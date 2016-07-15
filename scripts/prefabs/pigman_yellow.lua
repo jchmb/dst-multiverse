@@ -174,7 +174,7 @@ local builds = { "pig_yellow_build"}
 local MIN_WETNESS_REQUIRED = 0.1
 
 local function IsSlimeyItem(item)
-	return item.name == "phlegm" or item.name == "wetgoop"
+	return item.prefab == "phlegm" or item.prefab == "wetgoop"
 end
 
 local function AppearsSlimey(guy)
