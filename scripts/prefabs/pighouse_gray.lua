@@ -9,7 +9,7 @@ local assets =
 
 local prefabs =
 {
-    "pigman_blue",
+    "pigman_gray",
 }
 
 --Client update
@@ -380,7 +380,7 @@ local function fn()
     inst.components.workable:SetOnWorkCallback(onhit)
 
     inst:AddComponent("spawner")
-    inst.components.spawner:Configure("pigman_blue", TUNING.TOTAL_DAY_TIME*4)
+    inst.components.spawner:Configure("pigman_gray", TUNING.TOTAL_DAY_TIME*4)
     inst.components.spawner.onoccupied = onoccupied
     inst.components.spawner.onvacate = onvacate
     inst.components.spawner:CancelSpawning()

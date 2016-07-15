@@ -7,10 +7,10 @@ Recipe = GLOBAL.Recipe
 PrefabFiles = {
 	"pigman_blue",
 	"pigman_yellow",
-	--"pigman_gray",
+	"pigman_gray",
 	"pighouse_yellow",
 	"pighouse_blue",
-	--"pighouse_gray",
+	"pighouse_gray",
 	"pigking_blue",
 	"pigking_gray",
 }
@@ -59,8 +59,10 @@ pighouseBlueRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_blue.xml")
 STRINGS.NAMES.PIGHOUSE_BLUE = "Chillpig House"
 STRINGS.RECIPE_DESC.PIGHOUSE_BLUE = "Houses one chillpig"
 
+
 --[[
 	Gray Pighouse Recipe
+--]]
 local pighouseGrayRecipe = Recipe(
 	"pighouse_gray",
 	{
@@ -70,10 +72,9 @@ local pighouseGrayRecipe = Recipe(
 		Ingredient("nightmarefuel", 3),
 	},
 	RECIPETABS.TOWN,
-	{SCIENCE = 1},
+	TECH.LOST,
 	"pighouse_gray_placer"
 )
 pighouseGrayRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_blue.xml")
-STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Graypig House"
-STRINGS.NAMES.PIGHOUSE_GRAY = "Houses one graypig"
---]]
+STRINGS.NAMES.PIGHOUSE_GRAY = "Graypig House"
+STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Houses one graypig"

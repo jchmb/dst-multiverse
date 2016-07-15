@@ -18,6 +18,7 @@ local prefabs =
     "tophat",
     "strawhat",
     "pigskin",
+    "nightmarefuel",
 }
 
 local MAX_TARGET_SHARES = 5
@@ -94,7 +95,9 @@ end
 local function OnEat(inst, food)
     if food.components.edible ~= nil then
         if food.components.edible.foodtype == FOODTYPE.VEGGIE then
-            SpawnPrefab("ice").Transform:SetPosition(inst.Transform:GetWorldPosition())
+	    if math.random() < 0.75 then
+            	SpawnPrefab("spoiled_food").Transform:SetPosition(inst.Transform:GetWorldPosition())
+	    end
         elseif food.components.edible.foodtype == FOODTYPE.MEAT and
             inst.components.werebeast ~= nil and
             not inst.components.werebeast:IsInWereState() and
@@ -223,7 +226,7 @@ local function SetNormalPig(inst)
     inst.components.lootdropper:AddRandomLoot("meat", 3)
     inst.components.lootdropper:AddRandomLoot("pigskin", 1)
     inst.components.lootdropper.numrandomloot = 1
-    inst.components.lootdropper:AddChanceLoot("pighouse_blue_blueprint", 0.1)
+    inst.components.lootdropper:AddChanceLoot("pighouse_gray_blueprint", 0.1)
 
     inst.components.health:SetMaxHealth(TUNING.PIG_HEALTH)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
@@ -282,7 +285,8 @@ local function SetWerePig(inst)
 
     inst.components.lootdropper:SetLoot({ "meat", "meat", "pigskin" })
     inst.components.lootdropper.numrandomloot = 0
-    inst.components.lootdropper:AddChanceLoot("pighouse_blue_blueprint", 0.50)
+    inst.components.lootdropper:AddChanceLoot("pighouse_gray_blueprint", 0.50)
+    inst.components.lootdropper:AddChanceLoot("nightmarefuel", 0.50)
 
     inst.components.health:SetMaxHealth(TUNING.WEREPIG_HEALTH)
     inst.components.combat:SetTarget(nil)
