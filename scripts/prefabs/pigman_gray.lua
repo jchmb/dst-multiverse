@@ -171,10 +171,11 @@ local function NormalRetargetFn(inst)
         inst,
         TUNING.PIG_TARGET_DIST,
         function(guy)
-            return (guy.LightWatcher == nil or guy.LightWatcher:IsInLight())
-                and inst.components.combat:CanTarget(guy)
+            return ((guy.LightWatcher == nil or guy.LightWatcher:IsInLight())
+                and inst.components.combat:CanTarget(guy))
+       		and (guy:HasTag("monster") or (guy.components.sanity ~= nil and guy.components.sanity:GetPercent() <= 0.25))
         end,
-        { "monster", "_combat" }, -- see entityreplica.lua
+        {"_combat"}, -- see entityreplica.lua
         inst.components.follower.leader ~= nil and
         { "playerghost", "INLIMBO", "abigail" } or
         { "playerghost", "INLIMBO" }
