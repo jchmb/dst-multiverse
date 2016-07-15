@@ -440,6 +440,12 @@ local function common()
     inst:AddComponent("inspectable")
     inst.components.inspectable.getstatus = GetStatus
     ------------------------------------------
+    
+    inst:AddComponent("heater")
+    inst.components.heater.heatfn = function() return -10 end
+    inst.components.heater:SetThermics(false, true)
+    
+    ------------------------------------------
 
     inst.OnSave = OnSave
     inst.OnLoad = OnLoad
