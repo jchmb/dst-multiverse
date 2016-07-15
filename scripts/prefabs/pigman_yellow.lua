@@ -18,6 +18,7 @@ local prefabs =
     "tophat",
     "strawhat",
     "pigskin",
+    "phlegm",
 }
 
 local MAX_TARGET_SHARES = 5
@@ -168,7 +169,26 @@ local function OnNewTarget(inst, data)
     end
 end
 
-local builds = { "pig_blue_build"}
+local builds = { "pig_yellow_build"}
+
+local MIN_WETNESS_REQUIRED = 0.1
+
+local function IsSlimeyItem(item)
+	return item.name == "phlegm" or item.name == "wetgoop"
+end
+
+local function AppearsSlimey(guy)
+	return guy.components.inventory ~= nil
+		and guy.components.inventory:FindItem(IsSlimeyItem)
+end
+
+local function IsWetEnough(guy)
+	return guy.components.moisture == nil or guy.components.moisture:GetMoisturePercent() >= MIN_WETNESS_REQUIRED	
+end
+
+local function IsOneOfUs(guy)
+	return IsWetEnough(guy) or AppearsSlimey(guy)	
+end
 
 local function NormalRetargetFn(inst)
     return FindEntity(
@@ -177,8 +197,9 @@ local function NormalRetargetFn(inst)
         function(guy)
             return (guy.LightWatcher == nil or guy.LightWatcher:IsInLight())
                 and inst.components.combat:CanTarget(guy)
+                and not IsOneOfUs(guy)
         end,
-        { "monster", "_combat" }, -- see entityreplica.lua
+        { "_combat" }, -- see entityreplica.lua
         inst.components.follower.leader ~= nil and
         { "playerghost", "INLIMBO", "abigail" } or
         { "playerghost", "INLIMBO" }
