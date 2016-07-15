@@ -61,12 +61,6 @@ local function OnGetItemFromPlayer(inst, giver, item)
             if inst.components.combat:TargetIs(giver) then
                 inst.components.combat:SetTarget(nil)
             elseif giver.components.leader ~= nil then
-
-		-- If wet, then drop phlegm, maybe
-		if inst:GetIsWet() and math.random() < 0.50 then
-			SpawnPrefab("phlegm").Transform:SetPosition(inst.Transform:GetWorldPosition())
-		end
-
                 giver:PushEvent("makefriend")
                 giver.components.leader:AddFollower(inst)
                 inst.components.follower:AddLoyaltyTime(item.components.edible:GetHunger() * TUNING.PIG_LOYALTY_PER_HUNGER)
@@ -308,7 +302,11 @@ local function SetWerePig(inst)
     inst.components.sleeper:SetSleepTest(WerepigSleepTest)
     inst.components.sleeper:SetWakeTest(WerepigWakeTest)
 
-    inst.components.lootdropper:SetLoot({ "meat", "meat", "pigskin" })
+    if inst:GetIsWet() then
+    	inst.components.lootdropper:SetLoot({ "phlegm", "phlegm", "pigskin" })
+    else
+    	inst.components.lootdropper:SetLoot({ "meat", "meat", "pigskin" })
+    end
     inst.components.lootdropper.numrandomloot = 0
     inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.50)
     inst.components.lootdropper:AddChanceLoot("yellowgem", 0.05)
