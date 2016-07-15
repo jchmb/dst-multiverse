@@ -7,7 +7,7 @@ local assets =
 local prefabs =
 {
     "goldnugget",
-    "bluegem",
+    "petals_evil",
 }
 
 local tradeTable =
@@ -20,7 +20,23 @@ local tradeTable =
 				prefab = "petals_evil",
 				count = 3,
 			},
-		}
+		},
+		prefab = "monstermeat_dried",
+		rewards =
+		{
+			{
+				prefab = "petals_evil",
+				count = 1,
+			}
+		},
+		prefab = "feather_crow",
+		rewards =
+		{
+			{
+				prefab = "petals_evil",
+				count = 1,
+			}
+		},
 	},
 }
 
