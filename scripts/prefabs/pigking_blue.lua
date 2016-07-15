@@ -8,6 +8,7 @@ local prefabs =
 {
     "goldnugget",
     "bluegem",
+    "ice",
 }
 
 local tradeTable =
