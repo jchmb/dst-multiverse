@@ -85,7 +85,7 @@ STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Houses one graypig"
 Recipe(
 	"yellowgem",
 	{
-		Ingredient("phlegm", 25),
+		Ingredient("phlegm", 30),
 	},
 	RECIPETABS.REFINE,
 	TECH.LOST
