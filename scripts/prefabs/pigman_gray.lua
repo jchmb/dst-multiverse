@@ -31,7 +31,7 @@ end
 local function CalcSanityAura(inst, observer)
     return (inst.components.werebeast ~= nil and inst.components.werebeast:IsInWereState() and -TUNING.SANITYAURA_LARGE)
         or (inst.components.follower ~= nil and inst.components.follower.leader == observer and TUNING.SANITYAURA_SMALL)
-        or -TUNING.SANITYAURA_SMALL
+        or -TUNING.SANITYAURA_SMALL -- Graypigs have a small insanity aura where other pigs have none.
 end
 
 local function ShouldAcceptItem(inst, item)
@@ -173,7 +173,9 @@ local function NormalRetargetFn(inst)
         function(guy)
             return ((guy.LightWatcher == nil or guy.LightWatcher:IsInLight())
                 and inst.components.combat:CanTarget(guy))
-       		and (guy:HasTag("monster") or (guy.components.sanity ~= nil and guy.components.sanity:GetPercent() <= 0.25))
+                
+                -- Graypigs attack you if you are a monster (as usual), or if your sanity aura is less than 25%
+       		and (guy:HasTag("monster") or (guy.components.sanity ~= nil and guy.components.sanity:GetPercentWithPenalty() <= 0.25))
         end,
         {"_combat"}, -- see entityreplica.lua
         inst.components.follower.leader ~= nil and
