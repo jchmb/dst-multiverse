@@ -78,3 +78,15 @@ local pighouseGrayRecipe = Recipe(
 pighouseGrayRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_blue.xml")
 STRINGS.NAMES.PIGHOUSE_GRAY = "Graypig House"
 STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Houses one graypig"
+
+--[[
+	Secret recipe for creating yellow gems out of phlegm, don't tell your mother.
+--]]
+Recipe(
+	"yellowgem",
+	{
+		Ingredient("phlegm", 25),
+	},
+	RECIPETABS.REFINE,
+	TECH.LOST
+)
