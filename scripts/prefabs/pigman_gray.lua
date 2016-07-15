@@ -31,7 +31,7 @@ end
 local function CalcSanityAura(inst, observer)
     return (inst.components.werebeast ~= nil and inst.components.werebeast:IsInWereState() and -TUNING.SANITYAURA_LARGE)
         or (inst.components.follower ~= nil and inst.components.follower.leader == observer and TUNING.SANITYAURA_SMALL)
-        or 0
+        or -TUNING.SANITYAURA_SMALL
 end
 
 local function ShouldAcceptItem(inst, item)
