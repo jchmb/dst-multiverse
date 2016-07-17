@@ -4,6 +4,7 @@ require "recipes"
 local assets =
 {
     Asset("ANIM", "anim/pig_blue_house.zip"),
+    Asset("ANIM", "anim/pig_house.zip"),
     Asset("SOUND", "sound/pig.fsb"),
 }
 
@@ -292,7 +293,7 @@ local function MakeWindow()
     --[[Non-networked entity]]
     inst.persists = false
 
-    inst.AnimState:SetBank("pig_blue_house")
+    inst.AnimState:SetBank("pig_house")
     inst.AnimState:SetBuild("pig_blue_house")
     inst.AnimState:PlayAnimation("windowlight_idle")
     inst.AnimState:SetLightOverride(.6)
@@ -315,7 +316,7 @@ local function MakeWindowSnow()
     --[[Non-networked entity]]
     inst.persists = false
 
-    inst.AnimState:SetBank("pig_blue_house")
+    inst.AnimState:SetBank("pig_house")
     inst.AnimState:SetBuild("pig_blue_house")
     inst.AnimState:PlayAnimation("windowsnow_idle")
     inst.AnimState:SetFinalOffset(2)
@@ -348,7 +349,7 @@ local function fn()
     inst.Light:Enable(false)
     inst.Light:SetColour(180/255, 195/255, 50/255)
 
-    inst.AnimState:SetBank("pig_blue_house")
+    inst.AnimState:SetBank("pig_house")
     inst.AnimState:SetBuild("pig_blue_house")
     inst.AnimState:PlayAnimation("idle", true)
 

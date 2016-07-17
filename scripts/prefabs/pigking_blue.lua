@@ -78,7 +78,7 @@ local function ontradeforgold(inst, item)
     end  
 
     for k = 1, item.components.tradable.goldvalue do
-        ThrowReward(inst, "goldnugget")
+        ThrowReward(inst, "nitre")
     end
 end
 

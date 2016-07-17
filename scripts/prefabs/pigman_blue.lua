@@ -192,7 +192,7 @@ local function NormalShouldSleep(inst)
                 (inst.LightWatcher == nil or inst.LightWatcher:IsInLight())))
 end
 
-local normalbrain = require "brains/pigbrain"
+local normalbrain = require "brains/pigbrain_blue"
 
 local function SuggestTreeTarget(inst, data)
     if data ~= nil and data.tree ~= nil and inst:GetBufferedAction() ~= ACTIONS.CHOP then
@@ -223,7 +223,7 @@ local function SetNormalPig(inst)
     inst.components.lootdropper:AddRandomLoot("meat", 3)
     inst.components.lootdropper:AddRandomLoot("pigskin", 1)
     inst.components.lootdropper.numrandomloot = 1
-    inst.components.lootdropper:AddChanceLoot("pighouse_blue_blueprint", 0.1)
+    inst.components.lootdropper:AddChanceLoot("pighouse_blue_blueprint", 0.2)
 
     inst.components.health:SetMaxHealth(TUNING.PIG_HEALTH)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
@@ -282,7 +282,7 @@ local function SetWerePig(inst)
 
     inst.components.lootdropper:SetLoot({ "meat", "meat", "pigskin" })
     inst.components.lootdropper.numrandomloot = 0
-    inst.components.lootdropper:AddChanceLoot("pighouse_blue_blueprint", 0.50)
+    inst.components.lootdropper:AddChanceLoot("pighouse_blue_blueprint", 0.20)
 
     inst.components.health:SetMaxHealth(TUNING.WEREPIG_HEALTH)
     inst.components.combat:SetTarget(nil)
@@ -320,6 +320,10 @@ local function CustomOnHaunt(inst)
         inst.components.werebeast:SetWere(math.max(mintime, remainingtime) + math.random() * TUNING.SEG_TIME)
         inst.components.hauntable.hauntvalue = TUNING.HAUNT_LARGE
     end
+end
+
+local function GetTemperatureAura()
+    return not TheWorld.state.issummer and -10 or 0
 end
 
 local function common()
@@ -442,7 +446,7 @@ local function common()
     ------------------------------------------
     
     inst:AddComponent("heater")
-    inst.components.heater.heatfn = function() return -10 end
+    inst.components.heater.heatfn = GetTemperatureAura
     inst.components.heater:SetThermics(false, true)
     
     ------------------------------------------

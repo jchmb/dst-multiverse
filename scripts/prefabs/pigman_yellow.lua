@@ -309,7 +309,6 @@ local function SetWerePig(inst)
     end
     inst.components.lootdropper.numrandomloot = 0
     inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.50)
-    inst.components.lootdropper:AddChanceLoot("yellowgem", 0.05)
 
     inst.components.health:SetMaxHealth(TUNING.WEREPIG_HEALTH)
     inst.components.combat:SetTarget(nil)

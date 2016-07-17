@@ -1,26 +1,83 @@
+-- General globals
 STRINGS = GLOBAL.STRINGS
+
+-- Recipe globals
 RECIPETABS = GLOBAL.RECIPETABS
 Ingredient = GLOBAL.Ingredient
 TECH = GLOBAL.TECH
 Recipe = GLOBAL.Recipe
 
-PrefabFiles = {
-	"pigman_blue",
-	"pigman_yellow",
-	"pigman_gray",
-	"pighouse_yellow",
-	"pighouse_blue",
-	"pighouse_gray",
-	"pigking_blue",
-	"pigking_gray",
+Assets = {
+	Asset("IMAGE", "levels/textures/noise_snowy.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_snowy.tex"),
+	Asset("IMAGE", "levels/tiles/snowy.tex"),
+	Asset("FILE", "levels/tiles/snowy.xml"),
+	Asset("IMAGE", "images/pighouse_yellow.tex" ),
+	Asset("ATLAS", "images/pighouse_yellow.xml" ),
+	Asset("IMAGE", "images/pighouse_blue.tex" ),
+	Asset("ATLAS", "images/pighouse_blue.xml" ),
+	Asset("IMAGE", "images/pighouse_gray.tex" ),
+	Asset("ATLAS", "images/pighouse_gray.xml" ),
 }
 
-Assets = {
-	Asset( "IMAGE", "images/pighouse_yellow.tex" ),
-	Asset( "ATLAS", "images/pighouse_yellow.xml" ),
-	Asset( "IMAGE", "images/pighouse_blue.tex" ),
-	Asset( "ATLAS", "images/pighouse_blue.xml" ),
+--[[
+	Ground definitions
+--]]
+
+PrefabFiles = {
+	-- Location prefabs
+	--"forest_snow",
+	--"forest_snow_network",
+
+	-- Bluepig prefabs
+	"pigman_blue",
+	"pighouse_blue",
+	"pigking_blue",
+
+	-- Yellowpig prefabs
+	"pigman_yellow",
+	"pighouse_yellow",
+
+	-- Graypigs prefabs
+	"pigman_gray",
+	"pighouse_gray",
+	"pigking_gray",
+
+	-- Snow mobs and spawners
+	"rabbithole_snow",
+	"rabbit_snow",
+	"leif_snow",
+	"pond_open",
+	"reingoat",
+	"reingoatherd",
+	
+	-- Misc
+	"new_turfs",
 }
+
+--[[
+	Some new names
+--]]
+
+STRINGS.NAMES.TURF_SNOWY = "Snowy Turf"
+STRINGS.NAMES.PIGKING_GRAY = "Graypig King"
+STRINGS.NAMES.PIGKING_BLUE = "Chillpig King"
+STRINGS.NAMES.PIGHOUSE_BLUE = "Chillpig House"
+STRINGS.NAMES.PIGHOUSE_YELLOW = "Yellowpig House"
+STRINGS.NAMES.PIGHOUSE_GRAY = "Graypig House"
+STRINGS.NAMES.RABBIT_SNOW = "Snow Rabbit"
+STRINGS.NAMES.RABBITHOLE_SNOW = "Rabbithole"
+STRINGS.NAMES.LEIF_SNOW = "Snow Treeguard"
+STRINGS.NAMES.POND_OPEN = "Pond"
+STRINGS.NAMES.REINGOAT = "Reingoat"
+
+--[[
+	Import some chatter files
+--]]
+
+modimport("scripts/chatter/pigman_blue_chat.lua")
+modimport("scripts/chatter/pigman_gray_chat.lua")
+
 
 --[[
 	Yellow Pighouse Recipe
@@ -37,7 +94,6 @@ local pighouseYellowRecipe = Recipe(
 	"pighouse_yellow_placer"
 )
 pighouseYellowRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_yellow.xml")
-STRINGS.NAMES.PIGHOUSE_YELLOW = "Yellowpig House"
 STRINGS.RECIPE_DESC.PIGHOUSE_YELLOW = "Houses one yellowpig"
 
 --[[
@@ -56,7 +112,6 @@ local pighouseBlueRecipe = Recipe(
 	"pighouse_blue_placer"
 )
 pighouseBlueRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_blue.xml")
-STRINGS.NAMES.PIGHOUSE_BLUE = "Chillpig House"
 STRINGS.RECIPE_DESC.PIGHOUSE_BLUE = "Houses one chillpig"
 
 
@@ -76,17 +131,4 @@ local pighouseGrayRecipe = Recipe(
 	"pighouse_gray_placer"
 )
 pighouseGrayRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_blue.xml")
-STRINGS.NAMES.PIGHOUSE_GRAY = "Graypig House"
 STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Houses one graypig"
-
---[[
-	Secret recipe for creating yellow gems out of phlegm, don't tell your mother.
---]]
-Recipe(
-	"yellowgem",
-	{
-		Ingredient("phlegm", 30),
-	},
-	RECIPETABS.REFINE,
-	TECH.LOST
-)

@@ -1,6 +1,6 @@
 local assets =
 {
-    Asset("ANIM", "anim/pig_king_blue.zip"),
+    Asset("ANIM", "anim/pig_king_gray.zip"),
     Asset("SOUND", "sound/pig.fsb"),
 }
 
@@ -147,8 +147,8 @@ local function fn()
     --inst.Transform:SetScale(1.5, 1.5, 1.5)
 
     inst:AddTag("king")
-    inst.AnimState:SetBank("Pig_King_Blue")
-    inst.AnimState:SetBuild("Pig_King_Blue")
+    inst.AnimState:SetBank("Pig_King_Gray")
+    inst.AnimState:SetBuild("Pig_King_Gray")
     inst.AnimState:PlayAnimation("idle_90s", true)
 
     --trader (from trader component) added to pristine state for optimization
