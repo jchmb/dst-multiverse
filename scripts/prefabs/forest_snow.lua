@@ -138,7 +138,7 @@ monsters = nil
 local houndspawn =
 {
     base_prefab = "icehound",
-    winter_prefab = "icehound",
+    winter_prefab = "walrus",
     summer_prefab = "icehound",
 
     attack_levels =
@@ -147,7 +147,7 @@ local houndspawn =
         light   = { warnduration = function() return 60 end, numspawns = function() return 1 + math.random(2) end },
         med     = { warnduration = function() return 45 end, numspawns = function() return 2 + math.random(3) end },
         heavy   = { warnduration = function() return 30 end, numspawns = function() return 3 + math.random(3) end },
-        crazy   = { warnduration = function() return 30 end, numspawns = function() return 4 + math.random(4) end },
+        crazy   = { warnduration = function() return 30 end, numspawns = function() return 3 + math.random(3) end },
     },
 
     attack_delays =

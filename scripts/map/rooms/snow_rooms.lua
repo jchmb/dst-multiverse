@@ -117,8 +117,10 @@ AddRoom("SnowyKoalefants", {
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.2,
+		countprefabs = {
+			koalefant_winter = 4,
+		},
 		distributeprefabs = {
-			koalefant_winter = 0.1,
 			perma_grass = 0.2,
 			flower = 1,
 			rabbithole_snow = 0.05,
@@ -407,13 +409,13 @@ AddRoom("SnowyWalrusForest", {
 	contents =  {
 		distributepercent = 0.3,
 		countprefabs = {
-			walrus_camp = 3,
+			perma_walrus_camp = 1,
+			skeleton = 4,
 		},
 		distributeprefabs = {
 			evergreen = 3,
 			evergreen_sparse = 5,
 			grass = 0.3,
-			skeleton = 0.01,
 
 		}
 	}

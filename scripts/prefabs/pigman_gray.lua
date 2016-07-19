@@ -19,6 +19,8 @@ local prefabs =
     "strawhat",
     "pigskin",
     "nightmarefuel",
+    "spoiled_food",
+    "wetgoop",
 }
 
 local MAX_TARGET_SHARES = 5
@@ -177,7 +179,7 @@ local function NormalRetargetFn(inst)
                 and inst.components.combat:CanTarget(guy))
                 
                 -- Graypigs attack you if you are a monster (as usual), or if your sanity aura is less than 25%
-       		and (guy:HasTag("monster") or (guy.components.sanity ~= nil and guy.components.sanity:GetPercentWithPenalty() <= 0.25))
+       		and (guy:HasTag("monster") or (guy.components.sanity ~= nil and guy.components.sanity:GetPercentWithPenalty() <= 0.4))
         end,
         {"_combat"}, -- see entityreplica.lua
         inst.components.follower.leader ~= nil and

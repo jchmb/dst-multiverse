@@ -8,16 +8,45 @@ TECH = GLOBAL.TECH
 Recipe = GLOBAL.Recipe
 
 Assets = {
+	-- Snow tiles
 	Asset("IMAGE", "levels/textures/noise_snowy.tex"),
 	Asset("IMAGE", "levels/textures/mini_noise_snowy.tex"),
 	Asset("IMAGE", "levels/tiles/snowy.tex"),
 	Asset("FILE", "levels/tiles/snowy.xml"),
-	Asset("IMAGE", "images/pighouse_yellow.tex" ),
-	Asset("ATLAS", "images/pighouse_yellow.xml" ),
-	Asset("IMAGE", "images/pighouse_blue.tex" ),
-	Asset("ATLAS", "images/pighouse_blue.xml" ),
-	Asset("IMAGE", "images/pighouse_gray.tex" ),
-	Asset("ATLAS", "images/pighouse_gray.xml" ),
+
+	-- Slimey tiles
+	Asset("IMAGE", "levels/textures/noise_slimey.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_slimey.tex"),
+	Asset("IMAGE", "levels/tiles/slimey.tex"),
+	Asset("FILE", "levels/tiles/slimey.xml"),
+
+	-- Assets for recipes
+	Asset("IMAGE", "images/inventoryimages/pighouse_yellow.tex" ),
+	Asset("ATLAS", "images/inventoryimages/pighouse_yellow.xml" ),
+	Asset("IMAGE", "images/inventoryimages/pighouse_blue.tex" ),
+	Asset("ATLAS", "images/inventoryimages/pighouse_blue.xml" ),
+	Asset("IMAGE", "images/inventoryimages/pighouse_gray.tex" ),
+	Asset("ATLAS", "images/inventoryimages/pighouse_gray.xml" ),
+
+	-- Items
+	Asset("IMAGE", "images/inventoryimages/dug_coffeebush.tex" ),
+	Asset("ATLAS", "images/inventoryimages/dug_coffeebush.xml" ),
+	Asset("IMAGE", "images/inventoryimages/coffeebeans.tex" ),
+	Asset("ATLAS", "images/inventoryimages/coffeebeans.xml" ),
+	Asset("IMAGE", "images/inventoryimages/coffeebeans_cooked.tex" ),
+	Asset("ATLAS", "images/inventoryimages/coffeebeans_cooked.xml" ),
+	Asset("IMAGE", "images/inventoryimages/coffee.tex" ),
+	Asset("ATLAS", "images/inventoryimages/coffee.xml" ),
+
+	-- Turfs
+	Asset("IMAGE", "images/inventoryimages/turf_snowy.tex" ),
+	Asset("ATLAS", "images/inventoryimages/turf_snowy.xml" ),
+	Asset("IMAGE", "images/inventoryimages/turf_slimey.tex" ),
+	Asset("ATLAS", "images/inventoryimages/turf_slimey.xml" ),
+
+	-- Minimap icons
+	Asset("MINIMAP_IMAGE", "teleportato"),
+	Asset("MINIMAP_IMAGE", "map_icons/minimap_coffeebush.tex"),
 }
 
 --[[
@@ -26,8 +55,8 @@ Assets = {
 
 PrefabFiles = {
 	-- Location prefabs
-	--"forest_snow",
-	--"forest_snow_network",
+	"forest_snow",
+	"forest_snow_network",
 
 	-- Bluepig prefabs
 	"pigman_blue",
@@ -50,16 +79,23 @@ PrefabFiles = {
 	"pond_open",
 	"reingoat",
 	"reingoatherd",
+	"perma_walrus_camp",
 	
 	-- Misc
 	"new_turfs",
+	"new_plantables",
+	"new_bushes",
+	"new_veggies",
+	"coffee",
 }
 
 --[[
 	Some new names
 --]]
 
+-- Prefabs
 STRINGS.NAMES.TURF_SNOWY = "Snowy Turf"
+STRINGS.NAMES.TURF_SLIMEY = "Slimey Turf"
 STRINGS.NAMES.PIGKING_GRAY = "Graypig King"
 STRINGS.NAMES.PIGKING_BLUE = "Chillpig King"
 STRINGS.NAMES.PIGHOUSE_BLUE = "Chillpig House"
@@ -67,9 +103,24 @@ STRINGS.NAMES.PIGHOUSE_YELLOW = "Yellowpig House"
 STRINGS.NAMES.PIGHOUSE_GRAY = "Graypig House"
 STRINGS.NAMES.RABBIT_SNOW = "Snow Rabbit"
 STRINGS.NAMES.RABBITHOLE_SNOW = "Rabbithole"
-STRINGS.NAMES.LEIF_SNOW = "Snow Treeguard"
+STRINGS.NAMES.LEIF_SNOW = "Jolly Treeguard"
 STRINGS.NAMES.POND_OPEN = "Pond"
 STRINGS.NAMES.REINGOAT = "Reingoat"
+STRINGS.NAMES.PERMA_WALRUS_CAMP = "Elite Walrus Camp"
+
+-- Items
+STRINGS.NAMES.DUG_COFFEEBUSH = "Dug Coffeebush"
+STRINGS.NAMES.COFFEEBUSH = "Coffeebush"
+STRINGS.NAMES.COFFEEBEANS = "Coffeebeans"
+STRINGS.NAMES.COFFEEBEANS_COOKED = "Cooked Coffeebeans"
+STRINGS.NAMES.COFFEE = "Coffee"
+
+-- World names
+STRINGS.NAMES.MULTIWORLD_CUTE = "Bunny World"
+STRINGS.NAMES.MULTIWORLD_GRAY = "Grayscale World"
+STRINGS.NAMES.MULTIWORLD_SLIMEY = "Slimey World"
+STRINGS.NAMES.MULTIWORLD_SNOWY = "Snow World"
+STRINGS.NAMES.MULTIWORLD_CHEZZ = "Chezz World"
 
 --[[
 	Import some chatter files
@@ -78,6 +129,20 @@ STRINGS.NAMES.REINGOAT = "Reingoat"
 modimport("scripts/chatter/pigman_blue_chat.lua")
 modimport("scripts/chatter/pigman_gray_chat.lua")
 
+--[[
+	Recipes
+--]]
+modimport("cookpot_recipes.lua")
+
+--[[
+	Prefab descriptions
+--]]
+modimport("prefab_descriptions.lua")
+
+--[[
+	Minimap icons
+--]]
+modimport("minimap_icons.lua")
 
 --[[
 	Yellow Pighouse Recipe
@@ -93,7 +158,7 @@ local pighouseYellowRecipe = Recipe(
 	TECH.LOST,
 	"pighouse_yellow_placer"
 )
-pighouseYellowRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_yellow.xml")
+pighouseYellowRecipe.atlas = GLOBAL.resolvefilepath("images/inventoryimages/pighouse_yellow.xml")
 STRINGS.RECIPE_DESC.PIGHOUSE_YELLOW = "Houses one yellowpig"
 
 --[[
@@ -111,7 +176,7 @@ local pighouseBlueRecipe = Recipe(
 	TECH.LOST,
 	"pighouse_blue_placer"
 )
-pighouseBlueRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_blue.xml")
+pighouseBlueRecipe.atlas = GLOBAL.resolvefilepath("images/inventoryimages/pighouse_blue.xml")
 STRINGS.RECIPE_DESC.PIGHOUSE_BLUE = "Houses one chillpig"
 
 
@@ -130,5 +195,14 @@ local pighouseGrayRecipe = Recipe(
 	TECH.LOST,
 	"pighouse_gray_placer"
 )
-pighouseGrayRecipe.atlas = GLOBAL.resolvefilepath("images/pighouse_blue.xml")
+pighouseGrayRecipe.atlas = GLOBAL.resolvefilepath("images/inventoryimages/pighouse_gray.xml")
 STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Houses one graypig"
+
+--[[
+	Adapting some existing prefabs
+--]]
+
+-- Migration portals share the wormhole icon. This is confusing. Use teleportato icon instead.
+AddPrefabPostInit("migration_portal", function(prefab)
+	prefab.MiniMapEntity:SetIcon("teleportato.png")
+end)

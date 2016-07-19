@@ -163,6 +163,14 @@ end
 
 local builds = { "pig_blue_build"}
 
+local function IsTemperatureAnnoying()
+    return TheWorld.state.issummer
+end
+
+local function IsPissedOffAtGuy(inst, guy)
+    return guy:HasTag("monster") or (IsTemperatureAnnoying() and guy:HasTag("character") and not guy:HasTag("pig"))
+end
+
 local function NormalRetargetFn(inst)
     return FindEntity(
         inst,
@@ -170,8 +178,9 @@ local function NormalRetargetFn(inst)
         function(guy)
             return (guy.LightWatcher == nil or guy.LightWatcher:IsInLight())
                 and inst.components.combat:CanTarget(guy)
+                and IsPissedOffAtGuy(inst, guy)
         end,
-        { "monster", "_combat" }, -- see entityreplica.lua
+        {"_combat" }, -- see entityreplica.lua
         inst.components.follower.leader ~= nil and
         { "playerghost", "INLIMBO", "abigail" } or
         { "playerghost", "INLIMBO" }

@@ -20,8 +20,10 @@ local tradeTable =
 				prefab = "petals_evil",
 				count = 3,
 			},
-		},
-		prefab = "monstermeat_dried",
+		}
+    },
+	{
+        prefab = "monstermeat_dried",
 		rewards =
 		{
 			{
@@ -29,7 +31,9 @@ local tradeTable =
 				count = 1,
 			}
 		},
-		prefab = "feather_crow",
+    },
+	{
+    	prefab = "feather_crow",
 		rewards =
 		{
 			{
@@ -42,10 +46,11 @@ local tradeTable =
 
 local function GetRewardsFromTradeTable(item)
     for i, v in ipairs(tradeTable) do
-    	if v.prefab == item.name or v.prefab == item.prefab then
-		return v.rewards
-	end
+        if v.prefab == item.name or v.prefab == item.prefab then
+            return v.rewards
+        end
     end
+    return nil
 end
 
 local function ThrowReward(inst, prefab)

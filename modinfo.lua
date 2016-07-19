@@ -1,8 +1,8 @@
 -- This information tells other players more about the mod
-name = "000-Snowpig"
+name = "Multi-Worlds DST"
 description = "Multi-Worlds With Additional Stuff"
-author = "Joachim and Snook-8"
-version = "1.0.6"
+author = "Snook-8 and Joachim"
+version = "1.1.2"
 forumthread = ""
 api_version = 10	
 

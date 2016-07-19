@@ -48,9 +48,10 @@ local tradeTable =
 local function GetRewardsFromTradeTable(item)
     for i, v in ipairs(tradeTable) do
     	if v.prefab == item.name or v.prefab == item.prefab then
-		return v.rewards
-	end
+            return v.rewards
+        end
     end
+    return nil
 end
 
 local function ThrowReward(inst, prefab)
@@ -78,7 +79,7 @@ local function ontradeforgold(inst, item)
     end  
 
     for k = 1, item.components.tradable.goldvalue do
-        ThrowReward(inst, "nitre")
+        ThrowReward(inst, "goldnugget")
     end
 end
 

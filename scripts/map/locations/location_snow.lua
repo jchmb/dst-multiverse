@@ -5,7 +5,7 @@ AddLocation({
         start_location = "default",
         season_start = "default",
         world_size = "default",
-        task_set = "snowy",
+        task_set = "default",
         layout_mode = "LinkNodesByKeys",
         wormhole_prefab = "wormhole",
         roads = "default",

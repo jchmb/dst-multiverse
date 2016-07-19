@@ -2,7 +2,7 @@ AddLevel(LEVELTYPE.SURVIVAL, {
 	id = "SNOWWORLDPRESET",
 	name="Snow World",
 	desc="A world with lots of snow and ice",
-	location = "forest",
+	location = "forest_snow",
 	version = 2,
 	overrides={
 		task_set = "snowy",
