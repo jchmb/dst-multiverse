@@ -32,3 +32,10 @@ Changes
 * Snow World now has Walrus Camps that are always active during every season (except during dusk and night).
 * Fixed the Graypig King bug where the Graypig King does not give rewards for monsterlasagna.
 * Fixed Graypig House icon.
+* 
+20-07-2016
+----------
+
+* Implemneted some balance changes.
+* Added "permanent" beardlords and their houses to the Grayscale World.
+* Made it possible to name the migration portals.
