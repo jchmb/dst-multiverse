@@ -29,6 +29,7 @@ AddRoom("BGGray", {
 			spiderden = 0.1,
 			flint = 0.1,
 			slurper = 0.01,
+			tallbirdnest = 0.08,
 		}
 	}
 })
@@ -77,7 +78,7 @@ AddRoom("GrayPetGraveyard", {
 			sapling = 0.1,
 			tagswiggytree = 0.1,
 			evergreen = 1,
-			ghost = 0.01
+			ghost = 0.08,
 		}
 	}
 })
@@ -105,14 +106,15 @@ AddRoom("GrayCaveSpiders", {
 	value = GROUND.UNDERROCK,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-        distributepercent = .15,
+        distributepercent = .25,
         distributeprefabs=
         {
             stalagmite = 0.5,
             pillar_cave = 0.1,
             pillar_stalactite = 0.1,
             spiderhole = 0.1,
-            batcave = 0.01,
+            batcave = 0.1,
+            beardlordhouse = 0.1,
 
             thulecite = 0.01,
             thulecite_pieces = 0.05,
@@ -208,7 +210,7 @@ AddRoom("GrayRocks", {
 			rock2 = 0.3,
 			rock3 = 0.3,
 			rock_flintless_med = 0.5,
-			rocky = 0.4,
+			rocky = 0.3,
 			grassgekko = 0.2,
 			rock_ice = 0.4,
 		}
@@ -353,9 +355,6 @@ AddRoom("GrayHerds", {
 	value = GROUND.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs={
-			spat = function() return 2 + math.random(2) end
-		},
 		distributepercent = 0.15,
 		distributeprefabs = {
 			perma_grass = 0.1,

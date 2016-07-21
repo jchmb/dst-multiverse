@@ -29,7 +29,7 @@ local function StartCaffeineFn(inst, eater)
     if inst.name == "coffeebeans_cooked" or inst.prefab == "coffeebeans_cooked" then
         if eater.components.locomotor ~= nil then
             eater.components.locomotor:SetExternalSpeedMultiplier(eater, "caffeine", CAFFEINE_SPEED_MODIFIER)
-            eater:DoTaskInTime(30, EndCaffeineFn)
+            eater:DoTaskInTime(60, EndCaffeineFn)
         end
     end
 end

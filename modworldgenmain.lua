@@ -11,7 +11,13 @@ AddTile(
 	"SNOWY",
 	80,
 	"snowy",
-	{noise_texture = "levels/textures/noise_snowy.tex"},
+	{
+		noise_texture = "levels/textures/noise_snowy.tex",
+		runsound = "dontstarve/movement/run_snow",
+		walksound = "dontstarve/movement/run_snow",
+		snowsound = "dontstarve/movement/run_snow",
+		mudsound = "dontstarve/movement/run_mud",
+	},
 	{noise_texture = "levels/textures/mini_noise_snowy.tex"}
 )
 
@@ -19,7 +25,13 @@ AddTile(
 	"SLIMEY",
 	50,
 	"slimey",
-	{noise_texture = "levels/textures/noise_slimey.tex"},
+	{
+		noise_texture = "levels/textures/noise_slimey.tex",
+		runsound = "dontstarve/movement/run_mud",
+		walksound = "dontstarve/movement/run_mud",
+		snowsound = "dontstarve/movement/run_mud",
+		mudsound = "dontstarve/movement/run_mud",
+	},
 	{noise_texture = "levels/textures/mini_noise_slimey.tex"}
 )
 
@@ -32,6 +44,7 @@ GLOBAL.terrain.filter["rabbithole_snow"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUN
 GLOBAL.terrain.filter["leif_snow"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER, GROUND.ROCKY, GROUND.MARSH}
 GLOBAL.terrain.filter["perma_walrus_camp"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER, GROUND.ROCKY, GROUND.MARSH}
 GLOBAL.terrain.filter["coffeebush"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER }
+GLOBAL.terrain.filter["beardlordhouse"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER }
 
 --[[
 	Initialization stuff
@@ -47,6 +60,7 @@ Layouts["MigrationGrass"] = StaticLayout.Get("map/static_layouts/migration_grass
 --]]
 
 modimport("scripts/map/locations/location_snow")
+modimport("scripts/map/locations/location_slimey")
 
 modimport("scripts/map/rooms/gray_rooms")
 modimport("scripts/map/tasks/gray_tasks")

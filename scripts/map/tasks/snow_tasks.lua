@@ -7,8 +7,8 @@ AddTask("Make a pick snowy", {
 			["SnowyPlain"] = 2,
 			["Clearing"] = 1,
 		}, 
-		room_bg=GROUND.GRASS,
-		background_room="BGGrass",
+		room_bg=GROUND.SNOWY,
+		background_room="BGSnowy",
 		colour={r=0,g=1,b=0,a=1}
 	}) 
 

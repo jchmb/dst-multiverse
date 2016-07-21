@@ -214,7 +214,7 @@ local function master_postinit(inst)
     inst:AddComponent("butterflyspawner")
     inst:AddComponent("hounded")
 
-    inst.components.hounded:SetSpawnData(houndspawn)
+    inst.components.hounded:SetSpawnData(wormspawn)
 
     inst:AddComponent("worlddeciduoustreeupdater")
     inst:AddComponent("kramped")

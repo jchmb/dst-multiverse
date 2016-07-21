@@ -1,6 +1,5 @@
 local assets =
 {
-	Asset("ANIM", "anim/flan.zip"), -- TMP workaround
 	Asset("ANIM", "anim/coffee.zip"),
 	Asset("ATLAS", "images/inventoryimages/coffee.xml")
 }
@@ -19,7 +18,7 @@ end
 local function StartCaffeineFn(inst, eater)
 	if eater.components.locomotor ~= nil then
 		eater.components.locomotor:SetExternalSpeedMultiplier(eater, "caffeine", CAFFEINE_SPEED_MODIFIER)
-		eater:DoTaskInTime(60 * 4, EndCaffeineFn)
+		eater:DoTaskInTime(60 * 5, EndCaffeineFn)
 	end
 end
 
@@ -33,7 +32,7 @@ local function fn()
 		MakeInventoryPhysics(inst)
 
 		inst.AnimState:SetBuild("coffee")
-		inst.AnimState:SetBank("flan")
+		inst.AnimState:SetBank("coffee")
 		inst.AnimState:PlayAnimation("idle", false)
 
 		inst:AddTag("preparedfood")

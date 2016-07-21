@@ -2,7 +2,7 @@
 name = "Multi-Worlds DST"
 description = "Multi-Worlds With Additional Stuff"
 author = "Snook-8 and Joachim"
-version = "1.1.2"
+version = "1.1.5"
 forumthread = ""
 api_version = 10	
 
