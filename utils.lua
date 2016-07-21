@@ -1,3 +1,10 @@
+function AddTaskSetWrapped(task_set, data)
+   if GetModConfigData("UseMigrationPortals") then
+       data.set_pieces["MigrationGrass"] = data.set_pieces["CaveEntrance"]
+       data.set_pieces["CaveEntrance"] = nil
+   end
+end
+
 function AddLevelFixed(level_type, data)
     AddLevel(level_type, data)
     data_copy = deepcopy(data)
@@ -8,9 +15,9 @@ function AddLevelFixed(level_type, data)
 end
 
 function AddTaskSetFixed(task_set, data)
-    AddTaskSet(task_set, data)
+    AddTaskSetWrapped(task_set, data)
     data_copy = deepcopy(data)
     task_set_normal = task_set .. "_normal"
     data_copy.location = "forest"
-    AddTaskset(task_set_normal, data_copy)
+    AddTaskSetWrapped(task_set_normal, data_copy)
 end
