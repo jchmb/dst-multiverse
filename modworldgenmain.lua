@@ -63,6 +63,34 @@ AddTile(
 	{noise_texture = "levels/textures/mini_ground_volcano_noise.tex"}
 )
 
+AddTile(
+	"MAGMA",
+	53,
+	"magma",
+	{
+		noise_texture = "levels/textures/Ground_noise_magmafield.tex",
+		runsound = "dontstarve/movement/run_mud",
+		walksound = "dontstarve/movement/run_mud",
+		snowsound = "dontstarve/movement/run_mud",
+		mudsound = "dontstarve/movement/run_mud",
+	},
+	{noise_texture = "levels/textures/mini_magmafield_noise.tex"}
+)
+
+AddTile(
+	"LAVA_ROCK",
+	54,
+	"lava_rock",
+	{
+		noise_texture = "levels/textures/ground_lava_rock.tex",
+		runsound = "dontstarve/movement/run_mud",
+		walksound = "dontstarve/movement/run_mud",
+		snowsound = "dontstarve/movement/run_mud",
+		mudsound = "dontstarve/movement/run_mud",
+	},
+	{noise_texture = "levels/textures/mini_lava_noise.tex"}
+)
+
 --[[
 	Terrain filters
 --]]
