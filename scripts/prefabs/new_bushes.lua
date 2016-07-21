@@ -64,8 +64,7 @@ local function onpickedfn(inst, picker)
     if inst.components.pickable ~= nil then
         --V2C: nil cycles_left means unlimited picks, so use max value for math
         local old_percent = inst.components.pickable.cycles_left ~= nil and (inst.components.pickable.cycles_left + 1) / inst.components.pickable.max_cycles or 1
-        inst.AnimState:PlayAnimation(
-            old_percent >= .9 and "berriesmost_picked")
+        inst.AnimState:PlayAnimation("berriesmost_picked")
         inst.AnimState:PushAnimation(
             inst.components.pickable:IsBarren() and
             "idle_dead" or
@@ -90,11 +89,36 @@ local function getregentimefn_coffeebush(inst)
         + TUNING.BERRY_REGROW_VARIANCE * math.random()
 end
 
+local function getregentimefn_bittersweetbush(inst)
+    if inst.components.pickable == nil then
+        return TUNING.BERRY_REGROW_TIME
+    end
+    --V2C: nil cycles_left means unlimited picks, so use max value for math
+    local max_cycles = inst.components.pickable.max_cycles
+    local cycles_left = inst.components.pickable.cycles_left or max_cycles
+    local num_cycles_passed = math.max(0, max_cycles - cycles_left)
+    return TUNING.BERRY_REGROW_TIME
+        + TUNING.BERRY_REGROW_INCREASE * num_cycles_passed
+        + TUNING.BERRY_REGROW_VARIANCE * math.random()
+end
+
 local function makefullfn(inst)
     inst.AnimState:PlayAnimation(pickanim(inst))
 end
 
 local function onworked_coffeebush(inst, worker, workleft)
+    --This is possible when beaver is gnaw-digging the bush,
+    --and the expected behaviour should be same as jostling.
+    if workleft > 0 and
+        inst.components.lootdropper ~= nil and
+        inst.components.pickable ~= nil and
+        inst.components.pickable.droppicked and
+        inst.components.pickable:CanBePicked() then
+        inst.components.pickable:Pick(worker)
+    end
+end
+
+local function onworked_bittersweetbush(inst, worker, workleft)
     --This is possible when beaver is gnaw-digging the bush,
     --and the expected behaviour should be same as jostling.
     if workleft > 0 and
@@ -129,6 +153,10 @@ local function dig_up_coffeebush(inst)
     dig_up_common(inst, 1)
 end
 
+local function dig_up_bittersweetbush(inst)
+    dig_up_common(inst, 1)
+end
+
 local function OnHaunt(inst)
     if math.random() <= TUNING.HAUNT_CHANCE_ALWAYS then
         shake(inst)
@@ -142,7 +170,7 @@ local function createbush(bushname, bank, build, berryname, master_postinit)
     local assets =
     {
         Asset("ANIM", "anim/"..bank..".zip"),
-        
+        -- TODO minimap icon?
     }
     if bank ~= build then
         table.insert(assets, Asset("ANIM", "anim/"..build..".zip"))
@@ -172,8 +200,8 @@ local function createbush(bushname, bank, build, berryname, master_postinit)
         --witherable (from witherable component) added to pristine state for optimization
         inst:AddTag("witherable")
 
-        --inst.MiniMapEntity:SetIcon(bushname..".png")
-        inst.MiniMapEntity:SetIcon("minimap_coffeebush.tex")
+        inst.MiniMapEntity:SetIcon(bushname..".tex")
+        --inst.MiniMapEntity:SetIcon("minimap_coffeebush.tex")
 
         inst.AnimState:SetBank(bank)
         inst.AnimState:SetBuild(build)
@@ -232,4 +260,14 @@ local function coffeebush_postinit(inst)
     inst.components.workable:SetOnFinishCallback(dig_up_coffeebush)
 end
 
-return createbush("coffeebush", "coffeebush", "coffeebush", "coffeebeans", coffeebush_postinit)
+local function bittersweetbush_postinit(inst)
+    inst.components.pickable:SetUp("bittersweetberries", TUNING.BERRY_REGROW_TIME)
+    inst.components.pickable.getregentimefn = getregentimefn_bittersweetbush
+    inst.components.pickable.max_cycles = TUNING.BERRYBUSH_CYCLES + math.random(2)
+    inst.components.pickable.cycles_left = inst.components.pickable.max_cycles
+
+    inst.components.workable:SetOnFinishCallback(dig_up_bittersweetbush)
+end
+
+return createbush("coffeebush", "coffeebush", "coffeebush", "coffeebeans", coffeebush_postinit),
+    createbush("bittersweetbush", "bittersweetbush", "bittersweetbush", "bittersweetberries", bittersweetbush_postinit)
