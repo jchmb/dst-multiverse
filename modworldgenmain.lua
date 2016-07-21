@@ -35,6 +35,34 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_slimey.tex"}
 )
 
+AddTile(
+	"ASH",
+	51,
+	"ash",
+	{
+		noise_texture = "levels/textures/ground_ash.tex",
+		runsound = "dontstarve/movement/run_mud",
+		walksound = "dontstarve/movement/run_mud",
+		snowsound = "dontstarve/movement/run_mud",
+		mudsound = "dontstarve/movement/run_mud",
+	},
+	{noise_texture = "levels/textures/mini_ash.tex"}
+)
+
+AddTile(
+	"VOLCANO",
+	52,
+	"volcano",
+	{
+		noise_texture = "levels/textures/ground_volcano_noise.tex",
+		runsound = "dontstarve/movement/run_mud",
+		walksound = "dontstarve/movement/run_mud",
+		snowsound = "dontstarve/movement/run_mud",
+		mudsound = "dontstarve/movement/run_mud",
+	},
+	{noise_texture = "levels/textures/mini_ground_volcano_noise.tex"}
+)
+
 --[[
 	Terrain filters
 --]]
