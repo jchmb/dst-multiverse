@@ -1,6 +1,6 @@
 -- This information tells other players more about the mod
-name = "Multi-Worlds DST"
-description = "Multi-Worlds With Additional Stuff"
+name = "Multi-World DST"
+description = "Multi-World Biomes Pack"
 author = "Snook-8 and Joachim"
 version = "1.1.5"
 forumthread = ""
