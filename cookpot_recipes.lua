@@ -2,6 +2,7 @@
 	New ingredients
 --]]
 AddIngredientValues({"coffeebeans"}, {veggie=1}, true, false)
+AddIngredientValues({"bittersweetberries"}, {fruit=1, monster=0.25}, true, false)
 
 --[[
 	New recipes
