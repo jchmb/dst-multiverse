@@ -170,7 +170,7 @@ local function createbush(bushname, bank, build, berryname, master_postinit)
     local assets =
     {
         Asset("ANIM", "anim/"..bank..".zip"),
-        -- TODO minimap icon?
+        Asset("MINIMAP_ICON", "minimap_icons/minimap_coffeebush.tex"),
     }
     if bank ~= build then
         table.insert(assets, Asset("ANIM", "anim/"..build..".zip"))
@@ -200,7 +200,7 @@ local function createbush(bushname, bank, build, berryname, master_postinit)
         --witherable (from witherable component) added to pristine state for optimization
         inst:AddTag("witherable")
 
-        inst.MiniMapEntity:SetIcon(bushname..".tex")
+        inst.MiniMapEntity:SetIcon("minimap_icons/minimap_" .. bushname .. ".tex")
         --inst.MiniMapEntity:SetIcon("minimap_coffeebush.tex")
 
         inst.AnimState:SetBank(bank)
