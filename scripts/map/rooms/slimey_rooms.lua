@@ -109,6 +109,28 @@ AddRoom("SlimeyDeepDeciduous", {
 	}
 })
 
+AddRoom("SlimeyPigKingdom", {
+	colour={r=0.8,g=.8,b=.1,a=.50},
+	value = GROUND.SLIMEY,
+	tags = {"Town"},
+	required_prefabs = {"pigking_slimey"},
+	contents =  {
+		countstaticlayouts={
+			["PigKingSlimey"]=1,
+			["CropCircle"]=function() return math.random(0,1) end,
+			["TreeFarm"]= 	function()
+								if math.random() > 0.97 then 
+									return math.random(1,2) 
+								end 
+								return 0 
+							end,
+		},
+		countprefabs= {
+			pighouse_yellow = function () return 5 + math.random(4) end,
+		}
+	}
+})
+
 AddRoom("SlimeySwamp", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.MARSH,
