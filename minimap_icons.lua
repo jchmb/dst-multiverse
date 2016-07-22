@@ -1,1 +1,0 @@
-AddMinimapAtlas("map_icons/minimap_coffeebush.xml")
