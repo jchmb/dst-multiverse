@@ -37,5 +37,6 @@ Assets = {
 
 	-- Minimap icons
 	Asset("MINIMAP_IMAGE", "teleportato"),
-	Asset("MINIMAP_IMAGE", "map_icons/minimap_coffeebush.tex"),
+	Asset("IMAGE", "map_icons/minimap_coffeebush.tex"),
+	Asset("ATLAS", "map_icons/minimap_coffeebush.xml"),
 }
