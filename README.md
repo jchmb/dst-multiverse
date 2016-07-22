@@ -36,6 +36,11 @@ Changes
 20-07-2016
 ----------
 
-* Implemneted some balance changes.
+* Implemented some balance changes.
 * Added "permanent" beardlords and their houses to the Grayscale World.
 * Made it possible to name the migration portals.
+
+21-07-2016
+----------
+
+* Made coffeebushes a bit more widespread throughout the grayscale world. However, they are still rare.
