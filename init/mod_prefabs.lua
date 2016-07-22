@@ -27,6 +27,10 @@ PrefabFiles = {
 	"reingoat",
 	"reingoatherd",
 	"perma_walrus_camp",
+	
+	-- Slimey mobs and spawners
+	"perma_grassgekko",
+	"perma_grassgekkoherd",
 
 	-- Gray mobs and spawners
 	"beardlordhouse",
@@ -41,6 +45,7 @@ PrefabFiles = {
 	"new_plantables",
 	"new_bushes",
 	"new_veggies",
+	"new_rocks",
 
 	-- Special
 	"mimi",
