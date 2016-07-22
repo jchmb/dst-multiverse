@@ -1,4 +1,6 @@
-modimport "tile_adder.lua"
+modimport("lib/lua_functions.lua")
+modimport("lib/tile_adder.lua")
+modimport("utils/utils_worldgen.lua")
 
 GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATIONTABNAME.FOREST_SNOW = "Snowy"
 GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATION.FOREST_SNOW = "Snow Forest"
@@ -7,7 +9,7 @@ GLOBAL.STRINGS.TAGS.LOCATION.FOREST_SNOW = "Snow Forest"
 --[[
 	Add Tiles
 --]]
-modimport("ground_definitions.lua")
+modimport("init/ground_definitions.lua")
 
 --[[
 	Terrain filters
@@ -23,10 +25,7 @@ GLOBAL.terrain.filter["beardlordhouse"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND
 --[[
 	Initialization stuff
 --]]
-
-local Layouts = GLOBAL.require("map/layouts").Layouts
-local StaticLayout = GLOBAL.require("map/static_layout")
-Layouts["MigrationGrass"] = StaticLayout.Get("map/static_layouts/migration_grass")
+modimport("init/mod_layouts.lua")
 
 
 --[[
