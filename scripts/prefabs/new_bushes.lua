@@ -170,7 +170,6 @@ local function createbush(bushname, bank, build, berryname, master_postinit)
     local assets =
     {
         Asset("ANIM", "anim/"..bank..".zip"),
-        Asset("MINIMAP_ICON", "minimap_icons/minimap_coffeebush.tex"),
     }
     if bank ~= build then
         table.insert(assets, Asset("ANIM", "anim/"..build..".zip"))
