@@ -1,3 +1,14 @@
+local Layouts = GLOBAL.require("map/layouts").Layouts
+local StaticLayout = GLOBAL.require("map/static_layout")
+Layouts["PigKingSlimey"] = StaticLayout.Get(
+	"map/static_layouts/default_pigking_slimey",
+	{
+		start_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN_RESERVED,
+		fill_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN_RESERVED,
+		layout_position = GLOBAL.LAYOUT_POSITION.CENTER
+	}
+)
+
 AddRoom("BGSlimey", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.MARSH,
