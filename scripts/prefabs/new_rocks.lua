@@ -1,32 +1,7 @@
-local rock1_assets =
+local rock_slimey_assets =
 {
     Asset("ANIM", "anim/rock.zip"),
     Asset("MINIMAP_IMAGE", "rock"),
-}
-
-local rock2_assets =
-{
-    Asset("ANIM", "anim/rock2.zip"),
-    Asset("MINIMAP_IMAGE", "rock"),
-}
-
-local rock_flintless_assets =
-{
-    Asset("ANIM", "anim/rock_flintless.zip"),
-}
-
-local rock_moon_assets =
-{
-    Asset("ANIM", "anim/rock7.zip"),
-}
-
-local rock_petrified_tree_assets =
-{
-    Asset("ANIM", "anim/petrified_tree.zip"),
-    Asset("ANIM", "anim/petrified_tree_tall.zip"),
-    Asset("ANIM", "anim/petrified_tree_short.zip"),
-    Asset("ANIM", "anim/petrified_tree_old.zip"),
-    Asset("MINIMAP_IMAGE", "petrified_tree"),
 }
 
 local prefabs =
@@ -38,6 +13,8 @@ local prefabs =
     "moonrocknugget",
     "rock_break_fx",
     "collapse_small",
+    "phlegm",
+    "mucus",
 }
 
 SetSharedLootTable('rock_slimey',
@@ -45,7 +22,7 @@ SetSharedLootTable('rock_slimey',
     {'rocks',  1.00},
     {'rocks',  1.00},
     {'rocks',  1.00},
-    {'phlegm',  1.00},
+    {'mucus',  1.00},
     {'flint',  1.00},
     {'phlegm',  0.25},
     {'flint',  0.60},
