@@ -32,12 +32,15 @@ PrefabFiles = {
 	"beardlordhouse",
 	"perma_beardlord",
 	
+	-- Items
+	"coffee",
+	"mucus",
+	
 	-- Misc
 	"new_turfs",
 	"new_plantables",
 	"new_bushes",
 	"new_veggies",
-	"coffee",
 
 	-- Special
 	"mimi",
