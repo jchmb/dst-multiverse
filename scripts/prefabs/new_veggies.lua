@@ -38,10 +38,10 @@ local MOD_VEGGIES =
 {
     coffeebeans = MakeVegStats(0,   TUNING.CALORIES_TINY,   0,  TUNING.PERISH_FAST, 0,
                                 TUNING.CALORIES_TINY,   0,  TUNING.PERISH_SLOW * 2, -TUNING.SANITY_TINY, StartCaffeineFn),
-    bittersweetberries = MakeVegStats(0,   TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3,
-                                TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3, nil),
-    cacaobeans = MakeVegStats(0,   TUNING.CALORIES_TINY,   0,  TUNING.PERISH_FAST, 0,
-                                TUNING.CALORIES_TINY,   3,  TUNING.PERISH_SLOW * 2, -TUNING.SANITY_TINY, nil),
+    -- bittersweetberries = MakeVegStats(0,   TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3,
+    --                             TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3, nil),
+    -- cacaobeans = MakeVegStats(0,   TUNING.CALORIES_TINY,   0,  TUNING.PERISH_FAST, 0,
+    --                             TUNING.CALORIES_TINY,   3,  TUNING.PERISH_SLOW * 2, -TUNING.SANITY_TINY, nil),
 }
 
 local assets_seeds =

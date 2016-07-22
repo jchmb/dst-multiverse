@@ -85,10 +85,10 @@ local plantables =
         name = "coffeebush",
         anim = "idle_dead"
     },
-    {
-        name = "bittersweetbush",
-        anim = "idle_dead"
-    },
+    -- {
+    --     name = "bittersweetbush",
+    --     anim = "idle_dead"
+    -- },
 }
 
 local prefabs = {}

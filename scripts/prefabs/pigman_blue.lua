@@ -168,7 +168,8 @@ local function IsTemperatureAnnoying()
 end
 
 local function IsPissedOffAtGuy(inst, guy)
-    return guy:HasTag("monster") or (IsTemperatureAnnoying() and guy:HasTag("character") and not guy:HasTag("pig"))
+    --return guy:HasTag("monster") or (IsTemperatureAnnoying() and guy:HasTag("character") and not guy:HasTag("pig"))
+    return guy:HasTag("monster")
 end
 
 local function NormalRetargetFn(inst)

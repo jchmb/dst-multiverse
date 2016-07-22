@@ -11,7 +11,7 @@ local snow_tasks = {
 	"The hunters",
 }
  
-AddTaskSet("snowy", {
+AddTaskSetFixed("snowy", {
 	name = "Snowy",
 	location = "forest_snow",
 	tasks = snow_tasks,
@@ -23,7 +23,7 @@ AddTaskSet("snowy", {
 		["ResurrectionStone"] = { count = 2, tasks=snow_tasks},
 		["WormholeGrass"] = { count = 8, tasks=snow_tasks },
 		--["MooseNest"] = { count = 3, tasks={"Cuteness one", "Cuteness two a", "Cuteness three a", "Cuteness two b", "Cuteness three b", "Make a pick", "Speak to the king cute"} },
-		["MigrationGrass"] = { count = 10, tasks=snow_tasks},
+		["CaveEntrance"] = { count = 10, tasks=snow_tasks},
 			--["CaveEntrance"] = { count = 7, tasks={"Cuteness one", "Cuteness two a", "Cuteness three a", "Cuteness two b", "Cuteness three b", "Make a pick", "Speak to the king cute"} },
 	},
 })

@@ -1,4 +1,4 @@
-AddLevel(LEVELTYPE.SURVIVAL, {
+AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	id = "SNOWWORLDPRESET",
 	name="Snow World",
 	desc="A world with lots of snow and ice",

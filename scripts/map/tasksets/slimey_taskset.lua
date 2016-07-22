@@ -11,7 +11,7 @@ local slimey_tasks = {
 			"Frogs and bugs",
 		}
 
-AddTaskSet("slimey", {
+AddTaskSetFixed("slimey", {
 		name = "Slimey",
 		location = "forest_slimey",
 		tasks = slimey_tasks,
@@ -27,7 +27,7 @@ AddTaskSet("slimey", {
 			["ResurrectionStone"] = { count = 2, tasks=slimey_tasks},
 			["WormholeGrass"] = { count = 8, tasks=slimey_tasks},
 			["MooseNest"] = { count = 3, tasks=slimey_tasks },
-			["MigrationGrass"] = { count = 10, tasks=slimey_tasks},
+			["CaveEntrance"] = { count = 10, tasks=slimey_tasks},
 			--["CaveEntrance"] = { count = 7, tasks={"Grayness one", "Grayness two", "Grayness three a", "Grayness three b", "Grayness four", "Make a pick", "Speak to the king gray"} },
 		},
 	})

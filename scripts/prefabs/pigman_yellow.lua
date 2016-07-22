@@ -3,7 +3,7 @@ local assets =
     Asset("ANIM", "anim/ds_pig_basic.zip"),
     Asset("ANIM", "anim/ds_pig_actions.zip"),
     Asset("ANIM", "anim/ds_pig_attacks.zip"),
-    Asset("ANIM", "anim/pig_yellow_build.zip"),
+    Asset("ANIM", "anim/pig_slimey_build.zip"),
     Asset("ANIM", "anim/werepig_build.zip"),
     Asset("ANIM", "anim/werepig_basic.zip"),
     Asset("ANIM", "anim/werepig_actions.zip"),
@@ -245,7 +245,7 @@ local function SetNormalPig(inst)
     inst.components.lootdropper:AddRandomLoot("meat", 3)
     inst.components.lootdropper:AddRandomLoot("pigskin", 1)
     inst.components.lootdropper.numrandomloot = 1
-    inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.1)
+    --inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.1)
 
     inst.components.health:SetMaxHealth(TUNING.PIG_HEALTH)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
@@ -308,7 +308,7 @@ local function SetWerePig(inst)
     	inst.components.lootdropper:SetLoot({ "meat", "meat", "pigskin" })
     end
     inst.components.lootdropper.numrandomloot = 0
-    inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.50)
+    --inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.50)
 
     inst.components.health:SetMaxHealth(TUNING.WEREPIG_HEALTH)
     inst.components.combat:SetTarget(nil)
@@ -483,7 +483,7 @@ local function normal()
         return inst
     end
 
-    inst.build = "pig_yellow_build"
+    inst.build = "pig_slimey_build"
     inst.AnimState:SetBuild(inst.build)
     SetNormalPig(inst)
     return inst

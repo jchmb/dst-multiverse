@@ -12,7 +12,7 @@ local chezz_tasks = {
 			"Beeeees!",
 		}
 
-AddTaskSet("chezz", {
+AddTaskSetFixed("chezz", {
 		name = "Chess",
 		location = "forest",
 		tasks = chezz_tasks,
@@ -27,7 +27,7 @@ AddTaskSet("chezz", {
 		set_pieces = {
 			["ResurrectionStone"] = { count = 1, tasks=chezz_tasks},
 			["WormholeGrass"] = { count = 8, tasks=chezz_tasks},
-			["MigrationGrass"] = { count = 10, tasks=chezz_tasks},
+			["CaveEntrance"] = { count = 10, tasks=chezz_tasks},
 			--["CaveEntrance"] = { count = 7, tasks={"Grayness one", "Grayness two", "Grayness three a", "Grayness three b", "Grayness four", "Make a pick", "Speak to the king gray"} },
 		},
 	})

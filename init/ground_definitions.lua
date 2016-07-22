@@ -26,6 +26,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_slimey.tex"}
 )
 
+--[[
 AddTile(
 	"ASH",
 	51,
@@ -81,3 +82,4 @@ AddTile(
 	},
 	{noise_texture = "levels/textures/mini_lava_noise.tex"}
 )
+--]]

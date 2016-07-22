@@ -269,5 +269,5 @@ local function bittersweetbush_postinit(inst)
     inst.components.workable:SetOnFinishCallback(dig_up_bittersweetbush)
 end
 
-return createbush("coffeebush", "coffeebush", "coffeebush", "coffeebeans", coffeebush_postinit),
-    createbush("bittersweetbush", "bittersweetbush", "bittersweetbush", "bittersweetberries", bittersweetbush_postinit)
+return createbush("coffeebush", "coffeebush", "coffeebush", "coffeebeans", coffeebush_postinit)
+    -- ,createbush("bittersweetbush", "bittersweetbush", "bittersweetbush", "bittersweetberries", bittersweetbush_postinit)

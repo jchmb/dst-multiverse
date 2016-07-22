@@ -4,6 +4,7 @@ require "recipes"
 local assets =
 {
     Asset("ANIM", "anim/rabbit_house.zip"),
+    Asset("ANIM", "anim/beardlord_house.zip"),
     Asset("MINIMAP_IMAGE", "rabbit_house"),
 }
 
@@ -158,7 +159,7 @@ local function fn()
     inst.Light:SetColour(180/255, 195/255, 50/255)
 
     inst.AnimState:SetBank("rabbithouse")
-    inst.AnimState:SetBuild("rabbit_house")
+    inst.AnimState:SetBuild("beardlord_house")
     inst.AnimState:PlayAnimation("idle", true)
 
     inst:AddTag("cavedweller")
@@ -208,4 +209,4 @@ local function fn()
 end
 
 return Prefab("beardlordhouse", fn, assets, prefabs),
-    MakePlacer("beardlordhouse_placer", "rabbithouse", "rabbit_house", "idle")
+    MakePlacer("beardlordhouse_placer", "rabbithouse", "beardlord_house", "idle")

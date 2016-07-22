@@ -31,7 +31,7 @@ AddRoom("BGSlimeyDeciduous", {
 		distributeprefabs={
 			deciduoustree = 4,
 
-			pighouse=.1,
+			pighouse_yellow=.1,
 
 			rock1=0.05,
 			rock2=0.05,

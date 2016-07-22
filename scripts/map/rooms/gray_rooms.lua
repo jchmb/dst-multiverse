@@ -29,7 +29,9 @@ AddRoom("BGGray", {
 			spiderden = 0.1,
 			flint = 0.1,
 			slurper = 0.01,
-			tallbirdnest = 0.08,
+			tallbirdnest = 0.01,
+			beardlordhouse = 0.09,
+			coffeebush = 0.12,
 		}
 	}
 })
@@ -114,7 +116,6 @@ AddRoom("GrayCaveSpiders", {
             pillar_stalactite = 0.1,
             spiderhole = 0.1,
             batcave = 0.1,
-            beardlordhouse = 0.1,
 
             thulecite = 0.01,
             thulecite_pieces = 0.05,

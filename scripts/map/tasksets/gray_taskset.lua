@@ -10,7 +10,7 @@ local gray_tasks = {
 	"The hunters",
 }
 
-AddTaskSet("gray", {
+AddTaskSetFixed("gray", {
 		name = "Gray",
 		location = "forest",
 		tasks = gray_tasks,
@@ -22,7 +22,7 @@ AddTaskSet("gray", {
 			["ResurrectionStone"] = { count = 2, tasks=gray_tasks },
 			["WormholeGrass"] = { count = 8, tasks=gray_tasks },
 			["MooseNest"] = { count = 3, tasks=gray_tasks },
-			["MigrationGrass"] = { count = 10, tasks=gray_tasks },
+			["CaveEntrance"] = { count = 10, tasks=gray_tasks },
 			--["CaveEntrance"] = { count = 7, tasks={"Grayness one", "Grayness two", "Grayness three a", "Grayness three b", "Grayness four", "Make a pick", "Speak to the king gray"} },
 		},
 })

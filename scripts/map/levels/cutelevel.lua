@@ -1,4 +1,4 @@
-AddLevel(LEVELTYPE.SURVIVAL, {
+AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	id = "CUTENESSPRESET",
 	name="Cuteness",
 	desc="Cuteness",

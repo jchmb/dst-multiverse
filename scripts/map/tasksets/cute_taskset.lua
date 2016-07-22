@@ -12,7 +12,7 @@ local cute_tasks = {
 			"The hunters",
 		}
 
-AddTaskSet("cute", {
+AddTaskSetFixed("cute", {
 		name = "Cute",
 		location = "forest",
 		tasks = cute_tasks,
@@ -28,7 +28,7 @@ AddTaskSet("cute", {
 			["ResurrectionStone"] = { count = 2, tasks=cute_tasks},
 			["WormholeGrass"] = { count = 8, tasks=cute_tasks},
 			["MooseNest"] = { count = 3, tasks=cute_tasks},
-			["MigrationGrass"] = { count = 10, tasks=cute_tasks},
+			["CaveEntrance"] = { count = 10, tasks=cute_tasks},
 			--["CaveEntrance"] = { count = 7, tasks={"Cuteness one", "Cuteness two a", "Cuteness three a", "Cuteness two b", "Cuteness three b", "Make a pick", "Speak to the king cute"} },
 		},
 	})

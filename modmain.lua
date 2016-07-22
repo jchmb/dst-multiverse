@@ -1,4 +1,9 @@
 --[[
+	Dependencies
+--]]
+modimport("lib/lua_functions.lua")
+
+--[[
 	Globals
 --]]
 STRINGS = GLOBAL.STRINGS
@@ -10,14 +15,14 @@ Recipe = GLOBAL.Recipe
 --[[
 	Assets
 --]]
-modimport("mod_assets.lua")
+modimport("init/mod_assets.lua")
 
 --[[
 	Prefab definitions
 --]]
-modimport("mod_prefabs.lua")
-modimport("prefab_names.lua")
-modimport("prefab_descriptions.lua")
+modimport("init/mod_prefabs.lua")
+modimport("init/prefab_names.lua")
+modimport("init/prefab_descriptions.lua")
 
 --[[
 	Import some chatter files
@@ -29,13 +34,13 @@ modimport("scripts/chatter/mimi_chat.lua")
 --[[
 	Recipes
 --]]
-modimport("cookpot_recipes.lua")
-modimport("recipes.lua")
+modimport("init/cookpot_recipes.lua")
+modimport("init/recipes.lua")
 
 --[[
 	Minimap icons
 --]]
-modimport("minimap_icons.lua")
+modimport("init/minimap_icons.lua")
 
 --[[
 	Adapting some existing prefabs
