@@ -4,6 +4,12 @@ local rock_slimey_assets =
     Asset("MINIMAP_IMAGE", "rock"),
 }
 
+local rock_charcoal_assets =
+{
+    Asset("ANIM", "anim/rock.zip"),
+    Asset("MINIMAP_IMAGE", "rock"),
+}
+
 local prefabs =
 {
     "rocks",
@@ -15,6 +21,7 @@ local prefabs =
     "collapse_small",
     "phlegm",
     "mucus",
+    "charcoal",
 }
 
 SetSharedLootTable('rock_slimey',
@@ -25,6 +32,17 @@ SetSharedLootTable('rock_slimey',
     {'mucus',  1.00},
     {'flint',  1.00},
     {'phlegm',  0.25},
+    {'flint',  0.60},
+})
+
+SetSharedLootTable('rock_charcoal',
+{
+    {'rocks',  1.00},
+    {'rocks',  1.00},
+    {'rocks',  1.00},
+    {'charcoal',  1.00},
+    {'flint',  1.00},
+    {'charcoal',  0.25},
     {'flint',  0.60},
 })
 
@@ -127,9 +145,22 @@ local function rock_slimey_fn()
         return inst
     end
 
-    inst.components.lootdropper:SetChanceLootTable('rock1')
+    inst.components.lootdropper:SetChanceLootTable('rock_slimey')
 
     return inst
 end
 
-return Prefab("rock_slimey", rock_slimey_fn, rock_slimey_assets, prefabs)
+local function rock_charcoal_fn()
+    local inst = baserock_fn("rock", "rock", "full")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.lootdropper:SetChanceLootTable('rock_charcoal')
+
+    return inst
+end
+
+return Prefab("rock_slimey", rock_slimey_fn, rock_slimey_assets, prefabs),
+    Prefab("rock_charcoal", rock_slimey_fn, rock_slimey_assets, prefabs)
