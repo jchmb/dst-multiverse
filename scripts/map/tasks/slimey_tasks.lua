@@ -2,7 +2,7 @@ AddTask("Speak to the king slimey", {
 	locks=LOCKS.NONE,
 	keys_given={KEYS.PICKAXE, KEYS.AXE, KEYS.GRASS, KEYS.WOOD, KEYS.TIER1},
 	room_choices={
-		["PigKingdom"] = 1,
+		["SlimeyPigKingdom"] = 1,
 		["SlimeyMagicalDeciduous"] = 2, 
 		["SlimeyDeepDeciduous"] = 2,
 	},
@@ -28,9 +28,7 @@ AddTask("Slimey two a", {
 	locks={LOCKS.TIER2},
 	keys_given={KEYS.TIER3},
 	room_choices={
-		["SlimeySwamp"] = 2, 
-		["DeepForest"] = 1,
-		["ChezzFungusNoiseForest"] = 1,
+		["SlimeySwamp"] = 2,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.MARSH,
