@@ -13,38 +13,22 @@ TECH = GLOBAL.TECH
 Recipe = GLOBAL.Recipe
 
 --[[
-	Assets
+	Initialization scripts
 --]]
 modimport("init/mod_assets.lua")
-
---[[
-	Prefab definitions
---]]
 modimport("init/mod_prefabs.lua")
 modimport("init/prefab_names.lua")
 modimport("init/prefab_descriptions.lua")
+modimport("init/cookpot_recipes.lua")
+modimport("init/recipes.lua")
+modimport("init/minimap_icons.lua")
 
 --[[
-	Import some chatter files
+	Chatter scripts
 --]]
 modimport("scripts/chatter/pigman_blue_chat.lua")
 modimport("scripts/chatter/pigman_gray_chat.lua")
 modimport("scripts/chatter/mimi_chat.lua")
-
---[[
-	Recipes
---]]
-modimport("init/cookpot_recipes.lua")
-modimport("init/recipes.lua")
-
---[[
-	Minimap icons
---]]
-modimport("init/minimap_icons.lua")
-
---[[
-	Adapting some existing prefabs
---]]
 
 -- Migration portals share the wormhole icon. This is confusing. Use teleportato icon instead.
 AddPrefabPostInit("migration_portal", function(prefab)
