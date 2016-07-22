@@ -82,6 +82,7 @@ AddRoom("SlimeyMagicalDeciduous", {
 
 			pond_cave = 0.15,
 			slurtlehole = 0.1,
+			pighouse_yellow = 0.05,
 		},
 	}
 })
@@ -103,6 +104,8 @@ AddRoom("SlimeyDeepDeciduous", {
 
 			fireflies = 3,
 			slurtlehole = 0.2,
+			
+			pighouse_yellow = 0.05,
 		},
 	}
 })
@@ -143,7 +146,7 @@ AddRoom("SlimeySwampRocks", {
 			reeds = 0.05,
 			pond_cave = 0.1,
 			grassgekko = 0.2,
-			rock_ice = 0.3,
+			rock_ice = 0.05,
 		}
 	}
 })
@@ -169,6 +172,7 @@ AddRoom("SlimeyMudRocks", {
 			slurtlehole = 0.2,
 			green_mushroom = 0.2,
 			rock_ice = 0.1,
+			pighouse_yellow = 0.075,
 		}
 	}
 })
@@ -206,6 +210,7 @@ AddRoom("SlimeyStalagmite", {
 		fern = 0.5,
 		slurtlehole = 0.1,
 		grassgekko = 0.1,
+		pighouse_yellow = 0.05,
         },
     }
 })
