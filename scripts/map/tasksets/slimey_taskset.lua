@@ -8,18 +8,15 @@ local slimey_tasks = {
 			"Slimey three b",
 			"Slimey four a",
 			"Slimey four b",
-			"Frogs and bugs",
+			"Magic meadow",
 		}
 
 AddTaskSetFixed("slimey", {
 		name = "Slimey",
 		location = "forest_slimey",
 		tasks = slimey_tasks,
-		numoptionaltasks = 1,
-		optionaltasks = {
-			"Befriend the pigs",
-			"Magic meadow",
-		},
+		numoptionaltasks = 0,
+		optionaltasks = {},
 		valid_start_tasks = {
 			"Make a pick",
 		},
