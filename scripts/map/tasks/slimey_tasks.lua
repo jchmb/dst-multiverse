@@ -15,9 +15,7 @@ AddTask("Slimey one", {
 	locks={LOCKS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["Marsh"] = 1, 
-		["DeepForest"] = 1,
-		["ChezzFungusNoiseForest"] = 1,
+		["Marsh"] = 2,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.MARSH,
