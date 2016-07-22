@@ -24,10 +24,9 @@ AddRoom("BGSlimey", {
 			berrybush = 0.1,
 			berrybush_juicy = 0.05,
 			carrot_planted = 0.05,
-			grass = 0.2,
 			sapling = 0.2,
 			twiggytree = 0.2,
-			grassgekko = 0.1,
+			perma_grassgekko = 0.1,
 		}
 	}
 })
@@ -47,7 +46,7 @@ AddRoom("BGSlimeyDeciduous", {
 			rock2=0.05,
 
 			sapling=0.05,
-			grass=1,						
+			perma_grassgekko=0.2,						
 
 			flower=1,
 
@@ -75,7 +74,6 @@ AddRoom("SlimeyMagicalDeciduous", {
 		distributeprefabs={
 			deciduoustree = 3,
 
-			grass = 1,
 			sapling=0.03,
 			berrybush=1,
 			berrybush_juicy = 0.05,
@@ -104,7 +102,6 @@ AddRoom("SlimeyDeepDeciduous", {
 	contents =  {
 		distributepercent = .4,	
 		distributeprefabs={
-			grass = 1,
 			sapling=0.05,
 
 			deciduoustree = 10,
@@ -114,6 +111,8 @@ AddRoom("SlimeyDeepDeciduous", {
 
 			fireflies = 3,
 			slurtlehole = 0.2,
+			
+			perma_grassgekko = 0.1,
 			
 			pighouse_yellow = 0.05,
 		},
@@ -177,7 +176,7 @@ AddRoom("SlimeySwampRocks", {
 			rock3 = 0.1,
 			reeds = 0.05,
 			pond_mos = 0.1,
-			grassgekko = 0.2,
+			perma_grassgekko = 0.1,
 			rock_ice = 0.05,
 		}
 	}
@@ -198,7 +197,7 @@ AddRoom("SlimeyMudRocks", {
 			rock3 = 0.1,
 			reeds = 0.05,
 			pond_mos = 0.1,
-			grassgekko = 0.2,
+			perma_grassgekko = 0.1,
 			spiderden = 0.01,
 			flower = 2,
 			slurtlehole = 0.2,
@@ -217,9 +216,9 @@ AddRoom("SlimeyHerds", {
 		distributepercent = 0.10,
 		distributeprefabs = {
 			pillar_algae = .01,
-			grassgekko = 0.2,
+			perma_grassgekko = 0.1,
 			beefalo = 0.1,
-			perma_grass = 0.2,
+			perma_grass = 0.1,
 			marsh_bush = 0.2,
 			sapling = 0.1,
 			twiggytree = 0.1,
@@ -242,7 +241,7 @@ AddRoom("SlimeyStalagmite", {
             spiderden = 0.05,
 		fern = 0.5,
 		slurtlehole = 0.1,
-		grassgekko = 0.1,
+		perma_grassgekko = 0.1,
 		pighouse_yellow = 0.05,
         },
     }
