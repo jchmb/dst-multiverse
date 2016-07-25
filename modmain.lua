@@ -2,6 +2,8 @@
 	Dependencies
 --]]
 modimport("lib/lua_functions.lua")
+modimport("utils/utils_common.lua")
+modimport("utils/utils_main.lua")
 
 --[[
 	Globals
@@ -34,3 +36,6 @@ modimport("scripts/chatter/mimi_chat.lua")
 AddPrefabPostInit("migration_portal", function(prefab)
 	prefab.MiniMapEntity:SetIcon("teleportato.png")
 end)
+
+-- Add poisoned component
+modimport("init/player_hooks.lua")

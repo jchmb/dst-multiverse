@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8 and Joachim"
-version = "1.2.0"
+version = "1.2.8"
 forumthread = ""
 api_version = 10	
 
@@ -22,17 +22,9 @@ configuration_options =
 	{
 		name = "UseMigrationPortals",
 		default = 0,
-		options = {
-			{description = "Yes", data = 1},
-			{description = "No", data = 0},
-		}
 	},
 	{
 		name = "UseDefaultLocations",
 		default = 1,
-		options = {
-			{description = "Yes", data = 1},
-			{description = "No", data = 0},
-		}
 	},
 }
