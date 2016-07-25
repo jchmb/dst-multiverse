@@ -74,9 +74,8 @@ AddTask("Slimey four a", {
 	locks={LOCKS.TIER4},
 	keys_given={KEYS.NONE},
 	room_choices={ 
-		["SlimeyMudRocks"] = 1,
+		["SlimeySpiders"] = 3,
 		["SlimeyHounds"] = 1,
-		["SlimeyEwecus"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.MARSH,
@@ -87,7 +86,7 @@ AddTask("Slimey four b", {
 	locks={LOCKS.TIER4},
 	keys_given={KEYS.NONE},
 	room_choices={
-		["SlimeyEwecus"] = 1,
+		["SlimeyEwecus"] = 2,
 		["SlimeyMermCity"] = 2,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},

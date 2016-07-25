@@ -26,6 +26,34 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_slimey.tex"}
 )
 
+AddTile(
+	"ICE_LAKE",
+	51,
+	"ice_lake",
+	{
+		noise_texture = "levels/textures/noise_ice_lake.tex",
+		runsound = "dontstarve/movement/run_ice",
+		walksound = "dontstarve/movement/run_ice",
+		snowsound = "dontstarve/movement/run_ice",
+		mudsound = "dontstarve/movement/run_ice",
+	},
+	{noise_texture = "levels/textures/mini_noise_ice_lake.tex"}
+)
+
+AddTile(
+	"GRASS_GRAY",
+	52,
+	"grass_gray",
+	{
+		noise_texture = "levels/textures/noise_grass_gray.tex",
+		runsound = "dontstarve/movement/run_grass",
+		walksound = "dontstarve/movement/walk_grass",
+		snowsound = "dontstarve/movement/run_snow",
+		mudsound = "dontstarve/movement/run_mud",
+	},
+	{noise_texture = "levels/textures/mini_noise_grass_gray.tex"}
+)
+
 --[[
 AddTile(
 	"ASH",

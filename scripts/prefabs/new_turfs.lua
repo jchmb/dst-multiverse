@@ -60,7 +60,7 @@ local function make_turf(data)
 
         inst:AddComponent("inspectable")
         inst:AddComponent("inventoryitem")
-        inst.components.inventoryitem.atlasname = "images/inventoryitems/turf_" .. data.name .. ".xml"
+        inst.components.inventoryitem.atlasname = "images/inventoryimages/turf_" .. data.name .. ".xml"
         inst.data = data
 
         inst:AddComponent("bait")
@@ -92,6 +92,8 @@ local turfs =
 {
     {name="snowy",          anim="grass",       tile=GROUND.SNOWY},
     {name="slimey",         anim="grass",      tile=GROUND.SLIMEY},
+    {name="ice_lake",         anim="grass",      tile=GROUND.ICE_LAKE},
+    {name="grass_gray",         anim="grass",      tile=GROUND.GRASS_GRAY},
 }
 
 for k,v in pairs(turfs) do

@@ -1,6 +1,7 @@
 local assets =
 {
     Asset("ANIM", "anim/phlegm.zip"),
+    Asset("ANIM", "anim/mucus.zip"),
 }
 
 local function fn()
@@ -13,7 +14,7 @@ local function fn()
     MakeInventoryPhysics(inst)
 
     inst.AnimState:SetBank("phlegm")
-    inst.AnimState:SetBuild("phlegm")
+    inst.AnimState:SetBuild("mucus")
     inst.AnimState:PlayAnimation("idle")
 
     inst.entity:SetPristine()
@@ -24,6 +25,7 @@ local function fn()
 
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/mucus.xml"
     inst:AddComponent("stackable")
     inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
 

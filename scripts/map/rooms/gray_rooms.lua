@@ -11,7 +11,7 @@ Layouts["PigKingGray"] = StaticLayout.Get(
 
 AddRoom("BGGray", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MUD,
+	value = GROUND.GRASS_GRAY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.08,
@@ -28,7 +28,7 @@ AddRoom("BGGray", {
 			pond_mos = 0.01,
 			spiderden = 0.1,
 			flint = 0.1,
-			slurper = 0.01,
+			slurper = 0.03,
 			tallbirdnest = 0.01,
 			beardlordhouse = 0.09,
 			coffeebush = 0.12,
@@ -70,6 +70,9 @@ AddRoom("GrayPetGraveyard", {
 	value = GROUND.FOREST,
 	tags = {"ExitPiece", "Chester_Eyebone", "Mist"},
 	contents =  {
+		countprefabs = {
+			migration_portal = 1,
+		},
 		distributepercent = 0.2,
 		countprefabs = {
 			gravestone = function() return 3 + math.random(4) end,
@@ -95,7 +98,7 @@ AddRoom("GraySpiderTown", {
 			skeleton = function() return 6 + math.random(3) end
 		},
 		distributeprefabs = {
-			spiderden = 0.05,
+			spiderden = 0.15,
 			sapling = 0.1,
 			twiggytree = 0.1,
 			flower_evil = 0.1
@@ -125,9 +128,12 @@ AddRoom("GrayCaveSpiders", {
 
 AddRoom("GrayEvilMoles", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.FOREST,
+	value = GROUND.GRASS_GRAY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			migration_portal = 2,
+		},
 		distributepercent = 0.2,
 		distributeprefabs = {
 			molehill = 0.3,
@@ -188,6 +194,9 @@ AddRoom("GraySwamp", {
 	value = GROUND.MARSH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			migration_portal = 1,
+		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			marsh_bush = 0.2,
@@ -204,6 +213,9 @@ AddRoom("GrayRocks", {
 	value = GROUND.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			migration_portal = 2,
+		},
 		distributepercent = 0.2,
 		distributeprefabs = {
 			meteorspawner = 1,

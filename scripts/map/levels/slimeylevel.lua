@@ -9,8 +9,8 @@ AddLevelFixed(LEVELTYPE.SURVIVAL, {
 		ponds = "often",
 		fireflies = "often",
 		reeds = "often",
-		weather = "always",
-		lureplants = "always",
+		weather = "often",
+		lureplants = "often",
 	},
 	numrandom_set_pieces = 5,
 	random_set_pieces = {

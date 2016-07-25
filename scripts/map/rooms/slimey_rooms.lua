@@ -11,7 +11,7 @@ Layouts["PigKingSlimey"] = StaticLayout.Get(
 
 AddRoom("BGSlimey", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MARSH,
+	value = GROUND.MUD,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.10,
@@ -20,13 +20,14 @@ AddRoom("BGSlimey", {
 			marsh_tree = 0.05,
 			reeds = 0.03,
 			pond_mos = 0.1,
-			spiderden = 0.01,
-			berrybush = 0.1,
-			berrybush_juicy = 0.05,
+			bittersweetbush = 0.1,
 			carrot_planted = 0.05,
 			sapling = 0.2,
 			twiggytree = 0.2,
 			perma_grassgekko = 0.1,
+			mucus = 0.1,
+			phlegm = 0.01,
+			--snake_hole = 0.1,
 		}
 	}
 })
@@ -42,7 +43,7 @@ AddRoom("BGSlimeyDeciduous", {
 
 			pighouse_yellow=.1,
 
-			rock1=0.05,
+			rock_slimey=0.1,
 			rock2=0.05,
 
 			sapling=0.05,
@@ -52,8 +53,7 @@ AddRoom("BGSlimeyDeciduous", {
 
 			green_mushroom = 0.4,
 
-			berrybush=0.05,
-			berrybush_juicy = 0.025,
+			bittersweetbush=0.05,
 			carrot_planted = 0.2,
 
 			fireflies = 1.5,
@@ -75,8 +75,6 @@ AddRoom("SlimeyMagicalDeciduous", {
 			deciduoustree = 3,
 
 			sapling=0.03,
-			berrybush=1,
-			berrybush_juicy = 0.05,
 
 			green_mushroom = 4,
 
@@ -85,8 +83,7 @@ AddRoom("SlimeyMagicalDeciduous", {
 
 			molehill = 2,
 
-			berrybush = 3,
-			berrybush_juicy = 1.5,
+			bittersweetbush = 3,
 
 			pond_mos = 0.15,
 			slurtlehole = 0.1,
@@ -146,6 +143,9 @@ AddRoom("SlimeySwamp", {
 	value = GROUND.MARSH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			migration_portal = 1,
+		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			marsh_bush = 0.2,
@@ -166,12 +166,13 @@ AddRoom("SlimeySwampRocks", {
 	contents =  {
 		countprefabs = {
 			meteorspawner = 2,
+			migration_portal = 1,
 		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			marsh_bush = 0.2,
 			marsh_tree = 0.05,
-			rock1 = 0.2,
+			rock_slimey = 0.2,
 			rock2 = 0.1,
 			rock3 = 0.1,
 			reeds = 0.05,
@@ -184,24 +185,22 @@ AddRoom("SlimeySwampRocks", {
 
 AddRoom("SlimeyMudRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SLIMEY,
+	value = GROUND.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			migration_portal = 1,
+		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			pillar_algae = .01,
-			berrybush = 0.2,
-			berrybush_juicy = 0.1,
-			rock1 = 0.4,
+			rock_slimey = 0.1,
 			rock2 = 0.1,
 			rock3 = 0.1,
-			reeds = 0.05,
 			pond_mos = 0.1,
 			perma_grassgekko = 0.1,
-			spiderden = 0.01,
-			flower = 2,
-			slurtlehole = 0.2,
-			green_mushroom = 0.2,
+			spiderden_poisonous = 0.1,
+			slurtlehole = 0.1,
 			rock_ice = 0.1,
 			pighouse_yellow = 0.075,
 		}
@@ -213,6 +212,9 @@ AddRoom("SlimeyHerds", {
 	value = GROUND.SLIMEY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			migration_portal = 1,
+		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			pillar_algae = .01,
@@ -233,12 +235,15 @@ AddRoom("SlimeyStalagmite", {
 	value = GROUND.UNDERROCK,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			migration_portal = 1,
+		},
         distributepercent = .15,
         distributeprefabs=
         {
             stalagmite = 0.2,
             pillar_stalactite = 0.1,
-            spiderden = 0.05,
+            spiderden_poisonous = 0.05,
 		fern = 0.5,
 		slurtlehole = 0.1,
 		perma_grassgekko = 0.1,
@@ -247,9 +252,30 @@ AddRoom("SlimeyStalagmite", {
     }
 })
 
+AddRoom("SlimeySpiders", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.MUD,
+	tags = {"ExitPiece", "Chester_Eyebone"},
+	contents =  {
+		countprefabs = {
+			thulecite_pieces = 1,
+		},
+        distributepercent = .2,
+        distributeprefabs=
+        {
+        	spiderden_poisonous = 0.1,
+			marsh_bush = 0.5,
+			marsh_tree = 0.2,
+			bittersweetbush = 0.1,
+			mucus = 0.05,
+			phlegm = 0.05,
+        },
+    }
+})
+
 AddRoom("SlimeyHounds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MARSH,
+	value = GROUND.SLIMEY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 	countprefabs = {
@@ -261,15 +287,13 @@ AddRoom("SlimeyHounds", {
 		rocks = 0.1,
 		flint = 0.1,
 		marsh_bush = 0.5,
-		tumbleweedspawner = 0.01,
-		buzzardspawner = 0.05,
         },
     }
 })
 
 AddRoom("SlimeyMermCity", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SLIMEY,
+	value = GROUND.MARSH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 	countprefabs = {
@@ -293,6 +317,7 @@ AddRoom("SlimeyEwecus", {
 	countprefabs = {
 		spat = 2,
 		thulecite_pieces = 2,
+		phlegm = 5,
         },
         distributepercent = .2,
         distributeprefabs=

@@ -85,14 +85,14 @@ AddTask("Snowy four a", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},
 	room_choices={
-		["SnowyForest"] = 2,
-		["SnowyWalrusForest"] = 1,
-		["Marsh"] = 1,
-		["SpiderMarsh"] = 1,
+		["SnowyForest"] = 1,
+		["SnowyIcedLake"] = 5,
+		["SnowyIcedLakeHounds"] = 2,
+		["SnowyIcedLakeWalrus"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,
-	background_room="BGSnowyForest",
+	background_room="BGSnowyIcedLake",
 })
 
 AddTask("Snowy four b", {

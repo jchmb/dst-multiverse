@@ -1,6 +1,6 @@
 local rock_slimey_assets =
 {
-    Asset("ANIM", "anim/rock.zip"),
+    Asset("ANIM", "anim/rock_slimey.zip"),
     Asset("MINIMAP_IMAGE", "rock"),
 }
 
@@ -22,6 +22,7 @@ local prefabs =
     "phlegm",
     "mucus",
     "charcoal",
+    "wetgoop",
 }
 
 SetSharedLootTable('rock_slimey',
@@ -30,9 +31,10 @@ SetSharedLootTable('rock_slimey',
     {'rocks',  1.00},
     {'rocks',  1.00},
     {'mucus',  1.00},
-    {'flint',  1.00},
+    {'mucus',  1.00},
     {'phlegm',  0.25},
-    {'flint',  0.60},
+    {'flint',  0.50},
+    {'wetgoop', 0.50},
 })
 
 SetSharedLootTable('rock_charcoal',
@@ -139,7 +141,7 @@ local function baserock_fn(bank, build, anim, icon, tag)
 end
 
 local function rock_slimey_fn()
-    local inst = baserock_fn("rock", "rock", "full")
+    local inst = baserock_fn("rock_slimey", "rock_slimey", "full")
 
     if not TheWorld.ismastersim then
         return inst

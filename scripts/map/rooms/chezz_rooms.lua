@@ -1,6 +1,6 @@
 AddRoom("ChezzFungusNoiseForest", {
     colour={r=1.0,g=1.0,b=1.0,a=0.9},
-    value = GROUND.FUNGUS_NOISE,
+    value = GROUND.BRICK,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = .4,
@@ -27,15 +27,17 @@ AddRoom("ChezzFungusNoiseForest", {
 
 AddRoom("ChezzWetWilds", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.MUD,
+    value = GROUND.BRICK,
     tags = {"ExitPiece", "Chester_Eyebone"},    
     contents =  {
+        countprefabs = {
+            migration_portal = 1,
+        },
         distributepercent = 0.25,
         distributeprefabs=
         {
             lichen = .25,
             cave_fern = 0.1,
-            pillar_algae = .01,
             pond_mos = 0.1,
             slurper = .05,
         }
@@ -45,7 +47,7 @@ AddRoom("ChezzWetWilds", {
 --Lichen Meadow
 AddRoom("ChezzLichenMeadow", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.MUD,
+    value = GROUND.BRICK,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = 0.15,
@@ -70,7 +72,7 @@ AddRoom("ChezzLichenMeadow", {
 --Lichen Land
 AddRoom("ChezzLichenLand", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.MUD,
+    value = GROUND.ROCKY,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = 0.35,
@@ -78,7 +80,6 @@ AddRoom("ChezzLichenLand", {
         {
             lichen = 2.0,
             cave_fern = 0.5,
-            pillar_algae = 0.5,
             slurper = 0.05,
         }
     }
@@ -141,7 +142,7 @@ AddRoom("ChezzLand2", {
 
 AddRoom("ChezzRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = GROUND.BRICK,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countprefabs = {

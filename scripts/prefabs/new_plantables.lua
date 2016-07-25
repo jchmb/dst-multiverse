@@ -4,6 +4,8 @@ local function make_plantable(data)
     local assets =
     {
         Asset("ANIM", "anim/"..data.name..".zip"),
+        Asset("ANIM", "anim/berrybush.zip"),
+        Asset("ANIM", "anim/berrybush2.zip"),
         Asset("ATLAS", "images/inventoryimages/dug_" .. data.name..".xml"),
     }
 
@@ -85,10 +87,17 @@ local plantables =
         name = "coffeebush",
         anim = "idle_dead"
     },
-    -- {
-    --     name = "bittersweetbush",
-    --     anim = "idle_dead"
-    -- },
+    {
+        name = "bittersweetbush",
+        anim = "idle_dead",
+        bank = "berrybush",
+    },
+    {
+        name = "mintybush",
+        anim = "idle_dead",
+        bank = "berrybush2",
+        build = "berrybush2",
+    },
 }
 
 local prefabs = {}

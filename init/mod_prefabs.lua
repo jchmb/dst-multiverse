@@ -13,6 +13,7 @@ PrefabFiles = {
 	-- Yellowpig prefabs
 	"pigman_yellow",
 	"pighouse_yellow",
+	"pigking_slimey",
 
 	-- Graypigs prefabs
 	"pigman_gray",
@@ -31,6 +32,10 @@ PrefabFiles = {
 	-- Slimey mobs and spawners
 	"perma_grassgekko",
 	"perma_grassgekkoherd",
+	"spider_poisonous",
+	"spiderden_poisonous",
+	"snake",
+	"snake_hole",
 
 	-- Gray mobs and spawners
 	"beardlordhouse",
@@ -39,7 +44,10 @@ PrefabFiles = {
 	-- Items
 	"coffee",
 	"mucus",
-	
+	"venom_gland",
+	"antidote",
+	"spidereggsack_poisonous",
+
 	-- Misc
 	"new_turfs",
 	"new_plantables",

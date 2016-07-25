@@ -1,7 +1,8 @@
 require "tuning"
 
-local function MakeVegStats(seedweight, hunger, health, perish_time, sanity, cooked_hunger, cooked_health, cooked_perish_time, cooked_sanity, oneatenfn)
+local function MakeVegStats(bank, seedweight, hunger, health, perish_time, sanity, cooked_hunger, cooked_health, cooked_perish_time, cooked_sanity, oneatenfn)
     return {
+        bank = bank,
         health = health,
         hunger = hunger,
         cooked_health = cooked_health,
@@ -20,26 +21,24 @@ local UNCOMMON = 1
 local RARE = .5
 
 local CAFFEINE_SPEED_MODIFIER = 1.4
-
-local function EndCaffeineFn(eater)
-    eater.components.locomotor:RemoveExternalSpeedMultiplier(eater, "caffeine")
-end
+local CAFFEINE_DURATION = 60
 
 local function StartCaffeineFn(inst, eater)
     if inst.name == "coffeebeans_cooked" or inst.prefab == "coffeebeans_cooked" then
-        if eater.components.locomotor ~= nil then
-            eater.components.locomotor:SetExternalSpeedMultiplier(eater, "caffeine", CAFFEINE_SPEED_MODIFIER)
-            eater:DoTaskInTime(60, EndCaffeineFn)
+        if eater.components.locomotor ~= nil and eater.components.caffeinated ~= nil then
+            eater.components.caffeinated:Caffeinate(CAFFEINE_SPEED_MODIFIER, CAFFEINE_DURATION)
         end
     end
 end
 
 local MOD_VEGGIES =
 {
-    coffeebeans = MakeVegStats(0,   TUNING.CALORIES_TINY,   0,  TUNING.PERISH_FAST, 0,
+    coffeebeans = MakeVegStats(nil, 0,   TUNING.CALORIES_TINY,   0,  TUNING.PERISH_FAST, 0,
                                 TUNING.CALORIES_TINY,   0,  TUNING.PERISH_SLOW * 2, -TUNING.SANITY_TINY, StartCaffeineFn),
-    -- bittersweetberries = MakeVegStats(0,   TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3,
-    --                             TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3, nil),
+    bittersweetberries = MakeVegStats("berries", 0,   TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3,
+                                 TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3, nil),
+    mintyberries = MakeVegStats("berries", 0,  5,   2,  TUNING.PERISH_FAST, 2,
+                                 5,   3,  TUNING.PERISH_FAST, 2, nil),
     -- cacaobeans = MakeVegStats(0,   TUNING.CALORIES_TINY,   0,  TUNING.PERISH_FAST, 0,
     --                             TUNING.CALORIES_TINY,   3,  TUNING.PERISH_SLOW * 2, -TUNING.SANITY_TINY, nil),
 }
@@ -53,12 +52,14 @@ local function MakeVeggie(name, has_seeds)
 
     local assets =
     {
+        Asset("ANIM", "anim/berries.zip"),
         Asset("ANIM", "anim/"..name..".zip"),
         Asset("ATLAS", "images/inventoryimages/" .. name .. ".xml"),
     }
 
     local assets_cooked =
     {
+        Asset("ANIM", "anim/berries.zip"),
         Asset("ANIM", "anim/"..name..".zip"),
         Asset("ATLAS", "images/inventoryimages/" .. name .. "_cooked.xml"),
     }
@@ -136,7 +137,11 @@ local function MakeVeggie(name, has_seeds)
 
         MakeInventoryPhysics(inst)
 
-        inst.AnimState:SetBank(name)
+        if MOD_VEGGIES[name].bank ~= nil then
+            inst.AnimState:SetBank(MOD_VEGGIES[name].bank)
+        else
+            inst.AnimState:SetBank(name)
+        end
         inst.AnimState:SetBuild(name)
         inst.AnimState:PlayAnimation("idle")
 
@@ -209,7 +214,11 @@ local function MakeVeggie(name, has_seeds)
 
         MakeInventoryPhysics(inst)
 
-        inst.AnimState:SetBank(name)
+        if MOD_VEGGIES[name].bank ~= nil then
+            inst.AnimState:SetBank(MOD_VEGGIES[name].bank)
+        else
+            inst.AnimState:SetBank(name)
+        end
         inst.AnimState:SetBuild(name)
         inst.AnimState:PlayAnimation("cooked")
 
@@ -263,7 +272,7 @@ end
 
 local prefs = {}
 for veggiename,veggiedata in pairs(MOD_VEGGIES) do
-    local veg, cooked, seeds = MakeVeggie(veggiename, veggiename ~= "berries" and veggiename ~= "cave_banana" and veggiename ~= "cactus_meat" and veggiename ~= "berries_juicy" and veggiename ~= "coffeebeans")
+    local veg, cooked, seeds = MakeVeggie(veggiename, veggiename ~= "mintyberries" and veggiename ~= "bittersweetberries" and veggiename ~= "berries" and veggiename ~= "cave_banana" and veggiename ~= "cactus_meat" and veggiename ~= "berries_juicy" and veggiename ~= "coffeebeans")
     table.insert(prefs, veg)
     table.insert(prefs, cooked)
     if seeds then

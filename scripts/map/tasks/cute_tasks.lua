@@ -21,7 +21,6 @@ AddTask("Cuteness two a", {
 		["BeefalowPlain"] = 1,
 		["CuteBunnymanTown2"] = 1,
 		["CuteRocks"] = 1,
-		["WalrusHut_Plains"] = 2,
 		["MandrakeHome"] = 1
 	},
 	room_bg=GROUND.GRASS,
@@ -37,7 +36,6 @@ AddTask("Cuteness two b", {
 		["SpiderCity"] = 1,
 		["BeefalowPlain"] = 1,
 		["CuteRocks"] = 2,
-		["WalrusHut_Plains"] = 2,
 		["MandrakeHome"] = 1,
 	},
 	room_bg=GROUND.GRASS,

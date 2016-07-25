@@ -19,6 +19,7 @@ local prefabs =
     "strawhat",
     "pigskin",
     "phlegm",
+    "mucus",
 }
 
 local MAX_TARGET_SHARES = 5
@@ -166,9 +167,10 @@ end
 local builds = { "pig_yellow_build"}
 
 local MIN_WETNESS_REQUIRED = 0.1
+local WET_ITEMS = {"phlegm", "wetgoop", "mucus"}
 
 local function IsSlimeyItem(item)
-	return item.prefab == "phlegm" or item.prefab == "wetgoop"
+	return jchmb.IsOneOf(item, WET_ITEMS)
 end
 
 local function AppearsSlimey(guy)
@@ -244,8 +246,10 @@ local function SetNormalPig(inst)
     inst.components.lootdropper:SetLoot({})
     inst.components.lootdropper:AddRandomLoot("meat", 3)
     inst.components.lootdropper:AddRandomLoot("pigskin", 1)
+    inst.components.lootdropper:AddChanceLoot("mucus", 0.75)
+    inst.components.lootdropper:AddChanceLoot("phlegm", 0.25)
     inst.components.lootdropper.numrandomloot = 1
-    --inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.1)
+    inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.2)
 
     inst.components.health:SetMaxHealth(TUNING.PIG_HEALTH)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
@@ -303,12 +307,13 @@ local function SetWerePig(inst)
     inst.components.sleeper:SetWakeTest(WerepigWakeTest)
 
     if inst:GetIsWet() then
-    	inst.components.lootdropper:SetLoot({ "phlegm", "phlegm", "pigskin" })
+    	inst.components.lootdropper:SetLoot({ "phlegm", "phlegm", "mucus", "pigskin" })
     else
     	inst.components.lootdropper:SetLoot({ "meat", "meat", "pigskin" })
+        inst.components.lootdropper:AddChanceLoot("mucus", 0.75)
     end
     inst.components.lootdropper.numrandomloot = 0
-    --inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.50)
+    inst.components.lootdropper:AddChanceLoot("pighouse_yellow_blueprint", 0.2)
 
     inst.components.health:SetMaxHealth(TUNING.WEREPIG_HEALTH)
     inst.components.combat:SetTarget(nil)

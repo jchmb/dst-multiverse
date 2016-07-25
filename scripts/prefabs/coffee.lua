@@ -10,15 +10,11 @@ local prefabs =
 }
 
 local CAFFEINE_SPEED_MODIFIER = 1.5
-
-local function EndCaffeineFn(eater)
-	eater.components.locomotor:RemoveExternalSpeedMultiplier(eater, "caffeine")
-end
+local CAFFEINE_DURATION = 6 * 60
 
 local function StartCaffeineFn(inst, eater)
-	if eater.components.locomotor ~= nil then
-		eater.components.locomotor:SetExternalSpeedMultiplier(eater, "caffeine", CAFFEINE_SPEED_MODIFIER)
-		eater:DoTaskInTime(60 * 5, EndCaffeineFn)
+	if eater.components.locomotor ~= nil and eater.components.caffeinated ~= nil then
+		eater.components.caffeinated:Caffeinate(CAFFEINE_SPEED_MODIFIER, CAFFEINE_DURATION)
 	end
 end
 

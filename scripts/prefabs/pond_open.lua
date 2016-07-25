@@ -1,6 +1,6 @@
 local assets =
 {
-    Asset("ANIM", "anim/marsh_tile.zip"),
+    Asset("ANIM", "anim/pond_open.zip"),
     Asset("ANIM", "anim/splash.zip"),
 }
 
@@ -20,14 +20,14 @@ local function commonfn(pondtype)
 
     MakeObstaclePhysics(inst, 1.95)
 
-    inst.AnimState:SetBuild("marsh_tile")
-    inst.AnimState:SetBank("marsh_tile")
+    inst.AnimState:SetBuild("pond_open")
+    inst.AnimState:SetBank("pond_open")
     inst.AnimState:PlayAnimation("idle"..pondtype, true)
     inst.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
     inst.AnimState:SetLayer(LAYER_BACKGROUND)
     inst.AnimState:SetSortOrder(3)
 
-    inst.MiniMapEntity:SetIcon("pond"..pondtype..".png")
+    inst.MiniMapEntity:SetIcon("minimap_pond"..pondtype..".tex")
 
     inst:AddTag("watersource")
 

@@ -1,7 +1,7 @@
 local assets =
 {
-    Asset("ANIM", "anim/pig_king_slimey.zip"),
     Asset("ANIM", "anim/pig_king.zip"),
+    Asset("ANIM", "anim/pig_king_slimey.zip"),  
     Asset("SOUND", "sound/pig.fsb"),
 }
 
@@ -154,7 +154,7 @@ local function fn()
     --inst.Transform:SetScale(1.5, 1.5, 1.5)
 
     inst:AddTag("king")
-    inst.AnimState:SetBank("Pig_King")
+    inst.AnimState:SetBank("Pig_King_Slimey")
     inst.AnimState:SetBuild("Pig_King_Slimey")
     inst.AnimState:PlayAnimation("idle", true)
 
