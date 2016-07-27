@@ -54,60 +54,58 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_grass_gray.tex"}
 )
 
---[[
 AddTile(
 	"ASH",
-	51,
+	53,
 	"ash",
 	{
-		noise_texture = "levels/textures/ground_ash.tex",
+		noise_texture = "levels/textures/noise_ash.tex",
 		runsound = "dontstarve/movement/run_mud",
 		walksound = "dontstarve/movement/run_mud",
 		snowsound = "dontstarve/movement/run_mud",
 		mudsound = "dontstarve/movement/run_mud",
 	},
-	{noise_texture = "levels/textures/mini_ash.tex"}
+	{noise_texture = "levels/textures/mini_noise_ash.tex"}
 )
 
 AddTile(
 	"VOLCANO",
-	52,
+	54,
 	"volcano",
 	{
-		noise_texture = "levels/textures/ground_volcano_noise.tex",
+		noise_texture = "levels/textures/noise_volcano.tex",
 		runsound = "dontstarve/movement/run_mud",
 		walksound = "dontstarve/movement/run_mud",
 		snowsound = "dontstarve/movement/run_mud",
 		mudsound = "dontstarve/movement/run_mud",
 	},
-	{noise_texture = "levels/textures/mini_ground_volcano_noise.tex"}
+	{noise_texture = "levels/textures/mini_noise_volcano.tex"}
 )
 
 AddTile(
 	"MAGMA",
-	53,
+	55,
 	"magma",
 	{
-		noise_texture = "levels/textures/Ground_noise_magmafield.tex",
+		noise_texture = "levels/textures/noise_magma.tex",
 		runsound = "dontstarve/movement/run_mud",
 		walksound = "dontstarve/movement/run_mud",
 		snowsound = "dontstarve/movement/run_mud",
 		mudsound = "dontstarve/movement/run_mud",
 	},
-	{noise_texture = "levels/textures/mini_magmafield_noise.tex"}
+	{noise_texture = "levels/textures/mini_noise_magma.tex"}
 )
 
 AddTile(
 	"LAVA_ROCK",
-	54,
+	56,
 	"lava_rock",
 	{
-		noise_texture = "levels/textures/ground_lava_rock.tex",
+		noise_texture = "levels/textures/noise_lava_rock.tex",
 		runsound = "dontstarve/movement/run_mud",
 		walksound = "dontstarve/movement/run_mud",
 		snowsound = "dontstarve/movement/run_mud",
 		mudsound = "dontstarve/movement/run_mud",
 	},
-	{noise_texture = "levels/textures/mini_lava_noise.tex"}
+	{noise_texture = "levels/textures/mini_noise_lava_rock.tex"}
 )
---]]

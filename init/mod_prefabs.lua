@@ -47,6 +47,7 @@ PrefabFiles = {
 	"venom_gland",
 	"antidote",
 	"spidereggsack_poisonous",
+	"obsidian",
 
 	-- Misc
 	"new_turfs",

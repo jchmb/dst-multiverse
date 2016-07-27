@@ -1,5 +1,5 @@
 local onhit = function(inst, attacker, dmg)
-    if attacker:HasTag("poisonous") then
+    if attacker ~= nil and attacker:HasTag("poisonous") then
         if math.random() <= 0.5 then
             inst.components.poisoned:SetPoison(-1, 5, 60 * 14)
         end

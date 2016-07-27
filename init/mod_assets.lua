@@ -23,6 +23,30 @@ Assets = {
 	Asset("IMAGE", "levels/tiles/grass_gray.tex"),
 	Asset("FILE", "levels/tiles/grass_gray.xml"),
 
+	-- Gray grass tiles
+	Asset("IMAGE", "levels/textures/noise_ash.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_ash.tex"),
+	Asset("IMAGE", "levels/tiles/ash.tex"),
+	Asset("FILE", "levels/tiles/ash.xml"),
+
+	-- Gray grass tiles
+	Asset("IMAGE", "levels/textures/noise_magma.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_magma.tex"),
+	Asset("IMAGE", "levels/tiles/magma.tex"),
+	Asset("FILE", "levels/tiles/magma.xml"),
+
+	-- Gray grass tiles
+	Asset("IMAGE", "levels/textures/noise_volcano.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_volcano.tex"),
+	Asset("IMAGE", "levels/tiles/volcano.tex"),
+	Asset("FILE", "levels/tiles/volcano.xml"),
+
+	-- Gray grass tiles
+	Asset("IMAGE", "levels/textures/noise_lava_rock.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_lava_rock.tex"),
+	Asset("IMAGE", "levels/tiles/lava_rock.tex"),
+	Asset("FILE", "levels/tiles/lava_rock.xml"),
+
 	-- Assets for recipes
 	Asset("IMAGE", "images/inventoryimages/pighouse_yellow.tex" ),
 	Asset("ATLAS", "images/inventoryimages/pighouse_yellow.xml" ),
@@ -81,4 +105,6 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_mintybush.xml"),
 	Asset("IMAGE", "map_icons/minimap_pond_open.tex"),
 	Asset("ATLAS", "map_icons/minimap_pond_open.xml"),
+	Asset("IMAGE", "map_icons/minimap_rock_slimey.tex"),
+	Asset("ATLAS", "map_icons/minimap_rock_slimey.xml"),
 }

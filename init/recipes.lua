@@ -5,8 +5,9 @@ local pighouseYellowRecipe = Recipe(
 	"pighouse_yellow",
 	{
 		Ingredient("boards", 4),
-		Ingredient("pigskin", 4),
-		Ingredient("phlegm", 7),
+		Ingredient("pigskin", 3),
+		Ingredient("phlegm", 2),
+		Ingredient("mucus", 5, "images/inventoryimages/mucus.xml"),
 	},
 	RECIPETABS.TOWN,
 	TECH.LOST,
