@@ -6,7 +6,7 @@ local onhit = function(inst, attacker, dmg)
     end
 end
 
-local HyperfolderOnBuild = function(builder, prod)
+--[[local HyperfolderOnBuild = function(builder, prod)
 	if prod.prefab == "migration_portal" then
 		builder.components.hyperfolder:OnBuild(prod)	
 	end
@@ -25,7 +25,7 @@ local AddHyperfolderComponent = function(player)
 			player.components.builder.onBuild = HyperfolderOnBuild
 		end
 	end
-end
+end--]]
 
 local OnEverySpawn = function(src, player)
 	if player.components.poisoned == nil then
@@ -51,7 +51,7 @@ local OnPlayerSpawn = function(src, player)
     player.OnNewSpawn = function()
 
 	local maximum = 10
-	local count = math.floor((GLOBAL.TheWorld.state.cycles + 1) / 5)
+	local count = math.floor((GLOBAL.TheWorld.state.cycles + 1) / 4)
 	if count > maximum then
 		count = maximum
 	end

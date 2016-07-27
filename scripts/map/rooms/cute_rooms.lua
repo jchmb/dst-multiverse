@@ -10,7 +10,7 @@ AddRoom("CuteBunnymanTown", {
 		distributeprefabs = {
 			fireflies = 0.2,
 			carrot_planted = 1,
-			rabbithouse = 0.1,
+			colored_rabbithouse = 0.1,
 			flower = 0.1,
 			mushtree_medium = 2,
 			mushtree_small = 3,
@@ -35,7 +35,7 @@ AddRoom("CuteBunnymanTown2", {
 			carrot_planted = 0.5,
 			berrybush = 0.5,
 			berrybush_juicy = 0.25,
-			rabbithouse = 0.1,
+			colored_rabbithouse = 0.1,
 			flower = 0.1,
 			mushtree_medium = 2,
 			mushtree_small = 3,
@@ -60,7 +60,7 @@ AddRoom("CuteBunnymanTown3", {
 		distributeprefabs = {
 			fireflies = 0.2,
 			carrot_planted = 1,
-			rabbithouse = 0.1,
+			colored_rabbithouse = 0.1,
 			sapling = 0.2,
 			twiggytree = 0.2,
 			mushtree_medium = 2,
@@ -177,7 +177,7 @@ AddRoom("CuteFriends", {
 		distributeprefabs = {
 			carrot_planted = 1,
 			grass = 0.2,
-			rabbithouse = 0.2,
+			colored_rabbithouse = 0.2,
 			pighouse = 0.2,
 			flower = 0.5,
 			catcoonden = 0.1,
@@ -201,7 +201,7 @@ AddRoom("BGCuteDeciduous", {
 			mushtree_tall=3,
 			mushtree_medium=1,
 
-			rabbithouse=.15,
+			colored_rabbithouse=.15,
 			catcoonden=.1,
 
 			rock1=0.05,

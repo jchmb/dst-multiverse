@@ -20,6 +20,10 @@ PrefabFiles = {
 	"pighouse_gray",
 	"pigking_gray",
 
+	-- Cute mobs and spawners
+	"colored_bunnyman",
+	"colored_rabbithouse",
+
 	-- Snow mobs and spawners
 	"rabbithole_snow",
 	"rabbit_snow",

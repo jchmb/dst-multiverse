@@ -44,10 +44,10 @@ AddTask("Snowy two b", {
 	locks={LOCKS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["SnowyForest"] = 1,
 		["SnowyHerds"] = 1,
 		["SnowyLeifForest"] = 1,
 		["SnowyTotallyNormalForest"] = 1,
+		["SnowyBunnies"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,

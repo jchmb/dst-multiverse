@@ -397,6 +397,22 @@ AddRoom("SnowyGoats", {
 	}
 })
 
+AddRoom("SnowyBunnies", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.SNOWY,
+	tags = {"ExitPiece", "Chester_Eyebone"},
+	contents =  {
+		distributepercent = 0.4,
+		distributeprefabs = {
+			perma_grass = 0.4,
+			carrot_planted = 0.3,
+			rabbithouse = 0.2,
+			mintybush = 0.2,
+			evergreen = 9,
+		}
+	}
+})
+
 AddRoom("SnowyLeifForest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.SNOWY,
