@@ -172,14 +172,6 @@ local function _DropAndGoHome(inst)
     end
 end
 
-local function OnMonkeyDeath(inst, data)
-    --A monkey was killed by a player! Run home!
-    if data.afflicter ~= nil and data.inst:HasTag("monkey") and data.afflicter:HasTag("player") then
-        --Drop all items, go home
-        inst:DoTaskInTime(math.random(), _DropAndGoHome)
-    end
-end
-
 local function OnPickup(inst, data)
     local item = data.item
     if item ~= nil and
@@ -339,8 +331,8 @@ local function fn()
     inst._onharassplayerremoved = function() inst.harassplayer = nil end
 
     inst:AddComponent("knownlocations")
-
-    inst.listenfn = function(listento, data) OnMonkeyDeath(inst, data) end
+    
+    inst:AddComponent("follower")
 
     inst:ListenForEvent("onpickupitem", OnPickup)
     inst:ListenForEvent("attacked", OnAttacked)
