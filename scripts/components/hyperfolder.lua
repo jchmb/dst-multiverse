@@ -7,6 +7,14 @@ local Hyperfolder = Class(function(self, inst)
 	self.returning = false
 end)
 
+function Hyperfolder:Clear()
+	self.startPortalID = nil
+	self.startWorldID = nil
+	self.endPortalID = nil
+	self.endWorldID = nil
+	self.returning = false
+end
+
 function Hyperfolder:OnLoad(data)
 	if data.startPortalID ~= nil and data.startWorldID ~= nil then
 		self.startPortalID = data.startPortalID
