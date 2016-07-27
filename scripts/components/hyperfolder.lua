@@ -26,9 +26,18 @@ function Hyperfolder:RegisterEndPortal(portal)
 	portal.components.worldmigrator:SetReceivedPortal(self.startWorldID, self.startPortalID)
 end
 
-function Hyperfolder:DoReturn(portal, doer)
+function Hyperfolder:DoReturn(portal)
 	self.returning = true
-	portal.components.worldmigrator:Activate(doer)
+	portal.components.worldmigrator:Activate(self.inst)
+end
+
+function Hyperfolder:OnBuild(portal)
+	if self.startPortalID == nil or self.startWorldID == nil then
+		self:RegisterStartPortal(portal)
+	elseif self.endPortalID == nil or self.endWorldID == nil then
+		self.RegisterEndPortal(portal)
+		self:DoReturn()
+	end
 end
 
 function Hyperfolder:FindStartPortal()
@@ -62,6 +71,9 @@ function Hyperfolder:OnLoad(data)
 	end
 	if data.returning ~= nil then
 		self.returning = data.returning
+		if returning then
+			self:OnReturn()	
+		end
 	end
 end
 
