@@ -346,6 +346,10 @@ AddRoom("GrayPigKingdom", {
 	tags = {"Town"},
 	required_prefabs = {"pigking_gray"},
 	contents =  {
+		distributepercent = .4,
+		distributeprefabs = {
+			coffeebush = 0.25,
+		},
 		countstaticlayouts={
 			["PigKingGray"]=1,
 			["CropCircle"]=function() return math.random(0,1) end,
@@ -358,7 +362,6 @@ AddRoom("GrayPigKingdom", {
 		},
 		countprefabs= {
 			pighouse_gray = function () return 5 + math.random(4) end,
-			coffeebush = 0.2,
 		}
 	}
 })
@@ -374,6 +377,63 @@ AddRoom("GrayHerds", {
 			flower_cave = 0.2,
 			rock2 = 0.1,
 			grassgekko = 0.1
+		}
+	}
+})
+
+AddRoom("BGGray2", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.ASH,
+	tags = {"ExitPiece", "Chester_Eyebone"},
+	contents =  {
+		distributepercent = 0.08,
+		distributeprefabs = {
+			rocks = 0.07,
+			flint = 0.02,
+			coffeebush = 0.05,
+			spiderden = 0.01,
+			basalt = 0.1,
+		}
+	}
+})
+
+
+AddRoom("GrayMoonRocks", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.ASH,
+	tags = {"ExitPiece", "Chester_Eyebone"},
+	contents =  {
+		countprefabs = {
+			walrus_camp = 1,
+		},
+		distributepercent = 0.15,
+		distributeprefabs = {
+			rock_moon = 0.07,
+			rocks = 0.07,
+			pighouse_gray = 0.05,
+			grassgekko = 0.1,
+			basalt = 0.1,
+			tumbleweedspawner = 0.01,
+		}
+	}
+})
+
+AddRoom("GrayGoats", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.ASH,
+	tags = {"ExitPiece", "Chester_Eyebone"},
+	contents =  {
+		countprefabs = {
+			lightninggoat = 3,
+		},
+		distributepercent = 0.23,
+		distributeprefabs = {
+			basalt = 0.05,
+			evergreen_sparse = 4,
+			evergreen = 3,
+			sapling = 0.1,
+			twiggytree = 0.1,
+			spiderden = 0.07,
 		}
 	}
 })

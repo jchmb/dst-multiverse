@@ -22,13 +22,13 @@ local states=
 
 	State{
 		name = "gohome",
-		tags = {"busy"},
+		tags = {"busy", "nopredict"},
 		onenter = function(inst, playanim)
 			if inst.components.homeseeker and 
 			   inst.components.homeseeker.home and 
 			   inst.components.homeseeker.home:IsValid() then
 
-				inst.components.homeseeker.home.AnimState:PlayAnimation("chop", false)
+				--inst.components.homeseeker.home.AnimState:PlayAnimation("chop", false)
 			end
 			inst:PerformBufferedAction()
 		end,
@@ -36,9 +36,9 @@ local states=
 
 	State{
 		name = "idle",
-		tags = {"idle", "canrotate"},
+		tags = {"idle", "canrotate", "nopredict"},
 		onenter = function(inst, playanim)
-			inst.SoundEmitter:PlaySound("dontstarve/creatures/spider/idle")
+			--inst.SoundEmitter:PlaySound("dontstarve/creatures/spider/idle")
 			inst.Physics:Stop()
 			if playanim then
 				inst.AnimState:PlayAnimation(playanim)
@@ -54,7 +54,7 @@ local states=
 	
 	State{
 		name = "attack",
-		tags = {"attack", "busy"},
+		tags = {"attack", "busy", "nopredict"},
 
 		onenter = function(inst, target)
 			inst.sg.statemem.target = target
@@ -103,7 +103,7 @@ local states=
 
 	State{
 		name = "eat",
-		tags = {"busy"},
+		tags = {"busy", "nopredict"},
 
 		onenter = function(inst, cb)
 			inst.Physics:Stop()
@@ -127,7 +127,7 @@ local states=
 
 	State{
 		name = "spit",
-		tags = {"busy"},
+		tags = {"busy", "nopredict"},
 		
 		onenter = function(inst)
 			-- print("snake spit")
@@ -192,7 +192,7 @@ local states=
 	
 	State{
 		name = "hit",
-		tags = {"busy", "hit"},
+		tags = {"busy", "hit", "nopredict"},
 
 		onenter = function(inst, cb)
 			inst.Physics:Stop()
@@ -208,7 +208,7 @@ local states=
 
 	State{
 		name = "taunt",
-		tags = {"busy"},
+		tags = {"busy", "nopredict"},
 
 		onenter = function(inst, cb)
 			inst.Physics:Stop()

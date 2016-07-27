@@ -1,7 +1,7 @@
 local chezz_tasks = {
 			"Make a pick chezz",
 			"Dig that rock",
-			"Speak to the king",
+			"Speak to the king chezz",
 			"Chezzness three a",
 			"Chezzness three b",
 			"Chezzness four",

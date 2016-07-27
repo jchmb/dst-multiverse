@@ -37,5 +37,5 @@ AddPrefabPostInit("migration_portal", function(prefab)
 	prefab.MiniMapEntity:SetIcon("teleportato.png")
 end)
 
--- Add poisoned component
+-- Add extra components (caffeinated and poisoned for example)
 modimport("init/player_hooks.lua")

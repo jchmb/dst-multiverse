@@ -38,9 +38,9 @@ AddRoom("FireRocks", {
   Tier 1
 --]]
 
-AddRoom("FireForest", {
+AddRoom("FireForest2", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = GROUND.LAVA_ROCK,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.7,
@@ -54,9 +54,9 @@ AddRoom("FireForest", {
 	}
 })
 
-AddRoom("FireForest", {
+AddRoom("FireForest3", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = GROUND.VOLCANO,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.7,

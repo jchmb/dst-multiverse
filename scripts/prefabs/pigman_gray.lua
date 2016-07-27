@@ -4,7 +4,7 @@ local assets =
     Asset("ANIM", "anim/ds_pig_actions.zip"),
     Asset("ANIM", "anim/ds_pig_attacks.zip"),
     Asset("ANIM", "anim/pig_gray_build.zip"),
-    Asset("ANIM", "anim/werepig_build.zip"),
+    Asset("ANIM", "anim/werepig_gray_build.zip"),
     Asset("ANIM", "anim/werepig_basic.zip"),
     Asset("ANIM", "anim/werepig_actions.zip"),
     Asset("SOUND", "sound/pig.fsb"),
@@ -97,11 +97,7 @@ end
 local function OnEat(inst, food)
     if food.components.edible ~= nil then
         if food.components.edible.foodtype == FOODTYPE.VEGGIE then
-	    if math.random() < 0.5 then
             SpawnPrefab("spoiled_food").Transform:SetPosition(inst.Transform:GetWorldPosition())
-	    else
-            SpawnPrefab("guano").Transform:SetPosition(inst.Transform:GetWorldPosition())
-        end
         elseif food.components.edible.foodtype == FOODTYPE.MEAT and
             inst.components.werebeast ~= nil and
             not inst.components.werebeast:IsInWereState() and
@@ -278,7 +274,7 @@ local function SetWerePig(inst)
     inst:AddTag("werepig")
     inst:SetBrain(werepigbrain)
     inst:SetStateGraph("SGwerepig")
-    inst.AnimState:SetBuild("werepig_build")
+    inst.AnimState:SetBuild("werepig_gray_build")
 
     inst.components.sleeper:SetResistance(3)
 

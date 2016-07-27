@@ -76,3 +76,10 @@ modimport("scripts/map/rooms/chezz_rooms")
 modimport("scripts/map/tasks/chezz_tasks")
 modimport("scripts/map/tasksets/chezz_taskset")
 modimport("scripts/map/levels/chezzlevel")
+
+--[[
+modimport("scripts/map/rooms/fire_rooms")
+modimport("scripts/map/tasks/fire_tasks")
+modimport("scripts/map/tasksets/fire_taskset")
+modimport("scripts/map/levels/firelevel")
+--]]

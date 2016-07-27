@@ -128,9 +128,6 @@ AddRoom("ChezzLand2", {
 		countstaticlayouts={
 			["PigGuards"] = 1,
 		},
-		countprefabs = {
-			ancient_altar_broken = 1,
-		},
 		distributepercent = 0.3,
 		distributeprefabs = {
 			flower_evil = 3,
@@ -155,9 +152,120 @@ AddRoom("ChezzRocks", {
 			rock3 = 0.1,
 			flint = 0.2,
 			rocks = 0.1,
-			chessjunk1 = 0.01,
-			chessjunk2 = 0.01,
+			chessjunk1 = 0.002,
+			chessjunk2 = 0.002,
 			rock_ice = 0.2,
 		}
 	}
+})
+
+AddRoom("BGChezzDeciduous", {
+    colour={r=.1,g=.8,b=.1,a=.50},
+    value = GROUND.BRICK,
+    tags = {"ExitPiece", "Chester_Eyebone"},
+    contents =  {
+        distributepercent = .2,
+        distributeprefabs={
+            deciduoustree = 3,
+            pighouse = 0.15,
+
+            rock1=0.05,
+            rock2=0.05,
+
+            sapling=1,
+            grass=0.05,
+
+            berrybush=0.05,
+            berrybush_juicy = 0.025,
+            carrot_planted = 0.2,
+
+            fireflies = 1.5,
+
+            pond=.01,
+        },
+    }
+})
+
+AddRoom("ChezzMagicalDeciduous", {
+    colour={r=0,g=.9,b=0,a=.50},
+    value = GROUND.BRICK,
+    tags = {"ExitPiece", "Chester_Eyebone"},
+    contents =  {
+        countstaticlayouts={
+            ["DeciduousPond"] = 1,
+        },
+        distributepercent = .3,
+        distributeprefabs={
+            deciduoustree = 2,
+            berrybush=1,
+            berrybush_juicy = 0.05,
+
+            red_mushroom = 2,
+            blue_mushroom = 2,
+            green_mushroom = 2,
+
+            fireflies = 4,
+
+            berrybush = 3,
+            berrybush_juicy = 1.5,
+            chessjunk1 = 0.001,
+        },
+    }
+})
+
+AddRoom("ChezzDeepDeciduous", {
+    colour={r=0,g=.9,b=0,a=.50},
+    value = GROUND.BRICK,
+    tags = {"ExitPiece", "Chester_Eyebone"},
+    contents =  {
+        countprefabs = {
+            migration_portal = 1,
+        },
+        distributepercent = .4,
+        distributeprefabs={
+            knight = 0.005,
+            deciduoustree = 10,
+            grass = .03,
+            carrot_planted=0.5,
+
+            deciduoustree = 10,
+            catcoonden = .05,
+
+            red_mushroom = 0.15,
+            blue_mushroom = 0.15,
+            green_mushroom = 0.15,
+
+            fireflies = 3,
+            chessjunk2 = 0.01,
+        },
+    }
+})
+
+AddRoom("ChezzPigKingdom", {
+    colour={r=0.8,g=.8,b=.1,a=.50},
+    value = GROUND.BRICK,
+    tags = {"Town"},
+    required_prefabs = {"pigking"},
+    contents =  {
+        countstaticlayouts={
+            ["DefaultPigking"]=1,
+            ["CropCircle"]=function() return math.random(0,1) end,
+            ["TreeFarm"]=   function()
+                                if math.random() > 0.97 then 
+                                    return math.random(1,2) 
+                                end 
+                                return 0 
+                            end,
+        },
+        countprefabs= {
+            pighouse = function () return 5 + math.random(4) end,
+            ancient_altar_broken = 1,
+        },
+        distributepercent = 0.3,
+        distributeprefabs = {
+            coffeebush = 0.1,
+            mintybush = 0.1,
+            bittersweetbush = 0.1,
+        },
+    }
 })

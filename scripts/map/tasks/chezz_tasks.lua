@@ -49,3 +49,16 @@ AddTask("Chezzness four", {
 	background_room="BGChezz",
 	colour={r=.25,g=.28,b=.25,a=.50},
 })
+
+AddTask("Speak to the king chezz", {
+	locks={LOCKS.PIGKING,LOCKS.TIER2},
+	keys_given={KEYS.PIGS,KEYS.GOLD,KEYS.TIER3},
+	room_choices={
+		["ChezzPigKingdom"] = 1,
+		["ChezzMagicalDeciduous"] = 1,
+		["ChezzDeepDeciduous"] = 2,
+	}, 
+	room_bg=GROUND.BRICK_GLOW,
+	background_room="BGChezzDeciduous",
+	colour={r=1,g=1,b=0,a=1}
+})

@@ -4,7 +4,7 @@ local assets =
     Asset("ANIM", "anim/ds_pig_actions.zip"),
     Asset("ANIM", "anim/ds_pig_attacks.zip"),
     Asset("ANIM", "anim/pig_blue_build.zip"),
-    Asset("ANIM", "anim/werepig_build.zip"),
+    Asset("ANIM", "anim/werepig_blue_build.zip"),
     Asset("ANIM", "anim/werepig_basic.zip"),
     Asset("ANIM", "anim/werepig_actions.zip"),
     Asset("SOUND", "sound/pig.fsb"),
@@ -278,7 +278,7 @@ local function SetWerePig(inst)
     inst:AddTag("werepig")
     inst:SetBrain(werepigbrain)
     inst:SetStateGraph("SGwerepig")
-    inst.AnimState:SetBuild("werepig_build")
+    inst.AnimState:SetBuild("werepig_blue_build")
 
     inst.components.sleeper:SetResistance(3)
 

@@ -10,7 +10,7 @@ AddTask("Grayness one", {
 	colour={r=1,g=0.6,b=1,a=1},
 })
 
-AddTask("Grayness two", {
+AddTask("Grayness two a", {
 	locks={KEYS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
@@ -20,6 +20,18 @@ AddTask("Grayness two", {
 	},
 	room_bg=GROUND.FOREST,
 	background_room="BGGray",
+	colour={r=1,g=0.6,b=1,a=1},
+})
+
+AddTask("Grayness two b", {
+	locks={KEYS.TIER1},
+	keys_given={KEYS.TIER2},
+	room_choices={
+		["GrayMoonRocks"] = 2,
+		["GrayGoats"] = 2,
+	},
+	room_bg=GROUND.ASH,
+	background_room="BGGray2",
 	colour={r=1,g=0.6,b=1,a=1},
 })
 

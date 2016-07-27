@@ -18,6 +18,7 @@ local prefabs =
 	"obsidian",
 	"ash",
 	"charcoal",
+	"houndstooth",
 }
 
 
@@ -110,7 +111,7 @@ local function SanityAura(inst, observer)
     return -TUNING.SANITYAURA_SMALL
 end
 
-local function fn(Sim)
+local function fn()
 	local inst = CreateEntity()
 	local trans = inst.entity:AddTransform()
 	local anim = inst.entity:AddAnimState()
@@ -202,8 +203,8 @@ local function fn(Sim)
 	return inst
 end
 
-local function commonfn(Sim)
-	local inst = fn(Sim)
+local function commonfn()
+	local inst = fn()
 
 	--MakePoisonableCharacter(inst)
 	MakeMediumBurnableCharacter(inst, "hound_body")
@@ -211,8 +212,8 @@ local function commonfn(Sim)
 	return inst
 end
 
-local function poisonfn(Sim)
-	local inst = fn(Sim)
+local function poisonfn()
+	local inst = fn()
 
 	inst.AnimState:SetBuild("snake_yellow_build")
 

@@ -6,7 +6,13 @@ local rock_slimey_assets =
 
 local rock_charcoal_assets =
 {
-    Asset("ANIM", "anim/rock.zip"),
+    Asset("ANIM", "anim/rock_charcoal.zip"),
+    Asset("MINIMAP_IMAGE", "rock"),
+}
+
+local rock_obsidian_assets =
+{
+    Asset("ANIM", "anim/rock_obsidian.zip"),
     Asset("MINIMAP_IMAGE", "rock"),
 }
 
@@ -46,6 +52,15 @@ SetSharedLootTable('rock_charcoal',
     {'flint',  1.00},
     {'charcoal',  0.25},
     {'flint',  0.60},
+})
+
+SetSharedLootTable('rock_obsidian',
+{
+    {'obsidian', 1.00},
+    {'obsidian', 1.00},
+    {'obsidian', 0.50},
+    {'obsidian', 0.25},
+    {'obsidian', 0.25},
 })
 
 local function OnWork(inst, worker, workleft)
@@ -141,7 +156,7 @@ local function baserock_fn(bank, build, anim, icon, tag)
 end
 
 local function rock_slimey_fn()
-    local inst = baserock_fn("rock_slimey", "rock_slimey", "full")
+    local inst = baserock_fn("rock_slimey", "rock_slimey", "full", "minimap_rock_slimey.tex")
 
     if not TheWorld.ismastersim then
         return inst
@@ -153,7 +168,7 @@ local function rock_slimey_fn()
 end
 
 local function rock_charcoal_fn()
-    local inst = baserock_fn("rock", "rock", "full")
+    local inst = baserock_fn("rock_charcoal", "rock_charcoal", "full")
 
     if not TheWorld.ismastersim then
         return inst
@@ -164,5 +179,18 @@ local function rock_charcoal_fn()
     return inst
 end
 
+local function rock_obsidian_fn()
+    local inst = baserock_fn("rock_obsidian", "rock_obsidian", "full")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.lootdropper:SetChanceLootTable('rock_obsidian')
+
+    return inst
+end
+
 return Prefab("rock_slimey", rock_slimey_fn, rock_slimey_assets, prefabs),
-    Prefab("rock_charcoal", rock_slimey_fn, rock_slimey_assets, prefabs)
+    Prefab("rock_charcoal", rock_slimey_fn, rock_charcoal_assets, prefabs),
+    Prefab("rock_obsidian", rock_obsidian_fn, rock_obsidian_assets, prefabs)
