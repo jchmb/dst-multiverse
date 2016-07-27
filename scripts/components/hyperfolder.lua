@@ -4,4 +4,12 @@ local Hyperfolder = Class(function(self, inst)
 	self.endPortal = nil
 end)
 
+function Hyperfolder:OnLoad(data)
+	return	
+end
+
+function Hyperfolder:OnSave()
+	return {}	
+end
+
 return Hyperfolder
