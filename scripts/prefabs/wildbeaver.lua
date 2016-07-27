@@ -75,13 +75,8 @@ end
 
 local function OnEat(inst, food)
     if food.components.edible ~= nil then
-        if food.components.edible.foodtype == FOODTYPE.VEGGIE then
-            SpawnPrefab("spoiled_food").Transform:SetPosition(inst.Transform:GetWorldPosition())
-        elseif food.components.edible.foodtype == FOODTYPE.MEAT and
-            inst.components.werebeast ~= nil and
-            not inst.components.werebeast:IsInWereState() and
-            food.components.edible:GetHealth(inst) < 0 then
-            inst.components.werebeast:TriggerDelta(1)
+        if food.components.edible.foodtype == FOODTYPE.WOOD then
+            SpawnPrefab("manure").Transform:SetPosition(inst.Transform:GetWorldPosition())
         end
     end
 end
