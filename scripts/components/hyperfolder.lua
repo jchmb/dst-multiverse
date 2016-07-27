@@ -4,6 +4,7 @@ local Hyperfolder = Class(function(self, inst)
 	self.startWorldID = nil
 	self.endPortalID = nil
 	self.endWorldID = nil
+	self.returning = false
 end)
 
 function Hyperfolder:OnLoad(data)
@@ -15,6 +16,9 @@ function Hyperfolder:OnLoad(data)
 		self.endPortalID = data.endPortalID
 		self.endWorldID = data.endWorldID
 	end
+	if data.returning ~= nil then
+		self.returning = data.returning
+	end
 end
 
 function Hyperfolder:OnSave()
@@ -23,6 +27,7 @@ function Hyperfolder:OnSave()
 		startWorldID = self.startWorldID,
 		endPortalID = self.endPortalID,
 		endWorldID = self.endWorldID,
+		returning = self.returning,
 	}	
 end
 
