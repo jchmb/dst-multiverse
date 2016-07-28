@@ -83,6 +83,7 @@ local function fn()
     inst:AddTag("hostile")
     inst:AddTag("yeti")
     inst:AddTag("scarytoprey")
+    inst:AddTag("herdmember")
 
     inst.AnimState:SetBank("deerclops")
     inst.AnimState:SetBuild("deerclops_build")
@@ -135,6 +136,11 @@ local function fn()
 
     inst:AddComponent("lootdropper")
     inst.components.lootdropper:SetLoot(loot)
+
+    --
+
+    inst:AddComponent("herdmember")
+    inst.components.herdmember:SetHerdPrefab("yetiherd")
 
     ------------------------------------------
 

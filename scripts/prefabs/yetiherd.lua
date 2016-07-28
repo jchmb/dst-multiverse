@@ -3,6 +3,8 @@ local prefabs =
     "yeti",
 }
 
+local MAX_YETI_HERD_SIZE = 7
+
 local function CanSpawn(inst)
     return inst.components.herd ~= nil and not inst.components.herd:IsFull()
 end
@@ -28,6 +30,7 @@ local function fn()
     inst.components.herd:SetMemberTag("yeti")
     inst.components.herd:SetGatherRange(40)
     inst.components.herd:SetUpdateRange(20)
+    inst.components.herd:SetMaxSize(MAX_YETI_HERD_SIZE)
     --inst.components.herd:SetOnEmptyFn(inst.Remove)
 
     inst:AddComponent("periodicspawner")
@@ -42,4 +45,4 @@ local function fn()
     return inst
 end
 
-return Prefab("lightninggoatherd", fn, nil, prefabs)
+return Prefab("yetiherd", fn, nil, prefabs)
