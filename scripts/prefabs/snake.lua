@@ -1,6 +1,3 @@
-require "brains/snakebrain"
-require "stategraphs/SGsnake"
-
 local trace = function() end
 
 local assets=
@@ -117,7 +114,8 @@ local function fn()
 	local anim = inst.entity:AddAnimState()
 	local physics = inst.entity:AddPhysics()
 	local sound = inst.entity:AddSoundEmitter()
-	--local shadow = inst.entity:AddDynamicShadow()
+	local shadow = inst.entity:AddDynamicShadow()
+	inst.entity:AddNetwork()
 	--shadow:SetSize( 2.5, 1.5 )
 	inst.Transform:SetFourFaced()
 
@@ -131,7 +129,7 @@ local function fn()
 	anim:SetBank("snake")
 	anim:SetBuild("snake_build")
 	anim:PlayAnimation("idle")
-	inst.AnimState:SetRayTestOnBB(true)
+	--inst.AnimState:SetRayTestOnBB(true)
 
 	inst.entity:SetPristine()
 

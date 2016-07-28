@@ -98,6 +98,7 @@ local turfs =
     {name="volcano",         anim="grass",      tile=GROUND.VOLCANO},
     {name="magma",         anim="grass",      tile=GROUND.MAGMA},
     {name="lava_rock",         anim="grass",      tile=GROUND.LAVA_ROCK},
+    {name="grass_blue",         anim="grass",      tile=GROUND.GRASS_BLUE},
 }
 
 for k,v in pairs(turfs) do

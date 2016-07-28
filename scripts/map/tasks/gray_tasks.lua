@@ -29,6 +29,7 @@ AddTask("Grayness two b", {
 	room_choices={
 		["GrayMoonRocks"] = 2,
 		["GrayGoats"] = 2,
+		["GrayBeardlords"] = 1,
 	},
 	room_bg=GROUND.ASH,
 	background_room="BGGray2",
@@ -67,10 +68,11 @@ AddTask("Grayness four a", {
 	keys_given={KEYS.TIER4},
 	room_choices={
 		["GrayMermRocks"] = 1,
-		["GrayCaveSpiders"] = 2,
+		["GrayCaveSpiders"] = 1,
+		["GrayTallbirds"] = 1,
 	},
-	room_bg=GROUND.DIRT,
-	background_room="BGGray",
+	room_bg=GROUND.ASH,
+	background_room="BGGray2",
 	colour={r=1,g=0.6,b=1,a=1},
 })
 
@@ -80,10 +82,10 @@ AddTask("Grayness four b", {
 	room_choices={
 		["GrayHoundTown"] = 1,
 		["GrayHoundTownVarg"] = 1,
-		["GrayMermRocks"] = 2,
+		["GrayCaveSpiders"] = 1,
 	},
-	room_bg=GROUND.DIRT,
-	background_room="BGGray",
+	room_bg=GROUND.ASH,
+	background_room="BGGray2",
 	colour={r=1,g=0.6,b=1,a=1},
 })
 
@@ -104,11 +106,11 @@ AddTask("Make a pick gray", {
 		locks=LOCKS.NONE,
 		keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
 		room_choices={
-			["GrayForest"] = function() return 1 + math.random(3) end, 
+			["GrayForest"] = 2,
 			["BarePlain"] = 1, 
-			["Plain"] = function() return 1 + math.random(3) end,
+			["Plain"] = 1,
 		}, 
-		room_bg=GROUND.MUD,
+		room_bg=GROUND.GRASS_GRAY,
 		background_room="BGGray",
 		colour={r=0,g=1,b=0,a=1}
 	})

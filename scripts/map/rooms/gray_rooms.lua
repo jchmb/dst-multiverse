@@ -38,7 +38,7 @@ AddRoom("BGGray", {
 
 AddRoom("GrayForest", {
 					colour={r=.5,g=0.6,b=.080,a=.10},
-					value = GROUND.FOREST,
+					value = GROUND.ASH,
 					tags = {"ExitPiece", "Chester_Eyebone"},
 					contents =  {
 									countprefabs = {
@@ -53,11 +53,11 @@ AddRoom("GrayForest", {
 					                    rock1 = 0.05,
 					                    grass = .05,
 					                    sapling=.8,
+					                    flint = 0.07,
 										twiggytree = 0.8,
 										ground_twigs = 0.06,					                    
 										--rabbithole=.05,
-					                    berrybush=.03,
-					                    berrybush_juicy = 0.015,
+					                    coffeebush = 0.1,
 					                    red_mushroom = .03,
 					                    green_mushroom = .02,
 										trees = {weight = 6, prefabs = {"evergreen", "evergreen_sparse"}}
@@ -221,7 +221,6 @@ AddRoom("GrayRocks", {
 			meteorspawner = 1,
 			rock1 = 0.5,
 			rock2 = 0.3,
-			rock3 = 0.3,
 			rock_flintless_med = 0.5,
 			rocky = 0.3,
 			grassgekko = 0.2,
@@ -232,16 +231,18 @@ AddRoom("GrayRocks", {
 
 AddRoom("GrayMermRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = GROUND.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			mermhouse = 3,
+		},
 		distributepercent = 0.2,
 		distributeprefabs = {
 			rock1 = 0.1,
 			rock_flintless_med = 0.6,
-			mermhouse = 0.1,
-			tumbleweedspawner = 0.1,
-			rock_ice = 0.4,
+			rock_moon = 0.05,
+			coffeebush = 0.1,
 		}
 	}
 })
@@ -309,8 +310,6 @@ AddRoom("GrayMagicalDeciduous", {
 
 			molehill = 2,
 			catcoonden = .25,
-
-			coffeebush = 1,
 		},
 	}
 })
@@ -324,7 +323,6 @@ AddRoom("GrayDeepDeciduous", {
 		distributeprefabs={
 			grass = .03,
 			sapling=1,
-			coffeebush = 0.2,
 
 			deciduoustree = 10,
 			catcoonden = .05,
@@ -346,10 +344,6 @@ AddRoom("GrayPigKingdom", {
 	tags = {"Town"},
 	required_prefabs = {"pigking_gray"},
 	contents =  {
-		distributepercent = .4,
-		distributeprefabs = {
-			coffeebush = 0.25,
-		},
 		countstaticlayouts={
 			["PigKingGray"]=1,
 			["CropCircle"]=function() return math.random(0,1) end,
@@ -390,7 +384,7 @@ AddRoom("BGGray2", {
 		distributeprefabs = {
 			rocks = 0.07,
 			flint = 0.02,
-			coffeebush = 0.05,
+			coffeebush = 0.1,
 			spiderden = 0.01,
 			basalt = 0.1,
 		}
@@ -434,9 +428,42 @@ AddRoom("GrayGoats", {
 			sapling = 0.1,
 			twiggytree = 0.1,
 			spiderden = 0.07,
+			coffeebush = 0.1,
 		}
 	}
 })
+
+AddRoomWrapped(
+	"GrayBeardlords",
+	GROUND.ASH,
+	{
+		distributepercent = 0.3,
+		distributeprefabs = {
+			beardlordhouse = 0.15,
+			coffeebush = 0.1,
+			evergreen_sparse = 5,
+			carrot_planted = 0.15,
+			sapling = 0.1,
+			twiggytree = 0.1,
+		},
+	}
+)
+
+AddStandardRoom(
+	"GrayTallbirds",
+	GROUND.ASH,
+	0.12,
+	{
+		rock_moon = 0.05,
+		rock1 = 0.1,
+		rocks = 0.05,
+		flint = 0.05,
+	},
+	{
+		tallbirdnest = 3,
+		thulecite_pieces = 2,
+	}
+)
 
 AddRoom("GrayHerdsBeefalo", {
 	colour={r=.25,g=.28,b=.25,a=.50},
@@ -448,7 +475,7 @@ AddRoom("GrayHerdsBeefalo", {
 			perma_grass = 0.2,
 			flower_cave = 0.2,
 			beefalo = 0.1,
-			grassgekko = 0.1
+			grassgekko = 0.1,
 		}
 	}
 })

@@ -6,9 +6,9 @@ local snow_tasks = {
 	"Snowy two b",
 	"Snowy three a",
 	"Snowy three b",
+	"Snowy three c",
 	"Snowy four a",
 	"Snowy four b",
-	"The hunters",
 }
  
 AddTaskSetFixed("snowy", {

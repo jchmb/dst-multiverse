@@ -6,21 +6,16 @@ local cute_tasks = {
 			"Cuteness two b",
 			"Cuteness three a",
 			"Cuteness three b",
-			"Befriend the pigs",
+			"Cuteness four a",
+			"Cuteness four b",
 			"Frogs and bugs",
-			"Oasis",
-			"The hunters",
 		}
 
 AddTaskSetFixed("cute", {
 		name = "Cute",
 		location = "forest",
 		tasks = cute_tasks,
-		numoptionaltasks = 1,
-		optionaltasks = {
-			"Kill the spiders",
-			"Magic meadow",
-		},
+		numoptionaltasks = 0,
 		valid_start_tasks = {
 			"Make a pick",
 		},

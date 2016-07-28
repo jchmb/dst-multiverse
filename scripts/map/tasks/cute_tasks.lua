@@ -62,16 +62,39 @@ AddTask("Cuteness three b", {
 	locks={LOCKS.TIER2, LOCKS.AXE},
 	keys_given={KEYS.TIER3},
 	room_choices={
-		["CuteMonkeyRoom"] = 2,
 		["CuteBunnymanTown"] = 1,
 		["CuteRocks2"] = 2,
 		["WalrusHut_Rocky"] = 1,
-		["CuteHerds2"] = 1
 	},
-	room_bg=GROUND.SAVANNA,
-	background_room="BGSavanna",
+	room_bg=GROUND.FUNGUS,
+	background_room="BGCuteFungus",
 	colour={r=1,g=0.6,b=1,a=1},
 })
+
+AddTaskWrapped(
+	"Cuteness four a",
+	{LOCKS.TIER3},
+	{KEYS.TIER4},
+	{
+		["CuteMonkeyRoom"] = 2,
+		["CuteHerds2"] = 1,
+	},
+	GROUND.FUNGUS,
+	"BGCuteFungus"
+)
+
+AddTaskWrapped(
+	"Cuteness four b",
+	{LOCKS.TIER3},
+	{KEYS.TIER4},
+	{
+		["CuteGiantBunnyLair"] = 1,
+		["CuteBunnymanTown2"] = 1,
+		["CuteBunnymanTown3"] = 1,
+	},
+	GROUND.FUNGUS,
+	"BGCuteFungus"
+)
 
 AddTask("Speak to the king cute", {
 	locks={LOCKS.PIGKING,LOCKS.TIER2},

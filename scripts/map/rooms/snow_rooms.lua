@@ -215,9 +215,6 @@ AddRoom("SnowyMagicalDeciduous", {
 	value = GROUND.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countstaticlayouts={
-			["DeciduousPond"] = 1,
-		},
 		distributepercent = .3,
 		distributeprefabs={
 			grass =0.1,
@@ -309,7 +306,7 @@ AddRoom("SnowyIcedLake", {
 	contents =  {
 		distributepercent = 0.1,
 		distributeprefabs = {
-			pond_open = 0.03,
+			pond_open = 0.01,
 			houndbone = 0.09,
 			rock_ice = 0.16,
 			flint = 0.03,
@@ -328,7 +325,7 @@ AddRoom("SnowyIcedLakeWalrus", {
 			perma_walrus_camp = 1,
 		},
 		distributeprefabs = {
-			pond_open = 0.05,
+			pond_open = 0.01,
 		}
 	}
 })
@@ -344,7 +341,7 @@ AddRoom("SnowyIcedLakeHounds", {
 			houndmound = 2,
 		},
 		distributeprefabs = {
-			pond_open = 0.05,
+			pond_open = 0.01,
 			houndbone = 0.15,
 			rock1 = 0.09,
 			rock2 = 0.05,

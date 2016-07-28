@@ -138,7 +138,7 @@ monsters = nil
 local houndspawn =
 {
     base_prefab = "icehound",
-    winter_prefab = "walrus",
+    winter_prefab = "icehound",
     summer_prefab = "icehound",
 
     attack_levels =

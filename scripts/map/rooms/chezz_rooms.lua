@@ -111,9 +111,9 @@ AddRoom("ChezzLand", {
 			chessjunk1 = .1,
 			chessjunk2 = .1,
 			chessjunk3 = .1,
-			ruins_rubble_table = 0.1,
-            		ruins_rubble_chair = 0.1,
-            		ruins_rubble_vase = 0.1,
+			ruins_rubble_table = 0.01,
+            		ruins_rubble_chair = 0.01,
+            		ruins_rubble_vase = 0.01,
 			rook = 0.1,
 			bishop = 0.05,		
 		}
@@ -149,7 +149,6 @@ AddRoom("ChezzRocks", {
 		distributeprefabs = {
 			rock1 = 0.1,
 			rock2 = 0.1,
-			rock3 = 0.1,
 			flint = 0.2,
 			rocks = 0.1,
 			chessjunk1 = 0.002,
@@ -194,6 +193,9 @@ AddRoom("ChezzMagicalDeciduous", {
         countstaticlayouts={
             ["DeciduousPond"] = 1,
         },
+        countprefabs = {
+            chessjunk1 = 3,
+        },
         distributepercent = .3,
         distributeprefabs={
             deciduoustree = 2,
@@ -208,7 +210,6 @@ AddRoom("ChezzMagicalDeciduous", {
 
             berrybush = 3,
             berrybush_juicy = 1.5,
-            chessjunk1 = 0.001,
         },
     }
 })
@@ -219,7 +220,7 @@ AddRoom("ChezzDeepDeciduous", {
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         countprefabs = {
-            migration_portal = 1,
+            chessjunk2 = 2,
         },
         distributepercent = .4,
         distributeprefabs={
@@ -236,7 +237,6 @@ AddRoom("ChezzDeepDeciduous", {
             green_mushroom = 0.15,
 
             fireflies = 3,
-            chessjunk2 = 0.01,
         },
     }
 })
@@ -263,9 +263,9 @@ AddRoom("ChezzPigKingdom", {
         },
         distributepercent = 0.3,
         distributeprefabs = {
-            coffeebush = 0.1,
-            mintybush = 0.1,
-            bittersweetbush = 0.1,
+            coffeebush = 0.02,
+            mintybush = 0.02,
+            bittersweetbush = 0.02,
         },
     }
 })

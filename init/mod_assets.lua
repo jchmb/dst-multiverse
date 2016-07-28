@@ -47,6 +47,12 @@ Assets = {
 	Asset("IMAGE", "levels/tiles/lava_rock.tex"),
 	Asset("FILE", "levels/tiles/lava_rock.xml"),
 
+	-- Blue grass tiles
+	Asset("IMAGE", "levels/textures/noise_grass_blue.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_grass_blue.tex"),
+	Asset("IMAGE", "levels/tiles/grass_blue.tex"),
+	Asset("FILE", "levels/tiles/grass_blue.xml"),
+
 	-- Assets for recipes
 	Asset("IMAGE", "images/inventoryimages/pighouse_yellow.tex" ),
 	Asset("ATLAS", "images/inventoryimages/pighouse_yellow.xml" ),
@@ -94,6 +100,8 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/turf_ice_lake.xml" ),
 	Asset("IMAGE", "images/inventoryimages/turf_grass_gray.tex" ),
 	Asset("ATLAS", "images/inventoryimages/turf_grass_gray.xml" ),
+	Asset("IMAGE", "images/inventoryimages/turf_grass_blue.tex" ),
+	Asset("ATLAS", "images/inventoryimages/turf_grass_blue.xml" ),
 
 	-- Minimap icons
 	Asset("MINIMAP_IMAGE", "teleportato"),

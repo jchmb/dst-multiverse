@@ -69,3 +69,33 @@ function AddLevelWrapped(preset, name, desc, location, task_set, overrides)
 	},
 })
 end
+
+function AddRoomWrapped(room, ground, contents, tags)
+	tags = tags or {"ExitPiece", "Chester_Eyebone"}
+	AddRoom(room, {
+		colour={r=.25,g=.28,b=.25,a=.50},
+		value = ground,
+		tags = tags,
+		contents = contents,
+	})
+end
+
+function AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs)
+	countprefabs = countprefabs or {}
+	AddRoomWrapped(room, ground, {
+		countprefabs = countprefabs,
+		distributepercent = distributepercent,
+		distributeprefabs = distributeprefabs,
+	})
+end
+
+function AddTaskWrapped(task, locks, keys, room_choices, room_bg, background_room)
+	AddTask(task, {
+		locks=locks,
+		keys_given=keys,
+		room_choices=room_choices,
+		room_bg=room_bg,
+		background_room=background_room,
+		colour={r=1,g=0.6,b=1,a=1},
+	})
+end

@@ -72,9 +72,21 @@ AddTask("Snowy three b", {
 	keys_given={KEYS.TIER3},
 	room_choices={
 		["SnowyForest"] = 2,
-		["SnowyWalrusForest"] = 1,
 		["SnowySpiderForest"] = 2,
 		["SnowyKoalefants"] = 1,
+	},
+	colour={r=.25,g=.28,b=.25,a=.50},
+	room_bg=GROUND.SNOWY,
+	background_room="BGSnowyForest",
+})
+
+AddTask("Snowy three c", {
+	locks={LOCKS.TIER2},
+	keys_given={KEYS.TIER3},
+	room_choices={
+		["SnowyBunnies"] = 1,
+		["SnowyForest"] = 1,
+		["SnowyWalrusForest"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,

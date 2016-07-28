@@ -1,3 +1,18 @@
+AddStandardRoom(
+	"BGCuteFungus",
+	GROUND.FUNGUS,
+	0.4,
+	{
+		carrot_planted = 0.2,
+		evergreen = 8,
+		mushtree_tall = 2,
+		red_mushroom = 0.1,
+		green_mushroom = 0.1,
+		blue_mushroom = 0.1,
+		colored_rabbithouse = 0.05,
+	}
+)
+
 AddRoom("CuteBunnymanTown", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.FUNGUS,
@@ -27,9 +42,6 @@ AddRoom("CuteBunnymanTown2", {
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.07,
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributeprefabs = {
 			fireflies = 0.2,
 			carrot_planted = 0.5,
@@ -53,9 +65,6 @@ AddRoom("CuteBunnymanTown3", {
 	value = GROUND.FUNGUSRED,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.07,
 		distributeprefabs = {
 			fireflies = 0.2,
@@ -216,8 +225,8 @@ AddRoom("BGCuteDeciduous", {
 			blue_mushroom = 0.1,
 			green_mushroom = 0.1,
 
-			berrybush=0.05,
-			berrybush_juicy = 0.025,
+			berrybush=0.2,
+			berrybush_juicy = 0.1,
 			carrot_planted = 0.2,
 
 			fireflies = 1.5,
@@ -238,13 +247,14 @@ AddRoom("CuteMagicalDeciduous", {
 		distributepercent = .3,
 		distributeprefabs={
 			grass = .03,
-			sapling=1,
-			berrybush=1,
+			sapling= 0.2,
+			berrybush= 0.5,
 			berrybush_juicy = 0.05,
 
-			red_mushroom = 2,
-			blue_mushroom = 2,
-			green_mushroom = 2,
+			carrot_planted = 0.8,
+			red_mushroom = 1,
+			blue_mushroom = 1,
+			green_mushroom = 1,
 
 			fireflies = 2,
 			flower=5,
@@ -269,10 +279,12 @@ AddRoom("CuteDeepDeciduous", {
 		distributepercent = .4,
 		distributeprefabs={
 			grass = .03,
-			sapling=1,
+			sapling= 0.2,
 			carrot_planted=0.5,
 
-			deciduoustree = 10,
+			mushtree_medium = 2,
+			mushtree_small = 2,
+			mushtree_tall = 2,
 			catcoonden = .05,
 
 			red_mushroom = 0.15,
@@ -280,6 +292,24 @@ AddRoom("CuteDeepDeciduous", {
 			green_mushroom = 0.15,
 
 			fireflies = 3,
+
+			colored_rabbithouse = 0.1,
 		},
 	}
 })
+
+AddStandardRoom(
+	"CuteGiantBunnyLair",
+	GROUND.FUNGUSGREEN,
+	0.7,
+	{
+		mushtree_tall = 10,
+		mushtree_medium = 4,
+		fireflies = 6,
+		grass = 0.6,
+		colored_rabbithouse = 0.4,
+	},
+	{
+		giant_bunnyman = 1,
+	}
+)

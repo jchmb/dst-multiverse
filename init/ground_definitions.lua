@@ -109,3 +109,17 @@ AddTile(
 	},
 	{noise_texture = "levels/textures/mini_noise_lava_rock.tex"}
 )
+
+AddTile(
+	"GRASS_BLUE",
+	57,
+	"grass_blue",
+	{
+		noise_texture = "levels/textures/noise_grass_blue.tex",
+		runsound = "dontstarve/movement/run_grass",
+		walksound = "dontstarve/movement/walk_grass",
+		snowsound = "dontstarve/movement/run_snow",
+		mudsound = "dontstarve/movement/run_mud",
+	},
+	{noise_texture = "levels/textures/mini_noise_grass_blue.tex"}
+)

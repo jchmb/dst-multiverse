@@ -324,7 +324,7 @@ local function fn()
     inst.components.trader:Enable()
 
     local r = math.random() * 0.5 + 0.5
-    local g = math.random() * 0.2 + 0.6
+    local g = math.random() * 0.3 + 0.3
     local b = math.random() * 0.5
     inst.AnimState:SetMultColour(r, g, b, 1)
 

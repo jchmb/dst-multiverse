@@ -68,3 +68,29 @@ local antidoteRecipe = Recipe(
 )
 antidoteRecipe.atlas = GLOBAL.resolvefilepath("images/inventoryimages/antidote.xml")
 STRINGS.RECIPE_DESC.ANTIDOTE = "Cures poison"
+
+--[[
+	These recipes are not supposed to be used... yet.
+--]]
+
+AddStructureRecipe(
+	"colored_rabbithouse",
+	{
+		Ingredient("boards", 4),
+		Ingredient("carrot", 10),
+		Ingredient("manrabbit_tail", 4),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST
+)
+
+AddStructureRecipe(
+	"beardlordhouse",
+	{
+		Ingredient("boards", 4),
+		Ingredient("monstermeat", 2),
+		Ingredient("beardhair", 4),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST
+)
