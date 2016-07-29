@@ -71,7 +71,7 @@ local function FindFoodAction(inst)
 end
 
 local function GetHomePos(inst)
-    return nil
+    return inst.components.knownlocations:GetLocation("spawnpoint")
 end
 
 local GiantBunnymanBrain = Class(Brain, function(self, inst)
@@ -93,6 +93,10 @@ function GiantBunnymanBrain:OnStart()
         }, .5)
 
     self.bt = BT(self.inst, root)
+end
+
+function GiantBunnymanBrain:OnInitializationComplete()
+    self.inst.components.knownlocations:RememberLocation("spawnpoint", Point(self.inst.Transform:GetWorldPosition()))
 end
 
 return GiantBunnymanBrain
