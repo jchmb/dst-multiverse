@@ -21,7 +21,19 @@ local prefabs =
 
 local MAX_GIANT_BUNNYMAN_MINIONS = 4
 
-local regularloot = { "carrot", "carrot" }
+local GIANT_BUNNYMAN_LOOT = {
+    "carrot",
+    "carrot",
+    "carrot",
+    "manrabbit_tail",
+    "manrabbit_tail",
+    "meat",
+    "meat",
+    "thulecite_pieces",
+    "rabbit",
+    "rabbit",
+    "rabbit",
+}
 
 local brain = require("brains/giant_bunnymanbrain")
 
@@ -69,7 +81,7 @@ end
 
 local function LootSetupFunction(lootdropper)
     -- regular loot
-    lootdropper:SetLoot({"carrot", "carrot", "carrot", "carrot", "manrabbit_tail", "manrabbit_tail", "meat", "meat", "thulecite_pieces", "thulecite_pieces"})
+    lootdropper:SetLoot(GIANT_BUNNYMAN_LOOT)
     lootdropper.numrandomloot = 0
 end
 
@@ -176,11 +188,11 @@ local function fn()
     inst:ListenForEvent("attacked", OnAttacked)    
     inst:ListenForEvent("newcombattarget", OnNewTarget)
 
-    inst.components.sleeper:SetResistance(2)
+    inst.components.sleeper:SetResistance(6)
     inst.components.sleeper.sleeptestfn = NocturnalSleepTest
     inst.components.sleeper.waketestfn = NocturnalWakeTest
 
-    inst.components.combat:SetDefaultDamage(TUNING.BUNNYMAN_DAMAGE)
+    inst.components.combat:SetDefaultDamage(TUNING.BUNNYMAN_DAMAGE + 15)
     inst.components.combat:SetAttackPeriod(TUNING.BUNNYMAN_ATTACK_PERIOD)
     inst.components.combat:SetKeepTargetFunction(NormalKeepTargetFn)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
