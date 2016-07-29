@@ -4,6 +4,31 @@ local SPAWN_DIST = 30
 --[[ Kramped class definition ]]
 --------------------------------------------------------------------------
 
+JUDGEMENTS = {
+	["pigman"] = function(victim)
+			if not victim.components.werebeast or not victim.components.werebeast:IsInWereState() then
+				return 3
+			else
+				return 0	
+			end
+		end,
+	["babybeefalo"] = 6,
+	["teenbird"] = 2,
+	["smallbird"] = 6,
+	["beefalo"] = 4,
+	["crow"] = 1,
+	["robin"] = 2,
+	["robin_winter"] = 2,
+	["butterfly"] = 1,
+	["rabbit"] = 1,
+	["mole"] = 1,
+	["tallbird"] = 2,
+	["bunnyman"] = 3,
+	["penguin"] = 2,
+	["glommer"] = 50,
+	["catcoon"] = 5,
+}
+
 return Class(function(self, inst)
 
 assert(TheWorld.ismastersim, "Kramped should not exist on client")
@@ -87,6 +112,14 @@ local function OnNaughtyAction(how_naughty, playerdata)
     end
 end
 
+local function GetNaughtyPoints(victim, playerdata)
+	if JUDGEMENTS[victim.prefab] then
+		return type(JUDGEMENTS[victim.prefab]) == "function"
+			and JUDGEMENTS[victim.prefab](victim) or JUDGEMENTS[victim.prefab]
+	end
+	return 0
+end
+
 local function onkilledother(victim, killer)
 	-- KAJ: what happens if mobs kill someone?
 	if killer and killer:IsValid() and killer:HasTag("player") then
@@ -95,40 +128,9 @@ local function onkilledother(victim, killer)
 			-- get the playerdata for this player
 			local playerdata = _activeplayers[player]
 			assert(playerdata)
-			if victim.prefab == "pigman" then
-				if not victim.components.werebeast or not victim.components.werebeast:IsInWereState() then
-					OnNaughtyAction(3, playerdata)
-				end
-			elseif victim.prefab == "babybeefalo" then
-				OnNaughtyAction(6, playerdata)
-			elseif victim.prefab == "teenbird" then
-				OnNaughtyAction(2, playerdata)
-			elseif victim.prefab == "smallbird" then
-				OnNaughtyAction(6, playerdata)
-			elseif victim.prefab == "beefalo" then
-				OnNaughtyAction(4, playerdata)
-			elseif victim.prefab == "crow" then
-				OnNaughtyAction(1, playerdata)
-			elseif victim.prefab == "robin" then
-				OnNaughtyAction(2, playerdata)
-			elseif victim.prefab == "robin_winter" then
-				OnNaughtyAction(2, playerdata)
-			elseif victim.prefab == "butterfly" then
-				OnNaughtyAction(1, playerdata)
-			elseif victim.prefab == "rabbit" then
-				OnNaughtyAction(1, playerdata)
-			elseif victim.prefab == "mole" then
-				OnNaughtyAction(1, playerdata)
-			elseif victim.prefab == "tallbird" then
-				OnNaughtyAction(2, playerdata)
-			elseif victim.prefab == "bunnyman" then
-				OnNaughtyAction(3, playerdata)
-			elseif victim.prefab == "penguin" then
-				OnNaughtyAction(2, playerdata)
-			elseif victim.prefab == "glommer" then
-				OnNaughtyAction(50, playerdata) -- You've been bad!
-			elseif victim.prefab == "catcoon" then
-				OnNaughtyAction(5, playerdata)
+			local points = GetNaughtyPoints(victim, playerdata)
+			if points ~= 0 then
+				OnNaughtyAction(points, playerdata)	
 			end
 		end
 	end
