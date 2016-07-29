@@ -308,7 +308,7 @@ AddCenterRoom(
 		carrot_planted = 0.5,
 		rabbithole = 0.2,
 		colored_rabbithouse = 0.6,
-		rabbithouse = 0.15.
+		rabbithouse = 0.15,
 	}
 )
 
