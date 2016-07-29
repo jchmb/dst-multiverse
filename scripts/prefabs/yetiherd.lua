@@ -3,7 +3,9 @@ local prefabs =
     "yeti",
 }
 
-local MAX_YETI_HERD_SIZE = 7
+local MAX_YETI_HERD_SIZE = 8
+local YETI_SPAWN_DELAY = 60 * 6
+local YETI_SPAWN_DELAY_VARIANCE = YETI_SPAWN_DELAY * 0.5
 
 local function CanSpawn(inst)
     return inst.components.herd ~= nil and not inst.components.herd:IsFull()
@@ -34,7 +36,10 @@ local function fn()
     --inst.components.herd:SetOnEmptyFn(inst.Remove)
 
     inst:AddComponent("periodicspawner")
-    inst.components.periodicspawner:SetRandomTimes(TUNING.LIGHTNING_GOAT_MATING_SEASON_BABYDELAY, TUNING.LIGHTNING_GOAT_MATING_SEASON_BABYDELAY_VARIANCE)
+    inst.components.periodicspawner:SetRandomTimes(
+        YETI_SPAWN_DELAY,
+        YETI_SPAWN_DELAY_VARIANCE
+    )
     inst.components.periodicspawner:SetPrefab("yeti")
     inst.components.periodicspawner:SetOnSpawnFn(OnSpawned)
     inst.components.periodicspawner:SetSpawnTestFn(CanSpawn)
