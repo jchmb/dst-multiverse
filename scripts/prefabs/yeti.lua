@@ -72,7 +72,7 @@ local function fn()
     inst.entity:AddDynamicShadow()
     inst.entity:AddNetwork()
 
-    MakeCharacterPhysics(inst, 400, .5) -- TODO: fix
+    MakeCharacterPhysics(inst, 50, .5) -- TODO: fix
 
     local s  = 0.8
     inst.Transform:SetScale(s, s, s)
