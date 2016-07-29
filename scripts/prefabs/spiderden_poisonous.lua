@@ -51,6 +51,19 @@ local LOOT_DATA =
     LARGE = { "silk", "silk", "silk", "silk", "silk", "silk", "spidereggsack_poisonous" },
 }
 
+local QUEEN_LOOT =
+{
+    "monstermeat",
+    "monstermeat",
+    "monstermeat",
+    "venom_gland",
+    "silk",
+    "silk",
+    "silk",
+    "spidereggsack_poisonous",
+    "spiderhat",
+}
+
 local function SetStage(inst, stage)
     if stage <= 3 and inst.components.childspawner ~= nil then -- if childspawner doesn't exist, then this den is burning down
         inst.SoundEmitter:PlaySound("dontstarve/creatures/spider/spiderLair_grow")
@@ -125,11 +138,31 @@ local function PlayLegBurstSound(inst)
     inst.SoundEmitter:PlaySound("dontstarve/creatures/spiderqueen/legburst")
 end
 
+-- Override for spiderqueen
+local function MakePoisonousBaby(inst)
+    local angle = inst.Transform:GetRotation()/DEGREES
+    local prefab = (inst.components.combat.target and math.random() < .333) and "poisonous_spider" or "spider"
+    local spider = inst.components.lootdropper:SpawnLootPrefab(prefab)
+    local rad = spider.Physics:GetRadius()+inst.Physics:GetRadius()+.25;
+    local pt = Vector3(inst.Transform:GetWorldPosition())
+    if spider then
+        spider.Transform:SetPosition(pt.x + rad*math.cos(angle), pt.y, pt.z + rad*math.sin(angle))
+        spider.sg:GoToState("taunt")
+        inst.components.leader:AddFollower(spider)
+        if inst.components.combat.target then
+            spider.components.combat:SetTarget(inst.components.combat.target)
+        end
+    end
+end
+
 local function SpawnQueen(inst, should_duplicate)
     local queen = SpawnPrefab("spiderqueen")
     local x, y, z = inst.Transform:GetWorldPosition()
     local rad = 1.25
     local angle = math.random(2 * PI)
+    queen:SetStateGraph("SGpoisonousspiderqueen") -- Override stategraph
+    queen.components.lootdropper:SetLoot(QUEEN_LOOT) -- Override loot
+    queen.components.incrementalproducer.producefn = MakePoisonousBaby -- Override spider spawner!
     queen.Transform:SetPosition(x + rad * math.cos(angle), 0, z + rad * math.sin(angle))
     queen.sg:GoToState("birth")
 
