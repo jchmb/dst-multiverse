@@ -529,3 +529,19 @@ AddRoom("SnowyHoundNest", {
 		}
 	}
 })
+
+AddStandardRoom(
+	"SnowyYetiTerritory",
+	GROUND.SNOWY,
+	0.4,
+	{
+		deciduoustree = 7,
+		evergreen = 4,
+		flower_evil = 0.35,
+		rock2 = 0.1,
+	},
+	{
+		yeti = math.random(2, 4) + 2,
+		pond_open = 2,
+	}		
+)
