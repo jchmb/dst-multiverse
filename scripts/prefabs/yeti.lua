@@ -119,7 +119,7 @@ local function fn()
 
     inst:AddComponent("combat")
     inst.components.combat:SetDefaultDamage(20)
-    inst.components.combat:SetRange(5)
+    --inst.components.combat:SetRange(5)
     inst.components.combat.hiteffectsymbol = "deerclops_body"
     inst.components.combat:SetAttackPeriod(TUNING.DEERCLOPS_ATTACK_PERIOD / 2)
     inst.components.combat:SetRetargetFunction(1, RetargetFn)
