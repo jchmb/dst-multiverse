@@ -298,16 +298,30 @@ AddRoom("CuteDeepDeciduous", {
 	}
 })
 
+AddCenterRoom(
+	"CuteBunnyDefense",
+	GROUND.FUNGUSGREEN,
+	0.3,
+	{
+		mushtree_tall = 10,
+		fireflies = 4,
+		carrot_planted = 0.5,
+		rabbithole = 0.2,
+		colored_rabbithouse = 0.6,
+		rabbithouse = 0.15.
+	}
+)
+
 AddStandardRoom(
 	"CuteGiantBunnyLair",
 	GROUND.FUNGUSGREEN,
 	0.7,
 	{
-		mushtree_tall = 7,
+		mushtree_tall = 4,
 		mushtree_medium = 3,
 		fireflies = 6,
 		grass = 0.6,
-		colored_rabbithouse = 0.4,
+		colored_rabbithouse = 0.2,
 		rabbithole = 0.5,
 	},
 	{
