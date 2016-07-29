@@ -23,6 +23,7 @@ PrefabFiles = {
 	-- Cute mobs and spawners
 	"colored_bunnyman",
 	"colored_rabbithouse",
+	"giant_bunnyman_spawner",
 	"giant_bunnyman",
 
 	-- Snow mobs and spawners
