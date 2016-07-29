@@ -20,6 +20,8 @@ local prefabs =
 }
 
 local TARGET_DIST = 16
+local YETI_HELP_DISTANCE = 25
+local YETI_MAX_HELPERS = 4
 
 local function CalcSanityAura(inst)
     return -TUNING.SANITYAURA_SMALL
@@ -59,6 +61,14 @@ end
 
 local function OnAttacked(inst, data)
     inst.components.combat:SetTarget(data.attacker)
+    inst.components.combat:ShareTarget(
+        attacker,
+        YETI_HELP_DISTANCE,
+        function(dude)
+            return dude:HasTag("yeti")
+        end,
+        YETI_MAX_HELPERS
+    )
 end
 
 local loot = {"meat"}
