@@ -13,7 +13,7 @@ local CHASE_DIST = 32
 local CHASE_TIME = 20
 
 local function GetWanderPos(inst)
-    return inst.components.knownlocations:GetLocation("spawnpoint")
+    return inst.components.knownlocations:GetLocation("herd")
 end
 
 local YetiBrain = Class(Brain, function(self, inst)
