@@ -70,23 +70,37 @@ function AddLevelWrapped(preset, name, desc, location, task_set, overrides)
 })
 end
 
-function AddRoomWrapped(room, ground, contents, tags)
+function AddRoomWrapped(room, ground, contents, tags, internal_type)
 	tags = tags or {"ExitPiece", "Chester_Eyebone"}
+	internal_type = internal_type or nil
 	AddRoom(room, {
 		colour={r=.25,g=.28,b=.25,a=.50},
 		value = ground,
 		tags = tags,
 		contents = contents,
+		internal_type = internal_type,
 	})
 end
 
-function AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs)
+function AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs, internal_type)
 	countprefabs = countprefabs or {}
 	AddRoomWrapped(room, ground, {
 		countprefabs = countprefabs,
 		distributepercent = distributepercent,
 		distributeprefabs = distributeprefabs,
+		internal_type = internal_type,
 	})
+end
+
+function AddCenterRoom(room, ground, distributepercent, distributeprefabs, countprefabs)
+	AddStandardRoom(
+		room,
+		ground,
+		distributepercent,
+		distributeprefabs,
+		countprefabs,
+		GLOBAL.NODE_INTERNAL_CONNECTION_TYPE.EdgeCentroid
+	)	
 end
 
 function AddTaskWrapped(task, locks, keys, room_choices, room_bg, background_room)
