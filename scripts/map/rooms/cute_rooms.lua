@@ -303,11 +303,12 @@ AddStandardRoom(
 	GROUND.FUNGUSGREEN,
 	0.7,
 	{
-		mushtree_tall = 10,
-		mushtree_medium = 4,
+		mushtree_tall = 7,
+		mushtree_medium = 3,
 		fireflies = 6,
 		grass = 0.6,
 		colored_rabbithouse = 0.4,
+		rabbithole = 0.5,
 	},
 	{
 		giant_bunnyman_spawner = 1,
