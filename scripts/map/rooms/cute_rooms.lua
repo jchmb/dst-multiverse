@@ -310,6 +310,6 @@ AddStandardRoom(
 		colored_rabbithouse = 0.4,
 	},
 	{
-		giant_bunnyman = 1,
+		giant_bunnyman_spawner = 1,
 	}
 )
