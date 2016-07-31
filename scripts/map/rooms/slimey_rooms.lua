@@ -19,7 +19,7 @@ AddRoom("BGSlimey", {
 			marsh_bush = 0.2,
 			marsh_tree = 0.05,
 			reeds = 0.03,
-			pond_mos = 0.1,
+			perma_pond_mos = 0.1,
 			bittersweetbush = 0.1,
 			carrot_planted = 0.05,
 			sapling = 0.2,
@@ -27,7 +27,7 @@ AddRoom("BGSlimey", {
 			perma_grassgekko = 0.1,
 			mucus = 0.1,
 			phlegm = 0.01,
-			snake_hole = 0.1,
+			--snake_hole = 0.1,
 		}
 	}
 })
@@ -58,7 +58,7 @@ AddRoom("BGSlimeyDeciduous", {
 
 			fireflies = 1.5,
 
-			pond_mos=.01,
+			perma_pond_mos=.01,
 
 			slurtlehole = 0.1,
 		},
@@ -85,7 +85,7 @@ AddRoom("SlimeyMagicalDeciduous", {
 
 			bittersweetbush = 3,
 
-			pond_mos = 0.15,
+			perma_pond_mos = 0.15,
 			slurtlehole = 0.1,
 			pighouse_yellow = 0.05,
 		},
@@ -153,7 +153,7 @@ AddRoom("SlimeySwamp", {
 			mermhouse = 0.05,
 			tentacle = 0.5,
 			reeds = 0.15,
-			pond_mos = 0.1,
+			perma_pond_mos = 0.1,
 			mound = 0.2,
 		}
 	}
@@ -175,10 +175,10 @@ AddRoom("SlimeySwampRocks", {
 			rock_slimey = 0.2,
 			rock2 = 0.1,
 			reeds = 0.05,
-			pond_mos = 0.1,
+			perma_pond_mos = 0.1,
 			perma_grassgekko = 0.1,
 			rock_ice = 0.05,
-			snake_hole = 0.08,
+			--snake_hole = 0.08,
 		}
 	}
 })
@@ -196,7 +196,7 @@ AddRoom("SlimeyMudRocks", {
 			pillar_algae = .01,
 			rock_slimey = 0.1,
 			rock2 = 0.1,
-			pond_mos = 0.1,
+			perma_pond_mos = 0.1,
 			perma_grassgekko = 0.1,
 			spiderden_poisonous = 0.1,
 			slurtlehole = 0.1,
@@ -224,7 +224,7 @@ AddRoom("SlimeyHerds", {
 			sapling = 0.1,
 			twiggytree = 0.1,
 			flint = 0.05,
-			pond_mos = 0.05,
+			perma_pond_mos = 0.05,
 		}
 	}
 })
@@ -323,7 +323,7 @@ AddRoom("SlimeyEwecus", {
         {
 		marsh_tree = 3,
 		slurper = 0.05,
-		pond_mos = 0.1,
+		perma_pond_mos = 0.1,
 		reeds = 0.1,
         },
     }

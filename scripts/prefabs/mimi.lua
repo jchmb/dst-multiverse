@@ -27,17 +27,16 @@ SetSharedLootTable('monkey',
     {'cave_banana',   1.0},
 })
 
-local function SetHarassPlayer(inst, player)
-    if inst.harassplayer ~= player then
-        if inst.harassplayer ~= nil then
-            inst:RemoveEventCallback("onremove", inst._onharassplayerremoved, inst.harassplayer)
-            inst.harassplayer = nil
-        end
-        if player ~= nil then
-            inst:ListenForEvent("onremove", inst._onharassplayerremoved, player)
-            inst.harassplayer = player
-        end
-    end
+local function GetLeader(inst)
+    return inst.components.follower.leader
+end
+
+local function GetFaceTargetFn(inst)
+    return inst.components.follower.leader
+end
+
+local function KeepFaceTargetFn(inst, target)
+    return inst.components.follower.leader == target
 end
 
 local function IsPoop(item)
@@ -128,30 +127,6 @@ local function IsBanana(item)
     return item.prefab == "cave_banana" or item.prefab == "cave_banana_cooked"
 end
 
-local function FindTargetOfInterest(inst)
-    if not inst.curious then
-        return 
-    end
-
-    if inst.harassplayer == nil and inst.components.combat.target == nil then
-        local x, y, z = inst.Transform:GetWorldPosition()
-        -- Get all players in range
-        local targets = FindPlayersInRange(x, y, z, 25)
-        -- randomly iterate over all players until we find one we're interested in.
-        for i = 1, #targets do
-            local randomtarget = math.random(#targets)
-            local target = targets[randomtarget]
-            table.remove(targets, randomtarget)
-            --Higher chance to follow if he has bananas
-            if target.components.inventory ~= nil and math.random() < (target.components.inventory:FindItem(IsBanana) ~= nil and .6 or .15) then
-                SetHarassPlayer(inst, target)
-                inst:DoTaskInTime(120, SetHarassPlayer, nil)
-                return
-            end
-        end
-    end
-end
-
 local function retargetfn(inst)
     return nil
 end
@@ -230,9 +205,19 @@ local function OnSave(inst, data)
 end
 
 local function OnLoad(inst, data)
-    if data ~= nil and data.nightmare then
-        return
-    end
+    return
+end
+
+local function ShouldAcceptItem(inst, item)
+    return false
+end
+
+local function OnGetItemFromPlayer(inst, giver, item)
+    return
+end
+
+local function OnRefuseItem(inst, item)
+    return
 end
 
 local function fn()
@@ -323,16 +308,18 @@ local function fn()
     inst:SetBrain(brain)
     inst:SetStateGraph("SGmonkey")
 
-    inst.FindTargetOfInterestTask = inst:DoPeriodicTask(10, FindTargetOfInterest) --Find something to be interested in!
-
     inst.HasAmmo = hasammo
     inst.curious = true
-    inst.harassplayer = nil
-    inst._onharassplayerremoved = function() inst.harassplayer = nil end
 
     inst:AddComponent("knownlocations")
     
     inst:AddComponent("follower")
+
+    inst:AddComponent("trader")
+    inst.components.trader:SetAcceptTest(ShouldAcceptItem)
+    inst.components.trader.onaccept = OnGetItemFromPlayer
+    inst.components.trader.onrefuse = OnRefuseItem
+    inst.components.trader.deleteitemonaccept = false
 
     inst:ListenForEvent("onpickupitem", OnPickup)
     inst:ListenForEvent("attacked", OnAttacked)

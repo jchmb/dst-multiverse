@@ -403,10 +403,16 @@ AddRoom("SnowyBunnies", {
 		distributeprefabs = {
 			perma_grass = 0.4,
 			carrot_planted = 0.3,
-			rabbithouse = 0.2,
+			hatrabbithouse = 0.2,
 			mintybush = 0.2,
 			evergreen = 9,
-		}
+		},
+		prefabdata = {
+			hatrabbithouse = {
+				startinghat = "earmuffshat",
+				colorfname = "winter",
+			},
+		},
 	}
 })
 
@@ -541,7 +547,7 @@ AddStandardRoom(
 		rock2 = 0.1,
 	},
 	{
-		yeti = math.random(2, 4) + 2,
+		yeti = math.random(2, 4) + 4,
 		pond_open = 2,
 	}		
 )

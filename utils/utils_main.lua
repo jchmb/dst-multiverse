@@ -33,8 +33,9 @@ local CHARS = {
 
 GLOBAL.jchmb.CopyPrefabDescriptions = function(oldprefab, newprefab)
 	for i,character in ipairs(CHARS) do
-		if GLOBAL.STRINGS.CHARACTERS[character].DESCRIBE.oldprefab ~= nil then
-			GLOBAL.STRINGS.CHARACTERS[character].DESCRIBE.newprefab = GLOBAL.STRINGS.CHARACTERS[character].DESCRIBE.oldprefab
+		if GLOBAL.STRINGS.CHARACTERS[character].DESCRIBE[string.upper(oldprefab)] ~= nil then
+			GLOBAL.STRINGS.CHARACTERS[character].DESCRIBE[string.upper(newprefab)] =
+				GLOBAL.STRINGS.CHARACTERS[character].DESCRIBE[string.upper(oldprefab)]
 		end
 	end
 end

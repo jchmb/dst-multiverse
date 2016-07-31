@@ -82,23 +82,29 @@ function AddRoomWrapped(room, ground, contents, tags, internal_type)
 	})
 end
 
-function AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs, internal_type)
+function AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type)
 	countprefabs = countprefabs or {}
+	countstaticlayouts = countstaticlayouts or {}
+	prefabdata = prefabdata or {}
 	AddRoomWrapped(room, ground, {
 		countprefabs = countprefabs,
 		distributepercent = distributepercent,
 		distributeprefabs = distributeprefabs,
+		countstaticlayouts = countstaticlayouts,
+		prefabdata = prefabdata,
 		internal_type = internal_type,
 	})
 end
 
-function AddCenterRoom(room, ground, distributepercent, distributeprefabs, countprefabs)
+function AddCenterRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata)
 	AddStandardRoom(
 		room,
 		ground,
 		distributepercent,
 		distributeprefabs,
 		countprefabs,
+		countstaticlayouts,
+		prefabdata,
 		GLOBAL.NODE_INTERNAL_CONNECTION_TYPE.EdgeCentroid
 	)	
 end

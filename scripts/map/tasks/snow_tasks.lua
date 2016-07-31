@@ -112,7 +112,7 @@ AddTask("Snowy four b", {
 	keys_given={KEYS.TIER4},
 	room_choices={
 		["SnowyForest"] = 2,
-		["SnowyHoundNest"] = 2,
+		["SnowyYetiTerritory"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,

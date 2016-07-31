@@ -85,6 +85,17 @@ AddStructureRecipe(
 )
 
 AddStructureRecipe(
+	"hatrabbithouse",
+	{
+		Ingredient("boards", 4),
+		Ingredient("carrot", 10),
+		Ingredient("manrabbit_tail", 4),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST
+)
+
+AddStructureRecipe(
 	"beardlordhouse",
 	{
 		Ingredient("boards", 4),

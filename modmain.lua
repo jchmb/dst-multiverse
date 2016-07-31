@@ -31,6 +31,8 @@ modimport("init/minimap_icons.lua")
 --]]
 modimport("scripts/chatter/pigman_blue_chat.lua")
 modimport("scripts/chatter/pigman_gray_chat.lua")
+modimport("scripts/chatter/pigman_slimey_chat.lua")
+modimport("scripts/chatter/hatbunnyman_chat.lua")
 modimport("scripts/chatter/mimi_chat.lua")
 
 -- Migration portals share the wormhole icon. This is confusing. Use teleportato icon instead.

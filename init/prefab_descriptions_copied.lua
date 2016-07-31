@@ -1,2 +1,5 @@
 GLOBAL.jchmb.CopyPrefabDescriptions("rabbithouse", "colored_rabbithouse")
+GLOBAL.jchmb.CopyPrefabDescriptions("rabbithouse", "hatrabbithouse")
 GLOBAL.jchmb.CopyPrefabDescriptions("bunnyman", "colored_bunnyman")
+GLOBAL.jchmb.CopyPrefabDescriptions("pond", "perma_pond_mos")
+GLOBAL.jchmb.CopyPrefabDescriptions("mosquito", "perma_mosquito")

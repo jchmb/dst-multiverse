@@ -2,6 +2,7 @@ modimport("lib/lua_functions.lua")
 modimport("lib/tile_adder.lua")
 modimport("utils/utils_common.lua")
 modimport("utils/utils_worldgen.lua")
+--modimport("utils/utils_vector.lua")
 
 GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATIONTABNAME.FOREST_SNOW = "Snowy"
 GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATION.FOREST_SNOW = "Snow Forest"

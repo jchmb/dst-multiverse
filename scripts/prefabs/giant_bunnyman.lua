@@ -37,20 +37,27 @@ local GIANT_BUNNYMAN_LOOT = {
 
 local brain = require("brains/giant_bunnymanbrain")
 
-local MAX_TARGET_SHARES = 5
-local SHARE_TARGET_DIST = 30
+local MAX_TARGET_SHARES = 10
+local SHARE_TARGET_DIST = 50
 
 local function IsCrazyGuy(guy)
     return false
 end
 
 local function CalcSanityAura(inst, observer)
-    return -TUNING.SANITYAURA_SMALL
+    return -TUNING.SANITYAURA_MED
 end
 
 local function OnAttacked(inst, data)
     inst.components.combat:SetTarget(data.attacker)
-    inst.components.combat:ShareTarget(data.attacker, SHARE_TARGET_DIST, function(dude) return dude.prefab == inst.prefab end, MAX_TARGET_SHARES)
+    inst.components.combat:ShareTarget(
+        data.attacker,
+        SHARE_TARGET_DIST,
+        function(dude)
+            return string.find(dude.prefab, "bunnyman")
+        end,
+        MAX_TARGET_SHARES
+    )
 end
 
 local function OnNewTarget(inst, data)

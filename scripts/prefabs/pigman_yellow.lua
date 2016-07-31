@@ -216,7 +216,7 @@ local function NormalShouldSleep(inst)
                 (inst.LightWatcher == nil or inst.LightWatcher:IsInLight())))
 end
 
-local normalbrain = require "brains/pigbrain"
+local normalbrain = require "brains/pigbrain_slimey"
 
 local function SuggestTreeTarget(inst, data)
     if data ~= nil and data.tree ~= nil and inst:GetBufferedAction() ~= ACTIONS.CHOP then

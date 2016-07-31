@@ -17,9 +17,7 @@ AddTask("Cuteness two a", {
 	keys_given={KEYS.TIER2},
 	room_choices={
 		["CuteFriends"] = 2,
-		["SpiderCity"] = 2,
-		["BeefalowPlain"] = 1,
-		["CuteBunnymanTown2"] = 1,
+		["CuteBunnymanTown4"] = 1,
 		["CuteRocks"] = 1,
 		["MandrakeHome"] = 1
 	},
@@ -34,9 +32,8 @@ AddTask("Cuteness two b", {
 	room_choices={
 		["CuteFriends"] = 1,
 		["SpiderCity"] = 1,
-		["BeefalowPlain"] = 1,
 		["CuteRocks"] = 2,
-		["MandrakeHome"] = 1,
+		["CuteSpiderForest"] = 1,
 	},
 	room_bg=GROUND.GRASS,
 	background_room="BGGrass",
@@ -65,6 +62,7 @@ AddTask("Cuteness three b", {
 		["CuteBunnymanTown"] = 1,
 		["CuteRocks2"] = 2,
 		["WalrusHut_Rocky"] = 1,
+		["CuteBunnymanTown4"] = 1,
 	},
 	room_bg=GROUND.FUNGUS,
 	background_room="BGCuteFungus",
@@ -78,6 +76,8 @@ AddTaskWrapped(
 	{
 		["CuteMonkeyRoom"] = 2,
 		["CuteHerds2"] = 1,
+		["CuteSpiderForest"] = 2,
+		["SpiderCity"] = 1,
 	},
 	GROUND.FUNGUS,
 	"BGCuteFungus"
@@ -89,8 +89,8 @@ AddTaskWrapped(
 	{KEYS.TIER4},
 	{
 		["CuteGiantBunnyLair"] = 1,
-		["CuteBunnymanTown2"] = 1,
 		["CuteBunnymanTown3"] = 1,
+		["CuteBunnymanTown5"] = 3,
 	},
 	GROUND.FUNGUS,
 	"BGCuteFungus"

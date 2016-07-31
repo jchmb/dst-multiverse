@@ -329,16 +329,13 @@ function MimiBrain:OnStart()
 
         
         --Following
-        ChattyNode(self.inst, "MIMI_ANNOY",
-            WhileNode(function() return self.inst.harassplayer end, "Annoy Leader", 
-            DoAction(self.inst, AnnoyLeader))),
-        ChattyNode(self.inst, "MIMI_ANNOY",
-            Follow(self.inst, function() return self.inst.harassplayer end, MIN_FOLLOW_DIST, TARGET_FOLLOW_DIST, MAX_FOLLOW_DIST)),
+        ChattyNode(self.inst, "MIMI_WANDER",
+                Follow(self.inst, GetLeader, MIN_FOLLOW_DIST, TARGET_FOLLOW_DIST, MAX_FOLLOW_DIST)),
+        IfNode(function() return GetLeader(self.inst) end, "has leader",
+            ChattyNode(self.inst, "MIMI_WANDER",
+                FaceEntity(self.inst, GetFaceTargetFn, KeepFaceTargetFn ))),
         
         --Doing nothing
-        ChattyNode(self.inst, "MIMI_WANDER",
-            WhileNode(function() return self.inst.harassplayer  end, "Wander Around Leader", 
-            Wander(self.inst, function() if self.inst.harassplayer  then return self.inst.harassplayer:GetPosition() end end, MAX_FOLLOW_DIST))),
         ChattyNode(self.inst, "MIMI_WANDER",
             WhileNode(function() return not self.inst.harassplayer and not self.inst.components.combat.target end,
         "Wander Around Home", Wander(self.inst, function() return self.inst.components.knownlocations:GetLocation("home") end, MAX_WANDER_DIST)))

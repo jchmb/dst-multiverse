@@ -1,3 +1,7 @@
+local Layouts = GLOBAL.require("map/layouts").Layouts
+Layouts["BunnymanFarmers"] = GLOBAL.require("map/layouts/bunnyman_farmers")
+Layouts["GentleBunnyman"] = GLOBAL.require("map/layouts/gentle_bunnyman")
+
 AddStandardRoom(
 	"BGCuteFungus",
 	GROUND.FUNGUS,
@@ -18,6 +22,9 @@ AddRoom("CuteBunnymanTown", {
 	value = GROUND.FUNGUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countstaticlayouts = {
+			["BunnymanFarmers"] = 1,
+		},
 		countprefabs = {
 			migration_portal = 1,
 		},
@@ -41,6 +48,9 @@ AddRoom("CuteBunnymanTown2", {
 	value = GROUND.FUNGUSGREEN,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countstaticlayouts = {
+			["BunnymanFarmers"] = 1,
+		},
 		distributepercent = 0.07,
 		distributeprefabs = {
 			fireflies = 0.2,
@@ -81,6 +91,27 @@ AddRoom("CuteBunnymanTown3", {
 			pighouse = 0.05,
 			deciduoustree = 1,
 			rock_ice = 0.5,
+		}
+	}
+})
+
+AddRoom("CuteBunnymanTown4", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.FUNGUSRED,
+	tags = {"ExitPiece", "Chester_Eyebone"},
+	contents =  {
+		countstaticlayouts = {
+			["GentleBunnyman"] = 1,
+		},
+		distributepercent = 0.4,
+		distributeprefabs = {
+			carrot_planted = 0.1,
+			grass = 0.2,
+			pond = 0.01,
+			red_mushroom = 0.1,
+			green_mushroom = 0.1,
+			blue_mushroom = 0.1,
+			deciduoustree = 1,
 		}
 	}
 })
@@ -135,6 +166,15 @@ AddRoom("CuteRocks", {
 	value = GROUND.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countprefabs = {
+			hatrabbithouse = function() return math.random(0, 1) + 1 end,
+		},
+		prefabdata = {
+			hatrabbithouse = {
+				startinghat = "minerhat",
+				colorfname = "colored",
+			},
+		},
 		distributepercent = 0.15,
 		distributeprefabs = {
 			rock1 = 0.7,
@@ -165,7 +205,6 @@ AddRoom("CuteRocks2", {
 			rocks = 1,
 			flint = 0.7,
 			molehill = 0.1,
-			tallbirdnest=0.1,
 			grassgekko = 0.2,
 			buzzardspawner = 0.1,
 			catcoonden = 0.1,
@@ -298,7 +337,32 @@ AddRoom("CuteDeepDeciduous", {
 	}
 })
 
-AddCenterRoom(
+AddStandardRoom(
+	"CuteSpiderForest",
+	GROUND.FOREST,
+	0.7,
+	{
+		evergreen_sparse = 8,
+		evergreen = 3,
+		ground_twigs = 0.2,
+		red_mushroom = 0.2,
+		green_mushroom = 0.2,
+		blue_mushroom = 0.2,
+	},
+	{
+		hatrabbithouse = function() return math.random(2, 3) + 1 end,
+		spiderden = function() return math.random(1, 2) + 1 end,
+	},
+	{},
+	{
+		hatrabbithouse = {
+			startinghat = "footballhat",
+			colorfname = "colored",
+		}
+	}
+)
+
+AddStandardRoom(
 	"CuteBunnyDefense",
 	GROUND.FUNGUSGREEN,
 	0.3,
@@ -312,13 +376,11 @@ AddCenterRoom(
 	}
 )
 
-AddStandardRoom(
+AddCenterRoom(
 	"CuteGiantBunnyLair",
-	GROUND.FUNGUSGREEN,
+	GROUND.GRASS,
 	0.7,
 	{
-		mushtree_tall = 4,
-		mushtree_medium = 3,
 		fireflies = 6,
 		grass = 0.6,
 		colored_rabbithouse = 0.2,
@@ -326,5 +388,29 @@ AddStandardRoom(
 	},
 	{
 		giant_bunnyman_spawner = 1,
+		marbletree = function()
+			return math.random(4, 6) + 3
+		end,
+	}
+)
+
+AddStandardRoom(
+	"CuteBunnymanTown5",
+	GROUND.FUNGUS,
+	0.4,
+	{
+		fireflies = 3,
+		grass = 0.3,
+		hatrabbithouse = 0.3,
+		mushtree_tall = 7,
+		mushtree_medium = 5,
+	},
+	{},
+	{},
+	{
+		hatrabbithouse = {
+			startinghat = "flowerhat",
+			colorfname = "colored",
+		}
 	}
 )

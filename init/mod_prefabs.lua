@@ -25,6 +25,8 @@ PrefabFiles = {
 	"colored_rabbithouse",
 	"giant_bunnyman_spawner",
 	"giant_bunnyman",
+	"hatrabbithouse",
+	"hatbunnyman",
 
 	-- Snow mobs and spawners
 	"rabbithole_snow",
@@ -34,6 +36,8 @@ PrefabFiles = {
 	"reingoat",
 	"reingoatherd",
 	"perma_walrus_camp",
+	"yeti",
+	"yetiherd",
 	
 	-- Slimey mobs and spawners
 	"perma_grassgekko",
@@ -42,6 +46,8 @@ PrefabFiles = {
 	"spiderden_poisonous",
 	"snake",
 	"snake_hole",
+	"perma_pond_mos",
+	"perma_mosquito",
 
 	-- Gray mobs and spawners
 	"beardlordhouse",

@@ -3,7 +3,7 @@ local prefabs =
     "yeti",
 }
 
-local MAX_YETI_HERD_SIZE = 8
+local MAX_YETI_HERD_SIZE = 10
 local YETI_SPAWN_DELAY = 60 * 6
 local YETI_SPAWN_DELAY_VARIANCE = YETI_SPAWN_DELAY * 0.5
 

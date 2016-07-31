@@ -64,11 +64,25 @@ end
 
 local function OnAttacked(inst, data)
 	inst.components.combat:SetTarget(data.attacker)
-	inst.components.combat:ShareTarget(data.attacker, SHARE_TARGET_DIST, function(dude) return dude:HasTag("snake")and not dude.components.health:IsDead() end, 5)
+	inst.components.combat:ShareTarget(
+		data.attacker,
+		SHARE_TARGET_DIST,
+		function(dude)
+			return dude:HasTag("snake") and not dude.components.health:IsDead()
+		end,
+		5
+	)
 end
 
 local function OnAttackOther(inst, data)
-	inst.components.combat:ShareTarget(data.target, SHARE_TARGET_DIST, function(dude) return dude:HasTag("snake") and not dude.components.health:IsDead() end, 5)
+	inst.components.combat:ShareTarget(
+		data.target,
+		SHARE_TARGET_DIST,
+		function(dude)
+			return dude:HasTag("snake") and not dude.components.health:IsDead()
+		end,
+		5
+	)
 end
 
 local function DoReturn(inst)
@@ -91,12 +105,6 @@ local function OnEntitySleep(inst)
 	if TheWorld.state.iscaveday then
 		DoReturn(inst)
 	end
-end
-
-local function OnSave(inst, data)
-end
-
-local function OnLoad(inst, data)
 end
 
 local function SanityAura(inst, observer)
@@ -189,9 +197,6 @@ local function fn()
 	-- inst:ListenForEvent( "nighttime", function() OnNight( inst ) end, GetWorld())
 	-- inst:ListenForEvent( "daytime", function() OnDay( inst ) end, GetWorld())
 	inst.OnEntitySleep = OnEntitySleep
-
-	inst.OnSave = OnSave
-	inst.OnLoad = OnLoad
 
 	inst:ListenForEvent("attacked", OnAttacked)
 	inst:ListenForEvent("onattackother", OnAttackOther)

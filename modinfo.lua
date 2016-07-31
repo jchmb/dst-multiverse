@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8 and Joachim"
-version = "1.2.20"
+version = "1.3.4"
 forumthread = ""
 api_version = 10	
 

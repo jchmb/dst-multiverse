@@ -1,10 +1,11 @@
-local brain = require "brains/deerclopsbrain"
+local brain = require "brains/yetibrain"
 
 local assets =
 {
     Asset("ANIM", "anim/deerclops_basic.zip"),
     Asset("ANIM", "anim/deerclops_actions.zip"),
     Asset("ANIM", "anim/deerclops_build.zip"),
+    Asset("ANIM", "anim/yeti_build.zip"),
     Asset("ANIM", "anim/deerclops_neutral_build.zip"),
     Asset("SOUND", "sound/deerclops.fsb"),
 }
@@ -31,8 +32,9 @@ local function RetargetFn(inst)
     --print("Deerclops retarget", debugstack())
     return FindEntity(inst, TARGET_DIST, function(guy)
         return inst.components.combat:CanTarget(guy)
-               and (guy.components.combat.target == inst or (inst:GetPosition():Dist(guy:GetPosition()) <= (inst.Physics:GetRadius() + 8)))
-    end, nil, {"prey", "smallcreature"})
+               and (guy.components.combat.target == inst
+                or (inst:GetPosition():Dist(guy:GetPosition()) <= (inst.Physics:GetRadius() + 8)))
+    end, nil, {"yeti"})
 end
 
 local function KeepTargetFn(inst, target)
@@ -60,9 +62,12 @@ local function OnLoad(inst, data)
 end
 
 local function OnAttacked(inst, data)
+    if data.attacker == nil then
+        return
+    end
     inst.components.combat:SetTarget(data.attacker)
     inst.components.combat:ShareTarget(
-        attacker,
+        data.attacker,
         YETI_HELP_DISTANCE,
         function(dude)
             return dude:HasTag("yeti")
@@ -71,7 +76,7 @@ local function OnAttacked(inst, data)
     )
 end
 
-local loot = {"meat"}
+local loot = {"meat", "meat"}
 
 local function fn()
     local inst = CreateEntity()
@@ -96,7 +101,7 @@ local function fn()
     inst:AddTag("herdmember")
 
     inst.AnimState:SetBank("deerclops")
-    inst.AnimState:SetBuild("deerclops_build")
+    inst.AnimState:SetBuild("yeti_build")
     inst.AnimState:PlayAnimation("idle_loop", true)
 
     inst.entity:SetPristine()
@@ -111,7 +116,7 @@ local function fn()
     inst.components.locomotor.walkspeed = 3  
 
     ------------------------------------------
-    inst:SetStateGraph("SGdeerclops")
+    inst:SetStateGraph("SGyeti")
 
     ------------------------------------------
 
@@ -123,7 +128,7 @@ local function fn()
 
     ------------------
     inst:AddComponent("health")
-    inst.components.health:SetMaxHealth(400)
+    inst.components.health:SetMaxHealth(600)
 
     ------------------
 
@@ -131,7 +136,7 @@ local function fn()
     inst.components.combat:SetDefaultDamage(20)
     --inst.components.combat:SetRange(5)
     inst.components.combat.hiteffectsymbol = "deerclops_body"
-    inst.components.combat:SetAttackPeriod(TUNING.DEERCLOPS_ATTACK_PERIOD / 2)
+    inst.components.combat:SetAttackPeriod(TUNING.DEERCLOPS_ATTACK_PERIOD / 3)
     inst.components.combat:SetRetargetFunction(1, RetargetFn)
     inst.components.combat:SetKeepTargetFunction(KeepTargetFn)
 
@@ -146,6 +151,7 @@ local function fn()
 
     inst:AddComponent("lootdropper")
     inst.components.lootdropper:SetLoot(loot)
+    inst.components.lootdropper:AddChanceLoot("bluegem", 0.2)
 
     --
 
@@ -162,7 +168,7 @@ local function fn()
 
     inst:ListenForEvent("entitysleep", OnEntitySleep)
     inst:ListenForEvent("attacked", OnAttacked)
-    inst:ListenForEvent("death", OnDead)
+    --inst:ListenForEvent("death", OnDead)
 
     inst.OnSave = OnSave
     inst.OnLoad = OnLoad
