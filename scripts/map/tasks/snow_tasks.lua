@@ -61,6 +61,7 @@ AddTask("Snowy three a", {
 		["SnowyForest"] = 1,
 		["SnowyTallbirdForest"] = 2,
 		["Marsh"] = 1,
+		["SnowySleepingIceHounds"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,

@@ -19,6 +19,9 @@ local prefabs =
     "thulecite_pieces",
 }
 
+-- Every bunny citizen pays one carrot every day
+local CARROT_TAX = 60 * 8
+
 local MAX_GIANT_BUNNYMAN_MINIONS = 4
 
 local GIANT_BUNNYMAN_LOOT = {
@@ -61,7 +64,17 @@ local function OnAttacked(inst, data)
 end
 
 local function OnNewTarget(inst, data)
-    inst.components.combat:ShareTarget(data.target, SHARE_TARGET_DIST, function(dude) return dude.prefab == inst.prefab end, MAX_TARGET_SHARES)
+    if data == nil or data.target == nil then
+        return
+    end
+    inst.components.combat:ShareTarget(
+        data.target,
+        SHARE_TARGET_DIST,
+        function(dude)
+            return string.find(dude.prefab, "bunnyman")
+        end,
+        MAX_TARGET_SHARES
+    )
 end
 
 local function is_meat(item)
@@ -134,7 +147,7 @@ local function fn()
     end
 
     inst:AddComponent("locomotor") -- locomotor must be constructed before the stategraph
-    inst.components.locomotor.runspeed = 2 -- account for them being stopped for part of their anim
+    inst.components.locomotor.runspeed = 1 -- account for them being stopped for part of their anim
     inst.components.locomotor.walkspeed = 1 -- account for them being stopped for part of their anim
 
     inst:AddComponent("bloomer")
@@ -204,7 +217,7 @@ local function fn()
     inst.components.combat:SetKeepTargetFunction(NormalKeepTargetFn)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
 
-    inst.components.locomotor.runspeed = 2
+    inst.components.locomotor.runspeed = 1
     inst.components.locomotor.walkspeed = 1
 
     inst.components.health:SetMaxHealth(3000)
@@ -217,6 +230,10 @@ local function fn()
     inst:SetStateGraph("SGgiantbunnyman")
 
     inst.beardlord = false
+
+    inst.taxes = {
+        
+    }
 
     return inst
 end

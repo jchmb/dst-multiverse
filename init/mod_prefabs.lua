@@ -60,6 +60,7 @@ PrefabFiles = {
 	"antidote",
 	"spidereggsack_poisonous",
 	"obsidian",
+	"newpreparedfoods",
 
 	-- Misc
 	"new_turfs",

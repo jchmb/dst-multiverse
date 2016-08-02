@@ -227,7 +227,7 @@ AddRoom("SnowyMagicalDeciduous", {
 			molehill = 2,
 			catcoonden = .25,
 
-			mintybush = 3,
+			mintybush = 0.2,
 
 			fireflies = 2,
 			rock_ice = 0.2,
@@ -374,6 +374,25 @@ AddRoom("SnowyForest", {
 	}
 })
 
+AddRoom("SnowySleepingIceHounds", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.SNOWY,
+	tags = {"ExitPiece", "Chester_Eyebone"},
+	contents =  {
+		countstaticlayouts = {
+			["Ice Hounds"] = 1,
+		},
+		distributepercent = 0.7,
+		distributeprefabs = {
+			sapling = 0.1,
+			grass = 0.1,
+			ground_twigs = 0.1,
+			evergreen = 5,
+			evergreen_sparse = 5,
+		}
+	}
+})
+
 AddRoom("SnowyGoats", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.SNOWY,
@@ -409,7 +428,7 @@ AddRoom("SnowyBunnies", {
 		},
 		prefabdata = {
 			hatrabbithouse = {
-				startinghat = "earmuffshat",
+				startinghat = "winterhat",
 				colorfname = "winter",
 			},
 		},
@@ -501,13 +520,12 @@ AddRoom("SnowyWalrusForest", {
 		distributepercent = 0.3,
 		countprefabs = {
 			perma_walrus_camp = 1,
-			skeleton = 4,
+			skeleton = 2,
 		},
 		distributeprefabs = {
 			evergreen = 3,
 			evergreen_sparse = 5,
 			grass = 0.3,
-
 		}
 	}
 })

@@ -71,7 +71,13 @@ local function onvacate(inst, child)
             local item = SpawnPrefab(inst.startinghat)
             child.components.inventory:Equip(item)
             if item.components.finiteuses ~= nil then
-                item.components.finiteuses:SetPercent(math.random() * 0.1 + 0.1)
+                item.components.finiteuses:SetPercent(math.random() * 0.05 + 0.05)
+            end
+            if item.components.armor ~= nil then
+                item.components.armor:SetPercent(math.random() * 0.05 + 0.05)
+            end
+            if item.components.fueled ~= nil then
+                item.components.fueled:SetPercent(math.random() * 0.05 + 0.05)
             end
             child.AnimState:Show("hat")
             child.startinghat = inst.startinghat

@@ -103,23 +103,9 @@ end
 
 local function OnAttacked(inst, data)
     inst.components.combat:SetTarget(data.attacker)
-    SetHarassPlayer(inst, nil)
+    --SetHarassPlayer(inst, nil)
     if inst.task ~= nil then
         inst.task:Cancel()
-    end
-    inst.task = inst:DoTaskInTime(math.random(55, 65), _ForgetTarget) --Forget about target after a minute
-
-    local x, y, z = inst.Transform:GetWorldPosition()
-    local ents = TheSim:FindEntities(x, y, z, 30, { "monkey" })
-    for i, v in ipairs(ents) do
-        if v ~= inst then
-            v.components.combat:SuggestTarget(data.attacker)
-            SetHarassPlayer(v, nil)
-            if v.task ~= nil then
-                v.task:Cancel()
-            end
-            v.task = v:DoTaskInTime(math.random(55, 65), _ForgetTarget) --Forget about target after a minute
-        end
     end
 end
 
@@ -136,15 +122,6 @@ local function shouldKeepTarget(inst)
         return true
     end]]
     return true
-end
-
-local function _DropAndGoHome(inst)
-    if inst.components.inventory ~= nil then
-        inst.components.inventory:DropEverything(false, true)
-    end
-    if inst.components.homeseeker ~= nil and inst.components.homeseeker.home ~= nil then
-        inst.components.homeseeker.home:PushEvent("monkeydanger")
-    end
 end
 
 local function OnPickup(inst, data)
@@ -187,12 +164,6 @@ local function SetNormalMonkey(inst)
     inst.AnimState:SetMultColour(1, 1, 1, 1)
     inst.curious = true
     inst.soundtype = ""
-    inst.components.lootdropper:SetLoot({ "smallmeat", "cave_banana" })
-    inst.components.lootdropper.droppingchanceloot = false
-
-    inst.components.combat:SetTarget(nil)
-
-    inst:ListenForEvent("entity_death", inst.listenfn, TheWorld)
 end
 
 local function OnCustomHaunt(inst)
@@ -292,21 +263,19 @@ local function fn()
     inst.components.periodicspawner:Start()
 
     inst:AddComponent("lootdropper")
-    inst.components.lootdropper:SetChanceLootTable('monkey')
-    inst.components.lootdropper.droppingchanceloot = false
 
     inst:AddComponent("eater")
     inst.components.eater:SetDiet({ FOODTYPE.VEGGIE }, { FOODTYPE.VEGGIE })
     inst.components.eater:SetOnEatFn(oneat)
 
     inst:AddComponent("sleeper")
-    inst.components.sleeper.sleeptestfn = NocturnalSleepTest
-    inst.components.sleeper.waketestfn = NocturnalWakeTest
+    --inst.components.sleeper.sleeptestfn = NocturnalSleepTest
+    --inst.components.sleeper.waketestfn = NocturnalWakeTest
 
     inst:AddComponent("areaaware")
 
     inst:SetBrain(brain)
-    inst:SetStateGraph("SGmonkey")
+    inst:SetStateGraph("SGmimi")
 
     inst.HasAmmo = hasammo
     inst.curious = true

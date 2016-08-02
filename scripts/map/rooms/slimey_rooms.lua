@@ -27,7 +27,7 @@ AddRoom("BGSlimey", {
 			perma_grassgekko = 0.1,
 			mucus = 0.1,
 			phlegm = 0.01,
-			--snake_hole = 0.1,
+			snake_hole = 0.1,
 		}
 	}
 })
@@ -178,7 +178,7 @@ AddRoom("SlimeySwampRocks", {
 			perma_pond_mos = 0.1,
 			perma_grassgekko = 0.1,
 			rock_ice = 0.05,
-			--snake_hole = 0.08,
+			snake_hole = 0.08,
 		}
 	}
 })

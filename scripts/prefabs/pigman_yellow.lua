@@ -5,6 +5,7 @@ local assets =
     Asset("ANIM", "anim/ds_pig_attacks.zip"),
     Asset("ANIM", "anim/pig_slimey_build.zip"),
     Asset("ANIM", "anim/werepig_build.zip"),
+    Asset("ANIM", "anim/werepig_slimey_build.zip"),
     Asset("ANIM", "anim/werepig_basic.zip"),
     Asset("ANIM", "anim/werepig_actions.zip"),
     Asset("SOUND", "sound/pig.fsb"),
@@ -294,7 +295,7 @@ local function SetWerePig(inst)
     inst:AddTag("werepig")
     inst:SetBrain(werepigbrain)
     inst:SetStateGraph("SGwerepig")
-    inst.AnimState:SetBuild("werepig_build")
+    inst.AnimState:SetBuild(inst.werepig_build)
 
     inst.components.sleeper:SetResistance(3)
 
@@ -474,6 +475,8 @@ local function common()
 
     inst.OnSave = OnSave
     inst.OnLoad = OnLoad
+
+    inst.werepig_build = "werepig_slimey_build"
 
     inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)

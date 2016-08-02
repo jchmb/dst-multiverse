@@ -1,30 +1,25 @@
-
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEE = "I can't believe I can actually have coffee here!"
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.COFFEE = "Scientist's best friend on lone nights in the lab."
-
-STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEE = "Black like charcoal. Well burnt."
-
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEE = "Finally... A fresh cup of coffee, the best sort!"
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEE = "Black like charcoal. Well burnt. The aroma: smoky. Hot."
+    
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.COFFEE = "Coffee makes Wolfgang want go buttkicking for goodness!"
-
-STRINGS.CHARACTERS.WENDY.DESCRIBE.COFFEE = "Dark like this world. How fitting."
-
-STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.COFFEE = "I don't need it to stay awake, yet the flavour..."
-
-STRINGS.CHARACTERS.WX78.DESCRIBE.COFFEE = "AN UNEXPECTED FUEL TYPE. DOES ITS WORK THOUGH."
-
-STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.COFFEE = "It keeps the Valkyrie fighting!"
-
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.COFFEE = "I like the hue. Like funeral attires."
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.COFFEE = "THIS FUEL IS SURPRISINGLY EFFICIENT."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.COFFEE = "It's dark like the depths of Niflheim itself... and keeps the Valkyrie fighting!"
+    
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.COFFEE = "Mum would tell Dad not to drink it late."
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.COFFEE = "Insomnia never bothered me anyway."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.COFFEE = "It has a woody scent. I like my coffee best this way. If only I had buttered scones too..."
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEE = "At long last! Like back in Cisco. Not The Ritz, but will do for now." 
 
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEE = "Like back in Cisco."
 
-STRINGS.CHARACTERS.WOODIE.DESCRIBE.COFFEE = "If only I had buttered scones too..."
-
-
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEEBUSH = "Wait... Coffeebushes? Here?"
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.COFFEEBUSH = "Do you know you're in the incorrect biome?"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEEBUSH = "Wait... Coffeebushes? Here? Do you know you're in the incorrect biome?"
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEEBUSH = "Can we get through this awkward phase and cut to burning your beans please?"
 
@@ -38,16 +33,14 @@ STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.COFFEEBUSH = "Freyr has blessed you, coff
 
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.COFFEEBUSH = "Smells like Dad's coffee!"
 
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEEBUSH = "As close to a café I can get here."
-
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.COFFEEBUSH = "This feller smells faintly of coffee."
 
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.COFFEEBUSH = "Some specimen of the Coffea genus evidently adapted to local climate conditions."
 
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEEBUSH = "As close to a café I can get here."
+
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.DUG_COFFEEBUSH = "The beginnings of my own plantation."
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.DUG_COFFEEBUSH = "Ready to start a properly-scientific coffee plantation."
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.DUG_COFFEEBUSH = "To get to coffeebean-burning, I need to plant this first."
 
@@ -61,16 +54,14 @@ STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.DUG_COFFEEBUSH = "I should plant it to pl
 
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.DUG_COFFEEBUSH = "Let's go gardening!"
 
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.DUG_COFFEEBUSH = "The measures I have to take for a cup..."
-
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.DUG_COFFEEBUSH = "We can grow our own coffee with this feller here."
 
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.DUG_COFFEEBUSH = "Let's see if the climate is appropriate."
 
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.DUG_COFFEEBUSH = "The measures I have to take for a cup..."
+
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEEBEANS = "Now, the real question: how to turn those into coffee?"
-  
---STRINGS.CHARACTERS.WILSON.DESCRIBE.COFFEEBEANS = "I'd always buy it prepared for brewing. This needs more tests."
   
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEEBEANS = "Meet my lucky lighter and prepare to be burnt!"
   
@@ -90,9 +81,8 @@ STRINGS.CHARACTERS.WEBBER.DESCRIBE.COFFEEBEANS = "I don't think Dad drank those 
   
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEEBEANS = "Ha! Barista, where are you when I need you?!"
 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEEBEANS_COOKED = "I suppose they are edible now. But... My coffee..."
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.COFFEEBEANS_COOKED = "An avant-garde way of using the beans, fitting for a pioneer of science like me!"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEEBEANS_COOKED = "I suppose they are edible now. But... My coffee..."
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEEBEANS_COOKED = "You burned so nicely. I admire you, little beans."
 
@@ -113,33 +103,7 @@ STRINGS.CHARACTERS.WEBBER.DESCRIBE.COFFEEBEANS_COOKED = "A bit like what Mum use
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEEBEANS_COOKED = "I begin to dislike coffee for the handiwork involved."
 
 
-
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEE = "Finally... A fresh cup of coffee, the best sort!"
-    
---STRINGS.CHARACTERS.WILSON.DESCRIBE.COFFEE = "I brewed it with SCIENCE!"
-    
-STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEE = "The aroma: smoky. Hot."
-    
-STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.COFFEE = "Wolfgang made coffee!"
-    
-STRINGS.CHARACTERS.WENDY.DESCRIBE.COFFEE = "I like the hue. Like funeral attires."
-    
-STRINGS.CHARACTERS.WX78.DESCRIBE.COFFEE = "THIS FUEL IS SURPRISING EFFICIENT."
-    
-STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.COFFEE = "It's dark like the depths of Niflheim itself."
-    
-STRINGS.CHARACTERS.WEBBER.DESCRIBE.COFFEE = "Just like Dad!"
-    
-STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.COFFEE = "Insomnia never bothered me anyway."
-    
-STRINGS.CHARACTERS.WOODIE.DESCRIBE.COFFEE = "It has a woody scent. I like my coffee best this way."
-    
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEE = "At long last! Not The Ritz, but will do for now." 
-
-
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BITTERSWEETBUSH = "Looks poisonous if I'm any judge."
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.BITTERSWEETBUSH = "A new plant species? Here comes your discoverer!"
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.BITTERSWEETBUSH = "...Why do I feel like burning you would be enjoyable AND smart?"
 
@@ -160,10 +124,7 @@ STRINGS.CHARACTERS.WEBBER.DESCRIBE.BITTERSWEETBUSH = "Mum said not to eat unknow
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BITTERSWEETBUSH = "Adding your own mark upon this place, Charlie?"
 
 
-
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.DUG_BITTERSWEETBUSH = "Dug up, looks safe... for now."
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.DUG_BITTERSWEETBUSH = "A prepared experimental farmplot sounds like a good idea."
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.DUG_BITTERSWEETBUSH = "Fuel the stakes!"
 
@@ -186,8 +147,6 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.DUG_BITTERSWEETBUSH = "You create it, I spre
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BITTERSWEETBERRIES = "Do those appear toxic or is it just me?"
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.BITTERSWEETBERRIES = "Are those poisonous? ...Best to get to practical tests."
-
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.BITTERSWEETBERRIES = "Fire will purify you... Hopefully."
 
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.BITTERSWEETBERRIES = "Wolfgang likes red berries more!"
@@ -207,10 +166,7 @@ STRINGS.CHARACTERS.WEBBER.DESCRIBE.BITTERSWEETBERRIES = "I have a bad feeling ab
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BITTERSWEETBERRIES = "I think I'm playing with fire."
 
 
-
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BITTERSWEETBERRIES_COOKED = "They don't look half that bad as raw... That's still worlds away from \"tasty\"."
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.BITTERSWEETBERRIES_COOKED = "Let's see how toxic this variant is."
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.BITTERSWEETBERRIES_COOKED = "Fire purifies everything... Or does it?"
 
@@ -231,9 +187,7 @@ STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.BITTERSWEETBERRIES_COOKED = "They may ret
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BITTERSWEETBERRIES_COOKED = "Could have been worse."
 
 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.MINTYBUSH = "It gives off a fresh aroma."
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.MINTYBUSH = "I could develop a new formula of toothpaste with this plant."
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.MINTYBUSH = "It gives off a fresh aroma. I could develop a new formula of toothpaste with this plant."
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.MINTYBUSH = "Your berries seem too cold for my tastes."
 
@@ -256,8 +210,6 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.MINTYBUSH = "It's been a long time since my 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.DUG_MINTYBUSH = "I can use it as an air freshener anywhere now."
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.DUG_MINTYBUSH = "It's ready to be planted in a better place where SCIENCE reigns!"
-
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.DUG_MINTYBUSH = "Not so cool now, are you?"
 
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.DUG_MINTYBUSH = "My own toothpaste bush."
@@ -277,57 +229,7 @@ STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.DUG_MINTYBUSH = "I can pay homage to Frey
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.DUG_MINTYBUSH = "A promise of gardening. Ugh."
 
 
-
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.BITTERSWEETBERRIES = ""
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WILLOW.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WENDY.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WOODIE.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WX78.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WEBBER.DESCRIBE.BITTERSWEETBERRIES = ""
-
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BITTERSWEETBERRIES = ""
-
-
-
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WILLOW.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WENDY.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WOODIE.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WX78.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WEBBER.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BITTERSWEETBERRIES_COOKED = ""
-
-
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.REINGOAT = "They look a bit tipsy."
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.REINGOAT = "I wonder what causes the red nose?"
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.REINGOAT = "You'd better cut down on drinking."
 
@@ -350,8 +252,6 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.REINGOAT = "This is amusing... for a plebeia
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.LEIF_SNOW = "A peculiar blend of the festive and the deadly."
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.LEIF_SNOW = "But this doesn't mean Aunt Debbie is coming for Christmas, does it?"
-
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.LEIF_SNOW = "Still cheerier than Christmas at the orphanage."
 
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.LEIF_SNOW = "Christmas tree walking?!"
@@ -373,8 +273,6 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.LEIF_SNOW = "What trickery is that?! This lo
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.RABBIT_SNOW = "Rabbits prepare for winter too."
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.RABBIT_SNOW = "It clearly changes its fur for winter!"
-
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.RABBIT_SNOW = "You're white like a dove now. I still want to eat you."
 
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.RABBIT_SNOW = "White! Cuddly! TASTY!"
@@ -394,9 +292,7 @@ STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.RABBIT_SNOW = "Their coat changes with 
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.RABBIT_SNOW = "I swear the earmuffs I will make of you will be more dapper than the first pair."
 
 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.PERMA_WALRUS_CAMP = "I have a bad feeling about this."
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.PERMA_WALRUS_CAMP = "This looks more permanent. Should I prepare for an expeditious retreat?"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PERMA_WALRUS_CAMP = "I have a bad feeling about this. Should I prepare for an expeditious retreat?"
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.PERMA_WALRUS_CAMP = "I will fight you with FIRE."
 
@@ -417,9 +313,8 @@ STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.PERMA_WALRUS_CAMP = "Thor, give me your m
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PERMA_WALRUS_CAMP = "I guess an expeditious retreat from this place would be smart."
 
 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.POND_OPEN = "I should seize the opportunity before it freezes over."
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.POND_OPEN = "Since it still hasn't frozen over, I could revise my bathyscaphe project."
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.POND_OPEN = "I should seize the opportunity before it freezes over."
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.POND_OPEN = "Do I need a fishing permit like in Girl Scouts?"
 
@@ -442,8 +337,6 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.POND_OPEN = "I'm too delicate to bathe in TH
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGMAN_BLUE = "A surprisingly cool pigman."
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.PIGMAN_BLUE = "A new guinea pig for my experiments?"
-
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGMAN_BLUE = "Sorry, it wouldn't work out. You're cool, I'm hot. A clash of priorities."
 
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PIGMAN_BLUE = "Blue, but still made of bacon."
@@ -464,8 +357,6 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGMAN_BLUE = "If you aimed for cool, Charli
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGMAN_GRAY = "They don't look too benevolent."
-
---STRINGS.CHARACTERS.WILSON.DESCRIBE.PIGMAN_GRAY = "I've never seen your kind before. Care to play my guinea pig?"
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGMAN_GRAY = "Ashen grey. I guess you might not be that bad."
 
@@ -488,8 +379,6 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGMAN_GRAY = "A slobbering fool, slightly m
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGKING_GRAY = "His Plumpness seems to have netted himself a rival."
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.PIGKING_GRAY = "As much as I hate it myself, exercise outdoors could help you."
-
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGKING_GRAY = "You're completely ashen. Do you want an ambassador?"
 
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PIGKING_GRAY = "All fat, no muscles. Wolfgang disapproves."
@@ -511,8 +400,6 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGKING_GRAY = "Someone has to be on the top
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGKING_BLUE = "Cold never bothered him anyway."
 
---STRINGS.CHARACTERS.WILSON.DESCRIBE.PIGKING_BLUE = "How... festive."
-
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGKING_BLUE = "More Christmasy feels? I feel like parting with my meal, ugh..."
 
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PIGKING_BLUE = "Has Christmas gear, but no muscles, bah."
@@ -532,6 +419,151 @@ STRINGS.CHARACTERS.WEBBER.DESCRIBE.PIGKING_BLUE = "Will you give us presents?"
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGKING_BLUE = "Transient's spin on Santa Claus, heh."
 
 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.PERMA_GRASSGEKKO = STRINGS.CHARACTERS.GENERIC.DESCRIBE.GRASSGEKKO
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGKING_SLIMEY = "A king should never look so hobo-ish, bah!"
 
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.MIMI = "Mimi?"
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGKING_SLIMEY = "You need some cleansing fire, methinks."
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.PIGKING_SLIMEY = "This one is ready to meet death. In fact, the smells suggest the decay has already started."
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PIGKING_SLIMEY = "Big piggie smelly."
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.PIGKING_SLIMEY = "Whoa, buddy, go jump in some stream or somethin'!"
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.PIGKING_SLIMEY = "THE DECAY OF MEATBAG SOCIETY AT ITS BEST."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.PIGKING_SLIMEY = "Ugh, how utterly unhygienic!"
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.PIGKING_SLIMEY = "Wow, nobody tells THIS ONE to brush his teeth!"
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.PIGKING_SLIMEY = "A waggling mass of yuckiness and cowardice."
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGKING_SLIMEY = "I need to go leeward with this churl here."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGHOUSE_BLUE = "Is it time for Christmas yet?"
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGHOUSE_BLUE = "The house is so painstakingly decorated... The orphanage wouldn't bother."
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.PIGHOUSE_BLUE = "I find the spirit of cheer insulting."
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PIGHOUSE_BLUE = "Christmas time! Piggy, you have gingebreads?"
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.PIGHOUSE_BLUE = "Reminds me of the winters back home."
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.PIGHOUSE_BLUE = "YES! MORE GRATUITOUS ELECTRICITY!"
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.PIGHOUSE_BLUE = "The pigmen must be truly culturally-develop down here to display such sense of waking aesthetics."
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.PIGHOUSE_BLUE = "Dad and Grandfather would decorate the same way!"
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.PIGHOUSE_BLUE = "Come out and grapple with me! ...To celebrate, of course. Or something."
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGHOUSE_BLUE = "Plebeians and their lowly needs of aesthetics."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGHOUSE_YELLOW = "This ramshackle place isn't welcoming in the slightest."
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGHOUSE_YELLOW = "I have a bad feeling about this. Slime doesn't burn well."
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.PIGHOUSE_YELLOW = "It oozes primordial mucus."
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PIGHOUSE_YELLOW = "Slime and grime, yuck!"
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.PIGHOUSE_YELLOW = "My, worse than a camp of twelve lumberjacks."
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.PIGHOUSE_YELLOW = "DISGUST TRIGGER ACTIVATED."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.PIGHOUSE_YELLOW = "The inhabitant knows nothing of modern hygiene - or any hygiene, to think of it."
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.PIGHOUSE_YELLOW = "Mom wouldn't like me getting near this. Gross."
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.PIGHOUSE_YELLOW = "What gross inhabitants may dwell in such a structure?"
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGHOUSE_YELLOW = "Settled hobos. Disgusting."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGHOUSE_GRAY = "So gloomy. How can anyone live there?"
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGHOUSE_GRAY = "Ashen walls and embers behind the window. Let me in!"
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.PIGHOUSE_GRAY = "A caretaker's abode. Shall we knock, Abigail?"
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PIGHOUSE_GRAY = "Wolfgang hates scary houses."
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.PIGHOUSE_GRAY = "Like a house of the lost North Carolina tribe."
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.PIGHOUSE_GRAY = "FLESHLING RECHARGE STATION."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.PIGHOUSE_GRAY = "I have read about enough haunted dilapidated houses preying on men. I'm onto you."
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.PIGHOUSE_GRAY = "Are there ghosts inside?"
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.PIGHOUSE_GRAY = "So gloomy it inspires fear of Ragnarök."
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGHOUSE_GRAY = "Those attempts at architecture. Laughable."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.GIANT_BUNNYMAN = "WALLACE?!"
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.GIANT_BUNNYMAN = "Fire! Kill it with fire!"
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.GIANT_BUNNYMAN = "How long did it suffer the woes of existence to have grown that big?"
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.GIANT_BUNNYMAN = "Small bunny, small meat. Big bunny, BIG MEAT! LOTS OF!"
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.GIANT_BUNNYMAN = "I swear this is against nature!"
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.GIANT_BUNNYMAN = "AN UPGRADED RABBIT. PREPARE FOR EXTERMINATION."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.GIANT_BUNNYMAN = "It must lack any predators to have evolved into its current shape. Marvellous."
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.GIANT_BUNNYMAN = "We're afraid of this big bunny."
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.GIANT_BUNNYMAN = "Rabbits become worthy foes! What is this world coming to?"
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.GIANT_BUNNYMAN = "Like in a cheap fairytale."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SNAKE = "Careful, it may bite!"
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.SNAKE = "I see anger burning inside of this reptile."
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.SNAKE = "Hello, snake. Care to play Cleopatra?"
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.SNAKE = "Some people eat snakes. Is Wolfgang one of them?"
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.SNAKE = "\"Red and yellow kills a fellow, red and black - friend of Jack\"... I'm not sure about the second."
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.SNAKE = "ITS MOVEMENT MODULE IS PECULIAR."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.SNAKE = "More like Micrurus fulvius or Lampropeltis elapsoides? I'm not THAT eager to learn..."
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.SNAKE = "Cool and creepy. And hissing."
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.SNAKE = "Only a vile fiend resorts to poison!"
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.SNAKE = "Could have thought of that one. Good job, Charlie."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PIGMAN_YELLOW = "They suffer from runny snouts, poor things. Ouch, that wet glare!"
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.PIGMAN_YELLOW = "You apparently love moisture. Eek."
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.PIGMAN_YELLOW = "Is this moisture from tears of despair, pig?"
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PIGMAN_YELLOW = "Smelly, hateful wet meat on legs."
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.PIGMAN_YELLOW = "Oh, that one looks like a fan of wet goop."
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.PIGMAN_YELLOW = "CIRCUIT-THREATENING MOISTURE LEVEL."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.PIGMAN_YELLOW = "A particularly malevolent member of the Suidae. I should placate it by mimicry. Ugh."
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.PIGMAN_YELLOW = "You runny-nosed meanie!"
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.PIGMAN_YELLOW = "I can see through your wet disguise! Fight!"
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PIGMAN_YELLOW = "An odd mix of the scary and the disgusting."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PERMA_GRASSGEKKO = STRINGS.CHARACTERS.GENERIC.DESCRIBE.GRASSGEKKO

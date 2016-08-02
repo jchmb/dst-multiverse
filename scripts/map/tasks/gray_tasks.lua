@@ -28,7 +28,7 @@ AddTask("Grayness two b", {
 	keys_given={KEYS.TIER2},
 	room_choices={
 		["GrayMoonRocks"] = 2,
-		["GrayGoats"] = 2,
+		["GrayGoats"] = 1,
 		["GrayBeardlords"] = 1,
 	},
 	room_bg=GROUND.ASH,

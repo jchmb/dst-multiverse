@@ -9,7 +9,7 @@ local prefabs =
 	"spoiled_food",
 }
 
-local CAFFEINE_SPEED_MODIFIER = 1.5
+local CAFFEINE_SPEED_MODIFIER = 1.4
 local CAFFEINE_DURATION = 6 * 60
 
 local function StartCaffeineFn(inst, eater)

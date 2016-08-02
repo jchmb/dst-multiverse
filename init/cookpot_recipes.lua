@@ -25,3 +25,8 @@ AddCookerRecipe("cookpot", {
 	cooktime = .25,
 	tags = {},
 })
+
+local preparedFoods = GLOBAL.require("newpreparedfoods")
+for k,v in pairs(preparedFoods) do
+	AddCookerRecipe("cookpot", v)
+end

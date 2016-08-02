@@ -222,6 +222,11 @@ local function poisonfn()
 
 	inst:AddTag("poisonous")
 	--inst.components.combat.poisonous = true
+
+	if not TheWorld.ismastersim then
+        return inst
+    end
+	
 	inst.components.lootdropper:AddChanceLoot("venom_gland", 0.25)
 
 	MakeMediumBurnableCharacter(inst, "hound_body")

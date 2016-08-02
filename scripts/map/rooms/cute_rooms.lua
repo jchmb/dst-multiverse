@@ -1,13 +1,14 @@
 local Layouts = GLOBAL.require("map/layouts").Layouts
 Layouts["BunnymanFarmers"] = GLOBAL.require("map/layouts/bunnyman_farmers")
 Layouts["GentleBunnyman"] = GLOBAL.require("map/layouts/gentle_bunnyman")
+Layouts["TrapRabbitMeat"] = GLOBAL.require("map/layouts/trap_rabbit_meat")
 
 AddStandardRoom(
 	"BGCuteFungus",
 	GROUND.FUNGUS,
 	0.4,
 	{
-		carrot_planted = 0.2,
+		carrot_planted = 0.1,
 		evergreen = 8,
 		mushtree_tall = 2,
 		red_mushroom = 0.1,
@@ -31,7 +32,7 @@ AddRoom("CuteBunnymanTown", {
 		distributepercent = 0.07,
 		distributeprefabs = {
 			fireflies = 0.2,
-			carrot_planted = 1,
+			carrot_planted = 0.1,
 			colored_rabbithouse = 0.1,
 			flower = 0.1,
 			mushtree_medium = 2,
@@ -54,7 +55,7 @@ AddRoom("CuteBunnymanTown2", {
 		distributepercent = 0.07,
 		distributeprefabs = {
 			fireflies = 0.2,
-			carrot_planted = 0.5,
+			carrot_planted = 0.1,
 			berrybush = 0.5,
 			berrybush_juicy = 0.25,
 			colored_rabbithouse = 0.1,
@@ -78,7 +79,7 @@ AddRoom("CuteBunnymanTown3", {
 		distributepercent = 0.07,
 		distributeprefabs = {
 			fireflies = 0.2,
-			carrot_planted = 1,
+			carrot_planted = 0.1,
 			colored_rabbithouse = 0.1,
 			sapling = 0.2,
 			twiggytree = 0.2,
@@ -223,7 +224,7 @@ AddRoom("CuteFriends", {
 		},
 		distributepercent = 0.2,
 		distributeprefabs = {
-			carrot_planted = 1,
+			carrot_planted = 0.1,
 			grass = 0.2,
 			colored_rabbithouse = 0.2,
 			pighouse = 0.2,
@@ -290,7 +291,7 @@ AddRoom("CuteMagicalDeciduous", {
 			berrybush= 0.5,
 			berrybush_juicy = 0.05,
 
-			carrot_planted = 0.8,
+			carrot_planted = 0.2,
 			red_mushroom = 1,
 			blue_mushroom = 1,
 			green_mushroom = 1,
@@ -319,7 +320,7 @@ AddRoom("CuteDeepDeciduous", {
 		distributeprefabs={
 			grass = .03,
 			sapling= 0.2,
-			carrot_planted=0.5,
+			carrot_planted=0.2,
 
 			mushtree_medium = 2,
 			mushtree_small = 2,
@@ -369,7 +370,7 @@ AddStandardRoom(
 	{
 		mushtree_tall = 10,
 		fireflies = 4,
-		carrot_planted = 0.5,
+		carrot_planted = 0.1,
 		rabbithole = 0.2,
 		colored_rabbithouse = 0.6,
 		rabbithouse = 0.15,
@@ -384,6 +385,7 @@ AddCenterRoom(
 		fireflies = 6,
 		grass = 0.6,
 		colored_rabbithouse = 0.2,
+		carrot_planted = 0.2,
 		rabbithole = 0.5,
 	},
 	{
@@ -404,6 +406,7 @@ AddStandardRoom(
 		hatrabbithouse = 0.3,
 		mushtree_tall = 7,
 		mushtree_medium = 5,
+		carrot_planted = 0.1,
 	},
 	{},
 	{},

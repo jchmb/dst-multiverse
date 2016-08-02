@@ -84,6 +84,8 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/coffeebeans_cooked.xml" ),
 	Asset("IMAGE", "images/inventoryimages/coffee.tex" ),
 	Asset("ATLAS", "images/inventoryimages/coffee.xml" ),
+	Asset("IMAGE", "images/inventoryimages/coffeeham.tex" ),
+	Asset("ATLAS", "images/inventoryimages/coffeeham.xml" ),
 	Asset("IMAGE", "images/inventoryimages/mucus.tex" ),
 	Asset("ATLAS", "images/inventoryimages/mucus.xml" ),
 	Asset("IMAGE", "images/inventoryimages/venom_gland.tex" ),
@@ -115,4 +117,18 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_pond_open.xml"),
 	Asset("IMAGE", "map_icons/minimap_rock_slimey.tex"),
 	Asset("ATLAS", "map_icons/minimap_rock_slimey.xml"),
+	Asset("IMAGE", "map_icons/minimap_migration_portal.tex"),
+	Asset("ATLAS", "map_icons/minimap_migration_portal.xml"),
+
+	-- Minimap icons for each portal
+	Asset("IMAGE", "map_icons/minimap_portal_cute.tex"),
+	Asset("ATLAS", "map_icons/minimap_portal_cute.xml"),
+	Asset("IMAGE", "map_icons/minimap_portal_chezz.tex"),
+	Asset("ATLAS", "map_icons/minimap_portal_chezz.xml"),
+	Asset("IMAGE", "map_icons/minimap_portal_gray.tex"),
+	Asset("ATLAS", "map_icons/minimap_portal_gray.xml"),
+	Asset("IMAGE", "map_icons/minimap_portal_slimey.tex"),
+	Asset("ATLAS", "map_icons/minimap_portal_slimey.xml"),
+	Asset("IMAGE", "map_icons/minimap_portal_snowy.tex"),
+	Asset("ATLAS", "map_icons/minimap_portal_snowy.xml"),
 }

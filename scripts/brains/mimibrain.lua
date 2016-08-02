@@ -34,6 +34,10 @@ local function ShouldRunFn(inst, hunter)
     end
 end
 
+local function GetLeader(inst)
+    return inst.components.follower.leader
+end
+
 local function GetPoop(inst)
     local target = nil
 
@@ -274,18 +278,14 @@ local function KeepFaceTargetFn(inst, target)
     return target == inst.components.combat.target
 end
 
-local function GoHome(inst)
-    local homeseeker = inst.components.homeseeker
-    if homeseeker and homeseeker.home and homeseeker.home:IsValid()
-        and (not homeseeker.home.components.burnable or not homeseeker.home.components.burnable:IsBurning()) then
-        return BufferedAction(inst, inst.components.homeseeker.home, ACTIONS.GOHOME)
-    end
-end
-
 local function EquipWeapon(inst, weapon)
     if not weapon.components.equippable:IsEquipped() then
         inst.components.inventory:Equip(weapon)
     end
+end
+
+local function getLeaderPos(inst)
+    return inst.components.follower.leader and inst.components.follower.leader.Transform:GetWorldPosition() or nil
 end
 
 function MimiBrain:OnStart()
@@ -294,10 +294,6 @@ function MimiBrain:OnStart()
     {
         WhileNode( function() return self.inst.components.hauntable and self.inst.components.hauntable.panic end, "PanicHaunted", Panic(self.inst)),
         WhileNode( function() return self.inst.components.health.takingfiredamage end, "OnFire", Panic(self.inst)),
-
-        --Monkeys go home when quakes start.
-        EventNode(self.inst, "gohome", 
-            DoAction(self.inst, GoHome)),
 
         --In combat (with the player)... Should only ever use poop throwing.
         RunAway(self.inst, "character", RUN_AWAY_DIST, STOP_RUN_AWAY_DIST, function(hunter) return ShouldRunFn(self.inst, hunter) end),
@@ -337,8 +333,8 @@ function MimiBrain:OnStart()
         
         --Doing nothing
         ChattyNode(self.inst, "MIMI_WANDER",
-            WhileNode(function() return not self.inst.harassplayer and not self.inst.components.combat.target end,
-        "Wander Around Home", Wander(self.inst, function() return self.inst.components.knownlocations:GetLocation("home") end, MAX_WANDER_DIST)))
+            WhileNode(function() return not self.inst.components.combat.target end,
+        "Wander Around Home", Wander(self.inst, function() return GetLeaderPos(self.inst) end, MAX_WANDER_DIST)))
     }, .25)
     self.bt = BT(self.inst, root)
 end

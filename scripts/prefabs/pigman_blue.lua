@@ -278,7 +278,7 @@ local function SetWerePig(inst)
     inst:AddTag("werepig")
     inst:SetBrain(werepigbrain)
     inst:SetStateGraph("SGwerepig")
-    inst.AnimState:SetBuild("werepig_blue_build")
+    inst.AnimState:SetBuild(inst.werepig_build)
 
     inst.components.sleeper:SetResistance(3)
 
@@ -463,6 +463,8 @@ local function common()
 
     inst.OnSave = OnSave
     inst.OnLoad = OnLoad
+
+    inst.werepig_build = "werepig_blue_build"
 
     inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)

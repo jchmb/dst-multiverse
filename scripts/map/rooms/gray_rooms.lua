@@ -1,5 +1,6 @@
 local Layouts = GLOBAL.require("map/layouts").Layouts
 local StaticLayout = GLOBAL.require("map/static_layout")
+Layouts["ChestShadowTrap"] = GLOBAL.require("map/layouts/chest_shadow_trap")
 Layouts["PigKingGray"] = StaticLayout.Get(
 	"map/static_layouts/default_pigking_gray",
 	{
@@ -31,7 +32,6 @@ AddRoom("BGGray", {
 			slurper = 0.03,
 			tallbirdnest = 0.01,
 			beardlordhouse = 0.09,
-			coffeebush = 0.12,
 		}
 	}
 })
@@ -417,6 +417,9 @@ AddRoom("GrayGoats", {
 	value = GROUND.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
+		countstaticlayouts = {
+			["ChestShadowTrap"] = 1,
+		},
 		countprefabs = {
 			lightninggoat = 3,
 		},
@@ -456,8 +459,9 @@ AddStandardRoom(
 	{
 		rock_moon = 0.05,
 		rock1 = 0.1,
-		rocks = 0.05,
-		flint = 0.05,
+		rock2 = 0.05,
+		rocks = 0.03,
+		flint = 0.03,
 	},
 	{
 		tallbirdnest = 3,
