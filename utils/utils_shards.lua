@@ -1,3 +1,9 @@
+--[[
+	Shard Utilities
+	This will attempt to uniformly distirbute connections evenly for all shards, rather than
+	having to set the connections manually.
+--]]
+
 local function InitLinkCountTable(shardIds)
 	local counts = {}
 	for i,shardId in ipairs(shardIds) do
