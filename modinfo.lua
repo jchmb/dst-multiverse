@@ -7,7 +7,7 @@ forumthread = ""
 api_version = 10
 
 -- This guarantees that it will be loaded after some (optional) character mods
-priority = 1
+priority = -1
 
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
