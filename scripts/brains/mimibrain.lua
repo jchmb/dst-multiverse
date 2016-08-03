@@ -28,12 +28,6 @@ local MimiBrain = Class(Brain, function(self, inst)
     Brain._ctor(self, inst)
 end)
 
-local function ShouldRunFn(inst, hunter)
-    if inst.components.combat.target then
-        return hunter:HasTag("player")
-    end
-end
-
 local function GetLeader(inst)
     return inst.components.follower.leader
 end
@@ -199,77 +193,6 @@ local function OnLootingCooldown(inst)
     inst.canlootchests = true
 end
 
-local function AnnoyLeader(inst)
-    if inst.sg:HasStateTag("busy") then
-        return
-    end
-    local player = inst.harassplayer -- You will only ever harass the player.
-    local p_pt = player:GetPosition()
-    local m_pt = inst:GetPosition()
-    local ents = TheSim:FindEntities(m_pt.x, m_pt.y, m_pt.z, 30,
-        nil,
-        { "INLIMBO", "catchable", "fire", "irreplaceable" },
-        { "_inventoryitem", "_container" })
-
-    --Can we hassle the player by taking items from stuff he has killed or worked?
-    for i, v in ipairs(ents) do
-        if v.components.inventoryitem ~= nil and v.components.inventoryitem.canbepickedup and not v.components.inventoryitem:IsHeld() and v:GetTimeAlive() < 5 then
-            return BufferedAction(inst, v, ACTIONS.PICKUP)
-        end
-    end
-
-    --Can we hassle our leader by taking the items he wants?
-    local ba = player:GetBufferedAction()
-    if ba ~= nil and ba.action.id == "PICKUP" then
-        --The player wants to pick something up. Am I closer than the player?
-        local tar = ba.target
-        if tar ~= nil and tar:IsValid() and tar.components.inventoryitem ~= nil and not tar.components.inventoryitem:IsHeld() then
-            local t_pt = tar:GetPosition()
-            if distsq(p_pt, t_pt) > distsq(m_pt, t_pt) then
-                --I'm closer to the item than the player! Lets go get it!
-                return BufferedAction(inst, tar, ACTIONS.PICKUP)
-            end
-        end
-    end
-
-    --Can we hassle our leader by toying with his chests?
-    --Default to true when originally nil
-    if inst.canlootchests ~= false then
-        local items = {}
-        for i, v in ipairs(ents) do
-            local cont = v.components.container
-            if cont ~= nil and
-                cont.canbeopened and
-                not cont:IsOpen() and
-                v:GetDistanceSqToPoint(p_pt) < 225--[[15 * 15]] then
-                for k = 1, cont.numslots do
-                    local item = cont.slots[k]
-                    if item ~= nil then
-                        table.insert(items, item)
-                    end
-                end
-            end
-        end
-
-        if #items > 0 then
-            inst.canlootchests = false
-            inst:DoTaskInTime(math.random(15, 30), OnLootingCooldown)
-            local item = items[math.random(#items)]
-            local act = BufferedAction(inst, item, ACTIONS.STEAL)
-            act.validfn = function()
-                if item.components.inventoryitem ~= nil then
-                    local owner = item.components.inventoryitem.owner
-                    if owner ~= nil and not (owner.components.burnable ~= nil and owner.components.burnable:IsBurning()) then
-                        local cont = owner.components.container
-                        return cont ~= nil and cont.canbeopened and not cont:IsOpen()
-                    end
-                end
-            end
-            return act
-        end
-    end
-end
-
 local function GetFaceTargetFn(inst)
     return inst.components.combat.target
 end
@@ -295,13 +218,6 @@ function MimiBrain:OnStart()
         WhileNode( function() return self.inst.components.hauntable and self.inst.components.hauntable.panic end, "PanicHaunted", Panic(self.inst)),
         WhileNode( function() return self.inst.components.health.takingfiredamage end, "OnFire", Panic(self.inst)),
 
-        --In combat (with the player)... Should only ever use poop throwing.
-        RunAway(self.inst, "character", RUN_AWAY_DIST, STOP_RUN_AWAY_DIST, function(hunter) return ShouldRunFn(self.inst, hunter) end),
-        WhileNode(function() return self.inst.components.combat.target and self.inst.components.combat.target:HasTag("player") and self.inst.HasAmmo(self.inst) end, "Attack Player",
-            SequenceNode({
-                ActionNode(function() EquipWeapon(self.inst, self.inst.weaponitems.thrower) end, "Equip thrower"),
-                ChaseAndAttack(self.inst, MAX_CHASE_TIME, MAX_CHASE_DIST),
-            })),
         --Pick up poop to throw
         WhileNode(function() return self.inst.components.combat.target and self.inst.components.combat.target:HasTag("player") and not self.inst.HasAmmo(self.inst) end, "Pick Up Poop", 
             DoAction(self.inst, GetPoop)),
