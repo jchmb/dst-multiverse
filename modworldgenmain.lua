@@ -31,8 +31,10 @@ modimport("init/mod_layouts.lua")
 modimport("scripts/map/locations/location_snow")
 modimport("scripts/map/locations/location_slimey")
 
-modimport("scripts/map/tasksets/default_modified_taskset")
-modimport("scripts/map/levels/defaultmodifiedlevel")
+if GetModConfigBoolean("UseMigrationPortals") then
+	modimport("scripts/map/tasksets/default_modified_taskset")
+	modimport("scripts/map/levels/defaultmodifiedlevel")
+end
 
 modimport("scripts/map/rooms/gray_rooms")
 modimport("scripts/map/tasks/gray_tasks")
