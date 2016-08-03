@@ -1,12 +1,15 @@
 GLOBAL.global("JUDGEMENTS")
+
+local pigmanfn = function(victim)
+	if not victim.components.werebeast or not victim.components.werebeast:IsInWereState() then
+		return 3
+	else
+		return 0	
+	end
+end
+
 GLOBAL.JUDGEMENTS = {
-	["pigman"] = function(victim)
-			if not victim.components.werebeast or not victim.components.werebeast:IsInWereState() then
-				return 3
-			else
-				return 0	
-			end
-		end,
+	["pigman"] = pigmanfn,
 	["babybeefalo"] = 6,
 	["teenbird"] = 2,
 	["smallbird"] = 6,
@@ -22,4 +25,12 @@ GLOBAL.JUDGEMENTS = {
 	["penguin"] = 2,
 	["glommer"] = 50,
 	["catcoon"] = 5,
+	
+	-- New prefabs
+	["hatbunnyman"] = 4,
+	["colored_bunnyman"] = 4,
+	["giant_bunnyman"] = 5,
+	["pigman_gray"] = pigmanfn,
+	["pigman_blue"] = pigmanfn,
+	["pigman_yellow"] = pigmanfn,
 }
