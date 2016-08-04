@@ -36,6 +36,12 @@ local function GenerateConnection(shardX, shardY, counts, connections)
 	counts[shardY] = counts[shardY] + 1
 end
 
+local function GetAvailableShard(shardIds, counts, k)
+	for i,v in ipairs(shardIds) do
+
+	end
+end
+
 function GenerateConnections(shardIds, numPortals)
 	numPortals = numPortals or 10
 	local counts = InitLinkCountTable(shardIds)
@@ -45,12 +51,8 @@ function GenerateConnections(shardIds, numPortals)
 		local n = numPortals - counts[shardX]
 		if n > 0 then
 			for j=1,n do
-				local remaining = GetRemainingShards(shardIds, shardX, counts, numPortals)
-				if #remaining > 0 then
-					local shardY = remaining[k]
-					GenerateConnection(shardX, shardY, counts, connections)
-					k = (k % #remaining) + 1
-				end
+				local shardY = remaining[k]
+				GenerateConnection(shardX, shardY, counts, connections)
 			end
 		end
 	end

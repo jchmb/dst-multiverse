@@ -119,3 +119,7 @@ function AddTaskWrapped(task, locks, keys, room_choices, room_bg, background_roo
 		colour={r=1,g=0.6,b=1,a=1},
 	})
 end
+
+function AddStandardTerrainFilter(prefab)
+	GLOBAL.terrain.filter[prefab] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER}
+end
