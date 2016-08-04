@@ -60,9 +60,9 @@ AddTile(
 	"ash",
 	{
 		noise_texture = "levels/textures/noise_ash.tex",
-		runsound = "dontstarve/movement/run_mud",
-		walksound = "dontstarve/movement/run_mud",
-		snowsound = "dontstarve/movement/run_mud",
+		runsound = "dontstarve/movement/run_dirt",
+		walksound = "dontstarve/movement/walk_dirt",
+		snowsound = "dontstarve/movement/run_snow",
 		mudsound = "dontstarve/movement/run_mud",
 	},
 	{noise_texture = "levels/textures/mini_noise_ash.tex"}

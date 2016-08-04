@@ -1,46 +1,35 @@
-local creatures = {
-	{
-		prefab = "crawlingnightmare",
-		count = 4,
-	},
-}
-
 local function triggertrap(inst, scenariorunner, data)
 	local player = data.player
 	inst.SoundEmitter:PlaySound("dontstarve/cave/nightmare_spawner_open_warning")
-	if player and player.components.sanity then
-		player.components.sanity:SetPercent(0.1)
-		for i,v in pairs(creatures) do
-			for j=1,v.count do
-				local creature = SpawnPrefab(v.prefab)
-				creature.Transform:SetPosition(inst.Transform:GetWorldPosition())
+	if player then
+		for i=1,5 do
+			local pt = Vector3(player.Transform:GetWorldPosition())
+			local theta = ((i - 1) / 5) * 2 * PI
+    		local radius = 30
+			local offset = FindWalkableOffset(pt, theta, radius, 12, true)
+			if offset then
+				local spawn_pt = pt + offset
+				local spawn = SpawnPrefab("worm")
+				if spawn then
+					spawn.Physics:Teleport(spawn_pt:Get())
+					spawn:FacePoint(pt)
+					spawn.components.combat:SuggestTarget(player)
+				end
 			end
 		end
 	end
 end
 
-local function OnCreate(inst, scenariorunner)
-	chestfunctions.AddChestItems(inst, loot)
-end
-
 local function OnLoad(inst, scenariorunner)
 	inst.scene_triggerfn = function(inst, data)  
-		data.player = data.doer or data.worker
+		data.player = data.owner
 		triggertrap(inst, scenariorunner, data)
 		scenariorunner:ClearScenario()
 	end
-	inst:ListenForEvent("onopen", inst.scene_triggerfn)
-	inst:ListenForEvent("worked", inst.scene_triggerfn)
+	inst:ListenForEvent("onpickup", inst.scene_triggerfn)
 end
-
-local function OnDestroy(inst)
-	chestfunctions.OnDestroy(inst)
-end
-
 
 return
 {
-	OnCreate = OnCreate,
 	OnLoad = OnLoad,
-	OnDestroy = OnDestroy
 }

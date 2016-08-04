@@ -13,6 +13,7 @@ local prefabs =
 
 local function custom_postinit(inst)
     inst:AddComponent("weather")
+    inst:AddComponent("nightmareclock")
 end
 
 return MakeWorldNetwork("forest_gray_network", prefabs, assets, custom_postinit)

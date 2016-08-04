@@ -1,7 +1,7 @@
 AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	id = "SNOWWORLDPRESET",
-	name="Snow World",
-	desc="A world with lots of snow and ice",
+	name="Snowland",
+	desc="A world of snow and ice",
 	location = "forest_snow",
 	version = 2,
 	overrides={

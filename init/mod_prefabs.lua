@@ -52,6 +52,10 @@ PrefabFiles = {
 	-- Gray mobs and spawners
 	"beardlordhouse",
 	"perma_beardlord",
+
+	-- Beaverland mobs and spawners
+	"merm_blue",
+	"mermhouse_blue",
 	
 	-- Items
 	"coffee",
@@ -68,6 +72,7 @@ PrefabFiles = {
 	"new_bushes",
 	"new_veggies",
 	"new_rocks",
+	"new_hats",
 
 	-- Special
 	"mimi",

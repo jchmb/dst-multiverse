@@ -1,7 +1,7 @@
 AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	id = "SLIMEYPRESET",
-	name="Slimey",
-	desc="Slimey",
+	name="Slimeyland",
+	desc="Who drools on the floor?",
 	location = "forest_slimey",
 	version = 2,
 	overrides={

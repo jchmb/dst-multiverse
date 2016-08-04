@@ -1,8 +1,8 @@
 AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	id = "GRAYPRESET",
-	name="Grayness",
-	desc="Grayness",
-	location = "forest",
+	name="Grayland",
+	desc="Everything gray",
+	location = "forest_gray",
 	version = 2,
 	overrides={
 		task_set = "gray",

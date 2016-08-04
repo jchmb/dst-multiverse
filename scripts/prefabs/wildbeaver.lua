@@ -1,5 +1,8 @@
 local assets = {
-    
+    "werebeaver_build",
+    "werebeaver_basic",
+    "werebeaver_fx",
+    "werebeaver_groggy",
 }
 
 local prefabs = {
@@ -10,8 +13,7 @@ local MAX_TARGET_SHARES = 5
 local SHARE_TARGET_DIST = 30
 
 local function CalcSanityAura(inst, observer)
-    return (inst.components.werebeast ~= nil and inst.components.werebeast:IsInWereState() and -TUNING.SANITYAURA_LARGE)
-        or (inst.components.follower ~= nil and inst.components.follower.leader == observer and TUNING.SANITYAURA_SMALL)
+    return (inst.components.follower ~= nil and inst.components.follower.leader == observer and TUNING.SANITYAURA_SMALL)
         or 0
 end
 
@@ -84,27 +86,15 @@ end
 local function OnAttacked(inst, data)
     --print(inst, "OnAttacked")
     local attacker = data.attacker
-    inst:ClearBufferedAction()
-
-    if attacker.prefab == "deciduous_root" and attacker.owner ~= nil then 
-        OnAttackedByDecidRoot(inst, attacker.owner)
-    elseif attacker.prefab ~= "deciduous_root" then
+    if attacker ~= nil then
+        inst:ClearBufferedAction()
         inst.components.combat:SetTarget(attacker)
-
-        if inst:HasTag("werepig") then
-            inst.components.combat:ShareTarget(attacker, SHARE_TARGET_DIST, IsWerePig, MAX_TARGET_SHARES)
-        elseif inst:HasTag("guard") then
-            inst.components.combat:ShareTarget(attacker, SHARE_TARGET_DIST, attacker:HasTag("pig") and IsGuardPig or IsPig, MAX_TARGET_SHARES)
-        elseif not (attacker:HasTag("pig") and attacker:HasTag("guard")) then
-            inst.components.combat:ShareTarget(attacker, SHARE_TARGET_DIST, IsNonWerePig, MAX_TARGET_SHARES)
-        end
+        inst.components.combat:ShareTarget(attacker, SHARE_TARGET_DIST, function(x) x:HasTag("wildbeaver") end, MAX_TARGET_SHARES)
     end
 end
 
 local function OnNewTarget(inst, data)
-    if inst:HasTag("werepig") then
-        inst.components.combat:ShareTarget(data.target, SHARE_TARGET_DIST, IsWerePig, MAX_TARGET_SHARES)
-    end
+   return 
 end
 
 local function NormalRetargetFn(inst)
@@ -126,17 +116,11 @@ local function NormalRetargetFn(inst)
 end
 
 local function NormalKeepTargetFn(inst, target)
-    --give up on dead guys, or guys in the dark, or werepigs
     return inst.components.combat:CanTarget(target)
-        and (target.LightWatcher == nil or target.LightWatcher:IsInLight())
-        and not (target.sg ~= nil and target.sg:HasStateTag("transform"))
 end
 
 local function NormalShouldSleep(inst)
     return DefaultSleepTest(inst)
-        and (inst.components.follower == nil or inst.components.follower.leader == nil
-            or (FindEntity(inst, 6, nil, { "campfire", "fire" }) ~= nil and
-                (inst.LightWatcher == nil or inst.LightWatcher:IsInLight())))
 end
 
 local function GetStatus(inst)
@@ -163,7 +147,8 @@ local function fn()
     inst:AddTag("wildbeaver")
     inst:AddTag("scarytoprey")
     
-    inst.AnimState:SetBank("pigman")
+    inst.AnimState:SetBuild("werebeaver_build")
+    inst.AnimState:SetBank("werebeaver")
     inst.AnimState:PlayAnimation("idle_loop")
     inst.AnimState:Hide("hat")
     
@@ -187,8 +172,8 @@ local function fn()
     inst.components.locomotor.runspeed = TUNING.PIG_RUN_SPEED
     inst.components.locomotor.walkspeed = TUNING.PIG_WALK_SPEED
     
-    inst:SetBrain(normalbrain)
-    inst:SetStateGraph("SGpig")
+    inst:SetBrain(require "brains/wildbeaverbrain")
+    inst:SetStateGraph("SGwildbeaver")
     inst.components.sleeper:SetResistance(2)
 
     inst:AddComponent("bloomer")
@@ -205,12 +190,12 @@ local function fn()
     inst.components.combat:SetDefaultDamage(TUNING.PIG_DAMAGE)
     inst.components.combat:SetAttackPeriod(TUNING.PIG_ATTACK_PERIOD)
     inst.components.combat:SetKeepTargetFunction(NormalKeepTargetFn)
-    inst.components.combat.hiteffectsymbol = "pig_torso"
+    inst.components.combat.hiteffectsymbol = "werebeaver_torso"
     inst.components.health:SetMaxHealth(TUNING.PIG_HEALTH)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
     inst.components.combat:SetTarget(nil)
 
-    MakeMediumBurnableCharacter(inst, "pig_torso")
+    MakeMediumBurnableCharacter(inst, "werebeaver_torso")
 
     inst:AddComponent("named")
     inst.components.named.possiblenames = STRINGS.PIGNAMES

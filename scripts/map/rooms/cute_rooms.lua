@@ -2,6 +2,7 @@ local Layouts = GLOBAL.require("map/layouts").Layouts
 Layouts["BunnymanFarmers"] = GLOBAL.require("map/layouts/bunnyman_farmers")
 Layouts["GentleBunnyman"] = GLOBAL.require("map/layouts/gentle_bunnyman")
 Layouts["TrapRabbitMeat"] = GLOBAL.require("map/layouts/trap_rabbit_meat")
+Layouts["BunnymanFighters"] = GLOBAL.require("map/layouts/bunnyman_fighters")
 
 AddStandardRoom(
 	"BGCuteFungus",
@@ -351,15 +352,10 @@ AddStandardRoom(
 		blue_mushroom = 0.2,
 	},
 	{
-		hatrabbithouse = function() return math.random(2, 3) + 1 end,
 		spiderden = function() return math.random(1, 2) + 1 end,
 	},
-	{},
 	{
-		hatrabbithouse = {
-			startinghat = "footballhat",
-			colorfname = "colored",
-		}
+		["BunnymanFighters"] = 3,
 	}
 )
 

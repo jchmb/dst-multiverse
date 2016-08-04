@@ -32,6 +32,7 @@ AddRoom("BGGray", {
 			slurper = 0.03,
 			tallbirdnest = 0.01,
 			beardlordhouse = 0.09,
+			fissure = 0.01,
 		}
 	}
 })
@@ -203,7 +204,8 @@ AddRoom("GraySwamp", {
 			marsh_tree = 0.05,
 			mermhouse = 0.05,
 			tentacle = 0.1,
-			reeds = 0.15
+			reeds = 0.15,
+			fissure = 0.02,
 		}
 	}
 })
@@ -225,6 +227,7 @@ AddRoom("GrayRocks", {
 			rocky = 0.3,
 			grassgekko = 0.2,
 			rock_ice = 0.4,
+			fissure = 0.01,
 		}
 	}
 })
@@ -370,7 +373,8 @@ AddRoom("GrayHerds", {
 			perma_grass = 0.1,
 			flower_cave = 0.2,
 			rock2 = 0.1,
-			grassgekko = 0.1
+			grassgekko = 0.1,
+			fissure = 0.01,
 		}
 	}
 })
@@ -387,6 +391,7 @@ AddRoom("BGGray2", {
 			coffeebush = 0.1,
 			spiderden = 0.01,
 			basalt = 0.1,
+			fissure = 0.01,
 		}
 	}
 })

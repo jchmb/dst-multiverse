@@ -12,8 +12,8 @@ local gray_tasks = {
 }
 
 AddTaskSetFixed("gray", {
-		name = "Gray",
-		location = "forest",
+		name = "Grayland",
+		location = "forest_gray",
 		tasks = gray_tasks,
 		numoptionaltasks = 0,
 		valid_start_tasks = {

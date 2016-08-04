@@ -30,6 +30,7 @@ modimport("init/mod_layouts.lua")
 
 modimport("scripts/map/locations/location_snow")
 modimport("scripts/map/locations/location_slimey")
+modimport("scripts/map/locations/location_gray")
 
 if GetModConfigBoolean("UseMigrationPortals") then
 	modimport("scripts/map/tasksets/default_modified_taskset")
@@ -61,9 +62,12 @@ modimport("scripts/map/tasks/chezz_tasks")
 modimport("scripts/map/tasksets/chezz_taskset")
 modimport("scripts/map/levels/chezzlevel")
 
---[[
-modimport("scripts/map/rooms/fire_rooms")
-modimport("scripts/map/tasks/fire_tasks")
-modimport("scripts/map/tasksets/fire_taskset")
-modimport("scripts/map/levels/firelevel")
---]]
+modimport("scripts/map/rooms/water_rooms")
+modimport("scripts/map/tasks/water_tasks")
+modimport("scripts/map/tasksets/water_taskset")
+modimport("scripts/map/levels/waterlevel")
+
+-- modimport("scripts/map/rooms/fire_rooms")
+-- modimport("scripts/map/tasks/fire_tasks")
+-- modimport("scripts/map/tasksets/fire_taskset")
+-- modimport("scripts/map/levels/firelevel")

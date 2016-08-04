@@ -12,7 +12,7 @@ local snow_tasks = {
 }
  
 AddTaskSetFixed("snowy", {
-	name = "Snowy",
+	name = "Snowland",
 	location = "forest_snow",
 	tasks = snow_tasks,
 	numoptionaltasks = 0,

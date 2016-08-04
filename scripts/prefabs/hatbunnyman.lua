@@ -253,8 +253,8 @@ end
 
 local function ShouldAcceptItem(inst, item)
 	local testtradefn = HAT_TRADES[inst.startinghat] and HAT_TRADES[inst.startinghat]["test"] or nil
-	if testtradefn then
-		return testtradefn(inst, item)
+	if testtradefn and testtradefn(inst, item) then
+		return true
 	end
 	return
 		(   --accept all hats!
