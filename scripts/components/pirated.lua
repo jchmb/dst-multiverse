@@ -32,6 +32,7 @@ local function SpawnPirate(target, numItems)
 	if spawn_pt then
 		local pirate = SpawnPrefab("piratebunnyman")
 		pirate.numItems = numItems -- Number of items to steal
+		pirate.pirateTarget = target
 		pirate.Physics:Teleport(spaw_pt:Get())
 		pirate:FacePoint(pt)
 	end
@@ -91,8 +92,13 @@ end
 function Pirated:ReleasePirates()
 	local groups = MakeGroups()
 	for i,g in ipairs(groups) do
-		local target = nil
-		target 
+		for j=1,self.numPirates() do
+			local player = g[j % #self.numPirates]
+			local target = GetTargetForPlayer(player)
+			if target ~= nil then
+				SpawnPirate(target, self.numItems)
+			end
+		end
 	end
 end
 
