@@ -55,6 +55,7 @@ local function StealItemsFromContainer(inst)
 				end
 			end
 		until item == nil or inst:IsSatisfied()
+		inst.piratetarget.components.container:Close()
 	end
 end
 
@@ -118,7 +119,8 @@ function PirateBunnymanBrain:OnStart()
             WhileNode(function() return self.inst.components.health.takingfiredamage end, "OnFire", Panic(self.inst)),
             WhileNode(function() return self.inst.components.health:GetPercent() < TUNING.BUNNYMAN_PANIC_THRESH end, "LowHealth", 
                 RunAway(self.inst, "scarytoprey", SEE_PLAYER_DIST, STOP_RUN_DIST)),
-            DoAction(self.inst, FindItemsToStealAction),
+            IfNode(function() not self.inst:IsSatisfied() end, "Find items to steal",
+            	DoAction(self.inst, FindItemsToStealAction)),
             ChaseAndAttack(self.inst, MAX_CHASE_TIME, MAX_CHASE_DIST),
             --DoAction(self.inst, FindFoodAction),
             Wander(self.inst, GetHomePos, MAX_WANDER_DIST)
