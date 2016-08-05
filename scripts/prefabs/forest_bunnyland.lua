@@ -200,6 +200,7 @@ local function master_postinit(inst)
     inst:AddComponent("birdspawner")
     inst:AddComponent("butterflyspawner")
     inst:AddComponent("hounded")
+    inst:AddComponent("pirated")
 
     inst.components.hounded:SetSpawnData(houndspawn)
 
