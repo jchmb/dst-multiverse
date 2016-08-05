@@ -62,85 +62,12 @@ local function CalcSanityAura(inst, observer)
         or 0
 end
 
-local function ShouldAcceptItem(inst, item)
-    return
-        (   --accept all hats!
-            item.components.equippable ~= nil and
-            item.components.equippable.equipslot == EQUIPSLOTS.HEAD
-        ) or
-        (   --accept food, but not too many carrots for loyalty!
-            item.components.edible ~= nil and
-            (   (item.prefab ~= "carrot" and item.prefab ~= "carrot_cooked") or
-                inst.components.follower.leader == nil or
-                inst.components.follower:GetLoyaltyPercent() <= .9
-            )
-        )
-end
-
-local function OnGetItemFromPlayer(inst, giver, item)
-    --I eat food
-    if item.components.edible ~= nil then
-        if item.prefab == "carrot" or item.prefab == "carrot_cooked" then
-            if inst.components.combat:TargetIs(giver) then
-                inst.components.combat:SetTarget(nil)
-            elseif giver.components.leader ~= nil then
-                giver:PushEvent("makefriend")
-                giver.components.leader:AddFollower(inst)
-                inst.components.follower:AddLoyaltyTime(
-                    giver:HasTag("polite")
-                    and TUNING.RABBIT_CARROT_LOYALTY + TUNING.RABBIT_POLITENESS_LOYALTY_BONUS
-                    or TUNING.RABBIT_CARROT_LOYALTY
-                )
-            end
-        end
-        if inst.components.sleeper:IsAsleep() then
-            inst.components.sleeper:WakeUp()
-        end
-    end
-
-    --I wear hats
-    if item.components.equippable ~= nil and item.components.equippable.equipslot == EQUIPSLOTS.HEAD then
-        local current = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
-        if current ~= nil then
-            inst.components.inventory:DropItem(current)
-        end
-        inst.components.inventory:Equip(item)
-        inst.AnimState:Show("hat")
-    end
-end
-
-local function OnRefuseItem(inst, item)
-    inst.sg:GoToState("refuse")
-    if inst.components.sleeper:IsAsleep() then
-        inst.components.sleeper:WakeUp()
-    end
-end
-
 local function OnAttacked(inst, data)
     inst.components.combat:SetTarget(data.attacker)
-    inst.components.combat:ShareTarget(data.attacker, SHARE_TARGET_DIST, function(dude) return dude.prefab == inst.prefab end, MAX_TARGET_SHARES)
-end
-
-local function OnNewTarget(inst, data)
-    inst.components.combat:ShareTarget(data.target, SHARE_TARGET_DIST, function(dude) return dude.prefab == inst.prefab end, MAX_TARGET_SHARES)
-end
-
-local function is_meat(item)
-    return item.components.edible ~= nil  and item.components.edible.foodtype == FOODTYPE.MEAT
 end
 
 local function NormalRetargetFn(inst)
-    return FindEntity(inst, TUNING.PIG_TARGET_DIST,
-        function(guy)
-            return inst.components.combat:CanTarget(guy)
-                and (guy:HasTag("monster")
-                    or (guy.components.inventory ~= nil and
-                        guy:IsNear(inst, TUNING.BUNNYMAN_SEE_MEAT_DIST) and
-                        guy.components.inventory:FindItem(is_meat) ~= nil))
-        end,
-        { "_combat", "_health" }, -- see entityreplica.lua
-        nil,
-        { "monster", "player" })
+    return nil
 end
 
 local function NormalKeepTargetFn(inst, target)
@@ -149,20 +76,6 @@ end
 
 local function giveupstring()
     return "RABBIT_GIVEUP", math.random(#STRINGS["RABBIT_GIVEUP"])
-end
-
-local function battlecry(combatcmp, target)
-    local strtbl =
-        target ~= nil and
-        target.components.inventory ~= nil and
-        target.components.inventory:FindItem(is_meat) ~= nil and
-        "RABBIT_MEAT_BATTLECRY" or
-        "RABBIT_BATTLECRY"
-    return strtbl, math.random(#STRINGS[strtbl])
-end
-
-local function GetStatus(inst)
-    return inst.components.follower.leader ~= nil and "FOLLOWER" or nil
 end
 
 local function LootSetupFunction(lootdropper)
@@ -248,7 +161,7 @@ local function fn()
     inst.components.combat.hiteffectsymbol = "manrabbit_torso"
     inst.components.combat.panic_thresh = TUNING.BUNNYMAN_PANIC_THRESH
 
-    inst.components.combat.GetBattleCryString = battlecry
+    --inst.components.combat.GetBattleCryString = battlecry
     inst.components.combat.GetGiveUpString = giveupstring
 
     MakeMediumBurnableCharacter(inst, "manrabbit_torso")
@@ -258,8 +171,6 @@ local function fn()
     inst.components.named:PickNewName()
 
     ------------------------------------------
-    inst:AddComponent("follower")
-    inst.components.follower.maxfollowtime = TUNING.PIG_LOYALTY_MAXTIME
     ------------------------------------------
     inst:AddComponent("health")
     inst.components.health:StartRegen(TUNING.BUNNYMAN_HEALTH_REGEN_AMOUNT, TUNING.BUNNYMAN_HEALTH_REGEN_PERIOD)
@@ -277,14 +188,6 @@ local function fn()
     ------------------------------------------
 
     inst:AddComponent("knownlocations")
-
-    ------------------------------------------
-
-    inst:AddComponent("trader")
-    inst.components.trader:SetAcceptTest(ShouldAcceptItem)
-    inst.components.trader.onaccept = OnGetItemFromPlayer
-    inst.components.trader.onrefuse = OnRefuseItem
-    inst.components.trader.deleteitemonaccept = false
 
     ------------------------------------------
 
@@ -307,9 +210,9 @@ local function fn()
     inst:ListenForEvent("attacked", OnAttacked)    
     inst:ListenForEvent("newcombattarget", OnNewTarget)
 
-    inst.components.sleeper:SetResistance(2)
-    inst.components.sleeper.sleeptestfn = NocturnalSleepTest
-    inst.components.sleeper.waketestfn = NocturnalWakeTest
+    inst.components.sleeper:SetResistance(8)
+    inst.components.sleeper.sleeptestfn = function() return false end
+    inst.components.sleeper.waketestfn = function() return true end
 
     inst.components.combat:SetDefaultDamage(TUNING.BUNNYMAN_DAMAGE)
     inst.components.combat:SetAttackPeriod(TUNING.BUNNYMAN_ATTACK_PERIOD)
@@ -322,11 +225,6 @@ local function fn()
     inst.components.health:SetMaxHealth(TUNING.BUNNYMAN_HEALTH)
 
     inst.components.trader:Enable()
-
-    local r = math.random() * 0.5 + 0.5
-    local g = math.random() * 0.3 + 0.3
-    local b = math.random() * 0.5
-    inst.AnimState:SetMultColour(r, g, b, 1)
 
     MakeHauntablePanic(inst, 5, nil, 5)
 
