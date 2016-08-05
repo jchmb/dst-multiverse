@@ -27,6 +27,7 @@ PrefabFiles = {
 	"giant_bunnyman",
 	"hatrabbithouse",
 	"hatbunnyman",
+	"piratebunnyman",
 
 	-- Snow mobs and spawners
 	"rabbithole_snow",
