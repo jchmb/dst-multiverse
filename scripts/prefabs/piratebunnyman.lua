@@ -206,6 +206,9 @@ local function fn()
     inst:AddComponent("inspectable")
     inst.components.inspectable.getstatus = GetStatus
     ------------------------------------------
+    
+    inst:AddComponent("builder")
+    inst.components.builder:UnlockRecipe("treasurechest")
 
     inst:ListenForEvent("attacked", OnAttacked)    
     inst:ListenForEvent("newcombattarget", OnNewTarget)
@@ -223,8 +226,9 @@ local function fn()
     inst.components.locomotor.walkspeed = TUNING.BUNNYMAN_WALK_SPEED
 
     inst.components.health:SetMaxHealth(TUNING.BUNNYMAN_HEALTH)
-
-    inst.components.trader:Enable()
+    
+    inst.piratetarget = nil
+    inst.numitems = 0
 
     MakeHauntablePanic(inst, 5, nil, 5)
 
