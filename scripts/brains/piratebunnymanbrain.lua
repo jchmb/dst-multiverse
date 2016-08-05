@@ -44,14 +44,17 @@ end
 
 local function StealItemsFromContainer(inst)
 	if inst.piratetarget and inst.piratetarget.components.container and inst.piratetarget.components.container:IsOpenedBy(inst) then
-		for i=1,inst.piratetarget.components.container.numslots do
-			if inst:IsSatisfied() then
-				local item = inst.piratetarget.components.container:RemoveItemBySlot(i)
-				if item then
-					inst.components.inventory:GiveItem(item)	
+		local item = nil
+		local singleitem = nil
+		repeat
+			item = inst.piratetarget.components.container:FindItem(ShouldStealItem)
+			if item ~= nil then
+				singleitem = inst.piratetarget.components.container:RemoveItem(item, false)
+				if singleitem then
+					inst.components.inventory:GiveItem(singleitem)
 				end
 			end
-		end
+		until item == nil or inst:IsSatisfied()
 	end
 end
 
