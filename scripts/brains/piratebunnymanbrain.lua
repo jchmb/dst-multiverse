@@ -38,8 +38,33 @@ local RUN_AWAY_DIST = 5
 local STOP_RUN_AWAY_DIST = 8
 local SEE_PLAYER_DIST = 6
 
-local function StealItemsAction(inst)
-	
+local function ShouldStealItem(item)
+	return not (item.components.edible and item.components.edible.foodtype == FOODTYPE.MEAT)
+end
+
+local function StealItemsFromContainer(inst)
+	if inst.piratetarget and inst.piratetarget.components.container and inst.piratetarget.components.container:IsOpenedBy(inst) then
+		for i=1,inst.piratetarget.components.container.numslots do
+			if inst:IsSatisfied() then
+				local item = inst.piratetarget.components.container:RemoveItemBySlot(i)
+				if item then
+					inst.components.inventory:GiveItem(item)	
+				end
+			end
+		end
+	end
+end
+
+local function FindItemsToStealAction(inst)
+	local target = inst:FindStealableItems()
+	if target then
+		inst.piratetarget = target
+		if target.components.container then
+			return BufferedAction(inst, target, ACTIONS.RUMMAGE)	
+		elseif target.components.inventoryitem then
+			return BufferedAction(inst, target, ACTIONS.PICKUP)
+		end
+	end
 end
 
 local function FindFoodAction(inst)
@@ -90,6 +115,7 @@ function PirateBunnymanBrain:OnStart()
             WhileNode(function() return self.inst.components.health.takingfiredamage end, "OnFire", Panic(self.inst)),
             WhileNode(function() return self.inst.components.health:GetPercent() < TUNING.BUNNYMAN_PANIC_THRESH end, "LowHealth", 
                 RunAway(self.inst, "scarytoprey", SEE_PLAYER_DIST, STOP_RUN_DIST)),
+            DoAction(self.inst, FindItemsToStealAction),
             ChaseAndAttack(self.inst, MAX_CHASE_TIME, MAX_CHASE_DIST),
             --DoAction(self.inst, FindFoodAction),
             Wander(self.inst, GetHomePos, MAX_WANDER_DIST)
