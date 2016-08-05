@@ -22,6 +22,8 @@ local function fn()
     inst.components.herd:SetUpdateRange(20)
     inst.components.herd:SetMaxSize(MAX_SIZE)
     inst.components.herd:SetOnEmptyFn(inst.Remove)
+    
+    inst.settlelocation = nil
 
     return inst
 end
