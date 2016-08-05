@@ -31,8 +31,8 @@ local function SpawnPirate(target, numItems)
 	local spawn_pt = GetSpawnPoint(pt)
 	if spawn_pt then
 		local pirate = SpawnPrefab("piratebunnyman")
-		pirate.numItems = numItems -- Number of items to steal
-		pirate.pirateTarget = target
+		pirate.numitems = numItems -- Number of items to steal
+		pirate.piratetarget = target
 		pirate.Physics:Teleport(spaw_pt:Get())
 		pirate:FacePoint(pt)
 	end
