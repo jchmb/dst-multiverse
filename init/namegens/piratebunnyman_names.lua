@@ -1,0 +1,18 @@
+STRINGS.PIRATEBUNNYMAN_NAMES = {
+	"Cask Head Christina",
+	"Cask Lancelot",
+	"Cleat Slinger Gregory",
+	"Halyard Face Stephen",
+	"Iron Breath Oliver",
+	"Cutlass Martha",
+	"Handspike Eye Frideswide",
+	"Larder Bridget",
+	"Loggerhead Prudence",
+	"Casket Footed Susanna",
+	"Whitebeard",
+	"Captain Ale",
+	"Marlinspike Eye Avery",
+	"Sly Jib Giles",
+	"Bulkhead Mary",
+	"Jetty Eyed Judith",
+}
