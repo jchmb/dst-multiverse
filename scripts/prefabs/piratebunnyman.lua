@@ -169,6 +169,9 @@ local function fn()
     inst:AddComponent("named")
     inst.components.named.possiblenames = STRINGS.BUNNYMANNAMES
     inst.components.named:PickNewName()
+    
+    inst:AddComponent("herd")
+    inst.components.herd:SetHerdPrefab("piratebunnymanherd")
 
     ------------------------------------------
     ------------------------------------------
@@ -209,6 +212,7 @@ local function fn()
     
     inst:AddComponent("builder")
     inst.components.builder:UnlockRecipe("treasurechest")
+    inst.components.builder:UnlockRecipe("boards")
 
     inst:ListenForEvent("attacked", OnAttacked)    
     inst:ListenForEvent("newcombattarget", OnNewTarget)
