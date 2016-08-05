@@ -78,6 +78,28 @@ local function giveupstring()
     return "RABBIT_GIVEUP", math.random(#STRINGS["RABBIT_GIVEUP"])
 end
 
+local STEAL_DIST = 10
+
+local function FindStealableTargets(inst)
+	local container = FindEntity(inst, STEAL_DIST, function(x) x.components.container end)
+	if container then
+		return container
+	end
+	return FindEntity(inst, STEAL_DIST, function(x) x.components.inventoryitem end)
+end
+
+local function MustFlee(inst)
+	return inst.components.health:GetPercent() <= 0.4
+end
+
+local function IsSatisfied(inst)
+	local count = 0
+	for i,v in ipairs(inst.components.inventory.itemslots) do
+		count = v.components.stackable and v.components.stackable:StackSize() or 1
+	end
+	return count >= inst.numitems
+end
+
 local function LootSetupFunction(lootdropper)
     local guy = lootdropper.inst.causeofdeath
     if IsCrazyGuy(guy ~= nil and guy.components.follower ~= nil and guy.components.follower.leader or guy) then
@@ -230,6 +252,10 @@ local function fn()
     inst.components.locomotor.walkspeed = TUNING.BUNNYMAN_WALK_SPEED
 
     inst.components.health:SetMaxHealth(TUNING.BUNNYMAN_HEALTH)
+    
+    inst.IsSatisfied = IsSatisfied
+    inst.FindStealableItems = FindStealableItems
+    inst.MustFlee = MustFlee
     
     inst.piratetarget = nil
     inst.numitems = 0
