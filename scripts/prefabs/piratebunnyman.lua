@@ -137,15 +137,13 @@ local function fn()
     inst:AddTag("pig")
     inst:AddTag("manrabbit")
     inst:AddTag("scarytoprey")
+    inst:AddTag("herdmember")
 
     inst.AnimState:SetBank("manrabbit")
     inst.AnimState:PlayAnimation("idle_loop")
     inst.AnimState:Hide("hat")
 
     inst.AnimState:SetClientsideBuildOverride("insane", "manrabbit_build", "manrabbit_beard_build")
-
-    --trader (from trader component) added to pristine state for optimization
-    inst:AddTag("trader")
 
     --Sneak these into pristine state for optimization
     inst:AddTag("_named")
