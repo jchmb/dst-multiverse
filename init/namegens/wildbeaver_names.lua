@@ -22,4 +22,10 @@ STRINGS.WILDBEAVER_NAMES = {
 	"Taxus",
 	"Cedrus",
 	"Quercus",
+	"Linnaeus",
+	"Decidua",
+	"Palustris",
+	"Sylvestris",
+	"Mariana",
+	"Buxus",
 }

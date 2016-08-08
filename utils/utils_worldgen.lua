@@ -16,12 +16,15 @@ function AddTaskSetFixed(task_set, data)
 	AddTaskSet(task_set, data)
 end
 
-function AddTaskSetWrapped(task_set, name, location, tasks)
+function AddTaskSetWrapped(task_set, name, location, tasks, optionaltasks, numoptionaltasks)
+	optionaltasks = optionaltasks or nil
+	numoptionaltasks = numoptionaltasks or 0
 	AddTaskSetFixed(task_set, {
 		name = name,
 		location = location,
 		tasks = tasks,
-		numoptionaltasks = 0,
+		optionaltasks = optionaltasks,
+		numoptionaltasks = numoptionaltasks,
 		valid_start_tasks = {
 			"Make a pick " .. task_set,
 		},
@@ -120,6 +123,36 @@ function AddTaskWrapped(task, locks, keys, room_choices, room_bg, background_roo
 	})
 end
 
+function AddBlockedTask(task, locks, keys, room_choices, room_bg, background_room, entrance_room)
+	AddTask(task, {
+		locks=locks,
+		keys_given=keys,
+		room_choices=room_choices,
+		room_bg=room_bg,
+		background_room=background_room,
+		colour={r=1,g=0.6,b=1,a=1},
+		entrance_room=entrance_room,
+	})
+end
+
 function AddStandardTerrainFilter(prefab)
 	GLOBAL.terrain.filter[prefab] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER}
+end
+
+function AddLocationWrapped(label, data)
+	AddLocation(data)
+	if SERVER_LEVEL_LOCATIONS ~= nil then
+		table.insert(SERVER_LEVEL_LOCATIONS, data.location)
+	end
+	GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATION[string.upper(data.location)] = label
+	GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATIONTABNAME[string.upper(data.location)] = label
+	GLOBAL.STRINGS.TAGS.LOCATION[string.upper(data.location)] = label
+end
+
+function GetSizeFn(baseValue)
+	return function() return baseValue + math.random(GLOBAL.SIZE_VARIATION) end
+end
+
+function GetRandomFn(baseValue, randomValue)
+	return function() return baseValue + math.random(randomValue) end
 end

@@ -2,11 +2,6 @@ modimport("lib/lua_functions.lua")
 modimport("lib/tile_adder.lua")
 modimport("utils/utils_common.lua")
 modimport("utils/utils_worldgen.lua")
---modimport("utils/utils_vector.lua")
-
-GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATIONTABNAME.FOREST_SNOW = "Snowy"
-GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATION.FOREST_SNOW = "Snow Forest"
-GLOBAL.STRINGS.TAGS.LOCATION.FOREST_SNOW = "Snow Forest"
 
 --[[
 	Add Tiles
@@ -25,17 +20,25 @@ modimport("init/mod_layouts.lua")
 
 
 --[[
-	Level scripts
+	Locations
 --]]
-
+modimport("scripts/map/locations/location_bunnyland")
 modimport("scripts/map/locations/location_snow")
 modimport("scripts/map/locations/location_slimey")
 modimport("scripts/map/locations/location_gray")
+modimport("scripts/map/locations/location_water")
 
+--[[
+	Level scripts
+--]]
 if GetModConfigBoolean("UseMigrationPortals") then
 	modimport("scripts/map/tasksets/default_modified_taskset")
 	modimport("scripts/map/levels/defaultmodifiedlevel")
 end
+
+modimport("scripts/map/tasks/multi_tasks")
+modimport("scripts/map/tasksets/multi_taskset")
+modimport("scripts/map/levels/multilevel")
 
 modimport("scripts/map/rooms/gray_rooms")
 modimport("scripts/map/tasks/gray_tasks")

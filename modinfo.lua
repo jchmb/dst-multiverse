@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8 and Joachim"
-version = "1.4.0"
+version = "1.5.2"
 forumthread = ""
 api_version = 10
 
@@ -27,8 +27,6 @@ configuration_options =
 		name = "UseMigrationPortals",
 		default = 0,
 	},
-
-	-- It is recommended to disable this on dedicated servers.
 	{
 		name = "UseDefaultLocations",
 		default = 1,
@@ -72,12 +70,16 @@ configuration_options =
 
 	-- The connections used for connecting shards (if UseMultiShards is enabled)
 	{
-		name = "MultiConnections",
+		name = "Connections",
 		default = {
 			["1"] = { "11", "12" }, -- Shard 1 connected to shard 11 and shard 12
 			["11"] = { "12" } -- Shard 11 connected to shard 12
 			-- only connect one way (bidirection is done by the mod)
-		}
+		},
+	},
+	{
+		name = "MultiConnections",
+		default = {},
 	},
 
 	-- None of your business. :D

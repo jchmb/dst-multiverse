@@ -19,7 +19,7 @@ Recipe = GLOBAL.Recipe
 --]]
 modimport("init/mod_assets.lua")
 modimport("init/mod_prefabs.lua")
-
+modimport("init/minimap_icons.lua")
 
 --[[
 	Names and descriptions
@@ -28,15 +28,15 @@ modimport("init/prefab_names.lua")
 modimport("init/prefab_descriptions.lua")
 modimport("init/prefab_descriptions_copied.lua")
 
--- Extra characters (optionally)
-modimport("init/mod_prefab_descriptions/descriptions_taro")
+--[[
+	Mob name generators
+--]]
+modimport("init/namegens/wildbeaver_names")
 
 --[[
 	Recipes
 --]]
-modimport("init/cookpot_recipes.lua")
-modimport("init/recipes.lua")
-modimport("init/minimap_icons.lua")
+modimport("init/init_recipes.lua")
 
 --[[
 	Chatter scripts
@@ -45,6 +45,7 @@ modimport("scripts/chatter/pigman_blue_chat.lua")
 modimport("scripts/chatter/pigman_gray_chat.lua")
 modimport("scripts/chatter/pigman_slimey_chat.lua")
 modimport("scripts/chatter/hatbunnyman_chat.lua")
+modimport("scripts/chatter/wildbeaver_chat.lua")
 modimport("scripts/chatter/mimi_chat.lua")
 
 if GetModConfigData("UseMultiShards") and (GLOBAL.TheNet:GetIsServer() or GLOBAL.TheNet:IsDedicated()) then
@@ -55,6 +56,9 @@ if GetModConfigData("UseMultiShards") and (GLOBAL.TheNet:GetIsServer() or GLOBAL
 		prefab:DoTaskInTime(1, HookInitConnect)
 	end)
 end
+
+-- Prefab postinits
+modimport("init/prefab_postinits")
 
 -- Add extra components (caffeinated and poisoned for example)
 modimport("init/player_hooks.lua")
