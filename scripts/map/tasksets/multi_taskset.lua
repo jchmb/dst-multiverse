@@ -1,0 +1,30 @@
+AddTaskSetWrapped(
+	"multi",
+	"Multiland",
+	"forest",
+	{
+		"Make a pick multi",
+		"Multi one a",
+		"Multi one b",
+		"Snowy one",
+		"Snowy two b",
+		"Slimey three a",
+		"Cuteness three b",
+		"Grayness four a",
+		"Slimey four b",
+		"Snowy four b",
+		"Speak to the king",
+	},
+	{
+		"Snowy four a",
+		"Cuteness four a",
+		"Grayness two b",
+		"Chezzness four",
+		"Slimey four b",
+		"Grayness four b",
+		"Snowy three b",
+		"Snowy three a",
+		"Water two a",
+	},
+	5
+)

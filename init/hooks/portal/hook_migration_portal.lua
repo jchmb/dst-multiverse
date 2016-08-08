@@ -1,6 +1,15 @@
-local ALL_CONNECTIONS = GetModConfigData("MultiConnections")
+local ALL_CONNECTIONS = {}
 local DELETE_UNUSED = GetModConfigData("DeleteUnused")
 local WORLD_NAMES = GetModConfigData("WorldNames")
+
+local ALL_CONNECTIONS_1 = GetModConfigData("Connections")
+local ALL_CONNECTIONS_2 = GetModConfigData("MultiConnections")
+
+if #ALL_CONNECTIONS_2 == 0 then
+	ALL_CONNECTIONS = ALL_CONNECTIONS_1
+else
+	ALL_CONNECTIONS = ALL_CONNECTIONS_2
+end
 
 local VALID_WORLD_NAMES = {
 	"cute", "chezz", "slimey", "gray", "snowy"

@@ -16,7 +16,7 @@ local cute_tasks = {
 
 AddTaskSetFixed("cute", {
 		name = "Bunnyland",
-		location = "forest",
+		location = "forest_bunnyland",
 		tasks = cute_tasks,
 		numoptionaltasks = 0,
 		valid_start_tasks = {

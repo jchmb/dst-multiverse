@@ -1,4 +1,4 @@
-AddLocation({
+AddLocationWrapped("Slimey", {
     location = "forest_slimey",
     version = 2,
     overrides={

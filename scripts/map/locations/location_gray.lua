@@ -1,4 +1,4 @@
-AddLocation({
+AddLocationWrapped("Gray", {
     location = "forest_gray",
     version = 2,
     overrides={

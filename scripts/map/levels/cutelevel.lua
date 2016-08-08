@@ -2,7 +2,7 @@ AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	id = "CUTENESSPRESET",
 	name="Bunnyland",
 	desc="The land of bunnies",
-	location = "forest",
+	location = "forest_bunnyland",
 	version = 2,
 	overrides={
 		task_set = "cute",

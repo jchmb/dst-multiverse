@@ -1,3 +1,11 @@
+--[[
+	Extra characters
+--]]
+modimport("init/mod_prefab_descriptions/descriptions_taro")
+
+--[[
+	Descriptions
+--]]
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEE = "Finally... A fresh cup of coffee, the best sort!"
   
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEE = "Black like charcoal. Well burnt. The aroma: smoky. Hot."

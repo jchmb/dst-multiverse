@@ -36,7 +36,7 @@ local assets =
 
 local prefabs = 
 {
-    "forest_network",
+    "forest_gray_network",
     "adventure_portal",
     "resurrectionstone",
     "deerclops",

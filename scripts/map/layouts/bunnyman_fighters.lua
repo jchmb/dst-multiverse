@@ -1,5 +1,5 @@
 local walls = {}
-local n = 7
+local n = 11
 local ds = 0.25
 
 for i=0,n do
@@ -24,19 +24,23 @@ return {
 									wall_hay = walls,
 									hatrabbithouse = {
 										{
-											x = 2 * ds,
-											y = 3 * ds,
+											x = 4 * ds,
+											y = 4 * ds,
 											properties = {
-												startinghat = "footballhat",
-												colorfname = "colored",
+												data = {
+													startinghat = "footballhat",
+													colorfname = "colored",
+												},
 											},
 										},
 										{
-											x = 5 * ds,
-											y = 3 * ds,
+											x = 7 * ds,
+											y = 4 * ds,
 											properties = {
-												startinghat = "footballhat",
-												colorfname = "colored",
+												data = {
+													startinghat = "footballhat",
+													colorfname = "colored",
+												},
 											},
 										},
 									},

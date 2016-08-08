@@ -42,7 +42,7 @@ AddTask("Chezzness four", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},
 	room_choices={
-		["ChezzLand"] = 3,
+		["ChezzLand"] = GetSizeFn(1),
 		["ChezzLand2"] = 1,
 	},
 	room_bg=GROUND.CHECKER,

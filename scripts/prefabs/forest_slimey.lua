@@ -36,7 +36,7 @@ local assets =
 
 local prefabs = 
 {
-    "forest_snow_network",
+    "forest_slimey_network",
     "adventure_portal",
     "resurrectionstone",
     "deerclops",
@@ -224,7 +224,7 @@ local function master_postinit(inst)
     inst:AddComponent("beargerspawner")
     inst:AddComponent("moosespawner")
     inst:AddComponent("hunter")
-    inst:AddComponent("lureplantspawner")
+    inst:AddComponent("perma_lureplantspawner")
     inst:AddComponent("shadowcreaturespawner")
     inst:AddComponent("shadowhandspawner")
     inst:AddComponent("wildfires")

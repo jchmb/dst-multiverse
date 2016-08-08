@@ -28,3 +28,5 @@ GLOBAL.terrain.filter["mushtree_tall"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.
 GLOBAL.terrain.filter["mushtree_med"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER }
 GLOBAL.terrain.filter["mushtree_small"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER }
 AddStandardTerrainFilter("mermhouse_blue")
+AddStandardTerrainFilter("wildbeaver_house")
+AddStandardTerrainFilter("pond_purple")

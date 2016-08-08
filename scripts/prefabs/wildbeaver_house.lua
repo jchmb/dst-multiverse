@@ -1,13 +1,13 @@
 local assets =
 {
-    Asset("ANIM", "anim/pig_gray_house.zip"),
+    Asset("ANIM", "anim/wildbeaver_house.zip"),
     Asset("ANIM", "anim/pig_house.zip"),
     Asset("SOUND", "sound/pig.fsb"),
 }
 
 local prefabs =
 {
-    "pigman_gray",
+    "wildbeaver",
 }
 
 --Client update
@@ -291,7 +291,7 @@ local function MakeWindow()
     inst.persists = false
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_gray_house")
+    inst.AnimState:SetBuild("wildbeaver_house")
     inst.AnimState:PlayAnimation("windowlight_idle")
     inst.AnimState:SetLightOverride(.6)
     inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
@@ -314,7 +314,7 @@ local function MakeWindowSnow()
     inst.persists = false
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_gray_house")
+    inst.AnimState:SetBuild("wildbeaver_house")
     inst.AnimState:PlayAnimation("windowsnow_idle")
     inst.AnimState:SetFinalOffset(2)
 
@@ -347,7 +347,7 @@ local function fn()
     inst.Light:SetColour(180/255, 195/255, 50/255)
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_gray_house")
+    inst.AnimState:SetBuild("wildbeaver_house")
     inst.AnimState:PlayAnimation("idle", true)
 
     inst:AddTag("structure")
@@ -411,4 +411,4 @@ local function fn()
 end
 
 return Prefab("wildbeaver_house", fn, assets, prefabs),
-    MakePlacer("wildbeaver_house_placer", "pig_gray_house", "pig_gray_house", "idle")
+    MakePlacer("wildbeaver_house_placer", "wildbeaver_house", "wildbeaver_house", "idle")

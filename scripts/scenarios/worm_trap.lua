@@ -29,7 +29,15 @@ local function OnLoad(inst, scenariorunner)
 	inst:ListenForEvent("onpickup", inst.scene_triggerfn)
 end
 
+local function OnDestroy(inst)
+	if inst.scene_triggerfn then
+		inst:RemoveEventCallback("onpickup", inst.scene_triggerfn)
+		inst.scene_triggerfn = nil
+	end
+end
+
 return
 {
 	OnLoad = OnLoad,
+	OnDestroy = OnDestroy,
 }

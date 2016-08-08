@@ -93,6 +93,9 @@ Assets = {
 	Asset("IMAGE", "images/inventoryimages/antidote.tex" ),
 	Asset("ATLAS", "images/inventoryimages/antidote.xml" ),
 
+	Asset("IMAGE", "images/inventoryimages/hat_pirate.tex" ),
+	Asset("ATLAS", "images/inventoryimages/hat_pirate.xml" ),
+
 	-- Turfs
 	Asset("IMAGE", "images/inventoryimages/turf_snowy.tex" ),
 	Asset("ATLAS", "images/inventoryimages/turf_snowy.xml" ),
@@ -131,4 +134,8 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_portal_slimey.xml"),
 	Asset("IMAGE", "map_icons/minimap_portal_snowy.tex"),
 	Asset("ATLAS", "map_icons/minimap_portal_snowy.xml"),
+
+	-- Sound
+	Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),
+    Asset("SOUND", "sound/dontstarve_shipwreckedSFX.fsb"),
 }

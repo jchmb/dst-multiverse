@@ -35,6 +35,8 @@ return {
 	-- Choose layout type
 							type = LAYOUT.STATIC,
 							
+							layout_position = LAYOUT_POSITION.CENTER,
+							
 							-- Add any arguments for the layout function
 							args = nil,							
 							-- Lay the objects in whatever pattern

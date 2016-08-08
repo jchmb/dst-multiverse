@@ -4,6 +4,12 @@ PrefabFiles = {
 	"forest_snow_network",
 	"forest_slimey",
 	"forest_slimey_network",
+	"forest_gray",
+	"forest_gray_network",
+	"forest_bunnyland",
+	"forest_bunnyland_network",
+	"forest_water",
+	"forest_water_network",
 
 	-- Bluepig prefabs
 	"pigman_blue",
@@ -27,7 +33,7 @@ PrefabFiles = {
 	"giant_bunnyman",
 	"hatrabbithouse",
 	"hatbunnyman",
-	"piratebunnyman",
+	--"piratebunnyman",
 
 	-- Snow mobs and spawners
 	"rabbithole_snow",
@@ -57,6 +63,14 @@ PrefabFiles = {
 	-- Beaverland mobs and spawners
 	"merm_blue",
 	"mermhouse_blue",
+	"ox",
+	"babyox",
+	"oxherd",
+	"wildbeaver",
+	"wildbeaver_house",
+	"frog_purple",
+	"pond_purple",
+	"beaver_king",
 	
 	-- Items
 	"coffee",

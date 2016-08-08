@@ -50,8 +50,8 @@ AddTask("Slimey three a", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},
 	room_choices={
-		["SlimeySwampRocks"] = 1, 
-		["SlimeyMudRocks"] = 1,
+		["SlimeySwampRocks"] = GetSizeFn(1), 
+		["SlimeyMudRocks"] = GetSizeFn(1),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.MARSH,
@@ -62,8 +62,8 @@ AddTask("Slimey three b", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},
 	room_choices={
-		["SlimeyStalagmite"] = 2, 
-		["SlimeyMudRocks"] = 1,
+		["SlimeyStalagmite"] = 2,
+		["SlimeyMudRocks"] = function() return 1 + math.random(GLOBAL.SIZE_VARIATION) end,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.MARSH,

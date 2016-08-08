@@ -36,7 +36,7 @@ local assets =
 
 local prefabs = 
 {
-    "forest_network",
+    "forest_bunnyland_network",
     "adventure_portal",
     "resurrectionstone",
     "deerclops",
@@ -200,7 +200,7 @@ local function master_postinit(inst)
     inst:AddComponent("birdspawner")
     inst:AddComponent("butterflyspawner")
     inst:AddComponent("hounded")
-    inst:AddComponent("pirated")
+    --inst:AddComponent("pirated")
 
     inst.components.hounded:SetSpawnData(houndspawn)
 
@@ -222,9 +222,9 @@ local function master_postinit(inst)
     inst:AddComponent("desolationspawner")
     inst:AddComponent("prefabswapmanager")
 
-    inst:AddComponent("taxed")
-    inst.components.taxed:SetTaxRate(60 * 18)
-    inst.components.taxed:SetPaymentTypeFn(function(x) x.prefab == "carrot" or x.prefab == "carrot_cooked" end)
+    -- inst:AddComponent("taxed")
+    -- inst.components.taxed:SetTaxRate(60 * 18)
+    -- inst.components.taxed:SetPaymentTypeFn(function(x) x.prefab == "carrot" or x.prefab == "carrot_cooked" end)
 
     if METRICS_ENABLED then
         inst:AddComponent("worldoverseer")

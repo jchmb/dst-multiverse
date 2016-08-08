@@ -1,0 +1,1 @@
+modimport("init/prefabs/postinit_lureplant")

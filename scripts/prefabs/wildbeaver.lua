@@ -1,8 +1,9 @@
 local assets = {
-    "werebeaver_build",
-    "werebeaver_basic",
-    "werebeaver_fx",
-    "werebeaver_groggy",
+    Asset("ANIM", "anim/wildbeaver_build.zip"),
+    Asset("ANIM", "anim/werebeaver_build.zip"),
+    Asset("ANIM", "anim/werebeaver_basic.zip"),
+    Asset("ANIM", "anim/werebeaver_fx.zip"),
+    Asset("ANIM", "anim/werebeaver_groggy.zip"),
 }
 
 local prefabs = {
@@ -11,6 +12,7 @@ local prefabs = {
 
 local MAX_TARGET_SHARES = 5
 local SHARE_TARGET_DIST = 30
+local CHOP_WAIT_DURATION = 60 * 4
 
 local function CalcSanityAura(inst, observer)
     return (inst.components.follower ~= nil and inst.components.follower.leader == observer and TUNING.SANITYAURA_SMALL)
@@ -22,9 +24,9 @@ local function ShouldAcceptItem(inst, item)
         return true
     elseif item.components.edible ~= nil then
         local foodtype = item.components.edible.foodtype
-        if foodtype == FOODTYPE.MEAT or foodtype == FOODTYPE.HORRIBLE then
+        if foodtype == FOODTYPE.WOOD then
             return inst.components.follower.leader == nil or inst.components.follower:GetLoyaltyPercent() <= 0.9
-        elseif foodtype == FOODTYPE.VEGGIE or foodtype == FOODTYPE.RAW then
+        elseif foodtype == FOODTYPE.VEGGIE then
             local last_eat_time = inst.components.eater:TimeSinceLastEating()
             return (last_eat_time == nil or
                     last_eat_time >= TUNING.PIG_MIN_POOP_PERIOD)
@@ -35,17 +37,28 @@ local function ShouldAcceptItem(inst, item)
     end
 end
 
+local function WantsToChop(inst)
+    if inst.lastchoptime == nil then
+        return true
+    end
+    return (inst.lastchoptime + CHOP_WAIT_DURATION) > GetTime()
+end
+
+local function ontalk(inst)
+    inst.SoundEmitter:PlaySound("dontstarve/creatures/bunnyman/idle_med")
+end
+
 local function OnGetItemFromPlayer(inst, giver, item)
     --I eat food
     if item.components.edible ~= nil then
         --meat makes us friends (unless I'm a guard)
-        if item.components.edible.foodtype == FOODTYPE.MEAT or item.components.edible.foodtype == FOODTYPE.HORRIBLE then
+        if item.components.edible.foodtype == FOODTYPE.WOOD then
             if inst.components.combat:TargetIs(giver) then
                 inst.components.combat:SetTarget(nil)
             elseif giver.components.leader ~= nil then
                 giver:PushEvent("makefriend")
                 giver.components.leader:AddFollower(inst)
-                inst.components.follower:AddLoyaltyTime(item.components.edible:GetHunger() * TUNING.PIG_LOYALTY_PER_HUNGER)
+                inst.components.follower:AddLoyaltyTime(item.components.edible:GetWoodiness(inst) * 2 * TUNING.PIG_LOYALTY_PER_HUNGER)
                 inst.components.follower.maxfollowtime =
                     giver:HasTag("polite")
                     and TUNING.PIG_LOYALTY_MAXTIME + TUNING.PIG_LOYALTY_POLITENESS_MAXTIME_BONUS
@@ -69,7 +82,7 @@ local function OnGetItemFromPlayer(inst, giver, item)
 end
 
 local function OnRefuseItem(inst, item)
-    inst.sg:GoToState("refuse")
+    --inst.sg:GoToState("refuse")
     if inst.components.sleeper:IsAsleep() then
         inst.components.sleeper:WakeUp()
     end
@@ -78,7 +91,25 @@ end
 local function OnEat(inst, food)
     if food.components.edible ~= nil then
         if food.components.edible.foodtype == FOODTYPE.WOOD then
-            SpawnPrefab("manure").Transform:SetPosition(inst.Transform:GetWorldPosition())
+            inst.lastchoptime = GetTime()
+        end
+        if food.components.edible.foodtype == FOODTYPE.VEGGIE then
+            SpawnPrefab("poop").Transform:SetPosition(inst.Transform:GetWorldPosition())
+        end
+    end
+end
+
+local function OnAttackedByDecidRoot(inst, attacker)
+    local x, y, z = inst.Transform:GetWorldPosition()
+    local ents = TheSim:FindEntities(x, y, z, SpringCombatMod(SHARE_TARGET_DIST) * .5, { "_combat", "_health", "wildbeaver" }, {"INLIMBO" })
+    local num_helpers = 0
+    for i, v in ipairs(ents) do
+        if v ~= inst and not v.components.health:IsDead() then
+            v:PushEvent("suggest_tree_target", { tree = attacker })
+            num_helpers = num_helpers + 1
+            if num_helpers >= MAX_TARGET_SHARES then
+                break
+            end
         end
     end
 end
@@ -88,8 +119,12 @@ local function OnAttacked(inst, data)
     local attacker = data.attacker
     if attacker ~= nil then
         inst:ClearBufferedAction()
-        inst.components.combat:SetTarget(attacker)
-        inst.components.combat:ShareTarget(attacker, SHARE_TARGET_DIST, function(x) x:HasTag("wildbeaver") end, MAX_TARGET_SHARES)
+        if attacker.prefab == "deciduous_root" and attacker.owner ~= nil then 
+            OnAttackedByDecidRoot(inst, attacker.owner)
+        else
+            inst.components.combat:SetTarget(attacker)
+            inst.components.combat:ShareTarget(attacker, SHARE_TARGET_DIST, function(x) x:HasTag("wildbeaver") end, MAX_TARGET_SHARES)
+        end
     end
 end
 
@@ -128,6 +163,14 @@ local function GetStatus(inst)
         or nil
 end
 
+local function SuggestTreeTarget(inst, data)
+    if data ~= nil and data.tree ~= nil and inst:GetBufferedAction() ~= ACTIONS.CHOP then
+        inst.tree_target = data.tree
+    end
+end
+
+local brain = require "brains/wildbeaverbrain"
+
 local function fn()
     local inst = CreateEntity()
     
@@ -147,7 +190,7 @@ local function fn()
     inst:AddTag("wildbeaver")
     inst:AddTag("scarytoprey")
     
-    inst.AnimState:SetBuild("werebeaver_build")
+    inst.AnimState:SetBuild("wildbeaver_build")
     inst.AnimState:SetBank("werebeaver")
     inst.AnimState:PlayAnimation("idle_loop")
     inst.AnimState:Hide("hat")
@@ -172,8 +215,10 @@ local function fn()
     inst.components.locomotor.runspeed = TUNING.PIG_RUN_SPEED
     inst.components.locomotor.walkspeed = TUNING.PIG_WALK_SPEED
     
-    inst:SetBrain(require "brains/wildbeaverbrain")
+    inst:SetBrain(brain)
     inst:SetStateGraph("SGwildbeaver")
+
+    inst:AddComponent("sleeper")
     inst.components.sleeper:SetResistance(2)
 
     inst:AddComponent("bloomer")
@@ -190,21 +235,31 @@ local function fn()
     inst.components.combat:SetDefaultDamage(TUNING.PIG_DAMAGE)
     inst.components.combat:SetAttackPeriod(TUNING.PIG_ATTACK_PERIOD)
     inst.components.combat:SetKeepTargetFunction(NormalKeepTargetFn)
-    inst.components.combat.hiteffectsymbol = "werebeaver_torso"
+    inst.components.combat.hiteffectsymbol = "torso"
     inst.components.health:SetMaxHealth(TUNING.PIG_HEALTH)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
     inst.components.combat:SetTarget(nil)
 
-    MakeMediumBurnableCharacter(inst, "werebeaver_torso")
+    MakeMediumBurnableCharacter(inst, "torso")
+
+    inst:AddComponent("talker")
+    inst.components.talker.fontsize = 35
+    inst.components.talker.font = TALKINGFONT
+    --inst.components.talker.colour = Vector3(133/255, 140/255, 167/255)
+    inst.components.talker.offset = Vector3(0, -400, 0)
+    inst.components.talker:MakeChatter()
 
     inst:AddComponent("named")
-    inst.components.named.possiblenames = STRINGS.PIGNAMES
+    inst.components.named.possiblenames = STRINGS.WILDBEAVER_NAMES
     inst.components.named:PickNewName()
     
-     MakeHauntablePanic(inst)
+    MakeHauntablePanic(inst)
      
     inst:AddComponent("follower")
     inst.components.follower.maxfollowtime = TUNING.PIG_LOYALTY_MAXTIME
+
+    inst.components.talker.ontalk = ontalk
+
     ------------------------------------------
 
     inst:AddComponent("inventory")
@@ -212,9 +267,10 @@ local function fn()
     ------------------------------------------
 
     inst:AddComponent("lootdropper")
-    inst.components.lootdropper:SetLoot({"meat", "log", "twigs"})
+    inst.components.lootdropper:SetLoot({"meat", "log"})
     inst.components.lootdropper.numrandomloot = 0
     inst.components.lootdropper:AddChanceLoot("twigs", 0.5)
+    inst.components.lootdropper:AddChanceLoot("twigs", 0.25)
 
     ------------------------------------------
 
@@ -226,6 +282,7 @@ local function fn()
     inst.components.trader:SetAcceptTest(ShouldAcceptItem)
     inst.components.trader.onaccept = OnGetItemFromPlayer
     inst.components.trader.onrefuse = OnRefuseItem
+    inst.components.trader.acceptnontradable = true
     inst.components.trader.deleteitemonaccept = false
     inst.components.trader:Enable()
     
@@ -239,7 +296,7 @@ local function fn()
     inst:AddComponent("sleeper")
 
     ------------------------------------------
-    MakeMediumFreezableCharacter(inst, "pig_torso")
+    MakeMediumFreezableCharacter(inst, "torso")
 
     ------------------------------------------
 
@@ -247,8 +304,12 @@ local function fn()
     inst.components.inspectable.getstatus = GetStatus
     ------------------------------------------
 
+    inst.lastchoptime = nil
+    inst.WantsToChop = WantsToChop
+
     inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)
+    inst:ListenForEvent("suggest_tree_target", SuggestTreeTarget)
     
     return inst
 end

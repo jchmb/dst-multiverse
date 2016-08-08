@@ -6,7 +6,7 @@ AddTask("Make a pick water", {
 		["BarePlain"] = 1, 
 		["Plain"] = 1,
 	}, 
-	room_bg=GROUND.GRASS_GRAY,
+	room_bg=GROUND.GRASS_BLUE,
 	background_room="BGWater",
 	colour={r=0,g=1,b=0,a=1}
 })
@@ -16,7 +16,7 @@ AddTaskWrapped(
 	LOCKS.NONE,
 	{KEYS.TIER1},
 	{
-		["WaterForest"] = 2,
+		["WaterForest"] = GetSizeFn(1),
 		["WaterMeadow"] = 2,
 	},
 	GROUND.GRASS_BLUE,
@@ -29,7 +29,8 @@ AddTaskWrapped(
 	{KEYS.TIER2},
 	{
 		["WaterForest"] = 1,
-		["WaterRocks"] = 2,
+		["WaterRocks"] = GetSizeFn(1),
+		["WaterOxHerds"] = 2,
 	},
 	GROUND.GRASS_BLUE,
 	"BGWater"
@@ -42,6 +43,7 @@ AddTaskWrapped(
 	{
 		["WaterMonkeyForest"] = 2,
 		["WaterForest"] = 1,
+		["WaterBeaverForest"] = GetSizeFn(1),
 	},
 	GROUND.GRASS_BLUE,
 	"BGWater"
@@ -49,12 +51,37 @@ AddTaskWrapped(
 
 AddTaskWrapped(
 	"Water three a",
-	{LOCKS.TIER1},
-	{KEYS.TIER2},
+	{LOCKS.TIER2},
+	{KEYS.TIER3},
 	{
-		["WaterMeadow"] = 1,
+		["WaterMeadow"] = GetSizeFn(1),
 		["WaterMeadowMerms"] = 2,
 	},
 	GROUND.GRASS_BLUE,
 	"BGWater"
+)
+
+AddTaskWrapped(
+	"Water three b",
+	{LOCKS.TIER2},
+	{KEYS.TIER3},
+	{
+		["WaterSpiderForest"] = GetSizeFn(1),
+		["WaterMagicalForest"] = 1,
+		["WaterEvilForest"] = 1,
+	},
+	GROUND.FOREST,
+	"BGForest"
+)
+
+AddBlockedTask(
+	"Speak to the king water",
+	{LOCKS.TIER2},
+	{KEYS.TIER3},
+	{
+		["WaterBeaverKingdom"] = 1,
+	},
+	GROUND.GRASS_BLUE,
+	"BGWater",
+	"WaterLureplantWall"
 )

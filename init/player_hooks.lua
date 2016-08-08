@@ -1,10 +1,10 @@
-modimport("init/hooks/player/hook_poisoned")
+modimport("init/hooks/player/hook_poisonable")
 modimport("init/hooks/player/hook_caffeinated")
 modimport("init/hooks/player/hook_mimi")
 modimport("init/hooks/player/hook_starting_items")
 
 local OnEverySpawn = function(src, player)
-	HookInitPoisoned(player)
+	HookInitPoisonable(player)
     HookInitCaffeinated(player)
     --HookInitMimi(player)
 end
