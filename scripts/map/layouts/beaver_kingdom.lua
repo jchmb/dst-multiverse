@@ -1,4 +1,16 @@
+local sideLength = 12
+local width = 12 + 2 * math.ceil(math.cos((PI * 2) / 8))
+local height = width
+local ground_types = {GROUND.GRASS_BLUE, GROUND.WOODFLOOR}
 
+
+
+local ground = {}
+for i=1,width do
+	for j=1,height do
+		
+	end
+end
 
 return {
 	-- Choose layout type
