@@ -429,7 +429,17 @@ local data =
         name = "brown_mushroom",
         animname="brown",
         pickloot="brown_cap",
-        open_time = "day",
+        initfn = function(inst)
+            TheWorld:ListenForEvent("weathertick", function(data)
+                if data then
+                    if data.precipitationrate and data.precipitationrate >= 0.1 then
+                       OnIsOpenPhase(inst, true)
+                    elseif data.precipitationrate and data.precipitationrate <= 0.01 then
+                       OnIsOpenPhase(inst, false)
+                    end
+                end
+            end)
+        end,
         sanity = 0,
         health = -TUNING.HEALING_MED,
         hunger = TUNING.CALORIES_SMALL,
