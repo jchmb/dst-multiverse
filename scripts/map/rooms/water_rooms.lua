@@ -8,14 +8,16 @@ Layouts["BeaverKing"] = StaticLayout.Get(
 		layout_position = GLOBAL.LAYOUT_POSITION.CENTER
 	}
 )
+Layouts["RewardMooseTreasure"] = GLOBAL.require("map/layouts/reward_moosetreasure")
 
 AddStandardRoom(
 	"BGWater",
 	GROUND.GRASS_BLUE,
-	0.15,
+	0.4,
 	{
-		cave_banana_tree = 0.005,
+		cave_banana_tree = 0.05,
 		evergreen = 5,
+		deciduoustree = 3,
 		blue_mushroom = 0.1,
 		fireflies = 1,
 		sapling = 0.1,
@@ -197,6 +199,25 @@ AddStandardRoom(
 )
 
 AddStandardRoom(
+	"WaterBeaverForestHotspot",
+	GROUND.GRASS_BLUE,
+	0.7,
+	{
+		deciduoustree = 7,
+		evergreen = 5,
+		wildbeaver_house = 0.1,
+		sapling = 0.1,
+		twiggytree = 0.1,
+		grass = 0.1,
+		red_mushroom = 0.3,
+		fireflies = 0.5,
+	},
+	{
+		migration_portal = 1,
+	}
+)
+
+AddStandardRoom(
 	"WaterLureplantWall",
 	GROUND.GRASS_BLUE,
 	0.4,
@@ -209,7 +230,11 @@ AddStandardRoom(
 	},
 	{
 		lureplant = GetRandomFn(5, 4),
-	}
+	},
+	{},
+	{},
+	nil,
+	{"ForceConnected"}
 )
 
 --[[
@@ -222,10 +247,11 @@ AddStandardRoom(
 	0.25,
 	{
 		evergreen_sparse = 1,
-		rock_petrified_tree = 0.3,
-		rock2 = 0.05,
-		rock_ice = 0.05,
-		wildbeaver_house = 0.1,
+		rock1 = 0.05,
+		rock_ice = 0.15,
+	},
+	{
+		tallbirdnest = GetRandomFn(2, 2),
 	}
 )
 
@@ -259,6 +285,7 @@ AddStandardRoom(
 	},
 	{
 		mandrake = 3,
+		migration_portal = 1,
 	}
 )
 
@@ -267,7 +294,7 @@ AddStandardRoom(
 	GROUND.FOREST,
 	0.8,
 	{
-		evergreen_sparse = 8
+		evergreen_sparse = 8,
 		wildbeaver_house = 0.1,
 		sapling = 0.1,
 		twiggytree = 0.1,
@@ -276,5 +303,123 @@ AddStandardRoom(
 	{
 		livingtree = 3,
 		flower_evil = GetRandomFn(5, 5)
+	}
+)
+
+AddStandardRoom(
+	"WaterSuperMeadow",
+	GROUND.GRASS_BLUE,
+	0.2,
+	{
+		deciduoustree = 4,
+		pond_purple = 0.3,
+		beehive = 0.1,
+		snake_hole = 0.1,
+		grass = 0.1,
+		sapling = 0.1,
+		twiggytree = 0.1,
+		cave_banana_tree = 0.02,
+	}
+)
+
+AddStandardRoom(
+	"WaterWalrusMeadow",
+	GROUND.GRASS_BLUE,
+	0.15,
+	{
+		pond_purple = 0.1,
+		snake_hole = 0.1,
+		beehive = 0.05,
+		rock_petrified_tree = 0.1,
+	},
+	{
+		walrus_camp = GetRandomFn(1, 1)
+	}
+)
+
+--[[
+	Tier 4
+--]]
+
+AddStandardRoom(
+	"WaterMooseLair",
+	GROUND.GRASS_BLUE,
+	0.3,
+	{
+		grass = 0.4,
+		sapling = 0.3,
+		twiggytree = 0.3,
+		deciduoustree = 4,
+		cave_banana_tree = 0.05,
+	},
+	{},
+	{
+		["MooseNest"] = 3,
+	}
+)
+
+AddStandardRoom(
+	"WaterMooseLairTreasure",
+	GROUND.GRASS_BLUE,
+	0.2,
+	{
+		grass = 0.2,
+		pond_purple = 0.1,
+		deciduoustree = 5,
+	},
+	{},
+	{
+		["RewardMooseTreasure"] = 1,
+	}
+)
+
+AddStandardRoom(
+	"BGWaterMarsh",
+	GROUND.MARSH,
+	0.2,
+	{
+		reeds = 0.15,
+		marsh_tree = 0.1,
+		marsh_bush = 0.1,
+	}
+)
+
+AddStandardRoom(
+	"WaterMarsh",
+	GROUND.MARSH,
+	0.2,
+	{
+		reeds = 0.15,
+		pond_mos = 0.1,
+		tentacle = 0.5,
+		marsh_tree = 0.1,
+		marsh_bush = 0.1,
+	}
+)
+
+AddStandardRoom(
+	"WaterMarshSnakes",
+	GROUND.MARSH,
+	0.2,
+	{
+		reeds = 0.1,
+		marsh_tree = 0.1,
+		marsh_bush = 0.1,
+		snake_hole = 0.4,
+	}
+)
+
+AddStandardRoom(
+	"WaterMarshTreasure",
+	GROUND.MARSH,
+	0.1,
+	{
+		reeds = 0.1,
+		marsh_tree = 0.1,
+		marsh_bush = 0.4,
+		rock2 = 0.05,
+	},
+	{
+		thulecite_pieces = GetRandomFn(2, 2)
 	}
 )

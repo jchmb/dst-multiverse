@@ -44,6 +44,19 @@ AddTaskWrapped(
 		["WaterMonkeyForest"] = 2,
 		["WaterForest"] = 1,
 		["WaterBeaverForest"] = GetSizeFn(1),
+		["WaterBeaverForestHotspot"] = 1,
+	},
+	GROUND.GRASS_BLUE,
+	"BGWater"
+)
+
+AddTaskWrapped(
+	"Water two c",
+	{LOCKS.TIER1},
+	{LOCKS.TIER2},
+	{
+		["WaterTreeRocks"] = 2,
+		["WaterBeaverForest"] = GetSizeFn(1),
 	},
 	GROUND.GRASS_BLUE,
 	"BGWater"
@@ -72,6 +85,43 @@ AddTaskWrapped(
 	},
 	GROUND.FOREST,
 	"BGForest"
+)
+
+AddTaskWrapped(
+	"Water three c",
+	{LOCKS.TIER2},
+	{LOCKS.TIER3},
+	{
+		["WaterSuperMeadow"] = GetSizeFn(1),
+		["WaterWalrusMeadow"] = 1,
+	},
+	GROUND.GRASS_BLUE,
+	"BGWater"
+)
+
+AddBlockedTask(
+	"Water four a",
+	{LOCKS.TIER3},
+	{KEYS.TIER4},
+	{
+		["WaterMooseLairTreasure"] = 1,
+	},
+	GROUND.GRASS_BLUE,
+	"BGWater",
+	"WaterMooseLair"
+)
+
+AddBlockedTask(
+	"Water four b",
+	{LOCKS.TIER3},
+	{KEYS.TIER4},
+	{
+		["WaterMarsh"] = GetSizeFn(1),
+		["WaterMarshTreasure"] = 1,
+	},
+	GROUND.MARSH,
+	"BGWaterMarsh",
+	"WaterMarshSnakes"
 )
 
 AddBlockedTask(

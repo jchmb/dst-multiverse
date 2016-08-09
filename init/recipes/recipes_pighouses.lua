@@ -89,3 +89,16 @@ AddStructureRecipe(
 	RECIPETABS.TOWN,
 	TECH.LOST
 )
+
+AddStructureRecipe(
+	"wildbeaver_house",
+	{
+		Ingredient("boards", 2),
+		Ingredient("twigs", 4),
+		Ingredient("rope", 1),
+		Ingredient("log", 8),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST
+)
+STRINGS.RECIPE_DESC.WILDBEAVER_HOUSE = "Houses one Wildbeaver"

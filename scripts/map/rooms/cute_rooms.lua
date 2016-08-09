@@ -27,9 +27,6 @@ AddRoom("CuteBunnymanTown", {
 		countstaticlayouts = {
 			["BunnymanFarmers"] = 1,
 		},
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.07,
 		distributeprefabs = {
 			fireflies = 0.2,
@@ -220,9 +217,6 @@ AddRoom("CuteFriends", {
 	value = GROUND.FUNGUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.2,
 		distributeprefabs = {
 			carrot_planted = 0.1,
@@ -314,9 +308,6 @@ AddRoom("CuteDeepDeciduous", {
 	value = GROUND.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = .4,
 		distributeprefabs={
 			grass = .03,

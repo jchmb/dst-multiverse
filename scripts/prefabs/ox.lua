@@ -33,24 +33,20 @@ SetSharedLootTable( 'ox',
 
 local sounds = 
 {
-	angry = "dontstarve_DLC002/creatures/OX/angry",
-	curious = "dontstarve_DLC002/creatures/OX/curious",
+	angry = "dontstarve/beefalo/angry",
+	curious = "dontstarve/beefalo/curious",
 	
-	attack_whoosh = "dontstarve_DLC002/creatures/OX/attack_whoosh",
-	chew = "dontstarve_DLC002/creatures/OX/chew",
-	grunt = "dontstarve_DLC002/creatures/OX/bellow",
-	hairgrow_pop = "dontstarve_DLC002/creatures/OX/hairgrow_pop",
-	hairgrow_vocal = "dontstarve_DLC002/creatures/OX/hairgrow_vocal",
-	sleep = "dontstarve_DLC002/creatures/OX/sleep",
-	tail_swish = "dontstarve_DLC002/creatures/OX/tail_swish",
-	walk_land = "dontstarve_DLC002/creatures/OX/walk_land",
-	walk_water = "dontstarve_DLC002/creatures/OX/walk_water",
+	attack_whoosh = "dontstarve/beefalo/attack_whoosh",
+	chew = "dontstarve/beefalo/chew",
+	grunt = "dontstarve/beefalo/grunt",
+	hairgrow_pop = "dontstarve/beefalo/hairgrow_pop",
+	hairgrow_vocal = "dontstarve/beefalo/hairgrow_vocal",
+	sleep = "dontstarve/beefalo/sleep",
+	tail_swish = "dontstarve/beefalo/tail_swish",
+	walk_land = "dontstarve/beefalo/walk",
 
-	death = "dontstarve_DLC002/creatures/OX/death",
-	mating_call = "dontstarve_DLC002/creatures/OX/mating_call",
-
-	emerge = "dontstarve_DLC002/creatures/seacreature_movement/water_emerge_med",
-	submerge = "dontstarve_DLC002/creatures/seacreature_movement/water_submerge_med",
+	death = "dontstarve/beefalo/death",
+	mating_call = "dontstarve/beefalo/yell",
 }
 
 local function OnEnterMood(inst)

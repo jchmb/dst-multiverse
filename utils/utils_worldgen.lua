@@ -16,7 +16,11 @@ function AddTaskSetFixed(task_set, data)
 	AddTaskSet(task_set, data)
 end
 
-function AddTaskSetWrapped(task_set, name, location, tasks, optionaltasks, numoptionaltasks)
+function AddTaskSetWrapped(task_set, name, location, tasks, optionaltasks, numoptionaltasks, set_pieces)
+	set_pieces = set_pieces or {}
+	set_pieces["ResurrectionStone"] = set_pieces["ResurrectionStone"] or {count=2, tasks=tasks}
+	set_pieces["WormholeGrass"] = set_pieces["WormholeGrass"] or {count=2, tasks=tasks}
+	set_pieces["CaveEntrance"] = set_pieces["CaveEntrance"] or {count=2, tasks=tasks}
 	optionaltasks = optionaltasks or nil
 	numoptionaltasks = numoptionaltasks or 0
 	AddTaskSetFixed(task_set, {
@@ -28,13 +32,7 @@ function AddTaskSetWrapped(task_set, name, location, tasks, optionaltasks, numop
 		valid_start_tasks = {
 			"Make a pick " .. task_set,
 		},
-		set_pieces = {
-			["ResurrectionStone"] = { count = 2, tasks=tasks},
-			["WormholeGrass"] = { count = 8, tasks=tasks},
-			["MooseNest"] = { count = 6, tasks=tasks},
-			["CaveEntrance"] = { count = 10, tasks=tasks},
-			--["CaveEntrance"] = { count = 7, tasks={"Cuteness one", "Cuteness two a", "Cuteness three a", "Cuteness two b", "Cuteness three b", "Make a pick", "Speak to the king cute"} },
-		},
+		set_pieces = set_pieces,
 	})
 end
 
@@ -85,7 +83,7 @@ function AddRoomWrapped(room, ground, contents, tags, internal_type)
 	})
 end
 
-function AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type)
+function AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type, tags)
 	countprefabs = countprefabs or {}
 	countstaticlayouts = countstaticlayouts or {}
 	prefabdata = prefabdata or {}
@@ -96,6 +94,7 @@ function AddStandardRoom(room, ground, distributepercent, distributeprefabs, cou
 		countstaticlayouts = countstaticlayouts,
 		prefabdata = prefabdata,
 		internal_type = internal_type,
+		tags=tags,
 	})
 end
 
@@ -154,5 +153,9 @@ function GetSizeFn(baseValue)
 end
 
 function GetRandomFn(baseValue, randomValue)
-	return function() return baseValue + math.random(randomValue) end
+	return function() return baseValue + math.random(0, randomValue) end
+end
+
+function MakeSetPieceData(count, tasks)
+	return {count=count,tasks=tasks}
 end

@@ -17,8 +17,8 @@ Recipe = GLOBAL.Recipe
 --[[
 	Assets
 --]]
-modimport("init/mod_assets")
-modimport("init/mod_prefabs")
+modimport("init/init_assets")
+modimport("init/init_prefabs")
 modimport("init/minimap_icons")
 
 --[[

@@ -136,6 +136,6 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_portal_snowy.xml"),
 
 	-- Sound
-	Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),
-    Asset("SOUND", "sound/dontstarve_shipwreckedSFX.fsb"),
+	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),
+ --    Asset("SOUND", "sound/dontstarve_shipwreckedSFX.fsb"),
 }

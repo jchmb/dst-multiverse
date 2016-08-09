@@ -263,9 +263,8 @@ function WildbeaverBrain:OnStart()
                         DoAction(self.inst, FindTreeToChopAction )})),
             ChattyNode(self.inst, "WILDBEAVER_TALK_FOLLOW",
                 Follow(self.inst, GetLeader, MIN_FOLLOW_DIST, TARGET_FOLLOW_DIST, MAX_FOLLOW_DIST)),
-            IfNode(function() return GetLeader(self.inst) end, "has leader",
-                ChattyNode(self.inst, "WILDBEAVER_TALK_FOLLOW",
-                    FaceEntity(self.inst, GetFaceTargetFn, KeepFaceTargetFn ))),
+            WhileNode(function() return not TheWorld.state.iscaveday end, "IsNight",
+                    ChattyNode(self.inst, "WILDBEAVER_TALK_GOHOME", DoAction(self.inst, GoHomeAction, "go home", true ), 1)),
             IfNode(function() return self.inst.WantsToChop(self.inst) and not WoodIsNear(self.inst) end, "wants to chop", 
                 WhileNode(function() return self.inst.WantsToChop(self.inst) and not WoodIsNear(self.inst) end, "keep chopping",
                     LoopNode{ 

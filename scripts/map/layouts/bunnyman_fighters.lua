@@ -2,6 +2,7 @@ local walls = {}
 local n = 11
 local ds = 0.25
 
+--[[
 for i=0,n do
 	table.insert(walls, {x=i*ds,y=0})
 	if i ~= 3 and i ~= 4 then
@@ -10,6 +11,7 @@ for i=0,n do
 	end
 	table.insert(walls, {x=i*ds,y=n*ds})
 end
+--]]
 
 return {
 	-- Choose layout type

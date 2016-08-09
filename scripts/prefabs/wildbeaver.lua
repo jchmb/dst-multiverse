@@ -58,7 +58,7 @@ local function OnGetItemFromPlayer(inst, giver, item)
             elseif giver.components.leader ~= nil then
                 giver:PushEvent("makefriend")
                 giver.components.leader:AddFollower(inst)
-                inst.components.follower:AddLoyaltyTime(item.components.edible:GetWoodiness(inst) * 2 * TUNING.PIG_LOYALTY_PER_HUNGER)
+                inst.components.follower:AddLoyaltyTime(item.components.edible:GetWoodiness(inst) * TUNING.PIG_LOYALTY_PER_HUNGER)
                 inst.components.follower.maxfollowtime =
                     giver:HasTag("polite")
                     and TUNING.PIG_LOYALTY_MAXTIME + TUNING.PIG_LOYALTY_POLITENESS_MAXTIME_BONUS
@@ -271,6 +271,7 @@ local function fn()
     inst.components.lootdropper.numrandomloot = 0
     inst.components.lootdropper:AddChanceLoot("twigs", 0.5)
     inst.components.lootdropper:AddChanceLoot("twigs", 0.25)
+    inst.components.lootdropper:AddChanceLoot("wildbeaver_house_blueprint", 0.1)
 
     ------------------------------------------
 
@@ -294,6 +295,8 @@ local function fn()
     ------------------------------------------
 
     inst:AddComponent("sleeper")
+    inst.components.sleeper:SetSleepTest(NormalShouldSleep)
+    inst.components.sleeper:SetWakeTest(DefaultWakeTest)
 
     ------------------------------------------
     MakeMediumFreezableCharacter(inst, "torso")

@@ -34,7 +34,7 @@ local function LightsOn(inst)
     if not inst:HasTag("burnt") and not inst.lightson then
         inst.Light:Enable(true)
         inst.AnimState:PlayAnimation("lit", true)
-        inst.SoundEmitter:PlaySound("dontstarve/pig/pighut_lighton")
+        --inst.SoundEmitter:PlaySound("dontstarve/pig/pighut_lighton")
         inst.lightson = true
         if inst._window ~= nil then
             inst._window.AnimState:PlayAnimation("windowlight_idle", true)
@@ -51,7 +51,7 @@ local function LightsOff(inst)
     if not inst:HasTag("burnt") and inst.lightson then
         inst.Light:Enable(false)
         inst.AnimState:PlayAnimation("idle", true)
-        inst.SoundEmitter:PlaySound("dontstarve/pig/pighut_lightoff")
+        --inst.SoundEmitter:PlaySound("dontstarve/pig/pighut_lightoff")
         inst.lightson = false
         if inst._window ~= nil then
             inst._window:Hide()
@@ -105,8 +105,8 @@ end
 
 local function onoccupied(inst, child)
     if not inst:HasTag("burnt") then 
-        inst.SoundEmitter:PlaySound("dontstarve/pig/pig_in_hut", "pigsound")
-        inst.SoundEmitter:PlaySound("dontstarve/common/pighouse_door")
+        --inst.SoundEmitter:PlaySound("dontstarve/pig/pig_in_hut", "pigsound")
+        --inst.SoundEmitter:PlaySound("dontstarve/common/pighouse_door")
 
         if inst.doortask ~= nil then
             inst.doortask:Cancel()
@@ -125,8 +125,8 @@ local function onvacate(inst, child)
             inst.doortask:Cancel()
             inst.doortask = nil
         end
-        inst.SoundEmitter:PlaySound("dontstarve/common/pighouse_door")
-        inst.SoundEmitter:KillSound("pigsound")
+        --inst.SoundEmitter:PlaySound("dontstarve/common/pighouse_door")
+        --inst.SoundEmitter:KillSound("pigsound")
         LightsOff(inst)
 
         if child ~= nil then
