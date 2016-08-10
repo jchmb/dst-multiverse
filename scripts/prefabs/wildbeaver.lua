@@ -187,6 +187,7 @@ local function fn()
     inst.Transform:SetFourFaced()
 
     inst:AddTag("character")
+    inst:AddTag("beaver")
     inst:AddTag("wildbeaver")
     inst:AddTag("scarytoprey")
     
