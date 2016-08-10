@@ -39,7 +39,7 @@ AddTaskWrapped(
 AddTaskWrapped(
 	"Water two b",
 	{LOCKS.TIER1},
-	{KEYS.TIER2},
+	{KEYS.TIER2, KEYS.TIER5},
 	{
 		["WaterMonkeyForest"] = 2,
 		["WaterForest"] = 1,
@@ -97,6 +97,19 @@ AddTaskWrapped(
 	},
 	GROUND.GRASS_BLUE,
 	"BGWater"
+)
+
+AddBlockedTask(
+	"Water three d",
+	{LOCKS.TIER2, LOCKS.TIER5},
+	{LOCKS.TIER3},
+	{
+		["WaterBeach"] = GetSizeFn(1),
+		["WaterBeachRocks"] = 2,
+	},
+	GROUND.SAND,
+	"BGWaterBeach",
+	"WaterBeachEntrance"
 )
 
 AddBlockedTask(

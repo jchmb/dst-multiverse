@@ -59,7 +59,8 @@ AddStandardRoom(
 		blue_mushroom = 0.1,
 		green_mushroom = 0.1,
 		grass = 0.2,
-		wildbeaver_house = 0.05,
+		wildbeaver_house = 0.1,
+		rabbithole = 0.2,
 	}
 )
 
@@ -96,7 +97,9 @@ AddStandardRoom(
 		blue_mushroom = 0.1,
 		green_mushroom = 0.1,
 		grass = 0.2,
-		monkeybarrel = 0.03,
+	},
+	{
+		monkeybarrel = GetRandomFn(2, 2),
 	}
 )
 
@@ -195,6 +198,7 @@ AddStandardRoom(
 		fireflies = 0.5,
 		spiderden = 0.05,
 		cave_banana_tree = 0.02,
+		rabbithole = 0.05,
 	}
 )
 
@@ -282,9 +286,10 @@ AddStandardRoom(
 		grass = 0.1,
 		green_mushroom = 0.3,
 		blue_mushroom = 0.3,
+		rabbithole = 0.1,
 	},
 	{
-		mandrake = 3,
+		mandrake_planted = 3,
 		migration_portal = 1,
 	}
 )
@@ -333,6 +338,61 @@ AddStandardRoom(
 		rock_petrified_tree = 0.1,
 	},
 	{
+		walrus_camp = 1,
+	}
+)
+
+AddStandardRoom(
+	"BGWaterBeach",
+	GROUND.SAND,
+	0.15,
+	{
+		sapling = 0.05,
+		grass = 0.05,
+		rocks = 0.1,
+		flint = 0.1,
+	}
+)
+
+AddStandardRoom(
+	"WaterBeachEntrance",
+	GROUND.SAVANNA,
+	0.2,
+	{
+		rabbithole = 0.05,
+		perma_grass = 0.2,
+	}
+)
+
+AddStandardRoom(
+	"WaterBeach",
+	GROUND.SAND,
+	0.15,
+	{
+		sapling = 0.05,
+		grass = 0.05,
+		rocks = 0.1,
+		flint = 0.1,
+	},
+	{
+		mound = GetRandomFn(3, 5),
+	}
+)
+
+AddStandardRoom(
+	"WaterBeachRocks",
+	GROUND.SAND,
+	0.2,
+	{
+		sapling = 0.05,
+		grass = 0.05,
+		rocks = 0.1,
+		flint = 0.1,
+		rock1 = 0.05,
+		rock2 = 0.05,
+	},
+	{
+		rocky = GetRandomFn(2, 3),
 		walrus_camp = GetRandomFn(1, 1)
 	}
 )
