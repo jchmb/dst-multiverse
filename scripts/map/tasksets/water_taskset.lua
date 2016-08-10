@@ -30,7 +30,7 @@ local normaltasks = {
 AddTaskSetWrapped(
 	"water",
 	"Beaverland",
-	"forest",
+	"forest_water",
 	tasks,
 	{},
 	0,
