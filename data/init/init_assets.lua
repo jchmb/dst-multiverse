@@ -53,6 +53,12 @@ Assets = {
 	Asset("IMAGE", "levels/tiles/grass_blue.tex"),
 	Asset("FILE", "levels/tiles/grass_blue.xml"),
 
+	-- Jungle tiles
+	Asset("IMAGE", "levels/textures/noise_jungle.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_jungle.tex"),
+	Asset("IMAGE", "levels/tiles/jungle.tex"),
+	Asset("FILE", "levels/tiles/jungle.xml"),	
+
 	-- Assets for recipes
 	Asset("IMAGE", "images/inventoryimages/pighouse_yellow.tex" ),
 	Asset("ATLAS", "images/inventoryimages/pighouse_yellow.xml" ),
@@ -92,9 +98,22 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/venom_gland.xml" ),
 	Asset("IMAGE", "images/inventoryimages/antidote.tex" ),
 	Asset("ATLAS", "images/inventoryimages/antidote.xml" ),
+	Asset("IMAGE", "images/inventoryimages/dumbrella.tex" ),
+	Asset("ATLAS", "images/inventoryimages/dumbrella.xml" ),
+	Asset("IMAGE", "images/inventoryimages/shark_gills.tex" ),
+	Asset("ATLAS", "images/inventoryimages/shark_gills.xml" ),
+	Asset("IMAGE", "images/inventoryimages/seasack.tex" ),
+	Asset("ATLAS", "images/inventoryimages/seasack.xml" ),
+	Asset("IMAGE", "images/inventoryimages/jungletreeseed.tex" ),
+	Asset("ATLAS", "images/inventoryimages/jungletreeseed.xml" ),
+
+	Asset("IMAGE", "images/inventoryimages/armor_snakeskin.tex" ),
+	Asset("ATLAS", "images/inventoryimages/armor_snakeskin.xml" ),
 
 	Asset("IMAGE", "images/inventoryimages/hat_pirate.tex" ),
 	Asset("ATLAS", "images/inventoryimages/hat_pirate.xml" ),
+	Asset("IMAGE", "images/inventoryimages/hat_snakeskin.tex" ),
+	Asset("ATLAS", "images/inventoryimages/hat_snakeskin.xml" ),
 
 	-- Turfs
 	Asset("IMAGE", "images/inventoryimages/turf_snowy.tex" ),
@@ -109,6 +128,8 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/turf_grass_blue.xml" ),
 	Asset("IMAGE", "images/inventoryimages/turf_sand.tex" ),
 	Asset("ATLAS", "images/inventoryimages/turf_sand.xml" ),
+	Asset("IMAGE", "images/inventoryimages/turf_jungle.tex" ),
+	Asset("ATLAS", "images/inventoryimages/turf_jungle.xml" ),
 
 	-- Minimap icons
 	Asset("MINIMAP_IMAGE", "teleportato"),
@@ -124,6 +145,10 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_rock_slimey.xml"),
 	Asset("IMAGE", "map_icons/minimap_migration_portal.tex"),
 	Asset("ATLAS", "map_icons/minimap_migration_portal.xml"),
+	Asset("IMAGE", "map_icons/minimap_sharkittenspawner.tex"),
+	Asset("ATLAS", "map_icons/minimap_sharkittenspawner.xml"),
+	Asset("IMAGE", "map_icons/minimap_jungletree.tex"),
+	Asset("ATLAS", "map_icons/minimap_jungletree.xml"),
 
 	-- Minimap icons for each portal
 	Asset("IMAGE", "map_icons/minimap_portal_cute.tex"),

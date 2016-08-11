@@ -37,6 +37,12 @@ local KEEP_CHOPPING_DIST = 10
 local RUN_AWAY_DIST = 5
 local STOP_RUN_AWAY_DIST = 8
 
+local SEED_TYPES = {
+    "jungletreeseed",
+    "pinecone",
+    "birchnut",
+}
+
 local function ShouldRunAway(inst, target)
     return not inst.components.trader:IsTryingToTradeWithMe(target)
 end
@@ -69,6 +75,40 @@ local function WoodIsNear(inst)
         return true
     end
     return FindEntity(inst, SEE_FOOD_DIST, function(x) return IsWood(inst, x) end)
+end
+
+local function IsTreeSeed(item)
+    for i,seedtype in ipairs(SEED_TYPES) do
+        if seedtype == item.prefab then
+            return true
+        end
+    end
+    return false
+end
+
+local function FindTreeSeeds(inst)
+    local target = inst.components.inventory:FindItem(IsTreeSeed)
+
+    if target ~= nil then
+        -- Need to include old function (if present) as well TODO
+        target.ondeploy = function(seed, pos, deployer)
+            if deployer ~= nil and deployer.prefab == "wildbeaver" then
+                deployer.treesdue = deployer.treesdue - 1
+            end
+        end
+
+        local theta = math.random * 2 * PI
+        local pt = Vector3(inst.Transform:GetWorldPosition())
+        local deployoffset = FindWalkableOffset(pt, theta, math.random(5,20), 4, true)
+        if deployoffet and target.components.deployable and target.components.deployable:CanDeploy() then
+            return BufferedAction(inst, nil, ACTIONS.DEPLOY, target, pt + deployoffset)
+        end
+    end
+
+    target = FindEntity(inst, SEE_FOOD_DIST, IsTreeSeed, {"deployable"}, {"INLIMBO"})
+    if target ~= nil then
+        return BufferedAction(inst, target, ACTIONS.PICKUP)
+    end
 end
 
 local function FindFoodAction(inst)
@@ -257,6 +297,8 @@ function WildbeaverBrain:OnStart()
                 Panic(self.inst)),
             FaceEntity(self.inst, GetTraderFn, KeepTraderFn),
             DoAction(self.inst, FindFoodAction ),
+            IfNode(function() return self.inst.treesdue > 0 end, "find and plant trees",
+                DoAction(self.inst, FindTreeSeeds)),
             IfNode(function() return StartChoppingCondition(self.inst) end, "chop", 
                 WhileNode(function() return KeepChoppingAction(self.inst) end, "keep chopping",
                     LoopNode{ 

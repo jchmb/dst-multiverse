@@ -71,6 +71,10 @@ PrefabFiles = {
 	"frog_purple",
 	"pond_purple",
 	"beaver_king",
+	"sharkittenspawner",
+	"sharkitten",
+	"jungletrees",
+	"jungletreeseed",
 	
 	-- Items
 	"coffee",
@@ -80,6 +84,9 @@ PrefabFiles = {
 	"spidereggsack_poisonous",
 	"obsidian",
 	"newpreparedfoods",
+	"shark_gills",
+	"snakeskin",
+	--"armor_snakeskin",
 
 	-- Misc
 	"new_turfs",

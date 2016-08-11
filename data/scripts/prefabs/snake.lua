@@ -10,12 +10,7 @@ local assets=
 
 local prefabs =
 {
-	"monstermeat",
-	"venom_gland",
-	"obsidian",
-	"ash",
-	"charcoal",
-	"houndstooth",
+	
 }
 
 
@@ -177,7 +172,7 @@ local function fn()
 
 	inst:AddComponent("lootdropper")
 	inst.components.lootdropper:SetLoot({"monstermeat"})
-	inst.components.lootdropper:AddChanceLoot("houndstooth", 0.50)
+	inst.components.lootdropper:AddChanceLoot("snakeskin", 0.25)
 	inst.components.lootdropper.numrandomloot = 0
 
 	inst:AddComponent("inspectable")

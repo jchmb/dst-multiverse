@@ -90,8 +90,9 @@ end
 
 local function OnEat(inst, food)
     if food.components.edible ~= nil then
-        if food.components.edible.foodtype == FOODTYPE.WOOD then
+        if food.components.edible:GetWoodiness() > 0 then
             inst.lastchoptime = GetTime()
+            inst.treesdue = inst.treesdue + 1
         end
         if food.components.edible.foodtype == FOODTYPE.VEGGIE then
             SpawnPrefab("poop").Transform:SetPosition(inst.Transform:GetWorldPosition())
@@ -187,7 +188,7 @@ local function fn()
     inst.Transform:SetFourFaced()
 
     inst:AddTag("character")
-    inst:AddTag("beaver")
+    --inst:AddTag("beaver") >> Apparently this has unintended side-effects
     inst:AddTag("wildbeaver")
     inst:AddTag("scarytoprey")
     
@@ -226,9 +227,9 @@ local function fn()
     
     inst:AddComponent("eater")
     inst.components.eater:SetDiet({ FOODGROUP.WOODIE }, { FOODGROUP.WOODIE })
-    inst.components.eater:SetCanEatHorrible()
-    inst.components.eater:SetCanEatRaw()
-    inst.components.eater.strongstomach = true -- can eat monster meat!
+    -- inst.components.eater:SetCanEatHorrible()
+    -- inst.components.eater:SetCanEatRaw()
+    -- inst.components.eater.strongstomach = true -- can eat monster meat!
     inst.components.eater:SetOnEatFn(OnEat)
     
     inst:AddComponent("health")
@@ -310,6 +311,7 @@ local function fn()
 
     inst.lastchoptime = nil
     inst.WantsToChop = WantsToChop
+    inst.treesdue = 0
 
     inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)

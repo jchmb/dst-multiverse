@@ -30,3 +30,5 @@ GLOBAL.terrain.filter["mushtree_small"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND
 AddStandardTerrainFilter("mermhouse_blue")
 AddStandardTerrainFilter("wildbeaver_house")
 AddStandardTerrainFilter("pond_purple")
+AddStandardTerrainFilter("sharkittenspawner")
+AddPlantableTerrainFilter("jungletree")

@@ -100,6 +100,7 @@ local turfs =
     {name="lava_rock",         anim="grass",      tile=GROUND.LAVA_ROCK},
     {name="grass_blue",         anim="grass",      tile=GROUND.GRASS_BLUE},
     {name="sand",         anim="grass",      tile=GROUND.SAND},
+    {name="jungle",         anim="grass",      tile=GROUND.JUNGLE},
 }
 
 for k,v in pairs(turfs) do

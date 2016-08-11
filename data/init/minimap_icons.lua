@@ -4,6 +4,8 @@ AddMinimapAtlas("map_icons/minimap_mintybush.xml")
 AddMinimapAtlas("map_icons/minimap_pond_open.xml")
 AddMinimapAtlas("map_icons/minimap_rock_slimey.xml")
 AddMinimapAtlas("map_icons/minimap_migration_portal.xml")
+AddMinimapAtlas("map_icons/minimap_sharkittenspawner.xml")
+AddMinimapAtlas("map_icons/minimap_jungletree.xml")
 
 -- Icons for each portal
 AddMinimapAtlas("map_icons/minimap_portal_cute.xml")

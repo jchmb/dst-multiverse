@@ -85,25 +85,6 @@ AddStandardRoom(
 --]]
 
 AddStandardRoom(
-	"WaterMonkeyForest",
-	GROUND.FOREST,
-	0.3,
-	{
-		evergreen = 6,
-		deciduoustree = 4,
-		cave_banana_tree = 0.01,
-		fireflies = 0.5,
-		ground_twigs = 0.1,
-		blue_mushroom = 0.1,
-		green_mushroom = 0.1,
-		grass = 0.2,
-	},
-	{
-		monkeybarrel = GetRandomFn(2, 2),
-	}
-)
-
-AddStandardRoom(
 	"WaterMeadow",
 	GROUND.GRASS_BLUE,
 	0.2,
@@ -179,6 +160,68 @@ AddStandardRoom(
 	},
 	{
 		ox = GetRandomFn(4, 4),
+	}
+)
+
+AddStandardRoom(
+	"BGWaterJungle",
+	GROUND.JUNGLE,
+	0.5,
+	{
+		jungletree = 3,
+		grass = 0.1,
+		sapling = 0.1,
+		twiggytree = 0.1,
+		blue_mushroom = 0.1,
+		green_mushroom = 0.1,
+		cave_banana_tree = 0.03,
+	}
+)
+
+AddStandardRoom(
+	"WaterJungle",
+	GROUND.JUNGLE,
+	0.6,
+	{
+		jungletree = 4,
+		grass = 0.1,
+		sapling = 0.1,
+		twiggytree = 0.1,
+		snake_hole = 0.05,
+		blue_mushroom = 0.1,
+		green_mushroom = 0.1,
+		cave_banana_tree = 0.07,
+		flint = 0.05,
+	}
+)
+
+AddStandardRoom(
+	"WaterMonkeyJungle",
+	GROUND.JUNGLE,
+	0.7,
+	{
+		jungletree = 3,
+		cave_banana_tree = 0.07,
+		fireflies = 0.5,
+		ground_twigs = 0.1,
+		grass = 0.2,
+	},
+	{
+		monkeybarrel = GetRandomFn(2, 3),
+	}
+)
+
+AddStandardRoom(
+	"WaterSpiderJungle",
+	GROUND.JUNGLE,
+	0.8,
+	{
+		jungletree = 3,
+		cave_banana_tree = 0.03,
+	},
+	{
+		spiderden_poisonous = GetRandomFn(4, 3),
+		flower_evil = GetRandomFn(3, 3),
 	}
 )
 
@@ -394,6 +437,21 @@ AddStandardRoom(
 	{
 		rocky = GetRandomFn(2, 3),
 		walrus_camp = GetRandomFn(1, 1)
+	}
+)
+
+AddStandardRoom(
+	"WaterBeachSharkittens",
+	GROUND.SAND,
+	0.2,
+	{
+		ground_twigs = 0.1,
+		rocks = 0.05,
+		flint = 0.05,
+		grass = 0.1,
+	},
+	{
+		sharkittenspawner = GetRandomFn(3, 3),
 	}
 )
 

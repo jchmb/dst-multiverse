@@ -138,6 +138,10 @@ function AddStandardTerrainFilter(prefab)
 	GLOBAL.terrain.filter[prefab] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER}
 end
 
+function AddPlantableTerrainFilter(prefab)
+	AddStandardTerrainFilter(prefab)
+end
+
 function AddLocationWrapped(label, data)
 	AddLocation(data)
 	if SERVER_LEVEL_LOCATIONS ~= nil then

@@ -10,6 +10,7 @@ local actionhandlers =
 	ActionHandler(ACTIONS.ADDFUEL, "pickup"),
 	ActionHandler(ACTIONS.TAKEITEM, "eat"),
 	ActionHandler(ACTIONS.UNPIN, "pickup"),
+	ActionHandler(ACTIONS.DEPLOY, "funnyidle"),
 }
 
 
