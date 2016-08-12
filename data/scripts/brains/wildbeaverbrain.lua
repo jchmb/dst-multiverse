@@ -87,15 +87,53 @@ local function IsTreeSeed(item)
     return false
 end
 
+local function CanDeployWall(pt, item)
+	return TheWorld.Map:CanDeployWallAtPoint(pt, item)
+end
+
 local function GetFreeWallPos(inst)
 	local pt = Vector3(inst.Transform:GetWorldPosition())
-	--local offset = FindWalkableOffset(pt, )
+	
+end
+
+local WALL_RADIUS = 20
+
+local function GetDirections()
+	return {
+		{x=1,z=0},
+		{x=0,z=1},
+		{x=-1,z=0},
+		{x=0,z=-1},
+		{x=1,z=-1},
+		{x=-1,z=1},
+		{x=-1,z=-1},
+		{x=1,z=1},
+	}	
 end
 
 local function FindPosToWall(inst)
 	local item = inst.components.inventory:FindItem(function(x) x.prefab == "wall_wood_item" end)
 	if item ~= nil then
-		return
+		local wall = FindEntity(inst, WALL_RADIUS, function(x) x.prefab == "wall_wood" end, {"wall"})
+		if wall ~= nil then
+			local x, y, z = inst.Transform:GetWorldPosition()
+			local dirs = GetDirections()
+			for i,dir in ipairs(dirs) do
+				local xOffset = dir.x * 0.25
+				local zOffset = dir.z * 0.25
+				local newpt = Vector3(x + xOffset, y, z + zOffset)
+				if CanDeployWall(newpt, item) then
+					return BufferedAction(inst, nil, ACTIONS.DEPLOY, item, newpt)	
+				end
+			end
+		end
+		-- local x, y, z = inst.Transform:GetWorldPosition()
+		-- local ents = TheSim:FindEntities(x, y, z, WALL_RADIUS, {"wall"}, {"INLIMBO"})
+		-- for i,wall in ipairs(ents) do
+		-- 	for j,wall in ipairs(ents) do
+				
+		-- 	end
+		-- end
 	end
 end
 
@@ -314,6 +352,8 @@ function WildbeaverBrain:OnStart()
                 Panic(self.inst)),
             FaceEntity(self.inst, GetTraderFn, KeepTraderFn),
             DoAction(self.inst, FindFoodAction ),
+            IfNode(function() return self.inst.components.inventory:FindItem(function(x) x.prefab == "wall_wood_item" end) end, "find walls to deploy",
+            	DoAction(self.inst, FindPosToWall)),
             IfNode(function() return self.inst.treesdue > 0 end, "find and plant trees",
                 DoAction(self.inst, FindTreeSeeds)),
             IfNode(function() return StartChoppingCondition(self.inst) end, "chop", 
