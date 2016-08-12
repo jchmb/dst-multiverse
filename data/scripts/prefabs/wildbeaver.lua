@@ -88,11 +88,23 @@ local function OnRefuseItem(inst, item)
     end
 end
 
+local WALL_WOOD_COST = 20
+
+local function CraftWall(inst)
+	if inst.woodmeter >= WALL_WOOD_COST then
+		local item = SpawnPrefab("wall_wood_item")
+		inst.components.inventory:GiveItem(item)
+		inst.woodmeter = inst.woodmeter - WALL_WOOD_COST
+	end
+end
+
 local function OnEat(inst, food)
     if food.components.edible ~= nil then
-        if food.components.edible:GetWoodiness() > 0 then
+        if food.components.edible.foodtype == FOODTYPE.WOOD then
             inst.lastchoptime = GetTime()
             inst.treesdue = inst.treesdue + 1
+            inst.woodmeter = inst.woodmeter + food.components.edible.woodiness
+            CraftWall(inst)
         end
         if food.components.edible.foodtype == FOODTYPE.VEGGIE then
             SpawnPrefab("poop").Transform:SetPosition(inst.Transform:GetWorldPosition())
@@ -312,6 +324,7 @@ local function fn()
     inst.lastchoptime = nil
     inst.WantsToChop = WantsToChop
     inst.treesdue = 0
+    inst.woodmeter = 0
 
     inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)
