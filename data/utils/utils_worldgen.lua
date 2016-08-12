@@ -144,9 +144,9 @@ end
 
 function AddLocationWrapped(label, data)
 	AddLocation(data)
-	if SERVER_LEVEL_LOCATIONS ~= nil then
-		table.insert(SERVER_LEVEL_LOCATIONS, data.location)
-	end
+	-- if SERVER_LEVEL_LOCATIONS ~= nil then
+	-- 	table.insert(SERVER_LEVEL_LOCATIONS, data.location)
+	-- end
 	GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATION[string.upper(data.location)] = label
 	GLOBAL.STRINGS.UI.SANDBOXMENU.LOCATIONTABNAME[string.upper(data.location)] = label
 	GLOBAL.STRINGS.TAGS.LOCATION[string.upper(data.location)] = label
