@@ -87,6 +87,18 @@ local function IsTreeSeed(item)
     return false
 end
 
+local function GetFreeWallPos(inst)
+	local pt = Vector3(inst.Transform:GetWorldPosition())
+	--local offset = FindWalkableOffset(pt, )
+end
+
+local function FindPosToWall(inst)
+	local item = inst.components.inventory:FindItem(function(x) x.prefab == "wall_wood_item" end)
+	if item ~= nil then
+		return
+	end
+end
+
 local function FindTreeSeeds(inst)
     local target = inst.components.inventory:FindItem(IsTreeSeed)
 
