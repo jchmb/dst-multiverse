@@ -5,3 +5,7 @@ function GetModConfigBoolean(key)
 		return false
 	end
 end
+
+function IsDedicated()
+	return GLOBAL.TheNet ~= nil and GLOBAL.TheNet:IsDedicated()	
+end
