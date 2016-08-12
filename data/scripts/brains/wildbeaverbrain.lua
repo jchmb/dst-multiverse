@@ -41,6 +41,7 @@ local SEED_TYPES = {
     "jungletreeseed",
     "pinecone",
     "birchnut",
+    "twiggy_nut",
 }
 
 local function ShouldRunAway(inst, target)
@@ -100,8 +101,12 @@ local function FindTreeSeeds(inst)
         local theta = math.random * 2 * PI
         local pt = Vector3(inst.Transform:GetWorldPosition())
         local deployoffset = FindWalkableOffset(pt, theta, math.random(5,20), 4, true)
-        if deployoffet and target.components.deployable and target.components.deployable:CanDeploy() then
-            return BufferedAction(inst, nil, ACTIONS.DEPLOY, target, pt + deployoffset)
+        
+        if deployoffset then
+            local deploypt = pt + deployOffset
+            if target.components.deployable and target.components.deployable:CanDeploy(deploypt) then
+                return BufferedAction(inst, nil, ACTIONS.DEPLOY, target, deploypt)
+            end
         end
     end
 
