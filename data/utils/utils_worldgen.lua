@@ -135,11 +135,26 @@ function AddBlockedTask(task, locks, keys, room_choices, room_bg, background_roo
 end
 
 function AddStandardTerrainFilter(prefab)
-	GLOBAL.terrain.filter[prefab] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER}
+	GLOBAL.terrain.filter[prefab] = {
+		GROUND.ROAD,
+		GROUND.WOODFLOOR,
+		GROUND.SCALE,
+		GROUND.CARPET,
+		GROUND.CHECKER,
+	}
 end
 
 function AddPlantableTerrainFilter(prefab)
-	AddStandardTerrainFilter(prefab)
+	GLOBAL.terrain.filter[prefab] = {
+		GROUND.ROAD,
+		GROUND.WOODFLOOR,
+		GROUND.SCALE,
+		GROUND.CARPET,
+		GROUND.CHECKER,
+		GROUND.ROCKY,
+		GROUND.DIRT,
+		GROUND.ICE_LAKE,
+	}
 end
 
 function AddLocationWrapped(label, data)
