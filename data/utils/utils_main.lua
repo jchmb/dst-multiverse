@@ -60,3 +60,9 @@ function AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, 
 	placer = placer or (recipe .. "_placer")
 	AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer)
 end
+
+function AddMultiPrefabPostInit(prefabs, fn)
+	for i,prefab in ipairs(prefabs) do
+		AddPrefabPostInit(prefab, fn)	
+	end
+end
