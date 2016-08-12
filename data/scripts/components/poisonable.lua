@@ -4,6 +4,7 @@ local Poisonable = Class(function(self, inst)
 	self.interval = 0
 	self.maxInterval = 5
 	self.minInterval = 1
+	self.defaultDuration = 60 * 16
 	self.startDuration = 0
 	self.duration = 0
 	self.updating = false
@@ -13,7 +14,7 @@ end)
 function Poisonable:SetPoison(dmg, interval, duration)
 	self.dmg = dmg or 1
 	self.interval = interval or self.maxInterval
-	self.startDuration = duration or (60 * 16)
+	self.startDuration = duration or self.defaultDuration
 	self.duration = self.startDuration
 	if not self.updating then
 		self.inst:StartUpdatingComponent(self)
