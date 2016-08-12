@@ -35,7 +35,7 @@ function Poisonable:WearOff()
 end
 
 function Poisonable:IncreaseIntensity()
-	if self.duration ~= 0 then
+	if self.duration ~= 0 and self.interval > self.minInterval then
 		local progress = self.maxDuration / self.duration
 		self.interval = math.max(progress * self.maxInterval, self.minInterval)
 	end
