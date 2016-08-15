@@ -12,7 +12,7 @@ local actionhandlers =
 	ActionHandler(ACTIONS.ADDFUEL, "invisibleaction"),
 	ActionHandler(ACTIONS.TAKEITEM, "eat"),
 	ActionHandler(ACTIONS.UNPIN, "invisibleaction"),
-	ActionHandler(ACTIONS.DEPLOY_AI, "invisibleaction"),
+	-- ActionHandler(ACTIONS.DEPLOY_AI, "invisibleaction"),
 }
 
 
