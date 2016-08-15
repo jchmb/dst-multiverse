@@ -2,16 +2,16 @@ local Layouts = GLOBAL.require("map/layouts").Layouts
 Layouts["TrapRabbitMeat"] = GLOBAL.require("map/layouts/trap_rabbit_meat")
 
 local cute_tasks = {
-			"Make a pick",
+			"Make a pick cute",
 			"Speak to the king cute",
 			"Cuteness one",
 			"Cuteness two a",
 			"Cuteness two b",
 			"Cuteness three a",
 			"Cuteness three b",
+			"Cuteness three c",
 			"Cuteness four a",
 			"Cuteness four b",
-			"Frogs and bugs",
 		}
 
 AddTaskSetFixed("cute", {
@@ -20,7 +20,7 @@ AddTaskSetFixed("cute", {
 		tasks = cute_tasks,
 		numoptionaltasks = 0,
 		valid_start_tasks = {
-			"Make a pick",
+			"Make a pick cute",
 		},
 		set_pieces = {
 			["ResurrectionStone"] = { count = 2, tasks=cute_tasks},

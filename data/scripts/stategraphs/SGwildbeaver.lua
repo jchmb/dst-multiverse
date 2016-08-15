@@ -5,12 +5,14 @@ local actionhandlers =
 	ActionHandler(ACTIONS.GOHOME, "gohome"),
 	ActionHandler(ACTIONS.EAT, "eat"),
 	ActionHandler(ACTIONS.CHOP, "chop"),
+	ActionHandler(ACTIONS.DIG, "chop"),
 	ActionHandler(ACTIONS.PICKUP, "eat"),
-	ActionHandler(ACTIONS.EQUIP, "pickup"),
-	ActionHandler(ACTIONS.ADDFUEL, "pickup"),
 	ActionHandler(ACTIONS.TAKEITEM, "eat"),
-	ActionHandler(ACTIONS.UNPIN, "pickup"),
-	ActionHandler(ACTIONS.DEPLOY, "funnyidle"),
+	ActionHandler(ACTIONS.EQUIP, "invisibleaction"),
+	ActionHandler(ACTIONS.ADDFUEL, "invisibleaction"),
+	ActionHandler(ACTIONS.TAKEITEM, "eat"),
+	ActionHandler(ACTIONS.UNPIN, "invisibleaction"),
+	ActionHandler(ACTIONS.DEPLOY_AI, "invisibleaction"),
 }
 
 
@@ -44,6 +46,26 @@ local states=
 			inst.Physics:Stop()
 			inst.AnimState:PlayAnimation("idle_loop", true)
 		end,
+		
+		events=
+		{
+			EventHandler("animover", function(inst) inst.sg:GoToState("idle") end ),
+		},        
+	},
+	State{
+		name= "invisibleaction",	-- Placeholder for when we learn how to work with Spriter
+		tags = {"busy"},
+		
+		onenter = function(inst)
+			inst.Physics:Stop()
+			inst.AnimState:PlayAnimation("idle_loop")
+		end,
+
+		timeline=
+		{
+			
+			TimeEvent(7*FRAMES, function(inst) inst:PerformBufferedAction() end ),
+		},
 		
 		events=
 		{
@@ -288,9 +310,9 @@ table.insert(states, State
 CommonStates.AddIdle(states, "funnyidle")
 CommonStates.AddFrozenStates(states)
 
-CommonStates.AddSimpleActionState(states,"pickup", "pickup", 10*FRAMES, {"busy"})
+CommonStates.AddSimpleActionState(states,"pickup", "pig_pickup", 10*FRAMES, {"busy"})
 
-CommonStates.AddSimpleActionState(states, "gohome", "pickup", 4*FRAMES, {"busy"})
+CommonStates.AddSimpleActionState(states, "gohome", "pig_pickup", 4*FRAMES, {"busy"})
 
 	
 return StateGraph("wildbeaver", states, events, "idle", actionhandlers)

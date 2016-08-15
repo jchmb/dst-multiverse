@@ -33,6 +33,8 @@ PrefabFiles = {
 	"giant_bunnyman",
 	"hatrabbithouse",
 	"hatbunnyman",
+	"mutant_bunnyman",
+	"mutant_rabbithouse",
 	--"piratebunnyman",
 
 	-- Snow mobs and spawners
@@ -75,6 +77,10 @@ PrefabFiles = {
 	"sharkitten",
 	"jungletrees",
 	"jungletreeseed",
+
+	-- Chezz mobs and spawners
+	-- "pigman_cyborg",
+	-- "pighouse_cyborg",
 	
 	-- Items
 	"coffee",

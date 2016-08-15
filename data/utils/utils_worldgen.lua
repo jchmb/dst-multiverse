@@ -87,15 +87,23 @@ function AddStandardRoom(room, ground, distributepercent, distributeprefabs, cou
 	countprefabs = countprefabs or {}
 	countstaticlayouts = countstaticlayouts or {}
 	prefabdata = prefabdata or {}
-	AddRoomWrapped(room, ground, {
-		countprefabs = countprefabs,
-		distributepercent = distributepercent,
-		distributeprefabs = distributeprefabs,
-		countstaticlayouts = countstaticlayouts,
-		prefabdata = prefabdata,
-		internal_type = internal_type,
-		tags=tags,
-	})
+	AddRoomWrapped(
+		room,
+		ground,
+		{
+			countprefabs = countprefabs,
+			distributepercent = distributepercent,
+			distributeprefabs = distributeprefabs,
+			countstaticlayouts = countstaticlayouts,
+			prefabdata = prefabdata,
+		},
+		tags,
+		internal_type
+	)
+end
+
+function AddRoadPoisonRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type)
+	AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type, {"RoadPoison"})
 end
 
 function AddCenterRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata)

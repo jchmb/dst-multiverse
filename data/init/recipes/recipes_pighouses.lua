@@ -54,6 +54,23 @@ pighouseGrayRecipe.atlas = GLOBAL.resolvefilepath("images/inventoryimages/pighou
 STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Houses one graypig"
 
 --[[
+	Cyborg Pighouse Recipe
+--]]
+local pighouseCyborgRecipe = Recipe(
+	"pighouse_cyborg",
+	{
+		Ingredient("boards", 4),
+		Ingredient("gears", 2),
+		Ingredient("pigskin", 4),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST,
+	"pighouse_cyborg_placer"
+)
+pighouseCyborgRecipe.atlas = GLOBAL.resolvefilepath("images/inventoryimages/pighouse_gray.xml")
+STRINGS.RECIPE_DESC.PIGHOUSE_CYBORG = "Houses one clockworkpig"
+
+--[[
 	These recipes are not supposed to be used... yet.
 --]]
 
@@ -85,6 +102,17 @@ AddStructureRecipe(
 		Ingredient("boards", 4),
 		Ingredient("monstermeat", 2),
 		Ingredient("beardhair", 4),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST
+)
+
+AddStructureRecipe(
+	"mutant_rabbithouse",
+	{
+		Ingredient("boards", 4),
+		Ingredient("monstermeat", 2),
+		Ingredient("rot", 10),
 	},
 	RECIPETABS.TOWN,
 	TECH.LOST

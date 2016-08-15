@@ -81,7 +81,7 @@ AddRoom("SlimeyMagicalDeciduous", {
 			fireflies = 2,
 			flower=5,
 
-			molehill = 2,
+			molehill = 1,
 
 			bittersweetbush = 3,
 
@@ -193,7 +193,6 @@ AddRoom("SlimeyMudRocks", {
 		},
 		distributepercent = 0.10,
 		distributeprefabs = {
-			pillar_algae = .01,
 			rock_slimey = 0.1,
 			rock2 = 0.1,
 			perma_pond_mos = 0.1,
@@ -202,7 +201,10 @@ AddRoom("SlimeyMudRocks", {
 			slurtlehole = 0.1,
 			rock_ice = 0.1,
 			pighouse_yellow = 0.075,
-		}
+		},
+		countprefabs = {
+			pillar_algae = GetRandomFn(2, 3),
+		},
 	}
 })
 
@@ -216,7 +218,6 @@ AddRoom("SlimeyHerds", {
 		},
 		distributepercent = 0.10,
 		distributeprefabs = {
-			pillar_algae = .01,
 			perma_grassgekko = 0.1,
 			beefalo = 0.1,
 			perma_grass = 0.1,
@@ -225,7 +226,10 @@ AddRoom("SlimeyHerds", {
 			twiggytree = 0.1,
 			flint = 0.05,
 			perma_pond_mos = 0.05,
-		}
+		},
+		countprefabs = {
+			pillar_algae = GetRandomFn(2, 3),
+		},
 	}
 })
 
@@ -240,9 +244,8 @@ AddRoom("SlimeyStalagmite", {
         distributepercent = .15,
         distributeprefabs=
         {
-            stalagmite = 0.2,
-            pillar_stalactite = 0.1,
-            spiderden_poisonous = 0.05,
+        stalagmite = 0.2,
+        spiderden_poisonous = 0.05,
 		fern = 0.5,
 		slurtlehole = 0.1,
 		perma_grassgekko = 0.1,
@@ -322,7 +325,6 @@ AddRoom("SlimeyEwecus", {
         distributeprefabs=
         {
 		marsh_tree = 3,
-		slurper = 0.05,
 		perma_pond_mos = 0.1,
 		reeds = 0.1,
         },

@@ -1,9 +1,23 @@
+AddTask("Make a pick cute", {
+		locks=LOCKS.NONE,
+		keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
+		room_choices={
+			["CuteForest"] = GetSizeFn(1),
+			["BarePlain"] = 1, 
+			["CutePlain"] = GetSizeFn(1),
+			["Clearing"] = 1,
+		}, 
+		room_bg=GROUND.GRASS,
+		background_room="BGGrass",
+		colour={r=0,g=1,b=0,a=1}
+	})
+
 AddTask("Cuteness one", {
 	locks={LOCKS.NONE},
 	keys_given={KEYS.TIER1},
 	room_choices={
 		["CuteFriends"] = 1,
-		["CuteBunnymanTown"] = 1,
+		["CuteBunnymanTown"] = GetSizeFn(1),
 		["BeefalowPlain"] = 1,
 		["CuteBunnymanTown2"] = 1,
 	},
@@ -18,7 +32,6 @@ AddTask("Cuteness two a", {
 	room_choices={
 		["CuteFriends"] = 2,
 		["CuteBunnymanTown4"] = 1,
-		["CuteRocks"] = 1,
 		["MandrakeHome"] = 1
 	},
 	room_bg=GROUND.GRASS,
@@ -32,7 +45,7 @@ AddTask("Cuteness two b", {
 	room_choices={
 		["CuteFriends"] = 1,
 		["SpiderCity"] = 1,
-		["CuteRocks"] = 2,
+		["CuteRocks"] = GetSizeFn(1),
 		["CuteSpiderForest"] = 1,
 	},
 	room_bg=GROUND.GRASS,
@@ -70,11 +83,22 @@ AddTask("Cuteness three b", {
 })
 
 AddTaskWrapped(
+	"Cuteness three c",
+	{LOCKS.TIER2},
+	{KEYS.TIER3},
+	{
+		["CuteSwamp"] = GetSizeFn(1),
+		["CuteSwampMutants"] = 2,
+	},
+	GROUND.MARSH,
+	"BGCuteSwamp"
+)
+
+AddTaskWrapped(
 	"Cuteness four a",
 	{LOCKS.TIER3},
 	{KEYS.TIER4},
 	{
-		["CuteMonkeyRoom"] = 2,
 		["CuteHerds2"] = 1,
 		["CuteSpiderForest"] = 2,
 		["SpiderCity"] = 1,
@@ -94,6 +118,19 @@ AddTaskWrapped(
 	},
 	GROUND.FUNGUS,
 	"BGCuteFungus"
+)
+
+AddBlockedTask(
+	"Cuteness four d",
+	{LOCKS.TIER5},
+	{KEYS.TIER6},
+	{
+		["CuteBeach"] = GetSizeFn(1),
+		["CuteBeachPirates"] = 2,
+	},
+	GROUND.SAND,
+	"BGCuteBeach",
+	"CuteBeachEntrance"
 )
 
 AddTask("Speak to the king cute", {

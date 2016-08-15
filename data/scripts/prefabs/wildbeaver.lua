@@ -12,7 +12,25 @@ local prefabs = {
 
 local MAX_TARGET_SHARES = 5
 local SHARE_TARGET_DIST = 30
-local CHOP_WAIT_DURATION = 60 * 4
+local CHOP_WAIT_DURATION = 60 * 2
+local TREESDUE_THRESHOLD = 3
+
+local SEED_TYPES = {
+    "jungletreeseed",
+    "pinecone",
+    "acorn",
+    "twiggy_nut",
+}
+
+local function IsTreeSeed(item)
+    for i,seedtype in ipairs(SEED_TYPES) do
+        if (type(item) == "table" and seedtype == item.prefab) or
+                (type(item) ~= "table" and seedtype == item) then
+            return true
+        end
+    end
+    return false
+end
 
 local function CalcSanityAura(inst, observer)
     return (inst.components.follower ~= nil and inst.components.follower.leader == observer and TUNING.SANITYAURA_SMALL)
@@ -40,6 +58,9 @@ end
 local function WantsToChop(inst)
     if inst.lastchoptime == nil then
         return true
+    end
+    if inst.treesdue >= TREESDUE_THRESHOLD then
+        return false
     end
     return (inst.lastchoptime + CHOP_WAIT_DURATION) > GetTime()
 end
@@ -98,13 +119,27 @@ local function CraftWall(inst)
 	end
 end
 
+local function OnDeployItem(inst, data)
+    local prefab = data.prefab
+    if IsTreeSeed(prefab) then
+        inst.treesdue = inst.treesdue - 1
+    end
+end
+
+local function OnFinishWork(inst, data)
+    local action = data.action
+    if action == ACTIONS.CHOP then
+        inst.treesdue = inst.treesdue + 1
+        inst.lastchoptime = GetTime()
+    end
+end
+
 local function OnEat(inst, food)
     if food.components.edible ~= nil then
         if food.components.edible.foodtype == FOODTYPE.WOOD then
-            inst.lastchoptime = GetTime()
-            inst.treesdue = inst.treesdue + 1
+            --inst.treesdue = inst.treesdue + 1
             inst.woodmeter = inst.woodmeter + food.components.edible.woodiness
-            CraftWall(inst)
+            --CraftWall(inst)
         end
         if food.components.edible.foodtype == FOODTYPE.VEGGIE then
             SpawnPrefab("poop").Transform:SetPosition(inst.Transform:GetWorldPosition())
@@ -201,13 +236,14 @@ local function fn()
 
     inst:AddTag("character")
     --inst:AddTag("beaver") >> Apparently this has unintended side-effects
-    inst:AddTag("wildbeaver")
+    --inst:AddTag("wildbeaver")
+    inst:AddTag("pig")
     inst:AddTag("scarytoprey")
     
     inst.AnimState:SetBuild("wildbeaver_build")
     inst.AnimState:SetBank("werebeaver")
     inst.AnimState:PlayAnimation("idle_loop")
-    inst.AnimState:Hide("hat")
+    --inst.AnimState:Hide("hat")
     
     --trader (from trader component) added to pristine state for optimization
     inst:AddTag("trader")
@@ -232,8 +268,8 @@ local function fn()
     inst:SetBrain(brain)
     inst:SetStateGraph("SGwildbeaver")
 
-    inst:AddComponent("sleeper")
-    inst.components.sleeper:SetResistance(2)
+    -- inst:AddComponent("sleeper")
+    -- inst.components.sleeper:SetResistance(2)
 
     inst:AddComponent("bloomer")
     
@@ -309,6 +345,7 @@ local function fn()
     ------------------------------------------
 
     inst:AddComponent("sleeper")
+    inst.components.sleeper:SetResistance(2)
     inst.components.sleeper:SetSleepTest(NormalShouldSleep)
     inst.components.sleeper:SetWakeTest(DefaultWakeTest)
 
@@ -323,13 +360,15 @@ local function fn()
 
     inst.lastchoptime = nil
     inst.WantsToChop = WantsToChop
+    inst.IsTreeSeed = IsTreeSeed
     inst.treesdue = 0
     inst.woodmeter = 0
 
     inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)
     inst:ListenForEvent("suggest_tree_target", SuggestTreeTarget)
-    
+    inst:ListenForEvent("deployitem", OnDeployItem)
+    inst:ListenForEvent("finishedwork", OnFinishWork)
     return inst
 end
 

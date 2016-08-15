@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8 and Joachim"
-version = "1.6.6"
+version = "1.6.11"
 forumthread = ""
 api_version = 10
 
@@ -81,6 +81,9 @@ configuration_options =
 		name = "MultiConnections",
 		default = {},
 	},
+
+	-- Multiland settings
+	
 
 	-- None of your business. :D
 	{

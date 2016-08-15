@@ -30,6 +30,11 @@ modimport("init/init_descriptions_copied")
 modimport("init/namegens/wildbeaver_names")
 
 --[[
+	Actions
+--]]
+modimport("init/init_actions")
+
+--[[
 	Recipes
 --]]
 modimport("init/init_recipes")

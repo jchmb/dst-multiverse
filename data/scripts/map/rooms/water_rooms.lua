@@ -168,7 +168,7 @@ AddStandardRoom(
 	GROUND.JUNGLE,
 	0.5,
 	{
-		jungletree = 3,
+		jungletree = 1,
 		grass = 0.1,
 		sapling = 0.1,
 		twiggytree = 0.1,
@@ -181,9 +181,9 @@ AddStandardRoom(
 AddStandardRoom(
 	"WaterJungle",
 	GROUND.JUNGLE,
-	0.6,
+	0.3,
 	{
-		jungletree = 4,
+		jungletree = 1,
 		grass = 0.1,
 		sapling = 0.1,
 		twiggytree = 0.1,
@@ -198,9 +198,9 @@ AddStandardRoom(
 AddStandardRoom(
 	"WaterMonkeyJungle",
 	GROUND.JUNGLE,
-	0.7,
+	0.2,
 	{
-		jungletree = 3,
+		jungletree = 1,
 		cave_banana_tree = 0.07,
 		fireflies = 0.5,
 		ground_twigs = 0.1,
@@ -214,9 +214,9 @@ AddStandardRoom(
 AddStandardRoom(
 	"WaterSpiderJungle",
 	GROUND.JUNGLE,
-	0.8,
+	0.2,
 	{
-		jungletree = 3,
+		jungletree = 1,
 		cave_banana_tree = 0.03,
 	},
 	{
@@ -228,7 +228,7 @@ AddStandardRoom(
 AddStandardRoom(
 	"WaterBeaverForest",
 	GROUND.GRASS_BLUE,
-	0.8,
+	0.7,
 	{
 		deciduoustree = 6,
 		evergreen = 6,

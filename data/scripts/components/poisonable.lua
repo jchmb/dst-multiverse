@@ -61,7 +61,7 @@ function Poisonable:OnLoad(data)
 		self.startDuration = data.startDuration
 	end
 	if data.lastDamageTime ~= nil then
-		self.lastDamageTime = lastDamageTime
+		self.lastDamageTime = data.lastDamageTime
 	end
 end
 

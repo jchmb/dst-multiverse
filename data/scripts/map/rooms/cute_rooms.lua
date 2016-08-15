@@ -3,21 +3,73 @@ Layouts["BunnymanFarmers"] = GLOBAL.require("map/layouts/bunnyman_farmers")
 Layouts["GentleBunnyman"] = GLOBAL.require("map/layouts/gentle_bunnyman")
 Layouts["TrapRabbitMeat"] = GLOBAL.require("map/layouts/trap_rabbit_meat")
 Layouts["BunnymanFighters"] = GLOBAL.require("map/layouts/bunnyman_fighters")
+Layouts["BunnymanPirates"] = GLOBAL.require("map/layouts/bunnyman_pirates")
 
 AddStandardRoom(
 	"BGCuteFungus",
 	GROUND.FUNGUS,
 	0.4,
 	{
-		carrot_planted = 0.1,
-		evergreen = 8,
+		carrot_planted = 0.2,
+		evergreen = 1,
 		mushtree_tall = 2,
 		red_mushroom = 0.1,
 		green_mushroom = 0.1,
 		blue_mushroom = 0.1,
-		colored_rabbithouse = 0.05,
+		rabbithole = 0.05,
+		colored_rabbithouse = 0.1,
+		grass = 0.1,
+		sapling = 0.1,
+		twiggytree = 0.1,
 	}
 )
+
+AddRoom("CuteForest", {
+					colour={r=.5,g=0.6,b=.080,a=.10},
+					value = GROUND.FOREST,
+					tags = {"ExitPiece", "Chester_Eyebone"},
+					contents =  {
+					                distributepercent = .3,
+					                distributeprefabs=
+					                {
+                                        fireflies = 0.2,
+										--evergreen = 6,
+										rock_petrified_tree = 0.015,
+					                    rock1 = 0.05,
+					                    grass = .05,
+					                    sapling=.8,
+										twiggytree = 0.8,
+										ground_twigs = 0.06,					                    
+										--rabbithole=.05,
+					                    berrybush=.03,
+					                    berrybush_juicy = 0.015,
+					                    carrot_planted = 0.1,
+					                    red_mushroom = .03,
+					                    green_mushroom = .02,
+										trees = {weight = 6, prefabs = {"evergreen", "evergreen_sparse"}},
+										colored_rabbithouse = 0.05,
+					                },
+					            }
+					})
+
+AddRoom("CutePlain", {
+					colour={r=.8,g=.4,b=.4,a=.50},
+					value = GROUND.SAVANNA,
+					tags = {"ExitPiece", "Chester_Eyebone"},
+					contents =  {
+					                distributepercent = .2,
+					                distributeprefabs=
+					                {
+					                	rock_petrified_tree = 0.15,
+					                    rock1 = 0.05,
+					                    perma_grass = 0.5,
+					                    rabbithole= 0.25, 
+					                    green_mushroom = .005,
+					                    carrot_planted = 0.05,
+					                    colored_rabbithouse = 0.05,
+					                },
+					            }
+					})
 
 AddRoom("CuteBunnymanTown", {
 	colour={r=.25,g=.28,b=.25,a=.50},
@@ -27,17 +79,18 @@ AddRoom("CuteBunnymanTown", {
 		countstaticlayouts = {
 			["BunnymanFarmers"] = 1,
 		},
-		distributepercent = 0.07,
+		distributepercent = 0.2,
 		distributeprefabs = {
 			fireflies = 0.2,
-			carrot_planted = 0.1,
+			carrot_planted = 0.2,
 			colored_rabbithouse = 0.1,
 			flower = 0.1,
 			mushtree_medium = 2,
 			mushtree_small = 3,
 			red_mushroom = 0.1,
 			green_mushroom = 0.1,
-			blue_mushroom = 0.1
+			blue_mushroom = 0.1,
+			rabbithole = 0.1,
 		}
 	}
 })
@@ -50,10 +103,10 @@ AddRoom("CuteBunnymanTown2", {
 		countstaticlayouts = {
 			["BunnymanFarmers"] = 1,
 		},
-		distributepercent = 0.07,
+		distributepercent = 0.15,
 		distributeprefabs = {
 			fireflies = 0.2,
-			carrot_planted = 0.1,
+			carrot_planted = 0.2,
 			berrybush = 0.5,
 			berrybush_juicy = 0.25,
 			colored_rabbithouse = 0.1,
@@ -65,6 +118,7 @@ AddRoom("CuteBunnymanTown2", {
 			blue_mushroom = 0.1,
 			catcoonden = 0.1,
 			rock2 = 0.05,
+			rabbithole = 0.1,
 		}
 	}
 })
@@ -74,10 +128,10 @@ AddRoom("CuteBunnymanTown3", {
 	value = GROUND.FUNGUSRED,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		distributepercent = 0.07,
+		distributepercent = 0.15,
 		distributeprefabs = {
 			fireflies = 0.2,
-			carrot_planted = 0.1,
+			carrot_planted = 0.2,
 			colored_rabbithouse = 0.1,
 			sapling = 0.2,
 			twiggytree = 0.2,
@@ -90,6 +144,7 @@ AddRoom("CuteBunnymanTown3", {
 			pighouse = 0.05,
 			deciduoustree = 1,
 			rock_ice = 0.5,
+			rabbithole = 0.1,
 		}
 	}
 })
@@ -102,15 +157,16 @@ AddRoom("CuteBunnymanTown4", {
 		countstaticlayouts = {
 			["GentleBunnyman"] = 1,
 		},
-		distributepercent = 0.4,
+		distributepercent = 0.3,
 		distributeprefabs = {
-			carrot_planted = 0.1,
+			carrot_planted = 0.2,
 			grass = 0.2,
 			pond = 0.01,
 			red_mushroom = 0.1,
 			green_mushroom = 0.1,
 			blue_mushroom = 0.1,
 			deciduoustree = 1,
+			rabbithole = 0.1,
 		}
 	}
 })
@@ -139,7 +195,7 @@ AddRoom("CuteHerds", {
 			perma_grass = 0.1,
 			beefalo = 0.1,
 			rabbithole = 0.2,
-			mushtree_medium = 0.5
+			mushtree_medium = 0.5,
 		}
 	}
 })
@@ -153,7 +209,7 @@ AddRoom("CuteHerds2", {
 		distributeprefabs = {
 			rabbithole = 0.2,
 			perma_grass = 0.1,
-			koalefant_summer = 0.05,
+			koalefant_summer = 0.02,
 			lightninggoat = 0.01,
 			mushtree_small = 0.7
 		}
@@ -184,7 +240,7 @@ AddRoom("CuteRocks", {
 			molehill = 0.1,
 			tallbirdnest=0.008,
 			grassgekko = 0.7,
-			catcoonden = 0.1
+			catcoonden = 0.1,
 		}
 	}
 })
@@ -207,7 +263,7 @@ AddRoom("CuteRocks2", {
 			grassgekko = 0.2,
 			buzzardspawner = 0.1,
 			catcoonden = 0.1,
-			rock_ice = 0.7
+			rock_ice = 0.7,
 		}
 	}
 })
@@ -219,7 +275,7 @@ AddRoom("CuteFriends", {
 	contents =  {
 		distributepercent = 0.2,
 		distributeprefabs = {
-			carrot_planted = 0.1,
+			carrot_planted = 0.2,
 			grass = 0.2,
 			colored_rabbithouse = 0.2,
 			pighouse = 0.2,
@@ -357,7 +413,7 @@ AddStandardRoom(
 	{
 		mushtree_tall = 10,
 		fireflies = 4,
-		carrot_planted = 0.1,
+		carrot_planted = 0.2,
 		rabbithole = 0.2,
 		colored_rabbithouse = 0.6,
 		rabbithouse = 0.15,
@@ -372,7 +428,7 @@ AddCenterRoom(
 		fireflies = 6,
 		grass = 0.6,
 		colored_rabbithouse = 0.2,
-		carrot_planted = 0.2,
+		carrot_planted = 0.4,
 		rabbithole = 0.5,
 	},
 	{
@@ -393,7 +449,8 @@ AddStandardRoom(
 		hatrabbithouse = 0.3,
 		mushtree_tall = 7,
 		mushtree_medium = 5,
-		carrot_planted = 0.1,
+		carrot_planted = 0.2,
+		rabbithole = 0.1,
 	},
 	{},
 	{},
@@ -402,5 +459,99 @@ AddStandardRoom(
 			startinghat = "flowerhat",
 			colorfname = "colored",
 		}
+	}
+)
+
+AddRoadPoisonRoom(
+	"BGCuteSwamp",
+	GROUND.MARSH,
+	0.2,
+	{
+		marsh_bush = 0.1,
+		marsh_tree = 0.1,
+		pond_mos = 0.03,
+		carrot_planted = 0.1,
+		reeds = 0.1,
+	}
+)
+
+AddRoadPoisonRoom(
+	"CuteSwamp",
+	GROUND.MARSH,
+	0.2,
+	{
+		marsh_bush = 0.1,
+		marsh_tree = 0.1,
+		pond_mos = 0.03,
+		tentacle = 1,
+		reeds = 0.1,
+	}
+)
+
+AddRoadPoisonRoom(
+	"CuteSwampMutants",
+	GROUND.MARSH,
+	0.2,
+	{
+		marsh_bush = 0.1,
+		marsh_tree = 0.4,
+		reeds = 0.2,
+		mutant_rabbithouse = 0.1,
+	}
+)
+
+AddStandardRoom(
+	"BGCuteBeach",
+	GROUND.SAND,
+	0.2,
+	{
+		rocks = 0.01,
+		sapling = 0.05,
+		grass = 0.05,
+	}
+)
+
+AddStandardRoom(
+	"CuteBeachEntrance",
+	GROUND.SAND,
+	0.2,
+	{
+		rock1 = 0.05,
+		rocks = 0.01,
+		mushtree_small = 0.05,
+		sapling = 0.05,
+		grass = 0.05,
+		carrot_planted = 0.05,
+	}
+)
+
+AddStandardRoom(
+	"CuteBeach",
+	GROUND.SAND,
+	0.2,
+	{
+		rock1 = 0.05,
+		rocks = 0.01,
+		mushtree_small = 0.05,
+		sapling = 0.05,
+		grass = 0.05,
+		carrot_planted = 0.05,
+	}
+)
+
+AddStandardRoom(
+	"CuteBeachPirates",
+	GROUND.SAND,
+	0.25,
+	{
+		rock1 = 0.05,
+		rocks = 0.01,
+		mushtree_small = 0.05,
+		sapling = 0.05,
+		grass = 0.05,
+	},
+	{},
+	{
+		["BunnymanPirates"] = 1,
 	}
 )

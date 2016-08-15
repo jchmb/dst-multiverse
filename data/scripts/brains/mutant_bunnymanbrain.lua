@@ -117,8 +117,7 @@ local function HasValidHome(inst)
 end
 
 local function GoHomeAction(inst)
-	if not inst.components.follower.leader and
-		HasValidHome(inst) and
+	if HasValidHome(inst) and
 		not inst.components.combat.target then
 			return BufferedAction(inst, inst.components.homeseeker.home, ACTIONS.GOHOME)
 	end
@@ -132,18 +131,11 @@ local function IsHomeOnFire(inst)
 		and inst:GetDistanceSqToInst(inst.components.homeseeker.home) < SEE_BURNING_HOME_DIST_SQ
 end
 
-local function GetLeader(inst)
-	return inst.components.follower.leader 
-end
-
 local function GetHomePos(inst)
 	return HasValidHome(inst) and inst.components.homeseeker:GetHomePos()
 end
 
 local function GetNoLeaderHomePos(inst)
-	if GetLeader(inst) then
-		return nil
-	end
 	return GetHomePos(inst)
 end
 
@@ -154,58 +146,23 @@ end)
 function BunnymanBrain:OnStart()
 	--print(self.inst, "PigBrain:OnStart")
 
-	local stuffNode = WanderAndDoStuff(
-		self.inst,
-		GetNoLeaderHomePos,
-		MAX_WANDER_DIST
-	)
-	stuffNode = DynamicChat(self.inst, self.inst.GetStuffChatLines, stuffNode)
-
 	local root = 
 		PriorityNode(
 		{
 			WhileNode( function() return self.inst.components.hauntable and self.inst.components.hauntable.panic end, "PanicHaunted", Panic(self.inst)),
 			WhileNode(function() return self.inst.components.health.takingfiredamage end, "OnFire",
-				ChattyNode(self.inst, "RABBIT_PANICFIRE",
-					Panic(self.inst))),
+				Panic(self.inst)),
 			WhileNode(function() return self.inst.components.health:GetPercent() < TUNING.BUNNYMAN_PANIC_THRESH end, "LowHealth",
-				ChattyNode(self.inst, "RABBIT_RETREAT",
-					RunAway(self.inst, "scarytoprey", SEE_PLAYER_DIST, STOP_RUN_DIST))),
+				RunAway(self.inst, "scarytoprey", SEE_PLAYER_DIST, STOP_RUN_DIST)),
 			ChaseAndAttack(self.inst, MAX_CHASE_TIME, MAX_CHASE_DIST),
 			WhileNode(function() return IsHomeOnFire(self.inst) end, "OnFire",
-				ChattyNode(self.inst, "RABBIT_PANICHOUSEFIRE",
-					Panic(self.inst))),
-			FaceEntity(self.inst, GetTraderFn, KeepTraderFn),
+				Panic(self.inst)),
+			-- FaceEntity(self.inst, GetTraderFn, KeepTraderFn),
 			DoAction(self.inst, FindFoodAction),
-			Follow(self.inst, GetLeader, MIN_FOLLOW_DIST, TARGET_FOLLOW_DIST, MAX_FOLLOW_DIST),
-			WhileNode(function() return TheWorld.state.iscaveday end, "IsDay",
+			-- Follow(self.inst, GetLeader, MIN_FOLLOW_DIST, TARGET_FOLLOW_DIST, MAX_FOLLOW_DIST),
+			WhileNode(function() return not self.inst.beardlord and TheWorld.state.iscaveday end, "IsDay",
 						DoAction(self.inst, GoHomeAction, "go home", true ), 1),
 			Leash(self.inst, GetNoLeaderHomePos, LEASH_MAX_DIST, LEASH_RETURN_DIST),
-			IfNode(
-				function()
-					local loopfns = self.inst:GetStuffLoopFns()
-					return loopfns ~= nil and loopfns["test"](self.inst)
-				end,
-				"chop", 
-                WhileNode(
-                	function()
-                		local loopfns = self.inst:GetStuffLoopFns()
-						return loopfns ~= nil and loopfns["test"](self.inst)
-                	end,
-                	"keep chopping",
-                    LoopNode{
-                    	DoAction(
-                    		self.inst,
-                    		self.inst.GetStuffLoopAction
-                    	),
-                	}
-                )
-            ),
-            DynamicChat(
-				self.inst,
-				self.inst.GetStuffChatLines,
-				DoAction(self.inst, FindStuffAction)
-			),
 			Wander(self.inst, GetNoLeaderHomePos, MAX_WANDER_DIST)
 		}, .5)
 
