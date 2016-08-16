@@ -251,6 +251,13 @@ local function fn()
     --Sneak these into pristine state for optimization
     inst:AddTag("_named")
     
+    inst:AddComponent("talker")
+    inst.components.talker.fontsize = 35
+    inst.components.talker.font = TALKINGFONT
+    --inst.components.talker.colour = Vector3(133/255, 140/255, 167/255)
+    inst.components.talker.offset = Vector3(0, -400, 0)
+    inst.components.talker:MakeChatter()
+    
     inst.entity:SetPristine()
 
     if not TheWorld.ismastersim then
@@ -291,13 +298,6 @@ local function fn()
     inst.components.combat:SetTarget(nil)
 
     MakeMediumBurnableCharacter(inst, "torso")
-
-    inst:AddComponent("talker")
-    inst.components.talker.fontsize = 35
-    inst.components.talker.font = TALKINGFONT
-    --inst.components.talker.colour = Vector3(133/255, 140/255, 167/255)
-    inst.components.talker.offset = Vector3(0, -400, 0)
-    inst.components.talker:MakeChatter()
 
     inst:AddComponent("named")
     inst.components.named.possiblenames = STRINGS.WILDBEAVER_NAMES
