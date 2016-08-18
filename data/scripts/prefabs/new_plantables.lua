@@ -89,12 +89,12 @@ local plantables =
     },
     {
         name = "bittersweetbush",
-        anim = "idle_dead",
+        anim = "dead",
         bank = "berrybush",
     },
     {
         name = "mintybush",
-        anim = "idle_dead",
+        anim = "dead",
         bank = "berrybush2",
         build = "berrybush2",
     },

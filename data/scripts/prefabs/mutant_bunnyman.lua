@@ -134,7 +134,7 @@ end
 local function NormalRetargetFn(inst)
     return FindEntity(inst, TUNING.PIG_TARGET_DIST,
         function(guy)
-            return inst.components.combat:CanTarget(guy)
+            return inst.components.combat:CanTarget(guy) and not guy.prefab == inst.prefab
         end,
         { "_combat", "_health" }, -- see entityreplica.lua
         nil,

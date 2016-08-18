@@ -9,6 +9,7 @@ local Poisonable = Class(function(self, inst)
 	self.duration = 0
 	self.updating = false
 	self.lastDamageTime = 0
+	self:SetOnHitFn()
 end)
 
 function Poisonable:SetPoison(dmg, interval, duration)
@@ -55,8 +56,25 @@ function Poisonable:OnUpdate(dt)
 	end
 end
 
+function Poisonable:SetOnHitFn()
+	local onhit = function(inst, attacker, dmg)
+		if attacker ~= nil and attacker.components.poisonous then
+			attacker.components.poisonous:OnAttack(inst, dmg)
+		end
+	end
+	if self.inst.components.combat.onhitfn ~= nil then
+		local oldonhitfn = self.inst.components.combat.onhitfn
+		self.inst.components.combat:SetOnHit(function(inst, attacker, dmg)
+			oldonhitfn(inst, attacker, dmg)
+			onhit(inst, attacker, dmg)
+		end)
+	else
+		self.inst.components.combat:SetOnHit(onhit)
+	end
+end
+
 function Poisonable:OnLoad(data)
-	if data.mult ~= 1 and data.startDuration ~= 0 and data.duration ~= 0 and data.interval ~= 0 then
+	if data.dmg ~= 1 and data.startDuration ~= 0 and data.duration ~= 0 and data.interval ~= 0 then
 		self:SetPoison(data.dmg, data.interval, data.duration)
 		self.startDuration = data.startDuration
 	end

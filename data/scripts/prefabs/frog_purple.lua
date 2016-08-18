@@ -42,6 +42,10 @@ local function OnHitOther(inst, other, damage)
     inst.components.thief:StealItem(other)
 end
 
+local function PoisonTest(inst, target)
+    
+end
+
 local function fn()
     local inst = CreateEntity()
 
@@ -66,7 +70,7 @@ local function fn()
     inst:AddTag("smallcreature")
     inst:AddTag("frog")
     inst:AddTag("canbetrapped")
-    inst:AddTag("poisonous")
+    --inst:AddTag("poisonous")
 
     inst.entity:SetPristine()
 
@@ -94,6 +98,9 @@ local function fn()
     inst.components.combat:SetRetargetFunction(3, retargetfn)
 
     inst.components.combat.onhitotherfn = OnHitOther
+
+    inst:AddComponent("poisonous")
+    inst.components.poisonous:SetPoisonTestFn(PoisonTest)
 
     inst:AddComponent("thief")
 

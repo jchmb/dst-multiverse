@@ -215,7 +215,7 @@ local function poisonfn()
 
 	inst.AnimState:SetBuild("snake_yellow_build")
 
-	inst:AddTag("poisonous")
+	inst:AddComponent("poisonous")
 	--inst.components.combat.poisonous = true
 
 	if not TheWorld.ismastersim then

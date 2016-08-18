@@ -188,7 +188,7 @@ local function create_common(build, tag)
     inst:AddTag("canbetrapped")
     inst:AddTag("smallcreature")
     inst:AddTag("spider")
-    inst:AddTag("poisonous")
+    --inst:AddTag("poisonous")
     if tag ~= nil then
         inst:AddTag(tag)
     end
@@ -207,6 +207,7 @@ local function create_common(build, tag)
     end
 
     ----------
+
     inst.OnEntitySleep = OnEntitySleep
 
     -- locomotor must be constructed before the stategraph!
@@ -235,6 +236,8 @@ local function create_common(build, tag)
     inst.components.combat.hiteffectsymbol = "body"
     inst.components.combat:SetKeepTargetFunction(keeptargetfn)
     inst.components.combat:SetOnHit(SummonFriends)
+
+    inst:AddComponent("poisonous")
 
     inst:AddComponent("follower")
     inst.components.follower.maxfollowtime = TUNING.TOTAL_DAY_TIME

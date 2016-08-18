@@ -299,7 +299,7 @@ local growth_stages =
 
 local function chop_tree(inst, chopper, chops)
 
-	if chopper and chopper.components.beaverness and chopper.components.beaverness:IsBeaver() then
+	if chopper and chopper.components.beaverness and chopper.isbeavermode and chopper.isbeavermode:value() then
 		inst.SoundEmitter:PlaySound("dontstarve/characters/woodie/beaver_chop_tree")
 	else
 		inst.SoundEmitter:PlaySound("dontstarve/wilson/use_axe_tree")

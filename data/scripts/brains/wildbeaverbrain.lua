@@ -149,8 +149,8 @@ local function FindTreeSeeds(inst)
 		local pt = Vector3(x1, 0, z1)
 		if TheWorld.Map:CanPlantAtPoint(x1, 0, z1) then
 			--if target.components.deployable then -- and target.components.deployable:CanDeploy(deploypt) then
-				-- return BufferedAction(inst, nil, ACTIONS.DEPLOY_AI, target, pt)
-				return BufferedAction(inst, nil, ACTIONS.DEPLOY, target, pt)
+				return BufferedAction(inst, nil, ACTIONS.DEPLOY_AI, target, pt)
+				-- return BufferedAction(inst, nil, ACTIONS.DEPLOY, target, pt)
 			--end
 		end
 		target = nil

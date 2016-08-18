@@ -97,6 +97,7 @@ PrefabFiles = {
 	-- Misc
 	"new_turfs",
 	"new_plantables",
+	"coffeebush",
 	"new_bushes",
 	"new_veggies",
 	"new_rocks",
