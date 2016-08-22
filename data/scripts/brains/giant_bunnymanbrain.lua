@@ -90,7 +90,7 @@ function GiantBunnymanBrain:OnStart()
             ChaseAndAttack(self.inst, MAX_CHASE_TIME, MAX_CHASE_DIST),
             DoAction(self.inst, FindFoodAction),
             Wander(self.inst, GetHomePos, MAX_WANDER_DIST)
-        }, .5)
+        }, 1)
 
     self.bt = BT(self.inst, root)
 end

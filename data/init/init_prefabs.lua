@@ -77,6 +77,11 @@ PrefabFiles = {
 	"sharkitten",
 	"jungletrees",
 	"jungletreeseed",
+	"palmtrees",
+	"coconut",
+	"palmleaf",
+	"rock_limpet",
+	"limpets",
 
 	-- Chezz mobs and spawners
 	-- "pigman_cyborg",
@@ -92,7 +97,7 @@ PrefabFiles = {
 	"newpreparedfoods",
 	"shark_gills",
 	"snakeskin",
-	--"armor_snakeskin",
+	"armor_snakeskin",
 
 	-- Misc
 	"new_turfs",

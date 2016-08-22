@@ -5,6 +5,6 @@ AddLevelWrapped(
 	"forest",
 	"multi",
 	{
-		
+		start_location = "multi_beach"
 	}
 )

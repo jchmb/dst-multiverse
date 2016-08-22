@@ -8,10 +8,10 @@ AddTaskSetWrapped(
 		"Multi one b",
 		"Snowy one",
 		"Snowy two b",
+		"Water two b",
 		"Slimey three a",
 		"Cuteness three b",
 		"Grayness four a",
-		"Slimey four b",
 		"Snowy four b",
 		"Speak to the king",
 	},
@@ -22,9 +22,12 @@ AddTaskSetWrapped(
 		"Chezzness four",
 		"Slimey four b",
 		"Grayness four b",
+		"Slimey four b",
 		"Snowy three b",
 		"Snowy three a",
 		"Water two a",
+		"Water three d",
+		"Water two c",
 	},
-	5
+	6
 )

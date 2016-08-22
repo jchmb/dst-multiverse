@@ -185,13 +185,9 @@ local function NormalRetargetFn(inst)
         inst,
         TUNING.PIG_TARGET_DIST,
         function(guy)
-            return ((guy.LightWatcher == nil or guy.LightWatcher:IsInLight())
-                and inst.components.combat:CanTarget(guy))
-                
-                -- Graypigs attack you if you are a monster (as usual), or if your sanity aura is less than 25%
-       		and (guy:HasTag("monster") or (guy.components.sanity ~= nil and guy.components.sanity:GetPercentWithPenalty() <= 0.4))
+            return inst.components.combat:CanTarget(guy)
         end,
-        {"_combat"}, -- see entityreplica.lua
+        {"_combat", "monster"}, -- see entityreplica.lua
         inst.components.follower.leader ~= nil and
         { "playerghost", "INLIMBO", "abigail" } or
         { "playerghost", "INLIMBO" }
@@ -236,7 +232,7 @@ local function fn()
 
     inst:AddTag("character")
     --inst:AddTag("beaver") >> Apparently this has unintended side-effects
-    --inst:AddTag("wildbeaver")
+    inst:AddTag("wildbeaver")
     inst:AddTag("pig")
     inst:AddTag("scarytoprey")
     

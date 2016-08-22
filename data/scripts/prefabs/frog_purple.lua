@@ -43,7 +43,7 @@ local function OnHitOther(inst, other, damage)
 end
 
 local function PoisonTest(inst, target)
-    
+    return math.random() < 0.25
 end
 
 local function fn()

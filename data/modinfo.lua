@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8 and Joachim"
-version = "1.6.16"
+version = "1.7.1"
 forumthread = ""
 api_version = 10
 
@@ -36,7 +36,7 @@ configuration_options =
 	{
 		name = "EnableStartingItems",
 		description = "Enable starting items",
-		default = 0,
+		default = 0,	
 		options = {
 			{
 				description = "Yes",

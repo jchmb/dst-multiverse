@@ -127,6 +127,6 @@ AddStructureRecipe(
 		Ingredient("log", 8),
 	},
 	RECIPETABS.TOWN,
-	TECH.LOST
+	TECH.LOST,
+	"Houses one Wildbeaver"
 )
-STRINGS.RECIPE_DESC.WILDBEAVER_HOUSE = "Houses one Wildbeaver"

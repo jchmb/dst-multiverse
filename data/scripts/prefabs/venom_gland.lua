@@ -7,8 +7,8 @@ local MAX_VENOM_GLAND_DAMAGE = 80
 local MIN_VENOM_GLAND_LEFTOVER = 5
 
 local function oneat(inst, eater)
-    if eater.components.poisoned ~= nil then
-        eater.components.poisoned:WearOff()
+    if eater.components.poisonable then
+        eater.components.poisonable:WearOff()
         local dmg = MAX_VENOM_GLAND_DAMAGE
         if eater.components.health.currenthealth <= MAX_VENOM_GLAND_DAMAGE then
             dmg = eater.components.health.currenthealth - MIN_VENOM_GLAND_LEFTOVER

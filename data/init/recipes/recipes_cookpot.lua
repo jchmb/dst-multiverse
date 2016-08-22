@@ -4,6 +4,7 @@
 AddIngredientValues({"coffeebeans"}, {veggie=1}, true, false)
 AddIngredientValues({"bittersweetberries"}, {fruit=1, monster=0.5}, true, false)
 AddIngredientValues({"mintyberries"}, {fruit=1}, true, false)
+AddIngredientValues({"limpets"}, {fish=0.5}, true, false)
 
 --[[
 	New recipes

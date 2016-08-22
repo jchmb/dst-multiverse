@@ -36,9 +36,11 @@ if GetModConfigBoolean("UseMigrationPortals") then
 	modimport("scripts/map/levels/defaultmodifiedlevel")
 end
 
+modimport("scripts/map/rooms/multi_rooms")
 modimport("scripts/map/tasks/multi_tasks")
 modimport("scripts/map/tasksets/multi_taskset")
 modimport("scripts/map/levels/multilevel")
+modimport("scripts/map/start_locations/start_location_multi")
 
 modimport("scripts/map/rooms/gray_rooms")
 modimport("scripts/map/tasks/gray_tasks")

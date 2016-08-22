@@ -414,8 +414,6 @@ AddStandardRoom(
 	{
 		sapling = 0.05,
 		grass = 0.05,
-		rocks = 0.1,
-		flint = 0.1,
 	},
 	{
 		mound = GetRandomFn(3, 5),
@@ -429,9 +427,7 @@ AddStandardRoom(
 	{
 		sapling = 0.05,
 		grass = 0.05,
-		rocks = 0.1,
-		flint = 0.1,
-		rock1 = 0.05,
+		rock_limpet = 0.1,
 		rock2 = 0.05,
 	},
 	{

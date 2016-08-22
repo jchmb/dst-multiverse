@@ -1,8 +1,10 @@
 local preparedFoods = {
 	coffeeham =
 	{
-		test = function(cooker, names, tags)  return names.coffeebeans_cooked and tags.meat and tags.meat > 1.5 and not tags.inedible end,
-		priority = 2,
+		test = function(cooker, names, tags)
+			return names.coffeebeans_cooked and tags.meat and tags.meat > 1.5 and not tags.inedible
+		end,
+		priority = 11,
 		foodtype = FOODTYPE.MEAT,
 		health = TUNING.HEALING_TINY,
 		hunger = TUNING.CALORIES_HUGE,

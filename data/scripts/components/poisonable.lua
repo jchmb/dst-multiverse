@@ -12,13 +12,24 @@ local Poisonable = Class(function(self, inst)
 	self:SetOnHitFn()
 end)
 
+local function SpoilLoot(inst, loot)
+	if loot.components.perishable then
+		local pc = 0.5 * loot.components.perishable:GetPercent()
+		loot.components.perishable:SetPercent(pc)
+	end
+	return loot
+end
+
 function Poisonable:SetPoison(dmg, interval, duration)
-	self.dmg = dmg or 1
+	self.dmg = dmg or -1
 	self.interval = interval or self.maxInterval
 	self.startDuration = duration or self.defaultDuration
 	self.duration = self.startDuration
 	if not self.updating then
 		self.inst:StartUpdatingComponent(self)
+		if self.inst.components.lootdropper then
+			self.inst.components.lootdropper:SetLootPostInit("poisoned", SpoilLoot)
+		end
 	end
 end
 
@@ -33,12 +44,15 @@ end
 function Poisonable:WearOff()
 	self:ResetValues()
 	self.inst:StopUpdatingComponent(self)
+	if self.updating and self.inst.components.lootdropper then
+		self.inst.components.lootdropper:RemoveLootPostInit("poisoned")
+	end
 	self.updating = false
 end
 
 function Poisonable:IncreaseIntensity()
 	if self.duration ~= 0 and self.interval > self.minInterval then
-		local progress = self.maxDuration / self.duration
+		local progress = self.startDuration / self.duration
 		self.interval = math.max(progress * self.maxInterval, self.minInterval)
 	end
 end
@@ -74,7 +88,7 @@ function Poisonable:SetOnHitFn()
 end
 
 function Poisonable:OnLoad(data)
-	if data.dmg ~= 1 and data.startDuration ~= 0 and data.duration ~= 0 and data.interval ~= 0 then
+	if data.dmg and data.startDuration and data.duration and data.interval then
 		self:SetPoison(data.dmg, data.interval, data.duration)
 		self.startDuration = data.startDuration
 	end

@@ -14,6 +14,12 @@ local function fn(Sim)
     inst.AnimState:PlayAnimation("idle")
 
     MakeInventoryPhysics(inst)
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
     
     inst:AddComponent("stackable")
     inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
@@ -35,5 +41,5 @@ local function fn(Sim)
     return inst
 end
 
-return Prefab( "common/inventory/snakeskin", fn, assets) 
+return Prefab( "snakeskin", fn, assets) 
 

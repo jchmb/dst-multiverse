@@ -2,12 +2,11 @@ AddTask("Make a pick multi", {
 	locks=LOCKS.NONE,
 	keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
 	room_choices={
-		["Clearing"] = 1,
-		["BarePlain"] = 1, 
-		["Plain"] = 1,
+		["MultiBeachClearing"] = 1,
+		["MultiBeach"] = GetSizeFn(1),
 	}, 
-	room_bg=GROUND.GRASS,
-	background_room="BGForest",
+	room_bg=GROUND.SAND,
+	background_room="BGMultiBeach",
 	colour={r=0,g=1,b=0,a=1}
 })
 
@@ -33,9 +32,7 @@ AddTaskWrapped(
 	{KEYS.TIER2},
 	{
 		["SnowyForest"] = GetSizeFn(1),
-		["SnowySpiderForest"] = 1,
 		["SnowyLeifForest"] = 1,
-		["SnowyTallbirdForest"] = 1,
 		["SnowyGoats"] = 1,
 	},
 	GROUND.SNOWY,

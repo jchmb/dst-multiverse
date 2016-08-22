@@ -53,7 +53,7 @@ local function fn(Sim)
     
     inst:AddComponent("fueled")
     inst.components.fueled.fueltype = "USAGE"
-    inst.components.fueled:InitializeFuelLevel(TUNING.ARMOR_SNAKESKIN_PERISHTIME)
+    inst.components.fueled:InitializeFuelLevel(6*60*8)--TUNING.ARMOR_SNAKESKIN_PERISHTIME)
     inst.components.fueled:SetDepletedFn(onperish)
     
     
@@ -64,4 +64,4 @@ local function fn(Sim)
     return inst
 end
 
-return Prefab( "common/inventory/armor_snakeskin", fn, assets) 
+return Prefab( "armor_snakeskin", fn, assets) 

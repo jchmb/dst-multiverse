@@ -14,6 +14,8 @@ Ingredient = GLOBAL.Ingredient
 TECH = GLOBAL.TECH
 Recipe = GLOBAL.Recipe
 
+modimport("init/init_tuning")
+
 --[[
 	Assets
 --]]
@@ -43,6 +45,11 @@ modimport("init/init_recipes")
 	Chatter scripts
 --]]
 modimport("init/init_chatter")
+
+--[[
+	Misc
+--]]
+modimport("init/init_kramped")
 
 -- Prefab postinits
 modimport("init/postinits")

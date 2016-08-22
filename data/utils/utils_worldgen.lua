@@ -160,9 +160,15 @@ function AddPlantableTerrainFilter(prefab)
 		GROUND.CARPET,
 		GROUND.CHECKER,
 		GROUND.ROCKY,
-		GROUND.DIRT,
 		GROUND.ICE_LAKE,
 	}
+end
+
+function AddTreeTerrainFilter(prefab)
+	AddPlantableTerrainFilter(prefab)
+	AddPlantableTerrainFilter(prefab .. "_tall")
+	AddPlantableTerrainFilter(prefab .. "_normal")
+	AddPlantableTerrainFilter(prefab .. "_small")
 end
 
 function AddLocationWrapped(label, data)

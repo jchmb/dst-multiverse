@@ -1,7 +1,4 @@
-local walls = {}
-local n = 11
 local ds = 0.25
-
 --[[
 for i=0,n do
 	table.insert(walls, {x=i*ds,y=0})
@@ -22,8 +19,6 @@ return {
 							-- Lay the objects in whatever pattern
 							layout = 
 								{
-
-									wall_hay = walls,
 									hatrabbithouse = {
 										{
 											x = 4 * ds,
