@@ -12,11 +12,15 @@ local function onfinished(inst)
     inst:Remove()
 end
 
+local function UpdateSound(inst)
+    return -- TODO
+end
+
 local function onequip(inst, owner) 
     owner.AnimState:OverrideSymbol("swap_object", "swap_umbrella", "swap_umbrella")
     owner.AnimState:Show("ARM_carry")
     owner.AnimState:Hide("ARM_normal")
-    --UpdateSound(inst)
+    UpdateSound(inst)
     
     owner.DynamicShadow:SetSize(2.2, 1.4)
 
@@ -50,6 +54,7 @@ local function common_fn(Sim)
 	local inst = CreateEntity()
 	local trans = inst.entity:AddTransform()
 	local anim = inst.entity:AddAnimState()
+    inst.entity:AddNetwork()
     inst.entity:AddSoundEmitter()
 
     MakeInventoryPhysics(inst)
@@ -73,11 +78,11 @@ local function common_fn(Sim)
     inst:AddComponent("insulator")
     inst.components.insulator:SetSummer()
 
-    inst:ListenForEvent("rainstop", function() UpdateSound(inst) end, GetWorld()) 
-	inst:ListenForEvent("rainstart", function() UpdateSound(inst) end, GetWorld()) 
+ --    inst:ListenForEvent("rainstop", function() UpdateSound(inst) end, GetWorld()) 
+	-- inst:ListenForEvent("rainstart", function() UpdateSound(inst) end, GetWorld()) 
 
-    inst:ListenForEvent("startrowing", function() UpdateSound(inst) end)
-    inst:ListenForEvent("stoprowing", function() UpdateSound(inst) end)
+ --    inst:ListenForEvent("startrowing", function() UpdateSound(inst) end)
+ --    inst:ListenForEvent("stoprowing", function() UpdateSound(inst) end)
 
     return inst
 end
@@ -127,6 +132,8 @@ local function palmleaf(Sim)
     MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
     MakeSmallPropagator(inst)
     MakeDragonflyBait(inst, 3)
+
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/palmleaf_umbrella.xml"
 
     return inst
 end

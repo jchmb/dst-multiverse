@@ -82,6 +82,14 @@ PrefabFiles = {
 	"palmleaf",
 	"rock_limpet",
 	"limpets",
+	"thatchpack",
+	"palmleafhut",
+	"palmleaf_umbrella",
+	"wildbore",
+	"wildbore_house",
+	"bamboo",
+	"bambootree",
+	"machetes",
 
 	-- Chezz mobs and spawners
 	-- "pigman_cyborg",

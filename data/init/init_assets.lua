@@ -115,10 +115,22 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/coconut_cooked.xml" ),
 	Asset("IMAGE", "images/inventoryimages/palmleaf.tex" ),
 	Asset("ATLAS", "images/inventoryimages/palmleaf.xml" ),
+	Asset("IMAGE", "images/inventoryimages/palmleaf_umbrella.tex" ),
+	Asset("ATLAS", "images/inventoryimages/palmleaf_umbrella.xml" ),
+	Asset("IMAGE", "images/inventoryimages/palmleaf_hut.tex" ),
+	Asset("ATLAS", "images/inventoryimages/palmleaf_hut.xml" ),
 	Asset("IMAGE", "images/inventoryimages/limpets.tex" ),
 	Asset("ATLAS", "images/inventoryimages/limpets.xml" ),
 	Asset("IMAGE", "images/inventoryimages/limpets_cooked.tex" ),
 	Asset("ATLAS", "images/inventoryimages/limpets_cooked.xml" ),
+	Asset("IMAGE", "images/inventoryimages/bamboo.tex" ),
+	Asset("ATLAS", "images/inventoryimages/bamboo.xml" ),
+	Asset("IMAGE", "images/inventoryimages/dug_bambootree.tex" ),
+	Asset("ATLAS", "images/inventoryimages/dug_bambootree.xml" ),
+	Asset("IMAGE", "images/inventoryimages/machete.tex" ),
+	Asset("ATLAS", "images/inventoryimages/machete.xml" ),
+	Asset("IMAGE", "images/inventoryimages/goldenmachete.tex" ),
+	Asset("ATLAS", "images/inventoryimages/goldenmachete.xml" ),
 
 	Asset("IMAGE", "images/inventoryimages/armor_snakeskin.tex" ),
 	Asset("ATLAS", "images/inventoryimages/armor_snakeskin.xml" ),
@@ -168,6 +180,12 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_palmtree.xml"),
 	Asset("IMAGE", "map_icons/minimap_limpetrock.tex"),
 	Asset("ATLAS", "map_icons/minimap_limpetrock.xml"),
+	Asset("IMAGE", "map_icons/minimap_crate.tex"),
+	Asset("ATLAS", "map_icons/minimap_crate.xml"),
+	Asset("IMAGE", "map_icons/minimap_wildbore_house.tex"),
+	Asset("ATLAS", "map_icons/minimap_wildbore_house.xml"),
+	Asset("IMAGE", "map_icons/minimap_bambootree.tex"),
+	Asset("ATLAS", "map_icons/minimap_bambootree.xml"),
 
 	-- Minimap icons for each portal
 	Asset("IMAGE", "map_icons/minimap_portal_cute.tex"),
@@ -180,6 +198,11 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_portal_slimey.xml"),
 	Asset("IMAGE", "map_icons/minimap_portal_snowy.tex"),
 	Asset("ATLAS", "map_icons/minimap_portal_snowy.xml"),
+	Asset("IMAGE", "map_icons/minimap_portal_water.tex"),
+	Asset("ATLAS", "map_icons/minimap_portal_water.xml"),
+
+	-- UI
+	Asset("ANIM", "anim/ui_thatchpack_1x4.zip"),
 
 	-- Sound
 	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),

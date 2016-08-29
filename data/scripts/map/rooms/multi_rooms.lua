@@ -20,6 +20,7 @@ AddStandardRoom(
 		grass = 0.1,
 		palmtree = 0.5,
 		flint = 0.1,
+		crate = 0.05,
 	}
 )
 
@@ -33,5 +34,6 @@ AddStandardRoom(
 		palmtree = 1,
 		flint = 0.1,
 		rock_limpet = 0.1,
+		wildbore_house = 0.05,
 	}
 )

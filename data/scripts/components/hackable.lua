@@ -93,36 +93,26 @@ local Hackable = Class(function(self, inst)
 end)
 
 function Hackable:CheckPlantState()
-	local data = { temp = GetSeasonManager():GetCurrentTemperature() }
+	local data = { temp = TheWorld.state.temperature }
 	self:witherHandler(data)
 	self:rejuvenateHandler(data)
 end
 
 function Hackable:StartListeningToEvents()
-	if self.reverseseasons then
-	    self.inst:ListenForEvent("witherplants", self.rejuvenateHandler, TheWorld)
-	    self.inst:ListenForEvent("rejuvenateplants", self.witherHandler, TheWorld)
-	else
-	    self.inst:ListenForEvent("witherplants", self.witherHandler, TheWorld)
-	    self.inst:ListenForEvent("rejuvenateplants", self.rejuvenateHandler, TheWorld)
-	end
+	-- self.inst:ListenForEvent("witherplants", self.witherHandler, TheWorld)
+	-- self.inst:ListenForEvent("rejuvenateplants", self.rejuvenateHandler, TheWorld)
 end
 
 function Hackable:StopListeningToEvents()
-	if self.reverseseasons then
-	    self.inst:RemoveEventCallback("witherplants", self.rejuvenateHandler, TheWorld)
-	    self.inst:RemoveEventCallback("rejuvenateplants", self.witherHandler, TheWorld)
-	else
-		self.inst:RemoveEventCallback("witherplants", self.witherHandler, TheWorld)
-    	self.inst:RemoveEventCallback("rejuvenateplants", self.rejuvenateHandler, TheWorld)
-    end
+	-- self.inst:RemoveEventCallback("witherplants", self.witherHandler, TheWorld)
+ --    self.inst:RemoveEventCallback("rejuvenateplants", self.rejuvenateHandler, TheWorld)
 end
 
-function Hackable:SetReverseSeasons(reverse)
-	self:StopListeningToEvents()
-	self.reverseseasons = reverse
-	self:StartListeningToEvents()
-end
+-- function Hackable:SetReverseSeasons(reverse)
+-- 	self:StopListeningToEvents()
+-- 	self.reverseseasons = reverse
+-- 	self:StartListeningToEvents()
+-- end
 
 function Hackable:OnEntitySleep()
 	self:StopListeningToEvents()
@@ -204,7 +194,7 @@ function Hackable:Rejuvenate(fertilizer)
 		-- 	end
 		-- end)
 	else
-		GetPlayer():PushEvent("insufficientfertilizer")
+		fertilizer:PushEvent("insufficientfertilizer")
 	end
 end
 
@@ -284,13 +274,13 @@ function Hackable:GetDebugString()
 end
 
 function Hackable:GetGrowthMod()
-	if self.reverseseasons then
-		return 1
-	end
+	-- if self.reverseseasons then
+	-- 	return 1
+	-- end
 
 	local mod = 1.0
-	local sm = GetSeasonManager()
-	if sm and (sm:IsSpring() or sm:IsGreenSeason()) then
+	-- local sm = GetSeasonManager()
+	if TheWorld.state.isspring then
 		mod = TUNING.SPRING_GROWTH_MODIFIER
 	end
 	return mod

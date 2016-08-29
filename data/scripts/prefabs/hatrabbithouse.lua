@@ -68,6 +68,14 @@ local function onvacate(inst, child)
             child.colorpicked = colorpicked
         end
         if inst.startinghat ~= nil then
+            local hat = child.components.inventory:FindItem(
+                function(x)
+                    return x.prefab == inst.startinghat
+                end
+            )
+            if hat ~= nil then
+                return
+            end
             local item = SpawnPrefab(inst.startinghat)
             child.components.inventory:Equip(item)
             if item.components.finiteuses ~= nil then

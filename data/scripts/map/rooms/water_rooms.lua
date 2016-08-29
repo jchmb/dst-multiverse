@@ -175,6 +175,7 @@ AddStandardRoom(
 		blue_mushroom = 0.1,
 		green_mushroom = 0.1,
 		cave_banana_tree = 0.03,
+		bambootree = 0.2,
 	}
 )
 
@@ -183,7 +184,7 @@ AddStandardRoom(
 	GROUND.JUNGLE,
 	0.3,
 	{
-		jungletree = 1,
+		jungletree = 0.5,
 		grass = 0.1,
 		sapling = 0.1,
 		twiggytree = 0.1,
@@ -192,6 +193,7 @@ AddStandardRoom(
 		green_mushroom = 0.1,
 		cave_banana_tree = 0.07,
 		flint = 0.05,
+		bambootree = 0.2,
 	}
 )
 
@@ -200,7 +202,7 @@ AddStandardRoom(
 	GROUND.JUNGLE,
 	0.2,
 	{
-		jungletree = 1,
+		jungletree = 0.5,
 		cave_banana_tree = 0.07,
 		fireflies = 0.5,
 		ground_twigs = 0.1,
@@ -216,7 +218,7 @@ AddStandardRoom(
 	GROUND.JUNGLE,
 	0.2,
 	{
-		jungletree = 1,
+		jungletree = 0.5,
 		cave_banana_tree = 0.03,
 	},
 	{
@@ -394,6 +396,7 @@ AddStandardRoom(
 		grass = 0.05,
 		rocks = 0.1,
 		flint = 0.1,
+		palmtree = 0.1,
 	}
 )
 
@@ -414,9 +417,11 @@ AddStandardRoom(
 	{
 		sapling = 0.05,
 		grass = 0.05,
+		palmtree = 0.1,
+		wildbore_house = 0.1,
 	},
 	{
-		mound = GetRandomFn(3, 5),
+		crate = GetRandomFn(3, 5),
 	}
 )
 
@@ -429,10 +434,12 @@ AddStandardRoom(
 		grass = 0.05,
 		rock_limpet = 0.1,
 		rock2 = 0.05,
+		palmtree = 0.1,
 	},
 	{
-		rocky = GetRandomFn(2, 3),
-		walrus_camp = GetRandomFn(1, 1)
+		-- rocky = GetRandomFn(2, 3),
+		walrus_camp = GetRandomFn(1, 1),
+		crate = GetRandomFn(2, 2),
 	}
 )
 

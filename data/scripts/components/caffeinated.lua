@@ -35,7 +35,7 @@ function Caffeinated:OnUpdate(dt)
 end
 
 function Caffeinated:OnLoad(data)
-	if data.mult ~= nil and data.duration ~= nil and data.duration > 0 and self.mult > 1 then
+	if data.mult ~= nil and data.duration ~= nil and data.duration > 0 and data.mult > 1 then
 		self:Caffeinate(data.mult, data.duration)
 	end
 end

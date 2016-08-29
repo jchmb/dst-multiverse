@@ -1,6 +1,8 @@
 require "prefabutil"
 
 local function make_plantable(data)
+    local workable_type = data.workable or "pickable"
+
     local assets =
     {
         Asset("ANIM", "anim/"..data.name..".zip"),
@@ -18,7 +20,11 @@ local function make_plantable(data)
         if tree ~= nil then
             tree.Transform:SetPosition(pt:Get())
             inst.components.stackable:Get():Remove()
-            tree.components.pickable:OnTransplant()
+            if workable_type == "pickable" then
+                tree.components.pickable:OnTransplant()
+            elseif workable_type == "hackable" then
+                tree.components.hackable:OnTransplant()
+            end
             if deployer ~= nil and deployer.SoundEmitter ~= nil then
                 --V2C: WHY?!! because many of the plantables don't
                 --     have SoundEmitter, and we don't want to add
@@ -97,6 +103,14 @@ local plantables =
         anim = "dead",
         bank = "berrybush2",
         build = "berrybush2",
+    },
+    {
+        name="bambootree",
+        minspace = 2,
+        bank = "bambootree",
+        build = "bambootree_build",
+        workable = "hackable",
+        -- testfn=test_nobeach
     },
 }
 

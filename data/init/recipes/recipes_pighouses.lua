@@ -130,3 +130,15 @@ AddStructureRecipe(
 	TECH.LOST,
 	"Houses one Wildbeaver"
 )
+
+AddStructureRecipe(
+	"wildbore_house",
+	{
+		ModIngredient("bamboo", 8),
+		ModIngredient("palmleaf", 5),
+		Ingredient("pigskin", 4),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST,
+	"Houses one Wildbore"
+)
