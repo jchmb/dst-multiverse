@@ -49,7 +49,7 @@ local function fn()
 
 	-----
 	inst:AddComponent("tool")
-	inst.components.tool:SetAction(ACTIONS.HACK)
+	-- inst.components.tool:SetAction(ACTIONS.HACK)
 	-------
 	inst:AddComponent("finiteuses")
 	inst.components.finiteuses:SetMaxUses(TUNING.MACHETE_USES)
@@ -131,7 +131,7 @@ local function obsidian(Sim)
 	inst.AnimState:SetBuild("machete_obsidian")
 	inst.AnimState:SetBank("machete_obsidian")
 
-	inst.components.tool:SetAction(ACTIONS.HACK, TUNING.OBSIDIANTOOL_WORK)
+	-- inst.components.tool:SetAction(ACTIONS.HACK, TUNING.OBSIDIANTOOL_WORK)
 
 	inst.components.finiteuses:SetConsumption(ACTIONS.HACK, 1 / TUNING.OBSIDIANTOOLFACTOR)
 	inst.components.weapon.attackwear = 1 / TUNING.OBSIDIANTOOLFACTOR

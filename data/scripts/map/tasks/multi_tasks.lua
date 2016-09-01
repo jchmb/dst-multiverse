@@ -15,7 +15,6 @@ AddTaskWrapped(
 	{LOCKS.TIER1},
 	{KEYS.TIER2},
 	{
-		["CuteGiantBunnyLair"] = 1,
 		["CuteBunnymanTown3"] = 1,
 		["CuteBunnymanTown5"] = GetSizeFn(1),
 		["CuteBunnymanTown2"] = 1,
@@ -37,4 +36,15 @@ AddTaskWrapped(
 	},
 	GROUND.SNOWY,
 	"BGSnowy"
+)
+
+AddTaskWrapped(
+	"Multi one c",
+	{LOCKS.TIER1},
+	{KEYS.TIER2},
+	{
+		["MultiRocks"] = GetSizeFn(1),
+	},
+	GROUND.ROCKY,
+	"BGMultiRocks"
 )

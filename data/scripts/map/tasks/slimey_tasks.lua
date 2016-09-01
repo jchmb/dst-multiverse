@@ -90,6 +90,6 @@ AddTask("Slimey four b", {
 		["SlimeyMermCity"] = 2,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
-	room_bg=GROUND.MARSH,
+	room_bg=GROUND.SLIMEY,
 	background_room="BGSlimey",
 })

@@ -23,6 +23,7 @@ AddStandardRoom(
 		sapling = 0.1,
 		twiggytree = 0.1,
 		grass = 0.1,
+		bambootree = 0.02,
 	}
 )
 
@@ -96,7 +97,8 @@ AddStandardRoom(
 		beehive = 0.05,
 		flower = 2,
 		deciduoustree = 0.5,
-		rock1 = 0.05,
+		rock_limpet = 0.05,
+		bambootree = 0.02,
 	}
 )
 
@@ -168,14 +170,14 @@ AddStandardRoom(
 	GROUND.JUNGLE,
 	0.5,
 	{
-		jungletree = 1,
+		jungletree = 0.2,
 		grass = 0.1,
 		sapling = 0.1,
 		twiggytree = 0.1,
 		blue_mushroom = 0.1,
 		green_mushroom = 0.1,
 		cave_banana_tree = 0.03,
-		bambootree = 0.2,
+		bambootree = 0.15,
 	}
 )
 
@@ -184,7 +186,7 @@ AddStandardRoom(
 	GROUND.JUNGLE,
 	0.3,
 	{
-		jungletree = 0.5,
+		jungletree = 0.3,
 		grass = 0.1,
 		sapling = 0.1,
 		twiggytree = 0.1,
@@ -193,7 +195,8 @@ AddStandardRoom(
 		green_mushroom = 0.1,
 		cave_banana_tree = 0.07,
 		flint = 0.05,
-		bambootree = 0.2,
+		bambootree = 0.15,
+		wildbore_house = 0.05,
 	}
 )
 
@@ -202,7 +205,7 @@ AddStandardRoom(
 	GROUND.JUNGLE,
 	0.2,
 	{
-		jungletree = 0.5,
+		jungletree = 0.3,
 		cave_banana_tree = 0.07,
 		fireflies = 0.5,
 		ground_twigs = 0.1,
@@ -218,7 +221,7 @@ AddStandardRoom(
 	GROUND.JUNGLE,
 	0.2,
 	{
-		jungletree = 0.5,
+		jungletree = 0.3,
 		cave_banana_tree = 0.03,
 	},
 	{
@@ -260,9 +263,6 @@ AddStandardRoom(
 		grass = 0.1,
 		red_mushroom = 0.3,
 		fireflies = 0.5,
-	},
-	{
-		migration_portal = 1,
 	}
 )
 
@@ -335,7 +335,6 @@ AddStandardRoom(
 	},
 	{
 		mandrake_planted = 3,
-		migration_portal = 1,
 	}
 )
 
@@ -432,7 +431,7 @@ AddStandardRoom(
 	{
 		sapling = 0.05,
 		grass = 0.05,
-		rock_limpet = 0.1,
+		rock_limpet = 0.25,
 		rock2 = 0.05,
 		palmtree = 0.1,
 	},

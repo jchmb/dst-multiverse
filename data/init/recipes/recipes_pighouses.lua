@@ -59,8 +59,8 @@ STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Houses one graypig"
 local pighouseCyborgRecipe = Recipe(
 	"pighouse_cyborg",
 	{
-		Ingredient("boards", 4),
-		Ingredient("gears", 2),
+		Ingredient("boards", 6),
+		Ingredient("gears", 1),
 		Ingredient("pigskin", 4),
 	},
 	RECIPETABS.TOWN,
@@ -74,7 +74,7 @@ STRINGS.RECIPE_DESC.PIGHOUSE_CYBORG = "Houses one clockworkpig"
 	These recipes are not supposed to be used... yet.
 --]]
 
-AddStructureRecipe(
+AddLostRecipe(
 	"colored_rabbithouse",
 	{
 		Ingredient("boards", 4),
@@ -85,7 +85,7 @@ AddStructureRecipe(
 	TECH.LOST
 )
 
-AddStructureRecipe(
+AddLostRecipe(
 	"hatrabbithouse",
 	{
 		Ingredient("boards", 4),
@@ -96,7 +96,7 @@ AddStructureRecipe(
 	TECH.LOST
 )
 
-AddStructureRecipe(
+AddLostRecipe(
 	"beardlordhouse",
 	{
 		Ingredient("boards", 4),
@@ -107,7 +107,7 @@ AddStructureRecipe(
 	TECH.LOST
 )
 
-AddStructureRecipe(
+AddLostRecipe(
 	"mutant_rabbithouse",
 	{
 		Ingredient("boards", 4),
@@ -141,4 +141,16 @@ AddStructureRecipe(
 	RECIPETABS.TOWN,
 	TECH.LOST,
 	"Houses one Wildbore"
+)
+
+AddStructureRecipe(
+	"sand_castle",
+	{
+		ModIngredient("sand", 4),
+		ModIngredient("palmleaf", 2),
+		ModIngredient("seashell", 3),
+	},
+	RECIPETABS.TOWN,
+	TECH.NONE,
+	"Therapeutic and relaxing."
 )

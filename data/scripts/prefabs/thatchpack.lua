@@ -19,20 +19,14 @@ params =
 }
 
 for y = 0, 3 do
-    table.insert(params.widget.slotpos, Vector3(-162, -75 * y + 114, 0))
+    table.insert(params.widget.slotpos, Vector3(-162 +(75/2), -y*75 + 114 ,0))
     ---table.insert(params.widget.slotpos, Vector3(-162 + 75, -75 * y + 114, 0))
 end
 
 local function onequip(inst, owner)
 	local skin_build = inst:GetSkinBuild()
-	if skin_build ~= nil then
-        owner:PushEvent("equipskinneditem", inst:GetSkinName())
-		owner.AnimState:OverrideItemSkinSymbol("backpack", skin_build, "backpack", inst.GUID, "swap_backpack" )
-		owner.AnimState:OverrideItemSkinSymbol("swap_body", skin_build, "swap_body", inst.GUID, "swap_backpack" )
-	else
-		owner.AnimState:OverrideSymbol("backpack", "swap_backpack", "backpack")
-		owner.AnimState:OverrideSymbol("swap_body", "swap_backpack", "swap_body")
-	end
+	owner.AnimState:OverrideSymbol("swap_body", "swap_thatchpack", "backpack")
+    owner.AnimState:OverrideSymbol("swap_body", "swap_thatchpack", "swap_body")
     
     if inst.components.container ~= nil then
         inst.components.container:Open(owner)
@@ -40,10 +34,6 @@ local function onequip(inst, owner)
 end
 
 local function onunequip(inst, owner)
-    local skin_build = inst:GetSkinBuild()
-    if skin_build ~= nil then
-        owner:PushEvent("unequipskinneditem", inst:GetSkinName())
-    end
     owner.AnimState:ClearOverrideSymbol("swap_body")
     owner.AnimState:ClearOverrideSymbol("backpack")
     if inst.components.container ~= nil then
@@ -81,26 +71,27 @@ local function fn()
     inst.entity:AddTransform()
     inst.entity:AddAnimState()
     inst.entity:AddSoundEmitter()
-    inst.entity:AddMiniMapEntity()
+    local minimap = inst.entity:AddMiniMapEntity()
     inst.entity:AddNetwork()
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBank("backpack1")
-    inst.AnimState:SetBuild("swap_backpack")
+    inst.AnimState:SetBank("thatchpack")
+    inst.AnimState:SetBuild("swap_thatchpack")
     inst.AnimState:PlayAnimation("anim")
 
     inst:AddTag("backpack")
 
-    inst.MiniMapEntity:SetIcon("backpack.png")
-
-    inst.foleysound = "dontstarve/movement/foley/backpack"
+    minimap:SetIcon("minimap_thatchpack.tex")
+    minimap:SetPriority(-1)
 
     inst.entity:SetPristine()
 
     if not TheWorld.ismastersim then
         return inst
     end
+
+    inst.foleysound = "dontstarve/movement/foley/backpack"
 
     inst:AddComponent("inspectable")
 

@@ -1,4 +1,3 @@
-require "prefabutil"
 local assets =
 {
 	Asset("ANIM", "anim/coconut.zip"),
@@ -6,8 +5,8 @@ local assets =
 
 local prefabs = 
 {
-    "coconut_cooked", 
-    "cononut_halved"
+    -- "coconut_cooked", 
+    -- "cononut_halved"
 }
 
 local function growtree(inst)
@@ -165,7 +164,7 @@ local function OnLoad(inst, data)
     end
 end
 
-local function common(Sim)
+local function common()
 	local inst = CreateEntity()
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
@@ -181,7 +180,7 @@ local function common(Sim)
 
    -- inst:AddComponent("edible")
     --inst.components.edible.foodtype = "VEGGIE"
-    inst:AddTag("coconut")
+    -- inst:AddTag("coconut")
     inst:AddTag("cattoy")
 
     inst.entity:SetPristine()
@@ -196,7 +195,7 @@ local function common(Sim)
 	inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
 
     inst:AddComponent("inspectable")
-    inst.components.inspectable.getstatus = describe
+    -- inst.components.inspectable.getstatus = describe
     
     --inst:AddComponent("fuel")
     --inst.components.fuel.fuelvalue = TUNING.SMALL_FUEL
@@ -214,7 +213,7 @@ local function common(Sim)
    
 
     inst:AddComponent("edible")
-    inst.components.edible.foodtype = "RAW"
+    inst.components.edible.foodtype = FOODTYPE.RAW
 
     
     inst:AddComponent("inventoryitem")
@@ -295,14 +294,13 @@ local function cooked()
         return inst
     end
 
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/coconut_cooked.xml"
+
     inst.components.edible.foodstate = "COOKED"
     inst.components.edible.hungervalue = TUNING.CALORIES_TINY
     inst.components.edible.healthvalue = TUNING.HEALING_TINY
     inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
-    inst.components.edible.foodtype = "SEEDS"
-
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/coconut_halved.xml"
-
+    inst.components.edible.foodtype = FOODTYPE.SEEDS
 
     return inst
 end
@@ -312,27 +310,31 @@ local function halved()
 
     inst.AnimState:PlayAnimation("chopped")
 
+    inst:AddTag("cookable")
+
     if not TheWorld.ismastersim then
         return inst
     end
 
     inst:AddComponent("cookable")
     inst.components.cookable.product = "coconut_cooked"
+
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/coconut_halved.xml"
     
     -- MakeInventoryFloatable(inst, "chopped_water", "chopped")
     inst.components.edible.hungervalue = TUNING.CALORIES_TINY/2
     inst.components.edible.healthvalue = TUNING.HEALING_TINY
     inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
-    inst.components.edible.foodtype = "SEEDS"
+    inst.components.edible.foodtype = FOODTYPE.SEEDS
 
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/coconut_cooked.xml"
+    
 
     return inst
 end
 
 return Prefab( "coconut", raw, assets, prefabs),
-    Prefab( "coconut_cooked", cooked, assets),
-    Prefab( "coconut_halved", halved, assets),
+    Prefab( "coconut_cooked", cooked, assets, prefabs),
+    Prefab( "coconut_halved", halved, assets, prefabs),
 	   MakePlacer( "coconut_placer", "coconut", "coconut", "planted" ) 
 
 

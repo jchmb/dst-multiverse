@@ -27,7 +27,7 @@ local function fn(Sim)
 	inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
 
     inst:AddComponent("edible")
-    inst.components.edible.foodtype = "WOOD"
+    inst.components.edible.foodtype = FOODTYPE.WOOD
     inst.components.edible.woodiness = 1
 
     inst:AddTag("cattoy")
@@ -51,5 +51,5 @@ local function fn(Sim)
     return inst
 end
 
-return Prefab( "common/inventory/palmleaf", fn, assets) 
+return Prefab( "palmleaf", fn, assets) 
 

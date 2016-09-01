@@ -20,11 +20,11 @@ local function make_plantable(data)
         if tree ~= nil then
             tree.Transform:SetPosition(pt:Get())
             inst.components.stackable:Get():Remove()
-            if workable_type == "pickable" then
+            -- if workable_type == "pickable" then
                 tree.components.pickable:OnTransplant()
-            elseif workable_type == "hackable" then
-                tree.components.hackable:OnTransplant()
-            end
+            -- elseif workable_type == "hackable" then
+            --     tree.components.hackable:OnTransplant()
+            -- end
             if deployer ~= nil and deployer.SoundEmitter ~= nil then
                 --V2C: WHY?!! because many of the plantables don't
                 --     have SoundEmitter, and we don't want to add
@@ -109,7 +109,7 @@ local plantables =
         minspace = 2,
         bank = "bambootree",
         build = "bambootree_build",
-        workable = "hackable",
+        -- workable = "hackable",
         -- testfn=test_nobeach
     },
 }

@@ -1,7 +1,7 @@
 AddLevelWrapped(
 	"MULTIPRESET",
 	"Multiland",
-	"A mixture of different kinds of worlds",
+	"Shipwrecked stuff and more!",
 	"forest",
 	"multi",
 	{

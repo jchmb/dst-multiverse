@@ -190,7 +190,7 @@ local function NormalShouldSleep(inst)
                 (inst.LightWatcher == nil or inst.LightWatcher:IsInLight())))
 end
 
-local normalbrain = require "brains/pigbrain_gray"
+local normalbrain = require "brains/pigbrain"
 
 local function SuggestTreeTarget(inst, data)
     if data ~= nil and data.tree ~= nil and inst:GetBufferedAction() ~= ACTIONS.CHOP then
@@ -218,10 +218,11 @@ local function SetNormalPig(inst)
     inst.components.sleeper:SetWakeTest(DefaultWakeTest)
 
     inst.components.lootdropper:SetLoot({})
-    inst.components.lootdropper:AddRandomLoot("meat", 3)
-    inst.components.lootdropper:AddRandomLoot("pigskin", 1)
+    inst.components.lootdropper:AddRandomLoot("meat", 49)
+    inst.components.lootdropper:AddRandomLoot("pigskin", 49)
+    inst.components.lootdropper:AddRandomLoot("gears", 2)
     inst.components.lootdropper.numrandomloot = 1
-    inst.components.lootdropper:AddChanceLoot("pighouse_cyborg_blueprint", 0.2)
+    inst.components.lootdropper:AddChanceLoot("pighouse_cyborg_blueprint", 0.1)
 
     inst.components.health:SetMaxHealth(300)--TUNING.PIG_HEALTH)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
@@ -281,7 +282,7 @@ local function SetWerePig(inst)
     inst.components.lootdropper:SetLoot({ "meat", "meat", "pigskin" })
     inst.components.lootdropper.numrandomloot = 0
     inst.components.lootdropper:AddChanceLoot("pighouse_cyborg_blueprint", 0.20)
-    inst.components.lootdropper:AddChanceLoot("nightmarefuel", 0.50)
+    -- inst.components.lootdropper:AddChanceLoot("nightmarefuel", 0.50)
 
     inst.components.health:SetMaxHealth(TUNING.WEREPIG_HEALTH)
     inst.components.combat:SetTarget(nil)

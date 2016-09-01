@@ -134,6 +134,24 @@ local function MakeHat(name)
         return inst
     end
 
+    local function ox()
+        local inst = simple()
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALLMED)
+        
+        inst:AddComponent("armor")
+        inst.components.armor:InitCondition(TUNING.ARMOR_OXHAT, TUNING.ARMOR_OXHAT_ABSORPTION)
+
+        -- TODO: inst.components.equippable.poisonblocker = true
+
+        return inst
+    end
+
     local function snakeskin()
         local inst = simple()
 
@@ -205,8 +223,8 @@ local function MakeHat(name)
         inst:AddTag("waterproofer")
         inst:AddTag("umbrella")
 
-        inst.AnimState:SetBank("hat_double_umbrella")
-        inst.AnimState:SetBuild("hat_double_umbrella")
+        -- inst.AnimState:SetBank("hat_double_umbrella")
+        -- inst.AnimState:SetBuild("hat_double_umbrella")
         inst.AnimState:PlayAnimation("anim")
 
         inst.entity:AddSoundEmitter()
@@ -216,7 +234,7 @@ local function MakeHat(name)
         end
 
         inst:AddComponent("fueled")
-        inst.components.fueled.fueltype = "USAGE"
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
         inst.components.fueled:InitializeFuelLevel(12*60*8)--TUNING.EYEBRELLA_PERISHTIME)
         inst.components.fueled:SetDepletedFn( double_umbrella_perish )
 
@@ -249,6 +267,8 @@ local function MakeHat(name)
         fn = double_umbrella
     elseif name == "snakeskin" then
         fn = snakeskin
+    elseif name == "ox" then
+        fn = ox
     end
 
     return Prefab(prefabname, fn or default, assets, prefabs)
@@ -256,4 +276,5 @@ end
 
 return  MakeHat("pirate"),
     MakeHat("double_umbrella"),
-    MakeHat("snakeskin")
+    MakeHat("snakeskin"),
+    MakeHat("ox")

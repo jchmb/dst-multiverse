@@ -143,9 +143,6 @@ AddRoom("SlimeySwamp", {
 	value = GROUND.MARSH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			marsh_bush = 0.2,
@@ -166,7 +163,6 @@ AddRoom("SlimeySwampRocks", {
 	contents =  {
 		countprefabs = {
 			meteorspawner = 2,
-			migration_portal = 1,
 		},
 		distributepercent = 0.10,
 		distributeprefabs = {
@@ -188,9 +184,6 @@ AddRoom("SlimeyMudRocks", {
 	value = GROUND.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			rock_slimey = 0.1,
@@ -213,9 +206,6 @@ AddRoom("SlimeyHerds", {
 	value = GROUND.SLIMEY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			perma_grassgekko = 0.1,
@@ -238,9 +228,6 @@ AddRoom("SlimeyStalagmite", {
 	value = GROUND.UNDERROCK,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
         distributepercent = .15,
         distributeprefabs=
         {

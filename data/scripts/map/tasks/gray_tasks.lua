@@ -27,7 +27,7 @@ AddTask("Grayness two b", {
 	locks={KEYS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["GrayMoonRocks"] = 2,
+		["GrayMoonRocks"] = GetSizeFn(1),
 		["GrayGoats"] = 1,
 		["GrayBeardlords"] = 1,
 	},
@@ -56,7 +56,7 @@ AddTask("Grayness three b", {
 		["GraySpiderTown"] = 1,
 		["GrayHoundTown"] = 1,
 		["GrayHerds"] = 1,
-		["GrayRocks"] = 2
+		["GrayRocks"] = GetSizeFn(1),
 	},
 	room_bg=GROUND.ROCKY,
 	background_room="BGGray",

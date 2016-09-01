@@ -16,8 +16,8 @@ local assets=
 
 local prefabs =
 {
-	"meat",
-	"poop",
+	-- "meat",
+	-- "poop",
 	--"ox_horn",
 	--"horn",
 }
@@ -28,7 +28,7 @@ SetSharedLootTable( 'ox',
 	{'meat',            1.00},
 	{'meat',            1.00},
 	{'meat',            1.00},
-	--{'ox_horn',            0.33},
+	{'ox_horn',            0.33},
 })
 
 local sounds = 

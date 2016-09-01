@@ -45,20 +45,26 @@ end
 --]]
 function AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer)
 	description = description or "???"
-	atlas = atlas or "images/inventoryimages/pighouse_gray.xml"
+	atlas = atlas or "images/inventoryimages/" .. recipe .. ".xml"
 	placer = placer or nil
 	local newRecipe = Recipe(recipe, ingredients, tab, tech, placer)
 	newRecipe.atlas = GLOBAL.resolvefilepath(atlas)
 	GLOBAL.STRINGS.RECIPE_DESC[string.upper(recipe)] = description
+	return newRecipe
 end
 
 function AddItemRecipe(recipe, ingredients, tab, tech, description, atlas)
-	AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, nil)
+	return AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, nil)
 end
 
 function AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, placer)
 	placer = placer or (recipe .. "_placer")
-	AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer)
+	return AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer)
+end
+
+function AddLostRecipe(recipe, ingredients, tab, tech, description, atlas, placer)
+	atlas = atlas or "images/inventoryimages/pighouse_gray.xml"
+	return AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, placer)
 end
 
 function AddMultiPrefabPostInit(prefabs, fn)

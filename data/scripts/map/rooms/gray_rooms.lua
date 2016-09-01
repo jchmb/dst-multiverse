@@ -71,9 +71,6 @@ AddRoom("GrayPetGraveyard", {
 	value = GROUND.FOREST,
 	tags = {"ExitPiece", "Chester_Eyebone", "Mist"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.2,
 		countprefabs = {
 			gravestone = function() return 3 + math.random(4) end,
@@ -132,9 +129,6 @@ AddRoom("GrayEvilMoles", {
 	value = GROUND.GRASS_GRAY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 2,
-		},
 		distributepercent = 0.2,
 		distributeprefabs = {
 			molehill = 0.3,
@@ -195,9 +189,6 @@ AddRoom("GraySwamp", {
 	value = GROUND.MARSH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.10,
 		distributeprefabs = {
 			marsh_bush = 0.2,
@@ -215,9 +206,6 @@ AddRoom("GrayRocks", {
 	value = GROUND.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 2,
-		},
 		distributepercent = 0.2,
 		distributeprefabs = {
 			meteorspawner = 1,
@@ -413,6 +401,7 @@ AddRoom("GrayMoonRocks", {
 			grassgekko = 0.1,
 			basalt = 0.1,
 			tumbleweedspawner = 0.01,
+			coffeebush = 0.05,
 		}
 	}
 })

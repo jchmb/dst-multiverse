@@ -66,14 +66,10 @@ AddRoom("SnowyPlain", {
 	value = GROUND.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
-		distributepercent = 0.1,
+		distributepercent = 0.15,
 		distributeprefabs= {
 			rock_petrified_tree = 0.15,
 			rock1 = 0.05,
-			perma_grass = 0.5,
 			perma_grass = 0.5,
 			rabbithole_snow=0.25,
 			rock_ice = 0.2,
@@ -86,9 +82,6 @@ AddRoom("SnowyBarePlain", {
 	value = GROUND.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.1,
 		distributeprefabs= {
 			perma_grass = 0.8,

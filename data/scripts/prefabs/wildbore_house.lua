@@ -333,13 +333,15 @@ local function fn()
     inst.entity:AddAnimState()
     inst.entity:AddLight()
     inst.entity:AddSoundEmitter()
-    inst.entity:AddMiniMapEntity()
+    local minimap = inst.entity:AddMiniMapEntity()
     inst.entity:AddNetwork()
     inst.entity:AddLightWatcher()
 
     MakeObstaclePhysics(inst, 1)
 
-    inst.MiniMapEntity:SetIcon("wildbore_house.tex")
+    minimap:SetIcon("wildbore_house.tex")
+    minimap:SetPriority(-1)
+
 --{anim="level1", sound="dontstarve/common/campfire", radius=2, intensity=.75, falloff=.33, colour = {197/255,197/255,170/255}},
     inst.Light:SetFalloff(1)
     inst.Light:SetIntensity(.5)

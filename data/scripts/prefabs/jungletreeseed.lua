@@ -154,7 +154,7 @@ local function OnLoad(inst, data)
     end
 end
 
-local function fn(Sim)
+local function fn()
 	local inst = CreateEntity()
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
@@ -172,6 +172,13 @@ local function fn(Sim)
     --inst.components.edible.woodiness = 2
 
     inst:AddTag("cattoy")
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+    
     inst:AddComponent("tradable")
 
     inst:AddComponent("stackable")

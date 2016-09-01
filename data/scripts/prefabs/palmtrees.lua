@@ -91,8 +91,8 @@ local old_anims =
 }
 
 local function dig_up_stump(inst, chopper)
-	inst:Remove()
 	inst.components.lootdropper:SpawnLootPrefab("log")
+	inst:Remove()
 end
 
 local function chop_down_burnt_tree(inst, chopper)

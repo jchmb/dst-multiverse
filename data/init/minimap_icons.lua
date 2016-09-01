@@ -11,6 +11,8 @@ AddMinimapAtlas("map_icons/minimap_limpetrock.xml")
 AddMinimapAtlas("map_icons/minimap_crate.xml")
 AddMinimapAtlas("map_icons/minimap_wildbore_house.xml")
 AddMinimapAtlas("map_icons/minimap_bambootree.xml")
+AddMinimapAtlas("map_icons/minimap_chiminea.xml")
+AddMinimapAtlas("map_icons/minimap_chiminea.xml")
 
 -- Icons for each portal
 AddMinimapAtlas("map_icons/minimap_portal_cute.xml")

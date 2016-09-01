@@ -9,20 +9,20 @@ AddComponentPostInit("lootdropper", function(self, inst)
 
 	self.SetLootPostInit = function(_self, name, fn)
 		if type(fn) == "function" then
-			self.loot_postinits[name] = fn
+			_self.loot_postinits[name] = fn
 		end
 	end
 
 	self.RemoveLootPostInit = function(_self, name)
-		self.loot_postinits[name] = nil
+		_self.loot_postinits[name] = nil
 	end
 
 	self.old_SpawnLootPrefab = self.SpawnLootPrefab
-	self.SpawnLootPrefab = function(x, lootprefab, pt)
-		local loot = self:old_SpawnLootPrefab(lootprefab, pt)
-		if loot ~= nil and self.loot_postinits then
-			for i,loot_postinit in ipairs(self.loot_postinits) do
-				loot = loot_postinit(x, loot)
+	self.SpawnLootPrefab = function(_self, lootprefab, pt)
+		local loot = _self.old_SpawnLootPrefab(_self, lootprefab, pt)
+		if loot and _self.loot_postinits then
+			for i,loot_postinit in ipairs(_self.loot_postinits) do
+				loot = loot_postinit(_self, loot)
 			end
 		end
 		return loot

@@ -30,9 +30,6 @@ AddRoom("ChezzWetWilds", {
     value = GROUND.BRICK,
     tags = {"ExitPiece", "Chester_Eyebone"},    
     contents =  {
-        countprefabs = {
-            migration_portal = 1,
-        },
         distributepercent = 0.25,
         distributeprefabs=
         {

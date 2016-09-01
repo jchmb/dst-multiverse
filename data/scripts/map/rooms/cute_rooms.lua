@@ -485,6 +485,7 @@ AddRoadPoisonRoom(
 		pond_mos = 0.03,
 		tentacle = 1,
 		reeds = 0.1,
+		bamboo = 0.1,
 	}
 )
 
@@ -508,6 +509,7 @@ AddStandardRoom(
 		rocks = 0.01,
 		sapling = 0.05,
 		grass = 0.05,
+		palmtree = 0.1,
 	}
 )
 
@@ -516,8 +518,6 @@ AddStandardRoom(
 	GROUND.SAND,
 	0.2,
 	{
-		rock1 = 0.05,
-		rocks = 0.01,
 		mushtree_small = 0.05,
 		sapling = 0.05,
 		grass = 0.05,
@@ -530,12 +530,11 @@ AddStandardRoom(
 	GROUND.SAND,
 	0.2,
 	{
-		rock1 = 0.05,
-		rocks = 0.01,
+		rock_limpet = 0.2,
 		mushtree_small = 0.05,
 		sapling = 0.05,
 		grass = 0.05,
-		carrot_planted = 0.05,
+		palmtree = 0.1,
 	}
 )
 
@@ -544,14 +543,23 @@ AddStandardRoom(
 	GROUND.SAND,
 	0.25,
 	{
-		rock1 = 0.05,
-		rocks = 0.01,
 		mushtree_small = 0.05,
 		sapling = 0.05,
 		grass = 0.05,
+		palmtree = 0.1,
+	},
+	{
+		hatrabbithouse = 0.1,
 	},
 	{},
 	{
-		["BunnymanPirates"] = 1,
+		hatrabbithouse = {
+			startinghat = "piratehat",
+			colorfname = "default",
+		},
 	}
+	-- {},
+	-- {
+	-- 	["BunnymanPirates"] = 1,
+	-- }
 )
