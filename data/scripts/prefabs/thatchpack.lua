@@ -5,7 +5,7 @@ local assets =
     Asset("ANIM", "anim/ui_thatchpack_1x4.zip"),
 }
 
-params =
+local params =
 {
     widget =
     {
@@ -85,13 +85,16 @@ local function fn()
     minimap:SetIcon("minimap_thatchpack.tex")
     minimap:SetPriority(-1)
 
+    inst.foleysound = "dontstarve/movement/foley/backpack"
+
     inst.entity:SetPristine()
 
     if not TheWorld.ismastersim then
+        inst.OnEntityReplicated = function(inst)
+            inst.replica.container:WidgetSetup("thatchpack", params)
+        end 
         return inst
     end
-
-    inst.foleysound = "dontstarve/movement/foley/backpack"
 
     inst:AddComponent("inspectable")
 
