@@ -27,7 +27,7 @@ local function fn(Sim)
 
 	MakeSmallBurnable(inst, TUNING.MED_BURNTIME)
     MakeSmallPropagator(inst)
-    --inst.components.burnable:MakeDragonflyBait(3)
+    MakeDragonflyBait(inst, 3)
 
     ---------------------       
     

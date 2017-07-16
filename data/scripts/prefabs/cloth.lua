@@ -29,7 +29,7 @@ local function fn()
     
 	MakeSmallBurnable(inst, TUNING.LARGE_BURNTIME)
     MakeSmallPropagator(inst)
-    inst.components.burnable:MakeDragonflyBait(3)
+    MakeDragonflyBait(inst, 3)
     
     inst:AddComponent("fuel")
     inst.components.fuel.fuelvalue = TUNING.MED_FUEL

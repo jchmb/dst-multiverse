@@ -3,7 +3,7 @@
 local actionhandlers =
 {
 	ActionHandler(ACTIONS.EAT, "eat"),
-	ActionHandler(ACTIONS.LAVASPIT, "spit"),
+	--ActionHandler(ACTIONS.LAVASPIT, "spit"),
 	ActionHandler(ACTIONS.GOHOME, "gohome"),
 }
 

@@ -2,10 +2,10 @@ local brain = require("brains/grassgekkobrain")
 
 local assets =
 {
-    Asset("ANIM", "anim/grassgecko_notail_build.zip"),
+    -- Asset("ANIM", "anim/grassgecko_notail_build.zip"),
     Asset("ANIM", "anim/grassgecko.zip"),
-    Asset("ANIM", "anim/grassgecko_disease.zip"),
-    Asset("ANIM", "anim/grassgecko_notail_build_disease.zip"),
+    -- Asset("ANIM", "anim/grassgecko_disease.zip"),
+    -- Asset("ANIM", "anim/grassgecko_notail_build_disease.zip"),
     Asset("SOUND", "sound/catcoon.fsb"),
 }
 

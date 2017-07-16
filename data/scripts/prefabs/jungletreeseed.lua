@@ -197,7 +197,7 @@ local function fn()
 	inst:ListenForEvent("onignite", stopgrowing)
     inst:ListenForEvent("onextinguish", restartgrowing)
     MakeSmallPropagator(inst)
-    --inst.components.burnable:MakeDragonflyBait(3)
+    MakeDragonflyBait(inst, 3)
     
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.atlasname = "images/inventoryimages/jungletreeseed.xml"

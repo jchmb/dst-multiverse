@@ -112,10 +112,10 @@ local function onoccupied(inst, child)
             inst.doortask:Cancel()
         end
         inst.doortask = inst:DoTaskInTime(1, onoccupieddoortask)
-        if child ~= nil then
-            inst:ListenForEvent("transformwere", onwere, child)
-            inst:ListenForEvent("transformnormal", onnormal, child)
-        end
+        -- if child ~= nil then
+        --     inst:ListenForEvent("transformwere", onwere, child)
+        --     inst:ListenForEvent("transformnormal", onnormal, child)
+        -- end
     end
 end
 
@@ -130,14 +130,15 @@ local function onvacate(inst, child)
         LightsOff(inst)
 
         if child ~= nil then
-            inst:RemoveEventCallback("transformwere", onwere, child)
-            inst:RemoveEventCallback("transformnormal", onnormal, child)
-            if child.components.werebeast ~= nil then
-                child.components.werebeast:ResetTriggers()
-            end
+            -- inst:RemoveEventCallback("transformwere", onwere, child)
+            -- inst:RemoveEventCallback("transformnormal", onnormal, child)
+            -- if child.components.werebeast ~= nil then
+            --     child.components.werebeast:ResetTriggers()
+            -- end
             if child.components.health ~= nil then
                 child.components.health:SetPercent(1)
             end
+            child.sg:GoToState("funnyidle")
         end
     end
 end

@@ -605,7 +605,7 @@ local function makefn(build, stage, data)
 		MakeLargeBurnable(inst)
 		inst.components.burnable:SetFXLevel(5)
 		inst.components.burnable:SetOnBurntFn(tree_burnt)
-		--inst.components.burnable:MakeDragonflyBait(1)
+		MakeDragonflyBait(inst, 1)
 
 		MakeLargePropagator(inst)
 
