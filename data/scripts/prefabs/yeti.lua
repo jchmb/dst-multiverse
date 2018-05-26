@@ -6,7 +6,6 @@ local assets =
     Asset("ANIM", "anim/deerclops_actions.zip"),
     Asset("ANIM", "anim/deerclops_build.zip"),
     Asset("ANIM", "anim/yeti_build.zip"),
-    Asset("ANIM", "anim/deerclops_neutral_build.zip"),
     Asset("SOUND", "sound/deerclops.fsb"),
 }
 
@@ -50,15 +49,15 @@ local function ShouldWake(inst)
 end
 
 local function OnEntitySleep(inst)
-    
+
 end
 
 local function OnSave(inst, data)
-    
+
 end
-        
+
 local function OnLoad(inst, data)
-    
+
 end
 
 local function OnAttacked(inst, data)
@@ -113,7 +112,7 @@ local function fn()
     ------------------------------------------
 
     inst:AddComponent("locomotor") -- locomotor must be constructed before the stategraph
-    inst.components.locomotor.walkspeed = 3  
+    inst.components.locomotor.walkspeed = 3
 
     ------------------------------------------
     inst:SetStateGraph("SGyeti")

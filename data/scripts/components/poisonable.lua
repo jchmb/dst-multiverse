@@ -60,7 +60,8 @@ end
 function Poisonable:OnUpdate(dt)
 	self.duration = self.duration - dt
 	self.lastDamageTime = self.lastDamageTime - dt
-	if self.lastDamageTime <= 0 then
+	-- thanks to Swaggy for the fix
+	if self.inst.components.health and self.lastDamageTime <= 0 then
 		self.inst.components.health:DoDelta(self.dmg, nil, "poison")
 		self:IncreaseIntensity()
 		self.lastDamageTime = self.interval
