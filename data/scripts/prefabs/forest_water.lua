@@ -34,8 +34,11 @@ local assets =
     Asset("IMAGE", "images/wave.tex"),
 }
 
-local prefabs = 
+local prefabs =
 {
+    "cave",
+    "deer",
+    "deerspawningground",
     "forest_water_network",
     "adventure_portal",
     "resurrectionstone",
@@ -58,6 +61,13 @@ local prefabs =
     "mermhead",
     "rabbithole",
     "molehill",
+    "beemine_maxwell",
+   "trap_teeth_maxwell",
+   "sculpture_knight",
+   "sculpture_bishop",
+   "sculpture_rook",
+   "statue_marble",
+   "eyeplant",
     "carrot_planted",
     "tentacle",
     "wormhole",
@@ -67,11 +77,11 @@ local prefabs =
     "teleportato_box",
     "teleportato_crank",
     "teleportato_potato",
-    "pond", 
-    "marsh_tree", 
-    "marsh_bush", 
+    "pond",
+    "marsh_tree",
+    "marsh_bush",
     "burnt_marsh_bush",
-    "reeds", 
+    "reeds",
     "mist",
     "snow",
     "rain",
@@ -91,6 +101,7 @@ local prefabs =
     "shadowmeteor",
     "meteorwarning",
     "warg",
+    "claywarg",
     "spat",
     "multiplayer_portal",
     "lavae",
@@ -115,10 +126,17 @@ local prefabs =
     "chester",
     "grassgekko",
     "petrify_announce",
-
-    --Set piece spawners
-    "sps_berrybush",
-    "sps_berrybush_juicy",
+    "moonbase",
+    "moonrock_pieces",
+    "shadow_rook",
+    "shadow_knight",
+    "shadow_bishop",
+    "beequeenhive",
+    "klaus_sack",
+    "antlion_spawner",
+    "oasislake",
+    "succulent_plant",
+    "stagehand",
 }
 
 local monsters =
@@ -185,13 +203,12 @@ local wormspawn =
 local function common_postinit(inst)
     --Add waves
     inst.entity:AddWaveComponent()
-    inst.WaveComponent:SetRegionSize(40, 20)
-    inst.WaveComponent:SetRegionNumWaves(8)
+    inst.WaveComponent:SetWaveParams(13.5, 2.5)						-- wave texture u repeat, forward distance between waves
+    inst.WaveComponent:SetWaveSize(80, 3.5)							-- wave mesh width and height
     inst.WaveComponent:SetWaveTexture("images/wave.tex")
     --See source\game\components\WaveRegion.h
     inst.WaveComponent:SetWaveEffect("shaders/waves.ksh")
     --inst.WaveComponent:SetWaveEffect("shaders/texture.ksh")
-    inst.WaveComponent:SetWaveSize(2048, 512)
 
     --Initialize lua components
     inst:AddComponent("ambientlighting")
@@ -222,10 +239,20 @@ local function master_postinit(inst)
     inst:AddComponent("penguinspawner")
     inst:AddComponent("deerclopsspawner")
     inst:AddComponent("beargerspawner")
-    
+
     inst:AddComponent("perma_moosespawner")
     inst.components.perma_moosespawner:InitializeNests()
 
+    inst:AddComponent("worlddeciduoustreeupdater")
+    inst:AddComponent("kramped")
+    inst:AddComponent("frograin")
+    inst:AddComponent("penguinspawner")
+    inst:AddComponent("deerherdspawner")
+    inst:AddComponent("deerherding")
+    inst:AddComponent("klaussackspawner")
+    inst:AddComponent("deerclopsspawner")
+    inst:AddComponent("beargerspawner")
+    inst:AddComponent("moosespawner")
     inst:AddComponent("hunter")
     inst:AddComponent("perma_lureplantspawner")
     inst:AddComponent("shadowcreaturespawner")
@@ -235,7 +262,12 @@ local function master_postinit(inst)
     inst:AddComponent("forestresourcespawner")
     inst:AddComponent("regrowthmanager")
     inst:AddComponent("desolationspawner")
-    inst:AddComponent("prefabswapmanager") 
+    inst:AddComponent("forestpetrification")
+    inst:AddComponent("chessunlocks")
+    inst:AddComponent("retrofitforestmap_anr")
+    inst:AddComponent("specialeventsetup")
+    inst:AddComponent("townportalregistry")
+    inst:AddComponent("sandstorms")
 
     if METRICS_ENABLED then
         inst:AddComponent("worldoverseer")

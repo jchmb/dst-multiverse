@@ -39,7 +39,7 @@ AddRoom("CuteForest", {
 					                    grass = .05,
 					                    sapling=.8,
 										twiggytree = 0.8,
-										ground_twigs = 0.06,					                    
+										ground_twigs = 0.06,
 										--rabbithole=.05,
 					                    berrybush=.03,
 					                    berrybush_juicy = 0.015,
@@ -63,7 +63,7 @@ AddRoom("CutePlain", {
 					                	rock_petrified_tree = 0.15,
 					                    rock1 = 0.05,
 					                    perma_grass = 0.5,
-					                    rabbithole= 0.25, 
+					                    rabbithole= 0.25,
 					                    green_mushroom = .005,
 					                    carrot_planted = 0.05,
 					                    colored_rabbithouse = 0.05,
@@ -308,7 +308,7 @@ AddRoom("BGCuteDeciduous", {
 			rock2=0.05,
 
 			sapling=1,
-			grass=0.05,						
+			grass=0.05,
 
 			flower=0.75,
 
@@ -485,7 +485,6 @@ AddRoadPoisonRoom(
 		pond_mos = 0.03,
 		tentacle = 1,
 		reeds = 0.1,
-		bamboo = 0.1,
 	}
 )
 

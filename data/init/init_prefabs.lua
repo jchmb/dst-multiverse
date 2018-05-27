@@ -47,7 +47,7 @@ PrefabFiles = {
 	"perma_walrus_camp",
 	"yeti",
 	"yetiherd",
-	
+
 	-- Slimey mobs and spawners
 	"perma_grassgekko",
 	"perma_grassgekkoherd",
@@ -111,7 +111,7 @@ PrefabFiles = {
 	-- Chezz mobs and spawners
 	"pigman_cyborg",
 	"pighouse_cyborg",
-	
+
 	-- Items
 	"coffee",
 	"mucus",
