@@ -57,7 +57,7 @@ Assets = {
 	Asset("IMAGE", "levels/textures/noise_jungle.tex"),
 	Asset("IMAGE", "levels/textures/mini_noise_jungle.tex"),
 	Asset("IMAGE", "levels/tiles/jungle.tex"),
-	Asset("FILE", "levels/tiles/jungle.xml"),	
+	Asset("FILE", "levels/tiles/jungle.xml"),
 
 	-- Assets for recipes
 	Asset("IMAGE", "images/inventoryimages/pighouse_yellow.tex" ),
@@ -158,6 +158,8 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/ox_flute.xml" ),
 	Asset("IMAGE", "images/inventoryimages/oxhat.tex" ),
 	Asset("ATLAS", "images/inventoryimages/oxhat.xml" ),
+	Asset("IMAGE", "images/inventoryimages/bunnyhat.tex" ),
+	Asset("ATLAS", "images/inventoryimages/bunnyhat.xml" ),
 	Asset("IMAGE", "images/inventoryimages/armor_seashell.tex" ),
 	Asset("ATLAS", "images/inventoryimages/armor_seashell.xml" ),
 	Asset("IMAGE", "images/inventoryimages/dragoonden.tex" ),

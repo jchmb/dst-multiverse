@@ -1,11 +1,11 @@
-local function MakeHat(name)
+local function MakeHat(name, bankparam, prefabnameparam)
     local fname = "hat_"..name
-    local symname = name.."hat"
-    local prefabname = symname
+    local symname = bankparam or name.."hat"
+    local prefabname = prefabnameparam or symname
 
     local function onequip(inst, owner, fname_override)
         local build = fname_override or fname
-        
+
         local skin_build = inst:GetSkinBuild()
 		if skin_build ~= nil then
 			owner:PushEvent("equipskinneditem", inst:GetSkinName())
@@ -22,7 +22,7 @@ local function MakeHat(name)
             owner.AnimState:Hide("HEAD")
             owner.AnimState:Show("HEAD_HAT")
         end
-        
+
         if inst.components.fueled ~= nil then
             inst.components.fueled:StartConsuming()
         end
@@ -56,7 +56,7 @@ local function MakeHat(name)
         owner.AnimState:Hide("HAT_HAIR")
         owner.AnimState:Show("HAIR_NOHAT")
         owner.AnimState:Show("HAIR")
-        
+
         owner.AnimState:Show("HEAD")
         owner.AnimState:Hide("HEAD_HAT")
 
@@ -91,7 +91,7 @@ local function MakeHat(name)
         end
 
         inst:AddComponent("inventoryitem")
-        inst.components.inventoryitem.atlasname = "images/inventoryimages/" .. symname .. ".xml"
+        inst.components.inventoryitem.atlasname = "images/inventoryimages/" .. (prefabname or symname) .. ".xml"
 
         inst:AddComponent("inspectable")
 
@@ -143,7 +143,7 @@ local function MakeHat(name)
 
         inst:AddComponent("waterproofer")
         inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALLMED)
-        
+
         inst:AddComponent("armor")
         inst.components.armor:InitCondition(TUNING.ARMOR_OXHAT, TUNING.ARMOR_OXHAT_ABSORPTION)
 
@@ -166,7 +166,7 @@ local function MakeHat(name)
 
         inst:AddComponent("waterproofer")
         inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_LARGE)
-        
+
         inst.components.equippable.insulated = true
 
         return inst
@@ -176,39 +176,39 @@ local function MakeHat(name)
     --     local soundShouldPlay = GetSeasonManager():IsRaining() and inst.components.equippable:IsEquipped()
     --     if soundShouldPlay ~= inst.SoundEmitter:PlayingSound("umbrellarainsound") then
     --         if soundShouldPlay then
-    --             inst.SoundEmitter:PlaySound("dontstarve/rain/rain_on_umbrella", "umbrellarainsound") 
+    --             inst.SoundEmitter:PlaySound("dontstarve/rain/rain_on_umbrella", "umbrellarainsound")
     --         else
     --             inst.SoundEmitter:KillSound("umbrellarainsound")
     --         end
     --     end
-    -- end  
-        
+    -- end
+
     local function double_umbrella_onequip(inst, owner)
         owner.AnimState:OverrideSymbol("swap_hat", "hat_double_umbrella", "swap_hat")
         owner.AnimState:Show("HAT")
         owner.AnimState:Hide("HAT_HAIR")
         owner.AnimState:Show("HAIR_NOHAT")
         owner.AnimState:Show("HAIR")
-        
+
         owner.AnimState:Show("HEAD")
         owner.AnimState:Hide("HEAD_HAIR")
 
         if inst.components.fueled then
-            inst.components.fueled:StartConsuming()        
+            inst.components.fueled:StartConsuming()
         end
 
         -- double_umbrella_updatesound(inst)
-        
+
         owner.DynamicShadow:SetSize(2.2, 1.4)
     end
 
-    local function double_umbrella_onunequip(inst, owner) 
+    local function double_umbrella_onunequip(inst, owner)
         onunequip(inst, owner)
         -- double_umbrella_updatesound(inst)
 
         owner.DynamicShadow:SetSize(1.3, 0.6)
     end
-    
+
     local function double_umbrella_perish(inst)
         inst.SoundEmitter:KillSound("umbrellarainsound")
         if inst.components.inventoryitem and inst.components.inventoryitem.owner then
@@ -247,12 +247,51 @@ local function MakeHat(name)
         inst:AddComponent("insulator")
         inst.components.insulator:SetInsulation(TUNING.INSULATION_LARGE)
         inst.components.insulator:SetSummer()
-        
+
         inst.components.equippable.insulated = true
 
 
-        -- inst:ListenForEvent("rainstop", function() double_umbrella_updatesound(inst) end, GetWorld()) 
-        -- inst:ListenForEvent("rainstart", function() double_umbrella_updatesound(inst) end, GetWorld()) 
+        -- inst:ListenForEvent("rainstop", function() double_umbrella_updatesound(inst) end, GetWorld())
+        -- inst:ListenForEvent("rainstart", function() double_umbrella_updatesound(inst) end, GetWorld())
+
+        return inst
+    end
+
+    local function bunny_equip(inst, owner)
+        onequip(inst, owner)
+        owner:AddTag("bunnyfriend")
+    end
+
+    local function bunny_unequip(inst, owner)
+        onunequip(inst, owner)
+        owner:RemoveTag("bunnyfriend")
+    end
+
+    local function bunny_custom_init(inst)
+        --waterproofer (from waterproofer component) added to pristine state for optimization
+        inst:AddTag("waterproofer")
+    end
+
+    local function bunny()
+        local inst = simple(bunny_custom_init)
+
+        if not TheWorld.ismastersim then
+            return inst
+        end
+
+        inst.components.equippable:SetOnEquip(bunny_equip)
+        inst.components.equippable:SetOnUnequip(bunny_unequip)
+
+        inst:AddComponent("insulator")
+        inst.components.insulator:SetInsulation(TUNING.INSULATION_SMALL)
+
+        inst:AddComponent("waterproofer")
+        inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
+
+        inst:AddComponent("fueled")
+        inst.components.fueled.fueltype = FUELTYPE.USAGE
+        inst.components.fueled:InitializeFuelLevel(TUNING.BEEFALOHAT_PERISHTIME * 0.75) -- TMP TODO
+        inst.components.fueled:SetDepletedFn(inst.Remove)
 
         return inst
     end
@@ -269,12 +308,16 @@ local function MakeHat(name)
         fn = snakeskin
     elseif name == "ox" then
         fn = ox
+    elseif name == "bunny" then
+        fn = bunny
     end
 
     return Prefab(prefabname, fn or default, assets, prefabs)
 end
 
-return  MakeHat("pirate"),
+
+return MakeHat("pirate"),
     MakeHat("double_umbrella"),
     MakeHat("snakeskin"),
-    MakeHat("ox")
+    MakeHat("ox"),
+    MakeHat("bunny", "beefalohat", "bunnyhat")

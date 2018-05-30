@@ -127,7 +127,7 @@ local function fn()
     inst.MiniMapEntity:SetIcon("hound_mound.png")
 
     inst.AnimState:SetBank("houndbase")
-    inst.AnimState:SetBuild("hound_base")
+    inst.AnimState:SetBuild("hound_base_slimey")
     inst.AnimState:PlayAnimation("idle")
 
     inst:AddTag("structure")
