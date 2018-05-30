@@ -60,6 +60,8 @@ PrefabFiles = {
 	"perma_pond_mos",
 	"perma_mosquito",
 	"new_hounds",
+	"houndmound_slimey",
+	"houndbone_slimey",
 
 	-- Gray mobs and spawners
 	"beardlordhouse",
