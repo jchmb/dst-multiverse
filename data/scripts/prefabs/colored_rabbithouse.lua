@@ -56,7 +56,7 @@ local function onhammered(inst, worker)
 end
 
 local function onhit(inst, worker)
-    if not inst:HasTag("burnt") then 
+    if not inst:HasTag("burnt") then
         inst.AnimState:PlayAnimation("hit")
         inst.AnimState:PushAnimation("idle")
     end
@@ -163,6 +163,7 @@ local function fn()
 
     inst:AddTag("cavedweller")
     inst:AddTag("structure")
+    inst:AddTag("rabbithouse")
 
     MakeSnowCoveredPristine(inst)
 
@@ -196,7 +197,7 @@ local function fn()
     inst:ListenForEvent("burntup", onburntup)
     inst:ListenForEvent("onignite", onignite)
 
-    inst.OnSave = onsave 
+    inst.OnSave = onsave
     inst.OnLoad = onload
 
     inst:ListenForEvent("onbuilt", onbuilt)

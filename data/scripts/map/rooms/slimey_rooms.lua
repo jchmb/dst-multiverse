@@ -47,7 +47,7 @@ AddRoom("BGSlimeyDeciduous", {
 			rock2=0.05,
 
 			sapling=0.05,
-			perma_grassgekko=0.2,						
+			perma_grassgekko=0.2,
 
 			flower=1,
 
@@ -97,7 +97,7 @@ AddRoom("SlimeyDeepDeciduous", {
 	value = GROUND.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		distributepercent = .4,	
+		distributepercent = .4,
 		distributeprefabs={
 			sapling=0.05,
 
@@ -108,9 +108,9 @@ AddRoom("SlimeyDeepDeciduous", {
 
 			fireflies = 3,
 			slurtlehole = 0.2,
-			
+
 			perma_grassgekko = 0.1,
-			
+
 			pighouse_yellow = 0.05,
 		},
 	}
@@ -126,10 +126,10 @@ AddRoom("SlimeyPigKingdom", {
 			["PigKingSlimey"]=1,
 			["CropCircle"]=function() return math.random(0,1) end,
 			["TreeFarm"]= 	function()
-								if math.random() > 0.97 then 
-									return math.random(1,2) 
-								end 
-								return 0 
+								if math.random() > 0.97 then
+									return math.random(1,2)
+								end
+								return 0
 							end,
 		},
 		countprefabs= {
@@ -287,7 +287,6 @@ AddRoom("SlimeyMermCity", {
 	contents =  {
 	countprefabs = {
 		mermhouse = 5,
-		thulecite_pieces = 3,
         },
         distributepercent = .2,
         distributeprefabs=
@@ -305,7 +304,6 @@ AddRoom("SlimeyEwecus", {
 	contents =  {
 	countprefabs = {
 		spat = 2,
-		thulecite_pieces = 2,
 		phlegm = 5,
         },
         distributepercent = .2,

@@ -14,7 +14,7 @@ local assets =
 
 local prefabs =
 {
-    
+
 }
 
 
@@ -138,7 +138,7 @@ local function NormalRetargetFn(inst)
         end,
         { "_combat", "_health" }, -- see entityreplica.lua
         nil,
-        { "monster", "player" })
+        { "player" })
 end
 
 local function NormalKeepTargetFn(inst, target)
@@ -295,7 +295,7 @@ local function fn()
     inst.components.inspectable.getstatus = GetStatus
     ------------------------------------------
 
-    inst:ListenForEvent("attacked", OnAttacked)    
+    inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)
 
     inst.components.sleeper:SetResistance(2)

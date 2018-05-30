@@ -4,6 +4,7 @@ require "recipes"
 local assets =
 {
     Asset("ANIM", "anim/rabbit_house.zip"),
+    Asset("ANIM", "anim/rabbit_house_blue.zip"),
     Asset("MINIMAP_IMAGE", "rabbit_house"),
 }
 
@@ -32,10 +33,17 @@ local COLOR_GENERATORS = {
             b = math.random() * 0.4 + 0.6,
         }
     end,
+    ["desert"] = function()
+        return {
+            r = 1,
+            g = 0.6 + math.random() * 0.2,
+            b = 0
+        }
+    end,
 }
 
 local TRADE_BEHAVIORS = {
-    
+
 }
 
 local function getstatus(inst)
@@ -87,6 +95,10 @@ local function onvacate(inst, child)
             if item.components.fueled ~= nil then
                 item.components.fueled:SetPercent(math.random() * 0.05 + 0.05)
             end
+            if item.components.perishable ~= nil then
+                local perishable = item.components.perishable
+                perishable.perishremainingtime = perishable.perishtime * 0.2
+            end
             child.AnimState:Show("hat")
             child.startinghat = inst.startinghat
             local initfn = child.GetStuffInitFn(child)
@@ -116,7 +128,7 @@ local function onhammered(inst, worker)
 end
 
 local function onhit(inst, worker)
-    if not inst:HasTag("burnt") then 
+    if not inst:HasTag("burnt") then
         inst.AnimState:PlayAnimation("hit")
         inst.AnimState:PushAnimation("idle")
     end
@@ -184,6 +196,9 @@ local function onload(inst, data)
     if data ~= nil and data.colorfname ~= nil then
         inst.colorfname = data.colorfname
     end
+    if data ~= nil and data.startinghat == "winterhat" then
+        inst.AnimState:SetBuild("rabbit_house_blue")
+    end
 end
 
 local function onbuilt(inst)
@@ -235,6 +250,7 @@ local function fn()
 
     inst:AddTag("cavedweller")
     inst:AddTag("structure")
+    inst:AddTag("rabbithouse")
 
     MakeSnowCoveredPristine(inst)
 
@@ -268,7 +284,7 @@ local function fn()
     inst:ListenForEvent("burntup", onburntup)
     inst:ListenForEvent("onignite", onignite)
 
-    inst.OnSave = onsave 
+    inst.OnSave = onsave
     inst.OnLoad = onload
 
     inst:ListenForEvent("onbuilt", onbuilt)

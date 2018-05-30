@@ -35,6 +35,7 @@ PrefabFiles = {
 	"hatbunnyman",
 	"mutant_bunnyman",
 	"mutant_rabbithouse",
+	"new_koalefants",
 	--"piratebunnyman",
 
 	-- Snow mobs and spawners
@@ -47,6 +48,7 @@ PrefabFiles = {
 	"perma_walrus_camp",
 	"yeti",
 	"yetiherd",
+	"new_walruses",
 
 	-- Slimey mobs and spawners
 	"perma_grassgekko",
@@ -57,6 +59,7 @@ PrefabFiles = {
 	"snake_hole",
 	"perma_pond_mos",
 	"perma_mosquito",
+	"new_hounds",
 
 	-- Gray mobs and spawners
 	"beardlordhouse",

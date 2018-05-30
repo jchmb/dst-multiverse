@@ -16,7 +16,7 @@ local prefabs =
 }
 
 local NUM_HOUNDS = 2
-local AGGRO_SPAWN_PARTY_RADIUS = 10
+local AGGRO_SPAWN_PARTY_RADIUS = 12
 
 local function GetSpawnPoint(inst)
 	--print("GetSpawnPoint", inst, inst:GetPosition())
@@ -143,7 +143,7 @@ end
 
 DespawnedFromHaunt = function(inst, oldchild, data)
 	local newchild = data.newPrefab
-	
+
 	inst.data.children[oldchild] = nil
 	TrackMember(inst, newchild)
 

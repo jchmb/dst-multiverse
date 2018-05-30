@@ -94,11 +94,9 @@ AddStandardRoom(
 		grass = 0.1,
 		sapling = 0.1,
 		twiggytree = 0.1,
-		beehive = 0.05,
+		beehive = 0.03,
 		flower = 2,
 		deciduoustree = 0.5,
-		rock_limpet = 0.05,
-		bambootree = 0.02,
 	}
 )
 
@@ -121,10 +119,10 @@ AddRoom("WaterBeaverKingdom", {
 			["BeaverKing"]=1,
 			["CropCircle"]=function() return math.random(0,1) end,
 			["TreeFarm"]= 	function()
-								if math.random() > 0.97 then 
-									return math.random(1,2) 
-								end 
-								return 0 
+								if math.random() > 0.97 then
+									return math.random(1,2)
+								end
+								return 0
 							end,
 		},
 		countprefabs= {
@@ -417,7 +415,7 @@ AddStandardRoom(
 		sapling = 0.05,
 		grass = 0.05,
 		palmtree = 0.1,
-		wildbore_house = 0.1,
+		wildbore_house = 0.05,
 	},
 	{
 		crate = GetRandomFn(3, 5),
@@ -431,7 +429,7 @@ AddStandardRoom(
 	{
 		sapling = 0.05,
 		grass = 0.05,
-		rock_limpet = 0.25,
+		rock_limpet = 0.05,
 		rock2 = 0.05,
 		palmtree = 0.1,
 	},
@@ -538,8 +536,33 @@ AddStandardRoom(
 		marsh_tree = 0.1,
 		marsh_bush = 0.4,
 		rock2 = 0.05,
+	}
+)
+
+AddStandardRoom(
+	"WaterBeeClearing",
+	GROUND.GRASS_BLUE,
+	0.1,
+	{
+		fireflies=0.01,
+		flower=0.7,
+		beehive=0.05,
+	}
+)
+
+AddStandardRoom(
+	"WaterBeeQueen",
+	GROUND.GRASS_BLUE,
+	0.45,
+	{
+		flower = 5,
+		berrybush = 0.5,
+		berrybush_juicy = 0.25,
+		sapling = 0.2,
 	},
 	{
-		thulecite_pieces = GetRandomFn(2, 2)
+		beequeenhive = 1,
+		beehive = 1,
+		wasphive = function() return math.random(2) + 2 end,
 	}
 )

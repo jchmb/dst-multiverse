@@ -562,3 +562,46 @@ AddStandardRoom(
 	-- 	["BunnymanPirates"] = 1,
 	-- }
 )
+
+AddStandardRoom(
+	"CuteDesert",
+	GROUND.DIRT_NOISE,
+	0.15,
+	{
+		marsh_bush = 0.05,
+		marsh_tree = 0.2,
+		rock_flintless = 1,
+		--rock_ice = .5,
+		grass = 0.1,
+		grassgekko = 0.4,
+		cactus = 0.2,
+		tumbleweedspawner = .05,
+	},
+	{
+		hatrabbithouse = 2,
+	},
+	{},
+	{
+		hatrabbithouse = {
+			startinghat = "watermelonhat",
+			colorfname = "desert",
+		},
+	}
+)
+
+AddStandardRoom(
+	"CuteDesertHounds",
+	GROUND.DIRT_NOISE,
+	0.15,
+	{
+		marsh_bush = 0.05,
+		marsh_tree = 0.2,
+		rock_flintless = 1,
+		houndbone = 0.05,
+		--rock_ice = .5,
+		grass = 0.1,
+		grassgekko = 0.4,
+		cactus = 0.2,
+		tumbleweedspawner = .05,
+	}
+)

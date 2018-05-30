@@ -10,7 +10,7 @@ local assets =
 
 local prefabs =
 {
-    
+
 }
 
 --Client update
@@ -107,7 +107,7 @@ local function onoccupieddoortask(inst)
 end
 
 local function onoccupied(inst, child)
-    if not inst:HasTag("burnt") then 
+    if not inst:HasTag("burnt") then
         inst.SoundEmitter:PlaySound("dontstarve/pig/pig_in_hut", "pigsound")
         inst.SoundEmitter:PlaySound("dontstarve/common/pighouse_door")
 
@@ -164,7 +164,7 @@ local function onhammered(inst, worker)
 end
 
 local function onhit(inst, worker)
-    if not inst:HasTag("burnt") then 
+    if not inst:HasTag("burnt") then
         inst.AnimState:PlayAnimation("hit")
         if inst.lightson then
             inst.AnimState:PushAnimation("lit")
@@ -402,7 +402,7 @@ local function fn()
     inst:ListenForEvent("burntup", onburntup)
     inst:ListenForEvent("onignite", onignite)
 
-    inst.OnSave = onsave 
+    inst.OnSave = onsave
     inst.OnLoad = onload
 
     MakeHauntableWork(inst)

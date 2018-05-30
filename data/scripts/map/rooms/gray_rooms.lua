@@ -24,7 +24,7 @@ AddRoom("BGGray", {
 			green_mushroom = 0.05,
 			red_mushroom = 0.01,
 			flower_evil = 0.05,
-			flower_cave = 0.1,
+			flower_cave = 0.02,
 			cave_fern = 1,
 			pond_mos = 0.01,
 			spiderden = 0.1,
@@ -56,7 +56,7 @@ AddRoom("GrayForest", {
 					                    sapling=.8,
 					                    flint = 0.07,
 										twiggytree = 0.8,
-										ground_twigs = 0.06,					                    
+										ground_twigs = 0.06,
 										--rabbithole=.05,
 					                    coffeebush = 0.1,
 					                    red_mushroom = .03,
@@ -118,8 +118,7 @@ AddRoom("GrayCaveSpiders", {
             spiderhole = 0.1,
             batcave = 0.1,
 
-            thulecite = 0.01,
-            thulecite_pieces = 0.05,
+            thulecite_pieces = 0.01,
         },
     }
 })
@@ -179,7 +178,7 @@ AddRoom("GrayHoundTownVarg", {
 			rock2 = 0.4,
 			rock3 = 0.2,
 			flint = 0.5,
-			thulecite_pieces = 0.05,
+			thulecite_pieces = 0.01,
 		}
 	}
 })
@@ -254,7 +253,7 @@ AddRoom("BGGrayDeciduous", {
 			rock2=0.05,
 
 			sapling=1,
-			grass=0.05,						
+			grass=0.05,
 
 			flower=0.75,
 
@@ -266,9 +265,9 @@ AddRoom("BGGrayDeciduous", {
 			berrybush_juicy = 0.025,
 			carrot_planted = 0.2,
 
-			flower_cave = 0.2,
-			flower_cave_double = 0.1,
-			flower_cave_triple = 0.05,
+			flower_cave = 0.05,
+			flower_cave_double = 0.03,
+			flower_cave_triple = 0.01,
 
 			pond_mos=.01,
 
@@ -294,9 +293,9 @@ AddRoom("GrayMagicalDeciduous", {
 			blue_mushroom = 2,
 			green_mushroom = 2,
 
-			flower_cave = 0.3,
-			flower_cave_double = 0.2,
-			flower_cave_triple = 0.1,
+			flower_cave = 0.05,
+			flower_cave_double = 0.03,
+			flower_cave_triple = 0.01,
 			flower=5,
 
 			molehill = 2,
@@ -322,9 +321,8 @@ AddRoom("GrayDeepDeciduous", {
 			blue_mushroom = 0.4,
 			green_mushroom = 0.15,
 
-			flower_cave = 0.2,
-			flower_cave_double = 0.1,
-			flower_cave_triple = 0.1,
+			flower_cave = 0.04,
+			flower_cave_double = 0.01,
 		},
 	}
 })
@@ -339,10 +337,10 @@ AddRoom("GrayPigKingdom", {
 			["PigKingGray"]=1,
 			["CropCircle"]=function() return math.random(0,1) end,
 			["TreeFarm"]= 	function()
-								if math.random() > 0.97 then 
-									return math.random(1,2) 
-								end 
-								return 0 
+								if math.random() > 0.97 then
+									return math.random(1,2)
+								end
+								return 0
 							end,
 		},
 		countprefabs= {
@@ -359,7 +357,7 @@ AddRoom("GrayHerds", {
 		distributepercent = 0.15,
 		distributeprefabs = {
 			perma_grass = 0.1,
-			flower_cave = 0.2,
+			flower_cave = 0.05,
 			rock2 = 0.1,
 			grassgekko = 0.1,
 			fissure = 0.01,
@@ -459,7 +457,6 @@ AddStandardRoom(
 	},
 	{
 		tallbirdnest = 3,
-		thulecite_pieces = 2,
 	}
 )
 
@@ -471,7 +468,7 @@ AddRoom("GrayHerdsBeefalo", {
 		distributepercent = 0.15,
 		distributeprefabs = {
 			perma_grass = 0.2,
-			flower_cave = 0.2,
+			flower_cave = 0.05,
 			beefalo = 0.1,
 			grassgekko = 0.1,
 		}

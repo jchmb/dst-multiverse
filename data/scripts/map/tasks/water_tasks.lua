@@ -3,9 +3,9 @@ AddTask("Make a pick water", {
 	keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
 	room_choices={
 		["WaterClearing"] = 1,
-		["BarePlain"] = 1, 
+		["BarePlain"] = 1,
 		["Plain"] = 1,
-	}, 
+	},
 	room_bg=GROUND.GRASS_BLUE,
 	background_room="BGWater",
 	colour={r=0,g=1,b=0,a=1}
@@ -68,7 +68,9 @@ AddTaskWrapped(
 	{KEYS.TIER3},
 	{
 		["WaterMeadow"] = GetSizeFn(1),
-		["WaterMeadowMerms"] = 2,
+		["WaterMeadowMerms"] = 1,
+		["WaterBeeQueen"] = 1,
+		["WaterBeeClearing"] = 1,
 	},
 	GROUND.GRASS_BLUE,
 	"BGWater"
@@ -105,8 +107,8 @@ AddBlockedTask(
 	{LOCKS.TIER3},
 	{
 		["WaterBeach"] = GetSizeFn(1),
-		["WaterBeachRocks"] = 2,
-		["WaterBeachSharkittens"] = 2,
+		["WaterBeachRocks"] = 1,
+		["WaterBeachSharkittens"] = 1,
 	},
 	GROUND.SAND,
 	"BGWaterBeach",
