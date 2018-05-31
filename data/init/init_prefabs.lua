@@ -36,6 +36,8 @@ PrefabFiles = {
 	"mutant_bunnyman",
 	"mutant_rabbithouse",
 	"new_koalefants",
+	"hatpigman",
+	"hatpighouse",
 	--"piratebunnyman",
 
 	-- Snow mobs and spawners
@@ -137,6 +139,7 @@ PrefabFiles = {
 	"new_veggies",
 	"new_rocks",
 	"new_hats",
+	"special_signs",
 
 	-- Special
 	"mimi",

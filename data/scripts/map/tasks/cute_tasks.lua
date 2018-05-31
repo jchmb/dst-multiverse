@@ -5,7 +5,7 @@ AddTask("Make a pick cute", {
 			["CuteForest"] = GetSizeFn(1),
 			["BarePlain"] = 1,
 			["CutePlain"] = GetSizeFn(1),
-			["Clearing"] = 1,
+			["CuteClearing"] = 1,
 		},
 		room_bg=GROUND.GRASS,
 		background_room="BGGrass",

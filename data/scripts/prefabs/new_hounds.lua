@@ -198,6 +198,15 @@ local function OnAttacked(inst, data)
         end, 5)
 end
 
+local function RemoveSlimedEffect(target)
+    target.components.locomotor:RemoveExternalSpeedMultiplier(target, "slimed")
+end
+
+local function SlowDownTarget(target)
+    target.components.locomotor:SetExternalSpeedMultiplier(target, "slimed", 0.6)
+    target:DoTaskInTime(3 + math.random() * 2, RemoveSlimedEffect)
+end
+
 local function OnAttackOther(inst, data)
     inst.components.combat:ShareTarget(data.target, SHARE_TARGET_DIST,
         function(dude)
@@ -205,6 +214,9 @@ local function OnAttackOther(inst, data)
                 and (dude:HasTag("hound") or dude:HasTag("houndfriend"))
                 and data.target ~= (dude.components.follower ~= nil and dude.components.follower.leader or nil)
         end, 5)
+    if data.target ~= nil and data.target.components.locomotor then
+        SlowDownTarget(data.target)
+    end
 end
 
 local function GetReturnPos(inst)
@@ -401,7 +413,7 @@ local function fncommon(bank, build, morphlist, custombrain, tag)
     inst.sounds = tag == "clay" and sounds_clay or sounds
 
     inst:AddComponent("locomotor") -- locomotor must be constructed before the stategraph
-    inst.components.locomotor.runspeed = tag == "clay" and TUNING.CLAYHOUND_SPEED or TUNING.HOUND_SPEED
+    inst.components.locomotor.runspeed = tag == "slimey" and (0.7 * TUNING.HOUND_SPEED) or TUNING.HOUND_SPEED
     inst:SetStateGraph("SGhound")
 
     inst:SetBrain(custombrain or brain)
@@ -469,7 +481,7 @@ local function fncommon(bank, build, morphlist, custombrain, tag)
 end
 
 local function fnslimey()
-    local inst = fncommon("hound", "hound_slimey", {"hound_slimey"})
+    local inst = fncommon("hound", "hound_slimey", {"hound_slimey"}, nil, "slimey")
 
     if not TheWorld.ismastersim then
         return inst

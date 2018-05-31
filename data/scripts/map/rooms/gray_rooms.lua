@@ -143,7 +143,7 @@ AddRoom("GrayHoundTown", {
 	value = GROUND.ROCKY,
 	tags = {"ExitPiece"},
 	contents =  {
-		distributepercent = 0.2,
+		distributepercent = 0.1,
 		countprefabs = {
 			houndmound = function() return 2 + math.random(2) end,
 			redgem = function() return 1 + math.random(2) end,
@@ -151,10 +151,10 @@ AddRoom("GrayHoundTown", {
 		},
 		distributeprefabs = {
 			houndmound = 0.05,
-			rock1 = 0.3,
-			rock2 = 0.4,
-			rock3 = 0.2,
-			flint = 0.5,
+			rock1 = 0.4,
+			rock2 = 0.5,
+			rock3 = 0.3,
+			flint = 0.6,
 			tumbleweedspawner = 0.01
 		}
 	}
@@ -391,7 +391,7 @@ AddRoom("GrayMoonRocks", {
 		countprefabs = {
 			walrus_camp = 1,
 		},
-		distributepercent = 0.15,
+		distributepercent = 0.1,
 		distributeprefabs = {
 			rock_moon = 0.07,
 			rocks = 0.07,

@@ -6,6 +6,33 @@ Layouts["BunnymanFighters"] = GLOBAL.require("map/layouts/bunnyman_fighters")
 Layouts["BunnymanPirates"] = GLOBAL.require("map/layouts/bunnyman_pirates")
 
 AddStandardRoom(
+	"CuteClearing",
+	GROUND.FOREST,
+	0.1,
+	{
+		pighouse=0.015,
+        fireflies = 1,
+        evergreen = 1.5,
+        grass = .15,
+        sapling=.9,
+		twiggytree = 0.9,
+		ground_twigs = 0.06,
+        berrybush=.1,
+        berrybush_juicy = 0.05,
+        beehive=.05,
+        red_mushroom = .01,
+        green_mushroom = .02,
+	},
+	{
+		spawnpoint_multiplayer = 1,
+		-- homesign_welcome = 1,
+	},
+	{},
+	nil,
+	{"ExitPiece", "Chester_Eyebone", "StagehandGarden"}
+)
+
+AddStandardRoom(
 	"BGCuteFungus",
 	GROUND.FUNGUS,
 	0.4,
@@ -141,7 +168,7 @@ AddRoom("CuteBunnymanTown3", {
 			red_mushroom = 0.1,
 			green_mushroom = 0.1,
 			blue_mushroom = 0.1,
-			pighouse = 0.05,
+			hatpighouse = 0.05,
 			deciduoustree = 1,
 			rock_ice = 0.5,
 			rabbithole = 0.1,
@@ -278,7 +305,7 @@ AddRoom("CuteFriends", {
 			carrot_planted = 0.2,
 			grass = 0.2,
 			colored_rabbithouse = 0.2,
-			pighouse = 0.2,
+			hatpighouse = 0.2,
 			flower = 0.5,
 			catcoonden = 0.1,
 			berrybush = .5,
@@ -575,7 +602,7 @@ AddStandardRoom(
 		grass = 0.1,
 		grassgekko = 0.4,
 		cactus = 0.2,
-		tumbleweedspawner = .05,
+		tumbleweedspawner = .01,
 	},
 	{
 		hatrabbithouse = 2,
@@ -602,6 +629,6 @@ AddStandardRoom(
 		grass = 0.1,
 		grassgekko = 0.4,
 		cactus = 0.2,
-		tumbleweedspawner = .05,
+		tumbleweedspawner = .01,
 	}
 )
