@@ -13,6 +13,35 @@ local capassets =
     Asset("ANIM", "anim/new_mushrooms.zip"),
 }
 
+local function open(inst)
+    if inst.components.pickable ~= nil and inst.components.pickable:CanBePicked() then
+        if inst.growtask then
+            inst.growtask:Cancel()
+        end
+        inst.growtask = inst:DoTaskInTime(3 + math.random() * 6, inst.opentaskfn)
+        inst.openstate = "open"
+    end
+end
+
+local function close(inst)
+    if inst.components.pickable ~= nil and inst.components.pickable:CanBePicked() then
+        if inst.growtask then
+            inst.growtask:Cancel()
+        end
+        inst.growtask = inst:DoTaskInTime(3 + math.random() * 6, inst.closetaskfn)
+        inst.openstate = "closed"
+    end
+end
+
+local function OnIsOpenPhase(inst, isopen)
+    local notstate = isopen and "open" or "closed"
+    if isopen and inst.openstate ~= notstate then
+        open(inst)
+    elseif not isopen and inst.openstate ~= notstate then
+        close(inst)
+    end
+end
+
 local MUSHROOM_CHECK_DISTANCE = 5
 local MIN_WETNESS_REQUIRED = 0.1
 local WET_ITEMS = {"phlegm", "wetgoop", "mucus"}
@@ -61,7 +90,7 @@ local function IsCrazyGuyNearby(inst)
 end
 
 local function OnUpdateGrayMushroomState(inst)
-    if TheWorld.state.nightmarephase ~= calm or IsCrazyGuyNearby(inst) then
+    if TheWorld.state.nightmarephase == "wild" or IsCrazyGuyNearby(inst) then
         OnIsOpenPhase(inst, true)
     else
         OnIsOpenPhase(inst, false)
@@ -70,6 +99,14 @@ end
 
 local function OnUpdateYellowMushroomState(inst)
     if IsSlimeyGuyNearby(inst) then
+        OnIsOpenPhase(inst, true)
+    else
+        OnIsOpenPhase(inst, false)
+    end
+end
+
+local function OnUpdateBrownMushroomState(inst)
+    if TheWorld.state.israining then
         OnIsOpenPhase(inst, true)
     else
         OnIsOpenPhase(inst, false)
@@ -95,12 +132,12 @@ local function onpickedfn(inst)
         inst.growtask:Cancel()
         inst.growtask = nil
     end
-    inst.AnimState:PlayAnimation("picked_90s")
+    inst.AnimState:PlayAnimation("picked")
     inst.rain = 10 + math.random(10)
 end
 
 local function makeemptyfn(inst)
-    inst.AnimState:PlayAnimation("picked_90s")
+    inst.AnimState:PlayAnimation("picked")
 end
 
 local function checkregrow(inst)
@@ -118,24 +155,6 @@ local function GetStatus(inst)
         or "INGROUND"
 end
 
-local function open(inst)
-    if inst.components.pickable ~= nil and inst.components.pickable:CanBePicked() then
-        if inst.growtask then
-            inst.growtask:Cancel()
-        end
-        inst.growtask = inst:DoTaskInTime(3 + math.random() * 6, inst.opentaskfn)
-    end
-end
-
-local function close(inst)
-    if inst.components.pickable ~= nil and inst.components.pickable:CanBePicked() then
-        if inst.growtask then
-            inst.growtask:Cancel()
-        end
-        inst.growtask = inst:DoTaskInTime(3 + math.random() * 6, inst.closetaskfn)
-    end
-end
-
 local function onregenfn(inst)
     local fn = regen_conditions[inst.prefab]
     if fn ~= nil and fn(inst) then
@@ -145,14 +164,6 @@ end
 
 local function testfortransformonload(inst)
     return TheWorld.state.isfullmoon
-end
-
-local function OnIsOpenPhase(inst, isopen)
-    if isopen then
-        open(inst)
-    else
-        close(inst)
-    end
 end
 
 local function OnSpawnedFromHaunt(inst, data)
@@ -194,7 +205,7 @@ local function OnHauntMush(inst, haunter)
                     new.components.pickable:MakeEmpty()
                 end
             elseif inst.components.pickable ~= nil and not inst.components.pickable.caninteractwith then
-                new.AnimState:PlayAnimation("inground_90s")
+                new.AnimState:PlayAnimation("inground")
                 if new.components.pickable ~= nil then
                     new.components.pickable.caninteractwith = false
                 end
@@ -240,7 +251,7 @@ local function mushcommonfn(data)
 
     inst.AnimState:SetBank("new_mushrooms")
     inst.AnimState:SetBuild("new_mushrooms")
-    inst.AnimState:PlayAnimation(data.animname.."_90s")
+    inst.AnimState:PlayAnimation(data.animname)
     inst.AnimState:SetRayTestOnBB(true)
 
     inst.entity:SetPristine()
@@ -250,14 +261,15 @@ local function mushcommonfn(data)
     end
 
     inst.data = data
+    inst.openstate = "unknown"
 
     inst:AddComponent("inspectable")
     inst.components.inspectable.getstatus = GetStatus
 
     inst.opentaskfn = function()
-        inst.AnimState:PlayAnimation("open_inground_90s")
-        inst.AnimState:PushAnimation("open_"..data.animname.."_90s")
-        inst.AnimState:PushAnimation(data.animname.."_90s")
+        inst.AnimState:PlayAnimation("open_inground")
+        inst.AnimState:PushAnimation("open_"..data.animname)
+        inst.AnimState:PushAnimation(data.animname)
         inst.SoundEmitter:PlaySound("dontstarve/common/mushroom_up")
         inst.growtask = nil
         if inst.components.pickable ~= nil then
@@ -266,8 +278,8 @@ local function mushcommonfn(data)
     end
 
     inst.closetaskfn = function()
-        inst.AnimState:PlayAnimation("close_"..data.animname.."_90s")
-        inst.AnimState:PushAnimation("inground_90s")
+        inst.AnimState:PlayAnimation("close_"..data.animname)
+        inst.AnimState:PushAnimation("inground")
         inst:DoTaskInTime(.25, function() inst.SoundEmitter:PlaySound("dontstarve/common/mushroom_down") end )
         inst.growtask = nil
         if inst.components.pickable then
@@ -314,12 +326,14 @@ local function mushcommonfn(data)
     inst:DoPeriodicTask(TUNING.SEG_TIME, checkregrow, TUNING.SEG_TIME + math.random()*TUNING.SEG_TIME)
 
     if regen_conditions[data.name] then
-        inst.AnimState:PlayAnimation(data.animname.."_90s")
+        inst.AnimState:PlayAnimation(data.animname)
         inst.components.pickable.caninteractwith = true
     else
-        inst.AnimState:PlayAnimation("inground_90s")
+        inst.AnimState:PlayAnimation("inground")
         inst.components.pickable.caninteractwith = false
     end
+
+    data.initfn(inst)
 
     return inst
 end
@@ -364,7 +378,7 @@ local function capcommonfn(data)
 
     inst.AnimState:SetBank("new_mushrooms")
     inst.AnimState:SetBuild("new_mushrooms")
-    inst.AnimState:PlayAnimation(data.animname.."_cap_90s")
+    inst.AnimState:PlayAnimation(data.animname.."_cap")
 
     MakeDragonflyBait(inst, 3)
 
@@ -421,7 +435,7 @@ local function cookedcommonfn(data)
 
     inst.AnimState:SetBank("new_mushrooms")
     inst.AnimState:SetBuild("new_mushrooms")
-    inst.AnimState:PlayAnimation(data.pickloot.."_cooked_90s")
+    inst.AnimState:PlayAnimation(data.pickloot.."_cooked")
 
     inst.entity:SetPristine()
 
@@ -498,15 +512,8 @@ local data =
         animname="brown",
         pickloot="brown_cap",
         initfn = function(inst)
-            TheWorld:ListenForEvent("weathertick", function(data)
-                if data then
-                    if data.precipitationrate and data.precipitationrate >= 0.1 then
-                       OnIsOpenPhase(inst, true)
-                    elseif data.precipitationrate and data.precipitationrate <= 0.01 then
-                       OnIsOpenPhase(inst, false)
-                    end
-                end
-            end)
+            inst.updatetask = inst:DoPeriodicTask(2, OnUpdateBrownMushroomState)
+            OnUpdateBrownMushroomState(inst)
         end,
         sanity = 0,
         health = -8,
@@ -521,8 +528,8 @@ local data =
         animname="gray",
         pickloot="gray_cap",
         initfn = function(inst)
-            inst:WatchWorldState("nightmarephase", OnNightmarePhaseChange)
-            inst:DoPeriodicTask(1, OnUpdateGrayMushroomState, 2 + math.random() * 2)
+            inst:WatchWorldState("nightmarephase", OnNightmarePhaseChanged)
+            inst.updatetask = inst:DoPeriodicTask(2, OnUpdateGrayMushroomState)
             OnUpdateGrayMushroomState(inst)
         end,
         sanity = -5,
@@ -538,7 +545,7 @@ local data =
         animname="yellow",
         pickloot="yellow_cap",
         initfn = function(inst)
-            inst:DoPeriodicTask(1, OnUpdateYellowMushroomState, 2 + math.random() * 2)
+            inst.updatetask = inst:DoPeriodicTask(2, OnUpdateYellowMushroomState)
         end,
         sanity = -8,
         health = -10,

@@ -3,7 +3,6 @@ AddTask("Make a pick cute", {
 		keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
 		room_choices={
 			["CuteForest"] = GetSizeFn(1),
-			["BarePlain"] = 1,
 			["CutePlain"] = GetSizeFn(1),
 			["CuteClearing"] = 1,
 		},
@@ -18,7 +17,7 @@ AddTask("Cuteness one", {
 	room_choices={
 		["CuteFriends"] = 1,
 		["CuteBunnymanTown"] = GetSizeFn(1),
-		["BeefalowPlain"] = 1,
+		["CuteHerds"] = 1,
 		["CuteBunnymanTown2"] = 1,
 	},
 	room_bg=GROUND.GRASS,

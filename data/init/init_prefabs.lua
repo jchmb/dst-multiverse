@@ -143,7 +143,7 @@ PrefabFiles = {
 	"new_veggies",
 	"new_rocks",
 	"new_hats",
-	-- "new_mushrooms",
+	"new_mushrooms",
 	"special_signs",
 
 	-- Special

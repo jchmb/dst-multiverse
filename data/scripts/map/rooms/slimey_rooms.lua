@@ -51,7 +51,7 @@ AddRoom("BGSlimeyDeciduous", {
 
 			flower=1,
 
-			green_mushroom = 0.4,
+			yellow_mushroom = 0.4,
 
 			bittersweetbush=0.05,
 			carrot_planted = 0.2,
@@ -76,7 +76,7 @@ AddRoom("SlimeyMagicalDeciduous", {
 
 			sapling=0.03,
 
-			green_mushroom = 4,
+			yellow_mushroom = 4,
 
 			fireflies = 2,
 			flower=5,
@@ -103,8 +103,7 @@ AddRoom("SlimeyDeepDeciduous", {
 
 			deciduoustree = 10,
 
-			blue_mushroom = 0.1,
-			green_mushroom = 0.7,
+			yellow_mushroom = 0.5,
 
 			fireflies = 3,
 			slurtlehole = 0.2,

@@ -18,3 +18,14 @@ AddItemRecipe(
 	TECH.SCIENCE_ONE,
 	"Bamboo is so versatile!"
 )
+
+AddItemRecipe(
+	"gears",
+	{
+		ModIngredient("ironnugget", 8),
+	},
+	RECIPETABS.REFINE,
+	TECH.SCIENCE_TWO,
+	"Bamboo is so versatile!",
+	"images/inventoryimages.xml"
+)

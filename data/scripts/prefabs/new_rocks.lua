@@ -14,7 +14,7 @@ local rock_iron_assets =
 {
     Asset("ANIM", "anim/rock2.zip"),
     Asset("ANIM", "anim/rock_iron.zip"),
-    Asset("MINIMAP_IMAGE", "rock"),
+    Asset("MINIMAP_IMAGE", "minimap_rock_iron.tex"),
 }
 
 local rock_obsidian_assets =
@@ -199,7 +199,7 @@ local function rock_charcoal_fn()
 end
 
 local function rock_iron_fn()
-    local inst = baserock_fn("rock2", "rock_iron", "full")
+    local inst = baserock_fn("rock2", "rock_iron", "full", "minimap_rock_iron.tex")
 
     if not TheWorld.ismastersim then
         return inst

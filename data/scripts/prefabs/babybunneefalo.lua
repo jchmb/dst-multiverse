@@ -15,9 +15,9 @@ local prefabs =
     "beefalo",
 }
 
-local babyloot = {"smallmeat","smallmeat","smallmeat","beefalowool"}
-local toddlerloot = {"smallmeat","smallmeat","smallmeat","smallmeat","beefalowool","beefalowool"}
-local teenloot = {"meat","meat","meat","beefalowool","beefalowool"}
+local babyloot = {"smallmeat","smallmeat","smallmeat","beefalowool","carrot"}
+local toddlerloot = {"smallmeat","smallmeat","smallmeat","smallmeat","beefalowool","beefalowool","carrot"}
+local teenloot = {"meat","meat","meat","beefalowool","beefalowool","carrot"}
 
 local sounds =
 {

@@ -75,4 +75,4 @@ end
 
 function ModIngredient(prefab, count)
 	return Ingredient(prefab, count, "images/inventoryimages/" .. prefab .. ".xml")
-end 
+end

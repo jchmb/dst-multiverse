@@ -225,6 +225,8 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_pond_open.xml"),
 	Asset("IMAGE", "map_icons/minimap_rock_slimey.tex"),
 	Asset("ATLAS", "map_icons/minimap_rock_slimey.xml"),
+	Asset("IMAGE", "map_icons/minimap_rock_iron.tex"),
+	Asset("ATLAS", "map_icons/minimap_rock_iron.xml"),
 	Asset("IMAGE", "map_icons/minimap_migration_portal.tex"),
 	Asset("ATLAS", "map_icons/minimap_migration_portal.xml"),
 	Asset("IMAGE", "map_icons/minimap_sharkittenspawner.tex"),

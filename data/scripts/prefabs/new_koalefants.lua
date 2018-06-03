@@ -134,10 +134,9 @@ local function create_cute()
         return inst
     end
 
-    local s = 0.8
+    local s = 0.7
     inst.Transform:SetScale(s, s, s)
-
-    inst.AnimState:SetMultColour(1, 0.8, 0.8, 1)
+    inst.AnimState:SetAddColour(0.3, 0.1, 0.05, 0)
 
     inst.components.lootdropper:SetLoot(loot_cute)
     inst.components.lootdropper:AddRandomLoot("meat", 1)

@@ -20,9 +20,7 @@ AddRoom("BGGray", {
 			sapling = 0.2,
 			twiggytree = 0.2,
 			evergreen = 5,
-			blue_mushroom = 0.05,
-			green_mushroom = 0.05,
-			red_mushroom = 0.01,
+			gray_mushroom = 0.1,
 			flower_evil = 0.05,
 			flower_cave = 0.02,
 			cave_fern = 1,
@@ -59,8 +57,7 @@ AddRoom("GrayForest", {
 										ground_twigs = 0.06,
 										--rabbithole=.05,
 					                    coffeebush = 0.1,
-					                    red_mushroom = .03,
-					                    green_mushroom = .02,
+					                    gray_mushroom = .03,
 										trees = {weight = 6, prefabs = {"evergreen", "evergreen_sparse"}}
 					                },
 					            }
@@ -257,9 +254,7 @@ AddRoom("BGGrayDeciduous", {
 
 			flower=0.75,
 
-			red_mushroom = 0.1,
-			blue_mushroom = 0.1,
-			green_mushroom = 0.1,
+			gray_mushroom = 0.2,
 
 			berrybush=0.05,
 			berrybush_juicy = 0.025,
@@ -289,9 +284,7 @@ AddRoom("GrayMagicalDeciduous", {
 			grass = .03,
 			sapling=1,
 
-			red_mushroom = 2,
-			blue_mushroom = 2,
-			green_mushroom = 2,
+			gray_mushroom = 0.5,
 
 			flower_cave = 0.05,
 			flower_cave_double = 0.03,
@@ -317,9 +310,7 @@ AddRoom("GrayDeepDeciduous", {
 			deciduoustree = 10,
 			catcoonden = .05,
 
-			red_mushroom = 0.15,
-			blue_mushroom = 0.4,
-			green_mushroom = 0.15,
+			gray_mushroom = 0.15,
 
 			flower_cave = 0.04,
 			flower_cave_double = 0.01,
