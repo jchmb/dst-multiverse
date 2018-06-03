@@ -12,7 +12,7 @@ else
 end
 
 local VALID_WORLD_NAMES = {
-	"cute", "chezz", "slimey", "gray", "snowy"
+	"cute", "robo", "slimey", "gray", "snowy"
 }
 
 local function IsValidMultiWorld(wn)
@@ -39,37 +39,37 @@ local function ReplacePortalNames(prefab, linkedWorldID)
 		prefab.components.named:SetName("Unknown World")
 	end
 end
-	
+
 HookInitConnect = function(prefab)
 	local shardId = GLOBAL.TheShard:GetShardId()
 	local portalId = prefab.components.worldmigrator.id
-		
+
 	prefab.components.worldmigrator.linkedWorld = -1
 	prefab.components.worldmigrator.auto = false
-		
+
 	local nextFreePortal = {}
 	for from, toTable in pairs(ALL_CONNECTIONS) do
 		nextFreePortal[from] = nextFreePortal[from] or 1
-		
+
 		for id, to in pairs(toTable) do
 			nextFreePortal[to] = nextFreePortal[to] or 1
-			
+
 			local fromPortal = nextFreePortal[from]
 			local toPortal = nextFreePortal[to]
-				
+
 			if ((from == shardId) or (to == shardId)) then
 				if (nextFreePortal[shardId] == portalId) then
 					local linkedShardID = (from == shardId) and to or from
 					prefab.components.worldmigrator.linkedWorld = linkedShardID
 					prefab.components.worldmigrator.receivedPortal = (from == shardId) and toPortal or fromPortal
 					prefab.components.worldmigrator:ValidateAndPushEvents()
-					
+
 					ReplacePortalNames(prefab, linkedShardID)
-						
+
 					return
 				end
 			end
-				
+
 			nextFreePortal[from] = nextFreePortal[from] + 1
 			nextFreePortal[to] = nextFreePortal[to] + 1
 		end

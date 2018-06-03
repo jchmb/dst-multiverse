@@ -137,7 +137,7 @@ local function NormalRetargetFn(inst)
             return inst.components.combat:CanTarget(guy) and not guy.prefab == inst.prefab
         end,
         { "_combat", "_health" }, -- see entityreplica.lua
-        nil,
+        {"bunnyfriend"},
         { "player" })
 end
 

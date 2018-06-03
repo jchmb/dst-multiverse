@@ -6,10 +6,9 @@ AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	version = 2,
 	overrides={
 		task_set = "cute",
-		carrot = "always",
-		fireflies = "often",
+		carrot = "often",
 	},
-	numrandom_set_pieces = 5,
+	numrandom_set_pieces = 3,
 	random_set_pieces = {
 		"Chessy_1",
 		"Chessy_2",
@@ -27,8 +26,5 @@ AddLevelFixed(LEVELTYPE.SURVIVAL, {
 		"Maxwell5",
 		"Maxwell6",
 		"Maxwell7",
-		"Warzone_1",
-		"Warzone_2",
-		"Warzone_3",
 	},
 })

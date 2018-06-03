@@ -10,6 +10,13 @@ local rock_charcoal_assets =
     Asset("MINIMAP_IMAGE", "rock"),
 }
 
+local rock_iron_assets =
+{
+    Asset("ANIM", "anim/rock2.zip"),
+    Asset("ANIM", "anim/rock_iron.zip"),
+    Asset("MINIMAP_IMAGE", "rock"),
+}
+
 local rock_obsidian_assets =
 {
     Asset("ANIM", "anim/rock_obsidian.zip"),
@@ -54,6 +61,18 @@ SetSharedLootTable('rock_charcoal',
     {'flint',  0.60},
 })
 
+SetSharedLootTable('rock_iron',
+{
+    {'rocks',  1.00},
+    {'rocks',  1.00},
+    {'rocks',  1.00},
+    {'flint',  1.00},
+    {'flint',  0.60},
+    {'iron_nugget', 1.00},
+    {'iron_nugget', 0.50},
+    {'iron_nugget', 0.50},
+})
+
 SetSharedLootTable('rock_obsidian',
 {
     {'obsidian', 1.00},
@@ -93,7 +112,7 @@ local function onload(inst, data)
         inst.treeSize = data.treeSize
         --V2C: Note that this will reset workleft as well
         --     Gotta change this if you set workable to savestate
-        setPetrifiedTreeSize(inst) 
+        setPetrifiedTreeSize(inst)
     end
 end
 local function baserock_fn(bank, build, anim, icon, tag)
@@ -136,7 +155,7 @@ local function baserock_fn(bank, build, anim, icon, tag)
         return inst
     end
 
-    inst:AddComponent("lootdropper") 
+    inst:AddComponent("lootdropper")
 
     inst:AddComponent("workable")
     inst.components.workable:SetWorkAction(ACTIONS.MINE)
@@ -179,6 +198,18 @@ local function rock_charcoal_fn()
     return inst
 end
 
+local function rock_iron_fn()
+    local inst = baserock_fn("rock2", "rock_iron", "full")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.lootdropper:SetChanceLootTable('rock_iron')
+
+    return inst
+end
+
 local function rock_obsidian_fn()
     local inst = baserock_fn("rock_obsidian", "rock_obsidian", "full")
 
@@ -192,5 +223,6 @@ local function rock_obsidian_fn()
 end
 
 return Prefab("rock_slimey", rock_slimey_fn, rock_slimey_assets, prefabs),
-    Prefab("rock_charcoal", rock_slimey_fn, rock_charcoal_assets, prefabs),
-    Prefab("rock_obsidian", rock_obsidian_fn, rock_obsidian_assets, prefabs)
+    Prefab("rock_charcoal", rock_charcoal_fn, rock_charcoal_assets, prefabs),
+    Prefab("rock_obsidian", rock_obsidian_fn, rock_obsidian_assets, prefabs),
+    Prefab("rock_iron", rock_iron_fn, rock_iron_assets, prefabs)

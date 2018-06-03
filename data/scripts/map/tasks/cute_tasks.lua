@@ -30,11 +30,10 @@ AddTask("Cuteness two a", {
 	locks={LOCKS.TIER1, LOCKS.AXE},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["CuteFriends"] = 1,
-		["CuteBunnymanTown4"] = 1,
 		["MandrakeHome"] = 1,
-		["BeeClearing"] = 1,
+		["CuteBeeClearing"] = GetSizeFn(1),
 		["BeeQueenBee"] = 1,
+		["CuteBunnymanTown2"] = 1,
 	},
 	room_bg=GROUND.GRASS,
 	background_room="BGGrass",
@@ -59,10 +58,10 @@ AddTask("Cuteness three a", {
 	locks={LOCKS.TIER2, LOCKS.AXE},
 	keys_given={KEYS.TIER3},
 	room_choices={
-		["CuteRocks2"] = 2,
+		["CuteRocks2"] = 1,
 		["WalrusHut_Rocky"] = 1,
-		["CuteHerds"] = 1,
-		["CuteBunnymanTown3"] = 1,
+		["CuteBunnymanTown4"] = 1,
+		["CuteHerds"] = GetSizeFn(1),
 	},
 	room_bg=GROUND.DIRT,
 	background_room="BGRocky",
@@ -99,7 +98,7 @@ AddTaskWrapped(
 	{KEYS.TIER4},
 	{
 		["CuteHerds2"] = 1,
-		["CuteSpiderForest"] = 2,
+		["CuteSpiderForest"] = GetSizeFn(1),
 		["SpiderCity"] = 1,
 	},
 	GROUND.FUNGUS,
@@ -113,7 +112,7 @@ AddTaskWrapped(
 	{
 		["CuteGiantBunnyLair"] = 1,
 		["CuteBunnymanTown3"] = 1,
-		["CuteBunnymanTown5"] = 3,
+		["CuteBunnymanTown5"] = GetSizeFn(1),
 	},
 	GROUND.FUNGUS,
 	"BGCuteFungus"

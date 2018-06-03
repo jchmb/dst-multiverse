@@ -1,8 +1,8 @@
 -- This information tells other players more about the mod
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
-author = "Snook-8 and Joachim"
-version = "1.8.1"
+author = "Snook-8, Joachim, and Keeper-M"
+version = "1.8.3"
 forumthread = ""
 api_version = 10
 

@@ -37,8 +37,7 @@ local function fn(Sim)
 	inst:AddComponent("inspectable")
 
 	inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.atlasname = "images/inventoryimages/shipwrecked.xml"
-	inst.components.inventoryitem.imagename = "obsidian.tex"
+	inst.components.inventoryitem.atlasname = "images/inventoryimages/obsidian.xml"
 
 	--inst:AddComponent("heater")
 	--inst.components.heater.heatfn = heatfn

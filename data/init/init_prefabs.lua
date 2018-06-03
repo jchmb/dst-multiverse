@@ -38,6 +38,9 @@ PrefabFiles = {
 	"new_koalefants",
 	"hatpigman",
 	"hatpighouse",
+	"bunneefalo",
+	"babybunneefalo",
+	"bunneefaloherd",
 	--"piratebunnyman",
 
 	-- Snow mobs and spawners
@@ -130,6 +133,7 @@ PrefabFiles = {
 	"shark_gills",
 	"snakeskin",
 	"armor_snakeskin",
+	"ironnugget",
 
 	-- Misc
 	"new_turfs",
@@ -139,6 +143,7 @@ PrefabFiles = {
 	"new_veggies",
 	"new_rocks",
 	"new_hats",
+	-- "new_mushrooms",
 	"special_signs",
 
 	-- Special

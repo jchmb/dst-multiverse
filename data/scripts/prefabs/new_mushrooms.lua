@@ -1,17 +1,84 @@
 local mushassets =
 {
-    Asset("ANIM", "anim/mushrooms.zip"),
+    Asset("ANIM", "anim/new_mushrooms.zip"),
 }
 
 local cookedassets =
 {
-    Asset("ANIM", "anim/mushrooms.zip"),
+    Asset("ANIM", "anim/new_mushrooms.zip"),
 }
 
 local capassets =
 {
-    Asset("ANIM", "anim/mushrooms.zip"),
+    Asset("ANIM", "anim/new_mushrooms.zip"),
 }
+
+local MUSHROOM_CHECK_DISTANCE = 5
+local MIN_WETNESS_REQUIRED = 0.1
+local WET_ITEMS = {"phlegm", "wetgoop", "mucus"}
+
+local function IsSlimeyItem(item)
+	return jchmb.IsOneOf(item, WET_ITEMS)
+end
+
+local function AppearsSlimey(guy)
+	return guy.components.inventory ~= nil
+		and guy.components.inventory:FindItem(IsSlimeyItem)
+end
+
+local function IsWetEnough(guy)
+	return guy.components.moisture == nil or guy.components.moisture:GetMoisturePercent() >= MIN_WETNESS_REQUIRED
+end
+
+local function IsSlimey(guy)
+    return guy:HasTag("player") and
+        (IsWetEnough(guy) or AppearsSlimey(guy))
+end
+
+local function IsSlimeyGuyNearby(inst)
+    local target = FindEntity(inst, MUSHROOM_CHECK_DISTANCE, IsSlimey)
+    return target ~= nil
+end
+
+local regen_conditions =
+{
+    brown_mushroom = function(inst)
+        return TheWorld.state.israining
+    end,
+    gray_mushroom = function(inst)
+        return TheWorld.state.nightmarephase ~= "calm"
+    end,
+    yellow_mushroom = function(inst)
+        return IsSlimeyGuyNearby(inst)
+    end,
+}
+
+local function IsCrazyGuyNearby(inst)
+    local crazyguy = FindEntity(inst, MUSHROOM_CHECK_DISTANCE, function(guy)
+        return guy:HasTag("player") and guy.components.sanity:IsCrazy()
+    end)
+    return crazyguy ~= nil
+end
+
+local function OnUpdateGrayMushroomState(inst)
+    if TheWorld.state.nightmarephase ~= calm or IsCrazyGuyNearby(inst) then
+        OnIsOpenPhase(inst, true)
+    else
+        OnIsOpenPhase(inst, false)
+    end
+end
+
+local function OnUpdateYellowMushroomState(inst)
+    if IsSlimeyGuyNearby(inst) then
+        OnIsOpenPhase(inst, true)
+    else
+        OnIsOpenPhase(inst, false)
+    end
+end
+
+local function OnNightmarePhaseChanged(inst, phase, instant)
+    OnUpdateGrayMushroomState(inst)
+end
 
 local function onsave(inst, data)
     data.rain = inst.rain
@@ -28,12 +95,12 @@ local function onpickedfn(inst)
         inst.growtask:Cancel()
         inst.growtask = nil
     end
-    inst.AnimState:PlayAnimation("picked")
+    inst.AnimState:PlayAnimation("picked_90s")
     inst.rain = 10 + math.random(10)
 end
 
 local function makeemptyfn(inst)
-    inst.AnimState:PlayAnimation("picked")
+    inst.AnimState:PlayAnimation("picked_90s")
 end
 
 local function checkregrow(inst)
@@ -70,7 +137,8 @@ local function close(inst)
 end
 
 local function onregenfn(inst)
-    if inst.data.open_time == TheWorld.state.cavephase then
+    local fn = regen_conditions[inst.prefab]
+    if fn ~= nil and fn(inst) then
         open(inst)
     end
 end
@@ -93,7 +161,7 @@ end
 
 --V2C: basically, each colour and type can switch to another colour of the same type
 local switchtable = {}
-local switchcolours = { "red", "blue", "green" }
+local switchcolours = { "gray", "brown", "yellow" }
 local switchtypes = { "_cap", "_cap_cooked", "_mushroom" }
 for i, v in ipairs(switchcolours) do
     for i2, v2 in ipairs(switchtypes) do
@@ -126,12 +194,12 @@ local function OnHauntMush(inst, haunter)
                     new.components.pickable:MakeEmpty()
                 end
             elseif inst.components.pickable ~= nil and not inst.components.pickable.caninteractwith then
-                new.AnimState:PlayAnimation("inground")
+                new.AnimState:PlayAnimation("inground_90s")
                 if new.components.pickable ~= nil then
                     new.components.pickable.caninteractwith = false
                 end
             else
-                new.AnimState:PlayAnimation(new.data.animname)
+                new.AnimState:PlayAnimation(new.data.animname.."_90s")
                 if new.components.pickable ~= nil then
                     new.components.pickable.caninteractwith = true
                 end
@@ -170,9 +238,9 @@ local function mushcommonfn(data)
     inst.entity:AddAnimState()
     inst.entity:AddNetwork()
 
-    inst.AnimState:SetBank("mushrooms")
-    inst.AnimState:SetBuild("mushrooms")
-    inst.AnimState:PlayAnimation(data.animname)
+    inst.AnimState:SetBank("new_mushrooms")
+    inst.AnimState:SetBuild("new_mushrooms")
+    inst.AnimState:PlayAnimation(data.animname.."_90s")
     inst.AnimState:SetRayTestOnBB(true)
 
     inst.entity:SetPristine()
@@ -187,9 +255,9 @@ local function mushcommonfn(data)
     inst.components.inspectable.getstatus = GetStatus
 
     inst.opentaskfn = function()
-        inst.AnimState:PlayAnimation("open_inground")
-        inst.AnimState:PushAnimation("open_"..data.animname)
-        inst.AnimState:PushAnimation(data.animname)
+        inst.AnimState:PlayAnimation("open_inground_90s")
+        inst.AnimState:PushAnimation("open_"..data.animname.."_90s")
+        inst.AnimState:PushAnimation(data.animname.."_90s")
         inst.SoundEmitter:PlaySound("dontstarve/common/mushroom_up")
         inst.growtask = nil
         if inst.components.pickable ~= nil then
@@ -198,8 +266,8 @@ local function mushcommonfn(data)
     end
 
     inst.closetaskfn = function()
-        inst.AnimState:PlayAnimation("close_"..data.animname)
-        inst.AnimState:PushAnimation("inground")
+        inst.AnimState:PlayAnimation("close_"..data.animname.."_90s")
+        inst.AnimState:PushAnimation("inground_90s")
         inst:DoTaskInTime(.25, function() inst.SoundEmitter:PlaySound("dontstarve/common/mushroom_down") end )
         inst.growtask = nil
         if inst.components.pickable then
@@ -243,15 +311,13 @@ local function mushcommonfn(data)
     inst:AddComponent("hauntable")
     inst.components.hauntable:SetOnHauntFn(OnHauntMush)
 
-    inst:WatchWorldState("iscave"..data.open_time, OnIsOpenPhase)
-
     inst:DoPeriodicTask(TUNING.SEG_TIME, checkregrow, TUNING.SEG_TIME + math.random()*TUNING.SEG_TIME)
 
-    if data.open_time == TheWorld.state.cavephase then
-        inst.AnimState:PlayAnimation(data.animname)
+    if regen_conditions[data.name] then
+        inst.AnimState:PlayAnimation(data.animname.."_90s")
         inst.components.pickable.caninteractwith = true
     else
-        inst.AnimState:PlayAnimation("inground")
+        inst.AnimState:PlayAnimation("inground_90s")
         inst.components.pickable.caninteractwith = false
     end
 
@@ -296,9 +362,9 @@ local function capcommonfn(data)
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBank("mushrooms")
-    inst.AnimState:SetBuild("mushrooms")
-    inst.AnimState:PlayAnimation(data.animname.."_cap")
+    inst.AnimState:SetBank("new_mushrooms")
+    inst.AnimState:SetBuild("new_mushrooms")
+    inst.AnimState:PlayAnimation(data.animname.."_cap_90s")
 
     MakeDragonflyBait(inst, 3)
 
@@ -320,6 +386,7 @@ local function capcommonfn(data)
     MakeSmallBurnable(inst, TUNING.TINY_BURNTIME)
     MakeSmallPropagator(inst)
     inst:AddComponent("inventoryitem")
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/"..data.pickloot..".xml"
 
     --this is where it gets interesting
     inst:AddComponent("edible")
@@ -352,9 +419,9 @@ local function cookedcommonfn(data)
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBank("mushrooms")
-    inst.AnimState:SetBuild("mushrooms")
-    inst.AnimState:PlayAnimation(data.pickloot.."_cooked")
+    inst.AnimState:SetBank("new_mushrooms")
+    inst.AnimState:SetBuild("new_mushrooms")
+    inst.AnimState:PlayAnimation(data.pickloot.."_cooked_90s")
 
     inst.entity:SetPristine()
 
@@ -373,6 +440,7 @@ local function cookedcommonfn(data)
     MakeSmallBurnable(inst, TUNING.TINY_BURNTIME)
     MakeSmallPropagator(inst)
     inst:AddComponent("inventoryitem")
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/"..data.pickloot.."_cooked.xml"
 
     MakeHauntableLaunchAndPerish(inst)
     AddHauntableCustomReaction(inst, OnHauntCapOrCooked, true, false, true)
@@ -440,12 +508,44 @@ local data =
                 end
             end)
         end,
-        sanity = -TUNING.SANITY_SMALL,
-        health = -TUNING.HEALING_MED,
-        hunger = TUNING.CALORIES_SMALL,
-        cookedsanity = -TUNING.SANITY_SMALL,
-        cookedhealth = TUNING.HEALING_TINY,
-        cookedhunger = TUNING.CALORIES_SMALL,
+        sanity = 0,
+        health = -8,
+        hunger = 5,
+        cookedsanity = -3,
+        cookedhealth = 3,
+        cookedhunger = 10,
+        transform_prefab = "mushtree_medium",
+    },
+    {
+        name = "gray_mushroom",
+        animname="gray",
+        pickloot="gray_cap",
+        initfn = function(inst)
+            inst:WatchWorldState("nightmarephase", OnNightmarePhaseChange)
+            inst:DoPeriodicTask(1, OnUpdateGrayMushroomState, 2 + math.random() * 2)
+            OnUpdateGrayMushroomState(inst)
+        end,
+        sanity = -5,
+        health = -5,
+        hunger = 5,
+        cookedsanity = -8,
+        cookedhealth = 5,
+        cookedhunger = 2,
+        transform_prefab = "mushtree_medium",
+    },
+    {
+        name = "yellow_mushroom",
+        animname="yellow",
+        pickloot="yellow_cap",
+        initfn = function(inst)
+            inst:DoPeriodicTask(1, OnUpdateYellowMushroomState, 2 + math.random() * 2)
+        end,
+        sanity = -8,
+        health = -10,
+        hunger = 10,
+        cookedsanity = -3,
+        cookedhealth = -3,
+        cookedhunger = 15,
         transform_prefab = "mushtree_medium",
     },
 }

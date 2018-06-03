@@ -116,7 +116,7 @@ function AddCenterRoom(room, ground, distributepercent, distributeprefabs, count
 		countstaticlayouts,
 		prefabdata,
 		GLOBAL.NODE_INTERNAL_CONNECTION_TYPE.EdgeCentroid
-	)	
+	)
 end
 
 function AddTaskWrapped(task, locks, keys, room_choices, room_bg, background_room)
@@ -169,6 +169,13 @@ function AddTreeTerrainFilter(prefab)
 	AddPlantableTerrainFilter(prefab .. "_tall")
 	AddPlantableTerrainFilter(prefab .. "_normal")
 	AddPlantableTerrainFilter(prefab .. "_small")
+end
+
+function AddPreferredLayout(name, fname)
+	local layouts = GLOBAL.require("map/layouts").Layouts
+	local layout = GLOBAL.require("map/layouts/"..fname)
+	layout.fill_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN
+	layouts[name] = layout
 end
 
 function AddLocationWrapped(label, data)

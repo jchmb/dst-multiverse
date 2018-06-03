@@ -91,7 +91,7 @@ local function NormalRetargetFn(inst)
                         guy.components.inventory:FindItem(is_meat) ~= nil))
         end,
         { "_combat", "_health" }, -- see entityreplica.lua
-        nil,
+        {"bunnyfriend"},
         { "monster", "player" })
 end
 
@@ -205,7 +205,7 @@ local function fn()
     inst:AddComponent("inspectable")
     ------------------------------------------
 
-    inst:ListenForEvent("attacked", OnAttacked)    
+    inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)
 
     inst.components.sleeper:SetResistance(6)
@@ -232,7 +232,7 @@ local function fn()
     inst.beardlord = false
 
     inst.taxes = {
-        
+
     }
 
     return inst
