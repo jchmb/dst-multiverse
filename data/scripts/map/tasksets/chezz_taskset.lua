@@ -14,7 +14,7 @@ local chezz_tasks = {
 
 AddTaskSetFixed("chezz", {
 		name = "Chessland",
-		location = "forest",
+		location = "forest_chezz",
 		tasks = chezz_tasks,
 		numoptionaltasks = 1,
 		optionaltasks = {

@@ -10,6 +10,8 @@ PrefabFiles = {
 	"forest_bunnyland_network",
 	"forest_water",
 	"forest_water_network",
+	"forest_chezz",
+	"forest_chezz_network",
 
 	-- Bluepig prefabs
 	"pigman_blue",
@@ -25,6 +27,11 @@ PrefabFiles = {
 	"pigman_gray",
 	"pighouse_gray",
 	"pigking_gray",
+
+	-- Cyborg prefabs
+	"pigman_cyborg",
+	"pigking_cyborg",
+	"pighouse_cyborg",
 
 	-- Cute mobs and spawners
 	"colored_bunnyman",
@@ -119,8 +126,6 @@ PrefabFiles = {
 	-- "machetes",
 
 	-- Chezz mobs and spawners
-	"pigman_cyborg",
-	"pighouse_cyborg",
 
 	-- Items
 	"coffee",

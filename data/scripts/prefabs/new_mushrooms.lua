@@ -55,13 +55,9 @@ local function AppearsSlimey(guy)
 		and guy.components.inventory:FindItem(IsSlimeyItem)
 end
 
-local function IsWetEnough(guy)
-	return guy.components.moisture == nil or guy.components.moisture:GetMoisturePercent() >= MIN_WETNESS_REQUIRED
-end
-
 local function IsSlimey(guy)
-    return guy:HasTag("player") and
-        (IsWetEnough(guy) or AppearsSlimey(guy))
+    return (guy:HasTag("player") and AppearsSlimey(guy)) or
+        guy.prefab == "yellow_pigman"
 end
 
 local function IsSlimeyGuyNearby(inst)

@@ -12,7 +12,7 @@ local assets =
 
 local prefabs =
 {
-    
+
 }
 
 local MAX_TARGET_SHARES = 5
@@ -88,9 +88,7 @@ end
 
 local function OnEat(inst, food)
     if food.components.edible ~= nil then
-        if food.components.edible.foodtype == FOODTYPE.VEGGIE then
-            SpawnPrefab("spoiled_food").Transform:SetPosition(inst.Transform:GetWorldPosition())
-        elseif food.components.edible.foodtype == FOODTYPE.MEAT and
+        if food.components.edible.foodtype == FOODTYPE.MEAT and
             inst.components.werebeast ~= nil and
             not inst.components.werebeast:IsInWereState() and
             food.components.edible:GetHealth(inst) < 0 then
@@ -135,7 +133,7 @@ local function OnAttacked(inst, data)
     local attacker = data.attacker
     inst:ClearBufferedAction()
 
-    if attacker.prefab == "deciduous_root" and attacker.owner ~= nil then 
+    if attacker.prefab == "deciduous_root" and attacker.owner ~= nil then
         OnAttackedByDecidRoot(inst, attacker.owner)
     elseif attacker.prefab ~= "deciduous_root" then
         inst.components.combat:SetTarget(attacker)
@@ -158,6 +156,10 @@ end
 
 local builds = { "pig_cyborg_build"}
 
+local function IsTastyRobot(guy)
+    return not guy:HasTag("pig") and guy:HasTag(FOODTYPE.GEARS .. "_eater")
+end
+
 local function NormalRetargetFn(inst)
     return FindEntity(
         inst,
@@ -165,9 +167,9 @@ local function NormalRetargetFn(inst)
         function(guy)
             return ((guy.LightWatcher == nil or guy.LightWatcher:IsInLight())
                 and inst.components.combat:CanTarget(guy))
-                
+
                 -- Graypigs attack you if you are a monster (as usual), or if your sanity aura is less than 25%
-       		and (guy:HasTag("monster") or (guy.components.sanity ~= nil and guy.components.sanity:GetPercentWithPenalty() <= 0.4))
+       		and (guy:HasTag("monster") or IsTastyRobot(guy))
         end,
         {"_combat"}, -- see entityreplica.lua
         inst.components.follower.leader ~= nil and
@@ -190,7 +192,7 @@ local function NormalShouldSleep(inst)
                 (inst.LightWatcher == nil or inst.LightWatcher:IsInLight())))
 end
 
-local normalbrain = require "brains/pigbrain"
+local normalbrain = require "brains/pigbrain_cyborg"
 
 local function SuggestTreeTarget(inst, data)
     if data ~= nil and data.tree ~= nil and inst:GetBufferedAction() ~= ACTIONS.CHOP then
@@ -218,9 +220,9 @@ local function SetNormalPig(inst)
     inst.components.sleeper:SetWakeTest(DefaultWakeTest)
 
     inst.components.lootdropper:SetLoot({})
-    inst.components.lootdropper:AddRandomLoot("meat", 49)
-    inst.components.lootdropper:AddRandomLoot("pigskin", 49)
-    inst.components.lootdropper:AddRandomLoot("gears", 2)
+    inst.components.lootdropper:AddRandomLoot("meat", 50)
+    inst.components.lootdropper:AddRandomLoot("pigskin", 30)
+    inst.components.lootdropper:AddRandomLoot("ironnugget", 20)
     inst.components.lootdropper.numrandomloot = 1
     inst.components.lootdropper:AddChanceLoot("pighouse_cyborg_blueprint", 0.1)
 
@@ -273,8 +275,8 @@ local function SetWerePig(inst)
 
     inst.components.combat:SetDefaultDamage(TUNING.WEREPIG_DAMAGE)
     inst.components.combat:SetAttackPeriod(TUNING.WEREPIG_ATTACK_PERIOD)
-    inst.components.locomotor.runspeed = TUNING.WEREPIG_RUN_SPEED 
-    inst.components.locomotor.walkspeed = TUNING.WEREPIG_WALK_SPEED 
+    inst.components.locomotor.runspeed = TUNING.WEREPIG_RUN_SPEED
+    inst.components.locomotor.walkspeed = TUNING.WEREPIG_WALK_SPEED
 
     inst.components.sleeper:SetSleepTest(WerepigSleepTest)
     inst.components.sleeper:SetWakeTest(WerepigWakeTest)
@@ -377,6 +379,7 @@ local function common()
     ------------------------------------------
     inst:AddComponent("eater")
     inst.components.eater:SetDiet({ FOODGROUP.OMNI }, { FOODGROUP.OMNI })
+    inst.components.eater:SetCanEatGears()
     inst.components.eater:SetCanEatHorrible()
     inst.components.eater:SetCanEatRaw()
     inst.components.eater.strongstomach = true -- can eat monster meat!
@@ -422,7 +425,7 @@ local function common()
     inst.components.trader.onaccept = OnGetItemFromPlayer
     inst.components.trader.onrefuse = OnRefuseItem
     inst.components.trader.deleteitemonaccept = false
-    
+
     ------------------------------------------
 
     inst:AddComponent("sanityaura")

@@ -2,7 +2,7 @@ AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	id = "CHEZZPRESET",
 	name="Chessland",
 	desc="The land of chess",
-	location = "forest",
+	location = "forest_chezz",
 	version = 2,
 	overrides={
 		task_set = "chezz",

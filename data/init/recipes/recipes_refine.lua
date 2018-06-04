@@ -22,10 +22,10 @@ AddItemRecipe(
 AddItemRecipe(
 	"gears",
 	{
-		ModIngredient("ironnugget", 8),
+		ModIngredient("ironnugget", 10),
 	},
 	RECIPETABS.REFINE,
 	TECH.SCIENCE_TWO,
-	"Bamboo is so versatile!",
+	"Everybody needs gears",
 	"images/inventoryimages.xml"
 )

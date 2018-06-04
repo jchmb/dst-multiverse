@@ -1,13 +1,4 @@
-local Layouts = GLOBAL.require("map/layouts").Layouts
-local StaticLayout = GLOBAL.require("map/static_layout")
-Layouts["PigKingBlue"] = StaticLayout.Get(
-	"map/static_layouts/default_pigking_blue",
-	{
-		start_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN_RESERVED,
-		fill_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN_RESERVED,
-		layout_position = GLOBAL.LAYOUT_POSITION.CENTER
-	}
-)
+AddRequiredStaticLayout("PigKingBlue", "default_pigking_blue")
 
 --[[
 	Background Rooms
@@ -185,7 +176,7 @@ AddRoom("BGSnowyDeciduous", {
 			rock2=0.05,
 
 			sapling=0.1,
-			grass=0.1,						
+			grass=0.1,
 
 			flower=0.75,
 
@@ -263,10 +254,10 @@ AddRoom("SnowyPigKingdom", {
 			["PigKingBlue"]=1,
 			["CropCircle"]=function() return math.random(0,1) end,
 			["TreeFarm"]= 	function()
-								if math.random() > 0.97 then 
-									return math.random(1,2) 
-								end 
-								return 0 
+								if math.random() > 0.97 then
+									return math.random(1,2)
+								end
+								return 0
 							end,
 		},
 		countprefabs= {
@@ -560,5 +551,5 @@ AddStandardRoom(
 	{
 		yeti = math.random(2, 4) + 4,
 		pond_open = 2,
-	}		
+	}
 )

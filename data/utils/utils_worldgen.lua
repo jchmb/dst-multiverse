@@ -178,6 +178,19 @@ function AddPreferredLayout(name, fname)
 	layouts[name] = layout
 end
 
+function AddRequiredStaticLayout(name, fname)
+	local Layouts = GLOBAL.require("map/layouts").Layouts
+	local StaticLayout = GLOBAL.require("map/static_layout")
+	Layouts[name] = StaticLayout.Get(
+		"map/static_layouts/" .. fname,
+		{
+			start_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN_RESERVED,
+			fill_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN_RESERVED,
+			layout_position = GLOBAL.LAYOUT_POSITION.CENTER
+		}
+	)
+end
+
 function AddLocationWrapped(label, data)
 	AddLocation(data)
 	-- if SERVER_LEVEL_LOCATIONS ~= nil then

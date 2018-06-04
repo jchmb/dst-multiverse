@@ -59,8 +59,8 @@ STRINGS.RECIPE_DESC.PIGHOUSE_GRAY = "Houses one graypig"
 local pighouseCyborgRecipe = Recipe(
 	"pighouse_cyborg",
 	{
-		Ingredient("boards", 6),
-		Ingredient("gears", 1),
+		Ingredient("boards", 4),
+		Ingredient("ironnugget", 7),
 		Ingredient("pigskin", 4),
 	},
 	RECIPETABS.TOWN,
