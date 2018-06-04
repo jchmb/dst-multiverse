@@ -6,6 +6,29 @@ modimport("init/mod_prefab_descriptions/descriptions_taro")
 --[[
 	Descriptions
 --]]
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.GRAY_MUSHROOM = "It is a gray...mushroom?"
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.GRAY_MUSHROOM = "A gray mushroom, reminds me of ashes..."
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.GRAY_MUSHROOM = "Hmm, a gray mushroom? Is it any filling?"
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.GRAY_MUSHROOM = "Looks like a dead mushroom, can you see its spirit Abigail?"
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.GRAY_MUSHROOM = "LOOKS ALMOST UNLIVING, NOT A VERY EFFICIENT FUEL."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.GRAY_MUSHROOM = "An unworthy mushroom, looks like it's almost given up on fighting!"
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.GRAY_MUSHROOM = "Gloomy shroom, you need some color!"
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.GRAY_MUSHROOM = "A gray fungus, not very nutrient."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.GRAY_MUSHROOM = "Grayer than any mushroom I've seen. I wouldn't eat it."
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.GRAY_MUSHROOM = "Even the mushrooms have been imbued with darkness in this land..." 
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.GRAY_MUSHROOM = "It's some sorta gray mushroom."
+
+
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEE = "Finally... A fresh cup of coffee, the best sort!"
   
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEE = "Black like charcoal. Well burnt. The aroma: smoky. Hot."
