@@ -115,6 +115,17 @@ AddBlockedTask(
 	"WaterBeachEntrance"
 )
 
+AddTaskWrapped(
+	"Water three e",
+	{LOCKS.TIER2},
+	{KEYS.TIER3},
+	{
+		["WaterMeanvers"] = GetSizeFn(1),
+	},
+	GROUND.GRASS_BROWN,
+	"BGWaterMeanvers"
+)
+
 AddBlockedTask(
 	"Water four a",
 	{LOCKS.TIER3},

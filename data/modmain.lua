@@ -4,6 +4,7 @@
 modimport("lib/lua_functions")
 modimport("utils/utils_common")
 modimport("utils/utils_main")
+modimport("utils/utils_console")
 
 --[[
 	Globals
@@ -50,6 +51,7 @@ modimport("init/init_chatter")
 	Misc
 --]]
 modimport("init/init_kramped")
+-- modimport("init/init_clock")
 
 -- Prefab postinits
 modimport("init/postinits")

@@ -27,6 +27,7 @@ modimport("scripts/map/locations/location_snow")
 modimport("scripts/map/locations/location_slimey")
 modimport("scripts/map/locations/location_gray")
 modimport("scripts/map/locations/location_water")
+modimport("scripts/map/locations/location_chezz")
 
 --[[
 	Level scripts

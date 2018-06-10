@@ -81,7 +81,8 @@ local function onvacate(inst, child)
                     return x.prefab == inst.startinghat
                 end
             )
-            if hat ~= nil then
+            local equippedhat = child.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
+            if hat then --or equippedhat then
                 return
             end
             local item = SpawnPrefab(inst.startinghat)
@@ -93,7 +94,7 @@ local function onvacate(inst, child)
                 item.components.armor:SetPercent(math.random() * 0.05 + 0.05)
             end
             if item.components.fueled ~= nil then
-                item.components.fueled:SetPercent(math.random() * 0.05 + 0.05)
+                item.components.fueled:SetPercent(math.random() * 0.05 + 0.20)
             end
             if item.components.perishable ~= nil then
                 local perishable = item.components.perishable

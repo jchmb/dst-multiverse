@@ -13,7 +13,7 @@ Layouts["RewardMooseTreasure"] = GLOBAL.require("map/layouts/reward_moosetreasur
 AddStandardRoom(
 	"BGWater",
 	GROUND.GRASS_BLUE,
-	0.4,
+	0.5,
 	{
 		cave_banana_tree = 0.05,
 		evergreen = 5,
@@ -39,7 +39,7 @@ AddStandardRoom(
 		evergreen = 2,
 		deciduoustree = 1,
 		cave_banana_tree = 0.007,
-		fireflies = 0.5,
+		fireflies = 0.7,
 		grass = 0.1,
 	},
 	{
@@ -50,17 +50,20 @@ AddStandardRoom(
 AddStandardRoom(
 	"WaterForest",
 	GROUND.FOREST,
-	0.65,
+	0.7,
 	{
 		evergreen = 6,
 		deciduoustree = 4,
 		cave_banana_tree = 0.007,
-		fireflies = 0.5,
+		fireflies = 0.6,
 		ground_twigs = 0.1,
 		brown_mushroom = 0.1,
 		grass = 0.2,
 		wildbeaver_house = 0.1,
 		rabbithole = 0.2,
+	},
+	{
+		lureplant = 1,
 	}
 )
 
@@ -194,6 +197,9 @@ AddStandardRoom(
 		flint = 0.05,
 		bambootree = 0.15,
 		wildbore_house = 0.05,
+	},
+	{
+		lureplant = 1,
 	}
 )
 
@@ -204,7 +210,7 @@ AddStandardRoom(
 	{
 		jungletree = 0.3,
 		cave_banana_tree = 0.07,
-		fireflies = 0.5,
+		fireflies = 0.8,
 		ground_twigs = 0.1,
 		grass = 0.2,
 	},
@@ -234,12 +240,12 @@ AddStandardRoom(
 	{
 		deciduoustree = 6,
 		evergreen = 6,
-		wildbeaver_house = 0.2,
+		wildbeaver_house = 0.1,
 		sapling = 0.1,
 		twiggytree = 0.1,
 		grass = 0.1,
 		brown_mushroom = 0.1,
-		fireflies = 0.5,
+		fireflies = 0.4,
 		spiderden = 0.05,
 		cave_banana_tree = 0.02,
 		rabbithole = 0.05,
@@ -253,12 +259,12 @@ AddStandardRoom(
 	{
 		deciduoustree = 7,
 		evergreen = 5,
-		wildbeaver_house = 0.1,
+		wildbeaver_house = 0.2,
 		sapling = 0.1,
 		twiggytree = 0.1,
 		grass = 0.1,
 		brown_mushroom = 0.3,
-		fireflies = 0.5,
+		fireflies = 0.8,
 	}
 )
 
@@ -363,6 +369,7 @@ AddStandardRoom(
 		sapling = 0.1,
 		twiggytree = 0.1,
 		cave_banana_tree = 0.02,
+		wildbore_house = 0.05,
 	}
 )
 
@@ -470,6 +477,36 @@ AddStandardRoom(
 	{},
 	{
 		["MooseNest"] = 3,
+	}
+)
+
+AddStandardRoom(
+	"BGWaterMeanvers",
+	GROUND.GRASS_BROWN,
+	0.3,
+	{
+		grass = 0.1,
+		sapling = 0.1,
+		twiggytree = 0.5,
+		deciduoustree = 1,
+		evergreen_sparse = 4,
+		flower_evil = 0.1,
+	}
+)
+
+AddStandardRoom(
+	"WaterMeanvers",
+	GROUND.GRASS_BROWN,
+	0.3,
+	{
+		grass = 0.1,
+		sapling = 0.1,
+		twiggytree = 0.5,
+		evergreen_sparse = 4,
+		deciduoustree = 3,
+		wildmeanver_house = 0.1,
+		brown_mushroom = 0.1,
+		flower_evil = 0.3,
 	}
 )
 

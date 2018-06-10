@@ -2,9 +2,9 @@ AddTask("Make a pick chezz", {
 	locks=LOCKS.NONE,
 	keys_given={KEYS.PICKAXE, KEYS.AXE, KEYS.GRASS, KEYS.WOOD, KEYS.TIER1},
 	room_choices={
-		["Marsh"] = 2, 
-		["DeepForest"] = 2,
-		["ChezzFungusNoiseForest"] = 3,
+		["ChezzClearing"] = 1,
+		["ChezzPlain"] = 1,
+		["ChezzField"] = GetSizeFn(1)
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.CHECKER,
@@ -17,7 +17,7 @@ AddTask("Chezzness three a", {
 	room_choices={
 		["ChezzLichenMeadow"] = 1,
 		["ChezzLichenLand"] = 1,
-		["ChezzRocks"] = 1,
+		["ChezzFungusNoiseForest"] = 3,
 	},
 	room_bg=GROUND.CHECKER,
 	background_room="BGChezz",
@@ -31,7 +31,7 @@ AddTask("Chezzness three b", {
 		["CuteMonkeyRoom"] = 1,
 		["ChezzLichenLand"] = 1,
 		["ChezzWetWilds"] = 1,
-		["ChezzRocks"] = 1,
+		["ChezzRocks"] = GetSizeFn(1),
 	},
 	room_bg=GROUND.CHECKER,
 	background_room="BGChezz",
@@ -56,8 +56,8 @@ AddTask("Speak to the king chezz", {
 	room_choices={
 		["ChezzPigKingdom"] = 1,
 		["ChezzMagicalDeciduous"] = 1,
-		["ChezzDeepDeciduous"] = 2,
-	}, 
+		["ChezzDeepDeciduous"] = GetSizeFn(1),
+	},
 	room_bg=GROUND.BRICK_GLOW,
 	background_room="BGChezzDeciduous",
 	colour={r=1,g=1,b=0,a=1}

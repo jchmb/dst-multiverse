@@ -40,6 +40,7 @@ AddStandardTerrainFilter("hatpighouse")
 AddStandardTerrainFilter("gray_mushroom")
 AddStandardTerrainFilter("yellow_mushroom")
 AddStandardTerrainFilter("brown_mushroom")
+AddStandardTerrainFilter("wildmeanver_house")
 
 AddTreeTerrainFilter("jungletree")
 AddTreeTerrainFilter("palmtree")

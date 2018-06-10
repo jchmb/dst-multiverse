@@ -5,6 +5,7 @@ AddLevelWrapped(
 	"forest_water",
 	"water",
 	{
-		
-	}
+		weather = "always",
+	},
+	2
 )

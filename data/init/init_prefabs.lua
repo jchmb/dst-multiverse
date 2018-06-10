@@ -79,6 +79,13 @@ PrefabFiles = {
 	"beardlordhouse",
 	"perma_beardlord",
 
+	-- Volcanoland
+	"dragoon",
+	"dragoonden",
+	"dragoonheart",
+	"dragoonspit",
+	"dragoonfire",
+
 	-- Beaverland mobs and spawners
 	"merm_blue",
 	"mermhouse_blue",
@@ -124,6 +131,8 @@ PrefabFiles = {
 	"armor_blubber",
 	"armor_windbreaker",
 	-- "machetes",
+	"wildmeanver",
+	"wildmeanver_house",
 
 	-- Chezz mobs and spawners
 

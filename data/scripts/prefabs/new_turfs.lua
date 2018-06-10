@@ -50,7 +50,7 @@ local function make_turf(data)
         --MakeDragonflyBait(inst, 3)
 
         inst.entity:SetPristine()
-        
+
         if not TheWorld.ismastersim then
             return inst
         end
@@ -64,7 +64,7 @@ local function make_turf(data)
         inst.data = data
 
         inst:AddComponent("bait")
-        
+
         inst:AddComponent("fuel")
         inst.components.fuel.fuelvalue = TUNING.MED_FUEL
         MakeMediumBurnable(inst, TUNING.MED_BURNTIME)
@@ -101,6 +101,8 @@ local turfs =
     {name="grass_blue",         anim="grass",      tile=GROUND.GRASS_BLUE},
     {name="sand",         anim="grass",      tile=GROUND.SAND},
     {name="jungle",         anim="grass",      tile=GROUND.JUNGLE},
+    {name="grass_chess",         anim="grass",      tile=GROUND.GRASS_CHESS},
+    {name="grass_brown",         anim="grass",      tile=GROUND.GRASS_BROWN},
 }
 
 for k,v in pairs(turfs) do

@@ -3,7 +3,7 @@ AddTask("Speak to the king slimey", {
 	keys_given={KEYS.PICKAXE, KEYS.AXE, KEYS.GRASS, KEYS.WOOD, KEYS.TIER1},
 	room_choices={
 		["SlimeyPigKingdom"] = 1,
-		["SlimeyMagicalDeciduous"] = 2, 
+		["SlimeyMagicalDeciduous"] = 2,
 		["SlimeyDeepDeciduous"] = 2,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
@@ -37,7 +37,7 @@ AddTask("Slimey two b", {
 	locks={LOCKS.TIER2},
 	keys_given={KEYS.TIER3},
 	room_choices={
-		["SlimeySwampRocks"] = 2, 
+		["SlimeySwampRocks"] = 2,
 		["SlimeyMudRocks"] = 1,
 		["SlimeyHerds"] = 1,
 	},
@@ -50,7 +50,7 @@ AddTask("Slimey three a", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},
 	room_choices={
-		["SlimeySwampRocks"] = GetSizeFn(1), 
+		["SlimeySwampRocks"] = GetSizeFn(1),
 		["SlimeyMudRocks"] = GetSizeFn(1),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
@@ -73,7 +73,7 @@ AddTask("Slimey three b", {
 AddTask("Slimey four a", {
 	locks={LOCKS.TIER4},
 	keys_given={KEYS.NONE},
-	room_choices={ 
+	room_choices={
 		["SlimeySpiders"] = 3,
 		["SlimeyHounds"] = 1,
 	},
@@ -84,7 +84,7 @@ AddTask("Slimey four a", {
 
 AddTask("Slimey four b", {
 	locks={LOCKS.TIER4},
-	keys_given={KEYS.NONE},
+	keys_given={KEYS.CAVE},
 	room_choices={
 		["SlimeyEwecus"] = 2,
 		["SlimeyMermCity"] = 2,

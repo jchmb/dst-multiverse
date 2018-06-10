@@ -12,6 +12,9 @@ local slimey_tasks = {
 			"Slimey four a",
 			"Slimey four b",
 			"Magic meadow",
+			"ToadStoolTask1",
+			"ToadStoolTask2",
+			"ToadStoolTask3",
 		}
 
 AddTaskSetFixed("slimey", {

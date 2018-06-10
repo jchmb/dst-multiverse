@@ -1,5 +1,50 @@
 AddRequiredStaticLayout("PigKingCyborg", "default_pigking_cyborg")
 
+AddStandardRoom(
+	"ChezzClearing",
+	GROUND.GRASS_CHESS,
+	0.1,
+	{
+        flower = 0.1,
+	},
+	{
+		spawnpoint_multiplayer = 1,
+        rock_iron = 1,
+		-- homesign_welcome = 1,
+	},
+	{},
+	nil,
+	{"ExitPiece", "Chester_Eyebone", "StagehandGarden"}
+)
+
+AddStandardRoom(
+    "ChezzPlain",
+    GROUND.SAVANNA,
+    0.3,
+    {
+        perma_grass = 0.25,
+        rabbithole = 0.05,
+    }
+)
+
+AddStandardRoom(
+    "ChezzField",
+    GROUND.GRASS_CHESS,
+    0.3,
+    {
+        perma_grass = 0.05,
+        twigs = 0.1,
+        twiggytree = 0.1,
+        evergreen = 0.1,
+        flint = 0.05,
+        ground_twigs = 0.05,
+        molehill = 0.02,
+        berrybush = 0.05,
+        berrybush_juicy = 0.05,
+    }
+)
+
+
 AddRoom("ChezzFungusNoiseForest", {
     colour={r=1.0,g=1.0,b=1.0,a=0.9},
     value = GROUND.BRICK,
@@ -140,13 +185,13 @@ AddRoom("ChezzRocks", {
 		countprefabs = {
 			meteorspawner = 2,
 		},
-		distributepercent = 0.3,
+		distributepercent = 0.2,
 		distributeprefabs = {
 			rock1 = 0.15,
-			rock2 = 0.1,
-			flint = 0.2,
+			rock2 = 0.05,
+			flint = 0.1,
 			rocks = 0.1,
-            rock_iron = 0.1,
+            rock_iron = 0.05,
 			rock_ice = 0.1,
 		}
 	}

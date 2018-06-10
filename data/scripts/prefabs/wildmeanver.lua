@@ -1,5 +1,5 @@
 local assets = {
-    Asset("ANIM", "anim/wildbeaver_build.zip"),
+    Asset("ANIM", "anim/wildmeanver_build.zip"),
     Asset("ANIM", "anim/werebeaver_build.zip"),
     Asset("ANIM", "anim/werebeaver_basic.zip"),
     Asset("ANIM", "anim/werebeaver_fx.zip"),
@@ -149,7 +149,7 @@ end
 
 local function OnAttackedByDecidRoot(inst, attacker)
     local x, y, z = inst.Transform:GetWorldPosition()
-    local ents = TheSim:FindEntities(x, y, z, SpringCombatMod(SHARE_TARGET_DIST) * .5, { "_combat", "_health", "wildbeaver" }, {"INLIMBO" })
+    local ents = TheSim:FindEntities(x, y, z, SpringCombatMod(SHARE_TARGET_DIST) * .5, { "_combat", "_health", "wildmeanver" }, {"INLIMBO" })
     local num_helpers = 0
     for i, v in ipairs(ents) do
         if v ~= inst and not v.components.health:IsDead() then
@@ -171,7 +171,7 @@ local function OnAttacked(inst, data)
             OnAttackedByDecidRoot(inst, attacker.owner)
         else
             inst.components.combat:SetTarget(attacker)
-            inst.components.combat:ShareTarget(attacker, SHARE_TARGET_DIST, function(x) x:HasTag("wildbeaver") end, MAX_TARGET_SHARES)
+            inst.components.combat:ShareTarget(attacker, SHARE_TARGET_DIST, function(x) x:HasTag("wildmeanver") end, MAX_TARGET_SHARES)
         end
     end
 end
@@ -186,7 +186,8 @@ local function NormalRetargetFn(inst)
         TUNING.PIG_TARGET_DIST,
         function(guy)
             return inst.components.combat:CanTarget(guy) and
-                (guy:HasTag("monster") or guy:HasTag("wildmeanver"))
+                not guy:HasTag("wildmeanver") and not guy:HasTag("beaverness") and
+                not guy:HasTag("monster")
         end,
         {"_combat"}, -- see entityreplica.lua
         inst.components.follower.leader ~= nil and
@@ -233,11 +234,12 @@ local function fn()
 
     inst:AddTag("character")
     --inst:AddTag("beaver") >> Apparently this has unintended side-effects
-    inst:AddTag("wildbeaver")
+    inst:AddTag("wildmeanver")
     inst:AddTag("pig")
     inst:AddTag("scarytoprey")
+    inst:AddTag("hostile")
 
-    inst.AnimState:SetBuild("wildbeaver_build")
+    inst.AnimState:SetBuild("wildmeanver_build")
     inst.AnimState:SetBank("werebeaver")
     inst.AnimState:PlayAnimation("idle_loop")
     --inst.AnimState:Hide("hat")
@@ -318,7 +320,7 @@ local function fn()
     inst.components.lootdropper.numrandomloot = 0
     inst.components.lootdropper:AddChanceLoot("twigs", 0.5)
     inst.components.lootdropper:AddChanceLoot("twigs", 0.25)
-    inst.components.lootdropper:AddChanceLoot("wildbeaver_house_blueprint", 0.1)
+    inst.components.lootdropper:AddChanceLoot("wildmeanver_house_blueprint", 0.1)
 
     ------------------------------------------
 
@@ -369,4 +371,4 @@ local function fn()
     return inst
 end
 
-return Prefab("wildbeaver", fn, assets, prefabs)
+return Prefab("wildmeanver", fn, assets, prefabs)

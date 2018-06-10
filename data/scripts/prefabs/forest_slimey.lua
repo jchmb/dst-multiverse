@@ -137,6 +137,7 @@ local prefabs =
     "oasislake",
     "succulent_plant",
     "stagehand",
+    "toadstoolspawner",
 }
 
 local monsters =
@@ -258,6 +259,7 @@ local function master_postinit(inst)
     inst:AddComponent("specialeventsetup")
     inst:AddComponent("townportalregistry")
     inst:AddComponent("sandstorms")
+    inst:AddComponent("toadstoolspawner")
 
     if METRICS_ENABLED then
         inst:AddComponent("worldoverseer")

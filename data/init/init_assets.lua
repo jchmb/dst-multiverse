@@ -59,6 +59,12 @@ Assets = {
 	Asset("IMAGE", "levels/tiles/jungle.tex"),
 	Asset("FILE", "levels/tiles/jungle.xml"),
 
+	-- Grass chess
+	Asset("IMAGE", "levels/textures/noise_grass_chess.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_grass_chess.tex"),
+	Asset("IMAGE", "levels/tiles/grass_chess.tex"),
+	Asset("FILE", "levels/tiles/grass_chess.xml"),
+
 	-- Assets for recipes
 	Asset("IMAGE", "images/inventoryimages/pighouse_yellow.tex" ),
 	Asset("ATLAS", "images/inventoryimages/pighouse_yellow.xml" ),
@@ -212,6 +218,10 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/turf_jungle.xml" ),
 	Asset("IMAGE", "images/inventoryimages/turf_snakeskin.tex" ),
 	Asset("ATLAS", "images/inventoryimages/turf_snakeskin.xml" ),
+	Asset("IMAGE", "images/inventoryimages/turf_grass_chess.tex" ),
+	Asset("ATLAS", "images/inventoryimages/turf_grass_chess.xml" ),
+	Asset("IMAGE", "images/inventoryimages/turf_grass_brown.tex" ),
+	Asset("ATLAS", "images/inventoryimages/turf_grass_brown.xml" ),
 
 	-- Minimap icons
 	Asset("MINIMAP_IMAGE", "teleportato"),

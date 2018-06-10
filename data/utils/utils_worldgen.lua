@@ -36,18 +36,9 @@ function AddTaskSetWrapped(task_set, name, location, tasks, optionaltasks, numop
 	})
 end
 
-function AddLevelWrapped(preset, name, desc, location, task_set, overrides)
-	overrides = overrides or {}
-	overrides.task_set = task_set
-	AddLevelFixed(LEVELTYPE.SURVIVAL, {
-	id = preset,
-	name=name,
-	desc=desc,
-	location = location,
-	version = 2,
-	overrides=overrides,
-	numrandom_set_pieces = 5,
-	random_set_pieces = {
+function AddLevelWrapped(preset, name, desc, location, task_set, overrides, numrandom_set_pieces, random_set_pieces)
+	numrandom_set_pieces = numrandom_set_pieces or 5
+	random_set_pieces = random_set_pieces or {
 		"Chessy_1",
 		"Chessy_2",
 		"Chessy_3",
@@ -67,7 +58,18 @@ function AddLevelWrapped(preset, name, desc, location, task_set, overrides)
 		"Warzone_1",
 		"Warzone_2",
 		"Warzone_3",
-	},
+	}
+	overrides = overrides or {}
+	overrides.task_set = task_set
+	AddLevelFixed(LEVELTYPE.SURVIVAL, {
+	id = preset,
+	name=name,
+	desc=desc,
+	location = location,
+	version = 2,
+	overrides=overrides,
+	numrandom_set_pieces = numrandom_set_pieces,
+	random_set_pieces = random_set_pieces,
 })
 end
 

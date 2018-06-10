@@ -68,9 +68,9 @@ SetSharedLootTable('rock_iron',
     {'rocks',  1.00},
     {'flint',  1.00},
     {'flint',  0.60},
-    {'iron_nugget', 1.00},
-    {'iron_nugget', 0.50},
-    {'iron_nugget', 0.50},
+    {'ironnugget', 1.00},
+    {'ironnugget', 0.50},
+    {'ironnugget', 0.50},
 })
 
 SetSharedLootTable('rock_obsidian',

@@ -9,7 +9,8 @@ local tasks = {
 		"Water three a",
 		"Water three b",
 		"Water three c",
-		"Water three d",
+		-- "Water three d",
+		"Water three e",
 		"Water four a",
 		"Water four b",
 		"Speak to the king water",
@@ -24,7 +25,7 @@ local normaltasks = {
 	"Water three a",
 	"Water three b",
 	"Water three c",
-	"Water three d",
+	-- "Water three d",
 }
 
 AddTaskSetWrapped(

@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8, Joachim, and Keeper-M"
-version = "1.8.6"
+version = "1.9.2"
 forumthread = ""
 api_version = 10
 
@@ -29,6 +29,12 @@ configuration_options =
 	},
 	{
 		name = "UseDefaultLocations",
+		default = 1,
+	},
+
+	-- Synchronize seasons?
+	{
+		name = "SynchronizeSeasons",
 		default = 1,
 	},
 

@@ -151,3 +151,31 @@ AddTile(
 	},
 	{noise_texture = "levels/textures/mini_noise_jungle.tex"}
 )
+
+AddTile(
+	"GRASS_CHESS",
+	60,
+	"grass_chess",
+	{
+		noise_texture = "levels/textures/noise_grass_chess.tex",
+		runsound = "dontstarve/movement/run_grass",
+		walksound = "dontstarve/movement/walk_grass",
+		snowsound = "dontstarve/movement/run_snow",
+		mudsound = "dontstarve/movement/run_mud",
+	},
+	{noise_texture = "levels/textures/mini_noise_grass_chess.tex"}
+)
+
+AddTile(
+	"GRASS_BROWN",
+	61,
+	"grass_brown",
+	{
+		noise_texture = "levels/textures/noise_grass_brown.tex",
+		runsound = "dontstarve/movement/run_grass",
+		walksound = "dontstarve/movement/walk_grass",
+		snowsound = "dontstarve/movement/run_snow",
+		mudsound = "dontstarve/movement/run_mud",
+	},
+	{noise_texture = "levels/textures/mini_noise_grass_brown.tex"}
+)
