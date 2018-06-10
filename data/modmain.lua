@@ -51,7 +51,7 @@ modimport("init/init_chatter")
 	Misc
 --]]
 modimport("init/init_kramped")
--- modimport("init/init_clock")
+modimport("init/init_clock")
 
 -- Prefab postinits
 modimport("init/postinits")
