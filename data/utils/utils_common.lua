@@ -11,8 +11,7 @@ function IsDedicated()
 end
 
 function IsSlaveShard()
-	return (GLOBAL.TheNet:GetIsServer() or IsDedicated()) and
-		not TheWorld.ismastersim
+	return (GLOBAL.TheNet:GetIsServer() or IsDedicated())
 end
 
 -- Returns the Levenshtein distance between the two given strings
