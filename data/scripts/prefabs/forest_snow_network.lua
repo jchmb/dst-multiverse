@@ -1,7 +1,7 @@
 local MakeWorldNetwork = require("prefabs/world_network")
 
 -- t' =  0.75 * t - 3
-local SNOWY_WORLD_TEMP_MODIFIER = 0.75
+local SNOWY_WORLD_TEMP_MODIFIER = 0.2
 local SNOWY_WORLD_TEMP_LOCUS = -12
 
 local assets = {
