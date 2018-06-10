@@ -7,7 +7,7 @@ local assets=
 
 local prefabs =
 {
-    
+    "bamboo",
 }
 
 local function ontransplantfn(inst)
@@ -73,7 +73,7 @@ local function onpickedfn(inst, picker)
 			inst.AnimState:PushAnimation("picked")
 			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/bamboo_drop")
 		-- end
-	
+
 	-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/bamboo_hack")
 end
 

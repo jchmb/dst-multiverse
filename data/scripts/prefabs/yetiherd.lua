@@ -1,9 +1,9 @@
-local prefabs = 
+local prefabs =
 {
     "yeti",
 }
 
-local MAX_YETI_HERD_SIZE = 10
+local MAX_YETI_HERD_SIZE = 12
 local YETI_SPAWN_DELAY = 60 * 6
 local YETI_SPAWN_DELAY_VARIANCE = YETI_SPAWN_DELAY * 0.5
 
@@ -43,7 +43,7 @@ local function fn()
     inst.components.periodicspawner:SetPrefab("yeti")
     inst.components.periodicspawner:SetOnSpawnFn(OnSpawned)
     inst.components.periodicspawner:SetSpawnTestFn(CanSpawn)
-    inst.components.periodicspawner:SetDensityInRange(20, 6)
+    inst.components.periodicspawner:SetDensityInRange(20, 8)
     inst.components.periodicspawner:SetOnlySpawnOffscreen(true)
     inst.components.periodicspawner:Start()
 

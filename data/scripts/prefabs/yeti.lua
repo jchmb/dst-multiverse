@@ -20,8 +20,8 @@ local prefabs =
 }
 
 local TARGET_DIST = 16
-local YETI_HELP_DISTANCE = 25
-local YETI_MAX_HELPERS = 4
+local YETI_HELP_DISTANCE = 40
+local YETI_MAX_HELPERS = 6
 
 local function CalcSanityAura(inst)
     return -TUNING.SANITYAURA_SMALL
@@ -127,12 +127,12 @@ local function fn()
 
     ------------------
     inst:AddComponent("health")
-    inst.components.health:SetMaxHealth(600)
+    inst.components.health:SetMaxHealth(1000)
 
     ------------------
 
     inst:AddComponent("combat")
-    inst.components.combat:SetDefaultDamage(20)
+    inst.components.combat:SetDefaultDamage(30)
     --inst.components.combat:SetRange(5)
     inst.components.combat.hiteffectsymbol = "deerclops_body"
     inst.components.combat:SetAttackPeriod(TUNING.DEERCLOPS_ATTACK_PERIOD / 3)
