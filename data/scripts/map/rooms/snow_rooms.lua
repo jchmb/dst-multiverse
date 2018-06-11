@@ -235,6 +235,8 @@ AddRoom("SnowyDeepDeciduous", {
 
 			fireflies = 2,
 
+			mintybush = 0.05,
+
 			rock_ice = 0.5,
 			pighouse_blue = 0.1,
 		},
@@ -286,10 +288,12 @@ AddRoom("SnowyIcedLake", {
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
 		distributepercent = 0.1,
+		countprefabs = {
+			pond_open = 5,
+		},
 		distributeprefabs = {
-			pond_open = 0.01,
 			houndbone = 0.09,
-			rock_ice = 0.16,
+			rock_ice = 0.3,
 			flint = 0.03,
 		}
 	}
@@ -304,9 +308,12 @@ AddRoom("SnowyIcedLakeWalrus", {
 		distributepercent = 0.1,
 		countprefabs = {
 			perma_walrus_camp = 1,
+			pond_open = 5,
+			rock2 = 4,
+			rock_ice = 4,
 		},
 		distributeprefabs = {
-			pond_open = 0.01,
+
 		}
 	}
 })
@@ -320,9 +327,9 @@ AddRoom("SnowyIcedLakeHounds", {
 		distributepercent = 0.1,
 		countprefabs = {
 			houndmound = 2,
+			pond_open = 5,
 		},
 		distributeprefabs = {
-			pond_open = 0.01,
 			houndbone = 0.15,
 			rock1 = 0.09,
 			rock2 = 0.05,
@@ -357,17 +364,16 @@ AddRoom("SnowyForest2", {
 	value = GROUND.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
-		distributepercent = 0.6,
+		distributepercent = 0.7,
 		distributeprefabs = {
 			sapling = 0.1,
-			grass = 0.1,
-			ground_twigs = 0.1,
-			evergreen = 2,
-			evergreen_sparse = 8,
-			red_mushroom = 0.05,
-			green_mushroom = 0.05,
+			ground_twigs = 0.05,
+			twiggytree = 0.1,
+			evergreen = 1,
+			evergreen_sparse = 5,
 			blue_mushroom = 0.05,
 			pighouse_blue = 0.02,
+			mintybush = 0.1,
 		}
 	}
 })

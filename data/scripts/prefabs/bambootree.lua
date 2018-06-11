@@ -116,6 +116,8 @@ local function makefn(stage)
 	    local sound = inst.entity:AddSoundEmitter()
 		local minimap = inst.entity:AddMiniMapEntity()
 		inst.entity:AddNetwork()
+		
+		MakeObstaclePhysics(inst, .35)
 
 		minimap:SetIcon( "minimap_bambootree.tex" )
 
@@ -187,8 +189,6 @@ local function makefn(stage)
 	    MakeMediumBurnable(inst)
 	    MakeSmallPropagator(inst)
 	    MakeDragonflyBait(inst, 1)
-	    MakeObstaclePhysics(inst, .35)
-
 		--MakeNoGrowInWinter(inst)
 
 	    ---------------------
