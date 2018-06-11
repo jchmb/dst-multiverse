@@ -59,11 +59,10 @@ AddRoom("SnowyPlain", {
 	contents =  {
 		distributepercent = 0.15,
 		distributeprefabs= {
-			rock_petrified_tree = 0.15,
 			rock1 = 0.05,
 			perma_grass = 0.5,
 			rabbithole_snow=0.25,
-			rock_ice = 0.2,
+			rock_ice = 0.1,
 		},
 	}
 })
@@ -77,7 +76,7 @@ AddRoom("SnowyBarePlain", {
 		distributeprefabs= {
 			perma_grass = 0.8,
 			rabbithole_snow=0.4,
-			rock_ice = 0.2,
+			rock_ice = 0.1,
 		},
 	}
 })
@@ -90,13 +89,12 @@ AddRoom("SnowyHerds", {
 	value = GROUND.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		distributepercent = 0.2,
+		distributepercent = 0.3,
 		distributeprefabs = {
-			beefalo = 0.1,
-			perma_grass = 0.1,
-			flower = 1,
-			rabbithole_snow = 0.05,
-			rock_ice = 0.1,
+			beefalo = 0.05,
+			perma_grass = 0.2,
+			rabbithole_snow = 0.02,
+			rock_ice = 0.02,
 		}
 	}
 })
@@ -123,15 +121,15 @@ AddRoom("SnowyRocks", {
 	value = GROUND.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		distributepercent = 0.15,
+		distributepercent = 0.2,
 		countprefabs = {
 			meteorspawner = 1,
 		},
 		distributeprefabs = {
-			rock1 = 0.1,
-			rock2 = 0.1,
-			rock_ice = 0.4,
-			flint = 0.1,
+			rock1 = 0.15,
+			rock2 = 0.10,
+			rock_ice = 0.05,
+			flint = 0.02,
 		}
 	}
 })
@@ -143,7 +141,6 @@ AddRoom("SnowyGraveyard", {
 	contents =  {
 		distributepercent = 0.15,
 		countprefabs = {
-			meteorspawner = 1,
 			gravestone = 9,
 			skeleton = 2,
 			mound = 11,
@@ -151,7 +148,7 @@ AddRoom("SnowyGraveyard", {
 		distributeprefabs = {
 			evergreen_sparse = 5,
 			flower_evil = 0.2,
-			rock1 = 0.2,
+			rock1 = 0.01,
 		}
 	}
 })
@@ -338,9 +335,6 @@ AddRoom("SnowyForest", {
 	value = GROUND.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countprefabs = {
-			migration_portal = 1,
-		},
 		distributepercent = 0.6,
 		distributeprefabs = {
 			sapling = 0.1,
@@ -352,8 +346,45 @@ AddRoom("SnowyForest", {
 			green_mushroom = 0.2,
 			blue_mushroom = 0.2,
 			pighouse_blue = 0.02,
-			fireflies = 0.2,
-			catcoonden = 0.01,
+			fireflies = 0.05,
+			flower = 0.05,
+		}
+	}
+})
+
+AddRoom("SnowyForest2", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.SNOWY,
+	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
+	contents =  {
+		distributepercent = 0.6,
+		distributeprefabs = {
+			sapling = 0.1,
+			grass = 0.1,
+			ground_twigs = 0.1,
+			evergreen = 2,
+			evergreen_sparse = 8,
+			red_mushroom = 0.05,
+			green_mushroom = 0.05,
+			blue_mushroom = 0.05,
+			pighouse_blue = 0.02,
+		}
+	}
+})
+
+AddRoom("SnowyForestKlaus", {
+	colour={r=.25,g=.28,b=.25,a=.50},
+	value = GROUND.SNOWY,
+	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
+	contents =  {
+		distributepercent = 0.6,
+		countprefabs = {
+			klaus_sack = 1,
+			charcoal = 12,
+		},
+		distributeprefabs = {
+			evergreen = 2,
+			evergreen_sparse = 8,
 		}
 	}
 })
@@ -549,7 +580,7 @@ AddStandardRoom(
 		rock2 = 0.1,
 	},
 	{
-		yeti = math.random(2, 4) + 4,
+		yeti = math.random(2, 4) + 3,
 		pond_open = 2,
 	}
 )

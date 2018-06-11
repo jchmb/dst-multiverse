@@ -49,6 +49,7 @@ PrefabFiles = {
 	"babybunneefalo",
 	"bunneefaloherd",
 	--"piratebunnyman",
+	-- "spider_bunny",
 
 	-- Snow mobs and spawners
 	"rabbithole_snow",

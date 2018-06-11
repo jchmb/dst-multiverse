@@ -2,23 +2,22 @@ AddTask("Make a pick snowy", {
 		locks=LOCKS.NONE,
 		keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
 		room_choices={
-			["Forest"] = 2,
+			["Forest"] = 1,
 			["SnowyBarePlain"] = 1,
-			["SnowyPlain"] = 2,
+			["SnowyPlain"] = GetSizeFn(1),
 			["Clearing"] = 1,
-		}, 
+		},
 		room_bg=GROUND.SNOWY,
 		background_room="BGSnowy",
 		colour={r=0,g=1,b=0,a=1}
-	}) 
+	})
 
 AddTask("Snowy one", {
 	locks=LOCKS.NONE,
 	keys_given={KEYS.TIER1},
 	room_choices={
-		["SnowyForest"] = 2,
-		["SnowyRocks"] = 1,
-		["SnowyGraveyard"] = 1,
+		["SnowyRocks"] = GetSizeFn(1),
+		["SnowyGraveyard"] = 2,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,
@@ -29,11 +28,9 @@ AddTask("Snowy two a", {
 	locks={LOCKS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["SnowyForest"] = 2,
-		["SnowySpiderForest"] = 1,
+		["SnowyForest"] = GetSizeFn(1),
 		["SnowyLeifForest"] = 1,
-		["SnowyTallbirdForest"] = 1,
-		["SnowyGoats"] = 1,
+		["SnowySleepingIceHounds"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,
@@ -44,8 +41,7 @@ AddTask("Snowy two b", {
 	locks={LOCKS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["SnowyHerds"] = 1,
-		["SnowyLeifForest"] = 1,
+		["SnowyHerds"] = GetSizeFn(1),
 		["SnowyTotallyNormalForest"] = 1,
 		["SnowyBunnies"] = 1,
 	},
@@ -58,10 +54,9 @@ AddTask("Snowy three a", {
 	locks={LOCKS.TIER2},
 	keys_given={KEYS.TIER3},
 	room_choices={
-		["SnowyForest"] = 1,
-		["SnowyTallbirdForest"] = 2,
-		["Marsh"] = 1,
-		["SnowySleepingIceHounds"] = 1,
+		["SnowyForest2"] = GetSizeFn(1),
+		["SnowyForestKlaus"] = 1,
+		["SnowyTallbirdForest"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,
@@ -72,9 +67,7 @@ AddTask("Snowy three b", {
 	locks={LOCKS.TIER2},
 	keys_given={KEYS.TIER3},
 	room_choices={
-		["SnowyForest"] = 2,
-		["SnowySpiderForest"] = 2,
-		["SnowyKoalefants"] = 1,
+		["SnowySpiderForest"] = GetSizeFn(1),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,
@@ -86,6 +79,7 @@ AddTask("Snowy three c", {
 	keys_given={KEYS.TIER3},
 	room_choices={
 		["SnowyBunnies"] = 1,
+		["SnowyGoats"] = 1,
 		["SnowyForest"] = 1,
 		["SnowyWalrusForest"] = 1,
 	},
@@ -99,7 +93,7 @@ AddTask("Snowy four a", {
 	keys_given={KEYS.TIER4},
 	room_choices={
 		["SnowyForest"] = 1,
-		["SnowyIcedLake"] = 5,
+		["SnowyIcedLake"] = GetSizeFn(3),
 		["SnowyIcedLakeHounds"] = 2,
 		["SnowyIcedLakeWalrus"] = 1,
 	},
@@ -112,8 +106,8 @@ AddTask("Snowy four b", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},
 	room_choices={
-		["SnowyForest"] = 2,
-		["SnowyYetiTerritory"] = 1,
+		["SnowyForest"] = 1,
+		["SnowyYetiTerritory"] = GetSizeFn(1),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.SNOWY,
@@ -125,8 +119,8 @@ AddTask("Speak to the king snowy", {
 	keys_given={KEYS.PICKAXE, KEYS.AXE, KEYS.GRASS, KEYS.WOOD, KEYS.TIER2},
 	room_choices={
 		["SnowyPigKingdom"] = 1,
-		["SnowyMagicalDeciduous"] = 2, 
-		["SnowyDeepDeciduous"] = 2,
+		["SnowyMagicalDeciduous"] = 2,
+		["SnowyDeepDeciduous"] = GetSizeFn(1),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.DECIDUOUS,
