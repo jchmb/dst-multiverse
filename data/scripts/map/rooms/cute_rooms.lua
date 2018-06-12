@@ -519,6 +519,7 @@ AddStandardRoom(
 		sapling = 0.05,
 		grass = 0.05,
 		palmtree = 0.1,
+		sandhill = 0.05,
 	}
 )
 
@@ -531,6 +532,7 @@ AddStandardRoom(
 		sapling = 0.05,
 		grass = 0.05,
 		carrot_planted = 0.05,
+		sandhill = 0.1,
 	}
 )
 
@@ -544,6 +546,7 @@ AddStandardRoom(
 		sapling = 0.05,
 		grass = 0.05,
 		palmtree = 0.1,
+		sandhill = 0.1,
 	}
 )
 
@@ -556,6 +559,7 @@ AddStandardRoom(
 		sapling = 0.05,
 		grass = 0.05,
 		palmtree = 0.1,
+		sandhill = 0.1,
 	},
 	{
 		hatrabbithouse = 0.1,

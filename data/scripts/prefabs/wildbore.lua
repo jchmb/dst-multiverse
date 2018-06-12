@@ -143,7 +143,7 @@ local function OnAttacked(inst, data)
     local attacker = data.attacker
     inst:ClearBufferedAction()
 
-    if attacker.prefab == "deciduous_root" and attacker.owner ~= nil then 
+    if attacker.prefab == "deciduous_root" and attacker.owner ~= nil then
         OnAttackedByDecidRoot(inst, attacker.owner)
     elseif attacker.prefab ~= "deciduous_root" then
         inst.components.combat:SetTarget(attacker)
@@ -283,8 +283,8 @@ local function SetWerePig(inst)
 
     inst.components.combat:SetDefaultDamage(TUNING.WEREPIG_DAMAGE)
     inst.components.combat:SetAttackPeriod(TUNING.WEREPIG_ATTACK_PERIOD)
-    inst.components.locomotor.runspeed = TUNING.WEREPIG_RUN_SPEED 
-    inst.components.locomotor.walkspeed = TUNING.WEREPIG_WALK_SPEED 
+    inst.components.locomotor.runspeed = TUNING.WEREPIG_RUN_SPEED
+    inst.components.locomotor.walkspeed = TUNING.WEREPIG_WALK_SPEED
 
     inst.components.sleeper:SetSleepTest(WerepigSleepTest)
     inst.components.sleeper:SetWakeTest(WerepigWakeTest)
@@ -432,7 +432,7 @@ local function common()
     inst.components.trader.onaccept = OnGetItemFromPlayer
     inst.components.trader.onrefuse = OnRefuseItem
     inst.components.trader.deleteitemonaccept = false
-    
+
     ------------------------------------------
 
     inst:AddComponent("sanityaura")
@@ -454,7 +454,7 @@ local function common()
     inst.OnSave = OnSave
     inst.OnLoad = OnLoad
 
-    inst.werepig_build = "wildbore_werepig_build"
+    inst.werepig_build = "werepig_wildbore_build"
 
     inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("newcombattarget", OnNewTarget)

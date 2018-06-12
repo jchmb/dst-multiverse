@@ -168,9 +168,9 @@ local assets =
 
 local wormspawn =
 {
-    base_prefab = "worm",
-    winter_prefab = "worm",
-    summer_prefab = "worm",
+    base_prefab = "crocodog",
+    winter_prefab = "crocodog",
+    summer_prefab = "crocodog",
 
     attack_levels =
     {
@@ -188,7 +188,7 @@ local wormspawn =
         frequent    = function() return TUNING.TOTAL_DAY_TIME * 6, math.random() * TUNING.TOTAL_DAY_TIME * 5 end,
     },
 
-    warning_speech = "ANNOUNCE_WORMS",
+    warning_speech = "ANNOUNCE_HOUNDS",
 
     --Key = time, Value = sound prefab
     warning_sound_thresholds =

@@ -3,6 +3,10 @@ local assets =
     Asset("ANIM", "anim/hound_basic.zip"),
     Asset("ANIM", "anim/hound.zip"),
     Asset("ANIM", "anim/hound_slimey.zip"),
+    Asset("ANIM", "anim/crocodog_basic.zip"),
+    Asset("ANIM", "anim/crocodog.zip"),
+    Asset("ANIM", "anim/crocodog_water.zip"),
+    Asset("ANIM", "anim/crocodog_poison.zip"),
     Asset("SOUND", "sound/hound.fsb"),
 }
 
@@ -72,6 +76,32 @@ SetSharedLootTable('hound_slimey',
 {
     {'monstermeat', 1.000},
     {'mucus', 0.5},
+})
+
+SetSharedLootTable('crocodog',
+{
+    {'monstermeat', 1.000},
+    {'houndstooth', 0.500},
+    {'houndstooth', 0.250},
+    -- {'venom_gland', 0.25},
+})
+
+SetSharedLootTable('crocodog_poison',
+{
+    {'monstermeat', 1.000},
+    {'houndstooth', 0.500},
+    {'venom_gland', 0.250},
+})
+
+SetSharedLootTable('crocodog_water',
+{
+    {'monstermeat', 1.000},
+    {'houndstooth', 0.500},
+    {'ice', 1.000},
+    {'ice', 0.500},
+    {'ice', 0.250},
+    {'ice', 0.125},
+    -- {'venom_gland', 0.25},
 })
 
 SetSharedLootTable('hound_fire',
@@ -428,14 +458,14 @@ local function fncommon(bank, build, morphlist, custombrain, tag)
     inst.components.sanityaura.aura = -TUNING.SANITYAURA_MED
 
     inst:AddComponent("combat")
-    inst.components.combat:SetDefaultDamage(TUNING.HOUND_DAMAGE * 0.8)
+    inst.components.combat:SetDefaultDamage(TUNING.HOUND_DAMAGE)
     inst.components.combat:SetAttackPeriod(TUNING.HOUND_ATTACK_PERIOD)
     inst.components.combat:SetRetargetFunction(3, retargetfn)
     inst.components.combat:SetKeepTargetFunction(KeepTarget)
     inst.components.combat:SetHurtSound("dontstarve/creatures/hound/hurt")
 
     inst:AddComponent("lootdropper")
-    inst.components.lootdropper:SetChanceLootTable('hound')
+    inst.components.lootdropper:SetChanceLootTable(build)
 
     inst:AddComponent("inspectable")
     inst.components.inspectable.getstatus = GetStatus
@@ -487,10 +517,63 @@ local function fnslimey()
         return inst
     end
 
+    inst.components.combat:SetDefaultDamage(TUNING.HOUND_DAMAGE * 0.8)
+
     MakeMediumFreezableCharacter(inst, "hound_body")
     MakeMediumBurnableCharacter(inst, "hound_body")
 
     return inst
 end
 
-return Prefab("hound_slimey", fnslimey, assets, prefabs)
+local function fncroco()
+    local inst = fncommon("crocodog", "crocodog", {"crocodog"}, nil, "crocodile")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.combat:SetDefaultDamage(TUNING.HOUND_DAMAGE * 1.2)
+    -- inst:AddComponent("poisonous")
+
+    MakeMediumFreezableCharacter(inst, "hound_body")
+    MakeMediumBurnableCharacter(inst, "hound_body")
+
+    return inst
+end
+
+local function fncrocopoison()
+    local inst = fncommon("crocodog", "crocodog_poison", {"crocodog_water", "crocodog_poison"}, nil, "crocodile")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.combat:SetDefaultDamage(TUNING.HOUND_DAMAGE)
+    inst:AddComponent("poisonous")
+
+    MakeMediumFreezableCharacter(inst, "hound_body")
+    MakeMediumBurnableCharacter(inst, "hound_body")
+
+    return inst
+end
+
+local function fncrocowater()
+    local inst = fncommon("crocodog", "crocodog_water", {"crocodog_water", "crocodog_poison"}, nil, "crocodile")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.combat:SetDefaultDamage(TUNING.HOUND_DAMAGE)
+    -- inst:AddComponent("poisonous")
+
+    MakeMediumFreezableCharacter(inst, "hound_body")
+    MakeMediumBurnableCharacter(inst, "hound_body")
+
+    return inst
+end
+
+return Prefab("hound_slimey", fnslimey, assets, prefabs),
+    Prefab("crocodog", fncroco, assets, prefabs),
+    Prefab("crocodog_poison", fncrocopoison, assets, prefabs),
+    Prefab("crocodog_water", fncrocowater, assets, prefabs)
