@@ -75,4 +75,25 @@ local function pondopen()
     return inst
 end
 
-return Prefab("pond_open", pondopen, assets, prefabs)
+local function OnSpawnerInit(inst)
+    inst.task = nil
+    inst.components.childspawner:StartSpawning()
+end
+
+local function pondopenspawner()
+    local inst = pondopen()
+
+    inst:AddComponent("childspawner")
+    inst.components.childspawner.childname = "crocodog_water"
+    inst.components.childspawner:SetRegenPeriod(TUNING.POND_REGEN_TIME)
+    inst.components.childspawner:SetSpawnPeriod(TUNING.POND_SPAWN_TIME)
+    inst.components.childspawner:SetMaxChildren(1)
+    inst.components.childspawner:StartRegen()
+
+    inst.task = inst:DoTaskInTime(0, OnSpawnerInit)
+
+    return inst
+end
+
+return Prefab("pond_open", pondopen, assets, prefabs),
+    Prefab("pond_open_spawner", pondopenspawner, assets, prefabs)

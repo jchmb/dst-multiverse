@@ -244,7 +244,7 @@ local function OnAttackOther(inst, data)
                 and (dude:HasTag("hound") or dude:HasTag("houndfriend"))
                 and data.target ~= (dude.components.follower ~= nil and dude.components.follower.leader or nil)
         end, 5)
-    if data.target ~= nil and data.target.components.locomotor then
+    if inst:HasTag("slimey") and data.target ~= nil and data.target.components.locomotor then
         SlowDownTarget(data.target)
     end
 end

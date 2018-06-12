@@ -287,9 +287,9 @@ AddRoom("SnowyIcedLake", {
 	internal_type = GLOBAL.NODE_INTERNAL_CONNECTION_TYPE.EdgeCentroid,
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
-		distributepercent = 0.1,
+		distributepercent = 0.2,
 		countprefabs = {
-			pond_open = 5,
+			pond_open = 3,
 		},
 		distributeprefabs = {
 			houndbone = 0.09,
@@ -326,8 +326,7 @@ AddRoom("SnowyIcedLakeHounds", {
 	contents =  {
 		distributepercent = 0.1,
 		countprefabs = {
-			houndmound = 2,
-			pond_open = 5,
+			pond_open_spawner = 3,
 		},
 		distributeprefabs = {
 			houndbone = 0.15,

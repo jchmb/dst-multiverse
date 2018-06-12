@@ -58,20 +58,30 @@ configuration_options =
 	-- In case you want named migration portals, you can assign worldnames to shard IDs here.
 	{
 		name = "WorldNames",
-		default = {}
+		default = {},
+	},
+
+	-- Portal types. Please leave this empty if you want to use migration_portals always.
+	{
+		name = "DefaultPortalType",
+		default = "migration_portal",
+	},
+	{
+		name = "PortalTypes",
+		default = {},
 	},
 
 	-- Whether to connect migration portals.
 	{
 		name = "UseMultiShards",
-		default = false,
+		default = 0,
 	},
 
 	-- Delete unused migration portals.
 	{
 		name = "DeleteUnused",
 		description = "Mod will delete unused portals instead just plugging them",
-		default = true
+		default = 1,
 	},
 
 	-- The connections used for connecting shards (if UseMultiShards is enabled)

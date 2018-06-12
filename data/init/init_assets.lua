@@ -222,6 +222,12 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/turf_grass_chess.xml" ),
 	Asset("IMAGE", "images/inventoryimages/turf_grass_brown.tex" ),
 	Asset("ATLAS", "images/inventoryimages/turf_grass_brown.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sweet_potato.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sweet_potato.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sweet_potato_cooked.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sweet_potato_cooked.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sweet_potato_seeds.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sweet_potato_seeds.xml" ),
 
 	-- Minimap icons
 	Asset("MINIMAP_IMAGE", "teleportato"),

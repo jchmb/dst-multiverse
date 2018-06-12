@@ -88,6 +88,7 @@ PrefabFiles = {
 	"dragoonfire",
 
 	-- Beaverland mobs and spawners
+	"sweet_potato",
 	"merm_blue",
 	"mermhouse_blue",
 	"ox",

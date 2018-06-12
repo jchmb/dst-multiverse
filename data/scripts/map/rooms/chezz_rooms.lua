@@ -24,6 +24,9 @@ AddStandardRoom(
     {
         perma_grass = 0.25,
         rabbithole = 0.05,
+		flower_cave = .01,
+		flower_cave_double = .01,
+		flower_cave_triple = .01,
     }
 )
 
@@ -41,6 +44,7 @@ AddStandardRoom(
         molehill = 0.02,
         berrybush = 0.05,
         berrybush_juicy = 0.05,
+		rock_iron = 0.01,
     }
 )
 
@@ -53,17 +57,14 @@ AddRoom("ChezzFungusNoiseForest", {
         distributepercent = .4,
         distributeprefabs=
         {
-            mushtree_medium = 2.0,
-            mushtree_tall = 3.0,
-            mushtree_small = 3.0,
-            red_mushroom = 0.5,
-            green_mushroom = 0.5,
-            blue_mushroom = 0.5,
+            red_mushroom = 0.1,
+            green_mushroom = 0.1,
+            blue_mushroom = 0.1,
 
             grass = 0.1,
     	    sapling = 0.1,
     	    twiggytree = 0.1,
-    	    flint = 0.2,
+    	    flint = 0.1,
         },
     }
 })
@@ -76,7 +77,7 @@ AddRoom("ChezzWetWilds", {
         distributepercent = 0.25,
         distributeprefabs=
         {
-            lichen = .25,
+            lichen = .05,
             cave_fern = 0.1,
             pond_mos = 0.1,
             slurper = .05,
@@ -93,15 +94,8 @@ AddRoom("ChezzLichenMeadow", {
         distributepercent = 0.15,
         distributeprefabs=
         {
-            lichen = 1.0,
-            cave_fern = 1.0,
-            pillar_algae = 0.1,
-            slurper = 0.35,
-            fissure_lower = 0.05,
-
-            flower_cave = .05,
-            flower_cave_double = .03,
-            flower_cave_triple = .01,
+            lichen = 0.1,
+            cave_fern = 0.1,
 
             worm = 0.07,
             wormlight_plant = 0.15,
@@ -118,7 +112,7 @@ AddRoom("ChezzLichenLand", {
         distributepercent = 0.35,
         distributeprefabs=
         {
-            lichen = 2.0,
+            lichen = 0.1,
             cave_fern = 0.5,
             slurper = 0.05,
         }
@@ -156,6 +150,7 @@ AddRoom("ChezzLand", {
             		ruins_rubble_vase = 0.01,
 			rook = 0.01,
 			bishop = 0.01,
+			rock_iron = 0.01,
 		}
 	}
 })
@@ -173,6 +168,7 @@ AddRoom("ChezzLand2", {
 			flower_evil = 3,
 			chessjunk1 = 0.1,
 			bishop = 0.01,
+			rock_iron = 0.01,
 		}
 	}
 })
@@ -185,13 +181,13 @@ AddRoom("ChezzRocks", {
 		countprefabs = {
 			meteorspawner = 2,
 		},
-		distributepercent = 0.2,
+		distributepercent = 0.1,
 		distributeprefabs = {
-			rock1 = 0.15,
+			rock1 = 0.1,
 			rock2 = 0.05,
-			flint = 0.1,
-			rocks = 0.1,
-            rock_iron = 0.05,
+			flint = 0.05,
+			rocks = 0.05,
+            rock_iron = 0.02,
 			rock_ice = 0.1,
 		}
 	}
@@ -246,9 +242,6 @@ AddRoom("ChezzMagicalDeciduous", {
             green_mushroom = 2,
 
             fireflies = 4,
-
-            berrybush = 3,
-            berrybush_juicy = 1.5,
         },
     }
 })
@@ -267,6 +260,9 @@ AddRoom("ChezzDeepDeciduous", {
             grass = .1,
             rock = .1,
             fireflies = 1,
+			flower_cave = .01,
+			flower_cave_double = .01,
+			flower_cave_triple = .01,
         },
     }
 })
@@ -293,9 +289,8 @@ AddRoom("ChezzPigKingdom", {
         },
         distributepercent = 0.3,
         distributeprefabs = {
-            coffeebush = 0.02,
-            mintybush = 0.02,
-            bittersweetbush = 0.02,
+            berrybush = 0.1,
+			berrybush_juicy = 0.1,
         },
     }
 })

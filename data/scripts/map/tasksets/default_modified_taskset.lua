@@ -28,11 +28,11 @@ AddTask("Make a pick modified", {
 		locks=LOCKS.NONE,
 		keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
 		room_choices={
-			["ForestModified"] = 1, 
-			["BarePlainModified"] = 1, 
-			["PlainModified"] = 1, 
+			["ForestModified"] = 1,
+			["BarePlainModified"] = 1,
+			["PlainModified"] = 1,
 			["Clearing"] = 1,
-		}, 
+		},
 		room_bg=GROUND.GRASS,
 		background_room="BGGrass",
 		colour={r=0,g=1,b=0,a=1}
@@ -56,7 +56,7 @@ AddRoom("ForestModified", {
 					                    grass = .05,
 					                    sapling=.8,
 										twiggytree = 0.8,
-										ground_twigs = 0.06,					                    
+										ground_twigs = 0.06,
 										--rabbithole=.05,
 					                    berrybush=.03,
 					                    berrybush_juicy = 0.015,
@@ -81,7 +81,7 @@ AddRoom("PlainModified", {
 					                	rock_petrified_tree = 0.15,
 					                    rock1 = 0.05,
 					                    perma_grass = 0.5,
-					                    rabbithole= 0.25, 
+					                    rabbithole= 0.25,
 					                    green_mushroom = .005,
 					                },
 					            }

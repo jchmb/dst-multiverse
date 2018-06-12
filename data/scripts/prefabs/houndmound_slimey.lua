@@ -15,7 +15,7 @@ local prefabs =
     "boneshard",
 }
 
-SetSharedLootTable('hound_mound',
+SetSharedLootTable('hound_mound_slimey',
 {
     {'houndstooth', 1.00},
     {'houndstooth', 1.00},
@@ -159,7 +159,7 @@ local function fn()
 
     ---------------------
     inst:AddComponent("lootdropper")
-    inst.components.lootdropper:SetChanceLootTable('hound_mound')
+    inst.components.lootdropper:SetChanceLootTable('hound_mound_slimey')
 
     inst:AddComponent("combat")
     inst.components.combat:SetOnHit(SpawnAllGuards)

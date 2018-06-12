@@ -39,6 +39,8 @@ local MOD_VEGGIES =
                                  TUNING.CALORIES_TINY,   -3,  TUNING.PERISH_FAST, -3, nil),
     mintyberries = MakeVegStats("berries", 0,  5,   2,  TUNING.PERISH_FAST, 2,
                                  5,   3,  TUNING.PERISH_FAST, 2, nil),
+    sweet_potato = MakeVegStats("sweet_potato",	COMMON, TUNING.CALORIES_SMALL,	TUNING.HEALING_TINY,	TUNING.PERISH_MED, 0,
+                             	 TUNING.CALORIES_SMALL,	TUNING.HEALING_SMALL,	TUNING.PERISH_FAST, 0, nil),
     -- cacaobeans = MakeVegStats(0,   TUNING.CALORIES_TINY,   0,  TUNING.PERISH_FAST, 0,
     --                             TUNING.CALORIES_TINY,   3,  TUNING.PERISH_SLOW * 2, -TUNING.SANITY_TINY, nil),
 }
@@ -63,13 +65,13 @@ local function MakeVeggie(name, has_seeds)
         Asset("ANIM", "anim/"..name..".zip"),
         Asset("ATLAS", "images/inventoryimages/" .. name .. "_cooked.xml"),
     }
-    
+
     local prefabs =
     {
         name.."_cooked",
         "spoiled_food",
     }
-    
+
     if has_seeds then
         table.insert(prefabs, name.."_seeds")
     end
@@ -157,7 +159,7 @@ local function MakeVeggie(name, has_seeds)
         inst:AddComponent("edible")
         inst.components.edible.healthvalue = MOD_VEGGIES[name].health
         inst.components.edible.hungervalue = MOD_VEGGIES[name].hunger
-        inst.components.edible.sanityvalue = MOD_VEGGIES[name].sanity or 0      
+        inst.components.edible.sanityvalue = MOD_VEGGIES[name].sanity or 0
         inst.components.edible.foodtype = FOODTYPE.VEGGIE
 
         if MOD_VEGGIES[name].oneatenfn ~= nil then
@@ -172,7 +174,7 @@ local function MakeVeggie(name, has_seeds)
         inst:AddComponent("stackable")
         if name ~= "pumpkin" and
             name ~= "eggplant" and
-            name ~= "durian" and 
+            name ~= "durian" and
             name ~= "watermelon" then
             inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
         end
@@ -188,14 +190,14 @@ local function MakeVeggie(name, has_seeds)
 
         MakeSmallBurnable(inst)
         MakeSmallPropagator(inst)
-        ---------------------        
+        ---------------------
 
         inst:AddComponent("bait")
 
         ------------------------------------------------
         inst:AddComponent("tradable")
 
-        ------------------------------------------------  
+        ------------------------------------------------
 
         inst:AddComponent("cookable")
         inst.components.cookable.product = name.."_cooked"
@@ -251,7 +253,7 @@ local function MakeVeggie(name, has_seeds)
 
         MakeSmallBurnable(inst)
         MakeSmallPropagator(inst)
-        ---------------------        
+        ---------------------
 
         inst:AddComponent("bait")
 

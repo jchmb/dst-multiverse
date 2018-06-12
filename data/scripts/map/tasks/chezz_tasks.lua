@@ -28,7 +28,6 @@ AddTask("Chezzness three b", {
 	locks={LOCKS.TIER2, LOCKS.PIGS},
 	keys_given={KEYS.TIER3},
 	room_choices={
-		["CuteMonkeyRoom"] = 1,
 		["ChezzLichenLand"] = 1,
 		["ChezzWetWilds"] = 1,
 		["ChezzRocks"] = GetSizeFn(1),

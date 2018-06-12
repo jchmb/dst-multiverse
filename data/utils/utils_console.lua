@@ -30,8 +30,9 @@ local function c_ext()
     local player = GLOBAL.ConsoleCommandPlayer()
     local x, y, z = player.Transform:GetWorldPosition()
     local range = 50
-    local entities = GLOBAL.FindEntities(x, y, z, range, function(e)
-        return target.components.burnable:IsBurning() or target.components.IsSmoldering()
+    local entities = TheSim:FindEntities(x, y, z, range, function(e)
+        return target.components.burnable and
+            (target.components.burnable:IsBurning() or target.components.IsSmoldering())
     end)
     for i,v in ipairs(entities) do
         v.components.burnable:Extinguish()
@@ -64,10 +65,10 @@ local function c_invisible()
 end
 
 local function c_adminmode()
-    c_supergodmode()
-    c_speedmult(5)
-    c_give("minerhat")
-    c_give("lightbulb", 20)
+    GLOBAL.c_supergodmode()
+    GLOBAL.c_speedmult(5)
+    GLOBAL.c_give("minerhat")
+    GLOBAL.c_give("lightbulb", 20)
 end
 
 local function c_freeze(name)
@@ -95,9 +96,8 @@ end
 local function c_rescue(name)
     local player = FuzzyMatchPlayer(name)
     if player then
-        c_goto(player)
-        c_freezeall()
-        c_ext()
+        GLOBAL.c_goto(player)
+        GLOBAL.c_ext()
     end
 end
 

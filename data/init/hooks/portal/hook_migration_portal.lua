@@ -64,7 +64,9 @@ HookInitConnect = function(prefab)
 					prefab.components.worldmigrator.receivedPortal = (from == shardId) and toPortal or fromPortal
 					prefab.components.worldmigrator:ValidateAndPushEvents()
 
-					ReplacePortalNames(prefab, linkedShardID)
+					if prefab.prefab == "migration_portal" then
+						ReplacePortalNames(prefab, linkedShardID)
+					end
 
 					return
 				end

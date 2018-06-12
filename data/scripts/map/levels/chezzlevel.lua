@@ -12,7 +12,6 @@ AddLevelFixed(LEVELTYPE.SURVIVAL, {
 		berrybush = "rare",
 		buzzard = "often",
 		flowers = "rare",
-		tumbleweed = "often",
 	},
 	numrandom_set_pieces = 5,
 	random_set_pieces = {

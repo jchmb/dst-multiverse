@@ -6,10 +6,8 @@ local chezz_tasks = {
 			"Chezzness three b",
 			"Chezzness four",
 			"Kill the spiders",
-			"Killer bees!",
 			"The hunters",
 			"Squeltch",
-			"Beeeees!",
 		}
 
 AddTaskSetFixed("chezz", {
@@ -19,7 +17,7 @@ AddTaskSetFixed("chezz", {
 		numoptionaltasks = 1,
 		optionaltasks = {
 			"Frogs and bugs",
-			"Oasis",
+			"Killer bees!",
 		},
 		valid_start_tasks = {
 			"Make a pick chezz",

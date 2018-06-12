@@ -10,9 +10,10 @@ local assets =
 
 local prefabs =
 {
-	"walrus",
+	"elite_walrus",
 	"little_walrus",
 	"icehound",
+	"crocodog_water",
 }
 
 local NUM_HOUNDS = 2
@@ -203,9 +204,9 @@ local function SpawnHuntingParty(inst, target, houndsonly)
 	-- defer setting the transforms to prevent all kinds of events happening
 	-- during set-up of the party
 	local transformsToSet = {}
-	local leader = GetMember(inst, "walrus")
-	if not houndsonly and not leader and CanSpawn(inst, "walrus") then
-		leader = SpawnMember(inst, "walrus")
+	local leader = GetMember(inst, "elite_walrus")
+	if not houndsonly and not leader and CanSpawn(inst, "elite_walrus") then
+		leader = SpawnMember(inst, "elite_walrus")
 		local x,y,z = GetSpawnPoint(inst)
 		transformsToSet[#transformsToSet + 1] = {inst = leader, x=x, y=y,z=z }
 		--print("spawn", leader)
@@ -223,14 +224,14 @@ local function SpawnHuntingParty(inst, target, houndsonly)
 		companion.components.follower:SetLeader(leader)
 	end
 
-	local existing_hounds = GetMembers(inst, "icehound")
+	local existing_hounds = GetMembers(inst, "crocodog_water")
 	for i = 1,NUM_HOUNDS do
 		--print("hound", i)
 
 		local hound = existing_hounds[i]
-		if not hound and CanSpawn(inst, "icehound") then
+		if not hound and CanSpawn(inst, "crocodog_water") then
 			--print("spawn new hound")
-			hound = SpawnMember(inst, "icehound")
+			hound = SpawnMember(inst, "crocodog_water")
 			hound:AddTag("pet_hound")
 			local x,y,z = GetSpawnPoint(inst)
 			transformsToSet[#transformsToSet + 1] = {inst = hound, x=x, y=y,z=z }
