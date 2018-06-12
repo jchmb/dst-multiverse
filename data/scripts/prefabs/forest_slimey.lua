@@ -206,7 +206,7 @@ local function common_postinit(inst)
     inst.entity:AddWaveComponent()
     inst.WaveComponent:SetWaveParams(13.5, 2.5)						-- wave texture u repeat, forward distance between waves
     inst.WaveComponent:SetWaveSize(80, 3.5)							-- wave mesh width and height
-    inst.WaveComponent:SetWaveTexture("images/wave_slimey.tex")
+    inst.WaveComponent:SetWaveTexture(resolvefilepath("images/wave_slimey.tex"))
     --See source\game\components\WaveRegion.h
     inst.WaveComponent:SetWaveEffect("shaders/waves.ksh")
     --inst.WaveComponent:SetWaveEffect("shaders/texture.ksh")
