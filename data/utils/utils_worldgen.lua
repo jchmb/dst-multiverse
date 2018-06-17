@@ -180,11 +180,12 @@ function AddPreferredLayout(name, fname)
 	layouts[name] = layout
 end
 
-function AddRequiredStaticLayout(name, fname)
+function AddRequiredStaticLayout(name, fname, layouts_dir)
+	layouts_dir = layouts_dir or "static_layouts"
 	local Layouts = GLOBAL.require("map/layouts").Layouts
 	local StaticLayout = GLOBAL.require("map/static_layout")
 	Layouts[name] = StaticLayout.Get(
-		"map/static_layouts/" .. fname,
+		"map/" .. layouts_dir .. "/" .. fname,
 		{
 			start_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN_RESERVED,
 			fill_mask = GLOBAL.PLACE_MASK.IGNORE_IMPASSABLE_BARREN_RESERVED,
@@ -213,4 +214,8 @@ end
 
 function MakeSetPieceData(count, tasks)
 	return {count=count,tasks=tasks}
+end
+
+function GetCompatibleLocation(location, default_location)
+	return GetModConfigBoolean("UseDefaultLocations") and default_location or location
 end

@@ -15,7 +15,8 @@ for i=1,3 do
 end
 
 local houses = {}
-for i=1,3,2 do
+-- for i=1,3,2 do
+	local i = 1
 	table.insert(
 		houses,
 		{
@@ -29,7 +30,7 @@ for i=1,3,2 do
 			}
 		}
 	)
-end
+-- end
 
 return {
 	-- Choose layout type

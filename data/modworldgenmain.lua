@@ -57,6 +57,7 @@ modimport("scripts/map/rooms/cute_rooms")
 modimport("scripts/map/tasks/cute_tasks")
 modimport("scripts/map/tasksets/cute_taskset")
 modimport("scripts/map/levels/cutelevel")
+modimport("scripts/map/start_locations/start_location_bunnyland")
 
 modimport("scripts/map/rooms/slimey_rooms")
 modimport("scripts/map/tasks/slimey_tasks")

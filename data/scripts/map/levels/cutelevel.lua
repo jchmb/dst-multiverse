@@ -1,30 +1,12 @@
-AddLevelFixed(LEVELTYPE.SURVIVAL, {
-	id = "CUTENESSPRESET",
-	name="Bunnyland",
-	desc="The land of bunnies",
-	location = "forest_bunnyland",
-	version = 2,
-	overrides={
-		task_set = "cute",
-		carrot = "often",
+AddLevelWrapped(
+	"CUTENESSPRESET",
+	"Bunnyland",
+	"The land of bunnies",
+	"forest_bunnyland",
+	"multi",
+	{
+		start_location = "bunnyland"
 	},
-	numrandom_set_pieces = 3,
-	random_set_pieces = {
-		"Chessy_1",
-		"Chessy_2",
-		"Chessy_3",
-		"Chessy_4",
-		"Chessy_5",
-		"Chessy_6",
-		"ChessSpot1",
-		"ChessSpot2",
-		"ChessSpot3",
-		"Maxwell1",
-		"Maxwell2",
-		"Maxwell3",
-		"Maxwell4",
-		"Maxwell5",
-		"Maxwell6",
-		"Maxwell7",
-	},
-})
+	2,
+	nil
+)

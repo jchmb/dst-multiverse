@@ -2,7 +2,7 @@ AddLocationWrapped("Bunnyland", {
     location = "forest_bunnyland",
     version = 2,
     overrides={
-        start_location = "default",
+        start_location = "bunnyland",
         season_start = "default",
         world_size = "default",
         task_set = "default",
@@ -14,4 +14,3 @@ AddLocationWrapped("Bunnyland", {
         "multiplayer_portal",
     },
 })
-
