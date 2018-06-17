@@ -575,12 +575,16 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeeClearing",
-	GROUND.GRASS_BLUE,
+	-- GROUND.GRASS_BLUE, TMP
+	GROUND.OCEAN_SHALLOW,
 	0.1,
 	{
 		fireflies=0.01,
 		flower=0.7,
 		beehive=0.05,
+	},
+	{
+		rock_iron = 1,
 	}
 )
 

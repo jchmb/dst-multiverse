@@ -164,4 +164,9 @@ PrefabFiles = {
 
 	-- Special
 	"mimi",
+
+	-- Water
+	-- "wave_ripple",
+	-- "wave_shore",
+	-- "wave_shimmer",
 }

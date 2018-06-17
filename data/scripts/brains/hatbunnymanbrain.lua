@@ -133,7 +133,7 @@ local function IsHomeOnFire(inst)
 end
 
 local function GetLeader(inst)
-	return inst.components.follower.leader 
+	return inst.components.follower.leader
 end
 
 local function GetHomePos(inst)
@@ -151,6 +151,16 @@ local BunnymanBrain = Class(Brain, function(self, inst)
 	Brain._ctor(self, inst)
 end)
 
+local function GetDynamicWanderNode(self, inst)
+	local node = Wander(inst, GetNoLeaderHomePos, MAX_WANDER_DIST)
+	return inst.welcomer and
+		ChattyNode(
+			inst,
+			"RABBIT_WELCOMER",
+			node
+		) or node
+end
+
 function BunnymanBrain:OnStart()
 	--print(self.inst, "PigBrain:OnStart")
 
@@ -161,7 +171,7 @@ function BunnymanBrain:OnStart()
 	)
 	stuffNode = DynamicChat(self.inst, self.inst.GetStuffChatLines, stuffNode)
 
-	local root = 
+	local root =
 		PriorityNode(
 		{
 			WhileNode( function() return self.inst.components.hauntable and self.inst.components.hauntable.panic end, "PanicHaunted", Panic(self.inst)),
@@ -186,7 +196,7 @@ function BunnymanBrain:OnStart()
 					local loopfns = self.inst:GetStuffLoopFns()
 					return loopfns ~= nil and loopfns["test"](self.inst)
 				end,
-				"chop", 
+				"chop",
                 WhileNode(
                 	function()
                 		local loopfns = self.inst:GetStuffLoopFns()
@@ -206,7 +216,7 @@ function BunnymanBrain:OnStart()
 				self.inst.GetStuffChatLines,
 				DoAction(self.inst, FindStuffAction)
 			),
-			Wander(self.inst, GetNoLeaderHomePos, MAX_WANDER_DIST)
+			GetDynamicWanderNode(self, self.inst)
 		}, .5)
 
 	self.bt = BT(self.inst, root)

@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8, Joachim, and Keeper-M"
-version = "1.9.3"
+version = "1.9.4"
 forumthread = ""
 api_version = 10
 
@@ -97,4 +97,21 @@ configuration_options =
 		name = "MultiConnections",
 		default = {},
 	},
+
+	-- Compatibility options
+	{
+		name = "TileCompatibility",
+		default = 0,
+		description = "Tile compatibility mode",
+		options = {
+			{
+				description = "Standard",
+				data = 0,
+			},
+			{
+				description = "Compatible",
+				data = 1,
+			},
+		},
+	}
 }

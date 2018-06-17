@@ -3,14 +3,14 @@ require "recipes"
 
 local assets =
 {
-    Asset("ANIM", "anim/pig_gray_house.zip"),
+    Asset("ANIM", "anim/pig_cyborg_house.zip"),
     Asset("ANIM", "anim/pig_house.zip"),
     Asset("SOUND", "sound/pig.fsb"),
 }
 
 local prefabs =
 {
-    "pigman_gray",
+    "pigman_cyborg",
 }
 
 --Client update
@@ -107,7 +107,7 @@ local function onoccupieddoortask(inst)
 end
 
 local function onoccupied(inst, child)
-    if not inst:HasTag("burnt") then 
+    if not inst:HasTag("burnt") then
         inst.SoundEmitter:PlaySound("dontstarve/pig/pig_in_hut", "pigsound")
         inst.SoundEmitter:PlaySound("dontstarve/common/pighouse_door")
 
@@ -164,7 +164,7 @@ local function onhammered(inst, worker)
 end
 
 local function onhit(inst, worker)
-    if not inst:HasTag("burnt") then 
+    if not inst:HasTag("burnt") then
         inst.AnimState:PlayAnimation("hit")
         if inst.lightson then
             inst.AnimState:PushAnimation("lit")
@@ -294,7 +294,7 @@ local function MakeWindow()
     inst.persists = false
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_gray_house")
+    inst.AnimState:SetBuild("pig_cyborg_house")
     inst.AnimState:PlayAnimation("windowlight_idle")
     inst.AnimState:SetLightOverride(.6)
     inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
@@ -317,7 +317,7 @@ local function MakeWindowSnow()
     inst.persists = false
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_gray_house")
+    inst.AnimState:SetBuild("pig_cyborg_house")
     inst.AnimState:PlayAnimation("windowsnow_idle")
     inst.AnimState:SetFinalOffset(2)
 
@@ -350,7 +350,7 @@ local function fn()
     inst.Light:SetColour(180/255, 195/255, 50/255)
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_gray_house")
+    inst.AnimState:SetBuild("pig_cyborg_house")
     inst.AnimState:PlayAnimation("idle", true)
 
     inst:AddTag("structure")
@@ -402,7 +402,7 @@ local function fn()
     inst:ListenForEvent("burntup", onburntup)
     inst:ListenForEvent("onignite", onignite)
 
-    inst.OnSave = onsave 
+    inst.OnSave = onsave
     inst.OnLoad = onload
 
     MakeHauntableWork(inst)

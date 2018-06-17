@@ -51,7 +51,7 @@ AddStandardRoom(
 
 AddRoom("ChezzFungusNoiseForest", {
     colour={r=1.0,g=1.0,b=1.0,a=0.9},
-    value = GROUND.BRICK,
+    value = GROUND.GRASS_CHESS,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = .4,
@@ -61,7 +61,7 @@ AddRoom("ChezzFungusNoiseForest", {
             green_mushroom = 0.1,
             blue_mushroom = 0.1,
 
-            grass = 0.1,
+            grass = 0.05,
     	    sapling = 0.1,
     	    twiggytree = 0.1,
     	    flint = 0.1,
@@ -71,7 +71,7 @@ AddRoom("ChezzFungusNoiseForest", {
 
 AddRoom("ChezzWetWilds", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.BRICK,
+    value = GROUND.GRASS_CHESS,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = 0.25,
@@ -88,7 +88,7 @@ AddRoom("ChezzWetWilds", {
 --Lichen Meadow
 AddRoom("ChezzLichenMeadow", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.BRICK,
+    value = GROUND.GRASS_CHESS,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = 0.15,
@@ -106,7 +106,7 @@ AddRoom("ChezzLichenMeadow", {
 --Lichen Land
 AddRoom("ChezzLichenLand", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.ROCKY,
+    value = GROUND.GRASS_CHESS,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = 0.35,
@@ -187,11 +187,36 @@ AddRoom("ChezzRocks", {
 			rock2 = 0.05,
 			flint = 0.05,
 			rocks = 0.05,
-            rock_iron = 0.02,
 			rock_ice = 0.1,
 		}
 	}
 })
+
+AddStandardRoom(
+	"BGChezzMetalField",
+	GROUND.METAL,
+	0.1,
+	{
+		flint = 0.01,
+		rock_iron = 0.001,
+		flower_cave = .01,
+		evergreen_sparse = 3,
+	}
+)
+
+AddStandardRoom(
+	"ChezzMetalField",
+	GROUND.METAL,
+	0.15,
+	{
+		rock_iron = 0.02,
+		pighouse_cyborg = 0.05,
+		flower_cave = .01,
+		flower_cave_double = .01,
+		flower_cave_triple = .01,
+		evergreen_sparse = 3,
+	}
+)
 
 AddRoom("BGChezzDeciduous", {
     colour={r=.1,g=.8,b=.1,a=.50},
@@ -260,9 +285,6 @@ AddRoom("ChezzDeepDeciduous", {
             grass = .1,
             rock = .1,
             fireflies = 1,
-			flower_cave = .01,
-			flower_cave_double = .01,
-			flower_cave_triple = .01,
         },
     }
 })
@@ -284,7 +306,7 @@ AddRoom("ChezzPigKingdom", {
                             end,
         },
         countprefabs= {
-            pighouse_cyborg = function () return 5 + math.random(4) end,
+            pighouse_cyborg = function () return 2 + math.random(3) end,
             ancient_altar_broken = 1,
         },
         distributepercent = 0.3,

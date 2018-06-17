@@ -32,7 +32,7 @@ local function c_ext()
     local range = 50
     local entities = TheSim:FindEntities(x, y, z, range, function(e)
         return target.components.burnable and
-            (target.components.burnable:IsBurning() or target.components.IsSmoldering())
+            (target.components.burnable:IsBurning() or target.components.burnable:IsSmoldering())
     end)
     for i,v in ipairs(entities) do
         v.components.burnable:Extinguish()

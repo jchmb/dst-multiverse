@@ -37,6 +37,17 @@ AddTask("Chezzness three b", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 })
 
+AddTask("Chezzness three c", {
+	locks={LOCKS.TIER2},
+	keys_given={KEYS.TIER3},
+	room_choices={
+		["ChezzMetalField"] = GetSizeFn(1),
+	},
+	room_bg=GROUND.METAL,
+	background_room="BGChezzMetalField",
+	colour={r=.25,g=.28,b=.25,a=.50},
+})
+
 AddTask("Chezzness four", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},

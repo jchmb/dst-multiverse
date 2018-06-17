@@ -332,14 +332,14 @@ local function NormalRetargetFn(inst)
 	return FindEntity(inst, TUNING.PIG_TARGET_DIST,
 		function(guy)
 			return inst.components.combat:CanTarget(guy)
-				and (guy:HasTag("monster")
+				and not inst.welcomer and (guy:HasTag("monster")
 					or (guy.components.inventory ~= nil and
 						guy:IsNear(inst, TUNING.BUNNYMAN_SEE_MEAT_DIST) and
 						guy.components.inventory:FindItem(is_meat) ~= nil))
 		end,
 		{ "_combat", "_health" }, -- see entityreplica.lua
 		{"bunnyfriend"},
-		{ "monster", "player" })
+		{ "player" })
 end
 
 local function NormalKeepTargetFn(inst, target)
@@ -429,6 +429,9 @@ local function OnSave(inst, data)
 			b = inst.colorpicked.b or 1,
 		}
 	end
+	if inst.welcomer then
+		data.welcomer = true
+	end
 end
 
 local function OnLoad(inst, data)
@@ -444,6 +447,9 @@ local function OnLoad(inst, data)
 			inst.colorpicked.b,
 			1
 		)
+	end
+	if data.welcomer then
+		inst.welcomer = true
 	end
 end
 

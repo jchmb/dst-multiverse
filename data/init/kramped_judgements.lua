@@ -4,7 +4,7 @@ local pigmanfn = function(victim)
 	if not victim.components.werebeast or not victim.components.werebeast:IsInWereState() then
 		return 3
 	else
-		return 0	
+		return 0
 	end
 end
 
@@ -25,7 +25,7 @@ GLOBAL.JUDGEMENTS = {
 	["penguin"] = 2,
 	["glommer"] = 50,
 	["catcoon"] = 5,
-	
+
 	-- New prefabs
 	["hatbunnyman"] = 4,
 	["colored_bunnyman"] = 4,
@@ -33,4 +33,8 @@ GLOBAL.JUDGEMENTS = {
 	["pigman_gray"] = pigmanfn,
 	["pigman_blue"] = pigmanfn,
 	["pigman_yellow"] = pigmanfn,
+	["pigman_cyborg"] = pigmanfn,
+	["bunneefalo"] = 4,
+	["babybunneefalo"] = 6,
+	["rabbit_snow"] = 1,
 }

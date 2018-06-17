@@ -75,6 +75,9 @@ local function onvacate(inst, child)
             child.AnimState:SetMultColour(colorpicked.r, colorpicked.g, colorpicked.b, 1)
             child.colorpicked = colorpicked
         end
+        if inst.welcomer then
+            child.welcomer = true
+        end
         if inst.startinghat ~= nil then
             local hat = child.components.inventory:FindItem(
                 function(x)
@@ -82,7 +85,7 @@ local function onvacate(inst, child)
                 end
             )
             local equippedhat = child.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
-            if hat then --or equippedhat then
+            if hat or equippedhat then --or equippedhat then
                 return
             end
             local item = SpawnPrefab(inst.startinghat)
@@ -185,6 +188,14 @@ local function onsave(inst, data)
     if inst.colorfname ~= nil and inst.colorfname ~= "default" then
         data.colorfname = inst.colorfname
     end
+    if inst.welcomer then
+        data.welcomer = inst.welcomer
+    end
+end
+
+local function InitializeWelcomer(inst)
+    inst.components.workable:SetWorkLeft(1000)
+    inst:RemoveComponent("burnable")
 end
 
 local function onload(inst, data)
@@ -199,6 +210,10 @@ local function onload(inst, data)
     end
     if data ~= nil and data.startinghat == "winterhat" then
         inst.AnimState:SetBuild("rabbit_house_blue")
+    end
+    if data ~= nil and data.welcomer then
+        inst.welcomer = true
+        InitializeWelcomer(inst)
     end
 end
 

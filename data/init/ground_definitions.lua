@@ -179,3 +179,47 @@ AddTile(
 	},
 	{noise_texture = "levels/textures/mini_noise_grass_brown.tex"}
 )
+
+AddTile(
+	"METAL",
+	62,
+	"metal",
+	{
+		noise_texture = "levels/textures/noise_metal.tex",
+		runsound = "dontstarve/movement/run_ice",
+		walksound = "dontstarve/movement/run_ice",
+		snowsound = "dontstarve/movement/run_ice",
+		mudsound = "dontstarve/movement/run_ice",
+	},
+	{noise_texture = "levels/textures/mini_noise_metal.tex"}
+)
+
+-- Water turfs
+AddTile(
+	"OCEAN_SHALLOW",
+	63,
+	"water_shallow",
+	{
+		noise_texture = "levels/textures/noise_water_shallow.tex",
+		runsound = "dontstarve/movement/run_ice",
+		walksound = "dontstarve/movement/run_ice",
+		snowsound = "dontstarve/movement/run_ice",
+		mudsound = "dontstarve/movement/run_ice",
+	},
+	{noise_texture = "levels/textures/mini_noise_water_shallow.tex"}
+)
+
+-- Ocean
+GLOBAL.GROUND_WATER_TYPES = {
+	"OCEAN_SHALLOW",
+}
+
+--[[
+	Compatible definitions
+--]]
+GLOBAL.GROUND_COMPATIBLE_TYPES = {
+	["GRASS_CHESS"] = "GRASS",
+	["GRASS_BROWN"] = "GRASS",
+	["METAL"] = "ROCKY",
+	["OCEAN_SHALLOW"] = "GRASS",
+}

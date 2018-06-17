@@ -65,6 +65,18 @@ Assets = {
 	Asset("IMAGE", "levels/tiles/grass_chess.tex"),
 	Asset("FILE", "levels/tiles/grass_chess.xml"),
 
+	-- Metal
+	Asset("IMAGE", "levels/textures/noise_metal.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_metal.tex"),
+	Asset("IMAGE", "levels/tiles/metal.tex"),
+	Asset("FILE", "levels/tiles/metal.xml"),
+
+	-- Water shallow
+	Asset("IMAGE", "levels/textures/noise_water_shallow.tex"),
+	Asset("IMAGE", "levels/textures/mini_noise_water_shallow.tex"),
+	Asset("IMAGE", "levels/tiles/water_shallow.tex"),
+	Asset("FILE", "levels/tiles/water_shallow.xml"),
+
 	-- Assets for recipes
 	Asset("IMAGE", "images/inventoryimages/pighouse_yellow.tex" ),
 	Asset("ATLAS", "images/inventoryimages/pighouse_yellow.xml" ),
@@ -200,6 +212,12 @@ Assets = {
 	-- Asset("ATLAS", "images/inventoryimages/spear_launcher_spear.xml" ),
 	-- Asset("IMAGE", "images/inventoryimages/spear_launcher_wathgrithr.tex" ),
 	-- Asset("ATLAS", "images/inventoryimages/spear_launcher_wathgrithr.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sweet_potato.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sweet_potato.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sweet_potato_cooked.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sweet_potato_cooked.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sweet_potato_seeds.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sweet_potato_seeds.xml" ),
 
 	-- Turfs
 	Asset("IMAGE", "images/inventoryimages/turf_snowy.tex" ),
@@ -222,12 +240,8 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/turf_grass_chess.xml" ),
 	Asset("IMAGE", "images/inventoryimages/turf_grass_brown.tex" ),
 	Asset("ATLAS", "images/inventoryimages/turf_grass_brown.xml" ),
-	Asset("IMAGE", "images/inventoryimages/sweet_potato.tex" ),
-	Asset("ATLAS", "images/inventoryimages/sweet_potato.xml" ),
-	Asset("IMAGE", "images/inventoryimages/sweet_potato_cooked.tex" ),
-	Asset("ATLAS", "images/inventoryimages/sweet_potato_cooked.xml" ),
-	Asset("IMAGE", "images/inventoryimages/sweet_potato_seeds.tex" ),
-	Asset("ATLAS", "images/inventoryimages/sweet_potato_seeds.xml" ),
+	Asset("IMAGE", "images/inventoryimages/turf_metal.tex" ),
+	Asset("ATLAS", "images/inventoryimages/turf_metal.xml" ),
 
 	-- Minimap icons
 	Asset("MINIMAP_IMAGE", "teleportato"),
