@@ -19,6 +19,59 @@ GLOBAL.jchmb.SpawnPrefabAtOwner = function(owner, prefab)
 	SpawnPrefab(prefab).Transform:SetPosition(owner.Transform:GetWorldPosition())
 end
 
+GLOBAL.jchmb.MakeObsidianTool = function(inst, tooltype)
+    inst:AddTag("obsidian")
+    inst:AddTag("notslippery")
+    inst.no_wet_prefix = true
+
+    -- if inst.components.floatable then
+    --     inst.components.floatable:SetOnHitWaterFn(function(inst)
+    --         inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/obsidian_wetsizzles")
+    --         inst.components.obsidiantool:SetCharge(0)
+    --     end)
+    -- end
+
+    -- inst:AddComponent("obsidiantool")
+    -- inst.components.obsidiantool.tool_type = tooltype
+
+    -- if not inst.components.heater then
+    --     --only hook up heater to obsidiantool if the heater isn't already on.
+    --     inst:AddComponent("heater")
+    --     inst.components.heater.show_heat = true
+	--
+    --     inst.components.heater.heatfn = GetObsidianHeat
+    --     inst.components.heater.minheat = 0
+    --     inst.components.heater.maxheat = TUNING.OBSIDIAN_TOOL_MAXHEAT
+	--
+    --     inst.components.heater.equippedheatfn = GetObsidianEquippedHeat
+    --     --inst.components.heater.minequippedheat = 0
+    --     --inst.components.heater.maxequippedheat = TUNING.OBSIDIAN_TOOL_MAXHEAT
+	--
+    --     inst.components.heater.carriedheatfn = GetObsidianHeat
+    --     inst.components.heater.mincarriedheat = 0
+    --     inst.components.heater.maxcarriedheat = TUNING.OBSIDIAN_TOOL_MAXHEAT
+    -- end
+
+    -- if not inst.Light then
+    --     --only add a light if there is no light already
+    --     inst.entity:AddLight()
+    --     inst.Light:SetFalloff(0.5)
+    --     inst.Light:SetIntensity(0.75)
+    --     inst.components.obsidiantool.onchargedelta = ChangeObsidianLight
+    --     inst:ListenForEvent("equipped", ManageObsidianLight)
+    --     inst:ListenForEvent("onputininventory", ManageObsidianLight)
+    --     inst:ListenForEvent("ondropped", ManageObsidianLight)
+    -- end
+
+    -- if inst.components.weapon then
+    --     if inst.components.weapon.onattack then
+    --         print("Obsidian Weapon", inst, "already has an onattack!")
+    --     else
+    --         inst.components.weapon:SetOnAttack(ObsidianToolAttack)
+    --     end
+    -- end
+end
+
 local CHARS = {
 	"GENERIC",
 	"WILLOW",
@@ -56,13 +109,21 @@ function AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, pl
 	return newRecipe
 end
 
-function AddItemRecipe(recipe, ingredients, tab, tech, description, atlas, numtogive)
-	return AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, nil, numtogive)
+function AddItemRecipe(recipe, ingredients, tab, tech, description, atlas, numtogive, nounlock)
+	local newRecipe = AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, nil, numtogive)
+	if nounlock then
+		newRecipe.nounlock = true
+	end
+	return newRecipe
 end
 
-function AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, placer)
+function AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, placer, nounlock)
 	placer = placer or (recipe .. "_placer")
-	return AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer)
+	local newRecipe = AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer)
+	if nounlock then
+		newRecipe.nounlock = true
+	end
+	return newRecipe
 end
 
 function AddLostRecipe(recipe, ingredients, tab, tech, description, atlas, placer)

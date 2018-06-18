@@ -1,6 +1,7 @@
 --[[
 	Dependencies
 --]]
+modimport("init/init_tuning")
 modimport("lib/lua_functions")
 modimport("utils/utils_common")
 modimport("utils/utils_main")
@@ -14,8 +15,6 @@ RECIPETABS = GLOBAL.RECIPETABS
 Ingredient = GLOBAL.Ingredient
 TECH = GLOBAL.TECH
 Recipe = GLOBAL.Recipe
-
-modimport("init/init_tuning")
 
 --[[
 	Assets

@@ -1,8 +1,17 @@
-local day_time = 60 * 8
-local total_day_time = day_time
 local wilson_attack = 34
 local wilson_health = 150
 local calories_per_day = 75
+local seg_time = 30 --each segment of the clock is 30 seconds
+	local total_day_time = seg_time*16
+
+	local day_segs = 10
+	local dusk_segs = 4
+	local night_segs = 2
+
+	--default day composition. changes in winter, etc
+	local day_time = seg_time * day_segs
+	local dusk_time = seg_time * dusk_segs
+	local night_time = seg_time * night_segs
 
 TUNING.PALMTREE_GROW_TIME =
 {
@@ -67,3 +76,29 @@ TUNING.DRAGOONFIRE_FUEL = 2
 
 TUNING.WINDBREAKER_PERISHTIME = total_day_time*10
 TUNING.BLUBBERSUIT_PERISHTIME = total_day_time*8
+
+-- Take a look at the regular FIREPIT values way above for reference
+TUNING.OBSIDIANFIREPIT_BONUS_MULT = 3 -- regular firepit is 2
+TUNING.OBSIDIANFIREPIT_RAIN_RATE = 2 -- regular rirepit is 2
+TUNING.OBSIDIANFIREPIT_FUEL_MAX = (night_time+dusk_time)*3
+TUNING.OBSIDIANFIREPIT_FUEL_START = night_time+dusk_time
+TUNING.OBSIDIANFIRE_WINDBLOWN_SPEED = 0.7
+TUNING.OBSIDIANFIRE_BLOWOUT_CHANCE = 0 -- never blow out
+TUNING.OBSIDIANFIREPIT_FLOOD_RATE = 10
+
+	    -- light radius stages for the level of the OBSIDIANFIREFIRE
+TUNING.OBSIDIANLIGHT_RADIUS_1 = 4
+TUNING.OBSIDIANLIGHT_RADIUS_2 = 8
+TUNING.OBSIDIANLIGHT_RADIUS_3 = 12
+TUNING.OBSIDIANLIGHT_RADIUS_4 = 14
+
+TUNING.COCONADE_OBSIDIAN_DAMAGE = 350
+TUNING.COCONADE_OBSIDIAN_EXPLOSIONRANGE = 9
+TUNING.COCONADE_OBSIDIAN_BUILDINGDAMAGE = 15
+
+TUNING.OBSIDIAN_TOOL_MAXCHARGES = 75
+TUNING.OBSIDIAN_TOOL_MAXHEAT = 60
+TUNING.OBSIDIAN_WEAPON_MAXCHARGES = 30
+TUNING.OBSIDIANTOOLFACTOR = 2.5
+TUNING.OBSIDIANTOOL_WORK = 2.5
+TUNING.OBSIDIAN_SPEAR_DAMAGE = wilson_attack * 1.5

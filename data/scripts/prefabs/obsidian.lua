@@ -7,7 +7,7 @@ local assets=
 --    return 0.5 * inst.components.stackable:StackSize()
 --end
 
-local function fn(Sim)
+local function fn()
 	local inst = CreateEntity()
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()

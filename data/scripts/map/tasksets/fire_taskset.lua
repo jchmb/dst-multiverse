@@ -6,14 +6,14 @@ local fire_tasks = {
 	"Fire two b",
 	"Fire three a",
 	"Fire three b",
-	"Fire four a",
+	-- "Fire four a",
 	"Fire four b",
 	"The hunters",
 }
- 
+
 AddTaskSetFixed("fire", {
 	name = "Fire",
-	location = "forest_snow",
+	location = "forest_fire",
 	tasks = fire_tasks,
 	numoptionaltasks = 0,
 	valid_start_tasks = {

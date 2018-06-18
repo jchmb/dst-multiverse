@@ -1,3 +1,5 @@
+AddRequiredStaticLayout("DragonflyFireArena", "dragonfly_fire_arena")
+
 AddRoom("BGFire", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.ASH,
@@ -14,6 +16,67 @@ AddRoom("BGFire", {
 		}
 	}
 })
+
+AddStandardRoom(
+	"BGFireBeach",
+	GROUND.SAND,
+	0.2,
+	{
+		sapling = 0.1,
+		grass = 0.1,
+		palmtree = 0.5,
+		flint = 0.1,
+		crate = 0.05,
+		seashell_beached = 0.1,
+		sandhill = 0.1,
+	}
+)
+
+AddStandardRoom(
+	"FireBeach",
+	GROUND.SAND,
+	0.2,
+	{
+		sapling = 0.1,
+		ground_twigs = 0.05,
+		perma_grass = 0.125,
+		palmtree = 1.5,
+		flint = 0.1,
+		rock = 0.05,
+		rock_limpet = 0.05,
+		seashell_beached = 0.1,
+		sandhill = 0.1,
+	}
+)
+
+AddStandardRoom(
+	"FireBeach2",
+	GROUND.SAND,
+	0.175,
+	{
+		sapling = 0.1,
+		grass = 0.125,
+		palmtree = 1,
+		flint = 0.1,
+		seashell_beached = 0.1,
+		sandhill = 0.1,
+		sharkittenspawner = 0.01,
+		grassgekko = 0.1,
+	}
+)
+
+AddStandardRoom(
+	"FireBeach3",
+	GROUND.SAND,
+	0.15,
+	{
+		wildborehouse = 0.03,
+		crate = 0.03,
+		rock_limpet = 0.16,
+		palmtree = 0.09,
+		sandhill = 0.2,
+	}
+)
 
 --[[
   Tier 0
@@ -103,3 +166,59 @@ AddRoom("FireForest3", {
 		}
 	}
 })
+
+--[[
+	Tier 4
+]]
+AddStandardRoom(
+	"BGFireDragonflyTerritory",
+	GROUND.VOLCANO,
+	0.1,
+	{
+		flint = 0.01,
+		evergreen = 1,
+		charcoal = 0.01,
+	},
+	{},
+	{},
+	{
+		evergreen = {burnt = true},
+	}
+)
+
+AddStandardRoom(
+	"FireDragonflyTerritory",
+	GROUND.VOLCANO,
+	0.2,
+	{
+		rock_magma = 0.02,
+		rock_magma_gold = 0.01,
+		lava_pond = 0.01,
+		evergreen = 0.5,
+	},
+	{},
+	{},
+	{
+		evergreen = {burnt = true},
+	}
+)
+
+AddStandardRoom(
+	"FireDragonflyLair",
+	GROUND.VOLCANO,
+	0.15,
+	{
+		rock_magma_gold = 0.01,
+		lava_pond = 0.01,
+		evergreen = 0.5,
+	},
+	{
+		rock_charcoal = 0.01,
+	},
+	{
+		["DragonflyFireArena"] = 1,
+	},
+	{
+		evergreen = {burnt = true},
+	}
+)

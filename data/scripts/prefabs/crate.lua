@@ -16,12 +16,21 @@ local prefabs =
 
 local randomloot =
 {
-	boards = 10,
 	rope = 10,
 	fish = 10,
 	smallmeat_dried = 10,
+	coconut = 5,
+	flint = 5,
 	goldnugget = 5,
+	ironnugget = 5,
 	papyrus = 5,
+	cloth = 5,
+	honey = 5,
+	sap = 5,
+	gears = 1,
+	gunpowder = 1,
+	pigskin = 1,
+	antidote = 1,
 }
 
 local function setanim(inst, anim)

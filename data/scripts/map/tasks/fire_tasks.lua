@@ -19,42 +19,33 @@ AddTask("Fire one", {
 	locks=LOCKS.NONE,
 	keys_given={KEYS.TIER1},
 	room_choices={
-		["SnowyForest"] = 2,
-		["SnowyRocks"] = 1,
-		["SnowyGraveyard"] = 1,
+		["FireBeach"] = GetSizeFn(2),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
-	room_bg=GROUND.SNOWY,
-	background_room="BGSnowy",
+	room_bg=GROUND.BEACH,
+	background_room="BGFireBeach",
 })
 
 AddTask("Fire two a", {
 	locks={LOCKS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["SnowyForest"] = 2,
-		["SnowySpiderForest"] = 1,
-		["SnowyLeifForest"] = 1,
-		["SnowyTallbirdForest"] = 1,
-		["SnowyGoats"] = 1,
+		["FireBeach2"] = GetSizeFn(1),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
-	room_bg=GROUND.SNOWY,
-	background_room="BGSnowy",
+	room_bg=GROUND.BEACH,
+	background_room="BGFireBeach",
 })
 
 AddTask("Fire two b", {
 	locks={LOCKS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["SnowyForest"] = 1,
-		["SnowyHerds"] = 1,
-		["SnowyLeifForest"] = 1,
-		["SnowyTotallyNormalForest"] = 1,
+		["FireBeach3"] = GetSizeFn(1),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
-	room_bg=GROUND.SNOWY,
-	background_room="BGSnowy",
+	room_bg=GROUND.BEACH,
+	background_room="BGFireBeach",
 })
 
 AddTask("Fire three a", {
@@ -82,41 +73,41 @@ AddTask("Fire three b", {
 	background_room="BGSnowyForest",
 })
 
-AddTask("Fire four a", {
-	locks={LOCKS.TIER3},
-	keys_given={KEYS.TIER4},
-	room_choices={
-		["SnowyForest"] = 1,
-		["SnowyIcedLake"] = 5,
-		["SnowyIcedLakeHounds"] = 2,
-		["SnowyIcedLakeWalrus"] = 1,
-	},
-	colour={r=.25,g=.28,b=.25,a=.50},
-	room_bg=GROUND.SNOWY,
-	background_room="BGSnowyIcedLake",
-})
+-- AddTask("Fire four a", {
+-- 	locks={LOCKS.TIER3},
+-- 	keys_given={KEYS.TIER4},
+-- 	room_choices={
+-- 		["SnowyForest"] = 1,
+-- 		["SnowyIcedLake"] = 5,
+-- 		["SnowyIcedLakeHounds"] = 2,
+-- 		["SnowyIcedLakeWalrus"] = 1,
+-- 	},
+-- 	colour={r=.25,g=.28,b=.25,a=.50},
+-- 	room_bg=GROUND.SNOWY,
+-- 	background_room="BGSnowyIcedLake",
+-- })
 
 AddTask("Fire four b", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},
 	room_choices={
-		["SnowyForest"] = 2,
-		["SnowyHoundNest"] = 2,
+		["FireDragonflyTerritory"] = GetSizeFn(1),
+		["FireDragonflyLair"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
-	room_bg=GROUND.SNOWY,
-	background_room="BGSnowyForest",
+	room_bg=GROUND.VOLCANO,
+	background_room="BGFireDragonflyTerritory",
 })
 
-AddTask("Speak to the king snowy", {
-	locks={LOCKS.TIER1},
-	keys_given={KEYS.PICKAXE, KEYS.AXE, KEYS.GRASS, KEYS.WOOD, KEYS.TIER2},
-	room_choices={
-		["SnowyPigKingdom"] = 1,
-		["SnowyMagicalDeciduous"] = 2,
-		["SnowyDeepDeciduous"] = 2,
-	},
-	colour={r=.25,g=.28,b=.25,a=.50},
-	room_bg=GROUND.DECIDUOUS,
-	background_room="BGSnowyDeciduous",
-})
+-- AddTask("Speak to the king snowy", {
+-- 	locks={LOCKS.TIER1},
+-- 	keys_given={KEYS.PICKAXE, KEYS.AXE, KEYS.GRASS, KEYS.WOOD, KEYS.TIER2},
+-- 	room_choices={
+-- 		["SnowyPigKingdom"] = 1,
+-- 		["SnowyMagicalDeciduous"] = 2,
+-- 		["SnowyDeepDeciduous"] = 2,
+-- 	},
+-- 	colour={r=.25,g=.28,b=.25,a=.50},
+-- 	room_bg=GROUND.DECIDUOUS,
+-- 	background_room="BGSnowyDeciduous",
+-- })

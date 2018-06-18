@@ -12,6 +12,8 @@ PrefabFiles = {
 	"forest_water_network",
 	"forest_chezz",
 	"forest_chezz_network",
+	"forest_fire",
+	"forest_fire_network",
 
 	-- Bluepig prefabs
 	"pigman_blue",
@@ -126,17 +128,25 @@ PrefabFiles = {
 	"ox_horn",
 	"ox_flute",
 	"armor_seashell",
-	"dragoon",
-	"dragoonden",
-	"dragoonheart",
-	"dragoonspit",
-	"dragoonfire",
 	"cloth",
 	"armor_blubber",
 	"armor_windbreaker",
 	-- "machetes",
 	"wildmeanver",
 	"wildmeanver_house",
+
+	-- Volcanoland
+	"obsidian_workbench",
+	"obsidian",
+	"dragoon",
+	"dragoonden",
+	"dragoonheart",
+	"dragoonspit",
+	"dragoonfire",
+	"obsidianaxe",
+	"firepit_obsidian",
+	"obsidianfirefire",
+	"armor_obsidian",
 
 	-- Chezz mobs and spawners
 
@@ -146,7 +156,6 @@ PrefabFiles = {
 	"venom_gland",
 	"antidote",
 	"spidereggsack_poisonous",
-	"obsidian",
 	"newpreparedfoods",
 	"shark_gills",
 	"snakeskin",
@@ -164,7 +173,7 @@ PrefabFiles = {
 	"new_hats",
 	"new_mushrooms",
 	"special_signs",
-	"obsidian_workbench",
+	"new_spears",
 
 	-- Experimental
 	"saptrees",

@@ -53,6 +53,7 @@ local function fn()
     inst.components.weapon:SetDamage(TUNING.AXE_DAMAGE)
 
     inst:AddComponent("inventoryitem")
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/obsidianaxe.xml"
     -----
     inst:AddComponent("tool")
     inst.components.tool:SetAction(ACTIONS.CHOP, 2.5)
@@ -65,7 +66,7 @@ local function fn()
     -------
 
     inst:AddComponent("inspectable")
-    
+
     inst:AddComponent("equippable")
 
     inst.components.equippable:SetOnEquip(onequip)
@@ -80,4 +81,4 @@ local function fn()
     return inst
 end
 
-return Prefab("axe", fn, assets)
+return Prefab("obsidianaxe", fn, assets)

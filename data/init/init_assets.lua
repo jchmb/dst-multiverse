@@ -224,6 +224,14 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/sapbucket.xml" ),
 	Asset("IMAGE", "images/inventoryimages/sap_spoiled.tex" ),
 	Asset("ATLAS", "images/inventoryimages/sap_spoiled.xml" ),
+	Asset("IMAGE", "images/inventoryimages/obsidianaxe.tex" ),
+	Asset("ATLAS", "images/inventoryimages/obsidianaxe.xml" ),
+	Asset("IMAGE", "images/inventoryimages/spear_obsidian.tex" ),
+	Asset("ATLAS", "images/inventoryimages/spear_obsidian.xml" ),
+	Asset("IMAGE", "images/inventoryimages/firepit_obsidian.tex" ),
+	Asset("ATLAS", "images/inventoryimages/firepit_obsidian.xml" ),
+	Asset("IMAGE", "images/inventoryimages/armor_obsidian.tex" ),
+	Asset("ATLAS", "images/inventoryimages/armor_obsidian.xml" ),
 
 	-- Turfs
 	Asset("IMAGE", "images/inventoryimages/turf_snowy.tex" ),
