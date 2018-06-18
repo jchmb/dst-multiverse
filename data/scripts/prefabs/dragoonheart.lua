@@ -22,12 +22,12 @@ local function itemfn()
     local Pump = function(inst)
 
         -- TODO: inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/heart")
-        
-        if inst.components.floatable.onwater then
-            inst.pumptask = inst:DoTaskInTime(inst.AnimState:GetTotalTime("idle_water"), inst.pumpfn)
-        else
+
+        -- if inst.components.floatable.onwater then
+        --     inst.pumptask = inst:DoTaskInTime(inst.AnimState:GetTotalTime("idle_water"), inst.pumpfn)
+        -- else
             inst.pumptask = inst:DoTaskInTime(inst.AnimState:GetTotalTime("idle"), inst.pumpfn)
-        end
+        -- end
     end
 
     local StartPumping = function(inst)
@@ -46,7 +46,7 @@ local function itemfn()
     inst.entity:AddAnimState()
     inst.entity:AddSoundEmitter()
     inst.entity:AddNetwork()
-    
+
     inst.AnimState:SetBank("dragoon_heart")
     inst.AnimState:SetBuild("dragoon_heart")
     inst.AnimState:PlayAnimation("idle", true)
@@ -59,16 +59,16 @@ local function itemfn()
     if not TheWorld.ismastersim then
         return inst
     end
-    
+
     inst:AddComponent("inspectable")
-    
+
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.atlasname = "images/inventoryimages/dragoonheart.xml"
     inst.components.inventoryitem:SetOnPickupFn(StopPumping)
     inst.components.inventoryitem:SetOnDroppedFn(StartPumping)
 
     inst:AddComponent("tradable")
-    
+
     inst:AddComponent("edible")
     inst.components.edible.foodtype = FOODTYPE.MEAT
     inst.components.edible.healthvalue = TUNING.HEALING_MEDSMALL + TUNING.HEALING_SMALL

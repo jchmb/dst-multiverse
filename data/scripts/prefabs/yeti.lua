@@ -156,6 +156,7 @@ local function fn()
 
     inst:AddComponent("herdmember")
     inst.components.herdmember:SetHerdPrefab("yetiherd")
+    inst.components.herdmember:Enable(true)
 
     ------------------------------------------
 

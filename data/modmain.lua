@@ -21,8 +21,8 @@ modimport("init/init_tuning")
 	Assets
 --]]
 modimport("init/init_assets")
-modimport("init/init_prefabs")
 modimport("init/minimap_icons")
+modimport("init/init_prefabs")
 
 --[[
 	Names and descriptions

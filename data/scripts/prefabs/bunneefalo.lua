@@ -120,6 +120,13 @@ local function ApplyBuildOverrides(inst, animstate)
     end
 end
 
+local function GetPoopPrefab(inst)
+    if math.random() < 0.2 then
+        return "carrot"
+    end
+    return "poop"
+end
+
 local function OnEnterMood(inst)
     inst:AddTag("scarytoprey")
     inst:ApplyBuildOverrides(inst.AnimState)
@@ -661,7 +668,7 @@ local function bunneefalo()
     inst:ListenForEvent("attacked", OnAttacked)
 
     inst:AddComponent("periodicspawner")
-    inst.components.periodicspawner:SetPrefab("poop")
+    inst.components.periodicspawner:SetPrefab(GetPoopPrefab)
     inst.components.periodicspawner:SetRandomTimes(40, 60)
     inst.components.periodicspawner:SetDensityInRange(20, 2)
     inst.components.periodicspawner:SetMinimumSpacing(8)
@@ -713,6 +720,7 @@ local function bunneefalo()
 
     -- Herdmember component is ONLY used when feral
     inst:AddComponent("herdmember")
+    inst.components.herdmember:SetHerdPrefab("bunneefaloherd")
     inst.components.herdmember:Enable(true)
 
     -- Mood component is ONLY used when domesticated, otherwise it's part of the herd

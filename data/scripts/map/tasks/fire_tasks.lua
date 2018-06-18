@@ -9,11 +9,11 @@ AddTask("Make a pick fire", {
 			["FireRocks"] = 1,
 			["FireForest2"] = 1,
 			["FireForest3"] = 1,
-		}, 
+		},
 		room_bg=GROUND.ASH,
 		background_room="BGFire",
 		colour={r=0,g=1,b=0,a=1}
-	}) 
+	})
 
 AddTask("Fire one", {
 	locks=LOCKS.NONE,
@@ -61,13 +61,11 @@ AddTask("Fire three a", {
 	locks={LOCKS.TIER2},
 	keys_given={KEYS.TIER3},
 	room_choices={
-		["SnowyForest"] = 1,
-		["SnowyTallbirdForest"] = 2,
-		["Marsh"] = 1,
+		["FireDragoonLair"] = GetSizeFn(1),
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
-	room_bg=GROUND.SNOWY,
-	background_room="BGSnowyForest",
+	room_bg=GROUND.MAGMA,
+	background_room="BGFireDragoonLair",
 })
 
 AddTask("Fire three b", {
@@ -115,7 +113,7 @@ AddTask("Speak to the king snowy", {
 	keys_given={KEYS.PICKAXE, KEYS.AXE, KEYS.GRASS, KEYS.WOOD, KEYS.TIER2},
 	room_choices={
 		["SnowyPigKingdom"] = 1,
-		["SnowyMagicalDeciduous"] = 2, 
+		["SnowyMagicalDeciduous"] = 2,
 		["SnowyDeepDeciduous"] = 2,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},

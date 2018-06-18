@@ -1,3 +1,6 @@
+local TechTree = GLOBAL.require("techtree")
+table.insert(TechTree.AVAILABLE_TECH, "OBSIDIAN")
+
 modimport("init/recipes/recipes_pighouses")
 modimport("init/recipes/recipes_misc")
 modimport("init/recipes/recipes_survival")
@@ -7,3 +10,4 @@ modimport("init/recipes/recipes_armor")
 modimport("init/recipes/recipes_refine")
 modimport("init/recipes/recipes_fire")
 modimport("init/recipes/recipes_magic")
+modimport("init/recipes/recipes_obsidian")

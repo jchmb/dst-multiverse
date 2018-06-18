@@ -16,6 +16,7 @@ local prefabs =
     "poop",
     "trunk_summer",
     "trunk_winter",
+    "koalefant_cute_herd",
 }
 
 local loot_cute = {"meat","meat","meat","meat","meat"}
@@ -127,8 +128,15 @@ local function create_base(build)
     return inst
 end
 
+local function AddCuteMember(inst, member)
+    -- Nothing
+end
+
 local function create_cute()
     local inst = create_base("koalefant_summer_build")
+
+    inst:AddTag("koalefant_cute")
+    inst:RemoveTag("largecreature")
 
     if not TheWorld.ismastersim then
         return inst
@@ -136,7 +144,11 @@ local function create_cute()
 
     local s = 0.7
     inst.Transform:SetScale(s, s, s)
-    inst.AnimState:SetAddColour(0.3, 0.1, 0.05, 0)
+    -- inst.AnimState:SetAddColour(0.3, 0.1, 0.05, 0)
+
+    inst:AddComponent("herdmember")
+    inst.components.herdmember:SetHerdPrefab("koalefant_cute_herd")
+    inst.components.herdmember:Enable(true)
 
     inst.components.lootdropper:SetLoot(loot_cute)
     inst.components.lootdropper:AddRandomLoot("meat", 1)

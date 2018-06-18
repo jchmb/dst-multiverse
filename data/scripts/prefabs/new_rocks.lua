@@ -23,6 +23,18 @@ local rock_obsidian_assets =
     Asset("MINIMAP_IMAGE", "rock"),
 }
 
+local rock_magma_assets =
+{
+    Asset("ANIM", "anim/rock_magma.zip"),
+    Asset("MINIMAP_IMAGE", "minimap_rock_magma.tex"),
+}
+
+local rock_magma_gold_assets =
+{
+    Asset("ANIM", "anim/rock_magma_gold.zip"),
+    Asset("MINIMAP_IMAGE", "minimap_rock_magma.tex"),
+}
+
 local prefabs =
 {
     "rocks",
@@ -80,6 +92,28 @@ SetSharedLootTable('rock_obsidian',
     {'obsidian', 0.50},
     {'obsidian', 0.25},
     {'obsidian', 0.25},
+})
+
+SetSharedLootTable('rock_magma',
+{
+    {'rocks', 1.00},
+    {'rocks', 1.00},
+    {'rocks', 1.00},
+    {'flint', 0.75},
+    {'nitre', 0.75},
+    {'redgem', 0.125},
+    {'bluegem', 0.125},
+})
+
+SetSharedLootTable('rock_magma_gold',
+{
+    {'rocks', 1.00},
+    {'rocks', 1.00},
+    {'goldnugget', 1.00},
+    {'flint', 0.75},
+    {'nitre', 0.75},
+    {'redgem', 0.125},
+    {'bluegem', 0.125},
 })
 
 local function OnWork(inst, worker, workleft)
@@ -222,7 +256,33 @@ local function rock_obsidian_fn()
     return inst
 end
 
+local function rock_magma_fn()
+    local inst = baserock_fn("rock_magma", "rock_magma", "full", "minimap_rock_magma.tex")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.lootdropper:SetChanceLootTable('rock_magma')
+
+    return inst
+end
+
+local function rock_magma_gold_fn()
+    local inst = baserock_fn("rock_magma_gold", "rock_magma_gold", "full", "minimap_rock_magma.tex")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.lootdropper:SetChanceLootTable('rock_magma_gold')
+
+    return inst
+end
+
 return Prefab("rock_slimey", rock_slimey_fn, rock_slimey_assets, prefabs),
     Prefab("rock_charcoal", rock_charcoal_fn, rock_charcoal_assets, prefabs),
     Prefab("rock_obsidian", rock_obsidian_fn, rock_obsidian_assets, prefabs),
-    Prefab("rock_iron", rock_iron_fn, rock_iron_assets, prefabs)
+    Prefab("rock_iron", rock_iron_fn, rock_iron_assets, prefabs),
+    Prefab("rock_magma", rock_magma_fn, rock_magma_assets, prefabs),
+    Prefab("rock_magma_gold", rock_magma_gold_fn, rock_magma_gold_assets, prefabs)

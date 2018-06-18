@@ -3,7 +3,7 @@ AddLevelWrapped(
 	"Bunnyland",
 	"The land of bunnies",
 	"forest_bunnyland",
-	"multi",
+	"cute",
 	{
 		start_location = "bunnyland"
 	},

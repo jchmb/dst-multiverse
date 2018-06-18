@@ -22,7 +22,7 @@ local LEASH_RETURN_DIST = 10
 local LEASH_MAX_DIST = 20
 
 local HOUSE_MAX_DIST = 20
-local HOUSE_RETURN_DIST = 30 
+local HOUSE_RETURN_DIST = 30
 
 local SIT_BOY_DIST = 10
 
@@ -47,7 +47,7 @@ local function ShouldSpitFn(inst)
 	if inst:HasTag("lavaspitter") then
 		if inst.sg:HasStateTag("sleeping") or inst.num_targets_vomited >= TUNING.DRAGONFLY_VOMIT_TARGETS_FOR_SATISFIED or inst.hassleepdestination then return false end
 		if not inst.recently_frozen and not inst.flame_on then
-			if not inst.last_spit_time then 
+			if not inst.last_spit_time then
 				if inst:GetTimeAlive() > 5 then
 					return true
 				end
@@ -72,7 +72,7 @@ local function LavaSpitAction(inst)
 	end
 end
 
-local function FindLavaSpitTargetAction(inst) 
+local function FindLavaSpitTargetAction(inst)
 	if inst.sg:HasStateTag("sleeping") or inst.num_targets_vomited >= TUNING.DRAGONFLY_VOMIT_TARGETS_FOR_SATISFIED or inst.hassleepdestination then return false end
 	if inst.last_spit_time and ((GetTime() - inst.last_spit_time) < 5) then return false end
 
@@ -86,14 +86,14 @@ local function FindLavaSpitTargetAction(inst)
 	local tagpriority = {"dragonflybait_highprio", "dragonflybait_medprio", "dragonflybait_lowprio"}
 	local prio = 1
 	local currtag = nil
-	
+
 	local pt = inst:GetPosition()
 	local ents = nil
 
 	while not target and prio <= #tagpriority do
 		currtag = {tagpriority[prio]}
 		ents = TheSim:FindEntities(pt.x, pt.y, pt.z, SEE_BAIT_DIST, currtag, {"fire"})
-	
+
 		for k,v in pairs(ents) do
 			if v and v.components.burnable and (not v.components.inventoryitem or not v.components.inventoryitem:IsHeld()) then
 				if not target or (distsq(pt, Vector3(v.Transform:GetWorldPosition())) < distsq(pt, Vector3(target.Transform:GetWorldPosition()))) then
@@ -120,33 +120,32 @@ local function GoHome(inst)
 end
 
 function DragoonBrain:OnStart()
-	local clock = GetClock()
-	
 	local root = PriorityNode(
 	{
-		EventNode(self.inst, "gohome", 
+		EventNode(self.inst, "gohome",
             DoAction(self.inst, GoHome, "Go Home")),
 
 		-- max_chase_time, give_up_dist, max_attacks, findnewtargetfn, walk
-		WhileNode(function() return self.inst.components.combat.target end, "Chase Behaviours", 
+		WhileNode(function() return self.inst.components.combat.target end, "Chase Behaviours",
 			ChaseAndAttack(self.inst, TUNING.DRAGOON_CHASE_TIME)),
 
 		-- Leash(self.inst, GetHomePos, HOUSE_MAX_DIST, HOUSE_RETURN_DIST),
-		WhileNode(function() return clock and clock:IsNight() and GetHome(self.inst) end, "Night time",
+		WhileNode(function() return TheWorld.state.isnight and GetHome(self.inst) end, "Night time",
             DoAction(self.inst, GoHome, "Go Home")),
-		
-		WhileNode(function() return ShouldSpitFn(self.inst) end, "Spit",
-			DoAction(self.inst, LavaSpitAction)),
 
-		WhileNode(function() return GetHome(self.inst) end, "HasHome", 
+			-- TODO
+		-- WhileNode(function() return ShouldSpitFn(self.inst) end, "Spit",
+		-- 	DoAction(self.inst, LavaSpitAction)),
+
+		WhileNode(function() return GetHome(self.inst) end, "HasHome",
 			Wander(self.inst, GetHomePos, HOUSE_MAX_DIST) ),
 
 		Wander(self.inst, nil, HOUSE_MAX_DIST),
 
 	}, .25)
-	
+
 	self.bt = BT(self.inst, root)
-	
+
 end
 
 return DragoonBrain

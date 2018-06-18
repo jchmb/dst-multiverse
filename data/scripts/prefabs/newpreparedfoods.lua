@@ -43,7 +43,7 @@ local function MakePreparedFood(data)
 
         inst:AddComponent("inspectable")
         inst.wet_prefix = data.wet_prefix
-        
+
         inst:AddComponent("inventoryitem")
         inst.components.inventoryitem.atlasname = "images/inventoryimages/" .. data.name .. ".xml"
 
@@ -76,14 +76,14 @@ local function MakePreparedFood(data)
             --end
             return false
         end, true, false, true)
-        ---------------------        
+        ---------------------
 
         inst:AddComponent("bait")
 
         ------------------------------------------------
         inst:AddComponent("tradable")
-        
-        ------------------------------------------------  
+
+        ------------------------------------------------
 
         return inst
     end

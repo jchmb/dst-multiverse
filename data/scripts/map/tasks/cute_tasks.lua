@@ -43,8 +43,6 @@ AddTask("Cuteness two b", {
 	locks={LOCKS.TIER1, LOCKS.AXE},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["CuteFriends"] = 1,
-		["SpiderCity"] = 1,
 		["CuteRocks"] = GetSizeFn(1),
 		["CuteSpiderForest"] = 1,
 	},
@@ -92,11 +90,21 @@ AddTaskWrapped(
 )
 
 AddTaskWrapped(
+	"Cuteness three d",
+	{LOCKS.TIER2},
+	{KEYS.TIER3},
+	{
+		["CuteSweetPotatoField"] = GetSizeFn(1),
+	},
+	GROUND.GRASS,
+	"BGCuteSweetPotatoField"
+)
+
+AddTaskWrapped(
 	"Cuteness four a",
 	{LOCKS.TIER3},
 	{KEYS.TIER4},
 	{
-		["CuteHerds2"] = 1,
 		["CuteSpiderForest"] = GetSizeFn(1),
 		["SpiderCity"] = 1,
 	},

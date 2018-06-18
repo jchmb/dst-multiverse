@@ -34,6 +34,40 @@ AddRoom("FireRocks", {
 	}
 })
 
+AddStandardRoom(
+	"BGFireDragoonLair",
+	GROUND.MAGMA,
+	0.1,
+	{
+		rock_magma = 0.01,
+		rocks = 0.001,
+		evergreen = 1,
+	},
+	{},
+	{},
+	{
+		evergreen = {burnt = true},
+	}
+)
+
+AddStandardRoom(
+	"FireDragoonLair",
+	GROUND.MAGMA,
+	0.1,
+	{
+		dragoonden = 0.01,
+		rock_magma = 0.05,
+		rock_magma_gold = 0.01,
+		rock_obsidian = 0.01,
+		evergreen = 0.5,
+	},
+	{},
+	{},
+	{
+		evergreen = {burnt = true},
+	}
+)
+
 --[[
   Tier 1
 --]]

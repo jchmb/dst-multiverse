@@ -183,6 +183,37 @@ AddRoom("CuteBunnymanTown4", {
 	}
 })
 
+AddStandardRoom(
+	"BGCuteSweetPotatoField",
+	GROUND.GRASS,
+	0.1,
+	{
+		deciduoustree = 1,
+		evergreen = 1,
+		sweet_potato_planted = 0.01,
+		sapling = 0.05,
+		grass = 0.05,
+		twiggytree = 0.05,
+	}
+)
+
+AddStandardRoom(
+	"CuteSweetPotatoField",
+	GROUND.GRASS,
+	0.15,
+	{
+		deciduoustree = 3,
+		sweet_potato_planted = 0.1,
+		lightninggoat = 0.001,
+		sapling = 0.05,
+		grass = 0.05,
+		twiggytree = 0.05,
+	},
+	{
+		colored_rabbithouse = 1,
+	}
+)
+
 AddRoom("CuteMonkeyRoom", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.DIRT,
@@ -205,7 +236,7 @@ AddRoom("CuteHerds", {
 		distributepercent = 0.3,
 		distributeprefabs = {
 			perma_grass = 0.2,
-			bunneefalo = 0.05,
+			bunneefalo = 0.01,
 			rabbithole = 0.025,
 			mushtree_medium = 0.025,
 		}
@@ -221,7 +252,7 @@ AddRoom("CuteHerds2", {
 		distributeprefabs = {
 			rabbithole = 0.02,
 			perma_grass = 0.05,
-			koalefant_cute = 0.03,
+			koalefant_cute = 0.02,
 			lightninggoat = 0.01,
 			mushtree_small = 0.05,
 			colored_rabbithouse=0.05,
@@ -400,17 +431,17 @@ AddRoom("CuteDeepDeciduous", {
 AddStandardRoom(
 	"CuteSpiderForest",
 	GROUND.FOREST,
-	0.7,
+	0.6,
 	{
 		evergreen_sparse = 8,
 		evergreen = 3,
 		ground_twigs = 0.2,
-		red_mushroom = 0.2,
-		green_mushroom = 0.2,
-		blue_mushroom = 0.2,
+		red_mushroom = 0.1,
+		green_mushroom = 0.1,
+		blue_mushroom = 0.1,
 	},
 	{
-		spiderden = function() return math.random(1, 2) + 1 end,
+		spiderden = 1,
 	},
 	{
 		["BunnymanFighters"] = 1,

@@ -43,18 +43,21 @@ end
 --[[
 	Other functions
 --]]
-function AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer)
+function AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer, numtogive)
 	description = description or "???"
 	atlas = atlas or "images/inventoryimages/" .. recipe .. ".xml"
 	placer = placer or nil
 	local newRecipe = Recipe(recipe, ingredients, tab, tech, placer)
 	newRecipe.atlas = GLOBAL.resolvefilepath(atlas)
+	if numtogive then
+		newRecipe.numtogive = numtogive
+	end
 	GLOBAL.STRINGS.RECIPE_DESC[string.upper(recipe)] = description
 	return newRecipe
 end
 
-function AddItemRecipe(recipe, ingredients, tab, tech, description, atlas)
-	return AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, nil)
+function AddItemRecipe(recipe, ingredients, tab, tech, description, atlas, numtogive)
+	return AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, nil, numtogive)
 end
 
 function AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, placer)

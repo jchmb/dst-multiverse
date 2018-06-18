@@ -4,7 +4,7 @@ AddAction(
 	"Deploy AI",
 	function(act)
 		if act.invobject and act.invobject.components.deployable then
-			local obj = (act.doer.components.inventory and act.doer.components.inventory:RemoveItem(act.invobject)) or 
+			local obj = (act.doer.components.inventory and act.doer.components.inventory:RemoveItem(act.invobject)) or
 			(act.doer.components.container and act.doer.components.container:RemoveItem(act.invobject))
 			if obj then
 				if obj.components.deployable:ForceDeploy(act.pos, act.doer) then
@@ -17,6 +17,36 @@ AddAction(
 	end
 )
 
+-- AddAction(
+-- 	"TAPTREE",
+-- 	"Tap tree",
+-- 	function(act)
+--     	if act.target ~= nil and  act.target.components.tappable ~= nil then
+-- 	        if act.target.components.tappable:IsTapped() then
+-- 	            act.target.components.tappable:UninstallTap(act.doer)
+-- 	            return true
+-- 	        elseif act.invobject ~= nil and act.invobject.components.tapper ~= nil then
+-- 	            act.target.components.tappable:InstallTap(act.doer, act.invobject)
+-- 	            return true
+-- 	        end
+-- 		end
+-- 	end
+-- end)
+--
+-- AddComponentAction(
+-- 	"TAPTREE",
+-- 	"tappable",
+-- 	function(inst, doer, actions, right)
+-- 		if not inst:HasTag("tappable") and not inst:HasTag("fire") then
+-- 			if right then
+-- 				table.insert(actions, ACTIONS.TAPTREE) -- this is to untap the tree
+-- 			-- elseif inst:HasTag("tapped_harvestable") then
+-- 			-- 	table.insert(actions, ACTIONS.HARVEST)
+-- 			end
+-- 		end
+-- 	end
+-- )
+
 -- HACK ACTION
 -- AddAction(
 -- 	"HACK",
@@ -28,7 +58,7 @@ AddAction(
 -- 		elseif act.doer and act.doer.components.worker then
 -- 			numworks = act.doer.components.worker:GetEffectiveness(GLOBAL.ACTIONS.HACK)
 -- 		end
--- 		-- TODO: 
+-- 		-- TODO:
 -- 		-- if act.invobject and act.invobject.components.obsidiantool then
 -- 		-- 	act.invobject.components.obsidiantool:Use(act.doer, act.target)
 -- 		-- end
@@ -53,9 +83,9 @@ AddAction(
 --     		local tool = doer.components.inventory:GetEquippedItem(GLOBAL.EQUIPSLOTS.HANDS)
 --     		if (tool and tool.components.tool and tool.components.tool:CanDoAction(GLOBAL.ACTIONS.HACK)) then
 -- 				table.insert(actions, GLOBAL.ACTIONS.HACK)
--- 			end 
+-- 			end
 --     	-- end
---     end	
+--     end
 -- )
 -- AddStategraphActionHandler(
 -- 	"SGwilson",

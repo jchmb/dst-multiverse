@@ -51,12 +51,13 @@ local function fn()
 	local inst = CreateEntity()
 	local trans = inst.entity:AddTransform()
 	local anim = inst.entity:AddAnimState()
-	inst.entity:AddNetwork()
 	inst.entity:AddSoundEmitter()
+	inst.entity:AddNetwork()
 	MakeObstaclePhysics(inst, 1.5)
 
 	local minimap = inst.entity:AddMiniMapEntity()
-	minimap:SetIcon("dragoon_den.png")
+	minimap:SetIcon("minimap_dragoonden.tex")
+	minimap:SetPriority(-1)
 
 	anim:SetBank("dragoon_den")
 	anim:SetBuild("dragoon_den")
@@ -69,7 +70,7 @@ local function fn()
     if not TheWorld.ismastersim then
         return inst
     end
-	
+
     inst:AddComponent("lootdropper")
     inst:AddComponent("workable")
     inst.components.workable:SetWorkAction(nil)
@@ -96,4 +97,4 @@ local function fn()
 end
 
 return Prefab("dragoonden", fn, assets, prefabs),
-		MakePlacer("dragoonden_placer", "dragoon_den", "dragoon_den", "idle")  
+		MakePlacer("dragoonden_placer", "dragoon_den", "dragoon_den", "idle")

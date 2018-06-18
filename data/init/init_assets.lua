@@ -218,6 +218,12 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/sweet_potato_cooked.xml" ),
 	Asset("IMAGE", "images/inventoryimages/sweet_potato_seeds.tex" ),
 	Asset("ATLAS", "images/inventoryimages/sweet_potato_seeds.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sap.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sap.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sapbucket.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sapbucket.xml" ),
+	Asset("IMAGE", "images/inventoryimages/sap_spoiled.tex" ),
+	Asset("ATLAS", "images/inventoryimages/sap_spoiled.xml" ),
 
 	-- Turfs
 	Asset("IMAGE", "images/inventoryimages/turf_snowy.tex" ),
@@ -277,6 +283,12 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_chiminea.xml"),
 	Asset("IMAGE", "map_icons/minimap_thatchpack.tex"),
 	Asset("ATLAS", "map_icons/minimap_thatchpack.xml"),
+	Asset("IMAGE", "map_icons/minimap_saptree.tex"),
+	Asset("ATLAS", "map_icons/minimap_saptree.xml"),
+	Asset("IMAGE", "map_icons/minimap_dragoonden.tex"),
+	Asset("ATLAS", "map_icons/minimap_dragoonden.xml"),
+	Asset("IMAGE", "map_icons/minimap_obsidian_workbench.tex"),
+	Asset("ATLAS", "map_icons/minimap_obsidian_workbench.xml"),
 
 	-- Minimap icons for each portal
 	Asset("IMAGE", "map_icons/minimap_portal_cute.tex"),
@@ -299,6 +311,6 @@ Assets = {
 	Asset("IMAGE", "images/wave_slimey.tex"),
 
 	-- Sound
-	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),
- --    Asset("SOUND", "sound/dontstarve_shipwreckedSFX.fsb"),
+	Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),
+    Asset("SOUND", "sound/dontstarve_shipwreckedSFX.fsb"),
 }

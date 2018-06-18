@@ -12,7 +12,11 @@ AddMinimapAtlas("map_icons/minimap_crate.xml")
 AddMinimapAtlas("map_icons/minimap_wildbore_house.xml")
 AddMinimapAtlas("map_icons/minimap_bambootree.xml")
 AddMinimapAtlas("map_icons/minimap_chiminea.xml")
-AddMinimapAtlas("map_icons/minimap_chiminea.xml")
+AddMinimapAtlas("map_icons/minimap_saptree.xml")
+AddMinimapAtlas("map_icons/minimap_rock_iron.xml")
+AddMinimapAtlas("map_icons/minimap_dragoonden.xml")
+AddMinimapAtlas("map_icons/minimap_rock_magma.xml")
+AddMinimapAtlas("map_icons/minimap_obsidian_workbench.xml")
 
 -- Icons for each portal
 AddMinimapAtlas("map_icons/minimap_portal_cute.xml")

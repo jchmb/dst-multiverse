@@ -285,9 +285,9 @@ local function grounddetection_update(inst)
 	    	if v and v.components.combat and v ~= inst then  -- quakes shouldn't break the set dressing
 	    		v.components.combat:GetAttacked(inst, 20, nil)
 	    	end
-	   	end 
+	   	end
 
-	   	inst.Physics:SetDamping(0.9)	   	
+	   	inst.Physics:SetDamping(0.9)
 
 	    if inst.updatetask then
 			inst.updatetask:Cancel()
@@ -581,7 +581,7 @@ local function makefn(build, stage, data)
 		MakeObstaclePhysics(inst, .25)
 
 		local minimap = inst.entity:AddMiniMapEntity()
-		--minimap:SetIcon("palmTree.png")
+		minimap:SetIcon("minimap_palmtree.tex")
 
 		minimap:SetPriority(-1)
 
