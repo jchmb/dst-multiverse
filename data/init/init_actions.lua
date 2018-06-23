@@ -58,6 +58,19 @@ AddAction(
 	end
 )
 
+AddAction(
+	"SALT",
+	"Salt",
+	function(act)
+		local perishable = act.target.components.perishable
+		local stackable = act.target.components.stackable
+		local stacksize = stackable ~= nil and stackable.stacksize or 1
+	    if act.target ~= nil and perishable ~= nil then
+			perishable:ReducePercent(-1 * (1 / stacksize))
+		end
+	end
+)
+
 AddComponentAction(
 	"SCENE",
 	"tappable",
@@ -78,6 +91,17 @@ AddComponentAction(
 	function(inst, doer, target, actions)
         if target:HasTag("tappable") and not inst:HasTag("fire") and not inst:HasTag("burnt") then
             table.insert(actions, GLOBAL.ACTIONS.TAPTREE)
+        end
+    end
+)
+
+AddComponentAction(
+	"USEITEM",
+	"salter",
+	function(inst, doer, target, actions)
+		if target:HasTag("fresh") or target:HasTag("stale") then
+		-- if target:HasTag("quagmire_saltable") then
+            table.insert(actions, GLOBAL.ACTIONS.SALT)
         end
     end
 )

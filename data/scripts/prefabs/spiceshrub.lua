@@ -98,6 +98,9 @@ local function sprig_fn()
 
     inst:AddComponent("bait")
 
+    inst:AddComponent("stackable")
+    inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
+
     -- event_server_data("quagmire", "prefabs/quagmire_spiceshrub").master_postinit_sprig(inst)
 
     return inst
@@ -129,6 +132,9 @@ local function groundspice_fn()
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = "quagmire_spotspice_ground"
+
+    inst:AddComponent("stackable")
+    inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
 
     inst:AddComponent("bait")
 

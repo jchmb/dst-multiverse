@@ -14,7 +14,7 @@ local function OnTurnOn(inst)
     inst.components.prototyper.on = true  -- prototyper doesn't set this until after this function is called!!
     inst.AnimState:PlayAnimation("proximity_pre")
     inst.AnimState:PushAnimation("proximity_loop", true)
-    inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/obsidian_workbench_LP", "loop")
+    -- inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/obsidian_workbench_LP", "loop")
     inst.Light:Enable(true)
     inst.components.lighttweener:StartTween(nil, 0, nil, nil, nil, 0.2)
 end
@@ -23,7 +23,7 @@ local function OnTurnOff(inst)
     inst.components.prototyper.on = false  -- prototyper doesn't set this until after this function is called
     inst.AnimState:PlayAnimation("proximity_pst")
     inst.AnimState:PushAnimation("idle", true)
-    inst.SoundEmitter:KillSound("loop")
+    -- inst.SoundEmitter:KillSound("loop")
     inst.components.lighttweener:StartTween(nil, 0, nil, nil, nil, 0.2, turnlightoff)
 end
 

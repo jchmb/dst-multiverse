@@ -157,7 +157,7 @@ local function fn()
 	inst.components.combat:SetAttackPeriod(TUNING.DRAGOON_ATTACK_PERIOD)
 	inst.components.combat:SetRetargetFunction(1, retargetfn)
 	inst.components.combat:SetKeepTargetFunction(KeepTarget)
-	inst.components.combat:SetHurtSound("dontstarve_DLC002/creatures/dragoon/hit")
+	-- inst.components.combat:SetHurtSound("dontstarve_DLC002/creatures/dragoon/hit")
 	inst.components.combat:SetRange(2,2)
 
 	inst:AddComponent("lootdropper")

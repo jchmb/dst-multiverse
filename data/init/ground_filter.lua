@@ -27,6 +27,8 @@ GLOBAL.terrain.filter["mushtree_tall"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.
 GLOBAL.terrain.filter["mushtree_med"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER }
 GLOBAL.terrain.filter["mushtree_small"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER }
 AddStandardTerrainFilter("pond_open")
+AddStandardTerrainFilter("pond_salt")
+AddStandardTerrainFilter("spotspice_shrub")
 AddStandardTerrainFilter("pond")
 AddStandardTerrainFilter("pond_open_spawner")
 AddStandardTerrainFilter("mermhouse_blue")

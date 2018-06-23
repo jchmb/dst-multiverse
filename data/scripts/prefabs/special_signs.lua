@@ -105,6 +105,11 @@ end
 local function welcomefn()
     local welcome_msg = "Welcome to Multi-worlds. You are currently in Bunnyland. There are many more worlds to explore which you can find through portals."
     local inst = fn()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
     inst.components.writeable:SetText(welcome_msg)
     return inst
 end

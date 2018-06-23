@@ -15,8 +15,8 @@ local prefabs =
 
 local function addfirefx(inst, owner)
     if not inst.fire then
-		inst.SoundEmitter:KillSound("hiss")
-    	inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/cocnade_fuse_loop", "hiss")
+		-- inst.SoundEmitter:KillSound("hiss")
+    	-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/cocnade_fuse_loop", "hiss")
         inst.fire = SpawnPrefab( "torchfire" )
         local follower = inst.fire.entity:AddFollower()
         if owner then
@@ -61,7 +61,7 @@ local function onputininventory(inst)
     inst.Physics:SetFriction(.1)
 	removefirefx(inst)
 	if inst.components.burnable:IsBurning() then
-    	inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/cocnade_fuse_loop", "hiss")
+    	-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/cocnade_fuse_loop", "hiss")
 	end
 end
 
@@ -72,7 +72,7 @@ local function onthrown(inst, thrower, pt)
 	inst:FacePoint(pt:Get())
 	inst.components.floatable:UpdateAnimations("idle_water", "throw")
     inst.AnimState:PlayAnimation("throw", true)
-    inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/coconade_throw")
+    -- inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/coconade_throw")
 
 	inst.LightTask = inst:DoPeriodicTask(FRAMES, function()
 		local pos = inst:GetPosition()
@@ -98,7 +98,7 @@ end
 local function onexplode(inst, scale)
 	scale = scale or 1
 	local pos = Vector3(inst.Transform:GetWorldPosition())
-	inst.SoundEmitter:PlaySound("dontstarve/common/blackpowder_explo")
+	-- inst.SoundEmitter:PlaySound("dontstarve/common/blackpowder_explo")
 
 	local explode = SpawnPrefab("explode_large")
 	local ring = SpawnPrefab("explodering_fx")
@@ -115,7 +115,7 @@ local function onexplode(inst, scale)
 end
 
 local function onexplode_obsid(inst)
-	inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/coconade_obsidian_explode")
+	-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/coconade_obsidian_explode")
 	onexplode(inst, 1.3)
 end
 

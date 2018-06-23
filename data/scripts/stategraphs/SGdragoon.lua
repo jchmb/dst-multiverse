@@ -78,7 +78,7 @@ local states=
 		name = "idle",
 		tags = {"idle", "canrotate"},
 		onenter = function(inst, playanim)
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/idle")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/idle")
 			inst.Physics:Stop()
 			if playanim then
 				inst.AnimState:PlayAnimation(playanim)
@@ -101,7 +101,7 @@ local states=
 			inst.Physics:Stop()
 			inst.components.combat:StartAttack()
 			inst.AnimState:PlayAnimation("atk")
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/attack")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/attack")
 		end,
 
 		timeline=
@@ -120,7 +120,7 @@ local states=
 				if inst.components.combat.target then
 					inst:ForceFacePoint(inst.components.combat.target:GetPosition())
 				end
-				-- TODO: inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/attack_strike")
+				-- TODO: -- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/attack_strike")
 			end),
 
 			TimeEvent(20*FRAMES, function(inst)
@@ -158,7 +158,7 @@ local states=
 				-- inst.vomitfx.Transform:SetRotation(inst.Transform:GetRotation())
 
 				-- TODO
-				inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/hork")
+				-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/hork")
 			else
 				-- print("no spit")
 				inst:ClearBufferedAction()
@@ -192,7 +192,7 @@ local states=
 			TimeEvent(37*FRAMES, function(inst)
 				-- print("spit timeline")
 				-- print("vomitfire_fx spawned")
-				inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/spit")
+				-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/spit")
 				inst:PerformBufferedAction()
 				inst.last_target = inst.target
 				inst.target = nil
@@ -203,7 +203,7 @@ local states=
 			TimeEvent(39*FRAMES, function(inst)
 				-- print("spit timeline")
 				-- print("vomitfire_fx spawned")
-				inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/fireball")
+				-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/fireball")
 			end),
 		},
 	},
@@ -215,7 +215,7 @@ local states=
 		onenter = function(inst, cb)
 			inst.Physics:Stop()
 			inst.AnimState:PlayAnimation("hit")
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/hit")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/hit")
 		end,
 
 		events=
@@ -231,7 +231,7 @@ local states=
 	-- 	onenter = function(inst, cb)
 	-- 		inst.Physics:Stop()
 	-- 		inst.AnimState:PlayAnimation("taunt")
-	-- 		inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/taunt")
+	-- 		-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/taunt")
 	-- 	end,
 
 	-- 	events=
@@ -245,7 +245,7 @@ local states=
 		tags = {"busy"},
 
 		onenter = function(inst)
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/death")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/death")
 			inst.AnimState:PlayAnimation("death")
 			inst.Physics:Stop()
 			RemovePhysicsColliders(inst)
@@ -272,7 +272,7 @@ local states=
 		end,
 
 		timeline = {
-			--TimeEvent(0, function(inst) inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/snake/taunt") end),
+			--TimeEvent(0, function(inst) -- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/snake/taunt") end),
 			TimeEvent(0*FRAMES, PlayFootstep ),
 			TimeEvent(4*FRAMES, PlayFootstep ),
 		},
@@ -315,7 +315,7 @@ local states=
 			inst.AnimState:PlayAnimation("charge_loop")
 			inst.components.locomotor:RunForward()
 
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/charge")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/charge")
 
 			inst.sg.statemem.fire_timer = 5*FRAMES
 			inst.sg.statemem.fire_time = 5*FRAMES
@@ -365,7 +365,7 @@ CommonStates.AddSleepStates(states,
 		TimeEvent(
 			30*FRAMES,
 			function(inst)
-				inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/sleep")
+				-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/dragoon/sleep")
 			end
 		),
 	},

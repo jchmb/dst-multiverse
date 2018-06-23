@@ -68,8 +68,8 @@ AddTask("Grayness four a", {
 	keys_given={KEYS.TIER4},
 	room_choices={
 		["GrayMermRocks"] = 1,
+		["GrayMermRocksSaltPonds"] = GetSizeFn(1),
 		["GrayCaveSpiders"] = 1,
-		["GrayTallbirds"] = 1,
 	},
 	room_bg=GROUND.ASH,
 	background_room="BGGray2",
@@ -95,8 +95,8 @@ AddTask("Speak to the king gray", {
 	room_choices={
 		["GrayPigKingdom"] = 1,
 		["GrayMagicalDeciduous"] = 1,
-		["GrayDeepDeciduous"] = 3, 
-	}, 
+		["GrayDeepDeciduous"] = 3,
+	},
 	room_bg=GROUND.GRASS,
 	background_room="BGGrayDeciduous",
 	colour={r=1,g=1,b=0,a=1}
@@ -107,9 +107,9 @@ AddTask("Make a pick gray", {
 		keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
 		room_choices={
 			["GrayForest"] = 2,
-			["BarePlain"] = 1, 
+			["BarePlain"] = 1,
 			["Plain"] = 1,
-		}, 
+		},
 		room_bg=GROUND.GRASS_GRAY,
 		background_room="BGGray",
 		colour={r=0,g=1,b=0,a=1}

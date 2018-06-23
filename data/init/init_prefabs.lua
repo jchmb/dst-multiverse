@@ -148,8 +148,8 @@ PrefabFiles = {
 	"obsidianfirefire",
 	"armor_obsidian",
 	"volcano_shrub",
-	"packim_fishbone",
-	"packim",
+	-- "packim_fishbone",
+	-- "packim",
 	"elephantcactus",
 	"coconade",
 	"explodering_fx",
@@ -194,6 +194,8 @@ PrefabFiles = {
 	"saltrack",
 	"pond_salt",
 	"new_fishes",
+	"mealingstone",
+	"syrup",
 
 	-- Special
 	"mimi",

@@ -17,27 +17,32 @@ return {
 							--layout_position = LAYOUT_POSITION.CENTER,
 
 							ground = {
-								{1, 1, 1, 1},
-								{1, 1, 1, 1},
-								{1, 1, 1, 1},
-								{1, 1, 1, 1},
+								{1, 1, 1},
+								{1, 1, 1},
+								{1, 1, 1},
 							},
 
 							layout =
 								{
 									firepit = {
 										{
-											x = 1,
-											y = 1,
+											x = 0,
+											y = 0,
 										},
 									},
 									treasurechest = {
 										{
-											x = -1,
-											y = -1,
+											x = 1.5,
+											y = 1.5,
 											properties = {
 												scenario = "bunnyland_sapfarm_chest",
 											},
+										},
+									},
+									mealingstone = {
+										{
+											x = -1.5,
+											y = -1.5,
 										},
 									},
 								},

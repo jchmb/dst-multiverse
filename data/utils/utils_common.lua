@@ -15,7 +15,8 @@ function IsSlaveShard()
 end
 
 function GetCompatibleGround(tile)
-	local mode = GetModConfigData("TileCompatibility")
+	local mode = 0
+	-- local mode = GetModConfigData("TileCompatibility")
 
 	-- Compatibility mode
 	if mode == 1 then

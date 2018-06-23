@@ -3,9 +3,9 @@ local assets =
 	Asset("ANIM", "anim/coconut.zip"),
 }
 
-local prefabs = 
+local prefabs =
 {
-    -- "coconut_cooked", 
+    -- "coconut_cooked",
     -- "cononut_halved"
 }
 
@@ -13,9 +13,9 @@ local function growtree(inst)
 	print ("GROWTREE")
     inst.growtask = nil
     inst.growtime = nil
-	local tree = SpawnPrefab("palmtree_short") 
-    if tree then 
-		tree.Transform:SetPosition(inst.Transform:GetWorldPosition() ) 
+	local tree = SpawnPrefab("palmtree_short")
+    if tree then
+		tree.Transform:SetPosition(inst.Transform:GetWorldPosition() )
         tree:growfromseed()--PushEvent("growfromseed")
         inst:Remove()
 	end
@@ -68,23 +68,23 @@ local function plant(inst, growtime)
     end
 end
 
-local function ondeploy (inst, pt) 
+local function ondeploy (inst, pt)
     inst = inst.components.stackable:Get()
     inst.Transform:SetPosition(pt:Get() )
     local timeToGrow = GetRandomWithVariance(TUNING.COCONUT_GROWTIME.base, TUNING.COCONUT_GROWTIME.random)
     plant(inst, timeToGrow)
-	
+
 	--tell any nearby leifs to chill out
 	local ents = TheSim:FindEntities(pt.x,pt.y,pt.z, TUNING.LEIF_PINECONE_CHILL_RADIUS, {"leif"})
-	
+
 	local played_sound = false
 	for k,v in pairs(ents) do
-		
+
 		local chill_chance = TUNING.LEIF_PINECONE_CHILL_CHANCE_FAR
 		if distsq(pt, Vector3(v.Transform:GetWorldPosition())) < TUNING.LEIF_PINECONE_CHILL_CLOSE_RADIUS*TUNING.LEIF_PINECONE_CHILL_CLOSE_RADIUS then
 			chill_chance = TUNING.LEIF_PINECONE_CHILL_CHANCE_CLOSE
 		end
-	
+
 		if math.random() < chill_chance then
 			if v.components.sleeper then
 				v.components.sleeper:GoToSleep(1000)
@@ -95,9 +95,9 @@ local function ondeploy (inst, pt)
 				played_sound = true
 			end
 		end
-		
+
 	end
-	
+
 end
 
 local function stopgrowing(inst)
@@ -122,7 +122,7 @@ local function test_ground(inst, pt)
 	local tiletype = GetGroundTypeAtPosition(pt)
 	local ground_OK = tiletype == GROUND.DIRT or tiletype == GROUND.SAND
                         inst:IsPosSurroundedByLand(pt.x, pt.y, pt.z, 1)
-	
+
 	if ground_OK then
 	    local ents = TheSim:FindEntities(pt.x,pt.y,pt.z, 4, nil, notags) -- or we could include a flag to the search?
 		local min_spacing = inst.components.deployable.min_spacing or 2
@@ -176,7 +176,7 @@ local function common()
     inst.AnimState:SetBank("coconut")
     inst.AnimState:SetBuild("coconut")
     inst.AnimState:PlayAnimation("idle")
-    
+
 
    -- inst:AddComponent("edible")
     --inst.components.edible.foodtype = "VEGGIE"
@@ -196,10 +196,10 @@ local function common()
 
     inst:AddComponent("inspectable")
     -- inst.components.inspectable.getstatus = describe
-    
+
     --inst:AddComponent("fuel")
     --inst.components.fuel.fuelvalue = TUNING.SMALL_FUEL
-    
+
 	MakeSmallBurnable(inst, TUNING.SMALL_BURNTIME)
 	inst:ListenForEvent("onignite", stopgrowing)
     inst:ListenForEvent("onextinguish", restartgrowing)
@@ -210,28 +210,28 @@ local function common()
     inst.components.perishable:SetPerishTime(TUNING.PERISH_PRESERVED)
     inst.components.perishable:StartPerishing()
     inst.components.perishable.onperishreplacement = "spoiled_food"
-   
+
 
     inst:AddComponent("edible")
     inst.components.edible.foodtype = FOODTYPE.RAW
 
-    
+
     inst:AddComponent("inventoryitem")
     --inst:AddComponent("bait")
-    
+
 
     return inst
 end
 
 local function onhacked(inst)
-    local nut = inst 
-    if inst.components.inventoryitem then 
+    local nut = inst
+    if inst.components.inventoryitem then
         local owner = inst.components.inventoryitem.owner
-        if inst.components.stackable and inst.components.stackable.stacksize > 1 then 
+        if inst.components.stackable and inst.components.stackable.stacksize > 1 then
             nut = inst.components.stackable:Get()
             inst.components.workable:SetWorkLeft(1)
-        end 
-        if owner then 
+        end
+        if owner then
             local hacked = SpawnPrefab("coconut_halved")
             hacked.components.stackable.stacksize = 2
             if owner.components.inventory and not owner.components.inventory:IsFull() then
@@ -241,15 +241,15 @@ local function onhacked(inst)
             else
                 inst.components.lootdropper:DropLootPrefab(hacked)
             end
-        else 
+        else
             inst.components.lootdropper:SpawnLootPrefab("coconut_halved")
             inst.components.lootdropper:SpawnLootPrefab("coconut_halved")
-        end 
-        inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/bamboo_hack")
+        end
+        -- inst.SoundEmitter:PlaySound("dontstarve_DLC002/common/bamboo_hack")
     end
     nut:Remove()
 
-end 
+end
 
 local function raw()
     local inst = common()
@@ -264,13 +264,13 @@ local function raw()
     end
 
     inst:AddComponent("lootdropper")
-    
+
     inst:AddComponent("deployable")
     inst.components.deployable.test = test_ground
     inst.components.deployable.ondeploy = ondeploy
 
     -- MakeInventoryFloatable(inst, "idle_water", "idle")
-    
+
     inst.displaynamefn = displaynamefn
 
     inst.components.edible.healthvalue = 0
@@ -282,7 +282,7 @@ local function raw()
     inst.OnLoad = OnLoad
 
     return inst
-end 
+end
 
 local function cooked()
     local inst = common()
@@ -320,14 +320,14 @@ local function halved()
     inst.components.cookable.product = "coconut_cooked"
 
     inst.components.inventoryitem.atlasname = "images/inventoryimages/coconut_halved.xml"
-    
+
     -- MakeInventoryFloatable(inst, "chopped_water", "chopped")
     inst.components.edible.hungervalue = TUNING.CALORIES_TINY/2
     inst.components.edible.healthvalue = TUNING.HEALING_TINY
     inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
     inst.components.edible.foodtype = FOODTYPE.SEEDS
 
-    
+
 
     return inst
 end
@@ -335,6 +335,4 @@ end
 return Prefab( "coconut", raw, assets, prefabs),
     Prefab( "coconut_cooked", cooked, assets, prefabs),
     Prefab( "coconut_halved", halved, assets, prefabs),
-	   MakePlacer( "coconut_placer", "coconut", "coconut", "planted" ) 
-
-
+	   MakePlacer( "coconut_placer", "coconut", "coconut", "planted" )

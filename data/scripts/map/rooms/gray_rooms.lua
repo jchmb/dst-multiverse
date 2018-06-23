@@ -234,6 +234,23 @@ AddRoom("GrayMermRocks", {
 	}
 })
 
+AddStandardRoom(
+	"GrayMermRocksSaltPonds",
+	GROUND.ASH,
+	0.15,
+	{
+		rock1 = 0.05,
+		rock2 = 0.05,
+		rock_flintless_med = 0.05,
+		rock_moon = 0.03,
+		sapling = 0.1,
+		twiggytree = 0.1,
+	},
+	{
+		pond_salt = 2,
+	}
+)
+
 
 AddRoom("BGGrayDeciduous", {
 	colour={r=.1,g=.8,b=.1,a=.50},

@@ -54,7 +54,8 @@ local states=
 
 		timeline =
 		{
-			TimeEvent(0*FRAMES, function(inst) inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/death") end),
+			TimeEvent(0*FRAMES, function(inst) --inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/death")
+			end),
 		},
 
 		events=
@@ -97,7 +98,9 @@ local states=
 
 		timeline =
 		{
-			TimeEvent(8*FRAMES, function(inst) inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/attack_pre") end),
+			TimeEvent(8*FRAMES, function(inst)
+				-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/attack_pre")
+			end),
 		},
 
 		events=
@@ -113,7 +116,7 @@ local states=
 
 		onenter = function(inst)
 			inst.AnimState:PlayAnimation("attack")
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/attack")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/attack")
 		end,
 
 		timeline=
@@ -144,8 +147,8 @@ local states=
 
 		timeline =
 		{
-			TimeEvent(12*FRAMES, function(inst) inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/grow_pre") end),
-			TimeEvent(28*FRAMES, function(inst) inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/grow_spike") end),
+			-- TimeEvent(12*FRAMES, function(inst) inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/grow_pre") end),
+			-- TimeEvent(28*FRAMES, function(inst) inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/grow_spike") end),
 		},
 
 		events=
@@ -161,7 +164,7 @@ local states=
 		name = "dead_to_empty",
 		tags = {"busy"},
 		onenter = function(inst)
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/dead_to_empty")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/dead_to_empty")
 			inst.AnimState:PlayAnimation("dead_to_empty")
 		end,
 

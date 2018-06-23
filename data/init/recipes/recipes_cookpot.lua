@@ -9,7 +9,9 @@ AddIngredientValues({"mintyberries"}, {fruit=1}, true, false)
 AddIngredientValues({"limpets"}, {fish=0.5}, true, false)
 AddIngredientValues({"sweet_potato"}, {veggie=1}, true, false)
 AddIngredientValues({"sap"}, {sweetener=0.5}, true, false)
-AddIngredientValues({"spotspice_ground"}, {spice=1}, true, false)
+AddIngredientValues({"spotspice_ground"}, {spice=1, veggie=1}, true, false)
+AddIngredientValues({"syrup"}, {sweetener=2}, true, false)
+
 
 --[[
 	New recipes
@@ -32,6 +34,25 @@ AddCookerRecipe("cookpot", {
 	cooktime = .25,
 	tags = {},
 })
+
+AddCookerRecipe(
+	"cookpot",
+	{
+		name = "syrup",
+		test = function(cooker, names, tags)
+			return names.sap and names.sap == 4
+		end,
+		priority = 10,
+		weight = 1,
+		foodtype = "GENERIC",
+		health = 20,
+		hunger = 5,
+		sanity = 5,
+		perishtime = TUNING.PERISH_SLOW,
+		cooktime = 5,
+		tags = {},
+	}
+)
 
 local preparedFoods = GLOBAL.require("newpreparedfoods")
 for k,v in pairs(preparedFoods) do

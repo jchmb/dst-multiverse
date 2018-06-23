@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8, Joachim, and Keeper-M"
-version = "1.10.0"
+version = "1.10.2"
 forumthread = ""
 api_version = 10
 
@@ -43,31 +43,11 @@ configuration_options =
 		name = "EnableStartingItems",
 		description = "Enable starting items",
 		default = 0,
-		options = {
-			{
-				description = "Yes",
-				data = 1,
-			},
-			{
-				description = "No",
-				data = 0,
-			},
-		},
 	},
 
 	-- In case you want named migration portals, you can assign worldnames to shard IDs here.
 	{
 		name = "WorldNames",
-		default = {},
-	},
-
-	-- Portal types. Please leave this empty if you want to use migration_portals always.
-	{
-		name = "DefaultPortalType",
-		default = "migration_portal",
-	},
-	{
-		name = "PortalTypes",
 		default = {},
 	},
 
@@ -97,21 +77,4 @@ configuration_options =
 		name = "MultiConnections",
 		default = {},
 	},
-
-	-- Compatibility options
-	{
-		name = "TileCompatibility",
-		default = 0,
-		description = "Tile compatibility mode",
-		options = {
-			{
-				description = "Standard",
-				data = 0,
-			},
-			{
-				description = "Compatible",
-				data = 1,
-			},
-		},
-	}
 }

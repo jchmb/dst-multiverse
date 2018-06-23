@@ -26,6 +26,9 @@ local function rock_fn()
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = "quagmire_saltrock"
 
+    inst:AddComponent("stackable")
+    inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
+
     -- event_server_data("quagmire", "prefabs/quagmire_salts").master_postinit_rock(inst)
 
     return inst
@@ -52,6 +55,11 @@ local function ground_fn()
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = "quagmire_salt"
+
+    inst:AddComponent("stackable")
+    inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
+
+    inst:AddComponent("salter")
 
     -- event_server_data("quagmire", "prefabs/quagmire_salts").master_postinit_ground(inst)
 

@@ -34,10 +34,10 @@ local function makebarrenfn(inst)
 	if inst.components.pickable and inst.components.pickable.withered then
 		if not inst.components.pickable.hasbeenpicked then
 			inst.AnimState:PlayAnimation("full_to_dead")
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/full_to_dead")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/full_to_dead")
 		else
 			inst.AnimState:PlayAnimation("empty_to_dead")
-			inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/empty_to_dead")
+			-- inst.SoundEmitter:PlaySound("dontstarve_DLC002/creatures/volcano_cactus/empty_to_dead")
 		end
 		inst.AnimState:PushAnimation("idle_dead")
 	else
@@ -263,7 +263,7 @@ local function OnBlocked(owner, data)
 		and data.attacker and data.attacker.components.combat and data.stimuli ~= "thorns" and not data.attacker:HasTag("thorny")
 		and ((data.damage and data.damage > 0) or (data.attacker.components.combat and data.attacker.components.combat.defaultdamage > 0)) then
 		data.attacker.components.combat:GetAttacked(owner, TUNING.ELEPHANTCACTUS_DAMAGE/2, nil, "thorns")
-		owner.SoundEmitter:PlaySound("dontstarve_DLC002/common/armour/cactus")
+		-- owner.SoundEmitter:PlaySound("dontstarve_DLC002/common/armour/cactus")
 	end
 end
 
@@ -311,7 +311,7 @@ local function activefn()
 	inst.components.combat:SetRetargetFunction(1, retargetfn)
 	inst.components.combat:SetKeepTargetFunction(shouldKeepTarget)
 	inst.components.combat.notags = {"elephantcactus", "armorcactus"}
-	inst.components.combat:SetHurtSound("dontstarve_DLC002/creatures/volcano_cactus/hit")
+	-- inst.components.combat:SetHurtSound("dontstarve_DLC002/creatures/volcano_cactus/hit")
 
 	inst:AddComponent("timer")
 	inst:ListenForEvent("timerdone", ontimerdone)
