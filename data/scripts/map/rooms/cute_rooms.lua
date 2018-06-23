@@ -222,10 +222,9 @@ AddStandardRoom(
 	GROUND.QUAGMIRE_PARKFIELD,
 	0.1,
 	{
-		berrybush = 0.05,
-		berrybush_juicy = 0.05,
-		sapling = 0.05,
-		grass = 0.05,
+		spotspice_shrub = 0.01,
+		sapling = 0.07,
+		grass = 0.07,
 		flower = 0.2,
 		molehill = 0.01,
 	}
@@ -239,8 +238,7 @@ AddStandardRoom(
 		saptree_small = 0.03,
 		saptree_normal = 0.03,
 		saptree_tall = 0.03,
-		berrybush = 0.05,
-		berrybush_juicy = 0.05,
+		spotspice_shrub = 0.07,
 		sapling = 0.05,
 		grass = 0.05,
 		flower = 0.15,
@@ -257,7 +255,6 @@ AddStandardRoom(
 		saptree_normal = 0.03,
 		saptree_tall = 0.03,
 		flower = 0.1,
-		molehill = 0.02,
 	},
 	{
 		catcoonden = 5,
