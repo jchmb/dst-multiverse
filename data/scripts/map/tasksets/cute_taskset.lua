@@ -8,6 +8,7 @@ local cute_tasks = {
 			"Cuteness one",
 			"Cuteness two a",
 			"Cuteness two b",
+			"Cuteness two c",
 			"Cuteness three a",
 			"Cuteness three b",
 			"Cuteness three c",

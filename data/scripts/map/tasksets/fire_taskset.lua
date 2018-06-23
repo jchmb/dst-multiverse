@@ -1,14 +1,16 @@
 local fire_tasks = {
 	"Make a pick fire",
-	"Speak to the king snowy",
+	"Speak to the king fire",
 	"Fire one",
 	"Fire two a",
 	"Fire two b",
+	"Fire two c",
+	"Fire two d",
 	"Fire three a",
 	"Fire three b",
+	"Fire three c",
 	-- "Fire four a",
 	"Fire four b",
-	"The hunters",
 }
 
 AddTaskSetFixed("fire", {

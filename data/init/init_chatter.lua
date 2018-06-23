@@ -1,4 +1,5 @@
 modimport("init/chatter/pigman_blue_chat.lua")
+modimport("init/chatter/pigman_fire_chat.lua")
 modimport("init/chatter/pigman_gray_chat.lua")
 modimport("init/chatter/pigman_slimey_chat.lua")
 modimport("init/chatter/pigman_cyborg_chat.lua")

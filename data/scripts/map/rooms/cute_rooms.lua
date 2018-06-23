@@ -3,6 +3,8 @@ AddPreferredLayout("GentleBunnyman", "gentle_bunnyman")
 AddPreferredLayout("TrapRabbitMeat", "trap_rabbit_meat")
 AddPreferredLayout("BunnymanFighters", "bunnyman_fighters")
 AddPreferredLayout("BunnymanPirates", "bunnyman_pirates")
+AddPreferredLayout("BunnymanTown", "bunnyman_town")
+AddPreferredLayout("BunnylandSapfarm", "bunnyland_sapfarm")
 
 AddStandardRoom(
 	"CuteClearing",
@@ -123,7 +125,8 @@ AddRoom("CuteBunnymanTown2", {
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countstaticlayouts = {
-			["GentleBunnyman"] = 1,
+			-- ["GentleBunnyman"] = 1,
+			["BunnymanTown"] = 1,
 		},
 		distributepercent = 0.03,
 		distributeprefabs = {
@@ -214,6 +217,57 @@ AddStandardRoom(
 	}
 )
 
+AddStandardRoom(
+	"BGCuteSapTreeForest",
+	GROUND.QUAGMIRE_PARKFIELD,
+	0.1,
+	{
+		berrybush = 0.05,
+		berrybush_juicy = 0.05,
+		sapling = 0.05,
+		grass = 0.05,
+		flower = 0.2,
+		molehill = 0.01,
+	}
+)
+
+AddStandardRoom(
+	"CuteSapTreeForest",
+	GROUND.QUAGMIRE_PARKFIELD,
+	0.25,
+	{
+		saptree_small = 0.03,
+		saptree_normal = 0.03,
+		saptree_tall = 0.03,
+		berrybush = 0.05,
+		berrybush_juicy = 0.05,
+		sapling = 0.05,
+		grass = 0.05,
+		flower = 0.15,
+		rabbithole = 0.01,
+	}
+)
+
+AddStandardRoom(
+	"CuteSapTreeForestCore",
+	GROUND.QUAGMIRE_PARKFIELD,
+	0.3,
+	{
+		saptree_small = 0.05,
+		saptree_normal = 0.03,
+		saptree_tall = 0.03,
+		flower = 0.1,
+		molehill = 0.02,
+	},
+	{
+		catcoonden = 5,
+		pond = 3,
+	},
+	{
+		["BunnylandSapfarm"] = 1,
+	}
+)
+
 AddRoom("CuteMonkeyRoom", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.DIRT,
@@ -278,6 +332,7 @@ AddRoom("CuteRocks", {
 		distributeprefabs = {
 			rock1 = 0.7,
 			rock2 = 0.7,
+			rock_iron = 0.1,
 			rocks = 0.7,
 			rock_ice = 0.5,
 			flint = 0.7,
@@ -300,9 +355,9 @@ AddRoom("CuteRocks2", {
 		distributeprefabs = {
 			rock1 = 1,
 			rock2 = 1,
+			rock_iron = 0.2,
 			rocks = 1,
 			flint = 0.7,
-			molehill = 0.1,
 			grassgekko = 0.2,
 			buzzardspawner = 0.1,
 			catcoonden = 0.1,
@@ -477,6 +532,7 @@ AddCenterRoom(
 		marbletree = function()
 			return math.random(4, 6) + 3
 		end,
+		critterlab = 1,
 	}
 )
 

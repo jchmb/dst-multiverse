@@ -76,3 +76,17 @@ AddStructureRecipe(
     "images/inventoryimages/firepit_obsidian.xml",
     "firepit_obsidian_placer"
 )
+
+AddItemRecipe(
+	"obsidiancoconade",
+	{
+		ModIngredient("coconade", 3),
+		--Ingredient("phlegm", 1),
+		--Ingredient("mucus", 1, "images/inventoryimages/mucus.xml"),
+		ModIngredient("obsidian", 3),
+		ModIngredient("dragoonheart", 1),
+	},
+	GLOBAL.CUSTOM_RECIPETABS.OBSIDIAN,
+	OBSIDIAN_TWO,
+	"KA-BLAMMIER!"
+)

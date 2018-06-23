@@ -20,6 +20,13 @@ local prefabs =
     "sugarwood_leaf_withered_fx_chop",
 }
 
+local BUCKET_STAGES =
+{
+    "empty",
+    "full",
+    "overflow",
+}
+
 local DEFAULT_TREE_DEF = 2
 local TREE_DEFS =
 {
@@ -59,24 +66,6 @@ local function SetStage(inst, stage)
     inst.AnimState:SetBank(TREE_DEFS[stage].anim_file)
     inst.AnimState:SetBuild("quagmire_tree_cotton_build")
     inst.components.lootdropper:SetLoot(TREE_DEFS[stage].loot)
-end
-
-local function OnLoad(inst, data)
-    if not data then
-        return
-    end
-    if data.stage then
-        SetStage(inst, data.stage)
-    end
-end
-
-local function OnSave(inst, data)
-    if not data then
-        return
-    end
-    if inst.stage then
-        data.stage = inst.stage
-    end
 end
 
 local function PushSway(inst, skippre)
@@ -196,6 +185,91 @@ local function ChopDownTree(inst, chopper)
     MakeStump(inst)
 end
 
+local function OnBucketStageChange(inst, stage)
+    local name = "swap_sapbucket_" .. BUCKET_STAGES[stage + 1]
+    inst.AnimState:OverrideSymbol("swap_sapbucket", "quagmire_sapbucket", name)
+    -- inst.AnimState:OverrideSymbol("swap_sapbucket_0", "quagmire_sapbucket", name)
+    -- inst.AnimState:OverrideSymbol("swap_sapbucket_1", "quagmire_sapbucket", name)
+end
+
+local function OnGrow(inst, stage)
+    inst.AnimState:PlayAnimation("sap_leak_pre")
+    inst.AnimState:PushAnimation("sap_leak_pst")
+    inst.AnimState:PushAnimation("idle")
+    OnBucketStageChange(inst, stage)
+end
+
+local function OnHarvest(inst, picker, produce)
+    OnBucketStageChange(inst, 0)
+end
+
+local function SetHarvestable(inst)
+    inst:AddComponent("harvestable")
+    inst.components.harvestable:SetUp(
+        "sap",
+        (#BUCKET_STAGES) - 1,
+        300 / (math.min(1, inst.stage)),
+        OnHarvest,
+        OnGrow
+    )
+    inst:AddTag("tapped_harvestable")
+end
+
+local function SetNonHarvestable(inst)
+    inst.components.harvestable:StopGrowing()
+    inst:RemoveComponent("harvestable")
+    inst:RemoveTag("tapped_harvestable")
+end
+
+local function OnInstall(inst)
+    inst.AnimState:Show("swap_tapper")
+    inst.AnimState:Show("swap_sapbucket")
+    OnBucketStageChange(inst, 0)
+    SetHarvestable(inst)
+end
+
+local function OnUninstall(inst)
+    inst.AnimState:Hide("swap_tapper")
+    inst.AnimState:Hide("swap_sapbucket")
+    SetNonHarvestable(inst)
+end
+
+local function OnChop(inst, worker, workleft, numworks)
+    if inst.components.tappable:IsTapped() then
+        inst.components.tappable:UninstallTap(worker, true)
+        -- SetNonHarvestable(inst)
+    end
+end
+
+local function OnLoad(inst, data)
+    if not data then
+        return
+    end
+    if data.stage then
+        SetStage(inst, data.stage)
+    end
+    if data.tapper then
+        local sapbucket = SpawnPrefab("sapbucket")
+        inst.components.tappable:InstallTap(nil, sapbucket)
+        SetHarvestable(inst)
+        inst.components.harvestable:StopGrowing()
+        inst.components.harvestable:OnLoad(data.tapper)
+        OnBucketStageChange(inst, data.tapper.produce)
+    end
+end
+
+local function OnSave(inst, data)
+    if not data then
+        return
+    end
+    if inst.stage then
+        data.stage = inst.stage
+    end
+    if inst.components.tappable:IsTapped() then
+        data.tapper = inst.components.harvestable:OnSave()
+    end
+end
+
 local function fn(tree_def)
     local inst = CreateEntity()
 
@@ -243,11 +317,15 @@ local function fn(tree_def)
     inst.components.workable:SetWorkAction(ACTIONS.CHOP)
     inst.components.workable:SetOnWorkCallback(ChopTree)
     inst.components.workable:SetOnFinishCallback(ChopDownTree)
+    inst.components.workable:SetOnWorkCallback(OnChop)
 
     inst:AddComponent("lootdropper")
 
-    -- inst:AddComponent("tappable")
-    -- inst.components.tappable:SetPrefab("sap")
+    inst:AddComponent("tappable")
+    inst.components.tappable:SetOnInstallFn(OnInstall)
+    inst.components.tappable:SetOnUninstallFn(OnUninstall)
+
+    -- OnInstall(inst)
 
     inst.OnSave = OnSave
     inst.OnLoad = OnLoad

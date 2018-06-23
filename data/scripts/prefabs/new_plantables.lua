@@ -3,9 +3,11 @@ require "prefabutil"
 local function make_plantable(data)
     local workable_type = data.workable or "pickable"
 
+    local animfile = data.animfile or data.name
+
     local assets =
     {
-        Asset("ANIM", "anim/"..data.name..".zip"),
+        Asset("ANIM", "anim/"..animfile..".zip"),
         Asset("ANIM", "anim/berrybush.zip"),
         Asset("ANIM", "anim/berrybush2.zip"),
         Asset("ATLAS", "images/inventoryimages/dug_" .. data.name..".xml"),
@@ -111,6 +113,17 @@ local plantables =
         build = "bambootree_build",
         -- workable = "hackable",
         -- testfn=test_nobeach
+    },
+    {
+        name="elephantcactus",
+        bank = "cactus_volcano",
+        build = "cactus_volcano",
+        anim="idle_dead",
+        minspace=2,
+        -- testfn=test_volcano,
+        noburn=true,
+        deployatrange=true,
+        animfile = "cactus_volcano",
     },
 }
 

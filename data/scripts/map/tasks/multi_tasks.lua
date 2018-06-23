@@ -4,7 +4,7 @@ AddTask("Make a pick multi", {
 	room_choices={
 		["MultiBeachClearing"] = 1,
 		["MultiBeach"] = GetSizeFn(1),
-	}, 
+	},
 	room_bg=GROUND.SAND,
 	background_room="BGMultiBeach",
 	colour={r=0,g=1,b=0,a=1}
@@ -16,10 +16,10 @@ AddTaskWrapped(
 	{KEYS.TIER2},
 	{
 		["CuteBunnymanTown3"] = 1,
-		["CuteBunnymanTown5"] = GetSizeFn(1),
+		["CuteBunnymanTown5"] = 1,
 		["CuteBunnymanTown2"] = 1,
 		["CuteBunnymanTown"] = 1,
-		["CuteHerds"] = 1,
+		["MultiHerds"] = GetSizeFn(1),
 	},
 	GROUND.FUNGUS,
 	"BGCuteFungus"

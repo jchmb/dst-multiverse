@@ -232,6 +232,16 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/firepit_obsidian.xml" ),
 	Asset("IMAGE", "images/inventoryimages/armor_obsidian.tex" ),
 	Asset("ATLAS", "images/inventoryimages/armor_obsidian.xml" ),
+	Asset("IMAGE", "images/inventoryimages/fishbone.tex" ),
+	Asset("ATLAS", "images/inventoryimages/fishbone.xml" ),
+	Asset("IMAGE", "images/inventoryimages/dug_elephantcactus.tex" ),
+	Asset("ATLAS", "images/inventoryimages/dug_elephantcactus.xml" ),
+	Asset("IMAGE", "images/inventoryimages/needlespear.tex" ),
+	Asset("ATLAS", "images/inventoryimages/needlespear.xml" ),
+	Asset("IMAGE", "images/inventoryimages/coconade.tex" ),
+	Asset("ATLAS", "images/inventoryimages/coconade.xml" ),
+	Asset("IMAGE", "images/inventoryimages/obsidiancoconade.tex" ),
+	Asset("ATLAS", "images/inventoryimages/obsidiancoconade.xml" ),
 
 	-- Turfs
 	Asset("IMAGE", "images/inventoryimages/turf_snowy.tex" ),
@@ -297,6 +307,12 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_dragoonden.xml"),
 	Asset("IMAGE", "map_icons/minimap_obsidian_workbench.tex"),
 	Asset("ATLAS", "map_icons/minimap_obsidian_workbench.xml"),
+	Asset("IMAGE", "map_icons/minimap_volcano_shrub.tex"),
+	Asset("ATLAS", "map_icons/minimap_volcano_shrub.xml"),
+	Asset("IMAGE", "map_icons/minimap_packim_fire.tex"),
+	Asset("ATLAS", "map_icons/minimap_packim_fire.xml"),
+	Asset("IMAGE", "map_icons/minimap_elephant_cactus.tex"),
+	Asset("ATLAS", "map_icons/minimap_elephant_cactus.xml"),
 
 	-- Minimap icons for each portal
 	Asset("IMAGE", "map_icons/minimap_portal_cute.tex"),

@@ -23,7 +23,7 @@ local function fn()
     end
 
     inst:AddComponent("stackable")
-    inst.components.stackable.maxsize = 1
+    -- inst.components.stackable.maxsize = 1
 
     inst:AddComponent("tradable")
 

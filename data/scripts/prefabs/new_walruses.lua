@@ -186,6 +186,10 @@ end
 local function create_elite()
     local inst = create_common("walrus_build", 1.5)
 
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
     inst.components.health:SetMaxHealth(TUNING.WALRUS_HEALTH * 1.5)
 
     return inst

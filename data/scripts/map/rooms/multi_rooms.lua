@@ -48,6 +48,19 @@ AddStandardRoom(
 )
 
 AddStandardRoom(
+	"MultiHerds",
+	GROUND.SAVANNA,
+	0.3,
+	{
+		perma_grass = 0.2,
+		bunneefalo = 0.01,
+		beefalo = 0.01,
+		rabbithole = 0.025,
+		mushtree_medium = 0.025,
+	}
+)
+
+AddStandardRoom(
 	"BGMultiRocks",
 	GROUND.ROCKY,
 	0.2,

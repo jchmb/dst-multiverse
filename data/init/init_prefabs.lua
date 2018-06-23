@@ -147,8 +147,18 @@ PrefabFiles = {
 	"firepit_obsidian",
 	"obsidianfirefire",
 	"armor_obsidian",
+	"volcano_shrub",
+	"packim_fishbone",
+	"packim",
+	"elephantcactus",
+	"coconade",
+	"explodering_fx",
+	"pigking_fire",
+	"pighouse_fire",
+	"pigman_fire",
 
 	-- Chezz mobs and spawners
+	"mushtree_metal",
 
 	-- Items
 	"coffee",
@@ -178,7 +188,12 @@ PrefabFiles = {
 	-- Experimental
 	"saptrees",
 	"sap",
-	-- "sapbucket",
+	"sapbucket",
+	"spiceshrub",
+	"salts",
+	"saltrack",
+	"pond_salt",
+	"new_fishes",
 
 	-- Special
 	"mimi",

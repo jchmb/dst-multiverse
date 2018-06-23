@@ -7,9 +7,9 @@ return {
 							type = LAYOUT.STATIC,
 
 							layout_position = LAYOUT_POSITION.CENTER,
-							
+
 							-- Add any arguments for the layout function
-							args = nil,							
+							args = nil,
 							-- Lay the objects in whatever pattern
 
 							ground_types = {GROUND.GRASS},
@@ -24,15 +24,12 @@ return {
 								{1, 1, 1, 1, 1},
 							},
 
-							layout = 
+							layout =
 								{
 									treasurechest = {
 										{
 											x = 0,
 											y = 0,
-											properties = {
-												scenario = "trap_rabbit_meat",
-											},
 										},
 									},
 
@@ -68,10 +65,10 @@ return {
 										},
 									},
 								},
-								
+
 							-- Either choose to specify the objects positions or a number of objects
 							count = nil,
-								
+
 							-- Choose a scale on which to place everything
 							scale = 1,
 }

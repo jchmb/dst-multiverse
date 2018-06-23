@@ -13,11 +13,12 @@ local obsidian_assets =
 	Asset("ANIM", "anim/spear_obsidian.zip"),
 	Asset("ANIM", "anim/swap_spear_obsidian.zip"),
 }
--- local needle_assets =
--- {
--- 	Asset("ANIM", "anim/swap_cactus_spike.zip"),
--- 	Asset("ANIM", "anim/cactus_spike.zip"),
--- }
+
+local needle_assets =
+{
+	Asset("ANIM", "anim/swap_cactus_spike.zip"),
+	Asset("ANIM", "anim/cactus_spike.zip"),
+}
 -- local pegleg_assets =
 -- {
 -- 	Asset("ANIM", "anim/swap_peg_leg.zip"),
@@ -102,10 +103,6 @@ local function basicfn()
 
 	inst.speartype = "spear"
 
-    if not TheWorld.ismastersim then
-        return inst
-    end
-
 	return inst
 end
 
@@ -142,6 +139,10 @@ end
 local function obsidianfn()
 	local inst = commonfn()
 
+	if not TheWorld.ismastersim then
+        return inst
+    end
+
 	inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.atlasname = "images/inventoryimages/spear_obsidian.xml"
 
@@ -168,31 +169,36 @@ local function obsidianfn()
 	return inst
 end
 
--- local function onequipneedle(inst, owner)
--- 	owner.AnimState:OverrideSymbol("swap_object", "swap_cactus_spike", "swap_cactus_spike")
--- 	owner.AnimState:Show("ARM_carry")
--- 	owner.AnimState:Hide("ARM_normal")
--- end
---
--- local function needlefn(Sim)
--- 	local inst = commonfn(Sim)
---
--- 	inst:AddComponent("inventoryitem")
---
--- 	inst.AnimState:SetBuild("cactus_spike")
--- 	inst.AnimState:SetBank("cactus_spike")
--- 	inst.AnimState:PlayAnimation("idle")
---
--- 	inst.components.weapon:SetDamage(TUNING.NEEDLESPEAR_DAMAGE)
--- 	inst.components.finiteuses:SetMaxUses(TUNING.NEEDLESPEAR_USES)
--- 	inst.components.finiteuses:SetUses(TUNING.NEEDLESPEAR_USES)
---
--- 	inst.components.inventoryitem.imagename = "needlespear"
---
--- 	inst.components.equippable:SetOnEquip( onequipneedle )
---
--- 	return inst
--- end
+local function onequipneedle(inst, owner)
+	owner.AnimState:OverrideSymbol("swap_object", "swap_cactus_spike", "swap_cactus_spike")
+	owner.AnimState:Show("ARM_carry")
+	owner.AnimState:Hide("ARM_normal")
+end
+
+local function needlefn(Sim)
+	local inst = commonfn(Sim)
+
+	if not TheWorld.ismastersim then
+        return inst
+    end
+
+	inst:AddComponent("inventoryitem")
+	inst.components.inventoryitem.atlasname = "images/inventoryimages/needlespear.xml"
+
+	inst.AnimState:SetBuild("cactus_spike")
+	inst.AnimState:SetBank("cactus_spike")
+	inst.AnimState:PlayAnimation("idle")
+
+	inst.components.weapon:SetDamage(TUNING.NEEDLESPEAR_DAMAGE)
+	inst.components.finiteuses:SetMaxUses(TUNING.NEEDLESPEAR_USES)
+	inst.components.finiteuses:SetUses(TUNING.NEEDLESPEAR_USES)
+
+	inst.components.inventoryitem.imagename = "needlespear"
+
+	inst.components.equippable:SetOnEquip( onequipneedle )
+
+	return inst
+end
 
 -- local function onequippegleg(inst, owner)
 -- 	owner.AnimState:OverrideSymbol("swap_object", "swap_peg_leg", "swap_object")
@@ -220,9 +226,9 @@ end
 -- 	return inst
 -- end
 
-return Prefab( "spear_obsidian", obsidianfn, obsidian_assets)
+return Prefab( "spear_obsidian", obsidianfn, obsidian_assets),
 	-- Prefab( "spear", basicfn, basic_assets),
 	   -- Prefab( "common/inventory/spear_poison", poisonfn, poison_assets),
 
-	   -- Prefab( "common/inventory/needlespear", needlefn, needle_assets),
+	   Prefab( "needlespear", needlefn, needle_assets)
 	   -- Prefab( "common/inventory/peg_leg", peglegfn, pegleg_assets)

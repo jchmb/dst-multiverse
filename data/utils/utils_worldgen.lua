@@ -104,6 +104,20 @@ function AddStandardRoom(room, ground, distributepercent, distributeprefabs, cou
 	)
 end
 
+function AddStandardEdgeRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, tags)
+	local internal_type = 1
+	AddStandardRoom(
+		room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type, tags
+	)
+end
+
+function AddStandardCentroidRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, tags)
+	local internal_type = 0
+	AddStandardRoom(
+		room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type, tags
+	)
+end
+
 function AddRoadPoisonRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type)
 	AddStandardRoom(room, ground, distributepercent, distributeprefabs, countprefabs, countstaticlayouts, prefabdata, internal_type, {"RoadPoison"})
 end

@@ -9,6 +9,7 @@ AddIngredientValues({"mintyberries"}, {fruit=1}, true, false)
 AddIngredientValues({"limpets"}, {fish=0.5}, true, false)
 AddIngredientValues({"sweet_potato"}, {veggie=1}, true, false)
 AddIngredientValues({"sap"}, {sweetener=0.5}, true, false)
+AddIngredientValues({"spotspice_ground"}, {spice=1}, true, false)
 
 --[[
 	New recipes

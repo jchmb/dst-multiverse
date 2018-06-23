@@ -2,6 +2,19 @@
 	Antidote
 --]]
 AddItemRecipe(
+	"sapbucket",
+	{
+		ModIngredient("ironnugget", 2),
+		--Ingredient("phlegm", 1),
+		--Ingredient("mucus", 1, "images/inventoryimages/mucus.xml"),
+		Ingredient("houndstooth", 1),
+	},
+	RECIPETABS.SURVIVAL,
+	TECH.SCIENCE_ONE,
+	"Collect sweet sap from saptrees"
+)
+
+AddItemRecipe(
 	"antidote",
 	{
 		ModIngredient("venom_gland", 1),

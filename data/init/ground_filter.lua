@@ -27,6 +27,7 @@ GLOBAL.terrain.filter["mushtree_tall"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.
 GLOBAL.terrain.filter["mushtree_med"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER }
 GLOBAL.terrain.filter["mushtree_small"] = {GROUND.ROAD, GROUND.WOODFLOOR, GROUND.SCALE, GROUND.CARPET, GROUND.CHECKER }
 AddStandardTerrainFilter("pond_open")
+AddStandardTerrainFilter("pond")
 AddStandardTerrainFilter("pond_open_spawner")
 AddStandardTerrainFilter("mermhouse_blue")
 AddStandardTerrainFilter("wildbeaver_house")
@@ -47,8 +48,13 @@ AddStandardTerrainFilter("dragoonden")
 AddStandardTerrainFilter("rock_obsidian")
 AddStandardTerrainFilter("rock_magma")
 AddStandardTerrainFilter("rock_magma_gold")
+AddStandardTerrainFilter("mushtree_metal")
+AddStandardTerrainFilter("pighouse_fire")
+AddStandardTerrainFilter("lava_pond")
+AddStandardTerrainFilter("elephantcactus")
 
 AddTreeTerrainFilter("jungletree")
 AddTreeTerrainFilter("palmtree")
 AddTreeTerrainFilter("meanvertree")
 AddTreeTerrainFilter("saptree")
+AddTreeTerrainFilter("volcano_shrub")

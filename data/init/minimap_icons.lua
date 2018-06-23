@@ -17,6 +17,9 @@ AddMinimapAtlas("map_icons/minimap_rock_iron.xml")
 AddMinimapAtlas("map_icons/minimap_dragoonden.xml")
 AddMinimapAtlas("map_icons/minimap_rock_magma.xml")
 AddMinimapAtlas("map_icons/minimap_obsidian_workbench.xml")
+AddMinimapAtlas("map_icons/minimap_volcano_shrub.xml")
+AddMinimapAtlas("map_icons/minimap_packim_fire.xml")
+AddMinimapAtlas("map_icons/minimap_elephant_cactus.xml")
 
 -- Icons for each portal
 AddMinimapAtlas("map_icons/minimap_portal_cute.xml")

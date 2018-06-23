@@ -51,6 +51,18 @@ AddTask("Cuteness two b", {
 	colour={r=1,g=0.6,b=1,a=1},
 })
 
+AddTask("Cuteness two c", {
+	locks={LOCKS.TIER1, LOCKS.AXE},
+	keys_given={KEYS.TIER2},
+	room_choices={
+		["CuteSapTreeForest"] = GetSizeFn(1),
+		["CuteSapTreeForestCore"] = 1,
+	},
+	room_bg=GROUND.QUAGMIRE_PARKFIELD,
+	background_room="BGCuteSapTreeForest",
+	colour={r=1,g=0.6,b=1,a=1},
+})
+
 AddTask("Cuteness three a", {
 	locks={LOCKS.TIER2, LOCKS.AXE},
 	keys_given={KEYS.TIER3},

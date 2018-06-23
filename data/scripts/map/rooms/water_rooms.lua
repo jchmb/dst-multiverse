@@ -129,6 +129,7 @@ AddRoom("WaterBeaverKingdom", {
 		},
 		countprefabs= {
 			wildbeaver_house = GetRandomFn(5, 4),
+			critterlab = 1,
 		}
 	}
 })
@@ -162,74 +163,6 @@ AddStandardRoom(
 	},
 	{
 		ox = GetRandomFn(4, 4),
-	}
-)
-
-AddStandardRoom(
-	"BGWaterJungle",
-	GROUND.JUNGLE,
-	0.5,
-	{
-		jungletree = 0.2,
-		grass = 0.1,
-		sapling = 0.1,
-		twiggytree = 0.1,
-		blue_mushroom = 0.03,
-		green_mushroom = 0.03,
-		brown_mushroom = 0.1,
-		cave_banana_tree = 0.03,
-		bambootree = 0.15,
-	}
-)
-
-AddStandardRoom(
-	"WaterJungle",
-	GROUND.JUNGLE,
-	0.3,
-	{
-		jungletree = 0.3,
-		grass = 0.1,
-		sapling = 0.1,
-		twiggytree = 0.1,
-		snake_hole = 0.05,
-		brown_mushroom = 0.1,
-		cave_banana_tree = 0.07,
-		flint = 0.05,
-		bambootree = 0.15,
-		wildbore_house = 0.05,
-	},
-	{
-		lureplant = 1,
-	}
-)
-
-AddStandardRoom(
-	"WaterMonkeyJungle",
-	GROUND.JUNGLE,
-	0.2,
-	{
-		jungletree = 0.3,
-		cave_banana_tree = 0.07,
-		fireflies = 0.8,
-		ground_twigs = 0.1,
-		grass = 0.2,
-	},
-	{
-		monkeybarrel = GetRandomFn(2, 3),
-	}
-)
-
-AddStandardRoom(
-	"WaterSpiderJungle",
-	GROUND.JUNGLE,
-	0.2,
-	{
-		jungletree = 0.3,
-		cave_banana_tree = 0.03,
-	},
-	{
-		spiderden_poisonous = GetRandomFn(4, 3),
-		flower_evil = GetRandomFn(3, 3),
 	}
 )
 
@@ -575,16 +508,13 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeeClearing",
-	-- GROUND.GRASS_BLUE, TMP
-	GROUND.OCEAN_SHALLOW,
+	GROUND.GRASS_BLUE,
+	-- GROUND.OCEAN_SHALLOW,
 	0.1,
 	{
 		fireflies=0.01,
 		flower=0.7,
 		beehive=0.05,
-	},
-	{
-		rock_iron = 1,
 	}
 )
 

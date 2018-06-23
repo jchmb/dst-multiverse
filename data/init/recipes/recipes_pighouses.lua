@@ -71,6 +71,23 @@ pighouseCyborgRecipe.atlas = GLOBAL.resolvefilepath("images/inventoryimages/pigh
 STRINGS.RECIPE_DESC.PIGHOUSE_CYBORG = "Houses one clockworkpig"
 
 --[[
+	Fire Pighouse Recipe
+--]]
+local pighouseFireRecipe = Recipe(
+	"pighouse_fire",
+	{
+		Ingredient("boards", 4),
+		Ingredient("charcoal", 7),
+		Ingredient("pigskin", 3),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST,
+	"pighouse_fire_placer"
+)
+pighouseFireRecipe.atlas = GLOBAL.resolvefilepath("images/inventoryimages/pighouse_gray.xml")
+STRINGS.RECIPE_DESC.PIGHOUSE_FIRE = "Houses one firepig"
+
+--[[
 	These recipes are not supposed to be used... yet.
 --]]
 

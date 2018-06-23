@@ -261,6 +261,7 @@ AddRoom("SnowyPigKingdom", {
 		},
 		countprefabs= {
 			pighouse_blue = function () return 5 + math.random(4) end,
+			critterlab = 1,
 		}
 	}
 })

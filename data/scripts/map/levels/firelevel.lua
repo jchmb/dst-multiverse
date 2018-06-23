@@ -1,7 +1,7 @@
 AddLevelFixed(LEVELTYPE.SURVIVAL, {
 	id = "FIREPRESET",
-	name="Fire World",
-	desc="A world with lots of fire",
+	name="Volcanoland",
+	desc="You should probably bring shorts",
 	location = "forest_snow",
 	version = 2,
 	overrides={

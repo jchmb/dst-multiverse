@@ -200,7 +200,7 @@ AddStandardRoom(
 		flint = 0.01,
 		rock_iron = 0.001,
 		flower_cave = .01,
-		evergreen_sparse = 3,
+		mushtree_metal = 0.1,
 	}
 )
 
@@ -214,7 +214,7 @@ AddStandardRoom(
 		flower_cave = .01,
 		flower_cave_double = .01,
 		flower_cave_triple = .01,
-		evergreen_sparse = 3,
+		mushtree_metal = 1,
 	}
 )
 
