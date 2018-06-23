@@ -150,7 +150,7 @@ AddRoom("ChezzLand", {
             		ruins_rubble_vase = 0.01,
 			rook = 0.01,
 			bishop = 0.01,
-			rock_iron = 0.01,
+			rock_iron = 0.02,
 		}
 	}
 })
@@ -175,7 +175,7 @@ AddRoom("ChezzLand2", {
 
 AddRoom("ChezzRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.BRICK,
+	value = GROUND.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countprefabs = {
@@ -185,6 +185,7 @@ AddRoom("ChezzRocks", {
 		distributeprefabs = {
 			rock1 = 0.1,
 			rock2 = 0.05,
+			rock_iron = 0.05,
 			flint = 0.05,
 			rocks = 0.05,
 			rock_ice = 0.1,
@@ -198,7 +199,7 @@ AddStandardRoom(
 	0.1,
 	{
 		flint = 0.01,
-		rock_iron = 0.001,
+		rock_iron = 0.01,
 		flower_cave = .01,
 		mushtree_metal = 0.1,
 	}
@@ -209,7 +210,7 @@ AddStandardRoom(
 	GROUND.METAL,
 	0.15,
 	{
-		rock_iron = 0.02,
+		rock_iron = 0.05,
 		pighouse_cyborg = 0.05,
 		flower_cave = .01,
 		flower_cave_double = .01,
@@ -220,7 +221,7 @@ AddStandardRoom(
 
 AddRoom("BGChezzDeciduous", {
     colour={r=.1,g=.8,b=.1,a=.50},
-    value = GROUND.BRICK,
+    value = GROUND.METAL,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = .2,
@@ -247,7 +248,7 @@ AddRoom("BGChezzDeciduous", {
 
 AddRoom("ChezzMagicalDeciduous", {
     colour={r=0,g=.9,b=0,a=.50},
-    value = GROUND.BRICK,
+    value = GROUND.METAL,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         countstaticlayouts={
@@ -273,7 +274,7 @@ AddRoom("ChezzMagicalDeciduous", {
 
 AddRoom("ChezzDeepDeciduous", {
     colour={r=0,g=.9,b=0,a=.50},
-    value = GROUND.BRICK,
+    value = GROUND.METAL,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         countprefabs = {
@@ -291,7 +292,7 @@ AddRoom("ChezzDeepDeciduous", {
 
 AddRoom("ChezzPigKingdom", {
     colour={r=0.8,g=.8,b=.1,a=.50},
-    value = GROUND.BRICK,
+    value = GROUND.METAL,
     tags = {"Town"},
     required_prefabs = {"pigking_cyborg"},
     contents =  {

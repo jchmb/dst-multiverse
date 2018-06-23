@@ -31,7 +31,7 @@ local function fn()
     end
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitems.imagename = "quagmire_syrup"
+    inst.components.inventoryitem.imagename = "quagmire_syrup"
 
     inst:AddComponent("stackable")
 

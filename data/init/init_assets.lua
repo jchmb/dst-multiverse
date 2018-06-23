@@ -327,6 +327,8 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_portal_snowy.xml"),
 	Asset("IMAGE", "map_icons/minimap_portal_water.tex"),
 	Asset("ATLAS", "map_icons/minimap_portal_water.xml"),
+	Asset("IMAGE", "map_icons/minimap_portal_fire.tex"),
+	Asset("ATLAS", "map_icons/minimap_portal_fire.xml"),
 
 	-- UI
 	Asset("ANIM", "anim/ui_thatchpack_1x4.zip"),

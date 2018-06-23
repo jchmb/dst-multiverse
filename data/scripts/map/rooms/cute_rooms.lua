@@ -327,9 +327,8 @@ AddRoom("CuteRocks", {
 		},
 		distributepercent = 0.15,
 		distributeprefabs = {
-			rock1 = 0.7,
-			rock2 = 0.7,
-			rock_iron = 0.1,
+			rock1 = 0.8,
+			rock2 = 0.8,
 			rocks = 0.7,
 			rock_ice = 0.5,
 			flint = 0.7,
@@ -352,7 +351,6 @@ AddRoom("CuteRocks2", {
 		distributeprefabs = {
 			rock1 = 1,
 			rock2 = 1,
-			rock_iron = 0.2,
 			rocks = 1,
 			flint = 0.7,
 			grassgekko = 0.2,

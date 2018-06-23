@@ -26,7 +26,7 @@ local function itemfn()
         -- if inst.components.floatable.onwater then
         --     inst.pumptask = inst:DoTaskInTime(inst.AnimState:GetTotalTime("idle_water"), inst.pumpfn)
         -- else
-            inst.pumptask = inst:DoTaskInTime(inst.AnimState:GetTotalTime("idle"), inst.pumpfn)
+            -- inst.pumptask = inst:DoTaskInTime(inst.AnimState:GetTotalTime("idle"), inst.pumpfn)
         -- end
     end
 

@@ -7,7 +7,7 @@ local function OnCreate(inst, scenariorunner)
 	{
 		{
 			item = "sapbucket",
-			count = 3,
+			count = 5,
 		},
 		{
 			item = "log",

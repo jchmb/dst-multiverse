@@ -7,7 +7,6 @@ local chezz_tasks = {
 			"Chezzness three c",
 			"Chezzness four",
 			"Kill the spiders",
-			"Killer bees!",
 		}
 
 AddTaskSetFixed("chezz", {

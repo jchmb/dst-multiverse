@@ -26,6 +26,10 @@ local function FreezeAllPlayers(freeze)
     end
 end
 
+local function c_player(name)
+    return FuzzyMatchPlayer(name)
+end
+
 local function c_revealmap()
     local player = GLOBAL.ConsoleCommandPlayer()
     for x=-1600,1600,35 do
@@ -131,3 +135,4 @@ GLOBAL.c_unfreeze = c_unfreeze
 GLOBAL.c_freezeall = c_freezeall
 GLOBAL.c_unfreezeall = c_unfreezeall
 GLOBAL.c_drop = c_drop
+GLOBAL.c_player = c_player
