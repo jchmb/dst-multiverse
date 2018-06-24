@@ -63,11 +63,26 @@ AddStructureRecipe(
 	"palmleaf_hut",
 	{
 		ModIngredient("palmleaf", 4),
-		-- 4 Bamboo... TODO
-		Ingredient("twigs", 4),
+		Ingredient("bamboo", 4),
 		Ingredient("rope", 3),
 	},
 	RECIPETABS.TOWN,
 	TECH.SCIENCE_TWO,
 	"Escape the rain. Mostly.z"
+)
+
+--[[
+	Salt Rack
+--]]
+AddItemRecipe(
+	"salt_rack_item",
+	{
+		Ingredient("boards", 3),
+		Ingredient("twigs", 3),
+		Ingredient("rope", 1),
+	},
+	RECIPETABS.SURVIVAL,
+	TECH.SCIENCE_ONE,
+	"Extract salt from salt ponds",
+	"images/inventoryimages.xml"
 )

@@ -26,6 +26,7 @@ AddTask("Fire two a", {
 	keys_given={KEYS.TIER2},
 	room_choices={
 		["FireDesert"] = 2,
+		["FireDesertHounds"] = 1,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.DIRT_NOISE,
@@ -120,7 +121,8 @@ AddTask("Fire three c", {
 	locks={LOCKS.TIER3},
 	keys_given={KEYS.TIER4},
 	room_choices={
-		["FireDesert"] = 2,
+		["FireDesert"] = 1,
+		["FireDesertHounds"] = 2,
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.DIRT_NOISE,

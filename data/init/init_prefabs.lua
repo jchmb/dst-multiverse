@@ -156,6 +156,7 @@ PrefabFiles = {
 	"pigking_fire",
 	"pighouse_fire",
 	"pigman_fire",
+	"houndmound_fire",
 
 	-- Chezz mobs and spawners
 	"mushtree_metal",

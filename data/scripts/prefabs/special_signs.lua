@@ -103,7 +103,7 @@ local function fn(msg)
 end
 
 local function welcomefn()
-    local welcome_msg = "Welcome to Multi-worlds. You are currently in Bunnyland. There are many more worlds to explore which you can find through portals."
+    local welcome_msg = "Welcome to Multi-worlds. You are currently in Bunnyland. There are many more worlds to explore."
     local inst = fn()
 
     if not TheWorld.ismastersim then

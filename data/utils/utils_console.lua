@@ -57,6 +57,7 @@ local function c_ext()
 end
 
 local function c_travel(worldName)
+    local playerobj = GLOBAL.ConsoleCommandPlayer()
     local worldId = nil
     for k,v in pairs(GetModConfigData("WorldNames")) do
         if v == worldName then
@@ -65,7 +66,7 @@ local function c_travel(worldName)
     end
 
     if worldId then
-        local data = {worldid = worldId, portalid = 1}
+        local data = {player = playerobj, worldid = worldId, portalid = 1}
         GLOBAL.TheWorld:PushEvent("ms_playerdespawnandmigrate", data)
     end
 end

@@ -200,7 +200,7 @@ AddStandardRoom(
 		grassgekko = 0.4,
 		houndbone = 0.2,
 		cactus = 0.2,
-		tumbleweedspawner = .05,
+		tumbleweedspawner = .01,
 	}
 )
 
@@ -217,8 +217,24 @@ AddStandardCentroidRoom(
 		grassgekko = 0.6,
 		cactus = .7,
 		houndbone = .6,
-		tumbleweedspawner = .1,
+		tumbleweedspawner = .05,
 		basalt = 0.02,
+	}
+)
+
+AddStandardCentroidRoom(
+	"FireDesertHounds",
+	GROUND.DIRT_NOISE,
+	0.08,
+	{
+		rock_flintless = .8,
+		--rock_ice = .5,
+		grass = .5,
+		cactus = .7,
+		houndbone = .8,
+	},
+	{
+		houndmound_fire = 3,
 	}
 )
 
@@ -280,14 +296,17 @@ AddRoom("FireForest3", {
 	value = GROUND.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		distributepercent = 0.6,
+		distributepercent = 0.5,
 		distributeprefabs = {
-			spiderden = 0.05,
+			spiderden = 0.01,
 			ground_twigs = 0.1,
 			sapling = 0.1,
-			red_mushroom = 0.25,
-			volcano_shrub = 0.1,
+			twiggytree = 0.1,
+			red_mushroom = 0.03,
+			volcano_shrub = 0.2,
 			molehill = 0.05,
+			rock2 = 0.01,
+			rocks = 0.01,
 		}
 	}
 })

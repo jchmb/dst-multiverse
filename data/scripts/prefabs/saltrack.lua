@@ -1,19 +1,20 @@
 local assets =
 {
     Asset("ANIM", "anim/quagmire_salt_rack.zip"),
+    Asset("ANIM", "anim/quagmire_pot_hanger.zip"),
 }
 
 local prefabs =
 {
-    "quagmire_salt_rack_item",
-    "quagmire_saltrock",
+    "salt_rack_item",
+    "saltrock",
     "collapse_small",
     "splash",
 }
 
 local prefabs_item =
 {
-    "quagmire_salt_rack",
+    "salt_rack",
 }
 
 local function OnHarvest(inst, picker, produce)
@@ -75,7 +76,7 @@ local function itemfn()
 
     inst.AnimState:SetBank("quagmire_pot_hanger")
     inst.AnimState:SetBuild("quagmire_pot_hanger")
-    inst.AnimState:PlayAnimation("item")
+    inst.AnimState:PlayAnimation("item", true)
 
     inst.entity:SetPristine()
 
