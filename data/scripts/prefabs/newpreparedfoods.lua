@@ -17,12 +17,23 @@ local function MakePreparedFood(data)
         inst.entity:AddNetwork()
 
         MakeInventoryPhysics(inst)
+        local anim = data.anim and data.anim or data.name
+        local animfile = "anim/" .. anim .. ".zip"
 
-        inst.AnimState:SetBuild(data.name)
-        inst.AnimState:SetBank(data.name)
-        inst.AnimState:PlayAnimation("idle", false)
+        if data.dynamic then
+            inst.AnimState:SetBank("quagmire_generic_plate")
+            inst.AnimState:SetBuild("quagmire_generic_plate")
+            inst.AnimState:PlayAnimation("idle")
+            inst.AnimState:OverrideSymbol("swap_food", anim, "swap_food")
+        else
+            inst.AnimState:SetBank(anim)
+            inst.AnimState:SetBuild(anim)
+            inst.AnimState:PlayAnimation("idle", false)
+        end
 
-        inst:AddTag("preparedfood")
+        if not data.ingredient then
+            inst:AddTag("preparedfood")
+        end
 
         inst.entity:SetPristine()
 
@@ -45,7 +56,11 @@ local function MakePreparedFood(data)
         inst.wet_prefix = data.wet_prefix
 
         inst:AddComponent("inventoryitem")
-        inst.components.inventoryitem.atlasname = "images/inventoryimages/" .. data.name .. ".xml"
+        if data.image then
+            inst.components.inventoryitem.imagename = data.image .. ".tex"
+        else
+            inst.components.inventoryitem.atlasname = "images/inventoryimages/" .. data.name .. ".xml"
+        end
 
         inst:AddComponent("stackable")
         inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
@@ -88,7 +103,32 @@ local function MakePreparedFood(data)
         return inst
     end
 
-    return Prefab(data.name, fn, assets, prefabs)
+    local anim = data.anim and data.anim or data.name
+    local my_assets = {}
+    if data.dynamic then
+        local dynamic = data.dynamic and "dynamic/" or ""
+        local animfile = "anim/" .. dynamic .. anim .. ".zip"
+        local animid = data.animid
+        my_assets = {
+            -- Asset("ANIM", animfile),
+            Asset("ANIM", "anim/quagmire_generic_plate.zip"),
+            Asset("ANIM", "anim/quagmire_generic_bowl.zip"),
+            Asset("ATLAS", "images/quagmire_food_common_inv_images.xml"),
+            Asset("IMAGE", "images/quagmire_food_common_inv_images.tex"),
+            Asset("PKGREF", "klump/images/quagmire_food_inv_images_"..anim..".tex"),
+            Asset("PKGREF", "klump/images/quagmire_food_inv_images_hires_"..anim..".tex"),
+            Asset("PKGREF", "klump/anim/dynamic/"..anim..".dyn"),
+            Asset("DYNAMIC_ATLAS", "images/quagmire_food_inv_images_"..anim..".xml"),
+            Asset("DYNAMIC_ATLAS", "images/quagmire_food_inv_images_hires_"..anim..".xml"),
+            Asset("DYNAMIC_ANIM", "anim/dynamic/"..anim..".zip"),
+        }
+    else
+        my_assets = {
+            Asset("ANIM", "anim/" .. anim .. ".zip"),
+        }
+    end
+
+    return Prefab(data.name, fn, my_assets, prefabs)
 end
 
 local prefs = {}

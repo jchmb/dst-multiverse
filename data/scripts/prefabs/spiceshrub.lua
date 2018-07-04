@@ -119,6 +119,7 @@ local function groundspice_fn()
     inst.AnimState:SetBuild("quagmire_spotspice_ground")
     inst.AnimState:PlayAnimation("idle")
 
+    inst:AddTag("spice")
     inst:AddTag("quagmire_stewable")
 
     inst.entity:SetPristine()

@@ -62,11 +62,11 @@ AddAction(
 	"SALT",
 	"Salt",
 	function(act)
-		local perishable = act.target.components.perishable
-		local stackable = act.target.components.stackable
-		local stacksize = stackable ~= nil and stackable.stacksize or 1
-	    if act.target ~= nil and perishable ~= nil then
-			perishable:ReducePercent(-1 * (1 / stacksize))
+		local saltable = act.target and act.target.components.saltable or nil
+	    if act.invobject and saltable ~= nil then
+			saltable:AddSalt()
+			act.invobject.components.stackable:Get(1):Remove()
+			return true
 		end
 	end
 )
@@ -99,7 +99,7 @@ AddComponentAction(
 	"USEITEM",
 	"salter",
 	function(inst, doer, target, actions)
-		if target:HasTag("fresh") or target:HasTag("stale") then
+		if target:HasTag("saltable") then
 		-- if target:HasTag("quagmire_saltable") then
             table.insert(actions, GLOBAL.ACTIONS.SALT)
         end

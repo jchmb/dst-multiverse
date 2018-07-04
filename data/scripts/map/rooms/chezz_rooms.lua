@@ -38,7 +38,7 @@ AddStandardRoom(
         perma_grass = 0.05,
         twigs = 0.1,
         twiggytree = 0.1,
-        evergreen = 0.1,
+        petrified_tree_metal = 0.15,
         flint = 0.05,
         ground_twigs = 0.05,
         molehill = 0.02,
@@ -57,14 +57,15 @@ AddRoom("ChezzFungusNoiseForest", {
         distributepercent = .4,
         distributeprefabs=
         {
-            red_mushroom = 0.1,
-            green_mushroom = 0.1,
-            blue_mushroom = 0.1,
+            red_mushroom = 0.01,
+            green_mushroom = 0.01,
+            blue_mushroom = 0.01,
 
             grass = 0.05,
     	    sapling = 0.1,
     	    twiggytree = 0.1,
     	    flint = 0.1,
+			petrified_tree_metal = 0.1,
         },
     }
 })
@@ -99,6 +100,7 @@ AddRoom("ChezzLichenMeadow", {
 
             worm = 0.07,
             wormlight_plant = 0.15,
+			petrified_tree_metal = 0.1,
         }
     }
 })
@@ -115,6 +117,7 @@ AddRoom("ChezzLichenLand", {
             lichen = 0.1,
             cave_fern = 0.5,
             slurper = 0.05,
+			petrified_tree_metal = 0.1,
         }
     }
 })
@@ -129,7 +132,7 @@ AddRoom("BGChezz", {
 			rock1 = 0.1,
 			flower_evil = 0.05,
 			flower_cave = 0.1,
-			knight = 0.01,
+			petrified_tree_metal = 0.05,
 		}
 	}
 })
@@ -201,6 +204,7 @@ AddStandardRoom(
 		flint = 0.01,
 		rock_iron = 0.01,
 		flower_cave = .01,
+		petrified_tree_metal = 0.05,
 		mushtree_metal = 0.1,
 	}
 )
@@ -211,11 +215,12 @@ AddStandardRoom(
 	0.15,
 	{
 		rock_iron = 0.05,
-		pighouse_cyborg = 0.05,
+		pighouse_cyborg = 0.01,
 		flower_cave = .01,
 		flower_cave_double = .01,
 		flower_cave_triple = .01,
 		mushtree_metal = 1,
+		petrified_tree_metal = 0.3,
 	}
 )
 
@@ -263,9 +268,9 @@ AddRoom("ChezzMagicalDeciduous", {
             berrybush=1,
             berrybush_juicy = 0.05,
 
-            red_mushroom = 2,
-            blue_mushroom = 2,
-            green_mushroom = 2,
+            red_mushroom = 1,
+            blue_mushroom = 1,
+            green_mushroom = 1,
 
             fireflies = 4,
         },

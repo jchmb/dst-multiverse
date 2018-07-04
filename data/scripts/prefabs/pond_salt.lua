@@ -49,6 +49,10 @@ local function fn()
         15
     )
 
+    inst:AddComponent("fishable")
+    inst.components.fishable:SetRespawnTime(TUNING.FISH_RESPAWN_TIME)
+    inst.components.fishable:AddFish("salmon")
+
     -- event_server_data("quagmire", "prefabs/quagmire_pond").master_postinit(inst)
 
     return inst

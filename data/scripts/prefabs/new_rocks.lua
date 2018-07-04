@@ -35,6 +35,13 @@ local rock_magma_gold_assets =
     Asset("MINIMAP_IMAGE", "minimap_rock_magma.tex"),
 }
 
+local petrified_tree_metal_assets =
+{
+    Asset("ANIM", "anim/petrified_tree.zip"),
+    Asset("ANIM", "anim/petrified_tree_metal.zip"),
+    Asset("MINIMAP_IMAGE", "petrified_tree.png"),
+}
+
 local prefabs =
 {
     "rocks",
@@ -82,6 +89,16 @@ SetSharedLootTable('rock_iron',
     {'flint',  0.60},
     {'ironnugget', 1.00},
     {'ironnugget', 0.50},
+    {'ironnugget', 0.50},
+})
+
+SetSharedLootTable('petrified_tree_metal',
+{
+    {'log', 1.00},
+    {'log', 0.75},
+    {'log', 0.50},
+    {'flint',  0.50},
+    {'ironnugget', 1.00},
     {'ironnugget', 0.50},
 })
 
@@ -280,9 +297,22 @@ local function rock_magma_gold_fn()
     return inst
 end
 
+local function petrified_tree_metal_fn()
+    local inst = baserock_fn("petrified_tree", "petrified_tree_metal", "full", "petrified_tree.png")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.components.lootdropper:SetChanceLootTable('petrified_tree_metal')
+
+    return inst
+end
+
 return Prefab("rock_slimey", rock_slimey_fn, rock_slimey_assets, prefabs),
     Prefab("rock_charcoal", rock_charcoal_fn, rock_charcoal_assets, prefabs),
     Prefab("rock_obsidian", rock_obsidian_fn, rock_obsidian_assets, prefabs),
     Prefab("rock_iron", rock_iron_fn, rock_iron_assets, prefabs),
     Prefab("rock_magma", rock_magma_fn, rock_magma_assets, prefabs),
-    Prefab("rock_magma_gold", rock_magma_gold_fn, rock_magma_gold_assets, prefabs)
+    Prefab("rock_magma_gold", rock_magma_gold_fn, rock_magma_gold_assets, prefabs),
+    Prefab("petrified_tree_metal", petrified_tree_metal_fn, petrified_tree_metal_assets, prefabs)

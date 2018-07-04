@@ -1,8 +1,7 @@
 local assets =
 {
     Asset("ANIM", "anim/ds_spider_basic.zip"),
-    Asset("ANIM", "anim/ds_spider_warrior.zip"),
-    Asset("ANIM", "anim/spider_tropical_build.zip"),
+    Asset("ANIM", "anim/spider_metal_build.zip"),
     Asset("SOUND", "sound/spider.fsb"),
 }
 
@@ -25,7 +24,7 @@ function GetOtherSpiders(inst)
 end
 
 local function OnGetItemFromPlayer(inst, giver, item)
-    if inst.components.eater:CanEat(item) then  
+    if inst.components.eater:CanEat(item) then
         inst.sg:GoToState("eat", true)
 
         local playedfriendsfx = false
@@ -138,7 +137,7 @@ local function OnEntitySleep(inst)
 end
 
 local function SummonFriends(inst, attacker)
-    local den = GetClosestInstWithTag("spiderden_poisonous", inst, SpringCombatMod(TUNING.SPIDER_SUMMON_WARRIORS_RADIUS))
+    local den = GetClosestInstWithTag("spiderden_metal", inst, SpringCombatMod(TUNING.SPIDER_SUMMON_WARRIORS_RADIUS))
     if den ~= nil and den.components.combat ~= nil and den.components.combat.onhitfn ~= nil then
         den.components.combat.onhitfn(den, attacker)
     end
@@ -168,7 +167,7 @@ end
 
 local function create_common(build, tag)
     local inst = CreateEntity()
-    
+
     inst.entity:AddTransform()
     inst.entity:AddAnimState()
     inst.entity:AddSoundEmitter()
@@ -204,7 +203,7 @@ local function create_common(build, tag)
 
     if not TheWorld.ismastersim then
         return inst
-    end
+    endisonous
 
     ----------
 
@@ -220,24 +219,22 @@ local function create_common(build, tag)
 
     inst:AddComponent("lootdropper")
     inst.components.lootdropper:AddRandomLoot("monstermeat", 1)
-    inst.components.lootdropper:AddRandomLoot("silk", .5)
-    inst.components.lootdropper:AddRandomLoot("venom_gland", .5)
-    inst.components.lootdropper:AddRandomHauntedLoot("venom_gland", 1)
+    inst.components.lootdropper:AddRandomLoot("ironnugget", .5)
+    inst.components.lootdropper:AddRandomLoot("gland", .5)
+    -- inst.components.lootdropper:AddRandomHauntedLoot("venom_gland", 1)
     inst.components.lootdropper.numrandomloot = 1
 
-    ---------------------        
-    MakeMediumBurnableCharacter(inst, "body")
-    MakeMediumFreezableCharacter(inst, "body")
-    inst.components.burnable.flammability = TUNING.SPIDER_FLAMMABILITY
-    ---------------------       
+    ---------------------
+    -- MakeMediumBurnableCharacter(inst, "body")
+    -- MakeMediumFreezableCharacter(inst, "body")
+    -- inst.components.burnable.flammability = TUNING.SPIDER_FLAMMABILITY
+    ---------------------
 
     inst:AddComponent("health")
     inst:AddComponent("combat")
     inst.components.combat.hiteffectsymbol = "body"
     inst.components.combat:SetKeepTargetFunction(keeptargetfn)
     inst.components.combat:SetOnHit(SummonFriends)
-
-    inst:AddComponent("poisonous")
 
     inst:AddComponent("follower")
     inst.components.follower.maxfollowtime = TUNING.TOTAL_DAY_TIME
@@ -287,8 +284,8 @@ local function create_common(build, tag)
     return inst
 end
 
-local function create_poisonous()
-    local inst = create_common("spider_tropical_build", "spider_poisonous")
+local function create_metal()
+    local inst = create_common("spider_metal", "spider_metal")
 
     if not TheWorld.ismastersim then
         return inst
@@ -309,4 +306,4 @@ local function create_poisonous()
     return inst
 end
 
-return Prefab("spider_poisonous", create_poisonous, assets, prefabs)
+return Prefab("spider_metal", create_metal, assets, prefabs)

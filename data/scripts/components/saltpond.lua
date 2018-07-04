@@ -5,9 +5,9 @@ local SaltPond = Class(function(self, inst)
     self.saltprefab = nil
     self.saltextractor = nil
     -- self.basetime = 150
-    self.basetime = 5
+    self.basetime = 60
     -- self.timeinc = 10
-    self.timeinc = 1
+    self.timeinc = 10
 end)
 
 function SaltPond:SetUp(saltprefab, numsalt)

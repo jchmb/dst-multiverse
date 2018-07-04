@@ -16,10 +16,13 @@ AddTaskSetWrapped(
 		"Snowy one",
 		"Snowy two b",
 		"Water two b",
+		"Cuteness two c",
+		"Fire three b",
 		"Slimey three a",
 		"Cuteness three b",
-		-- "Grayness four a",
 		"Snowy four b",
+		"Chezzness three c",
+		"Grayness four a",
 
 		-- There should always be a PK
 		"Speak to the king",
@@ -41,7 +44,10 @@ AddTaskSetWrapped(
 
 		"Water two a",
 		"Water three d",
-		"Water two c",
+		-- "Water two c",
+
+		"Fire three a",
+		"Fire four b",
 	},
 	6
 )
