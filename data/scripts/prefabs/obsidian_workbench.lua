@@ -1,8 +1,5 @@
 local MAXHITS = 10  -- make this an even number
 
-local TechTree = require("techtree")
-local OBSIDIAN_TWO = TechTree.Create({OBSIDIAN = 2})
-
 local function turnlightoff(inst, light)
     if light then
         light:Enable(false)
@@ -66,7 +63,7 @@ local function InitFn(Sim)
 	inst.components.prototyper.onturnon = OnTurnOn
 	inst.components.prototyper.onturnoff = OnTurnOff
 
-	inst.components.prototyper.trees = OBSIDIAN_TWO
+	inst.components.prototyper.trees = TECH.OBSIDIAN_THREE
 
 	inst.components.prototyper.onactivate = function()
         inst.AnimState:PlayAnimation("use")

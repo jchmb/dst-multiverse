@@ -14,6 +14,10 @@ function IsSlaveShard()
 	return (GLOBAL.TheNet:GetIsServer() or IsDedicated())
 end
 
+function HasGorgePort()
+	return GLOBAL.KnownModIndex:IsModEnabled("workshop-1429531613")
+end
+
 function GetCompatibleGround(tile)
 	local mode = 0
 	-- local mode = GetModConfigData("TileCompatibility")

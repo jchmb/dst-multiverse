@@ -7,7 +7,7 @@ AddItemRecipe(
 	},
 	RECIPETABS.DRESS,
 	TECH.SCIENCE_ONE,
-	"Protects from rain and lightning"
+	"Keep the rain out, and look cool doing it."
 )
 
 AddItemRecipe(
@@ -19,7 +19,7 @@ AddItemRecipe(
 	},
 	RECIPETABS.DRESS,
 	TECH.SCIENCE_TWO,
-	"Protects from rain and lightning"
+	"Definitely function over fashion."
 )
 
 AddItemRecipe(

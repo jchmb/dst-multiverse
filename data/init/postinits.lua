@@ -7,4 +7,3 @@ modimport("init/postinits/prefabs/postinit_poisonables")
 -- Components
 modimport("init/postinits/components/postinit_deployable")
 modimport("init/postinits/components/postinit_lootdropper")
-modimport("init/postinits/components/postinit_edible")

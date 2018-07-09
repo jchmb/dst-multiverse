@@ -245,9 +245,6 @@ AddStandardRoom(
 		rock_moon = 0.03,
 		sapling = 0.1,
 		twiggytree = 0.1,
-	},
-	{
-		pond_salt = 2,
 	}
 )
 

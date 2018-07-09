@@ -16,7 +16,7 @@ AddTaskSetWrapped(
 		"Snowy one",
 		"Snowy two b",
 		"Water two b",
-		"Cuteness two c",
+		-- "Cuteness two c",
 		"Fire three b",
 		"Slimey three a",
 		"Cuteness three b",

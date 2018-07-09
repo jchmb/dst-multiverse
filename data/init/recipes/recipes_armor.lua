@@ -7,7 +7,7 @@ AddItemRecipe(
 	},
 	RECIPETABS.DRESS,
 	TECH.SCIENCE_TWO,
-	"Protects from rain and lightning."
+	"Stay dry and leathery."
 )
 
 AddItemRecipe(
