@@ -3,6 +3,7 @@
 --]]
 modimport("init/init_tuning")
 modimport("lib/lua_functions")
+modimport("lib/custom_tech_tree")
 modimport("utils/utils_common")
 modimport("utils/utils_main")
 modimport("utils/utils_console")

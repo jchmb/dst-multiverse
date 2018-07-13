@@ -1,18 +1,18 @@
 --[[
 	Antidote
 --]]
-AddItemRecipe(
-	"sapbucket",
-	{
-		ModIngredient("ironnugget", 2),
-		--Ingredient("phlegm", 1),
-		--Ingredient("mucus", 1, "images/inventoryimages/mucus.xml"),
-		Ingredient("houndstooth", 1),
-	},
-	RECIPETABS.SURVIVAL,
-	TECH.SCIENCE_ONE,
-	"Collect sweet sap from saptrees"
-)
+-- AddItemRecipe(
+-- 	"sapbucket",
+-- 	{
+-- 		ModIngredient("ironnugget", 2),
+-- 		--Ingredient("phlegm", 1),
+-- 		--Ingredient("mucus", 1, "images/inventoryimages/mucus.xml"),
+-- 		Ingredient("houndstooth", 1),
+-- 	},
+-- 	RECIPETABS.SURVIVAL,
+-- 	TECH.SCIENCE_ONE,
+-- 	"Collect sweet sap from saptrees"
+-- )
 
 AddItemRecipe(
 	"antidote",
@@ -31,15 +31,15 @@ AddItemRecipe(
 --[[
 	Thatchpack
 --]]
-AddItemRecipe(
-	"thatchpack",
-	{
-		ModIngredient("palmleaf", 4),
-	},
-	RECIPETABS.SURVIVAL,
-	TECH.NONE,
-	"Carry a light load."
-)
+-- AddItemRecipe(
+-- 	"thatchpack",
+-- 	{
+-- 		ModIngredient("palmleaf", 4),
+-- 	},
+-- 	RECIPETABS.SURVIVAL,
+-- 	TECH.NONE,
+-- 	"Carry a light load."
+-- )
 
 --[[
 	Tropical Parasol
@@ -69,20 +69,4 @@ AddStructureRecipe(
 	RECIPETABS.TOWN,
 	TECH.SCIENCE_TWO,
 	"Escape the rain. Mostly.z"
-)
-
---[[
-	Salt Rack
---]]
-AddItemRecipe(
-	"salt_rack_item",
-	{
-		Ingredient("boards", 3),
-		Ingredient("twigs", 3),
-		Ingredient("rope", 1),
-	},
-	RECIPETABS.SURVIVAL,
-	TECH.SCIENCE_ONE,
-	"Extract salt from salt ponds",
-	"images/inventoryimages.xml"
 )

@@ -187,16 +187,16 @@ PrefabFiles = {
 	"new_spears",
 
 	-- Experimental
-	"saptrees",
-	"sap",
-	"sapbucket",
-	"spiceshrub",
-	"salts",
-	"saltrack",
-	"pond_salt",
-	"new_fishes",
-	"mealingstone",
-	"syrup",
+	-- "saptrees",
+	-- "sap",
+	-- "sapbucket",
+	-- "spiceshrub",
+	-- "salts",
+	-- "saltrack",
+	-- "pond_salt",
+	-- "new_fishes",
+	-- "mealingstone",
+	-- "syrup",
 
 	-- Special
 	"mimi",

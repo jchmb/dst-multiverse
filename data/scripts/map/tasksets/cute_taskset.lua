@@ -8,7 +8,7 @@ local cute_tasks = {
 			"Cuteness one",
 			"Cuteness two a",
 			"Cuteness two b",
-			"Cuteness two c",
+			-- "Cuteness two c",
 			"Cuteness three a",
 			"Cuteness three b",
 			"Cuteness three c",
@@ -16,6 +16,11 @@ local cute_tasks = {
 			"Cuteness four a",
 			"Cuteness four b",
 		}
+
+if HasGorgePort() then
+	table.insert(cute_tasks, "Cuteness two c")
+	table.insert(cute_tasks, "Cuteness two d")
+end
 
 AddTaskSetFixed("cute", {
 		name = "Bunnyland",

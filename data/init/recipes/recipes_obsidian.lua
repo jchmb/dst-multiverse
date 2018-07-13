@@ -1,5 +1,6 @@
-local TechTree = GLOBAL.require("techtree")
-local OBSIDIAN_TWO = TechTree.Create({OBSIDIAN = 2})
+local TECH = _G.TECH
+
+AddNewTechTree("OBSIDIAN", 3)
 
 AddRecipeTab(
     "OBSIDIAN",
@@ -16,10 +17,11 @@ AddItemRecipe(
 		Ingredient("gears", 1),
 	},
 	GLOBAL.CUSTOM_RECIPETABS.OBSIDIAN,
-	OBSIDIAN_TWO,
+	TECH.OBSIDIAN_THREE,
 	"Destroy gears for their iron!",
     nil,
-    5
+    5,
+    true
 )
 
 AddItemRecipe(
@@ -30,10 +32,11 @@ AddItemRecipe(
         ModIngredient("dragoonheart", 1),
 	},
 	GLOBAL.CUSTOM_RECIPETABS.OBSIDIAN,
-	OBSIDIAN_TWO,
+	TECH.OBSIDIAN_THREE,
 	"Like a regular axe, only hotter.",
     nil,
-    1
+    1,
+    true
 )
 
 AddItemRecipe(
@@ -44,10 +47,11 @@ AddItemRecipe(
         ModIngredient("dragoonheart", 1),
 	},
 	GLOBAL.CUSTOM_RECIPETABS.OBSIDIAN,
-	OBSIDIAN_TWO,
+	TECH.OBSIDIAN_THREE,
 	"How about a lil fire with your spear?",
     nil,
-    1
+    1,
+    true
 )
 
 AddItemRecipe(
@@ -58,10 +62,11 @@ AddItemRecipe(
         ModIngredient("dragoonheart", 1),
 	},
 	GLOBAL.CUSTOM_RECIPETABS.OBSIDIAN,
-	OBSIDIAN_TWO,
+	TECH.OBSIDIAN_THREE,
 	"Hot to the touch.",
     nil,
-    1
+    1,
+    true
 )
 
 AddStructureRecipe(
@@ -70,8 +75,8 @@ AddStructureRecipe(
         Ingredient("log", 3),
         ModIngredient("obsidian", 8),
     },
-    GLOBAL.CUSTOM_RECIPETABS.OBSIDIAN,
-    OBSIDIAN_TWO,
+    GLOBAL.RECIPETABS.LIGHT,
+    TECH.OBSIDIAN_THREE,
     "The fieriest of all fires!",
     "images/inventoryimages/firepit_obsidian.xml",
     "firepit_obsidian_placer"
@@ -81,12 +86,13 @@ AddItemRecipe(
 	"obsidiancoconade",
 	{
 		ModIngredient("coconade", 3),
-		--Ingredient("phlegm", 1),
-		--Ingredient("mucus", 1, "images/inventoryimages/mucus.xml"),
 		ModIngredient("obsidian", 3),
 		ModIngredient("dragoonheart", 1),
 	},
 	GLOBAL.CUSTOM_RECIPETABS.OBSIDIAN,
-	OBSIDIAN_TWO,
-	"KA-BLAMMIER!"
+	TECH.OBSIDIAN_THREE,
+	"KA-BLAMMIER!",
+    nil,
+    3,
+    true
 )

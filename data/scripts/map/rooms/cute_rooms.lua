@@ -217,53 +217,53 @@ AddStandardRoom(
 	}
 )
 
-AddStandardRoom(
-	"BGCuteSapTreeForest",
-	GROUND.QUAGMIRE_PARKFIELD,
-	0.1,
-	{
-		spotspice_shrub = 0.01,
-		sapling = 0.07,
-		grass = 0.07,
-		flower = 0.2,
-		molehill = 0.01,
-	}
-)
-
-AddStandardRoom(
-	"CuteSapTreeForest",
-	GROUND.QUAGMIRE_PARKFIELD,
-	0.25,
-	{
-		saptree_small = 0.03,
-		saptree_normal = 0.03,
-		saptree_tall = 0.03,
-		spotspice_shrub = 0.07,
-		sapling = 0.05,
-		grass = 0.05,
-		flower = 0.15,
-		rabbithole = 0.01,
-	}
-)
-
-AddStandardRoom(
-	"CuteSapTreeForestCore",
-	GROUND.QUAGMIRE_PARKFIELD,
-	0.3,
-	{
-		saptree_small = 0.05,
-		saptree_normal = 0.03,
-		saptree_tall = 0.03,
-		flower = 0.1,
-	},
-	{
-		catcoonden = 5,
-		pond = 3,
-	},
-	{
-		["BunnylandSapfarm"] = 1,
-	}
-)
+-- AddStandardRoom(
+-- 	"BGCuteSapTreeForest",
+-- 	GROUND.QUAGMIRE_PARKFIELD,
+-- 	0.1,
+-- 	{
+-- 		spotspice_shrub = 0.01,
+-- 		sapling = 0.07,
+-- 		grass = 0.07,
+-- 		flower = 0.2,
+-- 		molehill = 0.01,
+-- 	}
+-- )
+--
+-- AddStandardRoom(
+-- 	"CuteSapTreeForest",
+-- 	GROUND.QUAGMIRE_PARKFIELD,
+-- 	0.25,
+-- 	{
+-- 		saptree_small = 0.03,
+-- 		saptree_normal = 0.03,
+-- 		saptree_tall = 0.03,
+-- 		spotspice_shrub = 0.07,
+-- 		sapling = 0.05,
+-- 		grass = 0.05,
+-- 		flower = 0.15,
+-- 		rabbithole = 0.01,
+-- 	}
+-- )
+--
+-- AddStandardRoom(
+-- 	"CuteSapTreeForestCore",
+-- 	GROUND.QUAGMIRE_PARKFIELD,
+-- 	0.3,
+-- 	{
+-- 		saptree_small = 0.05,
+-- 		saptree_normal = 0.03,
+-- 		saptree_tall = 0.03,
+-- 		flower = 0.1,
+-- 	},
+-- 	{
+-- 		catcoonden = 5,
+-- 		pond = 3,
+-- 	},
+-- 	{
+-- 		["BunnylandSapfarm"] = 1,
+-- 	}
+-- )
 
 AddRoom("CuteMonkeyRoom", {
 	colour={r=.25,g=.28,b=.25,a=.50},
@@ -723,3 +723,100 @@ AddStandardRoom(
 		}
 	}
 )
+
+-- If The Gorge Cooking Port is enabled, then add some more biomes
+if HasGorgePort() then
+	AddStandardRoom(
+		"BGCuteSapTreeForest",
+		GROUND.QUAGMIRE_PARKFIELD,
+		0.23,
+		{
+			spotspice_shrub = 0.02,
+			sapling = 0.1,
+			grass = 0.1,
+			fern = 0.05,
+			molehill = 0.02,
+			turnip_planted = 0.01,
+			saptree_small = 0.05,
+		}
+	)
+
+	AddStandardRoom(
+		"CuteSapTreeForest",
+		GROUND.QUAGMIRE_PARKFIELD,
+		0.35,
+		{
+			saptree_small = 0.1,
+			saptree_normal = 0.13,
+			saptree_tall = 0.08,
+			spotspice_shrub = 0.1,
+			sapling = 0.05,
+			twiggytree = 0.05,
+			grass = 0.05,
+			fern = 0.05,
+			rabbithole = 0.02,
+			berrybush = 0.1,
+			berrybush_juicy = 0.1,
+			turnip_planted = 0.02,
+		}
+	)
+
+	AddStandardRoom(
+		"CuteSapTreeForestTraders",
+		GROUND.QUAGMIRE_PARKFIELD,
+		0.2,
+		{
+			spotspice_shrub = 0.15,
+			sapling = 0.05,
+			twiggytree = 0.05,
+			grass = 0.05,
+			fern = 0.05,
+			rabbithole = 0.02,
+			berrybush = 0.1,
+			berrybush_juicy = 0.1,
+			turnip_planted = 0.02,
+		},
+		{
+			gorge_goatmum = 1,
+		},
+		{
+			["GorgeTraderMerm"] = 1,
+		}
+	)
+
+	AddStandardRoom(
+		"CuteSapTreeForestTraders2",
+		GROUND.QUAGMIRE_PARKFIELD,
+		0.2,
+		{
+			spotspice_shrub = 0.07,
+			sapling = 0.06,
+			twiggytree = 0.06,
+			grass = 0.05,
+			fern = 0.08,
+			rabbithole = 0.04,
+			berrybush = 0.12,
+			berrybush_juicy = 0.11,
+			turnip_planted = 0.03,
+		},
+		{},
+		{
+			["GorgeTraderMerm2"] = 1,
+		}
+	)
+
+	AddStandardRoom(
+		"CuteSapTreeForestCore",
+		GROUND.QUAGMIRE_PARKFIELD,
+		0.55,
+		{
+			saptree_small = 0.2,
+			saptree_normal = 0.15,
+			saptree_tall = 0.12,
+			flower = 0.1,
+		},
+		{
+			colored_rabbithouse = 1,
+		}
+	)
+end
