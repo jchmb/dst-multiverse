@@ -82,6 +82,7 @@ local CHARS = {
 	"WEBBER",
 	"WAXWELL",
 	"WOODIE",
+	"WINONA",
 }
 
 GLOBAL.jchmb.CopyPrefabDescriptions = function(oldprefab, newprefab)

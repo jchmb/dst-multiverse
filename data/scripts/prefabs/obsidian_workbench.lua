@@ -63,7 +63,7 @@ local function InitFn(Sim)
 	inst.components.prototyper.onturnon = OnTurnOn
 	inst.components.prototyper.onturnoff = OnTurnOff
 
-	inst.components.prototyper.trees = TECH.OBSIDIAN_THREE
+	inst.components.prototyper.trees = TUNING.PROTOTYPER_TREES.OBSIDIAN_THREE
 
 	inst.components.prototyper.onactivate = function()
         inst.AnimState:PlayAnimation("use")
