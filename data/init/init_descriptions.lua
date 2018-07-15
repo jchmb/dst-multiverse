@@ -29,6 +29,29 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.GRAY_MUSHROOM = "Even the mushrooms have bee
 STRINGS.CHARACTERS.WINONA.DESCRIBE.GRAY_MUSHROOM = "It's some sorta gray mushroom."
 
 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.STATUE_SNOOK = "Some say she is one of the creators of the Multiverse..."
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.STATUE_SNOOK = "Reminds me of someone I wanna burn already..."
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.STATUE_SNOOK = "Look at her feeble arms, as fragile as her statue"
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.STATUE_SNOOK = "Powerful, insane...or just dead inside?"
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.STATUE_SNOOK = "UNKOWN FEMALE.LOOKS DANGEROUS.AVOID."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.STATUE_SNOOK = "What a powerful stance! She would make a worthy opponent."
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.STATUE_SNOOK = "Eek! Looks like a meanie."
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.STATUE_SNOOK = "Hmm? Typical case of artistic lunacy, poor girl."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.STATUE_SNOOK = "She looks kinda obnoxious, no?"
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.STATUE_SNOOK = "She stole my pose! I won't forgive that..." 
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.STATUE_SNOOK = "Now that's a dynamic woman! I like her. Who is she though?."
+
+
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEE = "Finally... A fresh cup of coffee, the best sort!"
   
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEE = "Black like charcoal. Well burnt. The aroma: smoky. Hot."
