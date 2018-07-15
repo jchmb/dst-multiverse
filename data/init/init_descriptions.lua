@@ -37,7 +37,7 @@ STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.STATUE_SNOOK = "Look at her feeble arms, as
     
 STRINGS.CHARACTERS.WENDY.DESCRIBE.STATUE_SNOOK = "Powerful, insane...or just dead inside?"
     
-STRINGS.CHARACTERS.WX78.DESCRIBE.STATUE_SNOOK = "UNKOWN FEMALE.LOOKS DANGEROUS.AVOID."
+STRINGS.CHARACTERS.WX78.DESCRIBE.STATUE_SNOOK = "UNKOWN FEMALE. LOOKS DANGEROUS. AVOID."
     
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.STATUE_SNOOK = "What a powerful stance! She would make a worthy opponent."
     
@@ -50,6 +50,52 @@ STRINGS.CHARACTERS.WOODIE.DESCRIBE.STATUE_SNOOK = "She looks kinda obnoxious, no
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.STATUE_SNOOK = "She stole my pose! I won't forgive that..." 
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.STATUE_SNOOK = "Now that's a dynamic woman! I like her. Who is she though?."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.ROCK_IRON = "It's a boulder with iron veins."
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.ROCK_IRON = "Iron rock? I don't like it...can't set it on fire."
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.ROCK_IRON = "Yet another rock as hard as me!"
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.ROCK_IRON = "It will become dust eventually, iron won't save you litlle rock."
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.ROCK_IRON = "A ROCK CONTAINING IRON. GREAT POTENTIAL FOR UPGRADE."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.ROCK_IRON = "Does this rock have iron veins? Maybe I can forge a worthy armour out if it."
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.ROCK_IRON = "I wouldn't mind mining this, iron seems useful."
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.ROCK_IRON = "Ah, an excellent example of rocks containing iron veins. Can surely be mined and used."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.ROCK_IRON = "What if I make a new axe out of the iron these rocks have?"
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.ROCK_IRON = "...and yet another rock containing go-, wait! Is that iron?" 
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.ROCK_IRON = "Well, time to mine and smelt some iron."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.IRONNUGGET = "Aha! Iron! The things you can make with that..."
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.IRONNUGGET = "Iron nugget, I can smelt in high temperature, right?"
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.IRONNUGGET = "Maybe more useful than gold, yet useless for me."
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.IRONNUGGET = "Iron, it will rust and then become dust...death touches us all."
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.IRONNUGGET = "IRON! IMPORTANT MATERIAL FOR CREATING GEARS. EXTREMELY USEFUL."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.IRONNUGGET = "Aha! Iron, excellent material for my new weapon."
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.IRONNUGGET = "Hey an iron nugget, looks kind rusty, no?"
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.IRONNUGGET = "Raw iron, ready to be washed off its dust before smelting it."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.IRONNUGGET = "Now that I think about it smelting this will be troublesome."
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.IRONNUGGET = "Eh..not the shiniest iron but it will do." 
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.IRONNUGGET = "Great quality iron, powerful even at its crudest forms."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEE = "Finally... A fresh cup of coffee, the best sort!"
