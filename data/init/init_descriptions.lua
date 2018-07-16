@@ -33,7 +33,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.STATUE_SNOOK = "Some say she is one of the c
   
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.STATUE_SNOOK = "Reminds me of someone I wanna burn already..."
     
-STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.STATUE_SNOOK = "Look at her feeble arms, as fragile as her statue"
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.STATUE_SNOOK = "Look at her feeble arms, as fragile as her statue.
     
 STRINGS.CHARACTERS.WENDY.DESCRIBE.STATUE_SNOOK = "Powerful, insane...or just dead inside?"
     
@@ -50,6 +50,29 @@ STRINGS.CHARACTERS.WOODIE.DESCRIBE.STATUE_SNOOK = "She looks kinda obnoxious, no
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.STATUE_SNOOK = "She stole my pose! I won't forgive that..." 
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.STATUE_SNOOK = "Now that's a dynamic woman! I like her. Who is she though?"
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNNYHAT = "Feels fuzzy and warm."
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.BUNNYHAT = "Ehh, I don't like it."
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.BUNNYHAT = "This hat is for tiny men!"
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.BUNNYHAT = "Do I even look good in that?"
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.BUNNYHAT = "KEEPS THE HEAD GEARS WARM AND BUNNYFULL."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.BUNNYHAT = "A hat made from my fallen foes, can't say no to that."
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.BUNNYHAT = "Haha! I'm a bunny now."
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.BUNNYHAT = "Looks ridiculous but makes an excellent camouflage against Bunnyland's denizens."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.BUNNYHAT = "Oh no...I'm not wearing this."
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BUNNYHAT = "What a humiliating hat!"
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.BUNNYHAT = "I wouldn't say cute bunny hats are my thing...but if I must."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNNEEFALO = "It's like a beefalo but cuter, has bunny ears and runs faster."
