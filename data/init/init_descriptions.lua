@@ -52,6 +52,75 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.STATUE_SNOOK = "She stole my pose! I won't f
 STRINGS.CHARACTERS.WINONA.DESCRIBE.STATUE_SNOOK = "Now that's a dynamic woman! I like her. Who is she though?"
 
 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.HOUND_SLIMEY = "I don't think I want this thing to touch me."
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.HOUND_SLIMEY = "Purify this hound with fire."
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.HOUND_SLIMEY = "Disgusting puny booger dogs."
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.HOUND_SLIMEY = "Mucus hounds, so disgusting they shall perish."
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.HOUND_SLIMEY = "I DETECT HIGH LEVEL OF THREAT AND STICKYNESS."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.HOUND_SLIMEY = "I have fought stronger hounds, those are weak and slimey!"
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.HOUND_SLIMEY = "Eww, slimey dogs, don't touch me!"
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.HOUND_SLIMEY = "Mutation at its finest, slimey to the core. I would avoid touching them."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.HOUND_SLIMEY = "Can these things get any worse?"
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.HOUND_SLIMEY = "They looks sleezy and sickly, just like their creator I assume."
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.HOUND_SLIMEY = "I bet I can beat these down into slimey plumps, they don't looks so tough."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.HOUNDMOUND_SLIMEY = "It sticks of mucus and dog poop."
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.HOUNDMOUND_SLIMEY = "Purge it! Purge it with fire now!"
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.HOUNDMOUND_SLIMEY = "The nest of the booger dogs."
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.HOUNDMOUND_SLIMEY = "What kind of disgusting creature lives in that?"
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.HOUNDMOUND_SLIMEY = "THE BASE OF THE SLIMEY HOUNDS."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.HOUNDMOUND_SLIMEY = "May Ragnarök fall upon these nests."
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.HOUNDMOUND_SLIMEY = "These is were the slimey dogs live? Thought so."
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.HOUNDMOUND_SLIMEY = "The most unhygienic animal nest I have ever seen."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.HOUNDMOUND_SLIMEY = "Aha, no I ain't touching that."
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.HOUNDMOUND_SLIMEY = "Just burn these things already."
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.HOUNDMOUND_SLIMEY = "I better break these disgusting nests down."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.MUCUS = "As disgusting as phlegm."
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.MUCUS = "Eww, I'm pretty sure it stinks if I burn it."
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.MUCUS = "More boogers."
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.MUCUS = "Just looking at it makes me feel sick."
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.MUCUS = "MAJOR MATERIAL OF THE SLIMEYLAND."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.MUCUS = "Looks like Loki's snot, ha!"
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.MUCUS = "Hehe, more boogies."
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.MUCUS = "I wonder if the slimey pigs drop that."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.MUCUS = "This is just disgusting."
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.MUCUS = "I'm not touching that with bare hands."
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.MUCUS = "I could use that as an adhesive."
+
+
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNNYHAT = "Feels fuzzy and warm."
   
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.BUNNYHAT = "Ehh, I don't like it."
