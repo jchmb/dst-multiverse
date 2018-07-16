@@ -49,7 +49,30 @@ STRINGS.CHARACTERS.WOODIE.DESCRIBE.STATUE_SNOOK = "She looks kinda obnoxious, no
     
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.STATUE_SNOOK = "She stole my pose! I won't forgive that..." 
 
-STRINGS.CHARACTERS.WINONA.DESCRIBE.STATUE_SNOOK = "Now that's a dynamic woman! I like her. Who is she though?."
+STRINGS.CHARACTERS.WINONA.DESCRIBE.STATUE_SNOOK = "Now that's a dynamic woman! I like her. Who is she though?"
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNNEEFALO = "It's like a beefalo but cuter, has bunny ears and runs faster."
+  
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.BUNNEEFALO = "Even though it's cute, I still want to burn it."
+    
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.BUNNEEFALO = "Ah, they are actually terrifying now!"
+    
+STRINGS.CHARACTERS.WENDY.DESCRIBE.BUNNEEFALO = "Being bunnyfied doesn't make you less demented."
+    
+STRINGS.CHARACTERS.WX78.DESCRIBE.BUNNEEFALO = "IT STINKS OF BUNNY FUR AND MEAT."
+    
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.BUNNEEFALO = "In the name of Freyr! These things grew ears!"
+    
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.BUNNEEFALO = "Oversized bunny beefs!"
+    
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.BUNNEEFALO = "Interesting evolution, they adapted to the land."
+    
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.BUNNEEFALO = "Ah bunneefalos, cute yet stinky"
+    
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BUNNEEFALO = "Great, now they look even more stupid." 
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.BUNNEEFALO = "Ooh big wooly guys turned into bunnies now?"
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.ROCK_IRON = "It's a boulder with iron veins."
