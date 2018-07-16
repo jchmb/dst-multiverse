@@ -114,3 +114,30 @@ AddTask("Make a pick gray", {
 		background_room="BGGray",
 		colour={r=0,g=1,b=0,a=1}
 	})
+
+if HasGorgePort() then
+	AddTask("Grayness three c", {
+		locks={LOCKS.TIER2},
+		keys_given={KEYS.TIER3},
+		room_choices={
+			["ParkStone"] = GetSizeFn(1),
+			["ParkStoneTraders"] = 1,
+			["ParkStoneCrabs"] = 1,
+		},
+		room_bg=GROUND.QUAGMIRE_PARKSTONE,
+		background_room="BGParkStone",
+		colour={r=0,g=1,b=0,a=1}
+	})
+
+	AddTask("Grayness three d", {
+		locks={LOCKS.TIER2},
+		keys_given={KEYS.TIER3},
+			room_choices={
+				["GorgeSwamp"] = GetSizeFn(3),
+				["GorgeSwampElder"] = 1,
+			},
+			room_bg=GROUND.QUAGMIRE_PEATFOREST,
+			background_room="BGGorgeSwamp",
+			colour={r=0,g=1,b=0,a=1}
+		})
+end

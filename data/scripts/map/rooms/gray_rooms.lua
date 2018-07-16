@@ -479,3 +479,118 @@ AddRoom("GrayHerdsBeefalo", {
 		}
 	}
 })
+
+if HasGorgePort() then
+	AddStandardRoom(
+		"BGParkStone",
+		GROUND.QUAGMIRE_PARKSTONE,
+		0.1,
+		{
+			rock = 0.02,
+			rock_flintless = 0.02,
+			rock2 = 0.01,
+			-- grassgekko = 0.07,
+			marsh_bush = 0.05,
+			pebblecrab = 0.01,
+			flint = 0.01,
+			rocks = 0.01,
+		}
+	)
+
+	AddStandardRoom(
+		"ParkStone",
+		GROUND.QUAGMIRE_PARKSTONE,
+		0.23,
+		{
+			rock = 0.03,
+			rock2 = 0.01,
+			rocks = 0.03,
+			rock_flintless = 0.01,
+			pond_salt = 0.06,
+			-- grass = 0.03,
+			flint = 0.02,
+			-- grassgekko = 0.25,
+			-- buzzardspawner = .02,
+			garlic_planted = 0.06,
+			marsh_bush = 0.06,
+			pebblecrab = 0.04,
+		}
+	)
+
+	AddStandardRoom(
+		"ParkStoneCrabs",
+		GROUND.QUAGMIRE_PARKSTONE,
+		0.15,
+		{
+			rock = 0.01,
+			rock2 = 0.02,
+			rock_flintless = 0.06,
+			garlic_planted = 0.02,
+			marsh_bush = 0.04,
+			pebblecrab = 0.1,
+			flint = 0.04,
+			rocks = 0.04,
+			pond_salt = 0.04,
+		}
+	)
+
+	AddStandardRoom(
+		"ParkStoneTraders",
+		GROUND.QUAGMIRE_PARKSTONE,
+		0.12,
+		{
+			rock_flintless = 0.1,
+		},
+		{
+			pond_salt = GetRandomFn(2, 1),
+		},
+		{
+			["GorgeTraderMerm2"] = 1,
+		}
+	)
+
+	AddStandardRoom(
+		"BGGorgeSwamp",
+		GROUND.QUAGMIRE_PEATFOREST,
+		0.2,
+		{
+			evergreen_sparse = 2,
+			marsh_bush = 0.07,
+			sapling = 0.03,
+			twiggytree = 0.03,
+		}
+	)
+
+	AddStandardRoom(
+		"GorgeSwamp",
+		GROUND.QUAGMIRE_PEATFOREST,
+		0.2,
+		{
+			evergreen_sparse = 1.5,
+			marsh_bush = 0.07,
+			sapling = 0.03,
+			twiggytree = 0.03,
+			gorge_swamppig_house = 0.03,
+			gorge_swamppig_house_rubble = 0.02,
+			potato_planted = 0.03,
+		}
+	)
+
+	AddStandardRoom(
+		"GorgeSwampElder",
+		GROUND.QUAGMIRE_PEATFOREST,
+		0.3,
+		{
+			evergreen_sparse = 2.5,
+			marsh_bush = 0.07,
+			sapling = 0.03,
+			twiggytree = 0.03,
+		},
+		{
+			gorge_swamppig_elder = 1,
+			gorge_swamppig_house = 5,
+			gorge_swamppig_house_rubble = 7,
+			potato_planted = 12,
+		}
+	)
+end

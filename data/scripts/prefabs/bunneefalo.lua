@@ -41,7 +41,7 @@ SetSharedLootTable( 'beefalo',
     {'carrot',          1.00},
     {'carrot',          0.50},
     {'carrot',          0.50},
-    {'bunnyhat',            0.10},
+    {'bunnyhat',            1.00},
 })
 
 local sounds =

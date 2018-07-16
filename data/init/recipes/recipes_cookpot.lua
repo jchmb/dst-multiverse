@@ -8,10 +8,8 @@ AddIngredientValues({"bittersweetberries"}, {fruit=1, monster=0.5}, true, false)
 AddIngredientValues({"mintyberries"}, {fruit=1}, true, false)
 AddIngredientValues({"limpets"}, {fish=0.5}, true, false)
 AddIngredientValues({"sweet_potato"}, {veggie=1}, true, false)
-AddIngredientValues({"spotspice_ground"}, {spice=1, veggie=1}, true, false)
-AddIngredientValues({"syrup"}, {sweetener=2}, true, false)
-AddIngredientValues({"salmon"}, {fish=1}, true, false)
 AddIngredientValues({"crabmeat"}, {fish=1,crab=1}, true, false)
+AddIngredientValues({"pufftree_nut_cooked"}, {veggie=0.5}, true, false)
 
 --[[
 	New recipes

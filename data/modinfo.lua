@@ -42,7 +42,18 @@ configuration_options =
 	{
 		name = "EnableStartingItems",
 		description = "Enable starting items",
-		default = 0,
+		default = 1,
+		options =
+		{
+			{
+				description = "No",
+				data = 0,
+			},
+			{
+				description = "Yes",
+				data = 1,
+			},
+		},
 	},
 
 	-- In case you want named migration portals, you can assign worldnames to shard IDs here.

@@ -41,7 +41,7 @@ local GIANT_BUNNYMAN_LOOT = {
 local brain = require("brains/giant_bunnymanbrain")
 
 local MAX_TARGET_SHARES = 15
-local SHARE_TARGET_DIST = 100
+local SHARE_TARGET_DIST = 30
 
 local function IsCrazyGuy(guy)
     return false
@@ -69,11 +69,11 @@ local function OnNewTarget(inst, data)
     end
     inst.components.combat:ShareTarget(
         data.target,
-        math.floor(SHARE_TARGET_DIST / 4),
+        math.floor(SHARE_TARGET_DIST / 2),
         function(dude)
             return dude:HasTag("manrabbit")
         end,
-        math.floor(MAX_TARGET_SHARES / 2)
+        math.floor(MAX_TARGET_SHARES)
     )
 end
 
@@ -212,7 +212,7 @@ local function fn()
     inst.components.sleeper.sleeptestfn = NocturnalSleepTest
     inst.components.sleeper.waketestfn = NocturnalWakeTest
 
-    inst.components.combat:SetDefaultDamage(TUNING.BUNNYMAN_DAMAGE + 15)
+    inst.components.combat:SetDefaultDamage(TUNING.BUNNYMAN_DAMAGE + 30)
     inst.components.combat:SetAttackPeriod(TUNING.BUNNYMAN_ATTACK_PERIOD)
     inst.components.combat:SetKeepTargetFunction(NormalKeepTargetFn)
     inst.components.combat:SetRetargetFunction(3, NormalRetargetFn)
@@ -220,7 +220,7 @@ local function fn()
     inst.components.locomotor.runspeed = 1
     inst.components.locomotor.walkspeed = 1
 
-    inst.components.health:SetMaxHealth(3000)
+    inst.components.health:SetMaxHealth(5000)
 
     inst.AnimState:SetMultColour(0.75, 0.35, 0.25, 1)
 

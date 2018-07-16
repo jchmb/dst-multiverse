@@ -4,9 +4,9 @@ HookInitStartingItems = function(player)
 		if count > maximum then
 			count = maximum
 		end
-   
+
 		local start_items = {}
-		
+
 		--for season starting items
 		if true then
 			--for spring
@@ -25,10 +25,10 @@ HookInitStartingItems = function(player)
 
 		--for all season
 		local start_item_configs = {
-			{name="flint", multiplier=1},
-			{name="twigs", multiplier=2},
-			{name="cutgrass", multiplier=2},
-			{name="log", multiplier=1},
+			{name="flint", multiplier=2},
+			{name="twigs", multiplier=3},
+			{name="cutgrass", multiplier=3},
+			{name="log", multiplier=2},
 		}
 
 		for k,v in pairs(start_item_configs) do
@@ -40,10 +40,10 @@ HookInitStartingItems = function(player)
 
 		for k,v in pairs(start_items) do
 			local item = GLOBAL.SpawnPrefab(v)
-			
+
 			player.components.inventory:GiveItem(item)
-		end   
-		 
+		end
+
 		if player.prev_OnNewSpawn ~= nil then
 			player:prev_OnNewSpawn()
 			player.prev_OnNewSpawn = nil

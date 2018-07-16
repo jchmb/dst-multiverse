@@ -1,4 +1,5 @@
 local TECH = _G.TECH
+local STRINGS = _G.STRINGS
 
 AddNewTechTree("OBSIDIAN", 3)
 
@@ -10,6 +11,7 @@ AddRecipeTab(
     nil,
     true
 )
+STRINGS.TABS.OBSIDIAN = "Obsidian"
 
 AddItemRecipe(
 	"ironnugget",

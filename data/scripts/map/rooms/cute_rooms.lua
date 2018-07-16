@@ -101,17 +101,13 @@ AddRoom("CuteBunnymanTown", {
 	value = GROUND.FUNGUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		countstaticlayouts = {
-			["BunnymanFarmers"] = 1,
-		},
 		distributepercent = 0.05,
 		distributeprefabs = {
 			fireflies = 0.05,
 			carrot_planted = 0.05,
 			colored_rabbithouse = 0.05,
 			flower = 0.1,
-			mushtree_medium = 0.6,
-			mushtree_small = 0.6,
+			pufftree = 2,
 			red_mushroom = 0.05,
 			green_mushroom = 0.03,
 			blue_mushroom = 0.05,
@@ -136,8 +132,7 @@ AddRoom("CuteBunnymanTown2", {
 			berrybush_juicy = 0.15,
 			colored_rabbithouse = 0.1,
 			flower = 0.1,
-			mushtree_medium = 0.4,
-			mushtree_small = 0.3,
+			pufftree = 0.8,
 			red_mushroom = 0.05,
 			green_mushroom = 0.03,
 			blue_mushroom = 0.03,
@@ -158,9 +153,7 @@ AddRoom("CuteBunnymanTown3", {
 			colored_rabbithouse = 0.1,
 			sapling = 0.1,
 			twiggytree = 0.2,
-			mushtree_medium = 2,
-			mushtree_small = 2,
-			mushtree_tall = 1,
+			pufftree = 4,
 			red_mushroom = 0.1,
 			green_mushroom = 0.1,
 			blue_mushroom = 0.1,
@@ -375,8 +368,7 @@ AddRoom("CuteFriends", {
 			flower = 0.1,
 			berrybush = .5,
 			berrybush_juicy = 0.2,
-			mushtree_tall = 0.5,
-			mushtree_small = 0.5,
+			pufftree = 1,
 			sapling = 0.075,
 			twiggytree = 0.1,
 		}
@@ -390,8 +382,7 @@ AddRoom("BGCuteDeciduous", {
 	contents =  {
 		distributepercent = .2,
 		distributeprefabs={
-			mushtree_tall=3,
-			mushtree_medium=1,
+			pufftree = 4,
 
 			colored_rabbithouse=.15,
 			catcoonden=.1,
@@ -462,9 +453,7 @@ AddRoom("CuteDeepDeciduous", {
 			sapling= 0.2,
 			carrot_planted=0.2,
 
-			mushtree_medium = 2,
-			mushtree_small = 2,
-			mushtree_tall = 2,
+			pufftree = 5,
 			catcoonden = .05,
 
 			red_mushroom = 0.15,
@@ -503,7 +492,7 @@ AddStandardRoom(
 	GROUND.FUNGUSGREEN,
 	0.1,
 	{
-		mushtree_tall = 6,
+		pufftree = 6,
 		fireflies = 1,
 		carrot_planted = 0.2,
 		rabbithole = 0.2,
@@ -528,6 +517,56 @@ AddCenterRoom(
 			return math.random(4, 6) + 3
 		end,
 		critterlab = 1,
+	}
+)
+
+AddStandardRoom(
+	"BGCutePuffForest",
+	GROUND.GRASS,
+	0.3,
+	{
+		pufftree = 3,
+		berrybush = 0.1,
+		berrybush_juicy = 0.1,
+		tomato_planted = 0.03,
+		grass = 0.05,
+		flower = 0.05,
+		sapling = 0.05,
+		twiggytree = 0.05,
+	}
+)
+
+AddStandardRoom(
+	"CutePuffForest",
+	GROUND.GRASS,
+	0.5,
+	{
+		pufftree = 4,
+		berrybush = 0.1,
+		berrybush_juicy = 0.1,
+		tomato_planted = 0.07,
+		grass = 0.05,
+		flower = 0.05,
+		sapling = 0.05,
+		twiggytree = 0.05,
+		colored_rabbithouse = 0.01,
+	}
+)
+
+AddCenterRoom(
+	"CutePuffForestTown",
+	GROUND.GRASS,
+	0.2,
+	{
+		pufftree = 0.1,
+		berrybush = 0.1,
+		berrybush_juicy = 0.1,
+		flower = 0.05,
+		colored_rabbithouse = 0.03,
+	},
+	{},
+	{
+		["BunnymanFarmers"] = GetRandomFn(2, 1),
 	}
 )
 
@@ -610,7 +649,6 @@ AddStandardRoom(
 	GROUND.SAND,
 	0.2,
 	{
-		mushtree_small = 0.05,
 		sapling = 0.05,
 		grass = 0.05,
 		carrot_planted = 0.05,
@@ -777,7 +815,7 @@ if HasGorgePort() then
 			turnip_planted = 0.02,
 		},
 		{
-			gorge_goatmum = 1,
+			gorge_altar = 1,
 		},
 		{
 			["GorgeTraderMerm"] = 1,

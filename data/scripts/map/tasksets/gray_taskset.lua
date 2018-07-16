@@ -11,6 +11,11 @@ local gray_tasks = {
 	"The hunters",
 }
 
+if HasGorgePort() then
+	table.insert(gray_tasks, "Grayness three c")
+	table.insert(gray_tasks, "Grayness three d")
+end
+
 AddTaskSetFixed("gray", {
 		name = "Grayland",
 		location = "forest_gray",

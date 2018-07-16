@@ -29,3 +29,10 @@ function GetCompatibleGround(tile)
 
 	return GLOBAL.GROUND[tile]
 end
+
+function GetGorgePortPrefab(prefab, defaultprefab)
+	if HasGorgePort() then
+		return prefab
+	end
+	return defaultprefab
+end

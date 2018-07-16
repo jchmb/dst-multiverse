@@ -1,5 +1,8 @@
 local MAXHITS = 10  -- make this an even number
 
+local TechTree = require("techtree")
+local OBSIDIAN_TWO = TechTree.Create({OBSIDIAN = 2})
+
 local function turnlightoff(inst, light)
     if light then
         light:Enable(false)

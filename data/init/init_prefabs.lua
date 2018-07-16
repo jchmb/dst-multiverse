@@ -185,6 +185,10 @@ PrefabFiles = {
 	"new_mushrooms",
 	"special_signs",
 	"new_spears",
+	"creator_statues",
+	"pufftrees",
+	"new_planted_trees",
+	"pufftree_nut",
 
 	-- Experimental
 	-- "saptrees",

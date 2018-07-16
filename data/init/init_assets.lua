@@ -242,6 +242,10 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/coconade.xml" ),
 	Asset("IMAGE", "images/inventoryimages/obsidiancoconade.tex" ),
 	Asset("ATLAS", "images/inventoryimages/obsidiancoconade.xml" ),
+	Asset("IMAGE", "images/inventoryimages/pufftree_nut.tex" ),
+	Asset("ATLAS", "images/inventoryimages/pufftree_nut.xml" ),
+	Asset("IMAGE", "images/inventoryimages/pufftree_nut_cooked.tex" ),
+	Asset("ATLAS", "images/inventoryimages/pufftree_nut_cooked.xml" ),
 
 	-- Turfs
 	Asset("IMAGE", "images/inventoryimages/turf_snowy.tex" ),
@@ -313,6 +317,8 @@ Assets = {
 	Asset("ATLAS", "map_icons/minimap_packim_fire.xml"),
 	Asset("IMAGE", "map_icons/minimap_elephant_cactus.tex"),
 	Asset("ATLAS", "map_icons/minimap_elephant_cactus.xml"),
+	Asset("IMAGE", "map_icons/minimap_pufftree.tex"),
+	Asset("ATLAS", "map_icons/minimap_pufftree.xml"),
 
 	-- Minimap icons for each portal
 	Asset("IMAGE", "map_icons/minimap_portal_cute.tex"),
@@ -335,6 +341,7 @@ Assets = {
 
 	-- Misc
 	Asset("IMAGE", "images/wave_slimey.tex"),
+	Asset("IMAGE", "images/wave_gray.tex"),
 
 	-- Sound
 	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),

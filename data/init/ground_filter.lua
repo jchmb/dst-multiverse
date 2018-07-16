@@ -58,9 +58,11 @@ AddStandardTerrainFilter("pighouse_fire")
 AddStandardTerrainFilter("lava_pond")
 AddStandardTerrainFilter("elephantcactus")
 AddStandardTerrainFilter("petrified_tree_metal")
+AddStandardTerrainFilter("tomato_planted") -- TMP
 
 AddTreeTerrainFilter("jungletree")
 AddTreeTerrainFilter("palmtree")
 AddTreeTerrainFilter("meanvertree")
 AddTreeTerrainFilter("saptree")
 AddTreeTerrainFilter("volcano_shrub")
+AddTreeTerrainFilter("pufftree")
