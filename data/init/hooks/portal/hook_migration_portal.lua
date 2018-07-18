@@ -12,7 +12,7 @@ else
 end
 
 local VALID_WORLD_NAMES = {
-	"cute", "robo", "slimey", "gray", "snowy"
+	"cute", "robo", "slimey", "gray", "snowy", "water", "fire"
 }
 
 local function IsValidMultiWorld(wn)

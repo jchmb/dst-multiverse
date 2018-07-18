@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8, Joachim, and Keeper-M"
-version = "1.10.9"
+version = "1.10.10"
 forumthread = ""
 api_version = 10
 
@@ -18,7 +18,7 @@ reign_of_giants_compatible = true
 all_clients_require_mod = true
 client_only_mod = false
 
-server_filter_tags = {"environment","worldgen"}
+server_filter_tags = {"environment", "worldgen", "creature"}
 
 configuration_options =
 {

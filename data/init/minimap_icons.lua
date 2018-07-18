@@ -25,7 +25,7 @@ AddMinimapAtlas("map_icons/minimap_pufftree.xml")
 -- Icons for each portal
 AddMinimapAtlas("map_icons/minimap_portal_cute.xml")
 AddMinimapAtlas("map_icons/minimap_portal_slimey.xml")
-AddMinimapAtlas("map_icons/minimap_portal_chezz.xml")
+AddMinimapAtlas("map_icons/minimap_portal_robo.xml")
 AddMinimapAtlas("map_icons/minimap_portal_gray.xml")
 AddMinimapAtlas("map_icons/minimap_portal_snowy.xml")
 AddMinimapAtlas("map_icons/minimap_portal_water.xml")
