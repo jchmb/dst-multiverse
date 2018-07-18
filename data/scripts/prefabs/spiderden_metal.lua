@@ -27,9 +27,9 @@ local ANIM_DATA =
 
 local LOOT_DATA =
 {
-    SMALL = { "silk", "silk" },
-    MEDIUM = { "silk", "silk", "silk", "silk" },
-    LARGE = { "silk", "silk", "silk", "silk", "silk", "silk", "spidereggsack_poisonous" },
+    SMALL = { "silk", "ironnugget" },
+    MEDIUM = { "silk", "silk", "silk", "ironnugget" },
+    LARGE = { "silk", "silk", "silk", "silk", "silk", "silk"},
 }
 
 local QUEEN_LOOT =
@@ -216,7 +216,7 @@ local function MakeSpiderDenFn(den_level)
         inst.MiniMapEntity:SetIcon("spiderden.png")
 
         inst.AnimState:SetBank("spider_cocoon")
-        inst.AnimState:SetBuild("spider_cocoon")
+        inst.AnimState:SetBuild("spider_cocoon_metal")
         inst.AnimState:PlayAnimation("cocoon_small", true)
 
         inst:AddTag("cavedweller")
