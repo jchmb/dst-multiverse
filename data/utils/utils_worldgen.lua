@@ -168,6 +168,15 @@ function AddStandardTerrainFilter(prefab)
 	}
 end
 
+function AddRoboTerrainFilter(prefab)
+	GLOBAL.terrain.filter[prefab] = {
+		GROUND.ROAD,
+		GROUND.WOODFLOOR,
+		GROUND.SCALE,
+		GROUND.CARPET,
+	}
+end
+
 function AddPlantableTerrainFilter(prefab)
 	GLOBAL.terrain.filter[prefab] = {
 		GROUND.ROAD,

@@ -83,6 +83,10 @@ end
 local function pondopenspawner()
     local inst = pondopen()
 
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
     inst:AddComponent("childspawner")
     inst.components.childspawner.childname = "crocodog_water"
     inst.components.childspawner:SetRegenPeriod(TUNING.POND_REGEN_TIME)

@@ -267,7 +267,7 @@ AddRoom("SlimeyHounds", {
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 	countprefabs = {
-		houndmound = 2,
+		houndmound_slimey = 2,
 	},
         distributepercent = .2,
         distributeprefabs=

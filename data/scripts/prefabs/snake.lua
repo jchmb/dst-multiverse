@@ -10,7 +10,7 @@ local assets=
 
 local prefabs =
 {
-	
+
 }
 
 
@@ -89,17 +89,17 @@ end
 
 local function OnDay(inst)
 	--print("OnNight", inst)
-	if inst:IsAsleep() then
+	-- if inst:IsAsleep() then
 		DoReturn(inst)
-	end
+	-- end
 end
 
 
 local function OnEntitySleep(inst)
 	--print("OnEntitySleep", inst)
-	if TheWorld.state.iscaveday then
-		DoReturn(inst)
-	end
+	-- if TheWorld.state.iscaveday then
+	-- 	DoReturn(inst)
+	-- end
 end
 
 local function SanityAura(inst, observer)
@@ -191,7 +191,7 @@ local function fn()
 	-- inst:ListenForEvent( "dusktime", function() OnNight( inst ) end, GetWorld())
 	-- inst:ListenForEvent( "nighttime", function() OnNight( inst ) end, GetWorld())
 	-- inst:ListenForEvent( "daytime", function() OnDay( inst ) end, GetWorld())
-	inst.OnEntitySleep = OnEntitySleep
+	-- inst.OnEntitySleep = OnEntitySleep
 
 	inst:ListenForEvent("attacked", OnAttacked)
 	inst:ListenForEvent("onattackother", OnAttackOther)
@@ -214,14 +214,14 @@ local function poisonfn()
 	local inst = fn()
 
 	inst.AnimState:SetBuild("snake_yellow_build")
-
-	inst:AddComponent("poisonous")
 	--inst.components.combat.poisonous = true
 
 	if not TheWorld.ismastersim then
         return inst
     end
-	
+
+	inst:AddComponent("poisonous")
+
 	inst.components.lootdropper:AddChanceLoot("venom_gland", 0.25)
 
 	MakeMediumBurnableCharacter(inst, "hound_body")

@@ -347,6 +347,12 @@ local function stumpfn()
 	anim:SetBank("cactus_volcano")
 	anim:PlayAnimation("idle_underground")
 
+	inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
 	inst:AddComponent("workable")
 	inst.components.workable:SetWorkAction(ACTIONS.DIG)
 	inst.components.workable:SetOnFinishCallback(dig_up)

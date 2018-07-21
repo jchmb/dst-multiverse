@@ -26,6 +26,11 @@ AddTaskSetWrapped(
 
 		-- There should always be a PK
 		"Speak to the king",
+		"Dig that rock",
+		"Beeeees!",
+
+		-- Vanilla
+		"For a nice walk",
 	},
 	{
 		"Snowy four a",
@@ -48,6 +53,11 @@ AddTaskSetWrapped(
 
 		"Fire three a",
 		"Fire four b",
+
+		-- Vanilla
+		"Pigs in the city",
+		"Befriend the pigs",
+		"Walrus Desolate",
 	},
 	6
 )

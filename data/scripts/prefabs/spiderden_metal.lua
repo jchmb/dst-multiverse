@@ -25,12 +25,14 @@ local ANIM_DATA =
     },
 }
 
-local LOOT_DATA =
-{
-    SMALL = { "silk", "ironnugget" },
-    MEDIUM = { "silk", "silk", "silk", "ironnugget" },
-    LARGE = { "silk", "silk", "silk", "silk", "silk", "silk"},
-}
+SetSharedLootTable("spiderden_metal", {
+        {"rocks", 1.00},
+        {"rocks", 1.00},
+        {"rocks", 1.00},
+        {"ironnugget", 0.80},
+        {"ironnugget", 0.80},
+        {"goldnugget", 0.20},
+})
 
 local QUEEN_LOOT =
 {
@@ -48,10 +50,10 @@ local QUEEN_LOOT =
 local function SetStage(inst, stage)
     if stage <= 3 and inst.components.childspawner ~= nil then -- if childspawner doesn't exist, then this den is burning down
         inst.SoundEmitter:PlaySound("dontstarve/creatures/spider/spiderLair_grow")
-        inst.components.childspawner:SetMaxChildren(math.floor(SpringCombatMod(TUNING.SPIDERDEN_SPIDERS[stage])))
+        inst.components.childspawner:SetMaxChildren(math.floor(SpringCombatMod(TUNING.SPIDERDEN_SPIDERS[stage] * 2)))
         inst.components.childspawner:SetMaxEmergencyChildren(TUNING.SPIDERDEN_EMERGENCY_WARRIORS[stage])
-        inst.components.childspawner:SetEmergencyRadius(TUNING.SPIDERDEN_EMERGENCY_RADIUS[stage])
-        inst.components.health:SetMaxHealth(TUNING.SPIDERDEN_HEALTH[stage])
+        inst.components.childspawner:SetEmergencyRadius(TUNING.SPIDERDEN_EMERGENCY_RADIUS[stage] * 1.5)
+        inst.components.health:SetMaxHealth(TUNING.SPIDERDEN_HEALTH[stage] * 2)
 
         inst.AnimState:PlayAnimation(inst.anims.init)
         inst.AnimState:PushAnimation(inst.anims.idle, true)
@@ -63,6 +65,48 @@ end
 
 local function onspawnspider(inst, spider)
     spider.sg:GoToState("taunt")
+end
+
+local function SetSmall(inst)
+    inst.anims = ANIM_DATA.SMALL
+    SetStage(inst, 1)
+    inst.components.lootdropper:SetChanceLootTable("spiderden_metal")
+
+    if inst.components.burnable ~= nil then
+        inst.components.burnable:SetFXLevel(3)
+        inst.components.burnable:SetBurnTime(20)
+    end
+
+    if inst.components.freezable ~= nil then
+        inst.components.freezable:SetShatterFXLevel(3)
+        inst.components.freezable:SetResistance(4)
+    end
+
+    -- inst.GroundCreepEntity:SetRadius(0)
+end
+
+local function OnThaw(inst)
+    --print(inst, "OnThaw")
+    inst.AnimState:PlayAnimation(inst.anims.thaw, true)
+    inst.SoundEmitter:PlaySound("dontstarve/common/freezethaw", "thawing")
+    inst.AnimState:OverrideSymbol("swap_frozen", "frozen", "frozen")
+end
+
+local function OnUnFreeze(inst)
+    --print(inst, "OnUnFreeze")
+    inst.AnimState:PlayAnimation(inst.anims.idle, true)
+    inst.SoundEmitter:KillSound("thawing")
+    inst.AnimState:ClearOverrideSymbol("swap_frozen")
+
+    StartSpawning(inst)
+
+    if inst.components.growable ~= nil then
+        inst.components.growable:Resume()
+    end
+end
+
+local function GetSmallGrowTime(inst)
+    return TUNING.SPIDERDEN_GROW_TIME[1] * (1 + math.random())
 end
 
 local function OnKilled(inst)
@@ -177,6 +221,16 @@ local function OnStageAdvance(inst)
    return true
 end
 
+local function OnUpgrade(inst)
+   inst.AnimState:PlayAnimation(inst.anims.hit)
+   inst.AnimState:PushAnimation(inst.anims.idle)
+end
+
+local growth_stages =
+{
+    { name = "small",   time = GetSmallGrowTime,    fn = SetSmall           },
+}
+
 local function CanTarget(guy)
     return not guy.components.health:IsDead()
 end
@@ -206,7 +260,7 @@ local function MakeSpiderDenFn(den_level)
 
         inst.entity:AddTransform()
         inst.entity:AddAnimState()
-        inst.entity:AddGroundCreepEntity()
+        -- inst.entity:AddGroundCreepEntity()
         inst.entity:AddSoundEmitter()
         inst.entity:AddMiniMapEntity()
         inst.entity:AddNetwork()
@@ -228,7 +282,7 @@ local function MakeSpiderDenFn(den_level)
 
         MakeSnowCoveredPristine(inst)
 
-        inst:SetPrefabName("spiderden")
+        -- inst:SetPrefabName("spiderden")
 
         inst.entity:SetPristine()
 
@@ -240,7 +294,7 @@ local function MakeSpiderDenFn(den_level)
 
         -------------------
         inst:AddComponent("health")
-        inst.components.health:SetMaxHealth(200)
+        inst.components.health:SetMaxHealth(500)
 
         -------------------
         inst:AddComponent("childspawner")
@@ -275,6 +329,17 @@ local function MakeSpiderDenFn(den_level)
         inst:AddComponent("combat")
         inst.components.combat:SetOnHit(SpawnDefenders)
         inst:ListenForEvent("death", OnKilled)
+
+        inst:AddComponent("upgradeable")
+        inst.components.upgradeable.upgradetype = UPGRADETYPES.SPIDER
+        inst.components.upgradeable.onupgradefn = OnUpgrade
+        inst.components.upgradeable.onstageadvancefn = OnStageAdvance
+
+        inst:AddComponent("growable")
+        inst.components.growable.springgrowth = true
+        inst.components.growable.stages = growth_stages
+        inst.components.growable:SetStage(den_level)
+        inst.components.growable:StartGrowing()
 
         ---------------------
 

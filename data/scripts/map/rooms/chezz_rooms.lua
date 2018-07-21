@@ -38,7 +38,8 @@ AddStandardRoom(
         perma_grass = 0.05,
         twigs = 0.1,
         twiggytree = 0.1,
-        petrified_tree_metal = 0.15,
+        -- petrified_tree_metal = 0.15,
+		evergreen = 0.3,
         flint = 0.05,
         ground_twigs = 0.05,
         molehill = 0.02,
@@ -65,7 +66,8 @@ AddRoom("ChezzFungusNoiseForest", {
     	    sapling = 0.1,
     	    twiggytree = 0.1,
     	    flint = 0.1,
-			petrified_tree_metal = 0.1,
+			-- petrified_tree_metal = 0.1,
+			evergreen = 0.2,
         },
     }
 })
@@ -82,6 +84,7 @@ AddRoom("ChezzWetWilds", {
             cave_fern = 0.1,
             pond_mos = 0.1,
             slurper = .05,
+			evergreen_sparse = 3,
         }
     }
 })
@@ -100,7 +103,9 @@ AddRoom("ChezzLichenMeadow", {
 
             worm = 0.07,
             wormlight_plant = 0.15,
-			petrified_tree_metal = 0.1,
+			-- petrified_tree_metal = 0.1,
+			evergreen = 2,
+			evergreen_sparse = 1,
         }
     }
 })
@@ -116,8 +121,14 @@ AddRoom("ChezzLichenLand", {
         {
             lichen = 0.1,
             cave_fern = 0.5,
-            slurper = 0.05,
-			petrified_tree_metal = 0.1,
+            -- slurper = 0.05,
+			-- petrified_tree_metal = 0.1,
+			pighouse_cyborg = 0.02,
+			berrybush = 0.1,
+			berrybush_juicy = 0.1,
+			carrot_planted = 0.1,
+			tomato_planted = 0.03,
+			evergreen_sparse = 0.2,
         }
     }
 })
@@ -132,7 +143,7 @@ AddRoom("BGChezz", {
 			rock1 = 0.1,
 			flower_evil = 0.05,
 			flower_cave = 0.1,
-			petrified_tree_metal = 0.05,
+			petrified_tree_metal = 0.1,
 		}
 	}
 })
@@ -142,18 +153,18 @@ AddRoom("ChezzLand", {
 	value = GROUND.CHECKER,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		distributepercent = 0.08,
+		distributepercent = 0.4,
 		distributeprefabs = {
-			flower_evil = 1,
-			chessjunk1 = .1,
-			chessjunk2 = .1,
-			chessjunk3 = .1,
+			flower_evil = 0.3,
+			chessjunk1 = .02,
+			chessjunk2 = .02,
+			chessjunk3 = .02,
 			ruins_rubble_table = 0.01,
             		ruins_rubble_chair = 0.01,
             		ruins_rubble_vase = 0.01,
-			rook = 0.01,
-			bishop = 0.01,
-			rock_iron = 0.02,
+			spiderden_metal = 0.2,
+			rock_iron = 0.03,
+			petrified_tree_metal = 1,
 		}
 	}
 })
@@ -166,12 +177,14 @@ AddRoom("ChezzLand2", {
 		countstaticlayouts={
 			["PigGuards"] = 1,
 		},
-		distributepercent = 0.3,
+		distributepercent = 0.6,
 		distributeprefabs = {
 			flower_evil = 3,
 			chessjunk1 = 0.1,
 			bishop = 0.01,
 			rock_iron = 0.01,
+			petrified_tree_metal = 2,
+			mushtree_metal = 0.5,
 		}
 	}
 })
@@ -188,7 +201,7 @@ AddRoom("ChezzRocks", {
 		distributeprefabs = {
 			rock1 = 0.1,
 			rock2 = 0.05,
-			rock_iron = 0.05,
+			rock_iron = 0.06,
 			flint = 0.05,
 			rocks = 0.05,
 			rock_ice = 0.1,
@@ -204,23 +217,23 @@ AddStandardRoom(
 		flint = 0.01,
 		rock_iron = 0.01,
 		flower_cave = .01,
-		petrified_tree_metal = 0.05,
-		mushtree_metal = 0.1,
+		-- petrified_tree_metal = 0.05,
+		mushtree_metal = 0.2,
 	}
 )
 
 AddStandardRoom(
 	"ChezzMetalField",
 	GROUND.METAL,
-	0.15,
+	0.23,
 	{
 		rock_iron = 0.05,
 		pighouse_cyborg = 0.01,
 		flower_cave = .01,
 		flower_cave_double = .01,
 		flower_cave_triple = .01,
-		mushtree_metal = 1,
-		petrified_tree_metal = 0.3,
+		mushtree_metal = 1.3,
+		-- petrified_tree_metal = 0.3,
 	}
 )
 
@@ -230,9 +243,12 @@ AddRoom("BGChezzDeciduous", {
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = .2,
+		countprefabs =
+		{
+			pighouse_cyborg = 3,
+		},
         distributeprefabs={
             deciduoustree = 3,
-            pighouse_cyborg = 0.15,
 
             rock1=0.05,
             rock2=0.05,

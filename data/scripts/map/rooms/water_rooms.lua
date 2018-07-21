@@ -43,7 +43,7 @@ AddStandardRoom(
 		grass = 0.1,
 	},
 	{
-		multiplayer_portal = 1,
+		spawnpoint_multiplayer = 1,
 	}
 )
 

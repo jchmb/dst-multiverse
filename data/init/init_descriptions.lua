@@ -7,231 +7,231 @@ modimport("init/mod_prefab_descriptions/descriptions_taro")
 	Descriptions
 --]]
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.GRAY_MUSHROOM = "It is a gray...mushroom?"
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.GRAY_MUSHROOM = "A gray mushroom, reminds me of ashes..."
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.GRAY_MUSHROOM = "Hmm, a gray mushroom? Is it any filling?"
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.GRAY_MUSHROOM = "Looks like a dead mushroom, can you see its spirit Abigail?"
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.GRAY_MUSHROOM = "LOOKS ALMOST UNLIVING, NOT A VERY EFFICIENT FUEL."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.GRAY_MUSHROOM = "An unworthy mushroom, looks like it's almost given up on fighting!"
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.GRAY_MUSHROOM = "Gloomy shroom, you need some color!"
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.GRAY_MUSHROOM = "A gray fungus, not very nutrient."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.GRAY_MUSHROOM = "Grayer than any mushroom I've seen. I wouldn't eat it."
-    
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.GRAY_MUSHROOM = "Even the mushrooms have been imbued with darkness in this land..." 
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.GRAY_MUSHROOM = "Even the mushrooms have been imbued with darkness in this land..."
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.GRAY_MUSHROOM = "It's some sorta gray mushroom."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.STATUE_SNOOK = "Some say she is one of the creators of the Multiverse..."
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.STATUE_SNOOK = "Reminds me of someone I wanna burn already..."
-    
-STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.STATUE_SNOOK = "Look at her feeble arms, as fragile as her statue.
-    
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.STATUE_SNOOK = "Look at her feeble arms, as fragile as her statue."
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.STATUE_SNOOK = "Powerful, insane...or just dead inside?"
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.STATUE_SNOOK = "UNKOWN FEMALE. LOOKS DANGEROUS. AVOID."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.STATUE_SNOOK = "What a powerful stance! She would make a worthy opponent."
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.STATUE_SNOOK = "Eek! Looks like a meanie."
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.STATUE_SNOOK = "Hmm? Typical case of artistic lunacy, poor girl."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.STATUE_SNOOK = "She looks kinda obnoxious, no?"
-    
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.STATUE_SNOOK = "She stole my pose! I won't forgive that..." 
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.STATUE_SNOOK = "She stole my pose! I won't forgive that..."
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.STATUE_SNOOK = "Now that's a dynamic woman! I like her. Who is she though?"
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.HOUND_SLIMEY = "I don't think I want this thing to touch me."
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.HOUND_SLIMEY = "Purify this hound with fire."
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.HOUND_SLIMEY = "Disgusting puny booger dogs."
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.HOUND_SLIMEY = "Mucus hounds, so disgusting they shall perish."
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.HOUND_SLIMEY = "I DETECT HIGH LEVEL OF THREAT AND STICKYNESS."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.HOUND_SLIMEY = "I have fought stronger hounds, those are weak and slimey!"
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.HOUND_SLIMEY = "Eww, slimey dogs, don't touch me!"
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.HOUND_SLIMEY = "Mutation at its finest, slimey to the core. I would avoid touching them."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.HOUND_SLIMEY = "Can these things get any worse?"
-    
+
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.HOUND_SLIMEY = "They looks sleezy and sickly, just like their creator I assume."
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.HOUND_SLIMEY = "I bet I can beat these down into slimey plumps, they don't looks so tough."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.HOUNDMOUND_SLIMEY = "It sticks of mucus and dog poop."
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.HOUNDMOUND_SLIMEY = "Purge it! Purge it with fire now!"
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.HOUNDMOUND_SLIMEY = "The nest of the booger dogs."
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.HOUNDMOUND_SLIMEY = "What kind of disgusting creature lives in that?"
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.HOUNDMOUND_SLIMEY = "THE BASE OF THE SLIMEY HOUNDS."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.HOUNDMOUND_SLIMEY = "May Ragnarök fall upon these nests."
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.HOUNDMOUND_SLIMEY = "These is were the slimey dogs live? Thought so."
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.HOUNDMOUND_SLIMEY = "The most unhygienic animal nest I have ever seen."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.HOUNDMOUND_SLIMEY = "Aha, no I ain't touching that."
-    
+
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.HOUNDMOUND_SLIMEY = "Just burn these things already."
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.HOUNDMOUND_SLIMEY = "I better break these disgusting nests down."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.MUCUS = "As disgusting as phlegm."
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.MUCUS = "Eww, I'm pretty sure it stinks if I burn it."
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.MUCUS = "More boogers."
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.MUCUS = "Just looking at it makes me feel sick."
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.MUCUS = "MAJOR MATERIAL OF THE SLIMEYLAND."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.MUCUS = "Looks like Loki's snot, ha!"
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.MUCUS = "Hehe, more boogies."
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.MUCUS = "I wonder if the slimey pigs drop that."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.MUCUS = "This is just disgusting."
-    
+
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.MUCUS = "I'm not touching that with bare hands."
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.MUCUS = "I could use that as an adhesive."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNNYHAT = "Feels fuzzy and warm."
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.BUNNYHAT = "Ehh, I don't like it."
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.BUNNYHAT = "This hat is for tiny men!"
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.BUNNYHAT = "Do I even look good in that?"
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.BUNNYHAT = "KEEPS THE HEAD GEARS WARM AND BUNNYFULL."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.BUNNYHAT = "A hat made from my fallen foes, can't say no to that."
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.BUNNYHAT = "Haha! I'm a bunny now."
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.BUNNYHAT = "Looks ridiculous but makes an excellent camouflage against Bunnyland's denizens."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.BUNNYHAT = "Oh no...I'm not wearing this."
-    
+
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BUNNYHAT = "What a humiliating hat!"
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.BUNNYHAT = "I wouldn't say cute bunny hats are my thing...but if I must."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNNEEFALO = "It's like a beefalo but cuter, has bunny ears and runs faster."
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.BUNNEEFALO = "Even though it's cute, I still want to burn it."
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.BUNNEEFALO = "Ah, they are actually terrifying now!"
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.BUNNEEFALO = "Being bunnyfied doesn't make you less demented."
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.BUNNEEFALO = "IT STINKS OF BUNNY FUR AND MEAT."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.BUNNEEFALO = "In the name of Freyr! These things grew ears!"
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.BUNNEEFALO = "Oversized bunny beefs!"
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.BUNNEEFALO = "Interesting evolution, they adapted to the land."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.BUNNEEFALO = "Ah bunneefalos, cute yet stinky"
-    
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BUNNEEFALO = "Great, now they look even more stupid." 
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.BUNNEEFALO = "Great, now they look even more stupid."
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.BUNNEEFALO = "Ooh big wooly guys turned into bunnies now?"
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.ROCK_IRON = "It's a boulder with iron veins."
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.ROCK_IRON = "Iron rock? I don't like it...can't set it on fire."
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.ROCK_IRON = "Yet another rock as hard as me!"
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.ROCK_IRON = "It will become dust eventually, iron won't save you litlle rock."
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.ROCK_IRON = "A ROCK CONTAINING IRON. GREAT POTENTIAL FOR UPGRADE."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.ROCK_IRON = "Does this rock have iron veins? Maybe I can forge a worthy armour out if it."
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.ROCK_IRON = "I wouldn't mind mining this, iron seems useful."
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.ROCK_IRON = "Ah, an excellent example of rocks containing iron veins. Can surely be mined and used."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.ROCK_IRON = "What if I make a new axe out of the iron these rocks have?"
-    
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.ROCK_IRON = "...and yet another rock containing go-, wait! Is that iron?" 
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.ROCK_IRON = "...and yet another rock containing go-, wait! Is that iron?"
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.ROCK_IRON = "Well, time to mine and smelt some iron."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.IRONNUGGET = "Aha! Iron! The things you can make with that..."
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.IRONNUGGET = "Iron nugget, I can smelt in high temperature, right?"
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.IRONNUGGET = "Maybe more useful than gold, yet useless for me."
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.IRONNUGGET = "Iron, it will rust and then become dust...death touches us all."
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.IRONNUGGET = "IRON! IMPORTANT MATERIAL FOR CREATING GEARS. EXTREMELY USEFUL."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.IRONNUGGET = "Aha! Iron, excellent material for my new weapon."
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.IRONNUGGET = "Hey an iron nugget, looks kind rusty, no?"
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.IRONNUGGET = "Raw iron, ready to be washed off its dust before smelting it."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.IRONNUGGET = "Now that I think about it smelting this will be troublesome."
-    
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.IRONNUGGET = "Eh..not the shiniest iron but it will do." 
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.IRONNUGGET = "Eh..not the shiniest iron but it will do."
 
 STRINGS.CHARACTERS.WINONA.DESCRIBE.IRONNUGGET = "Great quality iron, powerful even at its crudest forms."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEE = "Finally... A fresh cup of coffee, the best sort!"
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEE = "Black like charcoal. Well burnt. The aroma: smoky. Hot."
-    
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.COFFEE = "Coffee makes Wolfgang want go buttkicking for goodness!"
-    
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.COFFEE = "I like the hue. Like funeral attires."
-    
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.COFFEE = "THIS FUEL IS SURPRISINGLY EFFICIENT."
-    
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.COFFEE = "It's dark like the depths of Niflheim itself... and keeps the Valkyrie fighting!"
-    
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.COFFEE = "Mum would tell Dad not to drink it late."
-    
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.COFFEE = "Insomnia never bothered me anyway."
-    
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.COFFEE = "It has a woody scent. I like my coffee best this way. If only I had buttered scones too..."
-    
-STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEE = "At long last! Like back in Cisco. Not The Ritz, but will do for now." 
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEE = "At long last! Like back in Cisco. Not The Ritz, but will do for now."
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEEBUSH = "Wait... Coffeebushes? Here? Do you know you're in the incorrect biome?"
@@ -277,23 +277,23 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.DUG_COFFEEBUSH = "The measures I have to tak
 
 
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.COFFEEBEANS = "Now, the real question: how to turn those into coffee?"
-  
+
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.COFFEEBEANS = "Meet my lucky lighter and prepare to be burnt!"
-  
+
 STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.COFFEEBEANS = "Yuck. Wolfgang needs do more work."
-  
+
 STRINGS.CHARACTERS.WENDY.DESCRIBE.COFFEEBEANS = "I shall sacrifice these to sate my thirst for liquid darkness."
-  
+
 STRINGS.CHARACTERS.WX78.DESCRIBE.COFFEEBEANS = "FLESHLINGS COMPLICATE EVERYTHING."
-  
+
 STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.COFFEEBEANS = "Well-formed indehiscent drupes."
-  
+
 STRINGS.CHARACTERS.WOODIE.DESCRIBE.COFFEEBEANS = "Not ready for coffee and scones yet, Luce..."
-  
+
 STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.COFFEEBEANS = "I should scry what Freyr wishes me to do with those beans."
-  
+
 STRINGS.CHARACTERS.WEBBER.DESCRIBE.COFFEEBEANS = "I don't think Dad drank those beans like that."
-  
+
 STRINGS.CHARACTERS.WAXWELL.DESCRIBE.COFFEEBEANS = "Ha! Barista, where are you when I need you?!"
 
 

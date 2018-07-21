@@ -203,7 +203,7 @@ local function create_common(build, tag)
 
     if not TheWorld.ismastersim then
         return inst
-    endisonous
+    end
 
     ----------
 
@@ -218,11 +218,11 @@ local function create_common(build, tag)
     inst:SetStateGraph("SGspider")
 
     inst:AddComponent("lootdropper")
-    inst.components.lootdropper:AddRandomLoot("monstermeat", 1)
-    inst.components.lootdropper:AddRandomLoot("ironnugget", .5)
-    inst.components.lootdropper:AddRandomLoot("gland", .5)
+    inst.components.lootdropper:SetLoot({"ironnugget"})
+    inst.components.lootdropper:AddChanceLoot("goldnugget", 0.35)
+    inst.components.lootdropper:AddChanceLoot("gland", 0.40)
     -- inst.components.lootdropper:AddRandomHauntedLoot("venom_gland", 1)
-    inst.components.lootdropper.numrandomloot = 1
+    -- inst.components.lootdropper.numrandomloot = 1
 
     ---------------------
     -- MakeMediumBurnableCharacter(inst, "body")
@@ -242,7 +242,7 @@ local function create_common(build, tag)
     ------------------
 
     inst:AddComponent("sleeper")
-    inst.components.sleeper:SetResistance(2)
+    inst.components.sleeper:SetResistance(4)
     inst.components.sleeper:SetSleepTest(ShouldSleep)
     inst.components.sleeper:SetWakeTest(ShouldWake)
     ------------------
@@ -285,23 +285,23 @@ local function create_common(build, tag)
 end
 
 local function create_metal()
-    local inst = create_common("spider_metal", "spider_metal")
+    local inst = create_common("spider_metal_build", "spider_metal")
 
     if not TheWorld.ismastersim then
         return inst
     end
 
-    inst.components.health:SetMaxHealth(TUNING.SPIDER_WARRIOR_HEALTH)
+    inst.components.health:SetMaxHealth(175)
 
-    inst.components.combat:SetDefaultDamage(TUNING.SPIDER_WARRIOR_DAMAGE)
-    inst.components.combat:SetAttackPeriod(TUNING.SPIDER_WARRIOR_ATTACK_PERIOD + math.random() * 2)
-    inst.components.combat:SetRange(TUNING.SPIDER_WARRIOR_ATTACK_RANGE, TUNING.SPIDER_WARRIOR_HIT_RANGE)
+    inst.components.combat:SetDefaultDamage(10)
+    inst.components.combat:SetAttackPeriod(2)
+    inst.components.combat:SetRange(2.5)
     inst.components.combat:SetRetargetFunction(2, NormalRetarget)
 
-    inst.components.locomotor.walkspeed = TUNING.SPIDER_WARRIOR_WALK_SPEED
-    inst.components.locomotor.runspeed = TUNING.SPIDER_WARRIOR_RUN_SPEED
+    inst.components.locomotor.walkspeed = 2
+    inst.components.locomotor.runspeed = 4
 
-    inst.components.sanityaura.aura = -TUNING.SANITYAURA_MED
+    inst.components.sanityaura.aura = -TUNING.SANITYAURA_LARGE
 
     return inst
 end

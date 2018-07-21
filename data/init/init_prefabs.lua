@@ -160,6 +160,8 @@ PrefabFiles = {
 
 	-- Chezz mobs and spawners
 	"mushtree_metal",
+	"spiderden_metal",
+	"spider_metal",
 
 	-- Items
 	"coffee",
