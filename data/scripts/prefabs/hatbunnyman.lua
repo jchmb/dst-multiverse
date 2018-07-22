@@ -421,6 +421,14 @@ local function GetStuffLoopAction(inst)
 	end
 end
 
+local function OnTurnOn(inst)
+    inst.components.prototyper.on = true  -- prototyper doesn't set this until after this function is called!!
+end
+
+local function OnTurnOff(inst)
+    inst.components.prototyper.on = false  -- prototyper doesn't set this until after this function is called
+end
+
 local function OnSave(inst, data)
 	if inst.colorpicked ~= nil then
 		data.colorpicked = {
@@ -580,6 +588,13 @@ local function fn()
 
 	inst:ListenForEvent("attacked", OnAttacked)
 	inst:ListenForEvent("newcombattarget", OnNewTarget)
+
+	-- if HasGorgePort() then
+	-- 	inst:AddComponent("prototyper")
+	-- 	inst.components.prototyper.onturnon = OnTurnOn
+	-- 	inst.components.prototyper.onturnoff = OnTurnOff
+	-- 	inst.components.prototyper.trees = TUNING.PROTOTYPER_TREES.TRADING_BUNNYMAN_THREE
+	-- end
 
 	inst.components.sleeper:SetResistance(2)
 	inst.components.sleeper.sleeptestfn = NocturnalSleepTest

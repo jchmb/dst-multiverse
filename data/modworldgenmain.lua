@@ -38,6 +38,11 @@ if GetModConfigBoolean("UseMigrationPortals") then
 	modimport("scripts/map/levels/defaultmodifiedlevel")
 end
 
+if HasGorgePort() then
+	AddPreferredLayout("GorgeSafe", "gorge_safe")
+	AddPreferredLayout("GorgeSafe2", "gorge_safe_2")
+end
+
 modimport("scripts/map/rooms/multi_rooms")
 modimport("scripts/map/tasks/multi_tasks")
 modimport("scripts/map/tasksets/multi_taskset")

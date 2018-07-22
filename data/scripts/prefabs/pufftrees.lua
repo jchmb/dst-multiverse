@@ -189,9 +189,10 @@ local function GrowLeavesFn(inst, monster, monsterout)
         else
             inst.components.lootdropper:SetLoot(GetBuild(inst).tall_loot)
         end
-        inst.components.lootdropper:AddRandomLoot("log", 8)
-        inst.components.lootdropper:AddRandomLoot("carrot", 8)
+        inst.components.lootdropper:AddRandomLoot("log", 10)
+        inst.components.lootdropper:AddRandomLoot("carrot", 10)
         inst.components.lootdropper:AddRandomLoot("manrabbit_tail", 2)
+        inst.components.lootdropper.numrandomloot = 1
     end
 
     inst.leaf_state = inst.target_leaf_state
@@ -281,6 +282,10 @@ local function SetShort(inst)
            inst.components.workable:SetWorkLeft(TUNING.DECIDUOUS_CHOPS_SMALL)
         end
         inst.components.lootdropper:SetLoot(GetBuild(inst).short_loot)
+        inst.components.lootdropper:AddRandomLoot("log", 10)
+        inst.components.lootdropper:AddRandomLoot("carrot", 10)
+        inst.components.lootdropper:AddRandomLoot("manrabbit_tail", 2)
+        inst.components.lootdropper.numrandomloot = 1
     end
 end
 
@@ -301,6 +306,10 @@ local function SetNormal(inst)
         inst.components.workable:SetWorkLeft(TUNING.DECIDUOUS_CHOPS_NORMAL)
     end
     inst.components.lootdropper:SetLoot(GetBuild(inst).normal_loot)
+    inst.components.lootdropper:AddRandomLoot("log", 10)
+    inst.components.lootdropper:AddRandomLoot("carrot", 10)
+    inst.components.lootdropper:AddRandomLoot("manrabbit_tail", 2)
+    inst.components.lootdropper.numrandomloot = 1
 end
 
 local function GrowNormal(inst)
@@ -318,6 +327,10 @@ local function SetTall(inst)
         inst.components.workable:SetWorkLeft(TUNING.DECIDUOUS_CHOPS_TALL)
     end
     inst.components.lootdropper:SetLoot(GetBuild(inst).tall_loot)
+    inst.components.lootdropper:AddRandomLoot("log", 10)
+    inst.components.lootdropper:AddRandomLoot("carrot", 10)
+    inst.components.lootdropper:AddRandomLoot("manrabbit_tail", 2)
+    inst.components.lootdropper.numrandomloot = 1
 end
 
 local function GrowTall(inst)

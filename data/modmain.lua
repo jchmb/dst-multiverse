@@ -7,6 +7,7 @@ modimport("lib/custom_tech_tree")
 modimport("utils/utils_common")
 modimport("utils/utils_main")
 modimport("utils/utils_console")
+modimport("utils/classes/trader_manager")
 
 --[[
 	Globals
@@ -41,6 +42,7 @@ modimport("init/init_actions")
 	Recipes
 --]]
 modimport("init/init_recipes")
+modimport("init/init_traders")
 
 --[[
 	Chatter scripts

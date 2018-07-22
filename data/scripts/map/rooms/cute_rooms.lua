@@ -5,6 +5,7 @@ AddPreferredLayout("BunnymanFighters", "bunnyman_fighters")
 AddPreferredLayout("BunnymanPirates", "bunnyman_pirates")
 AddPreferredLayout("BunnymanTown", "bunnyman_town")
 AddPreferredLayout("BunnylandSapfarm", "bunnyland_sapfarm")
+AddPreferredLayout("BunnymanWheatFarm", "bunnyman_wheatfarm")
 
 AddStandardRoom(
 	"CuteClearing",
@@ -13,7 +14,7 @@ AddStandardRoom(
 	{
 		hatpighouse=0.015,
         fireflies = 1,
-        evergreen = 1.5,
+        pufftrtee = 1.5,
         grass = .15,
         sapling=.9,
 		twiggytree = 0.9,
@@ -72,7 +73,8 @@ AddRoom("CuteForest", {
 					                    carrot_planted = 0.1,
 					                    red_mushroom = .03,
 					                    green_mushroom = .02,
-										trees = {weight = 6, prefabs = {"evergreen", "evergreen_sparse"}},
+										pufftree = 4,
+										trees = {weight = 2, prefabs = {"evergreen", "evergreen_sparse"}},
 										colored_rabbithouse = 0.05,
 					                },
 					            }
@@ -174,7 +176,8 @@ AddRoom("CuteBunnymanTown4", {
 		distributeprefabs = {
 			carrot_planted = 0.05,
 			grass = 0.05,
-			evergreen = 0.05,
+			-- evergreen = 0.05,
+			pufftree = 0.05,
 		}
 	}
 })
@@ -184,8 +187,9 @@ AddStandardRoom(
 	GROUND.GRASS,
 	0.1,
 	{
-		deciduoustree = 1,
-		evergreen = 1,
+		deciduoustree = 0.25,
+		evergreen = 0.25,
+		pufftree = 0.75,
 		sweet_potato_planted = 0.01,
 		sapling = 0.05,
 		grass = 0.05,
@@ -473,7 +477,7 @@ AddStandardRoom(
 	0.6,
 	{
 		evergreen_sparse = 8,
-		evergreen = 3,
+		pufftree = 3,
 		ground_twigs = 0.2,
 		red_mushroom = 0.1,
 		green_mushroom = 0.1,
@@ -556,17 +560,21 @@ AddStandardRoom(
 AddCenterRoom(
 	"CutePuffForestTown",
 	GROUND.GRASS,
-	0.2,
+	0.24,
 	{
-		pufftree = 0.1,
-		berrybush = 0.1,
-		berrybush_juicy = 0.1,
-		flower = 0.05,
-		colored_rabbithouse = 0.03,
+		pufftree = 0.05,
+		flower = 0.02,
+		wheat_planted = 0.05,
+		red_mushroom = 0.05,
+		green_mushroom = 0.05,
+		blue_mushroom = 0.05,
 	},
-	{},
 	{
-		["BunnymanFarmers"] = GetRandomFn(2, 1),
+		colored_rabbithouse = GetRandomFn(3, 2),
+	},
+	{
+		["BunnymanFarmers"] = 1,
+		-- ["BunnymanWheatFarm"] = 1,
 	}
 )
 
@@ -819,6 +827,7 @@ if HasGorgePort() then
 		},
 		{
 			["GorgeTraderMerm"] = 1,
+			["GorgeSafe"] = 1,
 		}
 	)
 
@@ -840,6 +849,7 @@ if HasGorgePort() then
 		{},
 		{
 			["GorgeTraderMerm2"] = 1,
+			["GorgeSafe"] = 1,
 		}
 	)
 
@@ -855,6 +865,9 @@ if HasGorgePort() then
 		},
 		{
 			colored_rabbithouse = 1,
+		},
+		{
+			["GorgeSafe"] = 1,
 		}
 	)
 end

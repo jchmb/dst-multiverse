@@ -36,3 +36,5 @@ function GetGorgePortPrefab(prefab, defaultprefab)
 	end
 	return defaultprefab
 end
+
+GLOBAL.HasGorgePort = HasGorgePort

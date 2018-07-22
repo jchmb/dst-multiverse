@@ -13,11 +13,11 @@ end
 return {
 	-- Choose layout type
 							type = LAYOUT.STATIC,
-							
+
 							-- Add any arguments for the layout function
-							args = nil,							
+							args = nil,
 							-- Lay the objects in whatever pattern
-							layout = 
+							layout =
 								{
 									hatrabbithouse = {
 										{
@@ -30,22 +30,12 @@ return {
 												},
 											},
 										},
-										{
-											x = 7 * ds,
-											y = 4 * ds,
-											properties = {
-												data = {
-													startinghat = "footballhat",
-													colorfname = "colored",
-												},
-											},
-										},
 									},
 								},
-								
+
 							-- Either choose to specify the objects positions or a number of objects
 							count = nil,
-								
+
 							-- Choose a scale on which to place everything
 							scale = 1,
 }

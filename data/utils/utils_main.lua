@@ -1,3 +1,7 @@
+local AllRecipes = GLOBAL.AllRecipes
+local TraderProducts = {}
+local cooking = GLOBAL.require("cooking")
+
 GLOBAL.global("jchmb")
 GLOBAL.jchmb = {}
 
@@ -132,12 +136,51 @@ function AddLostRecipe(recipe, ingredients, tab, tech, description, atlas, place
 	return AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, placer)
 end
 
+function ModIngredient(prefab, count)
+	return Ingredient(prefab, count, "images/inventoryimages/" .. prefab .. ".xml")
+end
+
+function AddTraderItem(prefab, cost, tab, tech, description, atlas, image, numtogive)
+	local product
+	if AllRecipes[prefab] then
+		local lastid = TraderProducts[prefab] or 0
+		local newid = lastid + 1
+		TraderProducts[prefab] = newid
+		product = "prefab_" .. tostring(newid)
+	else
+		product = prefab
+	end
+	local ingredients = {}
+	if type(cost) ~= "table" then
+		local currencyitem = "coin1"
+		local ingredient
+		if currencyitem == "goldnugget" then
+			ingredient = Ingredient(currencyitem, cost)
+		else
+			ingredient = ModIngredient(currencyitem, cost)
+		end
+		ingredients =
+		{
+			ingredient,
+		}
+	else
+		for k, v in pairs(cost) do
+			local ing = ModIngredient(k, v)
+			table.insert(ingredients, ing)
+		end
+	end
+
+
+	local recipe = AddItemRecipe(product, ingredients, tab, tech, description, atlas, numtogive, true)
+	recipe.product = prefab
+	if image then
+		recipe.image = image
+	end
+	return recipe
+end
+
 function AddMultiPrefabPostInit(prefabs, fn)
 	for i,prefab in ipairs(prefabs) do
 		AddPrefabPostInit(prefab, fn)
 	end
-end
-
-function ModIngredient(prefab, count)
-	return Ingredient(prefab, count, "images/inventoryimages/" .. prefab .. ".xml")
 end

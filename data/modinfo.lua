@@ -2,12 +2,12 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8, Joachim, and Keeper-M"
-version = "1.10.10"
+version = "1.10.14"
 forumthread = ""
 api_version = 10
 
 -- This guarantees that it will be loaded after some (optional) character mods
-priority = -1
+priority = -2
 
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"

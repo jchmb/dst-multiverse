@@ -2,11 +2,6 @@ local offsetX = 0
 local offsetY = 0
 
 local wheats = {}
-for i=-0.75,0.75,0.5 do
-	for j=-0.75,0.75,0.5 do
-		table.insert(wheats, {x=i,y=j})
-	end
-end
 
 
 return {
@@ -39,7 +34,44 @@ return {
 											y = 1,
 										},
 									},
-									wheat_planted = wheats,
+									wheat_planted = {
+										{
+											x = -0.75,
+											y = -0.75,
+										},
+										{
+											x = 0,
+											y = -0.75,
+										},
+										{
+											x = 0.75,
+											y = -0.75,
+										},
+										{
+											x = -0.75,
+											y = 0,
+										},
+										{
+											x = 0,
+											y = 0,
+										},
+										{
+											x = 0.75,
+											y = 0,
+										},
+										{
+											x = -0.75,
+											y = 0.75,
+										},
+										{
+											x = 0,
+											y = 0.75,
+										},
+										{
+											x = 0.75,
+											y = 0.75,
+										},
+									},
 								},
 
 							-- Either choose to specify the objects positions or a number of objects

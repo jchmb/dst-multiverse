@@ -56,7 +56,7 @@ AddTask("Cuteness two e", {
 	keys_given={KEYS.TIER2},
 	room_choices={
 		["CutePuffForest"] = GetSizeFn(1),
-		["CutePuffForestTown"] = 1,
+		["CutePuffForestTown"] = 3,
 	},
 	room_bg=GROUND.GRASS,
 	background_room="BGCutePuffForest",

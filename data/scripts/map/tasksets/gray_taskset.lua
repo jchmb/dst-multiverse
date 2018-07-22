@@ -16,6 +16,22 @@ if HasGorgePort() then
 	table.insert(gray_tasks, "Grayness three d")
 end
 
+local set_pieces = {
+	["ResurrectionStone"] = { count = 2, tasks=gray_tasks },
+	["WormholeGrass"] = { count = 8, tasks=gray_tasks },
+	["MooseNest"] = { count = 3, tasks=gray_tasks },
+	["CaveEntrance"] = { count = 10, tasks=gray_tasks },
+	--["CaveEntrance"] = { count = 7, tasks={"Grayness one", "Grayness two", "Grayness three a", "Grayness three b", "Grayness four", "Make a pick", "Speak to the king gray"} },
+}
+
+if HasGorgePort() then
+	set_pieces["GorgeSafe2"] =
+	{
+		count = 5,
+		tasks = gray_tasks,
+	}
+end
+
 AddTaskSetFixed("gray", {
 		name = "Grayland",
 		location = "forest_gray",
@@ -24,11 +40,5 @@ AddTaskSetFixed("gray", {
 		valid_start_tasks = {
 			"Make a pick gray",
 		},
-		set_pieces = {
-			["ResurrectionStone"] = { count = 2, tasks=gray_tasks },
-			["WormholeGrass"] = { count = 8, tasks=gray_tasks },
-			["MooseNest"] = { count = 3, tasks=gray_tasks },
-			["CaveEntrance"] = { count = 10, tasks=gray_tasks },
-			--["CaveEntrance"] = { count = 7, tasks={"Grayness one", "Grayness two", "Grayness three a", "Grayness three b", "Grayness four", "Make a pick", "Speak to the king gray"} },
-		},
+		set_pieces = set_pieces,
 })

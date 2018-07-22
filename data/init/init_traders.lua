@@ -1,0 +1,5 @@
+-- if HasGorgePort() then
+--     AddNewTechTree("TRADING_BUNNYMAN", 3)
+--
+--     modimport("init/traders/trader_bunnyman")
+-- end
