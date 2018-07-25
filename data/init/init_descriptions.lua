@@ -121,6 +121,98 @@ STRINGS.CHARACTERS.WAXWELL.DESCRIBE.MUCUS = "I'm not touching that with bare han
 STRINGS.CHARACTERS.WINONA.DESCRIBE.MUCUS = "I could use that as an adhesive."
 
 
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PUFFTREE = "Its leafage is as fluffly as a bunny puff and its trump is...carrot-ish."
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.PUFFTREE = "The puffier the easier to ignite."
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PUFFTREE = "These puffy trees looks awfully cuddlish...I mean, weak!"
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.PUFFTREE = "Being fluffier won't save you little tree."
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.PUFFTREE = "TREE,CARROTS AND BUNNY ESSENCE ALL TOGETHER."
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.PUFFTREE = "Fluffier than all the trees, Freyr has blessed you."
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.PUFFTREE = "Cute trees! I wanna hug them."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.PUFFTREE = "Yet another unnecessary hybridism of Bunnyland. Fluffius Carrotus Quercus."
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.PUFFTREE = "I kind of feel bad chopping this down...oh well."
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PUFFTREE = "Those trees don't amuse me, no matter how fluffy they are."
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.PUFFTREE = "Well, their trump better taste good at least."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.PUFFTREE_NUT = "The seed of the puff trees, seems delish."
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.PUFFTREE_NUT = "This must taste good when roasted."
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.PUFFTREE_NUT = "I need more of these if I want to fill my stomach."
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.PUFFTREE_NUT = "Abigail, do you think I should plan this...or eat it?"
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.PUFFTREE_NUT = "STORAGE UNIT FOR PUFF TREE."
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.PUFFTREE_NUT = "Looks like a chubby carrot but it's actually a seed!"
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.PUFFTREE_NUT = "Aha! If I plan many of these I can make a farm of puff trees!"
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.PUFFTREE_NUT = "The seed of Fluffius Carrotus Quercus, at least it tastes good."
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.PUFFTREE_NUT = "Well, chopping the tree down was worth after all. These seeds seem good."
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.PUFFTREE_NUT = "Stupid puff tree \"babies\"."
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.PUFFTREE_NUT = "Actually those look quite tasty, should I replant or eat them?"
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SPIDER_METAL = "Metallic and yet still disgusting."
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.SPIDER_METAL = "I just need to burn you in a higher temperature, right?"
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.SPIDER_METAL = "Your metallic shell won't save you from my might!"
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.SPIDER_METAL = "You shall rust filthy spiders, along with your land."
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.SPIDER_METAL = "UPGRADED SPIDERS."
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.SPIDER_METAL = "Now that's more like it, you better last a litte longer now for our fight!"
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.SPIDER_METAL = "The metallic cousins of our family...kind of."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.SPIDER_METAL = "Peculiar, the spiders grew metallic shells in order to survive in these lands."
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.SPIDER_METAL = "I thought those things were supposed to be squishy, this is plain unfair."
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.SPIDER_METAL = "Hmm, I don't like the adaptability of these pests."
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.SPIDER_METAL = "Spiders made of metal, yet not unbending for me."
+
+
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SPIDERDEN_METAL = "The production den of the metallic pests."
+
+STRINGS.CHARACTERS.WILLOW.DESCRIBE.SPIDERDEN_METAL = "I will need a flamethrower for this."
+
+STRINGS.CHARACTERS.WOLFGANG.DESCRIBE.SPIDERDEN_METAL = "I will smash their den to pieces."
+
+STRINGS.CHARACTERS.WENDY.DESCRIBE.SPIDERDEN_METAL = "The nest of these metalic villains, let's destroy it."
+
+STRINGS.CHARACTERS.WX78.DESCRIBE.SPIDERDEN_METAL = "THE SOURCE OF THE UPGRADED SPIDER MODELS."
+
+STRINGS.CHARACTERS.WATHGRITHR.DESCRIBE.SPIDERDEN_METAL = "Metallic or not I shall destroy the source!"
+
+STRINGS.CHARACTERS.WEBBER.DESCRIBE.SPIDERDEN_METAL = "Woah, can I take a look instead? Looks shiny."
+
+STRINGS.CHARACTERS.WICKERBOTTOM.DESCRIBE.SPIDERDEN_METAL = "The hive, as sturdy as its denizens, looks well preserved."
+
+STRINGS.CHARACTERS.WOODIE.DESCRIBE.SPIDERDEN_METAL = "Oh no, can I even destroy this?"
+
+STRINGS.CHARACTERS.WAXWELL.DESCRIBE.SPIDERDEN_METAL = "Is this where the spiders upgrade their metallic shell?"
+
+STRINGS.CHARACTERS.WINONA.DESCRIBE.SPIDERDEN_METAL = "Ugh, good thing I brought my tools for that."
+
+
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNNYHAT = "Feels fuzzy and warm."
 
 STRINGS.CHARACTERS.WILLOW.DESCRIBE.BUNNYHAT = "Ehh, I don't like it."
