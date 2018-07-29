@@ -215,7 +215,7 @@ local function create_common(build, tag)
     inst.components.locomotor:SetTriggersCreep(false)
     inst.components.locomotor.pathcaps = { ignorecreep = true }
 
-    inst:SetStateGraph("SGspider")
+    inst:SetStateGraph("SGmw_spider")
 
     inst:AddComponent("lootdropper")
     inst.components.lootdropper:SetLoot({"ironnugget"})

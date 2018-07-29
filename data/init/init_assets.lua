@@ -270,6 +270,8 @@ Assets = {
 	Asset("ATLAS", "images/inventoryimages/turf_grass_brown.xml" ),
 	Asset("IMAGE", "images/inventoryimages/turf_metal.tex" ),
 	Asset("ATLAS", "images/inventoryimages/turf_metal.xml" ),
+	Asset("IMAGE", "images/inventoryimages/turf_grass_orange.tex" ),
+	Asset("ATLAS", "images/inventoryimages/turf_grass_orange.xml" ),
 
 	-- Minimap icons
 	Asset("MINIMAP_IMAGE", "teleportato"),

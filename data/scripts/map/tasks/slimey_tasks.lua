@@ -1,3 +1,16 @@
+AddTask("Make a pick slimey", {
+		locks=LOCKS.NONE,
+		keys_given={KEYS.PICKAXE,KEYS.AXE,KEYS.GRASS,KEYS.WOOD,KEYS.TIER1},
+		room_choices={
+			["SlimeyForest"] = GetSizeFn(1),
+			["SlimeyPlain"] = GetSizeFn(1),
+			["SlimeyClearing"] = 1,
+		},
+		room_bg=GROUND.GRASS,
+		background_room="BGSlimey",
+		colour={r=0,g=1,b=0,a=1}
+	})
+
 AddTask("Speak to the king slimey", {
 	locks=LOCKS.NONE,
 	keys_given={KEYS.PICKAXE, KEYS.AXE, KEYS.GRASS, KEYS.WOOD, KEYS.TIER1},
@@ -15,7 +28,7 @@ AddTask("Slimey one", {
 	locks={LOCKS.TIER1},
 	keys_given={KEYS.TIER2},
 	room_choices={
-		["Marsh"] = 2,
+		["SlimeyForest"] = 2, -- TODO
 	},
 	colour={r=.25,g=.28,b=.25,a=.50},
 	room_bg=GROUND.MARSH,

@@ -19,7 +19,7 @@ local function triggertrap(inst, scenariorunner, data)
 			local offset = FindWalkableOffset(pt, theta, radius, 12, true)
 			if offset then
 				local spawn_pt = pt + offset
-				local spawn = math.random() 0.25 and SpawnPrefab("frog_purple") or SpawnPrefab("frog")
+				local spawn = math.random() <= 0.25 and SpawnPrefab("frog_purple") or SpawnPrefab("frog")
 				if spawn then
 					spawn.Physics:Teleport(spawn_pt:Get())
 					spawn:FacePoint(pt)
@@ -35,7 +35,7 @@ local function OnCreate(inst, scenariorunner)
 end
 
 local function OnLoad(inst, scenariorunner)
-	inst.scene_triggerfn = function(inst, data)  
+	inst.scene_triggerfn = function(inst, data)
 		data.player = data.owner
 		triggertrap(inst, scenariorunner, data)
 		scenariorunner:ClearScenario()

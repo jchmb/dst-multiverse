@@ -118,7 +118,7 @@ local function OnKilled(inst)
 
     inst.SoundEmitter:KillSound("loop")
 
-    inst.SoundEmitter:PlaySound("dontstarve/creatures/spider/spiderLair_destroy")
+    inst.SoundEmitter:PlaySound("dontstarve/creatures/knight/death")
     inst.components.lootdropper:DropLoot(inst:GetPosition())
 end
 
@@ -128,7 +128,7 @@ end
 
 local function SpawnDefenders(inst, attacker)
     if not inst.components.health:IsDead() then
-        inst.SoundEmitter:PlaySound("dontstarve/creatures/spider/spiderLair_hit")
+        inst.SoundEmitter:PlaySound("dontstarve/creatures/knight/hurt")
         inst.AnimState:PlayAnimation(inst.anims.hit)
         inst.AnimState:PushAnimation(inst.anims.idle)
         if inst.components.childspawner ~= nil then

@@ -223,8 +223,8 @@ local function MakeHat(name, bankparam, prefabnameparam)
         inst:AddTag("waterproofer")
         inst:AddTag("umbrella")
 
-        -- inst.AnimState:SetBank("hat_double_umbrella")
-        -- inst.AnimState:SetBuild("hat_double_umbrella")
+        inst.AnimState:SetBank("hat_double_umbrella")
+        inst.AnimState:SetBuild("hat_double_umbrella")
         inst.AnimState:PlayAnimation("anim")
 
         inst.entity:AddSoundEmitter()

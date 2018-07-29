@@ -1,6 +1,7 @@
 local prefabs =
 {
     "koalefant_cute",
+    "carrodoy",
 }
 
 local function AddMember(inst, member)
@@ -47,7 +48,7 @@ local function OnInit(inst)
     -- Nothing yet
 end
 
-local function fn()
+local function koalefant_cute_fn()
     local inst = CreateEntity()
 
     inst.entity:AddTransform()
@@ -82,4 +83,41 @@ local function fn()
     return inst
 end
 
-return Prefab("koalefant_cute_herd", fn, nil, prefabs)
+local function carrodoy_fn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    --[[Non-networked entity]]
+
+    inst:AddTag("herd")
+    --V2C: Don't use CLASSIFIED because herds use FindEntities on "herd" tag
+    inst:AddTag("NOBLOCK")
+    inst:AddTag("NOCLICK")
+
+    inst:AddComponent("herd")
+    inst.components.herd:SetMemberTag("carrodoy")
+    inst.components.herd:SetGatherRange(30)
+    inst.components.herd:SetUpdateRange(20)
+    inst.components.herd:SetOnEmptyFn(inst.Remove)
+    --inst.components.herd:SetOnFullFn(OnFull)
+    inst.components.herd:SetAddMemberFn(AddMember)
+
+    inst:DoTaskInTime(0, OnInit)
+
+    inst:AddComponent("periodicspawner")
+    inst.components.periodicspawner:SetRandomTimes(
+        TUNING.BEEFALO_MATING_SEASON_BABYDELAY,
+        TUNING.BEEFALO_MATING_SEASON_BABYDELAY_VARIANCE
+    )
+    inst.components.periodicspawner:SetPrefab("carrodoy")
+    inst.components.periodicspawner:SetOnSpawnFn(OnSpawned)
+    inst.components.periodicspawner:SetSpawnTestFn(CanSpawn)
+    inst.components.periodicspawner:SetDensityInRange(20, 6)
+    inst.components.periodicspawner:SetOnlySpawnOffscreen(true)
+
+    return inst
+end
+
+
+return Prefab("koalefant_cute_herd", koalefant_cute_fn, nil, prefabs),
+    Prefab("carrodoy_herd", carrodoy_fn, nil, prefabs)

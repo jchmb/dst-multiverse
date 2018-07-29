@@ -82,8 +82,8 @@ local function fn()
         return inst
     end
 
-    -- inst:AddComponent("cookable")
-    -- inst.components.cookable.product = "acorn_cooked"
+    inst:AddComponent("cookable")
+    inst.components.cookable.product = "pufftree_nut_cooked"
 
     inst:AddComponent("tradable")
 
@@ -95,7 +95,7 @@ local function fn()
     inst:AddComponent("edible")
     inst.components.edible.hungervalue = TUNING.CALORIES_TINY
     inst.components.edible.healthvalue = TUNING.HEALING_TINY
-    inst.components.edible.foodtype = FOODTYPE.RAW
+    inst.components.edible.foodtype = "SEEDS"
 
     inst:AddComponent("stackable")
     inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
@@ -161,7 +161,7 @@ local function cooked()
     MakeSmallPropagator(inst)
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryimage.atlasname = "pufftree_nut_cooked.xml"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/pufftree_nut_cooked.xml"
 
     MakeHauntableLaunch(inst)
 
@@ -169,4 +169,5 @@ local function cooked()
 end
 
 return Prefab("pufftree_nut", fn, assets, prefabs),
+    Prefab("pufftree_nut_cooked", cooked, assets, prefabs),
        MakePlacer("pufftree_nut_placer", "acorn", "pufftree_nut", "idle_planted")

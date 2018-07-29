@@ -2,8 +2,8 @@ local farmplots = {}
 local offsetX = 0
 local offsetY = 0
 
-for i=1,1 do
-	for j=1,1 do
+for i=1,5 do
+	for j=1,2 do
 		table.insert(
 			farmplots,
 			{
@@ -15,7 +15,7 @@ for i=1,1 do
 end
 
 local houses = {}
-for i=1,1,1 do
+for i=1,5,2 do
 	table.insert(
 		houses,
 		{

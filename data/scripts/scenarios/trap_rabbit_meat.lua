@@ -3,7 +3,11 @@ local loot =
 {
 	{
 		item = "meat",
-		count = 1,
+		count = 2,
+	},
+	{
+		item = "smallmeat",
+		count = 4,
 	},
 }
 
@@ -25,7 +29,7 @@ local function OnCreate(inst, scenariorunner)
 end
 
 local function OnLoad(inst, scenariorunner)
-	inst.scene_triggerfn = function(inst, data)  
+	inst.scene_triggerfn = function(inst, data)
 		data.player = data.doer or data.worker
 		triggertrap(inst, scenariorunner, data)
 		scenariorunner:ClearScenario()

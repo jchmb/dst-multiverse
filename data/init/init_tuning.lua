@@ -122,3 +122,36 @@ TUNING.COCONADE_POISON_CLOUD_DURATION = 3
 TUNING.COCONADE_OBSIDIAN_DAMAGE = 350
 TUNING.COCONADE_OBSIDIAN_EXPLOSIONRANGE = 9
 TUNING.COCONADE_OBSIDIAN_BUILDINGDAMAGE = 15
+
+TUNING.DOYDOY_MAX_POPULATION = 20
+TUNING.DOYDOY_SPAWN_TIMER = total_day_time * 2 -- try to mate some doydoy's after this ammount of time + random variance
+TUNING.DOYDOY_SPAWN_VARIANCE = total_day_time
+TUNING.DOYDOY_MATING_RANGE = 15
+TUNING.DOYDOY_MATING_DANCE_TIME = 3 -- how long should they dance?
+TUNING.DOYDOY_MATING_DANCE_DIST = 3 -- how far away should they dance?
+TUNING.DOYDOY_MATING_FEATHER_CHANCE = 0.2 -- feather drop chance after mating
+
+		-- doesn't really matter much for the herds
+TUNING.DOYDOY_HERD_SIZE = 20
+TUNING.DOYDOY_HERD_GATHER_RANGE = 40
+
+TUNING.DOYDOY_EGG_HATCH_TIMER = total_day_time * 2
+TUNING.DOYDOY_EGG_HATCH_VARIANCE = total_day_time/2
+
+TUNING.DOYDOY_HEALTH = 100
+TUNING.DOYDOY_WALK_SPEED = 2
+
+TUNING.DOYDOY_BABY_HEALTH = 25
+TUNING.DOYDOY_BABY_WALK_SPEED = 5
+TUNING.DOYDOY_BABY_GROW_TIME = total_day_time * 2 --time to grow up
+
+TUNING.DOYDOY_TEEN_HEALTH = 75
+TUNING.DOYDOY_TEEN_WALK_SPEED = 1.5
+TUNING.DOYDOY_TEEN_SCALE = 0.8
+TUNING.DOYDOY_TEEN_GROW_TIME = total_day_time * 1 --time to grow up
+
+		-- When you kill doydoys
+TUNING.DOYDOY_INNOCENCE_REALLY_BAD = 50 -- less than 2 doydoy's left, you get krampus
+TUNING.DOYDOY_INNOCENCE_BAD = 10 -- less than or equal to 4 doydoy's left, that's BAD
+TUNING.DOYDOY_INNOCENCE_LITTLE_BAD = 4 -- less than or equal to 10 doydoy's left, that's a LITTLE BAD
+TUNING.DOYDOY_INNOCENCE_OK = 1 -- there are more than 10 doydoy's so that's OK

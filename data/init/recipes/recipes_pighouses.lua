@@ -114,6 +114,17 @@ AddLostRecipe(
 )
 
 AddLostRecipe(
+	"rabbithouse_farmer",
+	{
+		Ingredient("boards", 4),
+		Ingredient("carrot", 10),
+		Ingredient("manrabbit_tail", 4),
+	},
+	RECIPETABS.TOWN,
+	TECH.LOST
+)
+
+AddLostRecipe(
 	"beardlordhouse",
 	{
 		Ingredient("boards", 4),

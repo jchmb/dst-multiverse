@@ -9,10 +9,83 @@ Layouts["PigKingSlimey"] = StaticLayout.Get(
 	}
 )
 
+AddStandardRoom(
+	"SlimeyClearing",
+	GROUND.FOREST,
+	0.1,
+	{
+        fireflies = 1,
+
+        grass = .15,
+        sapling=.9,
+		twiggytree = 0.9,
+		ground_twigs = 0.06,
+        berrybush=.1,
+        berrybush_juicy = 0.05,
+        red_mushroom = .01,
+        green_mushroom = .02,
+	},
+	{
+		spawnpoint_multiplayer = 1,
+		-- homesign_welcome = 1,
+	},
+	{},
+	{},
+	nil,
+	{"ExitPiece", "Hutch_Fishbowl", "StagehandGarden"}
+)
+
+AddStandardRoom(
+	"SlimeyForest",
+	GROUND.FOREST,
+	0.3,
+	{
+        fireflies = 0.2,
+		--evergreen = 6,
+		rock_petrified_tree = 0.015,
+        rock1 = 0.05,
+        grass = .05,
+        sapling=.8,
+		twiggytree = 0.8,
+		ground_twigs = 0.06,
+		--rabbithole=.05,
+        berrybush=.03,
+        berrybush_juicy = 0.015,
+        carrot_planted = 0.1,
+        red_mushroom = .03,
+        green_mushroom = .02,
+		trees = {weight = 3, prefabs = {"evergreen", "evergreen_sparse"}},
+	},
+	{},
+	{},
+	{},
+	nil,
+	{"ExitPiece", "Hutch_Fishbowl"}
+)
+
+AddStandardRoom(
+	"SlimeyPlain",
+	GROUND.SAVANNA,
+	0.3,
+	{
+    	rock_petrified_tree = 0.2,
+        rock1 = 0.075,
+        perma_grass = 0.5,
+        rabbithole= 0.3,
+        green_mushroom = .005,
+        carrot_planted = 0.05,
+	},
+	{},
+	{},
+	{},
+	nil,
+	{"ExitPiece", "Hutch_Fishbowl"}
+)
+
 AddRoom("BGSlimey", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.MUD,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = 0.10,
 		distributeprefabs = {
@@ -28,6 +101,7 @@ AddRoom("BGSlimey", {
 			mucus = 0.1,
 			phlegm = 0.01,
 			snake_hole = 0.1,
+			flint = 0.02,
 		}
 	}
 })
@@ -35,7 +109,7 @@ AddRoom("BGSlimey", {
 AddRoom("BGSlimeyDeciduous", {
 	colour={r=.1,g=.8,b=.1,a=.50},
 	value = GROUND.DECIDUOUS,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = .2,
 		distributeprefabs={
@@ -68,7 +142,7 @@ AddRoom("BGSlimeyDeciduous", {
 AddRoom("SlimeyMagicalDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
 	value = GROUND.DECIDUOUS,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = .3,
 		distributeprefabs={
@@ -95,7 +169,7 @@ AddRoom("SlimeyMagicalDeciduous", {
 AddRoom("SlimeyDeepDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
 	value = GROUND.DECIDUOUS,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = .4,
 		distributeprefabs={
@@ -140,7 +214,7 @@ AddRoom("SlimeyPigKingdom", {
 AddRoom("SlimeySwamp", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.MARSH,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = 0.10,
 		distributeprefabs = {
@@ -158,7 +232,7 @@ AddRoom("SlimeySwamp", {
 AddRoom("SlimeySwampRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.SLIMEY,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		countprefabs = {
 			meteorspawner = 2,
@@ -181,7 +255,7 @@ AddRoom("SlimeySwampRocks", {
 AddRoom("SlimeyMudRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.ROCKY,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = 0.10,
 		distributeprefabs = {
@@ -203,7 +277,7 @@ AddRoom("SlimeyMudRocks", {
 AddRoom("SlimeyHerds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.SLIMEY,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = 0.10,
 		distributeprefabs = {
@@ -225,7 +299,7 @@ AddRoom("SlimeyHerds", {
 AddRoom("SlimeyStalagmite", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.UNDERROCK,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
         distributepercent = .15,
         distributeprefabs=
@@ -243,7 +317,7 @@ AddRoom("SlimeyStalagmite", {
 AddRoom("SlimeySpiders", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.MUD,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		countprefabs = {
 			thulecite_pieces = 1,
@@ -264,7 +338,7 @@ AddRoom("SlimeySpiders", {
 AddRoom("SlimeyHounds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.SLIMEY,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 	countprefabs = {
 		houndmound_slimey = 2,
@@ -282,7 +356,7 @@ AddRoom("SlimeyHounds", {
 AddRoom("SlimeyMermCity", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.MARSH,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 	countprefabs = {
 		mermhouse = 5,
@@ -299,7 +373,7 @@ AddRoom("SlimeyMermCity", {
 AddRoom("SlimeyEwecus", {
 	colour={r=.25,g=.28,b=.25,a=.50},
 	value = GROUND.SLIMEY,
-	tags = {"ExitPiece", "Chester_Eyebone"},
+	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 	countprefabs = {
 		spat = 2,

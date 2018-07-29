@@ -1,4 +1,6 @@
 AddPreferredLayout("BunnymanFarmers", "bunnyman_farmers")
+AddPreferredLayout("BunnymanFarmers2", "bunnyman_farmers2")
+AddPreferredLayout("BunnymanFarmers3", "bunnyman_farmers3")
 AddPreferredLayout("GentleBunnyman", "gentle_bunnyman")
 AddPreferredLayout("TrapRabbitMeat", "trap_rabbit_meat")
 AddPreferredLayout("BunnymanFighters", "bunnyman_fighters")
@@ -6,6 +8,8 @@ AddPreferredLayout("BunnymanPirates", "bunnyman_pirates")
 AddPreferredLayout("BunnymanTown", "bunnyman_town")
 AddPreferredLayout("BunnylandSapfarm", "bunnyland_sapfarm")
 AddPreferredLayout("BunnymanWheatFarm", "bunnyman_wheatfarm")
+AddPreferredLayout("BunnymanGiant", "bunnyman_giant")
+AddPreferredLayout("Bunsy", "bunsy")
 
 AddStandardRoom(
 	"CuteClearing",
@@ -14,7 +18,7 @@ AddStandardRoom(
 	{
 		hatpighouse=0.015,
         fireflies = 1,
-        pufftrtee = 1.5,
+        pufftree = 0.2,
         grass = .15,
         sapling=.9,
 		twiggytree = 0.9,
@@ -109,7 +113,7 @@ AddRoom("CuteBunnymanTown", {
 			carrot_planted = 0.05,
 			colored_rabbithouse = 0.05,
 			flower = 0.1,
-			pufftree = 2,
+			pufftree = 1,
 			red_mushroom = 0.05,
 			green_mushroom = 0.03,
 			blue_mushroom = 0.05,
@@ -134,7 +138,7 @@ AddRoom("CuteBunnymanTown2", {
 			berrybush_juicy = 0.15,
 			colored_rabbithouse = 0.1,
 			flower = 0.1,
-			pufftree = 0.8,
+			pufftree = 0.5,
 			red_mushroom = 0.05,
 			green_mushroom = 0.03,
 			blue_mushroom = 0.03,
@@ -155,7 +159,7 @@ AddRoom("CuteBunnymanTown3", {
 			colored_rabbithouse = 0.1,
 			sapling = 0.1,
 			twiggytree = 0.2,
-			pufftree = 4,
+			pufftree = 3,
 			red_mushroom = 0.1,
 			green_mushroom = 0.1,
 			blue_mushroom = 0.1,
@@ -183,34 +187,70 @@ AddRoom("CuteBunnymanTown4", {
 })
 
 AddStandardRoom(
-	"BGCuteSweetPotatoField",
-	GROUND.GRASS,
-	0.1,
+	"BGCuteCarrodoyForest",
+	GROUND.GRASS_ORANGE,
+	0.35,
 	{
-		deciduoustree = 0.25,
-		evergreen = 0.25,
-		pufftree = 0.75,
-		sweet_potato_planted = 0.01,
-		sapling = 0.05,
-		grass = 0.05,
+		deciduoustree = 2,
+		pufftree = 1,
+		sapling = 0.1,
+		grass = 0.075,
 		twiggytree = 0.05,
+		berrybush = 0.05,
+		berrybush_juicy = 0.05,
+		sweet_potato_planted = 0.02,
+		flower = 0.07,
 	}
 )
 
 AddStandardRoom(
-	"CuteSweetPotatoField",
-	GROUND.GRASS,
-	0.15,
+	"CuteCarrodoyForest",
+	GROUND.GRASS_ORANGE,
+	0.5,
 	{
 		deciduoustree = 3,
-		sweet_potato_planted = 0.1,
-		lightninggoat = 0.001,
-		sapling = 0.05,
-		grass = 0.05,
+		pufftree = 3,
 		twiggytree = 0.05,
+		sweet_potato_planted = 0.03,
+		flower = 0.05,
 	},
 	{
+		pond = GetRandomFn(1, 1),
+		carrodoy = GetRandomFn(1, 2),
 		colored_rabbithouse = 1,
+	}
+)
+
+AddStandardRoom(
+	"CuteCarrodoyForestRabbits",
+	GROUND.GRASS_ORANGE,
+	0.21,
+	{
+		deciduoustree = 0.75,
+		pufftree = 0.3,
+		twiggytree = 0.15,
+		sweet_potato_planted = 0.05,
+		grass = 0.1,
+	},
+	{
+		rabbithole = GetRandomFn(4, 6),
+		colored_rabbithouse = 1,
+	}
+)
+
+AddStandardRoom(
+	"CuteCarrodoyForestCore",
+	GROUND.GRASS_ORANGE,
+	0.4,
+	{
+		deciduoustree = 0.5,
+		pufftree = 0.4,
+		twiggytree = 0.1,
+	},
+	{
+		pond = GetRandomFn(3, 2),
+		carrodoy = GetRandomFn(4, 5),
+		sweet_potato_planted = GetRandomFn(7, 4),
 	}
 )
 
@@ -328,7 +368,7 @@ AddRoom("CuteRocks", {
 			rock2 = 0.8,
 			rocks = 0.7,
 			rock_ice = 0.5,
-			flint = 0.7,
+			flint = 0.5,
 			molehill = 0.1,
 			tallbirdnest=0.008,
 			grassgekko = 0.8,
@@ -350,10 +390,10 @@ AddRoom("CuteRocks2", {
 			rock2 = 1,
 			rocks = 1,
 			flint = 0.7,
-			grassgekko = 0.2,
-			buzzardspawner = 0.1,
-			catcoonden = 0.1,
-			rock_ice = 0.7,
+			grassgekko = 0.3,
+			buzzardspawner = 0.05,
+			rock_ice = 0.4,
+			pond_salt = 0.03,
 		}
 	}
 })
@@ -457,7 +497,8 @@ AddRoom("CuteDeepDeciduous", {
 			sapling= 0.2,
 			carrot_planted=0.2,
 
-			pufftree = 5,
+			pufftree = 2,
+			deciduoustree = 2,
 			catcoonden = .05,
 
 			red_mushroom = 0.15,
@@ -477,7 +518,8 @@ AddStandardRoom(
 	0.6,
 	{
 		evergreen_sparse = 8,
-		pufftree = 3,
+		pufftree = 2,
+		deciduoustree = 1,
 		ground_twigs = 0.2,
 		red_mushroom = 0.1,
 		green_mushroom = 0.1,
@@ -494,9 +536,9 @@ AddStandardRoom(
 AddStandardRoom(
 	"CuteBunnyDefense",
 	GROUND.FUNGUSGREEN,
-	0.1,
+	0.15,
 	{
-		pufftree = 6,
+		pufftree = 5,
 		fireflies = 1,
 		carrot_planted = 0.2,
 		rabbithole = 0.2,
@@ -516,39 +558,38 @@ AddCenterRoom(
 	},
 	{
 		fireflies = 6,
-		giant_bunnyman_spawner = 1,
-		marbletree = function()
-			return math.random(4, 6) + 3
-		end,
-		critterlab = 1,
+	},
+	{
+		["BunnymanGiant"] = 1,
 	}
 )
 
 AddStandardRoom(
 	"BGCutePuffForest",
-	GROUND.GRASS,
+	GROUND.GRASS_ORANGE,
 	0.3,
 	{
-		pufftree = 3,
+		pufftree = 2,
 		berrybush = 0.1,
 		berrybush_juicy = 0.1,
-		tomato_planted = 0.03,
+		sweet_potato_planted = 0.03,
 		grass = 0.05,
 		flower = 0.05,
 		sapling = 0.05,
 		twiggytree = 0.05,
+		rabbithole = 0.02,
 	}
 )
 
 AddStandardRoom(
 	"CutePuffForest",
-	GROUND.GRASS,
+	GROUND.GRASS_ORANGE,
 	0.5,
 	{
-		pufftree = 4,
+		pufftree = 3.5,
 		berrybush = 0.1,
 		berrybush_juicy = 0.1,
-		tomato_planted = 0.07,
+		sweet_potato_planted = 0.02,
 		grass = 0.05,
 		flower = 0.05,
 		sapling = 0.05,
@@ -559,22 +600,99 @@ AddStandardRoom(
 
 AddCenterRoom(
 	"CutePuffForestTown",
-	GROUND.GRASS,
+	GROUND.GRASS_ORANGE,
 	0.24,
 	{
 		pufftree = 0.05,
 		flower = 0.02,
 		wheat_planted = 0.05,
-		red_mushroom = 0.05,
-		green_mushroom = 0.05,
-		blue_mushroom = 0.05,
+		red_mushroom = 0.03,
+		green_mushroom = 0.06,
+		blue_mushroom = 0.06,
 	},
 	{
-		colored_rabbithouse = GetRandomFn(3, 2),
+		critterlab = 1,
+		hatpighouse = 2,
+	},
+	{
+		["BunnymanFarmers2"] = 1,
+	}
+)
+
+AddCenterRoom(
+	"CutePuffForestTown2",
+	GROUND.GRASS_ORANGE,
+	0.31,
+	{
+		pufftree = 0.13,
+		wheat_planted = 0.07,
+		red_mushroom = 0.05,
+		green_mushroom = 0.01,
+		blue_mushroom = 0.01,
+		catcoonden = 0.01,
+	},
+	{
+		hatpighouse = 1,
 	},
 	{
 		["BunnymanFarmers"] = 1,
-		-- ["BunnymanWheatFarm"] = 1,
+	}
+)
+
+AddStandardRoom(
+	"CutePuffForestTown3",
+	GROUND.GRASS_ORANGE,
+	0.26,
+	{
+		pufftree = 0.07,
+		mushtree_small = 0.03,
+		grass = 0.07,
+		sapling = 0.04,
+		wheat_planted = 0.025,
+		blue_mushroom = 0.07,
+		green_mushroom = 0.01,
+		flower = 0.03,
+		sweet_potato_planted = 0.02,
+	},
+	{},
+	{
+		["BunnymanFarmers3"] = 1,
+	}
+)
+
+AddCenterRoom(
+	"CutePuffForestTownBunsy",
+	GROUND.GRASS_ORANGE,
+	0.4,
+	{
+		pufftree = 1,
+		wheat_planted = 0.02,
+		blue_mushroom = 0.07,
+		flower = 0.05,
+		sweet_potato_planted = 0.02,
+	},
+	{
+		rabbithole = GetRandomFn(4, 4),
+	},
+	{
+		["Bunsy"] = 1,
+	}
+)
+
+AddStandardRoom(
+	"CutePuffForestSpiders",
+	GROUND.GRASS_ORANGE,
+	0.24,
+	{
+		pufftree = 0.3,
+		blue_mushroom = 0.07,
+		green_mushroom = 0.04,
+		sweet_potato_planted = 0.04,
+	},
+	{
+		spiderden = GetRandomFn(1, 2),
+		goldnugget = GetRandomFn(3, 3),
+		rock2 = GetRandomFn(1, 2),
 	}
 )
 
@@ -780,7 +898,7 @@ if HasGorgePort() then
 			spotspice_shrub = 0.02,
 			sapling = 0.1,
 			grass = 0.1,
-			fern = 0.05,
+			cave_fern = 0.05,
 			molehill = 0.02,
 			turnip_planted = 0.01,
 			saptree_small = 0.05,
@@ -799,35 +917,11 @@ if HasGorgePort() then
 			sapling = 0.05,
 			twiggytree = 0.05,
 			grass = 0.05,
-			fern = 0.05,
+			cave_fern = 0.05,
 			rabbithole = 0.02,
 			berrybush = 0.1,
 			berrybush_juicy = 0.1,
 			turnip_planted = 0.02,
-		}
-	)
-
-	AddStandardRoom(
-		"CuteSapTreeForestTraders",
-		GROUND.QUAGMIRE_PARKFIELD,
-		0.2,
-		{
-			spotspice_shrub = 0.15,
-			sapling = 0.05,
-			twiggytree = 0.05,
-			grass = 0.05,
-			fern = 0.05,
-			rabbithole = 0.02,
-			berrybush = 0.1,
-			berrybush_juicy = 0.1,
-			turnip_planted = 0.02,
-		},
-		{
-			gorge_altar = 1,
-		},
-		{
-			["GorgeTraderMerm"] = 1,
-			["GorgeSafe"] = 1,
 		}
 	)
 
@@ -840,7 +934,7 @@ if HasGorgePort() then
 			sapling = 0.06,
 			twiggytree = 0.06,
 			grass = 0.05,
-			fern = 0.08,
+			cave_fern = 0.08,
 			rabbithole = 0.04,
 			berrybush = 0.12,
 			berrybush_juicy = 0.11,
@@ -861,12 +955,36 @@ if HasGorgePort() then
 			saptree_small = 0.2,
 			saptree_normal = 0.15,
 			saptree_tall = 0.12,
-			flower = 0.1,
+			cave_fern = 0.1,
 		},
 		{
 			colored_rabbithouse = 1,
 		},
 		{
+			["GorgeSafe"] = 1,
+		}
+	)
+
+	AddCenterRoom(
+		"CuteSapTreeForestTraders",
+		GROUND.QUAGMIRE_PARKFIELD,
+		0.2,
+		{
+			spotspice_shrub = 0.15,
+			sapling = 0.05,
+			twiggytree = 0.05,
+			grass = 0.05,
+			cave_fern = 0.05,
+			rabbithole = 0.02,
+			berrybush = 0.1,
+			berrybush_juicy = 0.1,
+			turnip_planted = 0.02,
+		},
+		{
+			gorge_altar = 1,
+		},
+		{
+			["GorgeTraderMerm"] = 1,
 			["GorgeSafe"] = 1,
 		}
 	)

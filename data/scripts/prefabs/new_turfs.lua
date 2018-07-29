@@ -104,6 +104,7 @@ local turfs =
     {name="grass_chess",         anim="grass",      tile=GROUND.GRASS_CHESS},
     {name="grass_brown",         anim="grass",      tile=GROUND.GRASS_BROWN},
     {name="metal",         anim="grass",      tile=GROUND.METAL},
+    {name="grass_orange",         anim="grass",      tile=GROUND.GRASS_ORANGE},
 }
 
 for k,v in pairs(turfs) do

@@ -194,20 +194,34 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_metal.tex"}
 )
 
--- Water turfs
 AddTile(
-	"OCEAN_SHALLOW",
+	"GRASS_ORANGE",
 	63,
-	"water_shallow",
+	"grass_orange",
 	{
-		noise_texture = "levels/textures/noise_water_shallow.tex",
-		runsound = "dontstarve/movement/run_ice",
-		walksound = "dontstarve/movement/run_ice",
-		snowsound = "dontstarve/movement/run_ice",
-		mudsound = "dontstarve/movement/run_ice",
+		noise_texture = "levels/textures/noise_grass_orange.tex",
+		runsound = "dontstarve/movement/run_grass",
+		walksound = "dontstarve/movement/walk_grass",
+		snowsound = "dontstarve/movement/run_snow",
+		mudsound = "dontstarve/movement/run_mud",
 	},
-	{noise_texture = "levels/textures/mini_noise_water_shallow.tex"}
+	{noise_texture = "levels/textures/mini_noise_grass_orange.tex"}
 )
+
+-- Water turfs
+-- AddTile(
+-- 	"OCEAN_SHALLOW",
+-- 	63,
+-- 	"water_shallow",
+-- 	{
+-- 		noise_texture = "levels/textures/noise_water_shallow.tex",
+-- 		runsound = "dontstarve/movement/run_ice",
+-- 		walksound = "dontstarve/movement/run_ice",
+-- 		snowsound = "dontstarve/movement/run_ice",
+-- 		mudsound = "dontstarve/movement/run_ice",
+-- 	},
+-- 	{noise_texture = "levels/textures/mini_noise_water_shallow.tex"}
+-- )
 
 -- Ocean
 GLOBAL.GROUND_WATER_TYPES = {

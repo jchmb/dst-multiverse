@@ -78,7 +78,7 @@ AddStructureRecipe(
         ModIngredient("obsidian", 8),
     },
     GLOBAL.RECIPETABS.LIGHT,
-    TECH.OBSIDIAN_THREE,
+    TECH.OBSIDIAN_TWO,
     "The fieriest of all fires!",
     "images/inventoryimages/firepit_obsidian.xml",
     "firepit_obsidian_placer"

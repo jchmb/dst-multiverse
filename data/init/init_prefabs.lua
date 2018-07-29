@@ -37,6 +37,8 @@ PrefabFiles = {
 
 	-- Cute mobs and spawners
 	"colored_bunnyman",
+	"bunnyman_farmer",
+	"rabbithouse_farmer",
 	"colored_rabbithouse",
 	"giant_bunnyman_spawner",
 	"giant_bunnyman",
@@ -50,6 +52,10 @@ PrefabFiles = {
 	"bunneefalo",
 	"babybunneefalo",
 	"bunneefaloherd",
+	"carrodoy",
+	"bunsy",
+	-- "carrodoynest",
+	-- "carrodoyegg",
 	--"piratebunnyman",
 	-- "spider_bunny",
 

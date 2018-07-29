@@ -2,7 +2,7 @@ local Layouts = GLOBAL.require("map/layouts").Layouts
 Layouts["WormTrap"] = GLOBAL.require("map/layouts/worm_trap")
 
 local slimey_tasks = {
-			"Make a pick",
+			"Make a pick slimey",
 			"Speak to the king slimey",
 			"Slimey one",
 			"Slimey two a",
@@ -11,7 +11,7 @@ local slimey_tasks = {
 			"Slimey three b",
 			"Slimey four a",
 			"Slimey four b",
-			"Magic meadow",
+			-- "Magic meadow",
 			"ToadStoolTask1",
 			"ToadStoolTask2",
 			"ToadStoolTask3",
@@ -24,7 +24,7 @@ AddTaskSetFixed("slimey", {
 		numoptionaltasks = 0,
 		optionaltasks = {},
 		valid_start_tasks = {
-			"Make a pick",
+			"Make a pick slimey",
 		},
 		set_pieces = {
 			["ResurrectionStone"] = { count = 2, tasks=slimey_tasks},
