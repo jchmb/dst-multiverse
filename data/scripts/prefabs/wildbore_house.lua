@@ -414,4 +414,4 @@ local function fn()
 end
 
 return Prefab("wildbore_house", fn, assets, prefabs),
-    MakePlacer("wildbore_house_placer", "pig_gray_house", "pig_gray_house", "idle")
+    MakePlacer("wildbore_house_placer", "pig_house_tropical", "pig_house_tropical", "idle")
