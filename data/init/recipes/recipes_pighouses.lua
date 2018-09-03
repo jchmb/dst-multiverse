@@ -140,7 +140,7 @@ AddLostRecipe(
 	{
 		Ingredient("boards", 4),
 		Ingredient("monstermeat", 2),
-		Ingredient("rot", 10),
+		Ingredient("spoiled_food", 10),
 	},
 	RECIPETABS.TOWN,
 	TECH.LOST
