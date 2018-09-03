@@ -60,7 +60,7 @@ local pighouseCyborgRecipe = Recipe(
 	"pighouse_cyborg",
 	{
 		Ingredient("boards", 4),
-		Ingredient("ironnugget", 7),
+		Ingredient("ironnugget", 7, "images/inventoryimages/ironnugget.xml"),
 		Ingredient("pigskin", 4),
 	},
 	RECIPETABS.TOWN,
