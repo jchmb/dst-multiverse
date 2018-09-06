@@ -70,6 +70,8 @@ PrefabFiles = {
 	"yeti",
 	"yetiherd",
 	"new_walruses",
+	"rabbithouse_snow",
+	"bunnyman_snow",
 
 	-- Slimey mobs and spawners
 	"perma_grassgekko",

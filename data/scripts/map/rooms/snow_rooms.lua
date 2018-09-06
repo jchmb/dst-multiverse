@@ -112,6 +112,7 @@ AddRoom("SnowyKoalefants", {
 			perma_grass = 0.2,
 			flower = 1,
 			rabbithole_snow = 0.05,
+			rabbithouse_snow = 0.01,
 		}
 	}
 })
@@ -374,6 +375,7 @@ AddRoom("SnowyForest2", {
 			blue_mushroom = 0.05,
 			pighouse_blue = 0.02,
 			mintybush = 0.1,
+			rabbithouse_snow = 0.02,
 		}
 	}
 })
@@ -443,15 +445,9 @@ AddRoom("SnowyBunnies", {
 		distributeprefabs = {
 			perma_grass = 0.4,
 			carrot_planted = 0.3,
-			hatrabbithouse = 0.2,
+			rabbithouse_snow = 0.2,
 			mintybush = 0.2,
 			evergreen = 9,
-		},
-		prefabdata = {
-			hatrabbithouse = {
-				startinghat = "winterhat",
-				colorfname = "winter",
-			},
 		},
 	}
 })
