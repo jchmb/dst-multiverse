@@ -113,7 +113,7 @@ local function fn()
     inst.components.periodicspawner:SetPrefab("babybunneefalo")
     inst.components.periodicspawner:SetOnSpawnFn(OnSpawned)
     inst.components.periodicspawner:SetSpawnTestFn(CanSpawn)
-    inst.components.periodicspawner:SetDensityInRange(20, 6)
+    inst.components.periodicspawner:SetDensityInRange(20, 4)
     inst.components.periodicspawner:SetOnlySpawnOffscreen(true)
 
     return inst

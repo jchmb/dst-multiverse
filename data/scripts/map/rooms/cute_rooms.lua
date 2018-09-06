@@ -321,7 +321,7 @@ AddRoom("CuteHerds", {
 	value = GROUND.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
-		distributepercent = 0.3,
+		distributepercent = 0.25,
 		distributeprefabs = {
 			perma_grass = 0.2,
 			bunneefalo = 0.01,
