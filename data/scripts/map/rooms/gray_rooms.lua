@@ -25,7 +25,7 @@ AddRoom("BGGray", {
 			flower_cave = 0.02,
 			cave_fern = 1,
 			pond_mos = 0.01,
-			spiderden = 0.1,
+			spiderden = 0.035,
 			flint = 0.1,
 			slurper = 0.03,
 			tallbirdnest = 0.01,
@@ -93,7 +93,7 @@ AddRoom("GraySpiderTown", {
 			skeleton = function() return 6 + math.random(3) end
 		},
 		distributeprefabs = {
-			spiderden = 0.15,
+			spiderden = 0.05,
 			sapling = 0.1,
 			twiggytree = 0.1,
 			flower_evil = 0.1
@@ -427,7 +427,7 @@ AddRoom("GrayGoats", {
 			evergreen = 3,
 			sapling = 0.1,
 			twiggytree = 0.1,
-			spiderden = 0.07,
+			spiderden = 0.04,
 			coffeebush = 0.1,
 		}
 	}
