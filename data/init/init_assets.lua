@@ -325,8 +325,8 @@ Assets = {
 	-- Minimap icons for each portal
 	Asset("IMAGE", "map_icons/minimap_portal_cute.tex"),
 	Asset("ATLAS", "map_icons/minimap_portal_cute.xml"),
-	Asset("IMAGE", "map_icons/minimap_portal_chezz.tex"),
-	Asset("ATLAS", "map_icons/minimap_portal_chezz.xml"),
+	Asset("IMAGE", "map_icons/minimap_portal_robo.tex"),
+	Asset("ATLAS", "map_icons/minimap_portal_robo.xml"),
 	Asset("IMAGE", "map_icons/minimap_portal_gray.tex"),
 	Asset("ATLAS", "map_icons/minimap_portal_gray.xml"),
 	Asset("IMAGE", "map_icons/minimap_portal_slimey.tex"),
