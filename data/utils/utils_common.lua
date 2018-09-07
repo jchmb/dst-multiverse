@@ -37,4 +37,12 @@ function GetGorgePortPrefab(prefab, defaultprefab)
 	return defaultprefab
 end
 
+function ShallowCopy(tbl)
+	local newtbl = {}
+	for k,v in pairs(tbl) do
+		newtbl[k] = v
+	end
+	return newtbl
+end
+
 GLOBAL.HasGorgePort = HasGorgePort

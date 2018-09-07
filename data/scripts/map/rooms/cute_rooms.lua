@@ -8,6 +8,7 @@ AddPreferredLayout("BunnymanPirates", "bunnyman_pirates")
 AddPreferredLayout("BunnymanTown", "bunnyman_town")
 AddPreferredLayout("BunnylandSapfarm", "bunnyland_sapfarm")
 AddPreferredLayout("BunnymanWheatFarm", "bunnyman_wheatfarm")
+AddPreferredLayout("BunnymanGraveyard", "bunnyman_graveyard")
 AddPreferredLayout("BunnymanGiant", "bunnyman_giant")
 AddPreferredLayout("Bunsy", "bunsy")
 
@@ -886,6 +887,55 @@ AddStandardRoom(
 			colorfname="colored",
 		}
 	}
+)
+
+AddStandardRoom(
+	"BGCuteGraveyard",
+	GROUND.FOREST,
+	0.1,
+	{
+		pufftree = 0.1,
+	},
+	{
+	},
+	{},
+	{},
+	nil,
+	{"Town", "Mist"}
+)
+
+AddStandardRoom(
+	"CuteGraveyard",
+	GROUND.FOREST,
+	0.1,
+	{},
+	{
+		pufftree = GetRandomFn(3, 2),
+        mound = GetRandomFn(2, 2),
+		gravestone = GetRandomFn(4, 4),
+		goldnugget = GetRandomFn(3, 2),
+	},
+	{},
+	{},
+	nil,
+	{"Town", "Mist"}
+)
+
+AddStandardRoom(
+	"CuteGraveyardFrabbit",
+	GROUND.FOREST,
+	0.1,
+	{},
+	{
+		pufftree = GetRandomFn(10, 5),
+        mound = GetRandomFn(2, 2),
+	},
+	{
+		["BunnymanGraveyard"] = 1,
+	},
+	{},
+	nil,
+	{"Town", "Mist"}
 )
 
 -- If The Gorge Cooking Port is enabled, then add some more biomes

@@ -54,6 +54,7 @@ PrefabFiles = {
 	"bunneefaloherd",
 	"carrodoy",
 	"bunsy",
+	"bunnyman_frabbit",
 	-- "carrodoynest",
 	-- "carrodoyegg",
 	--"piratebunnyman",

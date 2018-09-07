@@ -129,6 +129,18 @@ AddTaskWrapped(
 )
 
 AddTaskWrapped(
+	"Cuteness three e",
+	{LOCKS.TIER2},
+	{KEYS.TIER3},
+	{
+		["CuteGraveyard"] = GetSizeFn(1),
+		["CuteGraveyardFrabbit"] = 1,
+	},
+	GROUND.FOREST,
+	"BGCuteGraveyard"
+)
+
+AddTaskWrapped(
 	"Cuteness four a",
 	{LOCKS.TIER3},
 	{KEYS.TIER4},

@@ -11,15 +11,27 @@ local prefabs =
     -- "chesspiece_formal_sketch",
 }
 
+local FRABBIT_RANGE = 30
+
 SetSharedLootTable('snook_statue',
 {
     { 'chesspiece_formal_sketch', 1.00},
+    { 'marble', 1.00 },
+    { 'marble', 1.00 },
+    { 'marble', 1.00 },
+    { 'marble', 1.00 },
     { 'marble', 1.00 },
     { 'marble', 1.00 },
     { 'marble', 0.33 },
 })
 
 local function OnWork(inst, worker, workleft)
+    if inst.prefab == "statue_snook" then
+        local frabbit = FindEntity(inst, FRABBIT_RANGE, function(ent) return ent.prefab == "bunnyman_frabbit" end)
+        if frabbit ~= nil and worker ~= nil and worker.components.combat then
+            frabbit.components.combat:SuggestTarget(worker)
+        end
+    end
     if workleft <= 0 then
         local pos = inst:GetPosition()
         SpawnPrefab("rock_break_fx").Transform:SetPosition(pos:Get())
@@ -66,7 +78,7 @@ local function fn()
     inst:AddComponent("workable")
     --TODO: Custom variables for mining speed/cost
     inst.components.workable:SetWorkAction(ACTIONS.MINE)
-    inst.components.workable:SetWorkLeft(TUNING.MARBLEPILLAR_MINE)
+    inst.components.workable:SetWorkLeft(TUNING.MARBLEPILLAR_MINE * 5)
     inst.components.workable:SetOnWorkCallback(OnWork)
 
     MakeHauntableWork(inst)
