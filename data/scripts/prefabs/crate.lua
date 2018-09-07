@@ -60,7 +60,7 @@ local function onhammered(inst)
 	inst:Remove()
 end
 
-local function fn(Sim)
+local function fn()
 	local inst = CreateEntity()
 	local trans = inst.entity:AddTransform()
 	local anim = inst.entity:AddAnimState()
