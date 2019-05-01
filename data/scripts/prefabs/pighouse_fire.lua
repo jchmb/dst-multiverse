@@ -3,7 +3,7 @@ require "recipes"
 
 local assets =
 {
-    Asset("ANIM", "anim/pig_fire_house.zip"),
+    Asset("ANIM", "anim/pig_fir_h.zip"),
     Asset("ANIM", "anim/pig_house.zip"),
     Asset("SOUND", "sound/pig.fsb"),
 }
@@ -294,7 +294,7 @@ local function MakeWindow()
     inst.persists = false
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_fire_house")
+    inst.AnimState:SetBuild("pig_fir_h")
     inst.AnimState:PlayAnimation("windowlight_idle")
     inst.AnimState:SetLightOverride(.6)
     inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
@@ -317,7 +317,7 @@ local function MakeWindowSnow()
     inst.persists = false
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_fire_house")
+    inst.AnimState:SetBuild("pig_fir_h")
     inst.AnimState:PlayAnimation("windowsnow_idle")
     inst.AnimState:SetFinalOffset(2)
 
@@ -350,7 +350,7 @@ local function fn()
     inst.Light:SetColour(1, 0.3, 0.3)
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("pig_fire_house")
+    inst.AnimState:SetBuild("pig_fir_h")
     inst.AnimState:PlayAnimation("idle", true)
 
     inst:AddTag("structure")
@@ -414,4 +414,4 @@ local function fn()
 end
 
 return Prefab("pighouse_fire", fn, assets, prefabs),
-    MakePlacer("pighouse_fire_placer", "pig_house", "pig_fire_house", "idle")
+    MakePlacer("pighouse_fire_placer", "pig_house", "pig_fir_h", "idle")
