@@ -1,6 +1,6 @@
 local assets =
 {
-    Asset("ANIM", "anim/wildmeanver_house.zip"),
+    Asset("ANIM", "anim/wildmnv_h.zip"),
     Asset("SOUND", "sound/pig.fsb"),
 }
 
@@ -291,7 +291,7 @@ local function MakeWindow()
     inst.persists = false
 
     inst.AnimState:SetBank("pig_house")
-    inst.AnimState:SetBuild("wildbeaver_house")
+    inst.AnimState:SetBuild("wildmnv_h")
     inst.AnimState:PlayAnimation("windowlight_idle")
     inst.AnimState:SetLightOverride(.6)
     inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
@@ -313,8 +313,8 @@ local function MakeWindowSnow()
     --[[Non-networked entity]]
     inst.persists = false
 
-    inst.AnimState:SetBank("wildmeanver_house")
-    inst.AnimState:SetBuild("wildmeanver_house")
+    inst.AnimState:SetBank("pig_house")
+    inst.AnimState:SetBuild("wildmnv_h")
     inst.AnimState:PlayAnimation("windowsnow_idle")
     inst.AnimState:SetFinalOffset(2)
 
@@ -346,8 +346,8 @@ local function fn()
     inst.Light:Enable(false)
     inst.Light:SetColour(180/255, 195/255, 50/255)
 
-    inst.AnimState:SetBank("wildmeanver_house")
-    inst.AnimState:SetBuild("wildmeanver_house")
+    inst.AnimState:SetBank("pig_house")
+    inst.AnimState:SetBuild("wildmnv_h")
     inst.AnimState:PlayAnimation("idle", true)
 
     inst:AddTag("structure")
@@ -411,4 +411,4 @@ local function fn()
 end
 
 return Prefab("wildmeanver_house", fn, assets, prefabs),
-    MakePlacer("wildmeanver_house_placer", "wildmeanver_house", "wildmeanver_house", "idle")
+    MakePlacer("wildmeanver_house_placer", "pig_house", "wildmnv_h", "idle")
