@@ -1,7 +1,6 @@
 local assets =
 {
     Asset("ANIM", "anim/wildmnv_h.zip"),
-    Asset("ANIM", "anim/pig_house.zip"),
     Asset("SOUND", "sound/pig.fsb"),
 }
 
