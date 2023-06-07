@@ -56,7 +56,7 @@ local function KeepTraderFn(inst, target)
 end
 
 local function IsWood(inst, item)
-	return item.components.edible and item.components.edible.foodtype == FOODTYPE.WOOD and item.components.edible.woodiness > 0
+	return item.components.edible and item.components.edible.foodtype == FOODTYPE.WOOD
 end
 
 local function HasWood(inst)
@@ -350,8 +350,8 @@ function WildbeaverBrain:OnStart()
 			DoAction(self.inst, FindFoodAction ),
 			-- IfNode(function() return self.inst.components.inventory:FindItem(function(x) return x.prefab == "wall_wood_item" end) end, "find walls to deploy",
 			-- 	DoAction(self.inst, FindPosToWall)),
-			IfNode(function() return self.inst.treesdue > 0 end, "find and plant trees",
-				DoAction(self.inst, FindTreeSeeds)),
+			-- IfNode(function() return self.inst.treesdue > 0 end, "find and plant trees",
+			-- 	DoAction(self.inst, FindTreeSeeds)),
 			IfNode(function() return StartChoppingCondition(self.inst) end, "chop", 
 				WhileNode(function() return KeepChoppingAction(self.inst) end, "keep chopping",
 					LoopNode{ 

@@ -12,7 +12,7 @@ Layouts["PigKingGray"] = StaticLayout.Get(
 
 AddRoom("BGGray", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.GRASS_GRAY,
+	value = WORLD_TILES.GRASS_GRAY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.08,
@@ -37,7 +37,7 @@ AddRoom("BGGray", {
 
 AddRoom("GrayForest", {
 					colour={r=.5,g=0.6,b=.080,a=.10},
-					value = GROUND.ASH,
+					value = WORLD_TILES.ASH,
 					tags = {"ExitPiece", "Chester_Eyebone"},
 					contents =  {
 									countprefabs = {
@@ -65,7 +65,7 @@ AddRoom("GrayForest", {
 
 AddRoom("GrayPetGraveyard", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.FOREST,
+	value = WORLD_TILES.FOREST,
 	tags = {"ExitPiece", "Chester_Eyebone", "Mist"},
 	contents =  {
 		distributepercent = 0.2,
@@ -85,7 +85,7 @@ AddRoom("GrayPetGraveyard", {
 
 AddRoom("GraySpiderTown", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.FOREST,
+	value = WORLD_TILES.FOREST,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.2,
@@ -103,7 +103,7 @@ AddRoom("GraySpiderTown", {
 
 AddRoom("GrayCaveSpiders", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.UNDERROCK,
+	value = WORLD_TILES.UNDERROCK,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
         distributepercent = .25,
@@ -122,7 +122,7 @@ AddRoom("GrayCaveSpiders", {
 
 AddRoom("GrayEvilMoles", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.GRASS_GRAY,
+	value = WORLD_TILES.GRASS_GRAY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.2,
@@ -137,7 +137,7 @@ AddRoom("GrayEvilMoles", {
 
 AddRoom("GrayHoundTown", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = WORLD_TILES.ROCKY,
 	tags = {"ExitPiece"},
 	contents =  {
 		distributepercent = 0.1,
@@ -159,7 +159,7 @@ AddRoom("GrayHoundTown", {
 
 AddRoom("GrayHoundTownVarg", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = WORLD_TILES.ROCKY,
 	tags = {"ExitPiece"},
 	contents =  {
 		distributepercent = 0.2,
@@ -182,7 +182,7 @@ AddRoom("GrayHoundTownVarg", {
 
 AddRoom("GraySwamp", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MARSH,
+	value = WORLD_TILES.MARSH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.10,
@@ -199,7 +199,7 @@ AddRoom("GraySwamp", {
 
 AddRoom("GrayRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = WORLD_TILES.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.2,
@@ -218,7 +218,7 @@ AddRoom("GrayRocks", {
 
 AddRoom("GrayMermRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = WORLD_TILES.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countprefabs = {
@@ -236,7 +236,7 @@ AddRoom("GrayMermRocks", {
 
 AddStandardRoom(
 	"GrayMermRocksSaltPonds",
-	GROUND.ASH,
+	WORLD_TILES.ASH,
 	0.15,
 	{
 		rock1 = 0.05,
@@ -251,7 +251,7 @@ AddStandardRoom(
 
 AddRoom("BGGrayDeciduous", {
 	colour={r=.1,g=.8,b=.1,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .2,
@@ -287,7 +287,7 @@ AddRoom("BGGrayDeciduous", {
 
 AddRoom("GrayMagicalDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countstaticlayouts={
@@ -313,7 +313,7 @@ AddRoom("GrayMagicalDeciduous", {
 
 AddRoom("GrayDeepDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .4,
@@ -334,7 +334,7 @@ AddRoom("GrayDeepDeciduous", {
 
 AddRoom("GrayPigKingdom", {
 	colour={r=0.8,g=.8,b=.1,a=.50},
-	value = GROUND.GRASS,
+	value = WORLD_TILES.GRASS,
 	tags = {"Town"},
 	required_prefabs = {"pigking_gray"},
 	contents =  {
@@ -356,7 +356,7 @@ AddRoom("GrayPigKingdom", {
 
 AddRoom("GrayHerds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SAVANNA,
+	value = WORLD_TILES.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.15,
@@ -372,7 +372,7 @@ AddRoom("GrayHerds", {
 
 AddRoom("BGGray2", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = WORLD_TILES.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.08,
@@ -390,7 +390,7 @@ AddRoom("BGGray2", {
 
 AddRoom("GrayMoonRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = WORLD_TILES.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countprefabs = {
@@ -411,7 +411,7 @@ AddRoom("GrayMoonRocks", {
 
 AddRoom("GrayGoats", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = WORLD_TILES.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countstaticlayouts = {
@@ -435,7 +435,7 @@ AddRoom("GrayGoats", {
 
 AddRoomWrapped(
 	"GrayBeardlords",
-	GROUND.ASH,
+	WORLD_TILES.ASH,
 	{
 		distributepercent = 0.3,
 		distributeprefabs = {
@@ -451,7 +451,7 @@ AddRoomWrapped(
 
 AddStandardRoom(
 	"GrayTallbirds",
-	GROUND.ASH,
+	WORLD_TILES.ASH,
 	0.12,
 	{
 		rock_moon = 0.05,
@@ -467,7 +467,7 @@ AddStandardRoom(
 
 AddRoom("GrayHerdsBeefalo", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SAVANNA,
+	value = WORLD_TILES.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.15,
@@ -483,7 +483,7 @@ AddRoom("GrayHerdsBeefalo", {
 if HasGorgePort() then
 	AddStandardRoom(
 		"BGParkStone",
-		GROUND.QUAGMIRE_PARKSTONE,
+		WORLD_TILES.QUAGMIRE_PARKSTONE,
 		0.1,
 		{
 			rock = 0.02,
@@ -499,7 +499,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"ParkStone",
-		GROUND.QUAGMIRE_PARKSTONE,
+		WORLD_TILES.QUAGMIRE_PARKSTONE,
 		0.23,
 		{
 			rock = 0.03,
@@ -519,7 +519,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"ParkStoneCrabs",
-		GROUND.QUAGMIRE_PARKSTONE,
+		WORLD_TILES.QUAGMIRE_PARKSTONE,
 		0.15,
 		{
 			rock = 0.01,
@@ -536,7 +536,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"ParkStoneTraders",
-		GROUND.QUAGMIRE_PARKSTONE,
+		WORLD_TILES.QUAGMIRE_PARKSTONE,
 		0.12,
 		{
 			rock_flintless = 0.1,
@@ -551,7 +551,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"BGGorgeSwamp",
-		GROUND.QUAGMIRE_PEATFOREST,
+		WORLD_TILES.QUAGMIRE_PEATFOREST,
 		0.2,
 		{
 			evergreen_sparse = 2,
@@ -563,7 +563,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"GorgeSwamp",
-		GROUND.QUAGMIRE_PEATFOREST,
+		WORLD_TILES.QUAGMIRE_PEATFOREST,
 		0.2,
 		{
 			evergreen_sparse = 1.5,
@@ -578,7 +578,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"GorgeSwampElder",
-		GROUND.QUAGMIRE_PEATFOREST,
+		WORLD_TILES.QUAGMIRE_PEATFOREST,
 		0.3,
 		{
 			evergreen_sparse = 2.5,

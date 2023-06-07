@@ -2,7 +2,7 @@ AddRequiredStaticLayout("PigKingCyborg", "default_pigking_cyborg")
 
 AddStandardRoom(
 	"ChezzClearing",
-	GROUND.GRASS_CHESS,
+	WORLD_TILES.GRASS_CHESS,
 	0.1,
 	{
         flower = 0.1,
@@ -19,7 +19,7 @@ AddStandardRoom(
 
 AddStandardRoom(
     "ChezzPlain",
-    GROUND.SAVANNA,
+    WORLD_TILES.SAVANNA,
     0.3,
     {
         perma_grass = 0.25,
@@ -32,7 +32,7 @@ AddStandardRoom(
 
 AddStandardRoom(
     "ChezzField",
-    GROUND.GRASS_CHESS,
+    WORLD_TILES.GRASS_CHESS,
     0.3,
     {
         perma_grass = 0.05,
@@ -52,7 +52,7 @@ AddStandardRoom(
 
 AddRoom("ChezzFungusNoiseForest", {
     colour={r=1.0,g=1.0,b=1.0,a=0.9},
-    value = GROUND.GRASS_CHESS,
+    value = WORLD_TILES.GRASS_CHESS,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = .4,
@@ -74,7 +74,7 @@ AddRoom("ChezzFungusNoiseForest", {
 
 AddRoom("ChezzWetWilds", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.GRASS_CHESS,
+    value = WORLD_TILES.GRASS_CHESS,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = 0.25,
@@ -92,7 +92,7 @@ AddRoom("ChezzWetWilds", {
 --Lichen Meadow
 AddRoom("ChezzLichenMeadow", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.GRASS_CHESS,
+    value = WORLD_TILES.GRASS_CHESS,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = 0.15,
@@ -113,7 +113,7 @@ AddRoom("ChezzLichenMeadow", {
 --Lichen Land
 AddRoom("ChezzLichenLand", {
     colour={r=0.3,g=0.2,b=0.1,a=0.3},
-    value = GROUND.GRASS_CHESS,
+    value = WORLD_TILES.GRASS_CHESS,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = 0.35,
@@ -135,7 +135,7 @@ AddRoom("ChezzLichenLand", {
 
 AddRoom("BGChezz", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.CHECKER,
+	value = WORLD_TILES.CHECKER,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.08,
@@ -150,7 +150,7 @@ AddRoom("BGChezz", {
 
 AddRoom("ChezzLand", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.CHECKER,
+	value = WORLD_TILES.CHECKER,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.4,
@@ -171,7 +171,7 @@ AddRoom("ChezzLand", {
 
 AddRoom("ChezzLand2", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.CHECKER,
+	value = WORLD_TILES.CHECKER,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countstaticlayouts={
@@ -191,7 +191,7 @@ AddRoom("ChezzLand2", {
 
 AddRoom("ChezzRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = WORLD_TILES.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countprefabs = {
@@ -211,7 +211,7 @@ AddRoom("ChezzRocks", {
 
 AddStandardRoom(
 	"BGChezzMetalField",
-	GROUND.METAL,
+	WORLD_TILES.METAL,
 	0.1,
 	{
 		flint = 0.01,
@@ -224,7 +224,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"ChezzMetalField",
-	GROUND.METAL,
+	WORLD_TILES.METAL,
 	0.23,
 	{
 		rock_iron = 0.05,
@@ -239,7 +239,7 @@ AddStandardRoom(
 
 AddRoom("BGChezzDeciduous", {
     colour={r=.1,g=.8,b=.1,a=.50},
-    value = GROUND.METAL,
+    value = WORLD_TILES.METAL,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         distributepercent = .2,
@@ -269,7 +269,7 @@ AddRoom("BGChezzDeciduous", {
 
 AddRoom("ChezzMagicalDeciduous", {
     colour={r=0,g=.9,b=0,a=.50},
-    value = GROUND.METAL,
+    value = WORLD_TILES.METAL,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         countstaticlayouts={
@@ -295,7 +295,7 @@ AddRoom("ChezzMagicalDeciduous", {
 
 AddRoom("ChezzDeepDeciduous", {
     colour={r=0,g=.9,b=0,a=.50},
-    value = GROUND.METAL,
+    value = WORLD_TILES.METAL,
     tags = {"ExitPiece", "Chester_Eyebone"},
     contents =  {
         countprefabs = {
@@ -313,7 +313,7 @@ AddRoom("ChezzDeepDeciduous", {
 
 AddRoom("ChezzPigKingdom", {
     colour={r=0.8,g=.8,b=.1,a=.50},
-    value = GROUND.METAL,
+    value = WORLD_TILES.METAL,
     tags = {"Town"},
     required_prefabs = {"pigking_cyborg"},
     contents =  {

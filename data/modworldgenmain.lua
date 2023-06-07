@@ -1,5 +1,5 @@
 modimport("lib/lua_functions.lua")
-modimport("lib/tile_adder.lua")
+-- modimport("lib/tile_adder.lua")
 modimport("utils/utils_common.lua")
 modimport("utils/utils_worldgen.lua")
 
@@ -22,26 +22,26 @@ modimport("init/init_layouts.lua")
 --[[
 	Locations
 --]]
-modimport("scripts/map/locations/location_bunnyland")
-modimport("scripts/map/locations/location_snow")
-modimport("scripts/map/locations/location_slimey")
-modimport("scripts/map/locations/location_gray")
-modimport("scripts/map/locations/location_water")
-modimport("scripts/map/locations/location_chezz")
-modimport("scripts/map/locations/location_fire")
+-- modimport("scripts/map/locations/location_bunnyland")
+-- modimport("scripts/map/locations/location_snow")
+-- modimport("scripts/map/locations/location_slimey")
+-- modimport("scripts/map/locations/location_gray")
+-- modimport("scripts/map/locations/location_water")
+-- modimport("scripts/map/locations/location_chezz")
+-- modimport("scripts/map/locations/location_fire")
 
 --[[
 	Level scripts
 --]]
-if GetModConfigBoolean("UseMigrationPortals") then
-	modimport("scripts/map/tasksets/default_modified_taskset")
-	modimport("scripts/map/levels/defaultmodifiedlevel")
-end
+-- if GetModConfigBoolean("UseMigrationPortals") then
+-- 	modimport("scripts/map/tasksets/default_modified_taskset")
+-- 	modimport("scripts/map/levels/defaultmodifiedlevel")
+-- end
 
-if HasGorgePort() then
-	AddPreferredLayout("GorgeSafe", "gorge_safe")
-	AddPreferredLayout("GorgeSafe2", "gorge_safe_2")
-end
+-- if HasGorgePort() then
+-- 	AddPreferredLayout("GorgeSafe", "gorge_safe")
+-- 	AddPreferredLayout("GorgeSafe2", "gorge_safe_2")
+-- end
 
 modimport("scripts/map/rooms/multi_rooms")
 modimport("scripts/map/tasks/multi_tasks")
@@ -84,3 +84,8 @@ modimport("scripts/map/rooms/fire_rooms")
 modimport("scripts/map/tasks/fire_tasks")
 modimport("scripts/map/tasksets/fire_taskset")
 modimport("scripts/map/levels/firelevel")
+
+modimport("scripts/map/rooms/island_rooms")
+modimport("scripts/map/tasks/island_tasks")
+modimport("scripts/map/tasksets/island_taskset")
+modimport("scripts/map/levels/multiislandslevel")

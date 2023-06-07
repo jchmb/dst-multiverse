@@ -62,15 +62,15 @@ function AddLevelWrapped(preset, name, desc, location, task_set, overrides, numr
 	overrides = overrides or {}
 	overrides.task_set = task_set
 	AddLevelFixed(LEVELTYPE.SURVIVAL, {
-	id = preset,
-	name=name,
-	desc=desc,
-	location = location,
-	version = 2,
-	overrides=overrides,
-	numrandom_set_pieces = numrandom_set_pieces,
-	random_set_pieces = random_set_pieces,
-})
+		id = preset,
+		name=name,
+		desc=desc,
+		location = location,
+		version = 2,
+		overrides=overrides,
+		numrandom_set_pieces = numrandom_set_pieces,
+		random_set_pieces = random_set_pieces,
+	})
 end
 
 function AddRoomWrapped(room, ground, contents, tags, internal_type)

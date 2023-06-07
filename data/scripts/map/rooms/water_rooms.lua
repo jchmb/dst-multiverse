@@ -12,7 +12,7 @@ Layouts["RewardMooseTreasure"] = GLOBAL.require("map/layouts/reward_moosetreasur
 
 AddStandardRoom(
 	"BGWater",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.5,
 	{
 		cave_banana_tree = 0.05,
@@ -33,7 +33,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterClearing",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.3,
 	{
 		evergreen = 2,
@@ -49,7 +49,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterForest",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.7,
 	{
 		evergreen = 6,
@@ -69,7 +69,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterRocks",
-	GROUND.ROCKY,
+	WORLD_TILES.ROCKY,
 	0.2,
 	{
 		rock1 = 0.05,
@@ -89,7 +89,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterMeadow",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.2,
 	{
 		pond_purple = 0.05,
@@ -107,7 +107,7 @@ AddStandardRoom(
 --]]
 AddRoom("WaterBeaverKingdom", {
 	colour={r=0.8,g=.8,b=.1,a=.50},
-	value = GROUND.GRASS_BLUE,
+	value = WORLD_TILES.GRASS_BLUE,
 	tags = {"Town"},
 	required_prefabs = {"beaver_king"},
 	contents =  {
@@ -140,7 +140,7 @@ AddRoom("WaterBeaverKingdom", {
 
 AddStandardRoom(
 	"WaterMeadowMerms",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.3,
 	{
 		pond_purple = 0.05,
@@ -155,7 +155,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterOxHerds",
-	GROUND.SAVANNA,
+	WORLD_TILES.SAVANNA,
 	0.15,
 	{
 		perma_grass = 0.1,
@@ -168,7 +168,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeaverForest",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.7,
 	{
 		deciduoustree = 6,
@@ -187,7 +187,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeaverForestHotspot",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.7,
 	{
 		deciduoustree = 7,
@@ -203,7 +203,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterLureplantWall",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.4,
 	{
 		pond = 0.05,
@@ -227,7 +227,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterTreeRocks",
-	GROUND.ROCKY,
+	WORLD_TILES.ROCKY,
 	0.25,
 	{
 		evergreen_sparse = 1,
@@ -241,7 +241,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterSpiderForest",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.8,
 	{
 		evergreen_sparse = 8,
@@ -256,7 +256,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterMagicalForest",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.8,
 	{
 		evergreen_sparse = 7,
@@ -274,7 +274,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterEvilForest",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.8,
 	{
 		evergreen_sparse = 8,
@@ -291,7 +291,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterSuperMeadow",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.2,
 	{
 		deciduoustree = 4,
@@ -308,7 +308,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterWalrusMeadow",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.15,
 	{
 		pond_purple = 0.1,
@@ -323,7 +323,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGWaterBeach",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.15,
 	{
 		sapling = 0.05,
@@ -336,7 +336,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeachEntrance",
-	GROUND.SAVANNA,
+	WORLD_TILES.SAVANNA,
 	0.2,
 	{
 		rabbithole = 0.05,
@@ -346,7 +346,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeach",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.15,
 	{
 		sapling = 0.05,
@@ -361,7 +361,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeachRocks",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		sapling = 0.05,
@@ -379,7 +379,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeachSharkittens",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		ground_twigs = 0.1,
@@ -398,7 +398,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterMooseLair",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.3,
 	{
 		grass = 0.4,
@@ -415,7 +415,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGWaterMeanvers",
-	GROUND.GRASS_BROWN,
+	WORLD_TILES.GRASS_BROWN,
 	0.3,
 	{
 		grass = 0.1,
@@ -429,7 +429,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterMeanvers",
-	GROUND.GRASS_BROWN,
+	WORLD_TILES.GRASS_BROWN,
 	0.3,
 	{
 		grass = 0.1,
@@ -445,7 +445,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterMooseLairTreasure",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.2,
 	{
 		grass = 0.2,
@@ -460,7 +460,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGWaterMarsh",
-	GROUND.MARSH,
+	WORLD_TILES.MARSH,
 	0.2,
 	{
 		reeds = 0.15,
@@ -471,7 +471,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterMarsh",
-	GROUND.MARSH,
+	WORLD_TILES.MARSH,
 	0.2,
 	{
 		reeds = 0.15,
@@ -484,7 +484,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterMarshSnakes",
-	GROUND.MARSH,
+	WORLD_TILES.MARSH,
 	0.2,
 	{
 		reeds = 0.1,
@@ -496,7 +496,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterMarshTreasure",
-	GROUND.MARSH,
+	WORLD_TILES.MARSH,
 	0.1,
 	{
 		reeds = 0.1,
@@ -508,8 +508,8 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeeClearing",
-	GROUND.GRASS_BLUE,
-	-- GROUND.OCEAN_SHALLOW,
+	WORLD_TILES.GRASS_BLUE,
+	-- WORLD_TILES.OCEAN_SHALLOW,
 	0.1,
 	{
 		fireflies=0.01,
@@ -520,7 +520,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"WaterBeeQueen",
-	GROUND.GRASS_BLUE,
+	WORLD_TILES.GRASS_BLUE,
 	0.45,
 	{
 		flower = 5,

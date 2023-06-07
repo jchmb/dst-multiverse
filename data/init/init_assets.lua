@@ -342,8 +342,8 @@ Assets = {
 	Asset("ANIM", "anim/ui_thatchpack_1x4.zip"),
 
 	-- Misc
-	Asset("IMAGE", "images/wave_slimey.tex"),
-	Asset("IMAGE", "images/wave_gray.tex"),
+	-- Asset("IMAGE", "images/wave_slimey.tex"),
+	-- Asset("IMAGE", "images/wave_gray.tex"),
 
 	-- Sound
 	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),

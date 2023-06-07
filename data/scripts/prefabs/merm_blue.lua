@@ -1,6 +1,6 @@
 local assets =
 {
-    Asset("ANIM", "anim/merm_blue_build.zip"),
+    Asset("ANIM", "anim/merm_test_build.zip"),
     Asset("ANIM", "anim/ds_pig_basic.zip"),
     Asset("ANIM", "anim/ds_pig_actions.zip"),
     Asset("ANIM", "anim/ds_pig_attacks.zip"),
@@ -82,7 +82,7 @@ local function fn()
     inst.Transform:SetFourFaced()
 
     inst.AnimState:SetBank("pigman")
-    inst.AnimState:SetBuild("merm_blue_build")
+    inst.AnimState:SetBuild("merm_test_build")
     inst.AnimState:Hide("hat")
 
     inst:AddTag("character")

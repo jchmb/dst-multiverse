@@ -7,7 +7,7 @@ AddAction(
 			local obj = (act.doer.components.inventory and act.doer.components.inventory:RemoveItem(act.invobject)) or
 			(act.doer.components.container and act.doer.components.container:RemoveItem(act.invobject))
 			if obj then
-				if obj.components.deployable:ForceDeploy(act.pos, act.doer) then
+				if obj.components.deployable:Deploy(act.pos, act.doer) then
 					return true
 				else
 					act.doer.components.inventory:GiveItem(obj)

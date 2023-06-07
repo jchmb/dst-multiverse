@@ -1,6 +1,6 @@
 AddStandardRoom(
 	"MultiBeachClearing",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.1,
 	{
 		sapling = 0.05,
@@ -15,7 +15,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGMultiBeach",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		sapling = 0.1,
@@ -30,7 +30,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"MultiBeach",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		sapling = 0.1,
@@ -49,7 +49,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"MultiHerds",
-	GROUND.SAVANNA,
+	WORLD_TILES.SAVANNA,
 	0.3,
 	{
 		perma_grass = 0.2,
@@ -62,7 +62,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGMultiRocks",
-	GROUND.ROCKY,
+	WORLD_TILES.ROCKY,
 	0.2,
 	{
 		rock1 = 0.1,
@@ -75,7 +75,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"MultiRocks",
-	GROUND.ROCKY,
+	WORLD_TILES.ROCKY,
 	0.2,
 	{
 		rock1 = 0.1,

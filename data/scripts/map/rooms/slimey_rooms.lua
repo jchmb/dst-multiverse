@@ -11,7 +11,7 @@ Layouts["PigKingSlimey"] = StaticLayout.Get(
 
 AddStandardRoom(
 	"SlimeyClearing",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.1,
 	{
         fireflies = 1,
@@ -37,7 +37,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"SlimeyForest",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.3,
 	{
         fireflies = 0.2,
@@ -65,7 +65,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"SlimeyPlain",
-	GROUND.SAVANNA,
+	WORLD_TILES.SAVANNA,
 	0.3,
 	{
     	rock_petrified_tree = 0.2,
@@ -84,7 +84,7 @@ AddStandardRoom(
 
 AddRoom("BGSlimey", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MUD,
+	value = WORLD_TILES.MUD,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = 0.10,
@@ -108,7 +108,7 @@ AddRoom("BGSlimey", {
 
 AddRoom("BGSlimeyDeciduous", {
 	colour={r=.1,g=.8,b=.1,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = .2,
@@ -141,7 +141,7 @@ AddRoom("BGSlimeyDeciduous", {
 
 AddRoom("SlimeyMagicalDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = .3,
@@ -168,7 +168,7 @@ AddRoom("SlimeyMagicalDeciduous", {
 
 AddRoom("SlimeyDeepDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = .4,
@@ -191,7 +191,7 @@ AddRoom("SlimeyDeepDeciduous", {
 
 AddRoom("SlimeyPigKingdom", {
 	colour={r=0.8,g=.8,b=.1,a=.50},
-	value = GROUND.SLIMEY,
+	value = WORLD_TILES.SLIMEY,
 	tags = {"Town"},
 	required_prefabs = {"pigking_slimey"},
 	contents =  {
@@ -213,7 +213,7 @@ AddRoom("SlimeyPigKingdom", {
 
 AddRoom("SlimeySwamp", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MARSH,
+	value = WORLD_TILES.MARSH,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = 0.10,
@@ -231,7 +231,7 @@ AddRoom("SlimeySwamp", {
 
 AddRoom("SlimeySwampRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SLIMEY,
+	value = WORLD_TILES.SLIMEY,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		countprefabs = {
@@ -254,7 +254,7 @@ AddRoom("SlimeySwampRocks", {
 
 AddRoom("SlimeyMudRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = WORLD_TILES.ROCKY,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = 0.10,
@@ -276,7 +276,7 @@ AddRoom("SlimeyMudRocks", {
 
 AddRoom("SlimeyHerds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SLIMEY,
+	value = WORLD_TILES.SLIMEY,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		distributepercent = 0.10,
@@ -298,7 +298,7 @@ AddRoom("SlimeyHerds", {
 
 AddRoom("SlimeyStalagmite", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.UNDERROCK,
+	value = WORLD_TILES.UNDERROCK,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
         distributepercent = .15,
@@ -316,7 +316,7 @@ AddRoom("SlimeyStalagmite", {
 
 AddRoom("SlimeySpiders", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MUD,
+	value = WORLD_TILES.MUD,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 		countprefabs = {
@@ -337,7 +337,7 @@ AddRoom("SlimeySpiders", {
 
 AddRoom("SlimeyHounds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SLIMEY,
+	value = WORLD_TILES.SLIMEY,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 	countprefabs = {
@@ -355,7 +355,7 @@ AddRoom("SlimeyHounds", {
 
 AddRoom("SlimeyMermCity", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MARSH,
+	value = WORLD_TILES.MARSH,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 	countprefabs = {
@@ -372,7 +372,7 @@ AddRoom("SlimeyMermCity", {
 
 AddRoom("SlimeyEwecus", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SLIMEY,
+	value = WORLD_TILES.SLIMEY,
 	tags = {"ExitPiece", "Hutch_Fishbowl"},
 	contents =  {
 	countprefabs = {

@@ -6,7 +6,7 @@ AddRequiredStaticLayout("PigKingBlue", "default_pigking_blue")
 
 AddRoom("BGSnowy", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.15,
@@ -29,7 +29,7 @@ AddRoom("BGSnowy", {
 
 AddRoom("BGSnowyForest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.7,
@@ -54,7 +54,7 @@ AddRoom("BGSnowyForest", {
 
 AddRoom("SnowyPlain", {
 	colour={r=.5,g=.5,b=.45,a=.50},
-	value = GROUND.SAVANNA,
+	value = WORLD_TILES.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.15,
@@ -69,7 +69,7 @@ AddRoom("SnowyPlain", {
 
 AddRoom("SnowyBarePlain", {
 	colour={r=.5,g=.5,b=.45,a=.50},
-	value = GROUND.SAVANNA,
+	value = WORLD_TILES.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.1,
@@ -86,7 +86,7 @@ AddRoom("SnowyBarePlain", {
 --]]
 AddRoom("SnowyHerds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.3,
@@ -101,7 +101,7 @@ AddRoom("SnowyHerds", {
 
 AddRoom("SnowyKoalefants", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SAVANNA,
+	value = WORLD_TILES.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.2,
@@ -119,7 +119,7 @@ AddRoom("SnowyKoalefants", {
 
 AddRoom("SnowyRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.2,
@@ -137,7 +137,7 @@ AddRoom("SnowyRocks", {
 
 AddRoom("SnowyGraveyard", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone", "Mist"},
 	contents =  {
 		distributepercent = 0.15,
@@ -161,7 +161,7 @@ AddRoom("SnowyGraveyard", {
 
 AddRoom("BGSnowyDeciduous", {
 	colour={r=.1,g=.8,b=.1,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .2,
@@ -194,7 +194,7 @@ AddRoom("BGSnowyDeciduous", {
 
 AddRoom("SnowyMagicalDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .3,
@@ -219,7 +219,7 @@ AddRoom("SnowyMagicalDeciduous", {
 
 AddRoom("SnowyDeepDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .4,
@@ -246,7 +246,7 @@ AddRoom("SnowyDeepDeciduous", {
 
 AddRoom("SnowyPigKingdom", {
 	colour={r=0.8,g=.8,b=.1,a=.50},
-	value = GROUND.GRASS,
+	value = WORLD_TILES.GRASS,
 	tags = {"Town"},
 	required_prefabs = {"pigking_blue"},
 	contents =  {
@@ -273,7 +273,7 @@ AddRoom("SnowyPigKingdom", {
 
 AddRoom("BGSnowyIcedLake", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
 		distributepercent = 0.6,
@@ -285,7 +285,7 @@ AddRoom("BGSnowyIcedLake", {
 
 AddRoom("SnowyIcedLake", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ICE_LAKE,
+	value = WORLD_TILES.ICE_LAKE,
 	internal_type = GLOBAL.NODE_INTERNAL_CONNECTION_TYPE.EdgeCentroid,
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
@@ -303,7 +303,7 @@ AddRoom("SnowyIcedLake", {
 
 AddRoom("SnowyIcedLakeWalrus", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ICE_LAKE,
+	value = WORLD_TILES.ICE_LAKE,
 	internal_type = GLOBAL.NODE_INTERNAL_CONNECTION_TYPE.EdgeCentroid,
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
@@ -322,7 +322,7 @@ AddRoom("SnowyIcedLakeWalrus", {
 
 AddRoom("SnowyIcedLakeHounds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ICE_LAKE,
+	value = WORLD_TILES.ICE_LAKE,
 	internal_type = GLOBAL.NODE_INTERNAL_CONNECTION_TYPE.EdgeCentroid,
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
@@ -340,7 +340,7 @@ AddRoom("SnowyIcedLakeHounds", {
 
 AddRoom("SnowyForest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.6,
@@ -362,7 +362,7 @@ AddRoom("SnowyForest", {
 
 AddRoom("SnowyForest2", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
 		distributepercent = 0.7,
@@ -382,7 +382,7 @@ AddRoom("SnowyForest2", {
 
 AddRoom("SnowyForestKlaus", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone", "RoadPoison"},
 	contents =  {
 		distributepercent = 0.6,
@@ -399,7 +399,7 @@ AddRoom("SnowyForestKlaus", {
 
 AddRoom("SnowySleepingIceHounds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countstaticlayouts = {
@@ -418,7 +418,7 @@ AddRoom("SnowySleepingIceHounds", {
 
 AddRoom("SnowyGoats", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.6,
@@ -438,7 +438,7 @@ AddRoom("SnowyGoats", {
 
 AddRoom("SnowyBunnies", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.4,
@@ -454,7 +454,7 @@ AddRoom("SnowyBunnies", {
 
 AddRoom("SnowyLeifForest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countprefabs = {
@@ -474,7 +474,7 @@ AddRoom("SnowyLeifForest", {
 
 AddRoom("SnowyTotallyNormalForest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.7,
@@ -498,7 +498,7 @@ AddRoom("SnowyTotallyNormalForest", {
 
 AddRoom("SnowyTallbirdForest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.3,
@@ -515,7 +515,7 @@ AddRoom("SnowyTallbirdForest", {
 
 AddRoom("SnowySpiderForest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.8,
@@ -531,7 +531,7 @@ AddRoom("SnowySpiderForest", {
 
 AddRoom("SnowyWalrusForest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.3,
@@ -553,7 +553,7 @@ AddRoom("SnowyWalrusForest", {
 
 AddRoom("SnowyHoundNest", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SNOWY,
+	value = WORLD_TILES.SNOWY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.15,
@@ -573,7 +573,7 @@ AddRoom("SnowyHoundNest", {
 
 AddStandardRoom(
 	"SnowyYetiTerritory",
-	GROUND.SNOWY,
+	WORLD_TILES.SNOWY,
 	0.4,
 	{
 		deciduoustree = 7,

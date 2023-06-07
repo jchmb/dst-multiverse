@@ -1,4 +1,66 @@
-AddTile(
+-- local AddBackwardsCompatibleTile(id, numeric_id, name, data, )
+
+-- BEACH = {
+-- 	tile_range = TileRanges.LAND,
+-- 	tile_data = {
+-- 		ground_name = "Beach",
+-- 		old_static_id = 90,
+-- 	},
+-- 	ground_tile_def  = {
+-- 		name = "beach",
+-- 		noise_texture = "ground_noise_sand",
+-- 		runsound = "dontstarve/movement/ia_run_sand",
+-- 		walksound = "dontstarve/movement/ia_walk_sand",
+-- 		flashpoint_modifier = 0,
+-- 		bank_build = "turf_ia",
+-- 		cannotbedug = true,
+-- 	},
+-- 	minimap_tile_def = {
+-- 		name = "map_edge",
+-- 		noise_texture = "mini_beach_noise",
+-- 	},
+-- 	--turf_def = {
+-- 	--    name = "beach",
+-- 	--    bank_build = "turf_ia",
+-- 	--},
+-- },
+
+-- function(tile_name, tile_range, tile_data, ground_tile_def, minimap_tile_def, turf_def)
+local function AddBackwardsCompatibleTile(id, numeric_id, name, data, minimap_data)
+	-- local tile = {
+	-- 	runsound = data.runsound,
+	-- 	walksound = data.walksound,
+	-- 	snowsound = data.snowsound,
+	-- 	mudsound = data.mudsound,
+	-- 	minimap_noise_texture = minimap_data.noise_texture,
+	-- 	turf_name = "turf_" .. name,
+	-- }
+	-- data.minimap_noise_texture = minimap_data.noise_texture
+	local tile_data = {
+		ground_name = name,
+	}
+	local ground_tile_def = {
+		name = name,
+		noise_texture = data.noise_texture,
+		runsound	 = data.runsound,
+		walksound = data.walksound,
+		snowsound = data.snowsound,
+		mudsound = data.mudsound,
+		flashpoint_modifier = data.flashpoint_modifier,
+		bank_build = data.bank_build,
+	}
+	local minimap_tile_def = {
+		name = name,
+		noise_texture = minimap_data.noise_texture,
+	}
+	-- local turf_def = {
+	-- 	name = name,
+	-- 	bank_build = "turf_grass",
+	-- }
+	AddTile(id, "LAND", tile_data, ground_tile_def, minimap_tile_def, nil)
+end
+
+AddBackwardsCompatibleTile(
 	"SNOWY",
 	80,
 	"snowy",
@@ -12,7 +74,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_snowy.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"SLIMEY",
 	50,
 	"slimey",
@@ -26,7 +88,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_slimey.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"ICE_LAKE",
 	51,
 	"ice_lake",
@@ -40,7 +102,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_ice_lake.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"GRASS_GRAY",
 	52,
 	"grass_gray",
@@ -54,7 +116,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_grass_gray.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"ASH",
 	53,
 	"ash",
@@ -68,7 +130,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_ash.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"VOLCANO",
 	54,
 	"volcano",
@@ -82,7 +144,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_volcano.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"MAGMA",
 	55,
 	"magma",
@@ -96,7 +158,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_magma.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"LAVA_ROCK",
 	56,
 	"lava_rock",
@@ -110,7 +172,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_lava_rock.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"GRASS_BLUE",
 	57,
 	"grass_blue",
@@ -124,7 +186,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_grass_blue.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"SAND",
 	58,
 	"sand",
@@ -138,7 +200,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_sand.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"JUNGLE",
 	59,
 	"jungle",
@@ -152,7 +214,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_jungle.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"GRASS_CHESS",
 	60,
 	"grass_chess",
@@ -166,7 +228,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_grass_chess.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"GRASS_BROWN",
 	61,
 	"grass_brown",
@@ -180,7 +242,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_grass_brown.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"METAL",
 	62,
 	"metal",
@@ -194,7 +256,7 @@ AddTile(
 	{noise_texture = "levels/textures/mini_noise_metal.tex"}
 )
 
-AddTile(
+AddBackwardsCompatibleTile(
 	"GRASS_ORANGE",
 	63,
 	"grass_orange",
@@ -209,7 +271,7 @@ AddTile(
 )
 
 -- Water turfs
--- AddTile(
+-- AddBackwardsCompatibleTile(
 -- 	"OCEAN_SHALLOW",
 -- 	63,
 -- 	"water_shallow",
@@ -218,22 +280,22 @@ AddTile(
 -- 		runsound = "dontstarve/movement/run_ice",
 -- 		walksound = "dontstarve/movement/run_ice",
 -- 		snowsound = "dontstarve/movement/run_ice",
--- 		mudsound = "dontstarve/movement/run_ice",
+-- 		mudsound = "dontstarve/movememinimap_tile_defnt/run_ice",
 -- 	},
 -- 	{noise_texture = "levels/textures/mini_noise_water_shallow.tex"}
 -- )
 
 -- Ocean
-GLOBAL.GROUND_WATER_TYPES = {
-	"OCEAN_SHALLOW",
-}
+-- GLOBAL.GROUND_WATER_TYPES = {
+-- 	"OCEAN_SHALLOW",
+-- }
 
 --[[
 	Compatible definitions
 --]]
-GLOBAL.GROUND_COMPATIBLE_TYPES = {
-	["GRASS_CHESS"] = "GRASS",
-	["GRASS_BROWN"] = "GRASS",
-	["METAL"] = "ROCKY",
-	["OCEAN_SHALLOW"] = "GRASS",
-}
+-- GLOBAL.GROUND_COMPATIBLE_TYPES = {
+-- 	["GRASS_CHESS"] = "GRASS",
+-- 	["GRASS_BROWN"] = "GRASS",
+-- 	["METAL"] = "ROCKY",
+-- 	["OCEAN_SHALLOW"] = "GRASS",
+-- }

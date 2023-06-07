@@ -100,12 +100,14 @@ end
 
 --[[
 	Other functions
+	AddRecipe2 = function(name, ingredients, tech, config, filters)
 --]]
-function AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer, numtogive)
+function AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer, numtogive, config, filters)
 	description = description or "???"
 	atlas = atlas or "images/inventoryimages/" .. recipe .. ".xml"
 	placer = placer or nil
-	local newRecipe = Recipe(recipe, ingredients, tab, tech, placer)
+	local newRecipe = AddRecipe2(recipe, ingredients, tech, config, filters)
+	-- local newRecipe = Recipe(recipe, ingredients, tab, tech, placer)
 	newRecipe.atlas = GLOBAL.resolvefilepath(atlas)
 	if numtogive then
 		newRecipe.numtogive = numtogive
@@ -114,20 +116,14 @@ function AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, pl
 	return newRecipe
 end
 
-function AddItemRecipe(recipe, ingredients, tab, tech, description, atlas, numtogive, nounlock)
-	local newRecipe = AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, nil, numtogive)
-	if nounlock then
-		newRecipe.nounlock = true
-	end
+function AddItemRecipe(recipe, ingredients, tab, tech, description, atlas, numtogive, nounlock, filters)
+	local newRecipe = AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, nil, numtogive, {nounlock = nounlock}, filters)
 	return newRecipe
 end
 
-function AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, placer, nounlock)
+function AddStructureRecipe(recipe, ingredients, tab, tech, description, atlas, placer, nounlock, filters)
 	placer = placer or (recipe .. "_placer")
-	local newRecipe = AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer)
-	if nounlock then
-		newRecipe.nounlock = true
-	end
+	local newRecipe = AddRecipeWrapped(recipe, ingredients, tab, tech, description, atlas, placer, nil, {nounlock = nounlock}, filters)
 	return newRecipe
 end
 

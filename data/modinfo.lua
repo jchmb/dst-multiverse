@@ -2,7 +2,7 @@
 name = "Multi-World DST"
 description = "Multi-World Biomes Pack"
 author = "Snook-8, Joachim, and Keeper-M"
-version = "1.10.14"
+version = "1.11.0"
 forumthread = ""
 api_version = 10
 
@@ -19,6 +19,12 @@ all_clients_require_mod = true
 client_only_mod = false
 
 server_filter_tags = {"environment", "worldgen", "creature"}
+
+mod_dependencies = {
+    {--GEMCORE
+        workshop = "workshop-1378549454",
+    },
+}
 
 configuration_options =
 {

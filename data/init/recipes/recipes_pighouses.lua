@@ -159,26 +159,26 @@ AddStructureRecipe(
 	"Houses one Wildbeaver"
 )
 
-AddStructureRecipe(
-	"wildbore_house",
-	{
-		ModIngredient("bamboo", 8),
-		ModIngredient("palmleaf", 5),
-		Ingredient("pigskin", 4),
-	},
-	RECIPETABS.TOWN,
-	TECH.LOST,
-	"Houses one Wildbore"
-)
+-- AddStructureRecipe(
+-- 	"wildbore_house",
+-- 	{
+-- 		ModIngredient("bamboo", 8),
+-- 		ModIngredient("palmleaf", 5),
+-- 		Ingredient("pigskin", 4),
+-- 	},
+-- 	RECIPETABS.TOWN,
+-- 	TECH.LOST,
+-- 	"Houses one Wildbore"
+-- )
 
-AddStructureRecipe(
-	"sand_castle",
-	{
-		ModIngredient("sand", 4),
-		ModIngredient("palmleaf", 2),
-		ModIngredient("seashell", 3),
-	},
-	RECIPETABS.TOWN,
-	TECH.NONE,
-	"Therapeutic and relaxing."
-)
+-- AddStructureRecipe(
+-- 	"sand_castle",
+-- 	{
+-- 		ModIngredient("sand", 4),
+-- 		ModIngredient("palmleaf", 2),
+-- 		ModIngredient("seashell", 3),
+-- 	},
+-- 	RECIPETABS.TOWN,
+-- 	TECH.NONE,
+-- 	"Therapeutic and relaxing."
+-- )

@@ -14,7 +14,7 @@ AddPreferredLayout("Bunsy", "bunsy")
 
 AddStandardRoom(
 	"CuteClearing",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.1,
 	{
 		hatpighouse=0.015,
@@ -41,7 +41,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGCuteFungus",
-	GROUND.FUNGUS,
+	WORLD_TILES.FUNGUS,
 	0.4,
 	{
 		carrot_planted = 0.02,
@@ -58,7 +58,7 @@ AddStandardRoom(
 
 AddRoom("CuteForest", {
 					colour={r=.5,g=0.6,b=.080,a=.10},
-					value = GROUND.FOREST,
+					value = WORLD_TILES.FOREST,
 					tags = {"ExitPiece", "Chester_Eyebone"},
 					contents =  {
 					                distributepercent = .3,
@@ -87,7 +87,7 @@ AddRoom("CuteForest", {
 
 AddRoom("CutePlain", {
 					colour={r=.8,g=.4,b=.4,a=.50},
-					value = GROUND.SAVANNA,
+					value = WORLD_TILES.SAVANNA,
 					tags = {"ExitPiece", "Chester_Eyebone"},
 					contents =  {
 					                distributepercent = .3,
@@ -105,7 +105,7 @@ AddRoom("CutePlain", {
 
 AddRoom("CuteBunnymanTown", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.FUNGUS,
+	value = WORLD_TILES.FUNGUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.05,
@@ -124,7 +124,7 @@ AddRoom("CuteBunnymanTown", {
 
 AddRoom("CuteBunnymanTown2", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.FUNGUSGREEN,
+	value = WORLD_TILES.FUNGUSGREEN,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countstaticlayouts = {
@@ -150,7 +150,7 @@ AddRoom("CuteBunnymanTown2", {
 
 AddRoom("CuteBunnymanTown3", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.FUNGUSRED,
+	value = WORLD_TILES.FUNGUSRED,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.1,
@@ -174,7 +174,7 @@ AddRoom("CuteBunnymanTown3", {
 
 AddRoom("CuteBunnymanTown4", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.FUNGUSRED,
+	value = WORLD_TILES.FUNGUSRED,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.15,
@@ -189,7 +189,7 @@ AddRoom("CuteBunnymanTown4", {
 
 AddStandardRoom(
 	"BGCuteCarrodoyForest",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.35,
 	{
 		deciduoustree = 2,
@@ -206,7 +206,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteCarrodoyForest",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.5,
 	{
 		deciduoustree = 3,
@@ -224,7 +224,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteCarrodoyForestRabbits",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.21,
 	{
 		deciduoustree = 0.75,
@@ -241,7 +241,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteCarrodoyForestCore",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.4,
 	{
 		deciduoustree = 0.5,
@@ -257,7 +257,7 @@ AddStandardRoom(
 
 -- AddStandardRoom(
 -- 	"BGCuteSapTreeForest",
--- 	GROUND.QUAGMIRE_PARKFIELD,
+-- 	WORLD_TILES.QUAGMIRE_PARKFIELD,
 -- 	0.1,
 -- 	{
 -- 		spotspice_shrub = 0.01,
@@ -270,7 +270,7 @@ AddStandardRoom(
 --
 -- AddStandardRoom(
 -- 	"CuteSapTreeForest",
--- 	GROUND.QUAGMIRE_PARKFIELD,
+-- 	WORLD_TILES.QUAGMIRE_PARKFIELD,
 -- 	0.25,
 -- 	{
 -- 		saptree_small = 0.03,
@@ -286,7 +286,7 @@ AddStandardRoom(
 --
 -- AddStandardRoom(
 -- 	"CuteSapTreeForestCore",
--- 	GROUND.QUAGMIRE_PARKFIELD,
+-- 	WORLD_TILES.QUAGMIRE_PARKFIELD,
 -- 	0.3,
 -- 	{
 -- 		saptree_small = 0.05,
@@ -305,7 +305,7 @@ AddStandardRoom(
 
 AddRoom("CuteMonkeyRoom", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.DIRT,
+	value = WORLD_TILES.DIRT,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.07,
@@ -319,7 +319,7 @@ AddRoom("CuteMonkeyRoom", {
 
 AddRoom("CuteHerds", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SAVANNA,
+	value = WORLD_TILES.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.25,
@@ -334,7 +334,7 @@ AddRoom("CuteHerds", {
 
 AddRoom("CuteHerds2", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.SAVANNA,
+	value = WORLD_TILES.SAVANNA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.15,
@@ -351,7 +351,7 @@ AddRoom("CuteHerds2", {
 
 AddRoom("CuteRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = WORLD_TILES.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countprefabs = {
@@ -379,7 +379,7 @@ AddRoom("CuteRocks", {
 
 AddRoom("CuteRocks2", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ROCKY,
+	value = WORLD_TILES.ROCKY,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countprefabs={
@@ -401,7 +401,7 @@ AddRoom("CuteRocks2", {
 
 AddRoom("CuteFriends", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.FUNGUS,
+	value = WORLD_TILES.FUNGUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.1,
@@ -422,7 +422,7 @@ AddRoom("CuteFriends", {
 
 AddRoom("BGCuteDeciduous", {
 	colour={r=.1,g=.8,b=.1,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .2,
@@ -457,7 +457,7 @@ AddRoom("BGCuteDeciduous", {
 
 AddRoom("CuteMagicalDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		countstaticlayouts={
@@ -489,7 +489,7 @@ AddRoom("CuteMagicalDeciduous", {
 
 AddRoom("CuteDeepDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .4,
@@ -515,7 +515,7 @@ AddRoom("CuteDeepDeciduous", {
 
 AddStandardRoom(
 	"CuteSpiderForest",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.6,
 	{
 		evergreen_sparse = 8,
@@ -536,7 +536,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteBunnyDefense",
-	GROUND.FUNGUSGREEN,
+	WORLD_TILES.FUNGUSGREEN,
 	0.15,
 	{
 		pufftree = 5,
@@ -549,7 +549,7 @@ AddStandardRoom(
 
 AddCenterRoom(
 	"CuteGiantBunnyLair",
-	GROUND.GRASS,
+	WORLD_TILES.GRASS,
 	0.5,
 	{
 		grass = 0.6,
@@ -567,7 +567,7 @@ AddCenterRoom(
 
 AddStandardRoom(
 	"BGCutePuffForest",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.3,
 	{
 		pufftree = 2,
@@ -584,7 +584,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CutePuffForest",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.5,
 	{
 		pufftree = 3.5,
@@ -601,7 +601,7 @@ AddStandardRoom(
 
 AddCenterRoom(
 	"CutePuffForestTown",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.24,
 	{
 		pufftree = 0.05,
@@ -622,7 +622,7 @@ AddCenterRoom(
 
 AddCenterRoom(
 	"CutePuffForestTown2",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.31,
 	{
 		pufftree = 0.13,
@@ -642,7 +642,7 @@ AddCenterRoom(
 
 AddStandardRoom(
 	"CutePuffForestTown3",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.26,
 	{
 		pufftree = 0.07,
@@ -663,7 +663,7 @@ AddStandardRoom(
 
 AddCenterRoom(
 	"CutePuffForestTownBunsy",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.4,
 	{
 		pufftree = 1,
@@ -682,7 +682,7 @@ AddCenterRoom(
 
 AddStandardRoom(
 	"CutePuffForestSpiders",
-	GROUND.GRASS_ORANGE,
+	WORLD_TILES.GRASS_ORANGE,
 	0.24,
 	{
 		pufftree = 0.3,
@@ -699,7 +699,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteBunnymanTown5",
-	GROUND.FUNGUS,
+	WORLD_TILES.FUNGUS,
 	0.4,
 	{
 		fireflies = 3,
@@ -722,7 +722,7 @@ AddStandardRoom(
 
 AddRoadPoisonRoom(
 	"BGCuteSwamp",
-	GROUND.MARSH,
+	WORLD_TILES.MARSH,
 	0.2,
 	{
 		marsh_bush = 0.1,
@@ -735,7 +735,7 @@ AddRoadPoisonRoom(
 
 AddRoadPoisonRoom(
 	"CuteSwamp",
-	GROUND.MARSH,
+	WORLD_TILES.MARSH,
 	0.2,
 	{
 		marsh_bush = 0.1,
@@ -748,7 +748,7 @@ AddRoadPoisonRoom(
 
 AddRoadPoisonRoom(
 	"CuteSwampMutants",
-	GROUND.MARSH,
+	WORLD_TILES.MARSH,
 	0.2,
 	{
 		marsh_bush = 0.1,
@@ -760,7 +760,7 @@ AddRoadPoisonRoom(
 
 AddStandardRoom(
 	"BGCuteBeach",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		rocks = 0.01,
@@ -773,7 +773,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteBeachEntrance",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		sapling = 0.05,
@@ -785,7 +785,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteBeach",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		rock_limpet = 0.2,
@@ -799,7 +799,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteBeachPirates",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.25,
 	{
 		mushtree_small = 0.05,
@@ -826,7 +826,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteDesert",
-	GROUND.DIRT_NOISE,
+	WORLD_TILES.DIRT_NOISE,
 	0.15,
 	{
 		marsh_bush = 0.05,
@@ -852,7 +852,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteDesertHounds",
-	GROUND.DIRT_NOISE,
+	WORLD_TILES.DIRT_NOISE,
 	0.15,
 	{
 		marsh_bush = 0.05,
@@ -869,7 +869,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteBeeClearing",
-	GROUND.GRASS,
+	WORLD_TILES.GRASS,
 	0.03,
 	{
 		carrot_planted=0.003,
@@ -891,7 +891,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGCuteGraveyard",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.1,
 	{
 		pufftree = 0.1,
@@ -906,7 +906,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteGraveyard",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.1,
 	{},
 	{
@@ -923,7 +923,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"CuteGraveyardFrabbit",
-	GROUND.FOREST,
+	WORLD_TILES.FOREST,
 	0.1,
 	{},
 	{
@@ -942,7 +942,7 @@ AddStandardRoom(
 if HasGorgePort() then
 	AddStandardRoom(
 		"BGCuteSapTreeForest",
-		GROUND.QUAGMIRE_PARKFIELD,
+		WORLD_TILES.QUAGMIRE_PARKFIELD,
 		0.23,
 		{
 			spotspice_shrub = 0.02,
@@ -957,7 +957,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"CuteSapTreeForest",
-		GROUND.QUAGMIRE_PARKFIELD,
+		WORLD_TILES.QUAGMIRE_PARKFIELD,
 		0.35,
 		{
 			saptree_small = 0.1,
@@ -977,7 +977,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"CuteSapTreeForestTraders2",
-		GROUND.QUAGMIRE_PARKFIELD,
+		WORLD_TILES.QUAGMIRE_PARKFIELD,
 		0.2,
 		{
 			spotspice_shrub = 0.07,
@@ -999,7 +999,7 @@ if HasGorgePort() then
 
 	AddStandardRoom(
 		"CuteSapTreeForestCore",
-		GROUND.QUAGMIRE_PARKFIELD,
+		WORLD_TILES.QUAGMIRE_PARKFIELD,
 		0.55,
 		{
 			saptree_small = 0.2,
@@ -1017,7 +1017,7 @@ if HasGorgePort() then
 
 	AddCenterRoom(
 		"CuteSapTreeForestTraders",
-		GROUND.QUAGMIRE_PARKFIELD,
+		WORLD_TILES.QUAGMIRE_PARKFIELD,
 		0.2,
 		{
 			spotspice_shrub = 0.15,

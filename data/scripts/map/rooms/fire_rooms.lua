@@ -3,7 +3,7 @@ AddRequiredStaticLayout("PigKingFire", "default_pigking_fire")
 
 AddRoom("BGFire", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = WORLD_TILES.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.08,
@@ -20,7 +20,7 @@ AddRoom("BGFire", {
 
 AddStandardRoom(
 	"FireClearing",
-	GROUND.ASH,
+	WORLD_TILES.ASH,
 	0.1,
 	{
 		sapling = 0.1,
@@ -40,7 +40,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGFireBeach",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		sapling = 0.1,
@@ -55,7 +55,7 @@ AddStandardRoom(
 
 AddStandardEdgeRoom(
 	"FireBeach",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.2,
 	{
 		sapling = 0.1,
@@ -72,7 +72,7 @@ AddStandardEdgeRoom(
 
 AddStandardEdgeRoom(
 	"FireBeach2",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.175,
 	{
 		sapling = 0.1,
@@ -88,7 +88,7 @@ AddStandardEdgeRoom(
 
 AddStandardEdgeRoom(
 	"FireBeach3",
-	GROUND.SAND,
+	WORLD_TILES.SAND,
 	0.15,
 	{
 		wildborehouse = 0.03,
@@ -105,7 +105,7 @@ AddStandardEdgeRoom(
 
 AddRoom("FireRocks", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.MAGMA,
+	value = WORLD_TILES.MAGMA,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.08,
@@ -120,7 +120,7 @@ AddRoom("FireRocks", {
 
 AddStandardRoom(
 	"BGFireJungle",
-	GROUND.JUNGLE,
+	WORLD_TILES.JUNGLE,
 	0.5,
 	{
 		jungletree = 0.2,
@@ -136,7 +136,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"FireJungle",
-	GROUND.JUNGLE,
+	WORLD_TILES.JUNGLE,
 	0.3,
 	{
 		jungletree = 0.3,
@@ -157,7 +157,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"FireMonkeyJungle",
-	GROUND.JUNGLE,
+	WORLD_TILES.JUNGLE,
 	0.2,
 	{
 		jungletree = 0.3,
@@ -174,7 +174,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"FireSpiderJungle",
-	GROUND.JUNGLE,
+	WORLD_TILES.JUNGLE,
 	0.2,
 	{
 		jungletree = 0.2,
@@ -189,7 +189,7 @@ AddStandardRoom(
 
 AddStandardRoom(
 	"BGFireDesert",
-	GROUND.DIRT_NOISE,
+	WORLD_TILES.DIRT_NOISE,
 	0.07,
 	{
 		marsh_bush = 0.05,
@@ -206,7 +206,7 @@ AddStandardRoom(
 
 AddStandardCentroidRoom(
 	"FireDesert",
-	GROUND.DIRT_NOISE,
+	WORLD_TILES.DIRT_NOISE,
 	0.08,
 	{
 		rock_flintless = .8,
@@ -224,7 +224,7 @@ AddStandardCentroidRoom(
 
 AddStandardCentroidRoom(
 	"FireDesertHounds",
-	GROUND.DIRT_NOISE,
+	WORLD_TILES.DIRT_NOISE,
 	0.08,
 	{
 		rock_flintless = .8,
@@ -240,7 +240,7 @@ AddStandardCentroidRoom(
 
 AddStandardCentroidRoom(
 	"BGFireDragoonLair",
-	GROUND.MAGMA,
+	WORLD_TILES.MAGMA,
 	0.1,
 	{
 		rock_magma = 0.01,
@@ -253,7 +253,7 @@ AddStandardCentroidRoom(
 
 AddStandardCentroidRoom(
 	"FireDragoonLair",
-	GROUND.MAGMA,
+	WORLD_TILES.MAGMA,
 	0.1,
 	{
 		dragoonden = 0.05,
@@ -276,7 +276,7 @@ AddStandardCentroidRoom(
 
 AddRoom("FireForest2", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = WORLD_TILES.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.3,
@@ -293,7 +293,7 @@ AddRoom("FireForest2", {
 
 AddRoom("FireForest3", {
 	colour={r=.25,g=.28,b=.25,a=.50},
-	value = GROUND.ASH,
+	value = WORLD_TILES.ASH,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = 0.5,
@@ -313,7 +313,7 @@ AddRoom("FireForest3", {
 
 AddStandardRoom(
 	"BGFireCoffee",
-	GROUND.MAGMA,
+	WORLD_TILES.MAGMA,
 	0.1,
 	{
 		volcano_shrub = 0.07,
@@ -327,7 +327,7 @@ AddStandardRoom(
 
 AddStandardCentroidRoom(
 	"FireCoffee",
-	GROUND.MAGMA,
+	WORLD_TILES.MAGMA,
 	0.17,
 	{
 		volcano_shrub = 0.07,
@@ -346,7 +346,7 @@ AddStandardCentroidRoom(
 ]]
 AddStandardCentroidRoom(
 	"BGFireDragonflyTerritory",
-	GROUND.VOLCANO,
+	WORLD_TILES.VOLCANO,
 	0.1,
 	{
 		flint = 0.01,
@@ -364,7 +364,7 @@ AddStandardCentroidRoom(
 
 AddStandardCentroidRoom(
 	"FireDragonflyTerritory",
-	GROUND.VOLCANO,
+	WORLD_TILES.VOLCANO,
 	0.2,
 	{
 		rock_magma = 0.02,
@@ -382,7 +382,7 @@ AddStandardCentroidRoom(
 
 AddStandardCentroidRoom(
 	"FireDragonflyLair",
-	GROUND.VOLCANO,
+	WORLD_TILES.VOLCANO,
 	0.15,
 	{
 		rock_magma_gold = 0.01,
@@ -394,7 +394,7 @@ AddStandardCentroidRoom(
 		obsidian_workbench = 1,
 	},
 	{
-		["DragonflyFireArena"] = 1,
+		-- ["DragonflyFireArena"] = 1,
 	},
 	{
 		evergreen = {burnt = true},
@@ -407,7 +407,7 @@ AddStandardCentroidRoom(
 
 AddRoom("BGFireDeciduous", {
 	colour={r=.1,g=.8,b=.1,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .15,
@@ -439,7 +439,7 @@ AddRoom("BGFireDeciduous", {
 
 AddRoom("FireMagicalDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .3,
@@ -465,7 +465,7 @@ AddRoom("FireMagicalDeciduous", {
 
 AddRoom("FireDeepDeciduous", {
 	colour={r=0,g=.9,b=0,a=.50},
-	value = GROUND.DECIDUOUS,
+	value = WORLD_TILES.DECIDUOUS,
 	tags = {"ExitPiece", "Chester_Eyebone"},
 	contents =  {
 		distributepercent = .3,
@@ -488,7 +488,7 @@ AddRoom("FireDeepDeciduous", {
 
 AddRoom("FirePigKingdom", {
 	colour={r=0.8,g=.8,b=.1,a=.50},
-	value = GROUND.MAGMA,
+	value = WORLD_TILES.MAGMA,
 	tags = {"Town"},
 	required_prefabs = {"pigking_fire"},
 	contents =  {

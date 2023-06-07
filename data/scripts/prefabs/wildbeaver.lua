@@ -22,6 +22,19 @@ local SEED_TYPES = {
     "twiggy_nut",
 }
 
+local BEAVER_FOODGROUP =
+{
+    name = "OMNI",
+    types =
+    {
+        FOODTYPE.VEGGIE,
+        FOODTYPE.SEEDS,
+        FOODTYPE.GENERIC,
+        FOODTYPE.GOODIES,
+        FOODTYPE.WOOD,
+    },
+}
+
 local function IsTreeSeed(item)
     for i,seedtype in ipairs(SEED_TYPES) do
         if (type(item) == "table" and seedtype == item.prefab) or
@@ -138,7 +151,7 @@ local function OnEat(inst, food)
     if food.components.edible ~= nil then
         if food.components.edible.foodtype == FOODTYPE.WOOD then
             --inst.treesdue = inst.treesdue + 1
-            inst.woodmeter = inst.woodmeter + food.components.edible.woodiness
+            inst.woodmeter = inst.woodmeter + 10 -- TODO
             --CraftWall(inst)
         end
         if food.components.edible.foodtype == FOODTYPE.VEGGIE then
@@ -278,7 +291,7 @@ local function fn()
     inst:AddComponent("bloomer")
 
     inst:AddComponent("eater")
-    inst.components.eater:SetDiet({ FOODGROUP.WOODIE }, { FOODGROUP.WOODIE })
+    inst.components.eater:SetDiet({ BEAVER_FOODGROUP }, { BEAVER_FOODGROUP })
     -- inst.components.eater:SetCanEatHorrible()
     -- inst.components.eater:SetCanEatRaw()
     -- inst.components.eater.strongstomach = true -- can eat monster meat!
